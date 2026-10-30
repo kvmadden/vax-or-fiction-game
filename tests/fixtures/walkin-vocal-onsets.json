@@ -1,0 +1,101 @@
+{
+  "note": "Sung onset of each walk-in line in walkin.mp3 (Smile Take 3, sha256 1aa368aee2...). alignedStart is the first word start from torchaudio MMS_FA forced alignment of the approved lyric to the demucs htdemucs vocal stem. energyOnset is the first upward crossing of -35 dB in the stem envelope after a rest. The two agree within 70 ms on every line. Tools: docs/audio/lyric-cue-check/.",
+  "lines": [
+    {
+      "line": 1,
+      "text": "Question's up, now take your shot.",
+      "firstWord": "questions",
+      "alignedStart": 8.543,
+      "energyOnset": 8.545,
+      "cueBefore": 7.82
+    },
+    {
+      "line": 2,
+      "text": "Make your call with what you've got.",
+      "firstWord": "make",
+      "alignedStart": 12.865,
+      "energyOnset": 12.833,
+      "cueBefore": 12.28
+    },
+    {
+      "line": 3,
+      "text": "What's your best prediction?",
+      "firstWord": "whats",
+      "alignedStart": 17.147,
+      "energyOnset": 17.161,
+      "cueBefore": 16.66
+    },
+    {
+      "line": 4,
+      "text": "Vax or Fiction?",
+      "firstWord": "vax",
+      "alignedStart": 20.348,
+      "energyOnset": 20.364,
+      "cueBefore": 20.1
+    },
+    {
+      "line": 5,
+      "text": "You've heard the rumors, had your doubts.",
+      "firstWord": "youve",
+      "alignedStart": 26.01,
+      "energyOnset": 26.003,
+      "cueBefore": 26.2
+    },
+    {
+      "line": 6,
+      "text": "Now's the time to hash them out.",
+      "firstWord": "nows",
+      "alignedStart": 30.532,
+      "energyOnset": 30.497,
+      "cueBefore": 29.9
+    },
+    {
+      "line": 7,
+      "text": "Bring what you know, then test your view.",
+      "firstWord": "bring",
+      "alignedStart": 34.554,
+      "energyOnset": 34.565,
+      "cueBefore": 34.5
+    },
+    {
+      "line": 8,
+      "text": "We get sharper when we do.",
+      "firstWord": "we",
+      "alignedStart": 37.135,
+      "energyOnset": 37.144,
+      "cueBefore": 37.1
+    },
+    {
+      "line": 9,
+      "text": "Question's up, now take your shot.",
+      "firstWord": "questions",
+      "alignedStart": 42.837,
+      "energyOnset": 42.821,
+      "cueBefore": 42.7
+    },
+    {
+      "line": 10,
+      "text": "Make your call with what you've got.",
+      "firstWord": "make",
+      "alignedStart": 47.159,
+      "energyOnset": 47.089,
+      "cueBefore": 46.55
+    },
+    {
+      "line": 11,
+      "text": "What's your best prediction?",
+      "firstWord": "whats",
+      "alignedStart": 51.461,
+      "energyOnset": 51.449,
+      "cueBefore": 51.15
+    },
+    {
+      "line": 12,
+      "text": "Vax or Fiction?",
+      "firstWord": "vax",
+      "alignedStart": 54.642,
+      "energyOnset": 54.64,
+      "cueBefore": 54.55
+    }
+  ]
+}

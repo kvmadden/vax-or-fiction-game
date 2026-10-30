@@ -1,0 +1,4 @@
+{
+  "note": "Reserved for a shared source registry. Today every question cites sources embedded in its own deck module (Deck.citations, referenced by Question.sourceIds), and each metadata record repeats those ids under evidence.sourceIds.",
+  "sources": []
+}

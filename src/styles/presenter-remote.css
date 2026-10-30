@@ -1,0 +1,453 @@
+/* Presenter phone remote — extracted from presentation.css. */
+/* Presenter phone remote: private pairing overlay + fat word-labeled pad. Tokens only, 44px floor. */
+.presenter-pairing {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--kit-space-32);
+  overflow: hidden;
+  /* HB-33: the void-black scrim with a gold glow read as a brown haze on the one screen the host
+     sees first on a projector, breaking the navy identity. The stage's own deep navy instead.
+     W7: the 88% mix against transparent let setup show through behind this private panel. Solid
+     stage-deep keeps the navy identity HB-33 fixed for, with no see-through. */
+  background:
+    radial-gradient(ellipse at 50% 20%, color-mix(in srgb, var(--color-gold) 12%, transparent), transparent 55%),
+    var(--color-stage-deep);
+  color: var(--color-ink);
+  text-align: center;
+}
+.presenter-pairing__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--kit-space-16);
+  width: min(720px, 100%);
+  max-height: calc(100dvh - var(--kit-space-64));
+  padding: var(--kit-space-32) var(--kit-space-32);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 35%, var(--color-film-border));
+  border-radius: var(--kit-space-24);
+  background-color: color-mix(in srgb, var(--color-stage-deep) 88%, transparent);
+  box-shadow:
+    var(--kit-rim),
+    0 24px 64px color-mix(in srgb, var(--color-void) 70%, transparent);
+  backdrop-filter: blur(12px);
+}
+.presenter-pairing__banner {
+  margin: 0;
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 55%, transparent);
+  border-radius: var(--kit-radius-full);
+  background-color: color-mix(in srgb, var(--color-gold) 16%, transparent);
+  color: var(--color-gold);
+  font-family: var(--kit-font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.presenter-pairing__title {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.presenter-pairing__lead {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--color-ink-muted);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.presenter-pairing__qr {
+  position: relative;
+  margin-top: var(--kit-space-8);
+  padding: var(--kit-space-24);
+  border: 3px solid var(--color-gold);
+  border-radius: var(--kit-space-24);
+  background-color: var(--color-light);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-gold) 30%, transparent);
+}
+.presenter-pairing__private {
+  position: absolute;
+  top: calc(-1 * var(--kit-space-12));
+  left: 50%;
+  z-index: 1;
+  margin: 0;
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+.presenter-pairing__qr svg,
+.presenter-pairing__qr .presenter-remote-qr {
+  width: 280px;
+  height: 280px;
+  display: block;
+}
+.presenter-pairing__status {
+  margin: var(--kit-space-4) 0 0;
+  color: var(--color-ink-muted);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.presenter-pairing__status[data-paired="true"] {
+  color: var(--color-gold);
+  font-size: 24px;
+  font-weight: 700;
+}
+.presenter-pairing__continue {
+  min-width: 280px;
+  min-height: var(--kit-touch-min);
+  margin-top: var(--kit-space-8);
+  padding: var(--kit-space-16) var(--kit-space-32);
+  border: 0;
+  border-radius: var(--kit-space-16);
+  background-color: var(--color-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.presenter-pairing__continue:hover {
+  filter: brightness(1.06);
+}
+.presenter-pairing__continue:active {
+  filter: brightness(0.96);
+}
+.presenter-pairing__continue:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.setup-screen .setup-presenter-remote {
+  position: absolute;
+  left: 96px;
+  top: 930px;
+  width: 1408px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+}
+.setup-presenter-remote__kicker {
+  margin: 0;
+  color: var(--color-gold);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.setup-presenter-remote__banner {
+  margin: 0;
+  flex: 1 1 auto;
+  color: var(--color-ink-muted);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+}
+.setup-presenter-remote[data-paired="true"] .setup-presenter-remote__banner {
+  color: var(--color-ink);
+}
+.setup-presenter-remote__linked {
+  display: inline-block;
+  margin-right: var(--kit-space-8);
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border-radius: var(--kit-radius-full);
+  background-color: color-mix(in srgb, var(--color-verdict-true) 32%, var(--color-stage-deep));
+  color: var(--color-verdict-true);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.setup-presenter-remote__button {
+  flex: none;
+  width: 100%;
+  margin-top: 0;
+  /* W6: same real-px fix as .setup-copy-link-button in opening-stage.css. */
+  min-height: calc(var(--kit-space-48) / var(--stage-scale, 1));
+  padding: var(--kit-space-12) var(--kit-space-24);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--kit-space-12);
+  background-color: var(--color-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.setup-presenter-remote__button:hover {
+  filter: brightness(1.08);
+}
+.setup-presenter-remote__button:active {
+  filter: brightness(0.96);
+}
+.setup-presenter-remote__button:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+.presenter-setup-stage .setup-presenter-remote {
+  position: static;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--kit-space-8);
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 45%, var(--color-film-border));
+  border-radius: var(--kit-space-16);
+  /* N8: this read as flat zinc/black against the navy glass card next to it. --color-backer
+     matches the surface every other setup card uses. */
+  background-color: var(--color-backer);
+}
+
+.setup-offline-backup {
+  position: absolute;
+  left: 812px;
+  top: 844px;
+  z-index: 2;
+  width: 692px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--kit-space-8);
+  padding: var(--kit-space-16) var(--kit-space-24);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 45%, var(--color-film-border));
+  border-radius: var(--kit-space-16);
+  background-color: color-mix(in srgb, var(--color-gold) 10%, var(--color-stage-deep));
+}
+.setup-offline-backup__kicker {
+  margin: 0;
+  color: var(--color-gold);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.setup-offline-backup__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* W6: same real-px fix as .setup-copy-link-button in opening-stage.css. */
+  min-height: calc(var(--kit-space-48) / var(--stage-scale, 1));
+  padding: var(--kit-space-12) var(--kit-space-24);
+  border-radius: var(--kit-space-12);
+  border: 1px solid var(--color-gold);
+  background-color: var(--color-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+}
+.setup-offline-backup__link:hover {
+  filter: brightness(1.08);
+}
+.setup-offline-backup__link:active {
+  filter: brightness(0.96);
+}
+.setup-offline-backup__link:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+.setup-offline-backup__note {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.presenter-setup-stage .setup-offline-backup {
+  position: static;
+  width: 100%;
+  padding: var(--kit-space-12) var(--kit-space-16);
+  /* N8: matches the presenter-remote card's surface fix, same reason. */
+  background-color: var(--color-backer);
+}
+
+/* F-24: the app bar used to render with only a connection dot in it (brandMark="none", no room
+   code on this screen). It is gone now (PhoneLayout showHeader={false}). .remote-pad__topbar is
+   this screen's header, and it carries the safe-area-top inset the bar used to. */
+.remote-shell.phone-shell .phone-app-content[data-role="phone-content"] {
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  max-height: 100dvh;
+  padding-top: max(env(safe-area-inset-top, 0px), var(--kit-space-8)) !important;
+  /* F-26: an 8px floor sat 8 to 12px from the edge on a browser that reports no
+     safe-area-inset-bottom (Safari toolbars, Android). 16px keeps a real margin there too. */
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), var(--kit-space-16)) !important;
+}
+/* F-25: this row holds only the kicker, its dot, and End, so it fits one line at 390 without
+   wrapping. nowrap, not wrap: the join chip moved to the status row below instead of sharing
+   this one. */
+.remote-pad__topbar {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-12);
+  min-height: var(--kit-touch);
+  padding-bottom: var(--kit-space-8);
+  border-bottom: 1px solid var(--color-hairline);
+}
+.remote-pad__status-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--kit-space-8) var(--kit-space-12);
+}
+.remote-pad__dot {
+  display: inline-block;
+  width: var(--kit-space-8);
+  height: var(--kit-space-8);
+  margin-inline-start: var(--kit-space-8);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-verdict-true);
+}
+.remote-pad__dot[data-host="down"],
+.remote-pad__dot[data-paired="false"] {
+  background-color: var(--color-gold);
+}
+.remote-pad__join-chip {
+  padding: var(--kit-space-4) var(--kit-space-8);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+/* F-22: End moves out of the reachable action grid into this row, as a plain text button (not
+   styled like a primary or secondary action), behind the same tap-again-to-confirm it always had.
+   min-width, not just min-height: the label alone measured about 43.8px wide, under the 44px
+   floor. */
+.remote-pad__end-bar {
+  min-width: var(--kit-touch);
+  min-height: var(--kit-touch);
+  padding-inline: var(--kit-space-8);
+  border: 0;
+  background: none;
+  color: var(--color-fiction);
+  font-family: var(--kit-font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.remote-pad__end-bar.is-armed {
+  color: var(--color-on-gold);
+  background-color: var(--color-fiction);
+  border-radius: var(--kit-radius-12);
+}
+.remote-pad__end-bar:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.remote-pad__end-bar:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+.remote-pad__end-bar:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+/* End is a text button in the remote family, so it uses the family's own 0.6 disabled opacity,
+   not the 0.4 the icon-only order arrows use (a distinct, narrower exception, named in
+   tests/unit/desktop-presentation-chrome.test.ts). */
+.remote-pad__end-bar:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+/* F-24: the kicker now lives in .remote-pad__topbar with its status dot at its end. */
+.remote-pad__kicker {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--color-gold);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  flex: 0 0 auto;
+}
+.remote-pad__hint {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  flex: 0 0 auto;
+}
+.remote-pad__btn {
+  width: 100%;
+  min-height: 56px;
+  padding: var(--kit-space-8) var(--kit-space-12);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-space-12);
+  background-color: color-mix(in srgb, var(--color-accent-cobalt) 12%, var(--color-stage-deep));
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+/* F-23: matches the join/solo primary CTA treatment (the gold gradient pill) instead of a flat
+   muted gold fill with dark text, so Next reads as the one primary action it is. */
+.remote-pad__btn--primary {
+  min-height: 64px;
+  border: 0;
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  box-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 45%, transparent);
+  color: var(--color-on-gold);
+  font-size: 22px;
+  font-weight: 700;
+}
+.remote-pad__btn[data-remote-command="LOCK"]:not(:disabled),
+.remote-pad__btn[data-remote-command="REVEAL"]:not(:disabled) {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background-color: color-mix(in srgb, var(--color-gold) 16%, var(--color-stage-deep));
+}
+.remote-pad__btn:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.remote-pad__btn:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+.remote-pad__btn:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-accent-teal);
+  outline-offset: var(--kit-space-4);
+}
+/* F-23: enabled secondaries already read var(--color-ink). Disabled stays at the same 0.6 every
+   other disabled control on the phone uses (tests/unit/desktop-presentation-chrome.test.ts
+   asserts this family stays consistent). F-12's order-step arrows are a distinct, newer pattern
+   at 0.4, not one this button family already belonged to. */
+.remote-pad__btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+

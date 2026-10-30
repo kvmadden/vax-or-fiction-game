@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Not found · Vax or Fiction?</title>
+    <meta name="description" content="This page does not exist." />
+    <meta name="robots" content="noindex, nofollow" />
+    <!--
+      Static 404 (VOF-45). Vercel serves this straight from the output root for any unmatched
+      path, with a real 404 status, no app JS involved. It links the same real design tokens and
+      fonts the app uses (src/design/tokens.css, src/styles/site-404.css) instead of a copied
+      set, and Vite's artifactIdentity plugin stamps data-build-sha on it the same way it stamps
+      index.html, since both are now build.rollupOptions.input entries.
+    -->
+    <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/src/styles/site-404.css" />
+  </head>
+  <body>
+    <main class="site-404">
+      <div class="site-404-card">
+        <a class="site-404-brand" href="/" aria-label="Vax or Fiction? Home">
+          <span class="site-brand">
+            <span class="site-brand-vax">VAX</span>
+            <span class="site-brand-or">or</span>
+            <span class="site-brand-fiction">FICTION?</span>
+          </span>
+        </a>
+        <p class="site-404-eyebrow">404 &middot; Fiction</p>
+        <h1 class="site-404-title">That page is the myth.</h1>
+        <p class="site-404-sub">Wrong link, or a typo. This page does not exist.</p>
+        <div class="site-404-actions">
+          <a class="site-404-primary" href="/">Back to the game</a>
+          <a class="site-404-secondary" href="/about">Read the About page</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

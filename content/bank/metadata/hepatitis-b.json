@@ -1,0 +1,892 @@
+{
+  "flagship:q1": {
+    "bankId": "flagship:q1",
+    "copies": [
+      "flagship-r2:q1"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "dab95f5f1b48c642f8aa8b1d8a0e527ec574485f4b1dda07b473a8cf23dfadf7",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "core",
+    "conceptId": "hepatitis-b-undiagnosed-burden",
+    "tags": [
+      "screening",
+      "burden"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. Hepatitis B is often silent, so half unaware is plausible, but the figure is not widely known.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows hepatitis B is often silent, with about half of infected people unaware.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must accept that about half of people with hepatitis B are unaware, plausible given silent infection but not widely known.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. Hepatitis B is often silent, so half unaware is plausible, but the figure is not widely known.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepatitis-b-about"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "flagship:q9": {
+    "bankId": "flagship:q9",
+    "copies": [
+      "flagship-r2:q9"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "cfe18eba17c292f2983bf9537f6305cccd4f774c56e238d4966108b1e2aa0138",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "core",
+    "conceptId": "hepatitis-b-environmental-stability",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "One specific figure, seven days on a surface, from bloodborne pathogen training. Counterintuitive to anyone who has not kept it.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the specific fact that hepatitis B stays infectious on surfaces for at least a week, from bloodborne pathogen training.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "A bloodborne pathogen training fact: hepatitis B survives at least seven days on surfaces. Some staff recall it.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "One specific figure, seven days on a surface, from bloodborne pathogen training. Counterintuitive to anyone who has not kept it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepatitis-b-clinical-overview"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "hepatitis-b:q1": {
+    "bankId": "hepatitis-b:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "740a08eec4adb43f8597f403af5e06152405d151f9509a35b84d338cc895ea7c",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "core",
+    "conceptId": "hepatitis-b-universal-recommendation",
+    "tags": [
+      "eligibility",
+      "safety"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. The 2022 universal adult hepatitis B rule for 19 to 59 is standard now, better known to pharmacists than technicians.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows the 2022 universal hepatitis B rule for adults 19 to 59, better known to pharmacists than technicians.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know the 2022 universal adult hepatitis B recommendation for ages 19 to 59, standard but newer than most rules.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. The 2022 universal adult hepatitis B rule for 19 to 59 is standard now, better known to pharmacists than technicians.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepb-universal"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "hepatitis-b:q2": {
+    "bankId": "hepatitis-b:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "8d39798a7185d1763cab0eb8f1a3a74a1dbd8d22e485633e65afea04c341fab8",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "core",
+    "conceptId": "hepatitis-b-eligibility-60-plus",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Legally prohibited is extreme wording no guidance uses, so the claim gives itself away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Legally prohibited is extreme wording no guidance uses, so the claim gives itself away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "No vaccine is legally prohibited for older adults, so the extreme wording gives the answer away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepb-clinical"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "hepatitis-b:q3": {
+    "bankId": "hepatitis-b:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "03c973d05f17ba04080fbbe81b79a812f0d32b83679329c0f419616a0fc452f9",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "alternate",
+    "conceptId": "hepatitis-b-accelerated-schedule",
+    "tags": [
+      "schedule",
+      "product",
+      "administration"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Agreed. The Heplisav-B two doses a month apart detail matches the hard anchor vax-or-fiction:q10.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs Heplisav-B's two doses a month apart, a product detail many staff do not know.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "Same product detail as the one-month hepatitis B question: Heplisav-B is two doses a month apart. Naming it helps a little.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "Agreed. The Heplisav-B two doses a month apart detail matches the hard anchor vax-or-fiction:q10.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "fda-heplisav-b"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "hepatitis-b:q4": {
+    "bankId": "hepatitis-b:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "403cf24804ea60ada1b7e5e6b41dbb0fa51013c5bd1c81f5fe92482f1e94a512",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "core",
+    "conceptId": "hepatitis-b-chronic-condition-risk",
+    "tags": [
+      "safety",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "chronic-conditions"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows diabetes does not lower hepatitis B risk. Diabetes is a known risk condition.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows diabetes does not lower hepatitis B risk. Diabetes is a known risk condition.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Nothing suggests diabetes lowers infection risk, and diabetes is a known hepatitis B vaccine indication.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-diabetes-hepb"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "hepatitis-b:q5": {
+    "bankId": "hepatitis-b:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "d1bca33f8b83c185d6e2ae61c0ce59b09548fd4582eb7b374ebacab095a071f8",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "alternate",
+    "conceptId": "hepatitis-b-screening-recommendation",
+    "tags": [
+      "eligibility",
+      "screening"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "expert",
+      "source": "rubric",
+      "rationale": "A recent change the room has not caught up with: one-time screening for all adults, where most recall risk-based testing.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "expert",
+          "reason": "Needs the 2023 change to universal one-time adult hepatitis B screening with a triple panel. Most recall risk-based testing.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One recent rule: CDC's 2023 one-time hepatitis B screening for all adults with a triple panel. Few outside clinics know it.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "expert",
+          "reason": "A recent change the room has not caught up with: one-time screening for all adults, where most recall risk-based testing.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepb-screening"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "hepatitis-b:q6": {
+    "bankId": "hepatitis-b:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "17134b8066eee3067e1c1cd4b85f8519d382acfbf6d81d7c4b3b85af91e5d28a",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "alternate",
+    "conceptId": "hepatitis-b-interval-no-restart",
+    "tags": [
+      "eligibility",
+      "schedule"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Applies the standard rule that a late dose continues the series and never restarts it.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Applies the standard rule that a late dose continues the series and never restarts it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard rule that a delayed dose never restarts a series. Give the next hepatitis B dose.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-general-spacing"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "hepatitis-b:q7": {
+    "bankId": "hepatitis-b:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "568e985eec39f758d836cdd5c2508fd4267cebc9b650ff49a08eb3c01fcf10ad",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "alternate",
+    "conceptId": "hepatitis-b-hepd-coinfection-protection",
+    "tags": [
+      "effectiveness"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "One virology detail, that hepatitis D needs hepatitis B, but the stem states the reason, which makes true easy to accept. A mild tell.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the virology fact that hepatitis D depends on hepatitis B, so the vaccine prevents both.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know hepatitis D needs hepatitis B to replicate. The stem states the reason, which makes true easy to accept.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "One virology detail, that hepatitis D needs hepatitis B, but the stem states the reason, which makes true easy to accept. A mild tell.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepd-prevention"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "hepatitis-b:q8": {
+    "bankId": "hepatitis-b:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "e33b2d1e45e15888e68c6a4601da25a0db8384f6b9ecd068aaff60ea3ce36988",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "alternate",
+    "conceptId": "hepatitis-b-no-booster-needed",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows the vaccine does not treat an existing infection. Annually is a tell, as no hepatitis B booster is yearly.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows the vaccine does not treat an existing infection. Annually is a tell, as no hepatitis B booster is yearly.",
+          "sure": true,
+          "flags": [
+            "jargon",
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Hepatitis B vaccine is not yearly and not for people already infected. Annually alone makes the claim implausible.",
+          "sure": false,
+          "flags": [
+            "jargon",
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepb-chronic"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon",
+      "extreme-words"
+    ]
+  },
+  "vax-or-fiction:q10": {
+    "bankId": "vax-or-fiction:q10",
+    "copies": [
+      "flagship:q15",
+      "flagship-r2:q15"
+    ],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "f72f80f5c08497e02af8350cddc6d3a8217f0309230e0ba82dabaf3697b428f6",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "core",
+    "conceptId": "hepatitis-b-accelerated-schedule",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs Heplisav-B's two-dose schedule a month apart, a product detail many staff do not know.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs Heplisav-B's two-dose schedule a month apart, a product detail many staff do not know.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One product detail: Heplisav-B finishes an adult hepatitis B series in about one month. Many staff know only the six-month schedule.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "fda-heplisav-b-label",
+        "who-hepatitis-b"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q12": {
+    "bankId": "vax-or-fiction:q12",
+    "copies": [
+      "flagship:q18",
+      "flagship-r2:q18"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "4c5fe23037a7b34ebba688a466504bed6525a2ee02af9feb940afd17809a7540",
+    "status": "live",
+    "subject": "hepatitis-b",
+    "rotation": "core",
+    "conceptId": "hepatitis-b-testing-not-prerequisite",
+    "tags": [
+      "precaution",
+      "screening"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. A standard rule, screening never delays hepatitis B vaccination, and waiting for labs sounds prudent to some.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows hepatitis B screening should not delay adult vaccination, so there is no wait for results.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know hepatitis B screening should not delay vaccination. Waiting for labs sounds prudent to some.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. A standard rule, screening never delays hepatitis B vaccination, and waiting for labs sounds prudent to some.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepatitis-b-vaccine-administration"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  }
+}

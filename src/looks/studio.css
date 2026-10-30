@@ -1,0 +1,610 @@
+/* Studio set (VOF-93). Today's navy becomes a TV set: a marquee bulb rail
+   across the top, LED light towers down both side margins, light shafts from the two cone tips, set rings
+   on the back wall and a glossy floor with a light pool. Answers are lit podium panels standing on that
+   floor. The reveal is the big board: an opaque lit panel in a bulb frame with a sunburst behind it, and
+   the room's split as audience meters in a console underneath. Navy, teal and gold carry it. Every shade
+   below is mixed from a token. */
+
+:root[data-look="studio"] {
+  /* The calm hold over a picture (art=ai), the lowest the contrast meter allows plus 3 points of margin.
+     A question and the lobby: floor 32, set by the gold "65 or older" where the picture's beams cross the stem.
+     The screens that are words alone: floor 64, set by the closing's percent sign. */
+  --look-calm-stage: 35%;
+  --look-calm-words: 68%;
+  /* The portrait canvas wears the phone's picture and its words run nearly the full height: floor 54, set by the gold "65 and older" where the lamp lights the top of the phone picture. */
+  --look-calm-portrait: 60%;
+  /* A phone that asks for the picture (&art=ai) has small type across the whole screen, so its hold runs deep, and the kicker
+     rows at the top of each screen carry plates. A phone draws its set unless it asks. */
+  --look-calm-phone: 85%;
+  --studio-wall: color-mix(in srgb, var(--color-accent-cobalt) 9%, var(--color-stage-deep));
+  --studio-gold-hot: color-mix(in srgb, var(--color-gold) 45%, var(--color-light));
+  /* The reveal card's border, which the bulb frame is measured out from. */
+  --studio-card-border: 3px;
+  --studio-rail: color-mix(in srgb, var(--color-void) 50%, var(--color-stage-deep));
+  --studio-face-top: color-mix(in srgb, var(--color-light) 7%, var(--color-panel-navy));
+  --studio-face: var(--color-panel-navy);
+  --studio-face-low: color-mix(in srgb, var(--color-void) 30%, var(--color-stage-deep));
+  --studio-base: color-mix(in srgb, var(--color-void) 55%, var(--color-stage-deep));
+  --studio-console: color-mix(in srgb, var(--color-void) 35%, var(--color-stage-deep));
+  --studio-console-top: color-mix(in srgb, var(--color-light) 4%, var(--color-panel-navy));
+  --studio-track: color-mix(in srgb, var(--color-void) 45%, var(--color-stage-deep));
+  --studio-meter: color-mix(in srgb, var(--color-accent-cobalt) 55%, var(--color-light));
+  /* The towers' colours follow the question kind (set on the stage below). */
+  --studio-left: var(--color-vax);
+  --studio-right: var(--color-fiction);
+  /* The sunburst's ray colour: cool for a room that missed, gold for a room that called it. */
+  --studio-burst: color-mix(in srgb, var(--color-accent-cobalt) 16%, transparent);
+}
+
+/* ---- The set ----------------------------------------------------------------------------------- */
+
+/* The drawn set replaces today's cones and floor line, and the legibility scrims ease off over it,
+   because every word now sits on its own lit plate or on the dark wall. They ease off over a picture
+   as well, where the calm hold does that work. */
+:root[data-look="studio"] .stage-atmosphere > :is(.stage-cones, .show-lights) {
+  display: none;
+}
+
+:root[data-look="studio"] .stage-atmosphere > .show-scrim[data-active="true"] {
+  opacity: 0.45;
+}
+
+:root[data-look="studio"] .look-stage__wash {
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 34%, color-mix(in srgb, var(--color-accent-cobalt) 14%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--studio-wall), var(--color-stage-deep) 86%);
+}
+
+/* The towers follow the kind: the show's own pair for a true or false call, gold and cobalt for a
+   number, purple for the myth among three, cobalt and teal for the better reply, teal and gold for an order. */
+:root[data-look="studio"] .screen-router-root:has(.question-shell[data-kind="estimate"]) .look-stage {
+  --studio-left: var(--color-gold);
+  --studio-right: var(--color-accent-cobalt);
+}
+:root[data-look="studio"] .screen-router-root:has(.question-shell[data-kind="myth-among-three"]) .look-stage {
+  --studio-left: var(--color-accent-purple);
+  --studio-right: var(--color-accent-pink);
+}
+:root[data-look="studio"] .screen-router-root:has(.question-shell[data-kind="which-patient"]) .look-stage {
+  --studio-left: var(--color-accent-cobalt);
+  --studio-right: var(--color-vax);
+}
+:root[data-look="studio"] .screen-router-root:has(.question-shell[data-kind="order"]) .look-stage {
+  --studio-left: var(--color-vax);
+  --studio-right: var(--color-gold);
+}
+
+/* Gradient stops, by role. */
+:root[data-look="studio"] .studio-stop--clear { stop-color: var(--color-stage-deep); stop-opacity: 0; }
+:root[data-look="studio"] .studio-stop--teal-hot { stop-color: var(--color-vax); stop-opacity: 0.85; }
+:root[data-look="studio"] .studio-stop--teal-mid { stop-color: var(--color-vax); stop-opacity: 0.28; }
+:root[data-look="studio"] .studio-stop--orange-hot { stop-color: var(--color-fiction); stop-opacity: 0.8; }
+:root[data-look="studio"] .studio-stop--orange-mid { stop-color: var(--color-gold); stop-opacity: 0.24; }
+:root[data-look="studio"] .studio-stop--bulb-core { stop-color: var(--studio-gold-hot); stop-opacity: 1; }
+:root[data-look="studio"] .studio-stop--bulb-warm { stop-color: var(--color-gold); stop-opacity: 0.55; }
+:root[data-look="studio"] .studio-stop--pool { stop-color: var(--color-gold); stop-opacity: 0.2; }
+:root[data-look="studio"] .studio-stop--floor-top { stop-color: color-mix(in srgb, var(--color-accent-cobalt) 20%, var(--color-stage-deep)); stop-opacity: 1; }
+:root[data-look="studio"] .studio-stop--floor-bottom { stop-color: var(--color-stage-deep); stop-opacity: 1; }
+
+/* The back wall: two set rings. They warm to gold when the room calls it. */
+:root[data-look="studio"] .studio-wall__glow { fill: color-mix(in srgb, var(--color-accent-cobalt) 7%, transparent); }
+:root[data-look="studio"] .studio-ring {
+  fill: none;
+  stroke: color-mix(in srgb, var(--color-accent-cobalt) 26%, transparent);
+  stroke-width: 2;
+  transition: stroke var(--kit-dur-scene) var(--kit-ease);
+}
+:root[data-look="studio"] .studio-ring--inner {
+  stroke: color-mix(in srgb, var(--color-vax) 18%, transparent);
+  stroke-dasharray: 2 14;
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+:root[data-look="studio"] .screen-router-root:has(.question-shell[data-room-outcome="right"]) .studio-ring {
+  stroke: color-mix(in srgb, var(--color-gold) 40%, transparent);
+}
+
+/* Light shafts from the cone tips, screened over the wall. Each fan is its own SVG layer, turned whole on
+   its tip, so the sway is composited and the blur inside it rasterizes once. */
+:root[data-look="studio"] .look-art--studio-shafts {
+  opacity: 0.34;
+  mix-blend-mode: screen;
+  will-change: transform;
+  animation: studio-shaft-sway 11s ease-in-out infinite alternate;
+}
+:root[data-look="studio"] .look-art--studio-shafts-teal { transform-origin: 18% -8%; }
+:root[data-look="studio"] .look-art--studio-shafts-orange {
+  transform-origin: 101% -8%;
+  animation-duration: 13s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes studio-shaft-sway {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(4deg); }
+}
+
+/* The floor: a lit lip, seams converging on centre stage, and the light pool. */
+:root[data-look="studio"] .studio-floor__seam {
+  stroke: color-mix(in srgb, var(--color-light) 7%, transparent);
+  stroke-width: 1.5;
+}
+:root[data-look="studio"] .studio-floor__lip { fill: color-mix(in srgb, var(--color-gold) 75%, var(--color-light)); opacity: 0.8; }
+:root[data-look="studio"] .studio-floor__lip-glow {
+  fill: color-mix(in srgb, var(--color-gold) 40%, transparent);
+  filter: blur(4px);
+}
+
+/* The LED towers: segments chase upward in four phases, in the kind's colours. */
+:root[data-look="studio"] .studio-tower--left .studio-tower__seg { fill: var(--studio-left); }
+:root[data-look="studio"] .studio-tower--right .studio-tower__seg { fill: var(--studio-right); }
+:root[data-look="studio"] .studio-tower__seg {
+  opacity: 0.32;
+  animation: studio-tower-chase 1.6s steps(1, end) infinite;
+}
+:root[data-look="studio"] .studio-tower__seg--1 { animation-delay: -0.4s; }
+:root[data-look="studio"] .studio-tower__seg--2 { animation-delay: -0.8s; }
+:root[data-look="studio"] .studio-tower__seg--3 { animation-delay: -1.2s; }
+
+@keyframes studio-tower-chase {
+  0% { opacity: 0.95; }
+  25% { opacity: 0.3; }
+}
+
+/* The marquee: a dark rail and warm bulbs, every third one dark on a moving chase. */
+:root[data-look="studio"] .studio-marquee__rail {
+  fill: var(--studio-rail);
+  stroke: color-mix(in srgb, var(--color-gold) 30%, transparent);
+  stroke-width: 1;
+}
+:root[data-look="studio"] .studio-bulb__core { fill: var(--studio-gold-hot); }
+:root[data-look="studio"] .studio-bulb {
+  animation: studio-chase 1.5s steps(1, end) infinite;
+}
+:root[data-look="studio"] .studio-bulb--1 { animation-delay: -0.5s; }
+:root[data-look="studio"] .studio-bulb--2 { animation-delay: -1s; }
+
+@keyframes studio-chase {
+  0% { opacity: 0.3; }
+  33.4% { opacity: 1; }
+}
+
+/* A room that called it gets a faster, brighter chase. */
+:root[data-look="studio"] .screen-router-root:has(.question-shell[data-room-outcome="right"]) .studio-bulb {
+  animation-duration: 0.6s;
+}
+:root[data-look="studio"] .screen-router-root:has(.question-shell[data-room-outcome="right"]) .studio-bulb--1 { animation-delay: -0.2s; }
+:root[data-look="studio"] .screen-router-root:has(.question-shell[data-room-outcome="right"]) .studio-bulb--2 { animation-delay: -0.4s; }
+
+/* ---- The header: the number tile, the kicker, the join sign and the status light ---------------- */
+
+:root[data-look="studio"] body .question-shell.question-flow[data-format][data-phase] .question-source-number {
+  border: 2px solid var(--studio-gold-hot) !important;
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-gold) 22%, transparent),
+    0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 55%, transparent) !important;
+}
+
+:root[data-look="studio"] .question-show-frame .show-join-pill,
+:root[data-look="studio"] .question-show-frame .status-rail {
+  border-color: color-mix(in srgb, var(--color-gold) 45%, transparent) !important;
+  background-color: color-mix(in srgb, var(--color-stage-deep) 88%, transparent) !important;
+  /* Nearly opaque already, and a blur over the moving marquee would rerun every frame. */
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-light) 10%, transparent),
+    0 0 var(--kit-space-16) color-mix(in srgb, var(--color-gold) 18%, transparent) !important;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root[data-look="studio"] .question-show-frame .show-join-pill,
+  :root[data-look="studio"] .question-show-frame .status-rail {
+    background-color: var(--color-stage-deep) !important;
+  }
+}
+
+/* ---- Podium panels ------------------------------------------------------------------------------
+   Every answer card is the lit front of a podium: a light bar across the top in the answer's colour,
+   light spilling down the face, a dark base lip, a glow over the top edge and a soft reflection on the
+   floor under it. The words sit on the opaque face, so the light never touches them. */
+:root[data-look="studio"] .question-show-frame--binary [data-answer="true"] { --podium-light: var(--color-vax); }
+:root[data-look="studio"] .question-show-frame--binary [data-answer="false"] { --podium-light: var(--color-fiction); }
+:root[data-look="studio"] .question-show-frame--estimate .estimate-answer-rail .answer-bar { --podium-light: var(--range-accent, var(--color-gold)); }
+:root[data-look="studio"] .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--which-patient, .question-show-frame--order) :is(.answer-bar, .order-bar) { --podium-light: var(--color-accent-cobalt); }
+
+:root[data-look="studio"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--myth-among-three, .question-show-frame--which-patient) .answer-bar,
+:root[data-look="studio"] body .question-shell .question-show-frame--order .order-bar {
+  clip-path: none !important;
+  border: 0 !important;
+  border-radius: var(--kit-radius-12) !important;
+  background: linear-gradient(180deg, var(--studio-face-top), var(--studio-face) 42%, var(--studio-face-low) 88%, var(--studio-base) 88%) !important;
+  box-shadow:
+    inset 0 6px 0 var(--podium-light),
+    inset 0 22px 26px -18px color-mix(in srgb, var(--podium-light) 60%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--podium-light) 34%, transparent),
+    0 -4px 24px -6px color-mix(in srgb, var(--podium-light) 55%, transparent),
+    0 18px 28px -12px color-mix(in srgb, var(--color-void) 80%, transparent) !important;
+  -webkit-box-reflect: below 4px linear-gradient(to bottom, color-mix(in srgb, var(--color-light) 18%, transparent), transparent 16%);
+}
+
+:root[data-look="studio"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--which-patient) .answer-bar::before,
+:root[data-look="studio"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--which-patient) .answer-bar::after {
+  content: none !important;
+  display: none !important;
+}
+
+:root[data-look="studio"] body .question-shell .question-show-frame .answer-bar .answer-bar__label {
+  color: var(--color-ink) !important;
+  text-shadow: 0 2px 0 color-mix(in srgb, var(--color-void) 60%, transparent) !important;
+}
+
+/* Podiums light one after another as the question lands. */
+:root[data-look="studio"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot .answer-bar {
+  animation: studio-podium-on 520ms var(--kit-ease) 240ms backwards;
+}
+:root[data-look="studio"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot:nth-child(2) .answer-bar { animation-delay: 330ms; }
+:root[data-look="studio"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot:nth-child(3) .answer-bar { animation-delay: 420ms; }
+:root[data-look="studio"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot:nth-child(4) .answer-bar { animation-delay: 510ms; }
+:root[data-look="studio"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot:nth-child(n + 5) .answer-bar { animation-delay: 600ms; }
+
+@keyframes studio-podium-on {
+  0% { filter: brightness(0.35); }
+  60% { filter: brightness(1.25); }
+  100% { filter: none; }
+}
+
+/* The stem keeps its words and its gold emphasis. */
+
+/* ---- The reveal: the big board --------------------------------------------------------------------
+   The card and the backdrop share one grid cell, so the sunburst and the bulb frame always centre on the
+   card. The audience meters stand in a console in the row under it, which fills the band that used to
+   sit empty. */
+:root[data-look="studio"] body .question-shell.question-flow[data-format='widescreen'][data-phase] .question-show-frame .question-beat-pane > .question-result[data-screen="question"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  align-items: center;
+  row-gap: var(--kit-space-24);
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result {
+  --result-color: var(--color-gold);
+}
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result[data-tone="fiction"] { --result-color: var(--color-fiction); }
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result[data-tone="vax"] { --result-color: var(--color-vax); }
+
+:root[data-look="studio"] .look-reveal-backdrop {
+  grid-area: 1 / 1;
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 1280px;
+  height: 1280px;
+  pointer-events: none;
+}
+
+:root[data-look="studio"] .look-reveal-backdrop .look-sunburst {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, var(--studio-burst) 0deg 5deg, transparent 5deg 15deg);
+  -webkit-mask-image: radial-gradient(circle, var(--color-void) 18%, transparent 50%);
+  mask-image: radial-gradient(circle, var(--color-void) 18%, transparent 50%);
+  will-change: transform;
+  animation: look-spin 90s linear infinite;
+}
+
+:root[data-look="studio"] .look-reveal-backdrop[data-room-outcome="right"] {
+  --studio-burst: color-mix(in srgb, var(--color-gold) 38%, transparent);
+}
+:root[data-look="studio"] .look-reveal-backdrop[data-room-outcome="right"] .look-sunburst {
+  animation-duration: 40s;
+}
+
+:root[data-look="studio"] .look-glints {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+:root[data-look="studio"] .look-glint {
+  fill: var(--studio-gold-hot);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: studio-glint 1.8s ease-in-out infinite;
+}
+:root[data-look="studio"] .look-glint--1 { fill: var(--color-light); animation-delay: -0.6s; }
+:root[data-look="studio"] .look-glint--2 { animation-delay: -1.2s; }
+
+@keyframes studio-glint {
+  0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.45; transform: scale(0.6) rotate(45deg); }
+}
+
+:root[data-look="studio"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-card {
+  grid-area: 1 / 1;
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  min-height: 0;
+  padding: var(--kit-space-32) var(--kit-space-64);
+  border: var(--studio-card-border) solid color-mix(in srgb, var(--result-color) 75%, var(--color-light)) !important;
+  border-radius: var(--kit-radius-24) !important;
+  background: linear-gradient(180deg, var(--studio-face-top), var(--studio-face) 40%, var(--studio-face-low)) !important;
+  background-color: var(--studio-face) !important;
+  box-shadow:
+    inset 0 0 0 6px color-mix(in srgb, var(--color-void) 40%, transparent),
+    inset 0 0 48px color-mix(in srgb, var(--result-color) 14%, transparent),
+    0 0 48px color-mix(in srgb, var(--result-color) 30%, transparent),
+    0 28px 48px -20px color-mix(in srgb, var(--color-void) 85%, transparent) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* The bulb frame rides just outside the card's edge, so a bulb never sits under a word. */
+:root[data-look="studio"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-card::before {
+  content: "";
+  position: absolute;
+  /* From the card's border edge (its 3px border) out one bulb row. */
+  inset: calc(var(--kit-space-32) * -1 - var(--studio-card-border));
+  z-index: -1;
+  padding: var(--kit-space-32);
+  border-radius: calc(var(--kit-radius-24) + var(--kit-space-32));
+  background:
+    radial-gradient(circle at 16px 16px, var(--studio-gold-hot) 0 4px, color-mix(in srgb, var(--color-gold) 55%, transparent) 5px 8px, transparent 10px) 0 0 / 32px 32px round,
+    linear-gradient(var(--studio-rail), var(--studio-rail));
+  -webkit-mask:
+    linear-gradient(var(--color-void) 0 0) content-box,
+    linear-gradient(var(--color-void) 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(var(--color-void) 0 0) content-box exclude,
+    linear-gradient(var(--color-void) 0 0);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+:root[data-look="studio"] body .question-shell.question-flow[data-format='widescreen'] .question-result[data-room-outcome="right"] .question-result-card::before {
+  opacity: 1;
+  animation: studio-frame-flash 0.6s steps(1, end) infinite;
+}
+
+@keyframes studio-frame-flash {
+  0% { filter: none; }
+  50% { filter: brightness(1.35); }
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result:is([data-kind="binary"], [data-kind="estimate"]) .question-result-answer {
+  /* The smaller of 176 and the width the safe area leaves, shared out over the verdict's characters at 0.6 em each. */
+  font-size: min(176px, calc(1344px / var(--look-verdict-len, 4) / 0.6));
+  overflow-wrap: anywhere;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-shadow:
+    0 0 var(--kit-space-24) color-mix(in srgb, var(--result-color) 55%, transparent),
+    0 4px 0 color-mix(in srgb, var(--color-void) 50%, transparent);
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result .question-result-room-line {
+  text-align: center;
+  color: var(--studio-gold-hot);
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result[data-room-outcome="wrong"] .question-result-room-line {
+  color: var(--color-ink);
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result .question-result-sting {
+  margin-top: var(--kit-space-12);
+  text-align: center;
+}
+
+/* The audience meters: one lit column per answer in a console, the room's pick at full height of its
+   share. The answer's meter and words run gold, and the rest are cool light. */
+:root[data-look="studio"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-poll {
+  grid-area: 2 / 1;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-16) var(--kit-space-32) var(--kit-space-12);
+  border: 2px solid color-mix(in srgb, var(--color-gold) 28%, transparent);
+  border-radius: var(--kit-radius-16);
+  background: linear-gradient(180deg, var(--studio-console-top), var(--studio-console));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-light) 10%, transparent),
+    0 20px 36px -18px color-mix(in srgb, var(--color-void) 85%, transparent);
+}
+
+:root[data-look="studio"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-poll > div {
+  --meter: var(--studio-meter);
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "pct"
+    "bar"
+    "label"
+    "votes";
+  justify-items: center;
+  align-items: baseline;
+  row-gap: var(--kit-space-4);
+  /* A meter is 200 wide and takes more when its label does, down to "25% to under 50%". */
+  min-width: 200px;
+  color: var(--color-ink-muted);
+}
+
+:root[data-look="studio"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-poll[data-count="2"] > div {
+  min-width: 280px;
+}
+
+:root[data-look="studio"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-poll > div[data-correct="true"] {
+  --meter: var(--color-gold);
+  color: var(--studio-gold-hot);
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll > div > strong {
+  grid-area: pct;
+  color: var(--color-ink);
+  font-family: var(--kit-font-mono);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll > div[data-correct="true"] > strong { color: var(--studio-gold-hot); }
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll > div > span {
+  grid-area: label;
+  justify-self: center;
+  margin-top: var(--kit-space-4);
+  font-size: 26px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll > div > small {
+  grid-area: votes;
+  justify-self: center;
+  font-size: 26px;
+  white-space: nowrap;
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll .look-bar {
+  grid-area: bar;
+  width: 112px;
+  height: 128px;
+  border-radius: var(--kit-radius-8);
+  background:
+    repeating-linear-gradient(to top, color-mix(in srgb, var(--color-light) 6%, transparent) 0 10px, transparent 10px 14px),
+    var(--studio-track);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-light) 10%, transparent);
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll .look-bar__fill {
+  inset: auto 0 0;
+  /* The share of the room, out of a full track. */
+  height: calc(var(--share, 0) * 1%);
+  background:
+    repeating-linear-gradient(to top, var(--meter) 0 10px, transparent 10px 14px);
+  background-position: bottom;
+  filter: none;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--meter) 40%, transparent);
+  animation: studio-meter-fill 900ms var(--kit-ease) 380ms backwards;
+}
+
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll > div:nth-child(2) .look-bar__fill { animation-delay: 460ms; }
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll > div:nth-child(3) .look-bar__fill { animation-delay: 540ms; }
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll > div:nth-child(4) .look-bar__fill { animation-delay: 620ms; }
+:root[data-look="studio"] .question-flow[data-format='widescreen'] .question-result-poll > div:nth-child(n + 5) .look-bar__fill { animation-delay: 700ms; }
+
+@keyframes studio-meter-fill {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* ---- The lobby: contestant name plates and a lit join sign --------------------------------------- */
+:root[data-look="studio"] .preshow-lobby .lobby-arrival {
+  --plate-light: var(--color-vax);
+  border: 0;
+  border-radius: var(--kit-radius-12);
+  background: linear-gradient(180deg, var(--studio-face-top), var(--studio-face) 50%, var(--studio-face-low));
+  box-shadow:
+    inset 0 5px 0 var(--plate-light),
+    inset 0 18px 22px -16px color-mix(in srgb, var(--plate-light) 60%, transparent),
+    0 -3px 18px -6px color-mix(in srgb, var(--plate-light) 55%, transparent),
+    0 14px 22px -12px color-mix(in srgb, var(--color-void) 80%, transparent);
+  color: var(--color-ink);
+}
+:root[data-look="studio"] .preshow-lobby .lobby-arrival:nth-child(4n + 2) { --plate-light: var(--color-fiction); }
+:root[data-look="studio"] .preshow-lobby .lobby-arrival:nth-child(4n + 3) { --plate-light: var(--color-gold); }
+:root[data-look="studio"] .preshow-lobby .lobby-arrival:nth-child(4n + 4) { --plate-light: var(--color-accent-cobalt); }
+
+:root[data-look="studio"] .preshow-lobby .lobby-join {
+  position: relative;
+  border: 3px solid color-mix(in srgb, var(--color-gold) 70%, var(--color-light)) !important;
+  background: linear-gradient(180deg, var(--studio-face-top), var(--studio-face) 40%, var(--studio-face-low)) !important;
+  box-shadow:
+    inset 0 0 0 6px color-mix(in srgb, var(--color-void) 40%, transparent),
+    0 0 48px color-mix(in srgb, var(--color-gold) 26%, transparent) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* The lobby's walk-in lyric runs along the bottom, so the stage floor sits under it, not through it. */
+:root[data-look="studio"] .screen-router-root[data-active-screen="Lobby"] .studio-floor {
+  transform: translateY(calc(var(--kit-space-64) + var(--kit-space-32)));
+}
+
+/* ---- The phone: podium buttons and a lit verdict sign ---------------------------------------------- */
+:root[data-look="studio"] .phone-live-shell .phone-vote-surface {
+  background-color: transparent !important;
+}
+
+:root[data-look="studio"] .look-phone .studio-phone-shafts { opacity: 0.55; mix-blend-mode: screen; }
+:root[data-look="studio"] .look-phone .studio-tower--left .studio-tower__seg { fill: var(--color-vax); }
+:root[data-look="studio"] .look-phone .studio-tower--right .studio-tower__seg { fill: var(--color-fiction); }
+
+/* The phone's scrim eases so the set shows. The words sit on the podiums or on the dark wall. */
+:root[data-look="studio"] .phone-backdrop[data-scrim="stage"]::after {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-stage-deep) 72%, transparent), color-mix(in srgb, var(--color-stage-deep) 52%, transparent) 60%, color-mix(in srgb, var(--color-stage-deep) 40%, transparent));
+}
+
+/* A bulb rail along the bottom edge of the phone's bar, the marquee in miniature. */
+:root[data-look="studio"] .phone-live-shell .phone-app-bar {
+  position: relative;
+}
+:root[data-look="studio"] .phone-live-shell .phone-app-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--kit-space-12) * -1);
+  height: var(--kit-space-12);
+  background:
+    radial-gradient(circle at 50% 50%, var(--studio-gold-hot) 0 2.5px, color-mix(in srgb, var(--color-gold) 50%, transparent) 3px 4.5px, transparent 5.5px) 0 0 / 18px 12px repeat-x,
+    var(--studio-rail);
+  pointer-events: none;
+  z-index: 1;
+}
+
+:root[data-look="studio"] .phone-live-shell.room-frame .answer-slab--binary {
+  --podium-light: var(--color-vax);
+  border: 0;
+  border-radius: var(--kit-radius-16);
+  background: linear-gradient(180deg, var(--studio-face-top), var(--studio-face) 46%, var(--studio-face-low) 90%, var(--studio-base) 90%);
+  box-shadow:
+    inset 0 6px 0 var(--podium-light),
+    inset 0 26px 30px -20px color-mix(in srgb, var(--podium-light) 65%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--podium-light) 40%, transparent),
+    0 -4px 22px -6px color-mix(in srgb, var(--podium-light) 55%, transparent);
+}
+:root[data-look="studio"] .phone-live-shell.room-frame .answer-slab--false { --podium-light: var(--color-fiction); }
+:root[data-look="studio"] .phone-live-shell.room-frame .answer-slab--binary[data-marked="true"] {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--podium-light) 70%, var(--color-light)), var(--podium-light));
+  /* The marked podium is lit, so its words go navy. */
+  color: var(--color-stage-deep);
+}
+
+:root[data-look="studio"] .phone-live-shell.room-frame .stamp-claim__text {
+  text-shadow: 0 2px 0 color-mix(in srgb, var(--color-void) 60%, transparent);
+}
+
+:root[data-look="studio"] .phone-live-shell.room-frame .stamp-mark {
+  border-width: 3px;
+  background: linear-gradient(180deg, var(--studio-face-top), var(--studio-face-low));
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-void) 50%, transparent),
+    0 0 26px color-mix(in srgb, var(--phone-tone) 60%, transparent);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--phone-tone) 60%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-look="studio"] .question-shell .question-show-frame .answer-bar {
+    animation: none !important;
+  }
+}

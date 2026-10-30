@@ -1,0 +1,921 @@
+{
+  "hpv:q1": {
+    "bankId": "hpv:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "a54d809396b32758dfd8be73121addb6a6109c8c7f4ba2ce52fb9bb0fb4909d4",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "alternate",
+    "conceptId": "hpv-vaccine-coverage-scope",
+    "tags": [
+      "product",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "The seven and two split is one hard detail, but it sums to the 9 in Gardasil 9, a mild tell that lowers it one level. Jargon is a flag.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs Gardasil 9's split of seven cancer-causing types and two wart types. Oncogenic and anogenital are jargon.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know Gardasil 9's nine types include two wart types. The 7 plus 2 split adds up to nine, which helps.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "The seven and two split is one hard detail, but it sums to the 9 in Gardasil 9, a mild tell that lowers it one level. Jargon is a flag.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hpv-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "hpv:q2": {
+    "bankId": "hpv:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "b70b5bf77197d3b074bedb595d8f4e93996b2dd2802530f98396c5a655ac60e5",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "core",
+    "conceptId": "hpv-sex-neutral-recommendation",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows HPV vaccine is recommended for boys too, widely known. Exclusively flags the myth.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows HPV vaccine is recommended for boys too, widely known. Exclusively flags the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Anchor for easy: HPV vaccine for boys is widely known, and exclusively flags the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hpv-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "hpv:q3": {
+    "bankId": "hpv:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "8af5e84a8520ff08685323f07b66d97ab95275bf2a66de65e96f3f5ce2a6f9f2",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "core",
+    "conceptId": "hpv-age-based-dosing-schedule",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "adolescents"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Agreed. One schedule detail, two doses 6 to 12 months apart when started before 15, and the interval is easy to misremember.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the two-dose HPV schedule before the 15th birthday, with doses 6 to 12 months apart.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "Specific schedule detail: starting before 15 means two doses 6 to 12 months apart. The interval is easy to misremember.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "Agreed. One schedule detail, two doses 6 to 12 months apart when started before 15, and the interval is easy to misremember.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-hpv-schedule"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "hpv:q4": {
+    "bankId": "hpv:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "e13a6b52eba672403e54c515ee6332dd9aae7886fd3c310e15d154d6ca62dcf4",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "alternate",
+    "conceptId": "hpv-catch-up-shared-decision",
+    "tags": [
+      "eligibility",
+      "schedule"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "adults-19-49"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows adults 27 to 45 can get HPV vaccine through shared clinical decision-making.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows adults 27 to 45 can get HPV vaccine through shared clinical decision-making.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know HPV vaccine at 27 to 45 uses shared decision-making. The hedged may makes true easy to accept.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-adult-decision"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "hpv:q5": {
+    "bankId": "hpv:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "7784b7fa13c25c8708467b2feb4d63f99675203ec51d380187667f386f485e65",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "core",
+    "conceptId": "hpv-benefit-after-prior-exposure",
+    "tags": [
+      "schedule",
+      "screening"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows past HPV exposure leaves benefit from other vaccine types. Eliminates all clinical benefit flags the myth.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows past HPV exposure leaves benefit from other vaccine types. Eliminates all clinical benefit flags the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Twin of the HPV exposure question, made easier because eliminates all clinical benefit flags the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-hpv"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "hpv:q6": {
+    "bankId": "hpv:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "7c00a3c8065a3c58c584e8ac274849043fedf75d4b955d2a28eb96cb34a2b0d7",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "alternate",
+    "conceptId": "hpv-behavioral-myth",
+    "tags": [
+      "misconception"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "adolescents"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Rejects the myth that HPV vaccine changes sexual behavior. Sexual debut and contraceptive adherence are jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Rejects the myth that HPV vaccine changes sexual behavior. Sexual debut and contraceptive adherence are jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "A well-known myth that HPV vaccine encourages early sex, which pharmacy staff reject.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hpv-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "hpv:q7": {
+    "bankId": "hpv:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "be67b5e3b0b0d3ebe14886bf3aa18481dd0a8ff3684ef32fa119460779e89ba4",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "alternate",
+    "conceptId": "hpv-vaccination-vs-screening",
+    "tags": [
+      "schedule",
+      "screening"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows vaccinated people still need cervical cancer screening, widely known.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows vaccinated people still need cervical cancer screening, widely known.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Vaccinated people still need cervical screening, widely known, and no longer throughout their lifespan marks the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-hpv"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "hpv:q8": {
+    "bankId": "hpv:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "14f89b9a9db7ce76c6a37f7f41bbfd4fbc7aa171f2ac849ff30dd89ee4d7ac5a",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "alternate",
+    "conceptId": "hpv-pregnancy-management",
+    "tags": [
+      "schedule",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Immediate termination is extreme and no guidance says it, so the claim gives itself away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Immediate termination is extreme and no guidance says it, so the claim gives itself away.",
+          "sure": true,
+          "flags": [
+            "jargon",
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Termination is never indicated for vaccine exposure, so the extreme claim gives the answer away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hpv-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon",
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "season-2:q18": {
+    "bankId": "season-2:q18",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "3ebaf3fa07c68b669e2e717c62ad3f46103f11664339637ea43aa282ac474547",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "alternate",
+    "conceptId": "hpv-catch-up-shared-decision",
+    "tags": [
+      "product"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "adults-19-49"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows adults 27 to 45 can get Gardasil 9 through shared decision-making.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows adults 27 to 45 can get Gardasil 9 through shared decision-making.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know Gardasil 9 is approved through 45 with shared decision-making from 27. Cannot hints at the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "fda-gardasil9-label"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "season-2:q9": {
+    "bankId": "season-2:q9",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "3c1b721c693382ae1b7b57724673f329c260e1ec36d1ad2dde47e7e635e8a9f7",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "core",
+    "conceptId": "hpv-vaccine-coverage-scope",
+    "tags": [
+      "product"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Needs the 90 percent HPV figure. It is common in HPV talk but met less often at a pharmacy counter than flu or shingles figures.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows Gardasil 9's types cause about 90% of cervical cancers, a figure common in HPV messaging.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Matches the often-heard figure that HPV vaccine covers the types behind about 90 percent of cervical cancers.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Needs the 90 percent HPV figure. It is common in HPV talk but met less often at a pharmacy counter than flu or shingles figures.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hpv-acip-recommendations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q23": {
+    "bankId": "vax-or-fiction:q23",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "ffbfc153a320f9c30c28187985f009b642fdaa317197258eb0d110bbe07da404",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "core",
+    "conceptId": "hpv-catch-up-shared-decision",
+    "tags": [
+      "eligibility",
+      "schedule"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "adults-19-49"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows adults 27 to 45 can get HPV vaccine through shared clinical decision-making.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows adults 27 to 45 can get HPV vaccine through shared clinical decision-making.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know HPV vaccine at 27 to 45 is a shared decision, not routine and not barred. The hedged wording helps.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "t-hpv"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q4": {
+    "bankId": "vax-or-fiction:q4",
+    "copies": [
+      "flagship:q5",
+      "flagship-r2:q5"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "822356636b0e245390dea9c6ae5d184b05fbb2963e355f137c36cbbf60d0dc1f",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "core",
+    "conceptId": "hpv-cancer-burden",
+    "tags": [
+      "burden"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs the counterintuitive fact that HPV throat cancers in men outnumber cervical cancers in women.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the counterintuitive fact that HPV throat cancers in men outnumber cervical cancers in women.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "Counterintuitive figure: HPV throat cancers in men outnumber cervical cancers in women. Most assume cervical is larger.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hpv-cancer-cases"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q9": {
+    "bankId": "vax-or-fiction:q9",
+    "copies": [
+      "flagship:q12",
+      "flagship-r2:q12"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "3249bebd89dcdf1b2da67bca36de9a947d7db670d046e05676e156661de42ecb",
+    "status": "live",
+    "subject": "hpv",
+    "rotation": "alternate",
+    "conceptId": "hpv-benefit-after-prior-exposure",
+    "tags": [
+      "product",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows exposure to one HPV type leaves protection against the other vaccine types, a routine catch-up point.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows exposure to one HPV type leaves protection against the other vaccine types, a routine catch-up point.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know Gardasil 9 covers nine types, so exposure to one still leaves protection against the others.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hpv-vaccination-considerations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  }
+}

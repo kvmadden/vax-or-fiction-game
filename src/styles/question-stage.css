@@ -1,0 +1,1330 @@
+/* =============================================================================
+   question-stage.css — the posed question stage.
+
+   Ownership, so a rail is never positioned twice:
+     presentation.css    the show's visual treatment (glass, chevron plates,
+                         accents, wordmark) and every non-question screen.
+     question-flow.css   the question frame's chrome: the safe-area grid,
+                         header, footer, status rail, and the result and
+                         explanation beats.
+     editorial-cards.css the frame's per-format chrome and content box, and
+                         what sits inside an answer row on a phone.
+     question-stage.css  THIS FILE. The stem panel, the scenario, the per-kind
+                         answer rail, the answer row box, and their reading
+                         sizes. Nothing else may place them.
+
+   Imported last (src/App.tsx) so it is the final word. Plate paint (chevron
+   clip, rim, accent) stays in presentation.css and question-chrome.css.
+   A later, more specific rule is normally enough, so this file avoids
+   !important by default. It carries 4 named exceptions, every one of them
+   beating the SAME outside rule: `src/index.css`'s global 44pt touch-target
+   floor (`.scaled-stage-content button, [role="button"] { min-height: max(...)
+   !important; }`), which otherwise silently caps a card's own real min-height
+   below what its content needs regardless of this file's own specificity.
+   Each exception is provably never SMALLER than the touch floor it beats, so
+   winning via !important only ever adds height, never removes the
+   accessibility floor it is overriding:
+     :502  which-patient beside-tally cards, min-height
+     :542  card-badge-shape beside-tally fix, min-height
+     :1058 estimate wide/square note reservation (F5), min-height
+     :1065 estimate square note reservation (F5), min-height
+
+   Sizes come from docs/product-completion-2026-09-14/SCREEN-PROPORTIONS-RECEIPT.md:
+   a binary verdict is one huge word, a reply card is a sentence, an order step
+   is a line. Nothing the room reads on the wide canvas sits under 26px.
+   ========================================================================== */
+
+/* --- 1. Tokens -----------------------------------------------------------
+   Widescreen and the square canvas share one scale. Portrait restates it at
+   phone size further down. Per-kind blocks are written at the same
+   specificity as the format blocks that follow them, so format wins on order
+   instead of on a specificity race. */
+body .question-shell .question-show-frame {
+  --stage-stem-pad: var(--kit-space-24) var(--kit-space-32);
+  --stage-prompt: 72px;
+  --stage-choice: 44px;
+  --stage-rail-gap: var(--kit-space-16);
+  --stage-row-min: 112px;
+  --stage-row-pad: var(--kit-space-16) var(--kit-space-24);
+  --stage-stat-pct: 40px;
+  --stage-stat-votes: 26px;
+  /* STAGE-SPEC step 1 (spec section 3.2): one token per chevron size drives both
+     the clip-path paint below and the content padding the rebuild reads later.
+     Today's binary and which-patient chevron is 36 outer / 34 inner in every
+     format. Estimate overrides both to 24 / 22 just below. Zero-pixel change:
+     these are today's literal clip-path values, only named now. */
+  --stage-card-point: 36px;
+  --stage-card-point-inner: 34px;
+  /* STAGE-SPEC pass 4b (W5): page zone tokens (spec section 2.6). Read by question-flow.css's own
+     `.show-safe` grid rows (header/footer height) and by this file's own gap rules below (stem to
+     scenario, stem to answers, stem to order cue). */
+  --stage-header-h: 80px;
+  --stage-footer-h: 72px;
+  --stage-zone-gap: var(--kit-space-24);
+  --stage-gap-stem-scenario: var(--kit-space-16);
+  --stage-gap-to-answers: var(--kit-space-24);
+  --stage-gap-stem-cue: var(--kit-space-8);
+  --stage-stem-min-lines: 1;
+  /* STAGE-SPEC pass 4b (W5, spec section 4.1): readability floors, in rendered px, so they hold at
+     any window size. Applied at every stem, scenario, answer and tally font-size rule below via
+     `max(authored, calc(floor / var(--stage-scale, 1)))`. */
+  --stage-floor-stem: 25.6px;
+  --stage-floor-answer: 25.6px;
+  --stage-floor-scenario: 20.4px;
+  --stage-floor-label: 16.5px;
+  --stage-floor-tally: 12.5px;
+  --stage-floor-explanation: 29px;
+  transition: opacity var(--transition-smooth, 260ms) var(--ease-screen-fade, cubic-bezier(0.4, 0.0, 0.2, 1));
+}
+body .question-shell .question-show-frame--binary {
+  --stage-choice: 88px;
+  --stage-rail-gap: var(--kit-space-32);
+  --stage-row-min: 168px;
+  --stage-row-pad: var(--kit-space-32) var(--kit-space-48);
+}
+body .question-shell .question-show-frame--myth-among-three {
+  --stage-choice: 36px;
+  --stage-row-min: 88px;
+}
+body .question-shell .question-show-frame--which-patient {
+  --stage-prompt: 44px;
+  --stage-choice: 32px;
+  --stage-rail-gap: var(--kit-space-12);
+  --stage-row-min: 72px;
+  --stage-row-pad: var(--kit-space-12) var(--kit-space-24);
+}
+body .question-shell .question-show-frame--estimate {
+  --stage-prompt: 64px;
+  --stage-choice: 52px;
+  --stage-row-min: 120px;
+  --stage-row-pad: var(--kit-space-16) var(--kit-space-32);
+  --stage-card-point: 24px;
+  --stage-card-point-inner: 22px;
+}
+body .question-shell .question-show-frame--order {
+  --stage-choice: 32px;
+  --stage-rail-gap: var(--kit-space-12);
+  /* STAGE-SPEC step 6 (spec section 5.4): row-min drops from 64 to 56, so the pill's fixed radius
+     (half of row-min) reads as a step-shaped rounded rectangle rather than the old full-round pill. */
+  --stage-row-min: calc(var(--kit-space-48) + var(--kit-space-8));
+}
+/* The square canvas is 1200 wide against 1600: the long reads step down. */
+body .question-shell[data-format='square'] .question-show-frame:is(
+  .question-show-frame--myth-among-three,
+  .question-show-frame--estimate,
+  .question-show-frame--order
+) {
+  --stage-prompt: 44px;
+  --stage-choice: 30px;
+}
+/* A question with no stage plate carries its stem as editorial copy, which
+   runs longer than a poster line. */
+body .question-shell:not([data-format='portrait']) .question-show-frame:is(
+  .question-show-frame--myth-among-three,
+  .question-show-frame--which-patient
+)[data-layout='editorial'] {
+  --stage-prompt: 44px;
+}
+body .question-shell:not([data-format='portrait']) .question-show-frame--which-patient[data-layout='editorial'] {
+  --stage-choice: 32px;
+}
+/* Portrait is a 430 x 932 audience canvas: reading order at phone scale. */
+body .question-shell[data-format='portrait'] .question-show-frame {
+  --stage-stem-pad: var(--kit-space-8);
+  --stage-prompt: 30px;
+  --stage-choice: 22px;
+  --stage-rail-gap: var(--kit-space-8);
+  --stage-row-min: 64px;
+  --stage-row-pad: var(--kit-space-8) var(--kit-space-24);
+  --stage-stat-pct: 20px;
+  --stage-stat-votes: 14px;
+  /* STAGE-SPEC step 5 (spec section 2.6): portrait's own page-zone tokens. */
+  --stage-header-h: var(--kit-space-48);
+  --stage-footer-h: calc(var(--kit-space-48) + var(--kit-space-8));
+  --stage-zone-gap: var(--kit-space-16);
+  --stage-gap-stem-scenario: var(--kit-space-8);
+  --stage-gap-to-answers: var(--kit-space-16);
+  --stage-stem-min-lines: 2;
+  /* STAGE-SPEC pass 4b (W5, spec 4.1): portrait's own floor row (27.2 stem, 20.4 answer), applied
+     wherever the shared floor tokens are read below, same as the wide/square ones. */
+  --stage-floor-stem: 27.2px;
+  --stage-floor-answer: 20.4px;
+}
+/* A posed portrait binary question is a short read and holds the room as one
+   centered reading group at its receipted 36px prompt. */
+body .question-shell[data-format='portrait'] .question-show-frame--binary {
+  --stage-prompt: 36px;
+  --stage-choice: 32px;
+  --stage-rail-gap: var(--kit-space-16);
+  --stage-row-min: 88px;
+  --stage-row-pad: var(--kit-space-8) var(--kit-space-32);
+}
+body .question-shell[data-format='portrait'] .question-show-frame:is(
+  .question-show-frame--myth-among-three,
+  .question-show-frame--order
+) {
+  --stage-row-min: 48px;
+  --stage-row-pad: var(--kit-space-4) var(--kit-space-12);
+}
+body .question-shell[data-format='portrait'] .question-show-frame--which-patient {
+  --stage-prompt: 24px;
+  --stage-choice: 18px;
+  --stage-rail-gap: var(--kit-space-4);
+  --stage-row-min: 48px;
+  --stage-row-pad: var(--kit-space-4) var(--kit-space-12);
+}
+body .question-shell[data-format='portrait'] .question-show-frame--which-patient .answer-bar__main { gap: var(--kit-space-8); }
+/* STAGE-SPEC pass 4b fix (B1, spec 3.4): this used to hardcode the badge box at 32 wide, a whole
+   kit step past what `--stage-card-badge-w` (24 on portrait) tells `--stage-card-text-start`'s own
+   formula the badge actually is. The real painted badge therefore ran flush against the label's
+   own start x (badge end 28 + 32 = 60, text-start also 60, an independent designer's own "gap 0"
+   finding): the token and the paint had quietly drifted apart. Reading the shared token here
+   instead closes the gap at its cause, so the badge can never again be wider on screen than the
+   text-start formula believes it is. font-size already matches --stage-choice's own 18px for
+   portrait which-patient, so naming it again here was a second copy of the same number. */
+body .question-shell[data-format='portrait'] .question-show-frame--which-patient .answer-bar__key {
+  width: var(--stage-card-badge-w);
+  height: var(--stage-card-badge-w);
+}
+/* STAGE-SPEC pass 4b (W5, spec section 3.2): the rest of the card token table (card-anatomy,
+   section 10 step 6), read throughout this file's own padding, badge and pill rules below.
+   "Large" is wide/square binary and which-patient (today's point/inner). */
+body .question-shell .question-show-frame {
+  --stage-card-rim: var(--kit-space-4);
+  --stage-card-gutter: var(--kit-space-16);
+  --stage-card-safe-inset: calc(var(--stage-card-point) + var(--stage-card-gutter));
+  /* STAGE-SPEC step 8 fix (card-badge-shape, square/portrait which-patient): spec 3.4's own proof
+     ("start x = P/2 clears the slant whenever H >= 2b") has zero slack at exactly H = 2b, and the
+     sweep's own corner check adds a further 4px rounding buffer on top of the bare geometric line
+     the spec's proof draws. A short, real which-patient card (a 2x2 grid's own row-stretch does
+     not make every card's own button fill its stretched slot, spec 3.7's own note) lands closer to
+     that H = 2b floor than one kit step of margin covered (measured, after the first fix: required
+     31.1 against 26 on a 4-answer square grid). Two kit steps clears the worst case measured
+     without moving off the point-derived formula's own proportions. */
+  --stage-card-badge-x: calc(var(--stage-card-point) / 2 + var(--kit-space-16));
+  --stage-card-badge-w: var(--kit-space-32);
+  --stage-card-badge-gap: var(--kit-space-12);
+  --stage-card-text-start: max(var(--stage-card-safe-inset), calc(var(--stage-card-badge-x) + var(--stage-card-badge-w) + var(--stage-card-badge-gap)));
+  --stage-card-pad-block: var(--kit-space-16);
+  --stage-card-min-h: max(var(--stage-row-min), calc(2 * var(--stage-choice)), calc((var(--kit-touch) + var(--kit-space-4)) / var(--stage-scale, 1)));
+  --stage-tally-w: calc(var(--kit-space-64) * 2 + var(--kit-space-32));
+  --stage-tally-gap: var(--kit-space-16);
+  --stage-pill-radius: calc(var(--stage-row-min) / 2);
+  --stage-pill-safe-inset: var(--kit-space-24);
+  /* STAGE-SPEC pass 4b nit: named so the badge-to-label gap (.answer-bar__main) and the
+     badge-clear-of-slant fix at --stage-card-badge-x (spec 3.4) read from one shared property
+     instead of each repeating the same kit-space-16 literal. */
+  --stage-card-main-gap: var(--kit-space-16);
+}
+/* STAGE-SPEC pass 4b fix (F11, wide/square order): a radius of exactly half the row's own height
+   is a full stadium end regardless of the row-min number behind it, which is why order's rows
+   read as flat-sided bars once row-min dropped to 56 (step 6): the row-min-derived radius kept
+   pace with the row getting shorter and stayed a stadium the whole time, so the row read as a
+   plain rounded rectangle rather than the game-show pill silhouette the shape is meant to read as.
+   Deriving the radius from the row's own real content (the answer size plus its block padding)
+   instead keeps the curve reading as a pill end at every step size, 38.5 canvas px on wide at the
+   longest order step (spec 5.4). */
+body .question-shell .question-show-frame--order {
+  --stage-pill-radius: calc((1.25 * var(--stage-choice) + 2 * var(--stage-card-pad-block)) / 2);
+}
+/* Wide / square compact: estimate. --stage-card-point/-inner are already 24/22
+   from the estimate block above. Only the rest of the table differs from large. */
+body .question-shell .question-show-frame--estimate {
+  --stage-card-gutter: var(--kit-space-16);
+  --stage-card-badge-w: var(--kit-space-32);
+  --stage-card-badge-gap: var(--kit-space-12);
+  --stage-card-pad-block: var(--kit-space-16);
+}
+/* Portrait (all chevrons), spec 3.2 / judgment call 4: the point drops from 36 to 24, giving back
+   24px of line length on the 398 column. Binary and which-patient's large chevron used to stay at
+   36 on portrait (only estimate's own point was already 24, set unconditionally above); every
+   chevron is compact on portrait now. --stage-card-safe-inset below is written to the spec's
+   resolved number (32 = 24 + 8) directly rather than the calc, since portrait's gutter (8) differs
+   from the calc's wide/square default and this block is already the one place portrait states its
+   own numbers. */
+body .question-shell[data-format='portrait'] .question-show-frame {
+  --stage-card-point: 24px;
+  --stage-card-point-inner: 22px;
+  --stage-card-gutter: var(--kit-space-8);
+  --stage-card-safe-inset: var(--kit-space-32);
+  /* Same card-badge-shape fix as the wide/square token above, portrait's own numbers (point/2 = 12
+     plus two kit steps of real margin). */
+  --stage-card-badge-x: calc(var(--kit-space-12) + var(--kit-space-16));
+  --stage-card-badge-w: var(--kit-space-24);
+  --stage-card-badge-gap: var(--kit-space-8);
+  --stage-card-text-start: var(--kit-space-32);
+  --stage-card-pad-block: var(--kit-space-8);
+  --stage-tally-w: 0px;
+  --stage-tally-gap: var(--kit-space-4);
+  --stage-pill-radius: calc(var(--stage-row-min) / 2);
+  --stage-pill-safe-inset: var(--kit-space-16);
+}
+/* STAGE-SPEC pass 3 fix (badge-placement, which-patient portrait): this used to hardcode
+   `--stage-card-text-start` at the spec-literal 44 (32 safe-inset + 12), which was only ever
+   correct against the spec-literal badge-x of 12. The card-badge-shape fix above already moved
+   portrait's own badge-x to 28 (two kit steps, for real slant clearance on a short card), so a
+   flat 44 left only 16px between the 24-wide badge's own end (28 + 24 = 52) and where the label
+   was told to start (44): an 8px overlap, exactly what an independent designer measured live. The
+   one-property-drives-both formula (spec 3.2's own text-start row: the larger of the safe inset
+   and badge-x + badge-w + badge-gap) is read directly instead of a second hardcoded number, so a
+   future badge-x change cannot silently desync this again.
+
+   STAGE-SPEC pass 4b note (B1): this formula resolves to 60 (28 + 24 + 8) on portrait
+   which-patient, against the spec table's own literal 12 / 44 (3.2). Both the badge-x move (12 to
+   28, above) and this text-start (44 to 60) are real slant-clearance and gap fixes measured live,
+   not spec typos, so this stays an owner judgment call to note rather than a spec change to make
+   unasked. */
+/* STAGE-SPEC pass 4b nit: binary hides its own badge outright (`.answer-bar__key { display: none
+   }` further down) and never reads `--stage-card-text-start` at all, so carrying it in this
+   selector was dead weight. Which-patient is the only reader. */
+body .question-shell[data-format='portrait'] .question-show-frame--which-patient {
+  --stage-card-text-start: max(var(--stage-card-safe-inset), calc(var(--stage-card-badge-x) + var(--stage-card-badge-w) + var(--stage-card-badge-gap)));
+}
+
+/* --- 1b. Type ladder: data-stem-step / data-answer-step / data-density ---
+   STAGE-SPEC step 7 (spec section 4.2): each kind component computes its own step with
+   stage-fit.ts and writes it as data-stem-step / data-answer-step / data-density on its
+   [data-screen="question"] root. These rules read that markup and drive the same
+   --stage-prompt / --stage-choice / --stage-card-pad-block tokens the rest of this file
+   already reads, so one token still drives both paint and layout (no second source of size).
+   Values are the exact canvas px in spec section 4.3, one rule per step per format. */
+body .question-shell[data-format='widescreen'] [data-screen='question'][data-stem-step='L'] { --stage-prompt: 72px; }
+body .question-shell[data-format='widescreen'] [data-screen='question'][data-stem-step='M'] { --stage-prompt: 56px; }
+body .question-shell[data-format='widescreen'] [data-screen='question'][data-stem-step='S'] { --stage-prompt: 44px; }
+body .question-shell[data-format='widescreen'] [data-screen='question'][data-stem-step='XS'] { --stage-prompt: 36px; }
+body .question-shell[data-format='square'] [data-screen='question'][data-stem-step='L'] { --stage-prompt: 56px; }
+body .question-shell[data-format='square'] [data-screen='question'][data-stem-step='M'] { --stage-prompt: 44px; }
+body .question-shell[data-format='square'] [data-screen='question'][data-stem-step='S'] { --stage-prompt: 36px; }
+body .question-shell[data-format='square'] [data-screen='question'][data-stem-step='XS'] { --stage-prompt: 30px; }
+/* VOF-96 (F2, the owner's 2026-10-02 pick, option C): a true or false question on the square canvas takes a 72 stem at its
+   largest step and its two cards take 48 px of block padding, so the question and its cards fill the square. A statement
+   too long for 72 steps down to 56, today's square size, and the square S and XS steps above stay as they are. Square
+   binary only: every other kind, and binary on the wide and portrait canvases, keep their sizes. The fit reads the same
+   ladder (stemSizeFor in stage-fit.ts). A rail that falls back to compact density still takes the compact padding below,
+   since compact means the content did not fit. */
+body .question-shell[data-format='square'] [data-screen='question'][data-kind='binary'][data-stem-step='L'] { --stage-prompt: 72px; }
+body .question-shell[data-format='square'] [data-screen='question'][data-kind='binary'][data-stem-step='M'] { --stage-prompt: 56px; }
+body .question-shell[data-format='square'] .question-show-frame--binary { --stage-card-pad-block: var(--kit-space-48); }
+body .question-shell[data-format='portrait'] [data-screen='question'][data-stem-step='L'] { --stage-prompt: 36px; }
+/* Portrait's own ladder (spec 4.3) only names L and M, both 36 and 30. stage-fit.ts's per-kind cap
+   (order and which-patient cap at "S" in every format, spec 4.4) can still resolve a long portrait
+   stem to "S" or "XS" once capped, and those two steps size identically to "M" in portrait's own
+   table (`STEM_SIZE.portrait.S === STEM_SIZE.portrait.M === 30`, stage-fit.ts). Missing CSS rules
+   for them left a capped stem with no matching size rule at all, so it fell through to inherit the
+   frame's own old hardcoded 24px (a text-below-floor failure a scoped sweep caught: a 155-char
+   which-patient stem measured 24 against a 27 floor). */
+body .question-shell[data-format='portrait'] [data-screen='question'][data-stem-step='M'],
+body .question-shell[data-format='portrait'] [data-screen='question'][data-stem-step='S'],
+body .question-shell[data-format='portrait'] [data-screen='question'][data-stem-step='XS'] { --stage-prompt: 30px; }
+/* Answer ladder values, spec sections 5.2 to 5.5. One rule per distinct value across every
+   kind and format the ladder ever names, so a kind component only has to write the number. */
+body .question-shell [data-screen='question'][data-answer-step='52'] { --stage-choice: 52px; }
+body .question-shell [data-screen='question'][data-answer-step='44'] { --stage-choice: 44px; }
+body .question-shell [data-screen='question'][data-answer-step='36'] { --stage-choice: 36px; }
+body .question-shell [data-screen='question'][data-answer-step='32'] { --stage-choice: 32px; }
+body .question-shell [data-screen='question'][data-answer-step='30'] { --stage-choice: 30px; }
+body .question-shell [data-screen='question'][data-answer-step='26'] { --stage-choice: 26px; }
+body .question-shell [data-screen='question'][data-answer-step='22.5'] { --stage-choice: 22.5px; }
+/* Density fallback (spec 4.2 step 4, part of the step-down order): rail gap and card padding
+   both drop one notch once the type ladder alone cannot fit the content. */
+body .question-shell:not([data-format='portrait']) [data-screen='question'][data-density='compact'] {
+  --stage-card-pad-block: var(--kit-space-8);
+  --stage-rail-gap: var(--kit-space-8);
+}
+body .question-shell[data-format='portrait'] [data-screen='question'][data-density='compact'] {
+  --stage-card-pad-block: var(--kit-space-4);
+  --stage-rail-gap: var(--kit-space-4);
+}
+/* VOF-98 (the owner's pick of 2026-10-05): three rows of ranges on the wide stage take tighter cards, compact density above
+   and a 112 px row (ESTIMATE_TIGHT_ROW_MIN in stage-fit.ts, which the fit budgets), so the ask keeps its 56 over 52 px
+   ranges. EstimateQuestion.tsx marks the question data-cards="tight" from the same rule the fit uses. */
+body .question-shell[data-format='widescreen'] [data-screen='question'][data-kind='estimate'][data-cards='tight'] {
+  --stage-row-min: 112px;
+}
+
+/* --- 2. On canvas --------------------------------------------------------
+   The stage is a flow column. The legacy composition pinned the stem and each
+   rail to an absolute stage coordinate, and a live-show hotfix re-centred the
+   rails with `left: 50%` + `transform: translateX(-50%)`. The frame's
+   `inset: auto` won on specificity while the translate did not, so every rail
+   was dragged half its own width off the left edge: binary lost TRUE,
+   which-patient lost A and C, order and estimate lost options. Those
+   coordinates are gone. This block is the one place that decides where the
+   stem, the scenario and the rails sit. It deliberately declares no
+   `transform`, so a kind component's entrance animation still owns its own. */
+body .question-shell .question-show-frame :is(
+  .question-stage-copy,
+  .question-stage-scenario,
+  .answer-rail,
+  .estimate-answer-rail,
+  .order-rail
+) {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  /* Judgment call 1 (spec 10.1, 11.1): the one switch. `none` is the spec's own pick, "the column
+     is the full safe area". A centered measure (the alternative, e.g. `min(68rem, 100%)`) is a
+     one-line change here, at the single shared rule every rail and the stem panel both read. */
+  max-width: var(--stage-call-1-column-max-width, none);
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+/* --- 3. Nothing clips ----------------------------------------------------
+   Stems and options are authored clinical copy of unknown length. Every box
+   between the safe area and the glyphs grows instead of cutting. The beat
+   panes that used to be `overflow: hidden` are why a question could lose its
+   bottom row or its descenders. */
+body .question-shell .question-show-frame :is(.answer-slot, .answer-bar, .order-bar) {
+  height: auto;
+  min-height: var(--stage-row-min);
+  max-height: none;
+  min-width: 0;
+}
+body .question-shell .question-show-frame :is(
+  .question-stage-copy h1,
+  .question-stage-copy [data-comp-id='statement'],
+  .question-stage-scenario p,
+  .answer-bar p,
+  .answer-bar__label,
+  .order-bar > div > span
+) {
+  max-height: none;
+  overflow: visible;
+  text-overflow: clip;
+  -webkit-line-clamp: unset;
+  white-space: normal;
+}
+
+/* --- 4. The stem panel and the scenario ---------------------------------
+   STAGE-SPEC step 5 (spec section 2.2, the edge rule): the stem panel is the
+   full safe-area column, not a centered 68rem measure. Its own inline padding
+   is 0 so the stem, its label and the scenario all start on the shared edge;
+   only block spacing (top/bottom air around the group) remains, and that
+   comes from --stage-gap-stem-scenario/--stage-gap-to-answers between the
+   flex column's own children, not from box padding. */
+body .question-shell .question-show-frame .question-stage-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--stage-gap-stem-scenario);
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
+  padding-block: var(--kit-space-8);
+  text-align: start;
+}
+body .question-shell .question-show-frame.question-show-frame--binary .question-stage-copy,
+body .question-shell .question-show-frame.question-show-frame--estimate .question-stage-copy,
+body .question-shell .question-show-frame.question-show-frame--order .question-stage-copy,
+body .question-shell .question-show-frame.question-show-frame--myth-among-three .question-stage-copy,
+body .question-shell .question-show-frame.question-show-frame--which-patient .question-stage-copy {
+  background: transparent;
+  background-image: none;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+body .question-shell .question-show-frame .question-stage-copy :is(h1, [data-comp-id='statement']) {
+  margin: 0;
+  color: var(--color-ink);
+  /* STAGE-SPEC pass 4b (W5, spec 4.1): the floor is in RENDERED px, so it holds at any window
+     size regardless of the live --stage-scale the stage's own transform publishes. */
+  font-size: max(var(--stage-prompt), calc(var(--stage-floor-stem) / var(--stage-scale, 1)));
+  font-weight: 600;
+  /* Judgment call 9 (spec 4.5, 11.9): the one switch. 1.2 is the spec's own pick (room for the
+     gold underline's descender); the house heading line-height (1.1) is the one-line alternative. */
+  line-height: var(--stage-call-9-stem-line-height, 1.2);
+  /* Cap height plus one descender: an emphasised stem carries a gold
+     underline that an exact line box shaves off. */
+  padding-block: 0.08em;
+  text-wrap: pretty;
+  hyphens: manual;
+}
+body .question-shell .question-show-frame--which-patient .question-stage-scenario {
+  display: flex;
+  flex-direction: column;
+}
+body .question-shell .question-show-frame--order .order-question-container > main {
+  position: static;
+  display: contents;
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+body .question-shell .question-show-frame--myth-among-three .myth-main-split {
+  display: contents;
+}
+body .question-shell .question-show-frame .question-stage-scenario > span {
+  display: block;
+  margin: 0 0 var(--kit-space-8);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  /* STAGE-SPEC pass 4b (W5, spec 4.1): the scenario label is a kicker-role text, floored at
+     --stage-floor-label (16.5), well under this role's own 26px, but read through the same
+     formula as every other role rather than left as the one role never applying it. */
+  font-size: max(26px, calc(var(--stage-floor-label) / var(--stage-scale, 1)));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+body .question-shell .question-show-frame .question-stage-scenario p {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: max(var(--stage-choice), calc(var(--stage-floor-scenario) / var(--stage-scale, 1)));
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* --- 5. The answer row ---------------------------------------------------
+   STAGE-SPEC step 6 (spec section 3): padding now reads the card-anatomy
+   tokens (3.2) instead of --stage-row-pad's inline half, and the letter
+   badge lives in the nose instead of the flex row, so a chevron's slanted
+   point never eats into either. Padding block-only on the shared rule;
+   inline padding forks below because a chevron's safe box and a pill's
+   safe inset are different numbers. Plate chrome (chevron / hex clip-path,
+   pill radius, rim fill) stays with presentation.css so this file cannot
+   blunt the ends or fight a kind's own shape. */
+body .question-shell .question-show-frame .answer-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body .question-shell .question-show-frame :is(.answer-bar, .order-bar) {
+  position: relative;
+  /* STAGE-SPEC pass 3 fix (row-stretch, spec 3.7): the grid's own `align-items: stretch` (the
+     which-patient / estimate / binary rails) stretches `.answer-slot`, the grid item, to the
+     row's own tallest card, but `.answer-slot` is a column flex container whose only child (this
+     card) had no flex-grow of its own: a column flex child's default cross-axis stretch only
+     widens it, never grows it along the main (vertical) axis, so a short card's real painted box
+     stayed at its own content height inside a slot that was itself the right height, invisibly.
+     `flex: 1 1 auto` lets this card actually grow to fill that already-stretched slot, which is
+     the "row one cards differ in height" defect an independent designer measured live. A kind
+     whose own rail never stretches a row (order, myth, one column each) has no extra space in its
+     own slot to grow into, so this costs nothing there. */
+  flex: 1 1 auto;
+  padding-block: var(--stage-card-pad-block);
+  padding-inline: var(--stage-card-safe-inset);
+  /* STAGE-SPEC step 8 fix (card-badge-shape, which-patient square): the same global 44pt
+     touch-target !important rule documented on the beside min-height rule below also caps THIS
+     rule, for every card that never hits the beside branch (which-patient/myth's own "below"
+     placement, e.g. square). --stage-card-min-h's own third term already IS that same touch
+     formula (`calc((kit-touch + 4) / scale)`), and its other terms (row-min, 2 * answer-size) are
+     never smaller for any kind that reserves a nose badge, so winning via !important here can
+     only add height, never remove the accessibility floor it already contains. */
+  min-height: var(--stage-card-min-h) !important;
+  gap: var(--kit-space-16);
+  transition: background-color var(--transition-smooth, 260ms) var(--ease-standard, cubic-bezier(0.16, 1, 0.3, 1)),
+              border-color var(--transition-smooth, 260ms) var(--ease-standard, cubic-bezier(0.16, 1, 0.3, 1)),
+              box-shadow var(--transition-smooth, 260ms) var(--ease-standard, cubic-bezier(0.16, 1, 0.3, 1));
+}
+/* Pill cards (myth, order): both padding-inline edges are the pill's own safe inset (3.6),
+   since a pill has no nose and no point to clear. */
+body .question-shell .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--order) :is(.answer-bar, .order-bar) {
+  padding-inline: var(--stage-pill-safe-inset);
+  min-height: var(--stage-row-min);
+}
+/* Chevron cards with a badge (which-patient): the start edge grows to clear the nose badge
+   plus its own gap (3.3), the end edge stays the plain safe inset unless a beside tally
+   claims more of it (below). */
+body .question-shell .question-show-frame--which-patient .answer-bar {
+  padding-inline-start: var(--stage-card-text-start);
+}
+/* Tally beside (widescreen, polling mode): the end edge backs off the reserved tally zone plus
+   its own gap, so the label never runs under the numbers (3.3, 3.5). The card's own min-height
+   also grows to fit the tally's two stacked lines: the tally is absolutely positioned (below), so
+   it does not contribute to the card's own auto height the way in-flow content does, and a card
+   whose only in-flow content is a single short line would otherwise clip the tally's top line
+   against its own overflow:hidden vote-fill mask (found by a scoped sweep on a short myth label).
+   STAGE-SPEC step 8 fix (glyph-clipped-by-ancestor, PUB-22 myth wide): this rule's own min-height
+   was never actually reaching the card. `src/index.css`'s global 44pt touch-target floor
+   (`.scaled-stage-content button, [role="button"] { min-height: max(48px, calc(48px /
+   var(--stage-scale, 1))) !important; }`) is `!important`, so it always won over this rule
+   regardless of specificity, silently capping a short single-line myth card's real min-height at
+   the touch floor (60 canvas px at this render's scale) instead of the 106 this formula asks for.
+   The card then auto-sized to its own short content (about 79), well under the ~106 the beside
+   poll's stacked pct-then-votes content needs inside `inset-block: var(--stage-card-pad-block)`,
+   and the overflow:hidden vote-fill mask clipped the ink at the poll's own top edge -- real ink,
+   not box geometry, which is why an earlier pass could not reproduce it from static geometry
+   alone. This rule's own min-height is provably never SMALLER than the touch floor (it already
+   maxes in --stage-row-min, which is 88 or more for every kind that reserves a beside tally), so
+   letting it win via !important adds height, never removes the accessibility floor it is
+   overriding. */
+body .question-shell .question-show-frame [data-tally='beside'] :is(.answer-bar, .order-bar) {
+  padding-inline-end: calc(var(--stage-card-safe-inset) + var(--stage-tally-w) + var(--stage-tally-gap));
+  min-height: max(var(--stage-row-min), calc(var(--stage-stat-pct) + var(--stage-stat-votes) + var(--kit-space-8) + 2 * var(--stage-card-pad-block))) !important;
+}
+body .question-shell .question-show-frame--which-patient [data-tally='beside'] .answer-bar {
+  padding-inline-end: calc(var(--stage-card-safe-inset) + var(--stage-tally-w) + var(--stage-tally-gap));
+}
+/* Myth's pill uses its own safe inset, not the chevron's, for the same beside adjustment. */
+body .question-shell .question-show-frame--myth-among-three [data-tally='beside'] .answer-bar {
+  padding-inline-end: calc(var(--stage-pill-safe-inset) + var(--stage-tally-w) + var(--stage-tally-gap));
+}
+body .question-shell .question-show-frame .answer-bar__main {
+  gap: var(--stage-card-main-gap);
+  min-width: 0;
+}
+/* The letter badge lives in the nose, out of flow, so it never widens the flex row and a long
+   label wraps the same whether or not the badge renders (spec 3.4). Binary hides it entirely
+   (its own rule further down); myth's badge stays in flow at the pill's safe inset instead.
+
+   STAGE-SPEC step 8 fix (spec 3.4, card-text-safe / the badge-over-text defect found live): the
+   badge's containing block is NOT `.answer-bar` (the card), it is `.answer-bar__main`
+   (`.answer-bar > div:first-child`), because question-chrome.css makes that element
+   `position: relative` to paint the label above the card's own decorative gradient layer (an
+   older, still-needed z-index rule). `.answer-bar__main` sits inside the card's own
+   `padding-inline-start` (the text-start value), so an inset measured from ITS edge lands
+   text-start px further right than the nose position the token names, which is exactly the
+   badge-behind-the-first-word bug a scoped sweep caught (measured: the badge letter landing
+   inside the label's own first line, not clear of it). Subtracting text-start places the badge
+   at the true card-relative x the token intends, without touching the z-index rule the gradient
+   layer still needs. */
+body .question-shell .question-show-frame--which-patient .answer-bar__key {
+  position: absolute;
+  inset-inline-start: calc(var(--stage-card-badge-x) - var(--stage-card-text-start));
+  top: 50%;
+  translate: 0 -50%;
+  width: var(--stage-card-badge-w);
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--color-ink-muted);
+  font-size: var(--stage-choice);
+  line-height: 1;
+  text-align: center;
+}
+/* Myth's badge has no nose to hide in (pills, 3.6): it stays in flow at the pill's own safe
+   inset, sized to the spec's pill badge width. */
+body .question-shell .question-show-frame--myth-among-three .answer-bar__key {
+  flex: 0 0 var(--stage-card-badge-w);
+  width: var(--stage-card-badge-w);
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--color-ink-muted);
+  font-size: var(--stage-choice);
+  line-height: 1.25;
+}
+body .question-shell .question-show-frame :is(.answer-bar__label, .order-bar > div > span, .answer-bar p) {
+  /* STAGE-SPEC step 8 fix (stage-over-budget, REPL-PUB-13 which-patient wide): which-patient's own
+     label is a real `<p>` (every other kind uses a span), and this rule never reset the UA
+     default `<p>` margin (1em top and bottom, so 36px + 36px at this render's answer step). The
+     card's real height carried that whole margin on top of the label's own ink, which is why the
+     measured overflow (684.5 of 604 available) was so much bigger than stage-fit.ts's own text-
+     length estimate: the estimate has never modeled a UA margin no kind is supposed to have. */
+  margin: 0;
+  /* STAGE-SPEC pass 4b (W5, spec 4.1): the answer role's own floor (25.6 wide/square, 20.4
+     portrait, read through the format-scoped --stage-floor-answer token above). */
+  font-size: max(var(--stage-choice), calc(var(--stage-floor-answer) / var(--stage-scale, 1)));
+  line-height: 1.25;
+  visibility: visible;
+  /* STAGE-SPEC pass 3 fix (spec 4.5): stems already wrapped pretty. Answers never did, so a long
+     answer could still take an orphan or an awkward last-line break the stem's own rule already
+     avoids. hyphens stay manual (never auto), so this never invents a hyphenation break of its
+     own on words nobody has authored a soft hyphen into. */
+  text-wrap: pretty;
+  hyphens: manual;
+  /* STAGE-SPEC pass 4b fix (found investigating card-text-safe, REPL-PUB-13): `text-wrap: pretty`
+     only chooses WHERE among the existing whitespace break points a line ends. It never invents a
+     new break inside a single long word ("contraindication"), so a genuinely long word that alone
+     exceeds the card's real safe width still overflows the end boundary, real content the k-based
+     step algorithm (stage-fit.ts, an estimate by its own design, spec 4.2 step 2) can occasionally
+     size a step too large for. `anywhere` is the least intrusive of the two break keywords: it only
+     breaks inside a word when the word itself cannot fit, never splits a word that already fits on
+     its own line the way `break-word` can. */
+  overflow-wrap: anywhere;
+}
+/* Layout follow-ups (2026-09-30): the balanced measure, widow-guard.ts's last rung before a smaller
+   step. A stem or answer whose natural wrap, every safe join, every narrower measure (answers) and
+   every pull-down join still leave a widow or a stranded short line takes the browser's own even
+   wrap, only when the measured result is clean and adds no line. Keyed on the attribute the
+   resolver sets, so a raw clone (data-balanced removed) measures the stylesheet's own wrap again.
+   Written above the stem and answer rules' specificity, since both set `text-wrap: pretty`. */
+body .question-shell .question-show-frame .question-stage-copy [data-balanced='true'],
+body .question-shell .question-show-frame :is(.answer-bar__label, .order-bar > div > span)[data-balanced='true'] {
+  text-wrap: balance;
+}
+/* STAGE-SPEC step 6 (spec section 3.5): the tally zone is reserved by play mode now, not by beat,
+   so its own `data-tally` attribute on the rail (wired in step 8) replaces the old 0fr-to-1fr
+   slot-width animation. A polling-mode rail (`data-tally="beside"`/`"below"`) holds the zone open
+   from the posed beat on, so the label wraps the same at posed and locked and nothing reflows at
+   lock; the numbers fade into their fixed box instead of the box growing under them. Hands-up
+   play (`data-tally="none"`) reserves nothing, keeping the W2 fix for offline card widths. The
+   which-patient 3/4-answer portrait ruling hides the zone outright (`data-tally="hidden"`). Until
+   step 8 sets the attribute, every rail behaves as `"none"` (the :empty fallback below), which is
+   today's own default. */
+body .question-shell .question-show-frame .answer-bar__poll {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: end;
+  align-content: center;
+  row-gap: var(--kit-space-4);
+  flex: 0 0 auto;
+  min-width: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--transition-smooth, 260ms) var(--ease-screen-fade, cubic-bezier(0.4, 0.0, 0.2, 1)),
+              display var(--transition-smooth, 260ms) allow-discrete;
+}
+body .question-shell .question-show-frame .answer-bar__poll:not(:empty) {
+  opacity: 1;
+}
+/* STAGE-SPEC step 9 fix (spec 3.5, "the numbers fade in inside a fixed box"): the transition
+   above already names `display ... allow-discrete`, the half of this pair that lets a
+   `display: none` element transition at all, but without a starting-style paired to it the
+   browser had no "from" value to animate opacity out of once display stopped being none in the
+   same frame, so it painted straight at its end state instead of fading (measured live: 22
+   samples across 334ms after Lock, every one already at opacity 1). This is the other half. */
+@starting-style {
+  body .question-shell .question-show-frame .answer-bar__poll:not(:empty) {
+    opacity: 0;
+  }
+}
+body .question-shell .question-show-frame .answer-bar__poll:empty {
+  display: none;
+}
+/* STAGE-SPEC step 8 fix (spec section 3.5): the beside tally is positioned in its own reserved
+   zone, not laid out as a flex sibling inside the label's own (already end-padded) content box.
+   A flex sibling there would sit BEFORE the padding-inline-end zone, short of the card's own true
+   end, which is what a scoped sweep caught (the tally rendered inside the label's shrunk content
+   box instead of in the zone the padding reserved for it). Absolute positioning, anchored from the
+   card's real edges, decouples the two: the label's flex row now simply fills whatever content box
+   its own padding leaves, and the tally sits exactly where 3.1's table says regardless. */
+body .question-shell .question-show-frame [data-tally='beside'] .answer-bar__poll {
+  position: absolute;
+  inset-inline-end: var(--stage-card-safe-inset);
+  /* inset-block (not top + translate centering) ties the box to the card's own padding edges, so
+     its height is always the card's real available height and align-content: center (the base
+     rule, above) centers the two rows inside it. A translate-centered box sized only to its own
+     content can extend past a shorter card's own bounds and clip against the vote-fill mask's
+     overflow: hidden (found by a scoped sweep). */
+  inset-block: var(--stage-card-pad-block);
+  min-width: var(--stage-tally-w);
+  width: var(--stage-tally-w);
+}
+body .question-shell .question-show-frame--myth-among-three [data-tally='beside'] .answer-bar__poll {
+  inset-inline-end: var(--stage-pill-safe-inset);
+}
+/* A rail with data-tally="below" (binary always; other kinds off widescreen) keeps the tally in
+   flow, below the label, so it has to reserve its own height the same way "beside" reserves its
+   own width: a fixed min-height plus staying a real (invisible) box while empty, so the card is
+   exactly as tall at posed as it is at locked and the beat-stable check holds (found live: without
+   this, a binary card grew 78 canvas px the instant its tally filled in at lock).
+   Kept at the original gap (kit-space-4) as the shared default: estimate reserves this same zone on
+   every row of a 5- or 6-range portrait rail, so a blanket bump here re-blew the same content
+   budget the note fix (further down) just closed by about 15px. */
+body .question-shell .question-show-frame [data-tally='below'] .answer-bar__poll {
+  min-height: calc(var(--stage-stat-pct) + var(--kit-space-4) + var(--stage-stat-votes));
+}
+/* STAGE-SPEC step 8 fix (beat-stable, portrait binary only): the same real-ink-versus-box-height
+   gap the beside formula's own fix documents (a tight line-height:1 mono line's rendered ink can
+   run past its nominal box) reproduced here too, at a smaller ~2.8px margin. Binary is a single
+   full-width row per card (never many stacked rows the way estimate's ranges are), so the one
+   extra kit step of slack used there costs nothing toward the content budget. */
+body .question-shell .question-show-frame--binary [data-tally='below'] .answer-bar__poll {
+  min-height: calc(var(--stage-stat-pct) + var(--kit-space-8) + var(--stage-stat-votes));
+}
+body .question-shell .question-show-frame [data-tally='below'] .answer-bar__poll:empty {
+  display: grid;
+}
+body .question-shell .question-show-frame [data-tally='hidden'] .answer-bar__poll {
+  display: none;
+}
+/* STAGE-SPEC step 8 fix (spec 3.5, card-text-safe / beat-stable): which-patient and myth's below
+   placement (square, off-widescreen) had no row-wrap rule at all, so the poll stayed an in-flow
+   flex sibling of the label inside the same row (the base .answer-bar rule further up is
+   `flex-direction: row`). While the poll was empty (posed) it collapsed via `:empty { display:
+   none }` and cost the label nothing; the instant real vote numbers rendered at lock, the poll
+   claimed its own real width in that row and squeezed .answer-bar__main's, which is exactly the
+   beat-stable failure (the row's own shape changing between beats) and, measured live, the
+   card-text-safe overflow (an unshrunk label still painting its old, wider line past the card's
+   own safe end because the text itself never re-wrapped to the narrower space the squeeze
+   implied). A full-width wrap, keyed off data-tally (play mode) so it is identical at posed and
+   locked, puts the poll on its own row under the label instead, inside the card's own existing
+   padding, matching the portrait rule below. Portrait keeps its own, more specific rule (the key
+   and label also need re-flowing into a 2-column grid there); this one covers wide/square only by
+   staying off :not([data-format='portrait']). */
+body .question-shell:not([data-format='portrait']) .question-show-frame:is(.question-show-frame--which-patient, .question-show-frame--myth-among-three, .question-show-frame--estimate) .answer-rail[data-tally='below'] .answer-bar {
+  flex-wrap: wrap;
+}
+/* STAGE-SPEC pass 4b fix (F1, spec 3.5): a below-tally row's own two lines (label then poll) used
+   to inherit the card's default `align-content: stretch`, so the label sat pinned high in the top
+   half of the card and the tally sat pinned low in the bottom half, wherever the card's own
+   min-height left slack past the two lines' own content height. Centering the pair (or, for
+   which-patient, spacing them across the card) closes that gap at the cause instead of padding
+   around it. Which-patient keeps the two rows apart (label at top, tally at bottom) because its
+   own label box height is compared directly against A and B's badge-anchored first line (spec
+   3.4), while myth and estimate read better as one centered reading group. */
+body .question-shell:not([data-format='portrait']) .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--estimate) :is(.answer-rail, .estimate-answer-rail)[data-tally='below'] .answer-bar {
+  align-content: center;
+  row-gap: var(--kit-space-12);
+}
+body .question-shell:not([data-format='portrait']) .question-show-frame--which-patient .answer-rail[data-tally='below'] .answer-bar {
+  align-content: space-between;
+  row-gap: var(--kit-space-12);
+}
+body .question-shell[data-format='portrait'] .question-show-frame--myth-among-three .answer-rail[data-tally='below'] .answer-bar {
+  align-content: center;
+}
+body .question-shell:not([data-format='portrait']) .question-show-frame:is(.question-show-frame--which-patient, .question-show-frame--myth-among-three, .question-show-frame--estimate) .answer-rail[data-tally='below'] .answer-bar__main {
+  flex-basis: 100%;
+}
+body .question-shell:not([data-format='portrait']) .question-show-frame:is(.question-show-frame--which-patient, .question-show-frame--myth-among-three, .question-show-frame--estimate) .answer-rail[data-tally='below'] .answer-bar__poll {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+}
+/* STAGE-SPEC pass 3 fix (tally-row-start, spec 3.5): the shared wrap rule above starts the poll
+   flush with the CARD's own padding box, the same left edge `.answer-bar__main` starts from. That
+   is correct for which-patient (an absolute, out-of-flow badge, so the label itself starts there
+   too) but wrong for myth: its badge is in flow, at the pill's safe inset, so the label's own text
+   actually starts one badge-width and one flex gap further in. Left at the shared rule, the
+   below-tally row landed under the badge instead of under the label, an independent designer's own
+   finding ("x 90 against 137"). Myth-only, at its own in-flow badge's real measured width plus
+   `.answer-bar__main`'s own real gap (`--kit-space-16`, not the pill badge's own smaller 8:
+   the first attempt at this fix used the wrong gap and left an 8px residue a fresh sweep caught). */
+body .question-shell:not([data-format='portrait']) .question-show-frame--myth-among-three .answer-rail[data-tally='below'] .answer-bar__poll {
+  padding-inline-start: calc(var(--stage-card-badge-w) + var(--kit-space-16));
+}
+/* STAGE-SPEC pass 4b (W5, spec 4.1): the tally role's own floor, 12.5 in every format. */
+body .question-shell .question-show-frame .answer-bar__pct { font-size: max(var(--stage-stat-pct), calc(var(--stage-floor-tally) / var(--stage-scale, 1))); }
+/* STAGE-SPEC pass 4b fix (F10): the footer vote count reads its size from the shared token, and now
+   also carries the uppercase caps and 0.08em tracking every other mono stat on the stage already
+   uses, at the one CSS owner instead of each kind's own inline copy of the same two properties. */
+body .question-shell .question-show-frame .answer-bar__votes {
+  font-size: max(var(--stage-stat-votes), calc(var(--stage-floor-tally) / var(--stage-scale, 1)));
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+/* STAGE-SPEC pass 4b fix (F8, spec 4.5): a compound word an independent designer's own critique
+   named (`stage-text.ts`'s KEEP_COMPOUNDS) never breaks at its own internal hyphen, so it cannot
+   leave the word after it stranded alone on the next line. */
+.keep-compound {
+  white-space: nowrap;
+}
+
+/* --- 6. Rail tracks, one owner per kind --------------------------------- */
+
+/* Binary — two verdicts, each half the stem's measure, so TRUE and FALSE
+   hold the same width the question does. */
+/* STAGE-SPEC step 5 (spec judgment call 1, section 10 step 5): full-width column, not a centered
+   68rem measure. Every rail below drops its own centering cap for the same reason. */
+body .question-shell .question-show-frame--binary .answer-rail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  gap: var(--stage-rail-gap);
+  align-items: stretch;
+}
+body .question-shell .question-show-frame--binary .answer-bar__key {
+  display: none;
+}
+/* STAGE-SPEC step 8 (spec section 5.1): the tally sits in a row below the centered label, both
+   centered, not beside it in the same row. A column stack puts .answer-bar__main (the label) above
+   .answer-bar__poll (the tally), instead of the two sitting side by side. */
+body .question-shell .question-show-frame--binary .answer-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kit-space-8);
+}
+body .question-shell .question-show-frame--binary .answer-bar__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .question-shell .question-show-frame--binary .answer-bar__poll {
+  justify-items: center;
+}
+body .question-shell .question-show-frame--binary .answer-bar__label {
+  width: 100%;
+  text-align: center;
+}
+
+/* Myth among three — a stack. The rail wraps its rows in one animation group,
+   so the group is the flex column and the rail just holds it. */
+body .question-shell .question-show-frame--myth-among-three .answer-rail {
+  display: flex;
+  flex-direction: column;
+}
+body .question-shell .question-show-frame--myth-among-three .answer-rail > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stage-rail-gap);
+  width: 100%;
+  min-width: 0;
+}
+body .question-shell .question-show-frame--myth-among-three .answer-bar,
+body .question-shell .question-show-frame--which-patient .answer-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body .question-shell .question-show-frame--myth-among-three .answer-bar__main,
+body .question-shell .question-show-frame--which-patient .answer-bar__main {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+/* STAGE-SPEC pass 4b fix (F3, spec 3.3, wide which-patient): the label's own gap and inline padding
+   (inherited from the shared `.answer-bar__main` rule further up, and from `--stage-row-pad`'s
+   inline half before this file's own step 6 rewrite) were still eating into the text box on top of
+   `--stage-card-text-start`, which had already reserved exactly the room the badge needs. Zeroing
+   both here (wide only, where the measured overrun was 78 canvas px against the spec's 62) gives
+   the label its full 438px box back, so A and B drop to their designed 2 lines instead of 3. */
+body .question-shell[data-format='widescreen'] .question-show-frame--which-patient .answer-bar__main {
+  gap: 0;
+  padding-inline: 0;
+}
+body .question-shell[data-format='widescreen'] .question-show-frame--which-patient .answer-bar__label {
+  flex: 1 1 0;
+  /* A flex item's implicit min-width is `auto` (its own content's min-intrinsic width), not 0, so
+     without this the label could still grow past its 422-438px flex-basis to clear its own longest
+     word, which is exactly the 13.6px card-text-safe overrun an independent designer's own render
+     caught on card B ("postexposure"). Explicit 0 makes the label actually respect the space the
+     card's own padding reserves, wrapping instead of pushing the box wider. */
+  min-width: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+/* Which patient / which reply — reply cards two to a row when only two choices.
+   Three or four replies get a full-width row each instead: a reply is a spoken
+   sentence, and half a 1472px canvas is not enough line length for them. */
+body .question-shell .question-show-frame--which-patient .answer-rail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  margin-inline: 0;
+  gap: var(--stage-rail-gap);
+  align-items: stretch;
+}
+/* STAGE-SPEC step 8 (spec section 5.5, the design call): 3 or 4 answers use a 2x2 grid on
+   widescreen and square, kept at the base rule's own 2-column grid above (this used to force
+   `grid-template-columns: minmax(0, 1fr)` at 3 and 4 answers, the bug the spec exists to fix, and
+   also re-set --stage-prompt/--stage-choice/--stage-row-min by count, which is now the type
+   ladder's job (section 1b, driven by stage-fit.ts) and the kind's own base row-min (section 1) --
+   both dead weight once the grid itself is fixed). Portrait already forces one column and hides
+   the per-card tally at 3/4 further down; nothing here needs a portrait override. The 3-answer
+   case's third card is centered at its peers' own width, the one sanctioned edge-rule exception
+   (spec 2.2, 5.5): row 1 holds A and B, row 2 spans both tracks and centers C. */
+body .question-shell:not([data-format='portrait']) .question-show-frame--which-patient .answer-rail[data-count='3'] .answer-slot[data-slot='c'] {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc((100% - var(--stage-rail-gap)) / 2);
+}
+
+/* Order — scrambled steps as a readable column, not a full-canvas banner. */
+/* Judgment call 12 (spec 5.4): order uses the full column at every count, not a narrower
+   centered measure, so long steps get the room the edge rule promises everywhere else. */
+body .question-shell .question-show-frame--order .order-rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stage-rail-gap);
+  width: 100%;
+  margin-inline: 0;
+}
+body .question-shell .question-show-frame--order .order-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order-question-container { position: relative; user-select: none; }
+.order-kicker-row { display: flex; align-items: center; gap: var(--kit-space-12); }
+.order-id-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--kit-space-32);
+  padding: var(--kit-space-4) var(--kit-space-12);
+  border-radius: var(--kit-radius-8, 8px);
+  font-family: var(--kit-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.order-bar__main {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-right: var(--kit-space-16);
+}
+.order-bar__controls { display: flex; align-items: center; gap: var(--kit-space-4); flex: none; }
+.order-nudge,
+.order-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.order-nudge {
+  min-width: var(--kit-touch);
+  min-height: var(--kit-touch);
+  border-radius: var(--kit-radius-8, 8px);
+}
+.order-reset {
+  min-height: var(--kit-touch);
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border-radius: var(--kit-radius-12);
+  font-weight: 600;
+}
+.order-nudge:disabled,
+.order-reset:disabled { opacity: 0.3; cursor: not-allowed; }
+.order-nudge:active:not(:disabled),
+.order-reset:active:not(:disabled) { transform: scale(0.95); }
+.order-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(56rem, 100%);
+  margin: var(--kit-space-24) auto 0;
+  padding-top: var(--kit-space-16);
+  border-top: 1px solid var(--color-hairline);
+}
+@media (prefers-reduced-motion: reduce) {
+  .order-nudge:active:not(:disabled),
+  .order-reset:active:not(:disabled) {
+    transform: none;
+    filter: brightness(0.95);
+  }
+}
+/* STAGE-SPEC pass 3 fix (cue-alignment, spec 5.4): the cue used to center its own ink inside a
+   full-width block, which still left the block's own BOX starting on the edge (so the older
+   box-only align-start check never caught it), while the visible glyphs sat in the middle under a
+   start-aligned stem, an independent designer's own finding. Start-aligned per spec 5.4. */
+body .question-shell .question-show-frame--order .order-scramble-cue {
+  display: block;
+  /* STAGE-SPEC pass 4b (W5): spec 2.3's own row ("stem to order cue 8 in every format") is a
+     narrower gap than the stem-to-scenario gap the shared flex column already applies between
+     every child (`--stage-gap-stem-scenario`, 16 wide/square, 8 portrait). `--stage-gap-stem-cue`
+     was declared at step 1 but never read by anything: this pulls the cue up by the difference,
+     landing it at its own real 8px regardless of what the shared gap happens to be. */
+  margin-block-start: calc(var(--stage-gap-stem-cue) - var(--stage-gap-stem-scenario));
+  color: var(--color-gold);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: start;
+}
+/* STAGE-SPEC pass 4b fix (F12, spec 4.3): portrait's own cue used to inherit the wide/square rule
+   above (28px bold), which sits close enough to the 30px stem next to it that the two nearly read
+   as the same weight of announcement, an independent designer's own finding. Portrait's row in
+   spec 4.3 is corrected here to 18px / 600, recorded in the spec doc alongside this fix. */
+body .question-shell[data-format='portrait'] .question-show-frame--order .order-scramble-cue {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Estimate — the rail is a caption plus an option grid. The caption is a
+   report artefact the stage hides, and it used to be the rail's own first
+   child, which is why positional selectors over the rail were off by one. */
+body .question-shell .question-show-frame--estimate .estimate-answer-rail {
+  display: flex;
+  flex-direction: column;
+}
+body .question-shell .question-show-frame--estimate .estimate-answer-rail__header {
+  display: none;
+}
+body .question-shell .question-show-frame--estimate .estimate-answer-rail__options {
+  --stage-range-col: calc((100% - var(--stage-rail-gap)) / 2);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--stage-rail-gap);
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+}
+/* STAGE-SPEC step 8 (spec section 5.2, judgment call 7): estimate labels are start-aligned like
+   every other card now, not centered, to match the edge rule; tabular numerals keep the range
+   figures lining up between rows. */
+body .question-shell .question-show-frame--estimate .estimate-answer-rail .answer-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--kit-space-16);
+  width: 100%;
+}
+/* STAGE-SPEC pass 4b fix (F5, spec 5.2): every estimate card reserves a hidden note line
+   (`answer-bar__note`, visibility: hidden on every non-plurality card) so the room's typical-answer
+   text never reflows the card at lock, but nothing ever reserved that same room in the card's own
+   min-height, so every card sat pinned to its label's own short content height with the hidden
+   note line floating past its own bottom edge, which is the "labels pinned high" defect (F5). This
+   folds the note's own reserved line into the same min-height formula that already reserves the
+   tally row (F1's neighbor), so the card is exactly as tall as its real content, hidden note
+   included, with no separate reservation living only in the note's own invisible box. */
+body .question-shell:not([data-format='portrait']) .question-show-frame--estimate .estimate-answer-rail .answer-bar {
+  min-height: max(
+    var(--stage-row-min),
+    calc(var(--stage-stat-pct) + var(--stage-stat-votes) + var(--kit-space-8) + 2 * var(--stage-card-pad-block)),
+    calc(1.2 * var(--stage-choice) + var(--kit-space-4) + 1.2 * var(--stage-stat-votes) + 2 * var(--stage-card-pad-block))
+  ) !important;
+}
+body .question-shell[data-format='square'] .question-show-frame--estimate .estimate-answer-rail .answer-bar {
+  min-height: max(
+    var(--stage-row-min),
+    calc(var(--stage-stat-pct) + var(--stage-stat-votes) + var(--kit-space-8) + 2 * var(--stage-card-pad-block)),
+    calc(1.2 * var(--stage-choice) + var(--kit-space-4) + 1.2 * var(--stage-stat-votes) + 2 * var(--stage-card-pad-block) + var(--kit-space-12) + var(--stage-stat-pct))
+  ) !important;
+}
+body .question-shell .question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--kit-space-4);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+body .question-shell .question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__label {
+  width: 100%;
+  /* Judgment call 7 (spec 5.2, 11.7): the one switch. `start` is the spec's own pick (matches
+     every other card's edge-aligned label); `center` is the one-line alternative. */
+  text-align: var(--stage-call-7-range-label-align, start);
+  /* Judgment call 8 (spec 5.2, 11.8): the one switch. The spec's own pick keeps range labels in
+     the inherited Plex Sans (never overridden here) with tabular numerals; the alternative is
+     `var(--kit-font-mono)`, a one-line change on this property. */
+  font-family: var(--stage-call-8-range-label-font, inherit);
+  font-variant-numeric: tabular-nums;
+}
+/* STAGE-SPEC pass 4b fix (F9, spec 5.2): the note used to sit wherever it fell in DOM order (after
+   the label, before the poll), which read label-note-tally on square's below-tally rows but
+   label-tally-note on square's own flow order elsewhere, an independent designer's own finding
+   ("the note order differs between the two formats"). Reordering by the flex `order` property
+   matches square to portrait's already-settled label, tally, note reading order without touching
+   the DOM (the poll stays a flex sibling of the label, not a child, so this only needs to move the
+   label and note themselves). */
+body .question-shell[data-format='square'] .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar .answer-bar__main { display: contents; }
+body .question-shell[data-format='square'] .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar__label { order: 1; flex-basis: 100%; }
+body .question-shell[data-format='square'] .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar__poll { order: 2; }
+body .question-shell[data-format='square'] .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar__note { order: 3; flex-basis: 100%; }
+/* STAGE-SPEC step 8 fix (spec 5.2, beat-stable): the plurality note is now structurally present on
+   every card in polling mode, not only the winning card once votes exist (its own comment further
+   up in this file explains why). On wide and square there is room: the note stays in flow, adding
+   its own reserved line under the label on every card (visible or not), which is also why square's
+   below-tally poll (further down) does not need to know about it -- it simply sits after whatever
+   height main already claims.
+
+   Portrait is the one format where that cost is real: a 5- or 6-range estimate stacks every card in
+   one column, so a whole extra line multiplied across every row blew the content budget by close to
+   100px (measured). There the note goes out of flow instead. Anchoring it directly under the label
+   (main's own bottom) collided with the below-tally poll, which also wraps onto its own row right
+   after main; pushing the poll down to clear it just re-added the same flow height the whole point
+   was to avoid. Anchoring from the CARD's own bottom edge instead -- its containing block, not
+   main's, so main stays position: static on portrait -- puts the note comfortably below the poll's
+   own reserved zone with no flow cost and no collision. */
+body .question-shell[data-format='portrait'] .question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__main {
+  position: static;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__note {
+  position: absolute;
+  bottom: var(--stage-card-pad-block);
+  inset-inline-start: var(--stage-card-safe-inset);
+}
+/* STAGE-SPEC step 8 fix (spec 3.5, tally-zone / beat-stable): estimate's own below-tally wrap
+   (shared with which-patient and myth further up this file) needs one more class of specificity
+   than that shared rule carries, because this block's own `.answer-bar__main` rule above
+   (`flex: 1 1 auto`, tied specificity, declared later) would otherwise still win the flex-basis
+   component and keep the poll an in-flow sibling instead of its own wrapped row. */
+body .question-shell .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar .answer-bar__main {
+  flex-basis: 100%;
+  flex-grow: 0;
+}
+body .question-shell .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar .answer-bar__poll {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+  padding-inline-start: 0;
+}
+/* An odd option count finishes as its own row — five ranges read 2-2-1 — and
+   the lone card keeps the same width as its peers (centred, not a banner).
+   STAGE-SPEC pass 3 fix (one-column-card-width, estimate portrait): this rule only makes sense
+   against a 2-column grid. Portrait's own rail below collapses every kind to one column, so this
+   rule's own odd-card centering fired there too, narrowing and centering the last card inside a
+   rail that should have every card at the full one-column width, exactly the "fifth card still
+   about 195px wide" defect an independent designer measured live. Scoped off portrait the same
+   way which-patient's own equivalent centered-third-card rule already is. */
+body .question-shell:not([data-format='portrait']) .question-show-frame--estimate .estimate-answer-rail__options:is([data-count='1'], [data-count='3'], [data-count='5']) > .answer-slot:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: var(--stage-range-col);
+  max-width: 100%;
+}
+
+/* Portrait — every grid rail becomes one column in reading order. */
+body .question-shell[data-format='portrait'] .question-show-frame :is(.answer-rail, .estimate-answer-rail__options) {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: none;
+  width: 100%;
+  gap: var(--stage-rail-gap);
+}
+body .question-shell[data-format='portrait'] .question-show-frame :is(.answer-rail, .estimate-answer-rail__options) > .answer-slot {
+  grid-column: auto;
+  justify-self: stretch;
+  width: auto;
+  max-width: none;
+}
+
+/* The mounted question fills the beat. This used to be an !important block in
+   presentation.css, written to beat a second copy of the same layout. */
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame .show-content > .question-beat-stack {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame .question-beat-pane > [data-screen="question"] {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex-direction: column;
+  /* STAGE-SPEC step 5 (spec section 2.3): wide and square center the stem-to-answers group by
+     auto margins on the first/last relevant child, not by justify-content. flex-start plus those
+     auto margins only absorbs positive free space, so an overfull group falls back to top
+     alignment and can never rise into the header, unlike justify-content: center. */
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  gap: var(--stage-gap-to-answers, var(--kit-space-24));
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* Wide and square: the stem-to-answers group is centered by auto margins (spec 2.3).
+   STAGE-SPEC pass 3 fix (vertical-balance): the two selectors used to require
+   `.question-stage-copy` be the root's own `:first-child` and the rail be its own `:last-of-type`
+   direct child. Neither survives every kind's real markup: binary, order and which-patient each
+   render a trailing `.question-kind-footer` sibling after the rail (so the rail is never
+   `:last-of-type`, pinning that content to the bottom with only the top margin absorbing free
+   space, an independent designer's own finding), and myth wraps its rail in an own
+   `.myth-main-split` div plus renders a leading `<header>` before the stem (so NEITHER margin
+   ever matched, pinning myth to the top by plain `justify-content: flex-start`). A plain
+   descendant selector on the two classes themselves, dropping both the positional pseudo-class
+   and the direct-child requirement, reaches the stem and rail wherever a kind nests them: there is
+   exactly one of each per screen, so this stays as precise as the old selector while no longer
+   depending on sibling order or wrapper depth. */
+body .question-shell.question-flow:not([data-format='portrait'])[data-phase] .question-show-frame .question-beat-pane > [data-screen="question"] .question-stage-copy {
+  margin-block-start: auto;
+}
+body .question-shell.question-flow:not([data-format='portrait'])[data-phase] .question-show-frame .question-beat-pane > [data-screen="question"] :is(.answer-rail, .estimate-answer-rail, .order-rail) {
+  margin-block-end: auto;
+}
+/* Portrait: top-aligned, no auto margins, and the stem zone reserves its designed minimum line
+   count so a short stem does not collapse the header-to-answers gap (spec 2.3). */
+body .question-shell.question-flow[data-format='portrait'][data-phase] .question-show-frame .question-beat-pane > [data-screen="question"] {
+  justify-content: flex-start;
+}
+body .question-shell[data-format='portrait'] .question-show-frame .question-stage-copy {
+  min-height: calc(var(--stage-stem-min-lines) * 1.2 * var(--stage-prompt));
+  justify-content: flex-start;
+}
+
+/* Portrait tally sits under the reply, not beside it. STAGE-SPEC step 8 (spec section 3.5, the
+   beat-stable fix): this used to key off
+   `:has(.answer-bar__pct)`, which only matches once vote numbers actually render, so the grid
+   layout below turned on at the locked beat but not at posed and every card's rect moved between
+   the two, failing beat-stable. `[data-tally='below']` is set on the rail from play mode alone
+   (spec 3.5), so the layout is identical at posed and locked and only the numbers themselves fade
+   in inside it. */
+body .question-shell[data-format='portrait'] .question-show-frame:is(.question-show-frame--which-patient, .question-show-frame--myth-among-three) .answer-rail[data-tally='below'] .answer-bar {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 4px 12px;
+}
+/* STAGE-SPEC pass 4b fix (found investigating a real badge-placement hit, BUNDLE-vax-or-
+   fiction-q16): which-patient's own shared rule reserves `--stage-card-text-start` here (spec
+   3.3's own padding, sized to clear an out-of-flow badge sitting in the card's nose). This grid
+   puts the badge back in normal flow instead (the fix just above), so that reservation is now
+   double-counted: the grid's own 32px column plus a 12px gap already clears the badge, and the
+   card's own start padding should be the plain badge-x token (28) the badge column itself
+   starts from, matching badge-placement's own "wrong-start-x" expectation. Which-patient only:
+   myth's own badge was never out-of-flow (it has no nose to clear, spec 3.6), so its own
+   padding stays --stage-pill-safe-inset (16), which the shared rule above already left alone
+   until a first version of this fix accidentally widened it to which-patient's own token,
+   moving myth's badge 12px off its own real start, a regression a fresh full-bank run caught. */
+body .question-shell[data-format='portrait'] .question-show-frame--which-patient .answer-rail[data-tally='below'] .answer-bar {
+  padding-inline-start: var(--stage-card-badge-x);
+}
+body .question-shell[data-format='portrait'] .question-show-frame:is(.question-show-frame--which-patient, .question-show-frame--myth-among-three) .answer-rail[data-tally='below'] .answer-bar .answer-bar__main {
+  display: contents;
+}
+body .question-shell[data-format='portrait'] .question-show-frame:is(.question-show-frame--which-patient, .question-show-frame--myth-among-three) .answer-rail[data-tally='below'] .answer-bar .answer-bar__key {
+  /* STAGE-SPEC pass 4b fix (found investigating a real badge-placement hit, BUNDLE-vax-or-
+     fiction-q16): the badge key is `position: absolute; top: 50%; translate: 0 -50%` in every
+     other rail (the chevron-nose placement, spec 3.4), which vertically centers it in its
+     containing block by explicit inset regardless of any `align-self` also set on it. This grid
+     row's own `align-self: start` therefore had zero effect: an absolutely positioned box is not
+     laid out by grid alignment at all once it carries its own top/inset. Back to `static` here
+     puts the key back in normal grid flow, where grid-row and align-self both actually apply. */
+  position: static;
+  top: auto;
+  translate: none;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+body .question-shell[data-format='portrait'] .question-show-frame:is(.question-show-frame--which-patient, .question-show-frame--myth-among-three) .answer-rail[data-tally='below'] .answer-bar .answer-bar__label {
+  grid-column: 2;
+  grid-row: 1;
+}
+body .question-shell[data-format='portrait'] .question-show-frame:is(.question-show-frame--which-patient, .question-show-frame--myth-among-three) .answer-rail[data-tally='below'] .answer-bar .answer-bar__poll {
+  grid-column: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 12px;
+}
+/* Estimate portrait: the same below-tally wrap, without the key/label grid the badge-carrying
+   kinds above need (estimate has no badge, spec 3.3). A simple full-width wrap onto its own row
+   under the label is enough. */
+body .question-shell[data-format='portrait'] .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar {
+  flex-wrap: wrap;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar .answer-bar__main {
+  flex-basis: 100%;
+  flex-grow: 0;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--estimate .estimate-answer-rail[data-tally='below'] .answer-bar .answer-bar__poll {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+}

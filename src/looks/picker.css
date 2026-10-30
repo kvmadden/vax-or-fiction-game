@@ -1,0 +1,494 @@
+/* The look picker in setup (VOF-93). It reuses the quick setups' screen frame (.setup-setups, its title, its intro and its
+   Back button). Under the intro the four looks stand in a column of cards on the left, each a still of the look's real
+   stage beside its name and one plain line, and on the right the picked look is shown large on a sample question, with
+   the topic patterns switch (VOF-94) under it. Picked cards glow gold like every other setup choice, and carry a check
+   as well so the pick never rests on colour alone. Every colour is a token or mixed from one. Setup itself stays in
+   Today's navy in every look (looks.css), so the sample is the one place this screen shows the pick.
+
+   On the 1600 by 900 setup canvas the block runs from 232 down to the stage's bottom margin at 836, the same 64 the title
+   keeps from the top: the cards take a 520 wide column and the sample the rest, at 16 by 9 with the switch under it. */
+
+.setup-looks-body {
+  position: absolute;
+  top: 232px;
+  bottom: var(--kit-space-64);
+  left: 96px;
+  width: 1408px;
+  display: grid;
+  grid-template-columns: 520px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-content: start;
+  column-gap: var(--kit-space-32);
+  row-gap: var(--kit-space-24);
+}
+
+.setup-looks-body > .setup-setups-grid.setup-looks-grid {
+  position: static;
+  width: auto;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  row-gap: var(--kit-space-12);
+}
+
+.setup-looks-body > .look-sample {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.setup-looks-body > .setup-looks-patterns {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* The switch sits on a solid panel like the cards, so its words never stand on a picture showing through glass. */
+.setup-looks-patterns {
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-panel-navy);
+  background-image: linear-gradient(var(--color-film), var(--color-film));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  overflow: hidden;
+}
+
+/* The row's padding is the button's own, so its hover and press light the whole panel and not a strip inside it. Its hint takes
+   the muted ink and not the dim one, so it holds AA under the hover film as well as at rest. */
+.setup-looks-patterns .setup-sheet-switch {
+  padding-inline: var(--kit-space-32);
+}
+
+.setup-looks-patterns .setup-sheet-switch-hint {
+  color: var(--color-ink-muted);
+}
+
+/* A card: the still on the left, the name and the line beside it, centred in the card's height. */
+.setup-look {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto auto minmax(0, 1fr);
+  column-gap: var(--kit-space-16);
+  row-gap: var(--kit-space-4);
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 2px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  /* Solid, so a name never sits on a picture showing through glass. */
+  background-color: var(--color-panel-navy);
+  background-image: linear-gradient(var(--color-film), var(--color-film));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.setup-look input {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.setup-look:hover:not(:has(input:checked)) {
+  border-color: color-mix(in srgb, var(--color-gold) 40%, transparent);
+}
+
+.setup-look:active {
+  filter: brightness(1.05);
+}
+
+.setup-look:has(input:checked) {
+  border-color: var(--color-gold);
+  box-shadow:
+    0 0 var(--kit-space-32) color-mix(in srgb, var(--color-gold) 34%, transparent),
+    inset 0 0 var(--kit-space-16) color-mix(in srgb, var(--color-gold) 14%, transparent),
+    var(--kit-rim),
+    var(--kit-drop-deep);
+}
+
+.setup-look:has(input:focus-visible) {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.setup-look-name {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.setup-look:has(input:checked) .setup-look-name {
+  color: var(--color-gold);
+}
+
+.setup-look-line {
+  grid-column: 2;
+  grid-row: 3;
+  color: var(--color-ink-muted);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* The check at the card's corner, shown on the picked card only. */
+.setup-look-check {
+  position: absolute;
+  top: var(--kit-space-12);
+  right: var(--kit-space-12);
+  z-index: 1;
+  width: var(--kit-space-32);
+  height: var(--kit-space-32);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-gold);
+  color: var(--color-on-gold);
+  box-shadow: 0 0 var(--kit-space-12) color-mix(in srgb, var(--color-void) 60%, transparent);
+}
+
+.setup-look:has(input:checked) .setup-look-check {
+  display: flex;
+}
+
+.setup-look-check svg {
+  width: var(--kit-space-24);
+  height: var(--kit-space-24);
+  stroke-width: 3;
+}
+
+/* ---- The stills ----------------------------------------------------------------------------------------
+   Each card's still is the look's real stage on the sample question (LookThumb.tsx), 176 wide here, so 211 on a 1920 wide
+   screen, and the file is 432 by 243, twice that. */
+.look-thumb {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: center;
+  display: block;
+  width: 176px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-12);
+  background-color: var(--color-stage-deep);
+}
+
+.look-thumb__picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .setup-look {
+    transition: none;
+  }
+}
+
+/* A host window 600px wide or less stacks setup in one column: the cards, then the sample, then the switch, in reading
+   order, at the narrow type steps. */
+@media (max-width: 600px) {
+  .presenter-setup-stage .setup-looks-body {
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--kit-space-12);
+  }
+
+  .presenter-setup-stage .setup-looks-patterns .setup-sheet-switch {
+    padding-inline: var(--kit-space-16);
+  }
+
+  .presenter-setup-stage .setup-setups-grid.setup-looks-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    row-gap: var(--kit-space-12);
+  }
+
+  .presenter-setup-stage .setup-look {
+    column-gap: var(--kit-space-12);
+    padding: var(--kit-space-12);
+  }
+
+  .presenter-setup-stage .look-thumb {
+    width: 112px;
+  }
+
+  .presenter-setup-stage .setup-look-name {
+    padding-right: var(--kit-space-24);
+    font-size: 20px;
+  }
+
+  .presenter-setup-stage .setup-look-line {
+    font-size: 16px;
+  }
+
+  .presenter-setup-stage .setup-look-check {
+    top: var(--kit-space-8);
+    right: var(--kit-space-8);
+    width: var(--kit-space-24);
+    height: var(--kit-space-24);
+  }
+
+  .presenter-setup-stage .setup-look-check svg {
+    width: var(--kit-space-16);
+    height: var(--kit-space-16);
+  }
+}
+
+/* ---- The sample question ----------------------------------------------------------------------------------
+   The picked look at the big screen's own proportions. Inside it every length is a share of the sample's width, so one
+   stage pixel of the 1600 wide canvas is 0.0625cqw: the stem is 72px there and 4.5cqw here, an answer is 720 by 224 there
+   and 45 by 14cqw here. The look's treatment is scoped by the page's data-look, which is the picked look, so the sample
+   reads each look's own colours from its stylesheet. Today is the base. */
+.look-sample {
+  --side: var(--color-vax);
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+  container-type: inline-size;
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-stage-deep);
+  /* Today: the navy stage and its two cones. */
+  background-image:
+    radial-gradient(ellipse 70% 90% at 18% -10%, color-mix(in srgb, var(--color-vax) 34%, transparent), transparent 70%),
+    radial-gradient(ellipse 70% 90% at 100% -10%, color-mix(in srgb, var(--color-fiction) 30%, transparent), transparent 70%),
+    linear-gradient(125deg, color-mix(in srgb, var(--color-vax) 18%, var(--color-stage-deep)), var(--color-stage-deep) 48%, color-mix(in srgb, var(--color-gold) 12%, var(--color-stage-deep)));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+:root[data-look] .look-sample {
+  background-image: none;
+}
+
+.look-sample__picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+/* The calm hold over a picture, where the stage keeps it: x 4% to 96% and y 11% to 90.5%, at the look's own question hold
+   (--look-calm-stage, set by studio.css, casefile.css and seventies.css). Setup has no hold of its own, so the sample reads
+   the look's value, and Today, which has no picture, holds nothing. The stage draws its hold inside the look's own layer and
+   the topic pattern as the next layer up (ScreenRouter.tsx), so the hold never dims the pattern, and the sample stacks them
+   the same way: the picture, the hold, the pattern, then the question. */
+.look-sample__scrim {
+  position: absolute;
+  inset: 11% 4% 9.5%;
+  z-index: 1;
+  border-radius: 1.5cqw;
+  background: color-mix(in srgb, var(--color-stage-deep) var(--look-calm-stage, 0%), transparent);
+  filter: blur(1.5cqw);
+}
+
+.look-sample > .topic-pattern {
+  z-index: 2;
+}
+
+.look-sample__question {
+  position: absolute;
+  top: 12.875cqw;
+  right: 4cqw;
+  left: 4cqw;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5cqw;
+}
+
+.look-sample__stem {
+  position: relative;
+  display: block;
+  padding: 0.5cqw 0;
+  color: var(--color-ink);
+  font-size: 4.5cqw;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* The stage balances its stem across the full safe width, which puts this one on two lines there, and so does the sample. */
+.look-sample__words {
+  display: block;
+  text-wrap: balance;
+}
+
+.look-sample__answers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2cqw;
+}
+
+.look-sample__answer {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 14cqw;
+  padding-top: 1cqw;
+  /* Today: a pointed card with the side's colour as its rim and the navy inside. It carries the stage card's deep drop at the
+     stage's proportions (0 33px 67px -20px there). The card's own clip cuts that drop away, on the stage as here, so it draws
+     nothing. It is kept so the two cards' computed styles stay the same and a drift test can hold them together. */
+  clip-path: polygon(2.25cqw 0, calc(100% - 2.25cqw) 0, 100% 50%, calc(100% - 2.25cqw) 100%, 2.25cqw 100%, 0 50%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--side) 90%, var(--color-light)), var(--side) 40%, color-mix(in srgb, var(--side) 55%, var(--color-void)));
+  box-shadow: 0 2.0625cqw 4.1875cqw -1.25cqw var(--color-shadow-deep);
+}
+
+.look-sample__answer[data-side="fiction"] {
+  --side: var(--color-fiction);
+}
+
+.look-sample__answer::after {
+  content: "";
+  position: absolute;
+  inset: 0.25cqw;
+  clip-path: polygon(2.125cqw 0, calc(100% - 2.125cqw) 0, 100% 50%, calc(100% - 2.125cqw) 100%, 2.125cqw 100%, 0 50%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-accent-cobalt) 20%, var(--color-void)), var(--color-backer));
+}
+
+.look-sample__label {
+  position: relative;
+  z-index: 1;
+  color: var(--color-ink);
+  font-size: 5.5cqw;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 2cqw color-mix(in srgb, var(--side) 60%, transparent);
+}
+
+/* Studio set: lit podium panels with the side's light bar across the top. */
+:root[data-look="studio"] .look-sample__answer {
+  clip-path: none;
+  border-radius: 0.75cqw;
+  background: linear-gradient(180deg, var(--studio-face-top), var(--studio-face) 42%, var(--studio-face-low) 88%, var(--studio-base) 88%);
+  box-shadow:
+    inset 0 0.375cqw 0 var(--side),
+    inset 0 1.375cqw 1.625cqw -1.125cqw color-mix(in srgb, var(--side) 60%, transparent),
+    inset 0 0 0 0.0625cqw color-mix(in srgb, var(--side) 34%, transparent),
+    0 -0.25cqw 1.5cqw -0.375cqw color-mix(in srgb, var(--side) 55%, transparent),
+    0 1.125cqw 1.75cqw -0.75cqw color-mix(in srgb, var(--color-void) 80%, transparent);
+}
+
+:root[data-look="studio"] .look-sample__answer::after {
+  content: none;
+}
+
+:root[data-look="studio"] .look-sample__label {
+  text-shadow: 0 0.125cqw 0 color-mix(in srgb, var(--color-void) 60%, transparent);
+}
+
+/* Case file: the stem on a ruled case sheet in navy ink with a paper clip, the answers as manila tags with an eyelet and
+   a band of the side's colour. */
+:root[data-look="casefile"] .look-sample__stem {
+  padding: 1cqw 3cqw 1.5cqw 4cqw;
+  color: var(--case-ink);
+}
+
+:root[data-look="casefile"] .look-sample__stem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 0.25cqw;
+  background:
+    linear-gradient(90deg, transparent 2.875cqw, var(--case-margin) 2.875cqw 3cqw, transparent 3cqw),
+    repeating-linear-gradient(180deg, transparent 0 2.875cqw, var(--case-paper-line) 2.875cqw 3cqw),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade));
+  background-position: 0 0, 0 0.75cqw, 0 0;
+  box-shadow:
+    0 0.125cqw 0 var(--case-paper-shade),
+    0 1.5cqw 2.5cqw -1.125cqw color-mix(in srgb, var(--color-void) 85%, transparent);
+  /* Only the paper turns a hair off square, as on the stage, and the words on it stand straight. */
+  transform: rotate(-0.5deg);
+}
+
+/* The paper clip, the stage's own at its proportions: a steel wire loop over the sheet's top edge, turned 4 degrees. */
+:root[data-look="casefile"] .look-sample__stem::after {
+  content: "";
+  position: absolute;
+  top: -0.75cqw;
+  right: 4cqw;
+  width: 1.5cqw;
+  height: 4cqw;
+  border: 0.25cqw solid color-mix(in srgb, var(--color-light) 70%, var(--color-text-dim));
+  border-radius: 0.75cqw;
+  box-shadow:
+    inset 0 0 0 0.25cqw var(--case-paper),
+    inset 0 0 0 0.5cqw color-mix(in srgb, var(--color-light) 70%, var(--color-text-dim));
+  transform: rotate(4deg);
+}
+
+:root[data-look="casefile"] .look-sample__answer {
+  padding-left: 2cqw;
+  box-shadow: none;
+  border-radius: 0 0.5cqw 0.5cqw 0;
+  clip-path: polygon(1.5cqw 0, 100% 0, 100% 100%, 1.5cqw 100%, 0 calc(100% - 1.5cqw), 0 1.5cqw);
+  background:
+    radial-gradient(circle at 3cqw 50%, var(--case-hole) 0 0.5cqw, var(--side) 0.53cqw 0.875cqw, transparent 0.9cqw),
+    linear-gradient(90deg, transparent 0 calc(100% - 1cqw), var(--side) calc(100% - 1cqw)),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 55%, var(--case-paper-shade));
+}
+
+:root[data-look="casefile"] .look-sample__answer::after {
+  content: none;
+}
+
+:root[data-look="casefile"] .look-sample__label {
+  color: var(--case-ink);
+  font-family: var(--kit-font-mono);
+  text-shadow: none;
+}
+
+/* 70s game show: chunky filled tiles with a light band across the top and a hard offset shadow. */
+:root[data-look="seventies"] .look-sample__answer {
+  clip-path: none;
+  height: 14.5cqw;
+  border: 0.25cqw solid color-mix(in srgb, var(--side) 55%, var(--color-void));
+  border-radius: 1.5cqw;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--side) 55%, var(--color-light)) 0 16%, var(--side) 16%);
+  box-shadow:
+    0.5cqw 0.5cqw 0 var(--s70-drop),
+    inset 0 -0.5cqw 0 color-mix(in srgb, var(--side) 72%, var(--color-void));
+}
+
+:root[data-look="seventies"] .look-sample__answer::after {
+  content: none;
+}
+
+:root[data-look="seventies"] .look-sample__label {
+  color: var(--s70-on-color);
+  font-weight: 700;
+  text-shadow: 0 0.125cqw 0 color-mix(in srgb, var(--color-light) 30%, transparent);
+}
+
+/* With less transparency the sample's calm hold goes solid with no feather, as the stage's does over a picture, and the
+   picture shows only in the margins it leaves. Its topic pattern is not drawn, as on the stage (patterns.css). With forced
+   colours the sample, like the stage, keeps its picture, drops its pattern and takes the system's colours. */
+@media (prefers-reduced-transparency: reduce) {
+  :root[data-look] .look-sample__scrim {
+    background: var(--color-stage-deep);
+    filter: none;
+  }
+}

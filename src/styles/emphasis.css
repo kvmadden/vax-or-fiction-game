@@ -1,0 +1,33 @@
+/*
+ * The deciding words of a stem, reveal or takeaway (content/editorial/emphasis.json), marked by
+ * src/components/EmphasizedText.tsx on every screen. This file is the whole look.
+ *
+ * VOF-83 (the owner, 2026-09-29, the stage review page's call 17): gold everywhere, and the underline only on
+ * the big screen's question stem. In a reveal, a dialog or on a phone, a gold underline reads as a link.
+ *
+ * VOF-89 call 17 (the stage review page's option 10): the marked words keep the gold underline and get heavier type.
+ * The option rendered at 800 on a 600 stem, but IBM Plex Sans is loaded only up to 700 (DS-11), so every mark is 700,
+ * the heaviest real face. The underline keeps its offset and its breaks at descenders.
+ */
+:root {
+  --emphasis-color: var(--color-gold);
+  --emphasis-line: none;
+}
+
+.question-stage-copy {
+  --emphasis-line: underline;
+}
+
+.vof-emphasis {
+  color: var(--emphasis-color);
+  text-decoration-line: var(--emphasis-line);
+  text-decoration-color: var(--emphasis-color);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
+  font-weight: 700;
+}
+
+/* Where the words around it are already gold (the explanation beat's takeaway headline), the mark flips to ink. */
+.question-explanation-copy h2 {
+  --emphasis-color: var(--color-ink);
+}

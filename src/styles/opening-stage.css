@@ -1,0 +1,1782 @@
+/* Entry, setup, and opening composition, extracted from presentation.css. */
+/* Opening presentation composition: source placement over the Task 1 primitives. */
+.entry-screen,
+.setup-screen,
+.preshow-lobby,
+.preshow-title,
+.preshow-instructions {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background-color: var(--color-stage-deep);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+}
+
+/* Entry */
+.entry-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(32px, 5vh, 64px);
+  width: 100vw;
+  height: 100dvh;
+  padding: clamp(32px, 6vh, 64px) clamp(24px, 5vw, 64px) clamp(32px, 7vh, 64px);
+  box-sizing: border-box;
+}
+
+.entry-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(70% 42% at 50% 70%, color-mix(in srgb, var(--color-gold) 12%, transparent), transparent),
+    linear-gradient(0deg, color-mix(in srgb, var(--color-stage-deep) 78%, transparent), transparent 55%);
+}
+
+.entry-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Landing music toggle (VOF-W9): off by default, its own preference, separate from the show's
+   mute. A fixed corner control reads as deliberate without competing with the wordmark or the
+   three actions below it. */
+.entry-audio-toggle {
+  position: fixed;
+  top: max(var(--kit-space-16), env(safe-area-inset-top));
+  right: max(var(--kit-space-16), env(safe-area-inset-right));
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--kit-space-48);
+  height: var(--kit-space-48);
+  min-width: var(--kit-touch);
+  min-height: var(--kit-touch);
+  padding: 0;
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-glass);
+  background-image: linear-gradient(var(--color-film), var(--color-film));
+  color: var(--color-ink-dim);
+  cursor: pointer;
+  box-shadow: var(--kit-rim), var(--kit-drop);
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entry-audio-toggle svg {
+  width: var(--kit-space-24);
+  height: var(--kit-space-24);
+}
+
+.entry-audio-toggle:hover {
+  border-color: color-mix(in srgb, var(--color-gold) 36%, var(--color-film-border));
+  color: var(--color-ink);
+}
+
+.entry-audio-toggle:active {
+  transform: scale(0.96);
+}
+
+.entry-audio-toggle:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.entry-audio-toggle.is-playing {
+  border-color: color-mix(in srgb, var(--color-gold) 55%, var(--color-film-border));
+  color: var(--color-gold);
+}
+
+.entry-audio-toggle.is-playing svg {
+  animation: entry-audio-toggle-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes entry-audio-toggle-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry-audio-toggle.is-playing svg {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .entry-audio-toggle {
+    top: max(var(--kit-space-12), env(safe-area-inset-top));
+    right: max(var(--kit-space-12), env(safe-area-inset-right));
+  }
+}
+
+.entry-hero-art {
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 980px);
+  height: auto;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  filter: drop-shadow(0 var(--kit-space-8) var(--kit-space-16) var(--color-shadow-deep));
+}
+
+.entry-hero-art .show-wordmark,
+.title-source-mark .show-wordmark,
+.lobby-title .show-wordmark {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  max-width: none;
+  height: 100%;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.entry-hero-art .show-wordmark__vax,
+.title-source-mark .show-wordmark__vax,
+.lobby-title .show-wordmark__vax {
+  font-size: 1em;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  padding-inline-end: 0.04em;
+  overflow: visible;
+}
+
+.entry-hero-art .show-wordmark__or,
+.title-source-mark .show-wordmark__or,
+.lobby-title .show-wordmark__or {
+  width: 88%;
+  justify-content: center;
+  gap: var(--kit-space-24);
+  font-size: 0.22em;
+  line-height: 1;
+}
+
+.entry-hero-art .show-wordmark__or::before,
+.entry-hero-art .show-wordmark__or::after,
+.title-source-mark .show-wordmark__or::before,
+.title-source-mark .show-wordmark__or::after,
+.lobby-title .show-wordmark__or::before,
+.lobby-title .show-wordmark__or::after {
+  flex: 1;
+  width: auto;
+  height: 2px;
+  opacity: 0.7;
+  background-color: var(--color-vax);
+}
+
+.entry-hero-art .show-wordmark__fiction,
+.title-source-mark .show-wordmark__fiction,
+.lobby-title .show-wordmark__fiction {
+  position: relative;
+  gap: var(--kit-space-12);
+  font-size: 0.55em;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  padding-inline-end: 0.06em;
+  overflow: visible;
+}
+
+/* Entry, title, lobby and phone hero park the syringe from one shared mark geometry
+   in styles/preshow-stage.css. */
+
+.entry-card {
+  position: relative;
+  z-index: 3;
+  width: min(100%, 880px);
+  text-align: center;
+}
+
+.entry-kicker {
+  margin: 0 0 var(--kit-space-16);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: clamp(18px, 1.7vw, 28px);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.entry-orientation {
+  max-width: 22em;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  font-size: clamp(32px, 3.6vw, 56px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.entry-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--kit-space-24);
+  margin-top: clamp(32px, 4vh, 48px);
+  align-items: stretch;
+}
+
+.entry-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--kit-space-64);
+  padding: var(--kit-space-16) var(--kit-space-32);
+  border-radius: var(--kit-radius-card);
+  font-family: var(--kit-font-sans);
+  font-size: clamp(18px, 1.6vw, 28px);
+  font-weight: 600;
+  line-height: 1.15;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.entry-primary {
+  border: 0;
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  color: var(--color-on-gold);
+  /* HB-14: the ring used to sit outside the box (a spread shadow), so the primary button read
+     about 3px taller and wider than the glass buttons even though all three share one
+     min-height. Inset keeps every edge on the same line. */
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--color-gold) 60%, transparent), var(--kit-drop);
+}
+
+.entry-secondary {
+  border: 1px solid var(--color-film-border);
+  background-color: var(--color-glass);
+  background-image: linear-gradient(var(--color-film), var(--color-film));
+  color: var(--color-ink);
+  box-shadow: var(--kit-rim), var(--kit-drop);
+}
+
+.entry-primary,
+.entry-secondary {
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), filter 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.entry-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.entry-primary:active:not(:disabled) {
+  transform: translateY(1px) scale(0.99);
+  filter: brightness(0.96);
+}
+
+.entry-secondary:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--color-gold) 36%, var(--color-film-border));
+}
+
+.entry-secondary:active:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.entry-actions button:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.entry-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+/* Solo play (VOF-44) takes the full row under the two room choices, until a wide screen has room for all three
+   side by side. */
+.entry-actions .entry-solo {
+  grid-column: 1 / -1;
+}
+
+/* HB-16: min-aspect-ratio keeps this three-across row for a wide canvas only. Without it, a
+   1080-wide host portrait canvas (taller than it is wide, but still past 1024px of raw width)
+   qualified too, squeezing three buttons into a column meant for a single stacked one. */
+@media (min-width: 1024px) and (min-aspect-ratio: 4 / 3) {
+  .entry-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .entry-actions .entry-solo {
+    grid-column: auto;
+  }
+}
+
+/* HB-16: the host portrait canvas (1080x1920) is far wider than a phone, so this is gated on
+   width, not just orientation. A real phone keeps its existing two-column layout. The block
+   floated mid-canvas with about 600px empty above and below. A full column of three taller
+   buttons and a wordmark scaled to the column both close most of that gap. */
+@media (orientation: portrait) and (min-width: 900px) {
+  .entry-actions {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 640px);
+    margin-inline: auto;
+  }
+
+  .entry-actions .entry-solo {
+    grid-column: auto;
+  }
+
+  .entry-actions button {
+    min-height: 88px;
+    font-size: 28px;
+  }
+
+  .entry-hero-art {
+    width: min(80%, 640px);
+  }
+}
+
+/* Setup */
+.presenter-setup-stage {
+  height: 100dvh !important;
+}
+
+.scaled-stage-container:has(:is(.preshow-lobby, .preshow-title, .preshow-instructions)) {
+  height: 100dvh !important;
+}
+
+.presenter-setup-stage .preflight-screen {
+  padding: 0 !important;
+}
+
+.setup-show-frame .show-safe {
+  inset: 0;
+  display: block;
+}
+
+/* One grid owns the whole ready screen. Every block claims a named area, so a block added later
+   lands in its own row instead of free-floating over the headings. The columns share the stage,
+   and the venue row plus the action rows take the height the title does not. */
+/* B2 (premium-host pass 2): during setup the stage always renders at the widescreen 1600x900
+   design canvas (PresentationSuite.tsx:70 pins stageFormat to "widescreen" for the whole setup
+   phase) no matter which game format the host has picked or what shape the real viewport is.
+   data-format on this screen names the chosen GAME format, not the canvas. A data-format-keyed
+   single-column branch (the first two attempts at HB-12/HB-13) was reshaping content for a
+   canvas that never actually changes shape: the interactive area measures full viewport WIDTH by
+   a fixed 900 design-unit HEIGHT at every real viewport (confirmed by a computed-state probe: at
+   1080x1920 and 1200x1200 the box is 1080x607.5 / 1200x675, both exactly width x (900 x scale),
+   i.e. still 16:9. Width is abundant, height is the fixed, scarce budget, so the one grid below
+   applies at every canvas, uses the width it already has (2 columns, venues 3-across) rather than
+   stacking into a narrow column that only demands more of the scarce height, and centers instead
+   of stretching so it settles in the middle of the 900-unit box instead of touching both edges. */
+.setup-compact {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas:
+    'title  title'
+    'venues venues'
+    'room   lobby'
+    'room   options'
+    'remote backup'
+    'live   live';
+  align-content: center;
+  gap: var(--kit-space-16) var(--kit-space-24);
+  padding: var(--kit-space-24) var(--kit-space-64) calc(var(--kit-floor-glow-h) + var(--kit-space-16));
+}
+
+.setup-title {
+  grid-area: title;
+  margin: 0 0 var(--kit-space-8);
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.setup-venues {
+  grid-area: venues;
+  display: flex;
+  flex-direction: column;
+  /* B2: an auto grid row cannot measure size through a flex descendant with min-height: 0 (it
+     collapses that contribution toward 0 instead of real content height). auto here lets
+     .setup-compact's auto row track measure this column's real height. */
+  min-height: auto;
+}
+
+.setup-venues h2 {
+  margin: var(--kit-space-8) 0 var(--kit-space-16);
+  color: var(--color-ink-muted);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.setup-venue-row {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--kit-space-24);
+  min-height: auto;
+}
+
+.setup-venue {
+  height: 100%;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-12);
+  padding: var(--kit-space-16) var(--kit-space-32);
+  text-align: left;
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: color-mix(in srgb, var(--color-accent-cobalt) 12%, var(--color-stage-deep));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  cursor: pointer;
+}
+
+.setup-venue.is-selected {
+  border: 2px solid var(--color-gold);
+  background-color: color-mix(in srgb, var(--color-gold) 8%, var(--color-panel-navy));
+  box-shadow: var(--kit-rim), 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-gold) 30%, transparent);
+}
+
+.setup-venue-name {
+  color: var(--color-ink);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.setup-venue.is-selected .setup-venue-name {
+  color: var(--color-gold);
+}
+
+.setup-venue:hover:not(.is-selected) {
+  border-color: color-mix(in srgb, var(--color-gold) 28%, var(--color-film-border));
+  background-color: color-mix(in srgb, var(--color-gold) 8%, var(--color-stage-deep));
+}
+
+.setup-venue:active {
+  filter: brightness(1.05);
+}
+
+.setup-venue:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.setup-venue-detail {
+  color: var(--color-ink-muted);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.setup-room-card {
+  grid-area: room;
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-24);
+  padding: var(--kit-space-24) var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: color-mix(in srgb, var(--color-accent-cobalt) 12%, var(--color-stage-deep));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.setup-room-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-8);
+}
+
+.setup-room-qr {
+  flex: none;
+  padding: var(--kit-space-8);
+  border: 0;
+  border-radius: var(--kit-space-16);
+  background-color: var(--color-light);
+}
+
+.setup-room-qr :is(img, svg, canvas) {
+  width: 128px;
+  height: 128px;
+}
+
+.setup-room-qr[data-qr-kind='audience'] {
+  box-shadow: none;
+}
+
+.setup-room-label {
+  color: var(--color-ink-dim);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.setup-room-code {
+  color: var(--color-ink);
+  font-family: var(--kit-font-mono);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.setup-room-card:not(:has(.setup-room-qr)) .setup-room-code {
+  font-size: 80px;
+}
+
+.setup-room-link {
+  overflow: hidden;
+  color: var(--color-ink-muted);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Copying the join link is the whole job on an online-meeting game, so it is a full-width gold
+   button under the code rather than the 16px outline text link it used to be. */
+.setup-copy-link-button,
+[data-role='setup-copy-link'] {
+  margin-top: var(--kit-space-4);
+  /* W6: --kit-touch-min's max(64px design, 44px/scale) picks the 64px design floor whenever it
+     already exceeds the scale-adjusted 44px figure, so at this canvas's ~0.675 scale the button
+     still rendered at 64 * 0.675 = 43.2 real px, under the 44px floor. A real-px target instead. */
+  min-height: calc(var(--kit-space-48) / var(--stage-scale, 1));
+  padding: var(--kit-space-12) var(--kit-space-24);
+  border: 2px solid var(--color-gold);
+  border-radius: var(--kit-space-12);
+  /* N8: the 16%-gold-mix-on-transparent background read as flat zinc against the room card's
+     navy glass. --color-backer matches the surface the rest of setup uses, and the gold border and
+     text still carry the accent. */
+  background-color: var(--color-backer);
+  color: var(--color-gold);
+  font-family: var(--kit-font-sans);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+[data-role='setup-copy-link'][data-copied='true'] {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-on-gold);
+}
+
+.setup-copy-link-button:hover,
+[data-role='setup-copy-link']:hover {
+  background-color: color-mix(in srgb, var(--color-gold) 28%, transparent);
+  border-color: var(--color-gold-light);
+}
+
+.setup-copy-link-button:active,
+[data-role='setup-copy-link']:active {
+  filter: brightness(0.96);
+}
+
+.setup-copy-link-button:focus-visible,
+[data-role='setup-copy-link']:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.setup-primary-actions {
+  display: contents;
+}
+
+.setup-open-lobby,
+.setup-more-options {
+  display: grid;
+  place-items: center;
+  border-radius: var(--kit-radius-card);
+  font-family: var(--kit-font-sans);
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.setup-open-lobby {
+  grid-area: lobby;
+  height: 100%;
+  min-height: 128px;
+  border: 0;
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-gold) 25%, transparent), var(--kit-drop-deep);
+  color: var(--color-on-gold);
+  font-size: 48px;
+}
+
+.setup-more-options {
+  grid-area: options;
+  height: 100%;
+  min-height: var(--kit-space-64);
+  padding: var(--kit-space-16) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  background-color: color-mix(in srgb, var(--color-accent-cobalt) 12%, var(--color-stage-deep));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-ink);
+  font-size: 40px;
+  box-sizing: border-box;
+}
+
+.setup-open-lobby,
+.setup-more-options {
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), filter 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.setup-open-lobby:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.setup-open-lobby:active {
+  transform: translateY(1px) scale(0.99);
+  filter: brightness(0.96);
+}
+
+.setup-more-options:hover {
+  border-color: color-mix(in srgb, var(--color-gold) 36%, var(--color-film-border));
+  background-color: color-mix(in srgb, var(--color-gold) 10%, var(--color-stage-deep));
+}
+
+.setup-more-options:active {
+  filter: brightness(1.05);
+}
+
+.setup-open-lobby:focus-visible,
+.setup-more-options:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.setup-live-line {
+  grid-area: live;
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-12);
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.setup-live-line strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.setup-live-dot {
+  --connection-color: var(--color-gold);
+  width: var(--kit-space-16);
+  height: var(--kit-space-16);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--connection-color);
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--connection-color) 25%, transparent);
+}
+
+.setup-live-line[data-live-status='connected'] .setup-live-dot { --connection-color: var(--color-vax); }
+.setup-live-line[data-live-status='offline'] .setup-live-dot { --connection-color: var(--color-ink-dim); }
+
+.setup-show-frame [hidden] {
+  display: none !important;
+}
+
+/* More options: one sheet on the ready screen's stage, in the lobby's glass. Picked choices glow gold and switches that are on glow teal, the game's color for live. */
+.setup-sheet,
+.setup-setups {
+  position: absolute;
+  inset: 0;
+}
+
+.setup-sheet .setup-title:focus:not(:focus-visible),
+.setup-setups .setup-title:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.setup-sheet > .setup-title,
+.setup-setups > .setup-title {
+  position: absolute;
+  top: var(--kit-space-64);
+  left: 96px;
+}
+
+.setup-sheet-actions {
+  position: absolute;
+  top: var(--kit-space-64);
+  right: 96px;
+  display: flex;
+  gap: var(--kit-space-16);
+}
+
+.setup-glass-button {
+  height: 80px;
+  min-height: var(--kit-touch-min);
+  min-width: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kit-space-12);
+  padding: 0 var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, filter 160ms ease;
+}
+
+.setup-glass-button:hover {
+  border-color: color-mix(in srgb, var(--color-gold) 36%, var(--color-film-border));
+  background-color: color-mix(in srgb, var(--color-gold) 10%, var(--color-backer));
+}
+
+.setup-glass-button:active:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.setup-glass-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+.setup-glass-button svg {
+  width: 32px;
+  height: 32px;
+  flex: none;
+}
+
+.setup-sheet-groups {
+  position: absolute;
+  left: 96px;
+  top: 184px;
+  width: 1408px;
+  height: 540px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--kit-space-24);
+}
+
+.setup-sheet-group {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding: var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-glass);
+  background-image: linear-gradient(var(--color-film), var(--color-film));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.setup-sheet-group h2 {
+  margin: 0 0 var(--kit-space-24);
+  color: var(--color-ink-dim);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.setup-sheet-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+}
+
+.setup-sheet-field + .setup-sheet-field {
+  margin-top: var(--kit-space-32);
+}
+
+.setup-sheet-legend {
+  color: var(--color-ink-muted);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.setup-sheet-tiles,
+.setup-sheet-shapes {
+  display: grid;
+  gap: var(--kit-space-12);
+}
+
+.setup-sheet-tiles {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Five question sets stay two columns so Curated 15 and Practice run stay one line (VOF-45, VOF-49). */
+.setup-sheet-group:has(.setup-sheet-tiles[data-count="5"]) {
+  padding: var(--kit-space-24);
+}
+
+.setup-sheet-group:has(.setup-sheet-tiles[data-count="5"]) h2 {
+  margin-bottom: var(--kit-space-16);
+}
+
+.setup-sheet-group:has(.setup-sheet-tiles[data-count="5"]) .setup-sheet-field + .setup-sheet-field {
+  margin-top: var(--kit-space-16);
+}
+
+.setup-sheet-group:has(.setup-sheet-tiles[data-count="5"]) .setup-sheet-choice {
+  height: max(72px, calc(44px / var(--stage-scale, 1)));
+}
+
+.setup-sheet-shapes {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* On a narrow stage the choices and the time field grow, so they never draw under 44px, like the buttons in index.css. */
+.setup-sheet-choice {
+  position: relative;
+  min-width: 0;
+  height: max(88px, calc(44px / var(--stage-scale, 1)));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-4);
+  padding: 0 var(--kit-space-16);
+  border: 2px solid transparent;
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-film);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.setup-sheet-choice input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.setup-sheet-choice:has(input:checked) {
+  border-color: var(--color-gold);
+  background-color: color-mix(in srgb, var(--color-gold) 12%, transparent);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--color-gold) 34%, transparent), inset 0 0 var(--kit-space-16) color-mix(in srgb, var(--color-gold) 14%, transparent);
+}
+
+.setup-sheet-choice:hover:not(:has(input:checked)) {
+  border-color: color-mix(in srgb, var(--color-gold) 40%, transparent);
+  background-color: color-mix(in srgb, var(--color-gold) 8%, transparent);
+}
+
+.setup-sheet-choice:active {
+  filter: brightness(1.05);
+}
+
+.setup-sheet-choice:has(input:focus-visible) {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.setup-sheet-choice-name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.setup-sheet-choice-meta {
+  color: var(--color-ink-dim);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.setup-sheet-choice:has(input:checked) .setup-sheet-choice-name,
+.setup-sheet-choice:has(input:checked) .setup-sheet-ratio {
+  color: var(--color-gold);
+}
+
+.setup-sheet-shapes .setup-sheet-choice {
+  align-items: center;
+  gap: var(--kit-space-8);
+  padding: 0 var(--kit-space-8);
+}
+
+.setup-sheet-shape {
+  display: block;
+  border: 3px solid var(--color-ink-dim);
+  border-radius: var(--kit-space-4);
+}
+
+/* Each glyph is drawn at its format's real ratio. A data attribute, not a built class name, so the stylesheet keeps the rule. */
+.setup-sheet-shape[data-shape='widescreen'] {
+  width: 48px;
+  height: 27px;
+}
+
+.setup-sheet-shape[data-shape='square'] {
+  width: 32px;
+  height: 32px;
+}
+
+.setup-sheet-shape[data-shape='portrait'] {
+  width: 20px;
+  height: 36px;
+}
+
+.setup-sheet-choice:has(input:checked) .setup-sheet-shape {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 var(--kit-space-12) color-mix(in srgb, var(--color-gold) 50%, transparent);
+}
+
+.setup-sheet-ratio {
+  font-family: var(--kit-font-mono);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.setup-sheet-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.setup-sheet-switch {
+  width: 100%;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-12) var(--kit-space-4);
+  border: 0;
+  border-top: 1px solid var(--color-film-border);
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  text-align: left;
+  cursor: pointer;
+}
+
+.setup-sheet-switch:first-child {
+  border-top: 0;
+}
+
+.setup-sheet-switch:hover {
+  background-color: var(--color-film);
+}
+
+.setup-sheet-switch:active {
+  filter: brightness(1.04);
+}
+
+.setup-sheet-switch-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-4);
+}
+
+.setup-sheet-switch-label {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.setup-sheet-switch-hint {
+  color: var(--color-ink-dim);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.setup-sheet-track {
+  position: relative;
+  flex: none;
+  width: 80px;
+  height: 48px;
+  border: 1px solid color-mix(in srgb, var(--color-light) 18%, transparent);
+  border-radius: var(--kit-radius-full);
+  background-color: color-mix(in srgb, var(--color-light) 8%, transparent);
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.setup-sheet-track::after {
+  content: "";
+  position: absolute;
+  top: var(--kit-space-4);
+  left: var(--kit-space-4);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-ink-dim);
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.setup-sheet-switch[aria-checked='true'] .setup-sheet-track {
+  border-color: transparent;
+  background-color: var(--color-vax);
+  box-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-vax) 55%, transparent), inset 0 1px 0 color-mix(in srgb, var(--color-light) 35%, transparent);
+}
+
+.setup-sheet-switch[aria-checked='true'] .setup-sheet-track::after {
+  transform: translateX(var(--kit-space-32));
+  background-color: var(--color-light);
+}
+
+.setup-sheet-switch:focus-visible,
+.setup-glass-button:focus-visible,
+.setup-sheet-lobby:focus-visible,
+.setup-sheet-time input:focus-visible {
+  outline: var(--kit-space-4) solid var(--color-ink);
+  outline-offset: var(--kit-space-4);
+}
+
+.setup-sheet-time {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+  margin-top: var(--kit-space-8);
+  padding: var(--kit-space-4) var(--kit-space-16);
+  border: 1px solid color-mix(in srgb, var(--color-vax) 36%, transparent);
+  border-radius: var(--kit-radius-16);
+  background-color: color-mix(in srgb, var(--color-vax) 10%, transparent);
+}
+
+.setup-sheet-time label {
+  color: var(--color-ink-muted);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.setup-sheet-time input {
+  width: 232px;
+  height: max(72px, calc(44px / var(--stage-scale, 1)));
+  padding: 0 var(--kit-space-12);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-12);
+  background-color: var(--color-backer);
+  color: var(--color-ink);
+  color-scheme: dark;
+  font-family: var(--kit-font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.setup-sheet-quiet {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-16);
+  padding: 0 var(--kit-space-8) var(--kit-space-24);
+}
+
+.setup-sheet-quiet svg {
+  width: 64px;
+  height: 64px;
+  color: var(--color-ink-dim);
+}
+
+.setup-sheet-quiet strong {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.setup-sheet-quiet p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.setup-sheet-footer {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  top: 756px;
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-24);
+}
+
+.setup-sheet-footer .setup-live-line {
+  position: static;
+}
+
+.setup-sheet-footer-end {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-24);
+}
+
+.setup-sheet-notice {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.setup-sheet-notice svg {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  color: var(--color-gold);
+  filter: drop-shadow(0 0 var(--kit-space-8) color-mix(in srgb, var(--color-gold) 60%, transparent));
+}
+
+.setup-sheet-lobby {
+  height: 96px;
+  padding: 0 var(--kit-space-48);
+  border: 0;
+  border-radius: var(--kit-radius-card);
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-gold) 25%, transparent), 0 0 var(--kit-space-48) color-mix(in srgb, var(--color-gold) 22%, transparent), var(--kit-drop-deep);
+  color: var(--color-on-gold);
+  font-family: var(--kit-font-sans);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: filter 160ms ease;
+}
+
+.setup-sheet-lobby:hover {
+  filter: brightness(1.06);
+}
+
+.setup-sheet-lobby:active {
+  filter: brightness(0.96);
+}
+
+.setup-setups-intro {
+  position: absolute;
+  left: 96px;
+  top: 160px;
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Two equal rows sized to their content, then the note, so taller buttons on a narrow stage never push a card into the note. */
+.setup-setups-grid {
+  position: absolute;
+  left: 96px;
+  top: 232px;
+  width: 1408px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 1fr) auto;
+  /* H4: three cards plus the note ran past the 900px canonical stage bottom, worst at a narrow
+     scale (768x1024, where --kit-touch-min's scale compensation, tokens.css:129, grows the "Use
+     this"/"Use again" button past the card's own two-line chip wrap and becomes the tallest thing
+     in the row). Tighten only the row gap (column gap and every card's horizontal padding are
+     untouched, so text and chip wrapping do not shift). */
+  row-gap: var(--kit-space-8);
+  column-gap: var(--kit-space-24);
+}
+
+/* Five cards keep two rows plus the note, so Quick setups still fits the stage. */
+.setup-setups-grid[data-count="5"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.setup-setups-grid[data-count="5"] .setup-setup {
+  padding: var(--kit-space-24);
+}
+
+.setup-setups-grid[data-count="5"] .setup-setup h2 {
+  font-size: 32px;
+}
+
+.setup-setup {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+  /* H4: vertical padding only, so the card's horizontal width (and its chip/description
+     wrapping) is byte-identical to before. See the row-gap comment on .setup-setups-grid. */
+  padding-block: var(--kit-space-16);
+  padding-inline: var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-glass);
+  background-image: linear-gradient(var(--color-film), var(--color-film));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.setup-setup[data-active='true'] {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 var(--kit-space-32) color-mix(in srgb, var(--color-gold) 30%, transparent), var(--kit-rim), var(--kit-drop-deep);
+}
+
+.setup-setup-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-24);
+}
+
+.setup-setup h2 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.setup-setup[data-active='true'] h2 {
+  color: var(--color-gold);
+}
+
+.setup-setup-use {
+  min-width: 176px;
+  font-size: 30px;
+}
+
+.setup-setup p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 26px;
+  line-height: 1.35;
+}
+
+.setup-setup ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--kit-space-8);
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.setup-setup li {
+  padding: var(--kit-space-4) var(--kit-space-12);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-film);
+  color: var(--color-ink-muted);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.setup-setups-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--color-ink-dim);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .setup-sheet-choice,
+  .setup-sheet-track,
+  .setup-sheet-track::after,
+  .setup-glass-button,
+  .setup-sheet-lobby,
+  .setup-venue,
+  .setup-open-lobby,
+  .setup-more-options,
+  .entry-primary,
+  .entry-secondary,
+  .entry-audio-toggle {
+    transition: none;
+  }
+}
+
+/* Lobby and title layout live in styles/preshow-stage.css: those two surfaces are grids, not
+   absolute stage maps. Only the instructions plate still uses a full-bleed safe area here. */
+.preshow-instructions .show-safe {
+  inset: 0;
+  display: block;
+}
+
+.now-playing-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 40px;
+  opacity: 0.95;
+  margin-bottom: 8px;
+}
+
+.lobby-meter-bar {
+  width: 8px;
+  height: 18px;
+  border-radius: 999px;
+  background-color: var(--color-gold);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--color-gold) 55%, transparent);
+  transform-origin: bottom;
+}
+
+.lobby-meter-bar:nth-child(2) { height: 36px; }
+.lobby-meter-bar:nth-child(3) { height: 28px; }
+.lobby-meter-bar:nth-child(4) { height: 22px; }
+.lobby-live-pulse { display: none; }
+
+.lobby-open-stage,
+.opening-screen-action {
+  position: absolute;
+  z-index: 8;
+  right: var(--kit-space-24);
+  /* H6 (regression found while restoring the HUD's pointer-events, see hud.css): this trigger is
+     position:absolute, so it never sat inside .lobby-stage/.preshow-title's own padding-bottom
+     (that padding only clears normal-flow content, preshow-stage.css:394-406). At a compact host
+     width the persistent HUD bar overlaps this corner, and it was only a mouse-safe click target
+     because the HUD was silently unclickable. A keyboard user (the trigger's own opacity:0.001
+     un-hides only on focus) was never affected. Reuse the same --preshow-hud-clearance the
+     surrounding screen already publishes (preshow-stage.css:16-24) instead of a flat 24px. */
+  bottom: max(var(--kit-space-24), var(--preshow-hud-clearance, 0px));
+  min-width: 176px;
+  min-height: var(--kit-touch-min);
+  padding: var(--kit-space-12) var(--kit-space-24);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--kit-space-12);
+  background-color: var(--color-panel-navy);
+  color: var(--color-gold);
+  font-family: var(--kit-font-sans);
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.001;
+  cursor: pointer;
+  transition: opacity 160ms var(--kit-ease);
+}
+
+.lobby-open-stage:focus-visible,
+.opening-screen-action:focus-visible {
+  opacity: 1;
+}
+
+.lobby-open-stage:active:not(:disabled),
+.opening-screen-action:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+@media (max-width: 600px) {
+  .presenter-setup-stage {
+    display: block !important;
+    overflow: auto !important;
+  }
+
+  .presenter-setup-stage > div:not(.sr-only) {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .presenter-setup-stage .scaled-stage-content {
+    --stage-scale: 1 !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100dvh;
+    transform: none !important;
+  }
+
+  .presenter-setup-stage .screen-router-root,
+  .presenter-setup-stage .screen-router-viewport {
+    position: relative !important;
+    height: auto !important;
+    min-height: 100dvh;
+    overflow: visible !important;
+  }
+
+  .presenter-setup-stage .setup-show-frame {
+    position: relative;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .presenter-setup-stage .setup-show-frame .show-safe {
+    position: relative;
+    inset: auto;
+  }
+
+  .presenter-setup-stage .preflight-screen {
+    height: auto !important;
+    min-height: 100dvh !important;
+    overflow: visible !important;
+  }
+
+  .presenter-setup-stage .setup-compact {
+    position: relative;
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    gap: var(--kit-space-16);
+    padding: var(--kit-space-24) var(--kit-space-16);
+  }
+
+  .presenter-setup-stage .setup-title,
+  .presenter-setup-stage .setup-venues,
+  .presenter-setup-stage .setup-room-card,
+  .presenter-setup-stage .setup-presenter-remote,
+  .presenter-setup-stage .setup-offline-backup,
+  .presenter-setup-stage .setup-open-lobby,
+  .presenter-setup-stage .setup-more-options,
+  .presenter-setup-stage .setup-live-line {
+    position: static;
+    width: 100%;
+  }
+
+  .presenter-setup-stage .setup-title {
+    font-size: 28px;
+  }
+
+  .presenter-setup-stage .setup-venues h2 {
+    margin-bottom: var(--kit-space-12);
+    font-size: 18px;
+  }
+
+  .presenter-setup-stage .setup-venue-row {
+    grid-template-columns: 1fr;
+    gap: var(--kit-space-8);
+  }
+
+  .presenter-setup-stage .setup-open-lobby,
+  .presenter-setup-stage .setup-more-options,
+  .presenter-setup-stage .setup-venue {
+    height: auto;
+  }
+
+  .presenter-setup-stage .setup-facilitator-lead { text-wrap: wrap; }
+  .presenter-setup-stage .setup-facilitator-title { font-size: 28px; }
+  .presenter-setup-stage .setup-facilitator-lead,
+  .presenter-setup-stage .setup-facilitator-steps li { font-size: 16px; }
+  .presenter-setup-stage .setup-facilitator-badge,
+  .presenter-setup-stage .setup-facilitator-kicker { font-size: 16px; }
+
+  .presenter-setup-stage .setup-venue {
+    min-height: 96px !important;
+    justify-content: flex-start;
+    gap: var(--kit-space-8);
+    padding: var(--kit-space-16) var(--kit-space-12);
+    border-radius: var(--kit-space-16);
+  }
+
+  .presenter-setup-stage .setup-venue-name {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .presenter-setup-stage .setup-venue-detail {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .presenter-setup-stage .setup-room-card {
+    height: auto;
+    flex-wrap: wrap;
+    padding: var(--kit-space-16);
+  }
+
+  .presenter-setup-stage .setup-room-label,
+  .presenter-setup-stage .setup-room-link {
+    font-size: 16px;
+  }
+
+  .presenter-setup-stage .setup-room-link {
+    overflow: visible;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .presenter-setup-stage .setup-room-card > .setup-room-copy {
+    display: grid;
+    flex: 1;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "label action" "code action" "host action";
+    gap: var(--kit-space-4) var(--kit-space-16);
+    align-items: center;
+  }
+
+  .presenter-setup-stage .setup-room-label { grid-area: label; font-size: 14px; }
+  .presenter-setup-stage .setup-room-code { grid-area: code; font-size: 56px !important; letter-spacing: 0.08em; }
+  .presenter-setup-stage .setup-room-link { grid-area: host; font-size: 14px; }
+  .presenter-setup-stage [data-role='setup-copy-link'] { grid-area: action; align-self: center !important; }
+  .presenter-setup-stage .setup-room-qr { margin: auto; }
+  .presenter-setup-stage .setup-room-qr :is(img, svg, canvas) { width: 112px; height: 112px; }
+  .presenter-setup-stage .setup-room-card:has(.setup-room-qr) > .setup-room-copy {
+    display: flex;
+    align-items: flex-start;
+    min-width: 144px;
+  }
+
+  .presenter-setup-stage .setup-open-lobby,
+  .presenter-setup-stage .setup-more-options {
+    height: 48px;
+    font-size: 18px;
+    border-radius: var(--kit-space-16);
+  }
+
+  .presenter-setup-stage .setup-primary-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--kit-space-12);
+  }
+
+  .presenter-setup-stage .setup-live-line {
+    flex-wrap: wrap;
+    gap: var(--kit-space-8);
+    font-size: 14px;
+  }
+
+  .presenter-setup-stage .setup-sheet,
+  .presenter-setup-stage .setup-setups {
+    position: relative;
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    gap: var(--kit-space-16);
+    padding: var(--kit-space-24) var(--kit-space-16);
+  }
+
+  .presenter-setup-stage :is(.setup-sheet-actions, .setup-sheet-groups, .setup-sheet-footer, .setup-setups-intro, .setup-setups-grid, .setup-setups-note) {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .presenter-setup-stage .setup-sheet-actions {
+    flex-wrap: wrap;
+  }
+
+  .presenter-setup-stage .setup-sheet-groups,
+  .presenter-setup-stage .setup-setups-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    gap: var(--kit-space-12);
+  }
+
+  .presenter-setup-stage .setup-sheet-group,
+  .presenter-setup-stage .setup-setup {
+    padding: var(--kit-space-16);
+    border-radius: var(--kit-radius-16);
+  }
+
+  .presenter-setup-stage .setup-sheet-group h2 {
+    margin-bottom: var(--kit-space-8);
+    font-size: 16px;
+  }
+
+  .presenter-setup-stage .setup-sheet-field + .setup-sheet-field {
+    margin-top: var(--kit-space-16);
+  }
+
+  .presenter-setup-stage .setup-sheet-legend,
+  .presenter-setup-stage .setup-sheet-choice-meta,
+  .presenter-setup-stage .setup-sheet-ratio,
+  .presenter-setup-stage .setup-sheet-switch-hint,
+  .presenter-setup-stage .setup-sheet-quiet p,
+  .presenter-setup-stage .setup-sheet-notice,
+  .presenter-setup-stage .setup-setup p,
+  .presenter-setup-stage .setup-setup li,
+  .presenter-setup-stage .setup-setups-note {
+    font-size: 14px;
+  }
+
+  .presenter-setup-stage .setup-sheet-choice-name,
+  .presenter-setup-stage .setup-sheet-switch-label,
+  .presenter-setup-stage .setup-sheet-time label,
+  .presenter-setup-stage .setup-setups-intro,
+  .presenter-setup-stage .setup-glass-button {
+    font-size: 16px;
+  }
+
+  .presenter-setup-stage .setup-sheet-choice {
+    height: auto;
+    min-height: 48px;
+    padding: var(--kit-space-8) var(--kit-space-12);
+  }
+
+  .presenter-setup-stage .setup-sheet-switch {
+    min-height: 48px;
+    padding: var(--kit-space-8) 0;
+  }
+
+  .presenter-setup-stage .setup-sheet-track {
+    width: 56px;
+    height: 32px;
+  }
+
+  .presenter-setup-stage .setup-sheet-track::after {
+    width: 22px;
+    height: 22px;
+  }
+
+  .presenter-setup-stage .setup-sheet-switch[aria-checked='true'] .setup-sheet-track::after {
+    transform: translateX(var(--kit-space-24));
+  }
+
+  .presenter-setup-stage .setup-sheet-time {
+    min-height: 48px;
+  }
+
+  .presenter-setup-stage .setup-sheet-time input {
+    width: 152px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .presenter-setup-stage .setup-sheet-quiet {
+    padding: var(--kit-space-8) 0;
+  }
+
+  .presenter-setup-stage .setup-sheet-quiet svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .presenter-setup-stage .setup-sheet-quiet strong {
+    font-size: 18px;
+  }
+
+  .presenter-setup-stage .setup-glass-button {
+    height: 48px;
+    min-width: 0;
+    padding: 0 var(--kit-space-16);
+    border-radius: var(--kit-radius-16);
+  }
+
+  .presenter-setup-stage .setup-glass-button svg,
+  .presenter-setup-stage .setup-sheet-notice svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .presenter-setup-stage .setup-sheet-footer,
+  .presenter-setup-stage .setup-sheet-footer-end {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--kit-space-12);
+  }
+
+  .presenter-setup-stage .setup-sheet-lobby {
+    height: 48px;
+    padding: 0 var(--kit-space-16);
+    border-radius: var(--kit-radius-16);
+    font-size: 18px;
+  }
+
+  .presenter-setup-stage .setup-setup-head {
+    flex-wrap: wrap;
+    gap: var(--kit-space-8);
+  }
+
+  .presenter-setup-stage .setup-setup h2 {
+    font-size: 20px;
+  }
+
+  .presenter-setup-stage .setup-setup-use {
+    min-width: 0;
+  }
+
+  .entry-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--kit-space-32);
+    height: auto;
+    min-height: 100dvh;
+    padding: var(--kit-space-32) var(--kit-space-24);
+    overflow: auto;
+  }
+
+  .entry-hero-art {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    transform: none;
+    font-size: clamp(88px, 27vw, 112px);
+  }
+
+  .entry-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    transform: none;
+  }
+
+  .entry-kicker {
+    margin: 0 auto var(--kit-space-8);
+    font-size: 16px;
+    letter-spacing: 0.06em;
+  }
+
+  .entry-orientation {
+    max-width: 25ch;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .entry-actions {
+    grid-template-columns: 1fr;
+    gap: var(--kit-space-12);
+    margin-top: var(--kit-space-32);
+  }
+
+  .entry-actions button {
+    min-height: var(--kit-space-48);
+    padding: var(--kit-space-12) var(--kit-space-16);
+    border-radius: var(--kit-space-16);
+    font-size: 18px;
+  }
+
+  /* Join's gold ring sits inside the gap, so it gets the ring's width back and the three buttons read evenly spaced. */
+  .entry-actions .entry-primary {
+    margin-bottom: var(--kit-space-4);
+  }
+}

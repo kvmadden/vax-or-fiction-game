@@ -1,0 +1,212 @@
+{
+  "flagship:q17": {
+    "bankId": "flagship:q17",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "544a018dd2f6605015d3b54d19a77bc15012bce5e94263d0fd6a3503867204e3",
+    "status": "live",
+    "subject": "public-health",
+    "rotation": "alternate",
+    "conceptId": "publichealth-vaccine-history",
+    "tags": [
+      "history"
+    ],
+    "vaccines": [
+      "smallpox"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Agreed. One history detail, that the first vaccine came decades before germ theory, which many place the other way round.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs to place Jenner's 1796 smallpox vaccine before germ theory in the late 1800s, a history fact many lack.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "History detail: Jenner's smallpox vaccine (1796) came decades before germ theory. Many link vaccines to Pasteur.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "Agreed. One history detail, that the first vaccine came decades before germ theory, which many place the other way round.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "who-smallpox-history",
+        "nlm-germ-theory-history"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "flagship:q20": {
+    "bankId": "flagship:q20",
+    "copies": [
+      "flagship-r2:q20"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "baa3f2ecbd653f0c2b006fa52485301225cc9945f8f8cbe85fce0c10c421ca3d",
+    "status": "live",
+    "subject": "public-health",
+    "rotation": "core",
+    "conceptId": "publichealth-vaccine-broad-benefits",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. A broad, hedged claim that vaccines help prevent infections, some cancers and heart complications. Few would doubt it.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "A broad, hedged claim that vaccines help prevent infections, some cancers and heart complications. Few would doubt it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "A broad hedged claim (can help, some cancers) that is nearly impossible to call false.",
+          "sure": true,
+          "flags": [
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "who-hepatitis-b",
+        "cdc-hpv-cancers",
+        "cdc-flu-heart-disease"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "gives-itself-away"
+    ]
+  },
+  "season-2:q7": {
+    "bankId": "season-2:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "dd64d8bfac779387d65a935e33996e3e272049d8061af93a27f5db9183a93050",
+    "status": "live",
+    "subject": "public-health",
+    "rotation": "core",
+    "conceptId": "publichealth-smallpox-eradication",
+    "tags": [
+      "history"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows smallpox was eradicated by vaccination and declared gone in 1980, a widely cited milestone.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows smallpox was eradicated by vaccination and declared gone in 1980, a widely cited milestone.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Smallpox eradication by vaccination is widely known history, and 1980 is the commonly taught date.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "who-smallpox-history"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  }
+}

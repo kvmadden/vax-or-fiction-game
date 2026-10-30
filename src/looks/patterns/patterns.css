@@ -1,0 +1,108 @@
+/* Topic patterns (VOF-94).
+   The layer sits behind every word: on the stage it is the second layer of the stage atmosphere, over the look's
+   set or picture and under the scrims, the lights and the cones. On the phone it sits in the backdrop, over the
+   backdrop's own scrim and under every screen. It is one engraved tile, used as a mask, drawn in one ink at one
+   strength for the whole layer, so overlapping lines never stack darker, and a calm hold eases it through the middle
+   of the canvas, where the stem and the answers sit, so it reads as texture first and topic second. Every color is
+   a token. Nothing here runs an endless animation. This file loads with the layer, never with the page. */
+
+.topic-pattern {
+  /* The ink, the layer's strength and the calm hold through the middle (1 is no hold). A look tints the ink below.
+     The strength is the owner's pick of 2026-10-01: 22 percent ink, twice the first build's 11. */
+  --pattern-ink: var(--color-ink);
+  --pattern-alpha: 0.22;
+  --pattern-calm: 0.55;
+  /* The header band holds the kicker row, whose words stand straight on the stage with no plate. The pattern is held to
+     this share of its strength across the band and eases back to full below it. */
+  --pattern-header: 0.2;
+  /* One tile across 37.5 percent of the stage's width, which is 600px of the 1600 by 900 stage canvas (720 on a 1920 by
+     1080 screen), and the same share of the canvas on the square and portrait ones. The surface can change it, and each
+     family scales it (families.ts) to even out how busy they look. */
+  --pattern-tile-size: min(37.5cqw, 66.67cqh);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  /* The layer is its own size container, so the tile sizes itself to the stage or the phone it sits on. */
+  container-type: size;
+  -webkit-mask-image: radial-gradient(ellipse 72% 66% at 50% 50%, color-mix(in srgb, var(--color-void) calc(var(--pattern-calm) * 100%), transparent) 0%, color-mix(in srgb, var(--color-void) calc(var(--pattern-calm) * 100%), transparent) 42%, var(--color-void) 100%);
+  mask-image: radial-gradient(ellipse 72% 66% at 50% 50%, color-mix(in srgb, var(--color-void) calc(var(--pattern-calm) * 100%), transparent) 0%, color-mix(in srgb, var(--color-void) calc(var(--pattern-calm) * 100%), transparent) 42%, var(--color-void) 100%);
+}
+
+/* The hold under the header band, a mask of its own so it multiplies with the layer's calm hold above it. */
+.topic-pattern__hold {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(180deg, color-mix(in srgb, var(--color-void) calc(var(--pattern-header) * 100%), transparent) 0%, color-mix(in srgb, var(--color-void) calc(var(--pattern-header) * 100%), transparent) 14%, var(--color-void) 30%);
+  mask-image: linear-gradient(180deg, color-mix(in srgb, var(--color-void) calc(var(--pattern-header) * 100%), transparent) 0%, color-mix(in srgb, var(--color-void) calc(var(--pattern-header) * 100%), transparent) 14%, var(--color-void) 30%);
+}
+
+/* The engraved tile is a mask: its ink takes the layer's colour, so the tile itself carries no colour. */
+.topic-pattern__tile {
+  --pattern-size: calc(var(--pattern-tile-size) * var(--pattern-scale, 1));
+  position: absolute;
+  inset: -24%;
+  /* The ink is a colour, never currentColor. The contrast meter forces every element's text colour to white, black and
+     transparent to find the words, and an ink that followed it would vanish from the shot that reads the background. */
+  background-color: var(--pattern-ink);
+  -webkit-mask-image: var(--pattern-tile);
+  mask-image: var(--pattern-tile);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: var(--pattern-size) var(--pattern-size);
+  mask-size: var(--pattern-size) var(--pattern-size);
+  transform: rotate(-4deg);
+  opacity: var(--pattern-alpha);
+}
+
+/* ---- Each look tints the ink --------------------------------------------------------------------------
+   Today keeps the text white the owner chose the strength on. The drawn looks tint it to their own palette so the
+   engraving reads as part of the set: cool cobalt light on the studio's navy wall, the cream of the case file's paper
+   on its desk, and the 70s gold-cream on its navy. Only the colour changes here, never the strength. */
+:root[data-look="studio"] .topic-pattern {
+  --pattern-ink: color-mix(in srgb, var(--color-accent-cobalt) 45%, var(--color-light));
+}
+
+:root[data-look="casefile"] .topic-pattern {
+  --pattern-ink: color-mix(in srgb, var(--color-gold) 22%, var(--color-light));
+}
+
+:root[data-look="seventies"] .topic-pattern {
+  --pattern-ink: color-mix(in srgb, var(--color-gold) 40%, var(--color-light));
+}
+
+/* ---- The phone ---------------------------------------------------------------------------------------
+   Over the backdrop's scrim (its ::after), so the scrim does not bury it. A tile is about three quarters of the
+   phone's width. */
+.phone-backdrop > .topic-pattern {
+  z-index: 1;
+  --pattern-calm: 0.6;
+  --pattern-tile-size: 77cqw;
+  /* A phone draws softer than the big screen, and each look at its own measured strength. The phone's words are small and run the
+     whole screen, and the reveal's smallest (SCORE, RANK, YOUR ANSWER) stand on the dimmest grey the show uses, so the owner's 22
+     percent takes them under the 4.5 they need (4.13 in Today). Each value is the strongest step, with a clear margin, at which every
+     word of every family holds AA on a 390 by 844 phone and on a 430 by 932 phone. The smallest labels then read as low as 4.83 in
+     Today, 5.11 in the Studio set, 4.74 in the 70s game show and 4.64 in Case file. A look whose phone backdrop leaves them less to
+     spare gets less of the pattern: at 16 percent the 70s reads 4.40 and Case file 3.74. */
+  --pattern-alpha: 0.16;
+}
+
+:root[data-look="seventies"] .phone-backdrop > .topic-pattern {
+  --pattern-alpha: 0.12;
+}
+
+:root[data-look="casefile"] .phone-backdrop > .topic-pattern {
+  --pattern-alpha: 0.07;
+}
+
+/* With reduced motion the layer arrives and leaves with no fade (TopicPattern.tsx plays none), so a layer that is leaving is simply gone. */
+@media (prefers-reduced-motion: reduce) {
+  .topic-pattern[data-leaving] { display: none; }
+}
+
+/* A viewer who asks for less transparency gets a solid background, the way the looks turn their see-through plates solid, so
+   no word stands on a see-through layer. The pattern is that layer, so it is not drawn. Forced colours drop it for the same
+   reason: it is decoration, and a mask would paint in a system colour. */
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+  .topic-pattern { display: none; }
+}

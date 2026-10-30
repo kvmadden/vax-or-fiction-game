@@ -1,0 +1,1348 @@
+{
+  "flagship:q14": {
+    "bankId": "flagship:q14",
+    "copies": [
+      "flagship-r2:q14"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "ca4f0162c301cc7666bf9efe079fa852235a5f1dbb7103c7fa489e974d2bba95",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "alternate",
+    "conceptId": "flu-egg-allergy",
+    "tags": [
+      "contraindication",
+      "misconception"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows egg allergy no longer rules out any flu vaccine, a changed rule some staff still apply.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows egg allergy no longer rules out any flu vaccine, a changed rule some staff still apply.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard rule: egg allergy does not rule out an egg-based flu vaccine, though the belief persists among staff and public.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-egg-allergies"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "influenza:q1": {
+    "bankId": "influenza:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "fea952309a9c024f4d67b56cd41db79e93b78423b4b85c355faf590859ae970b",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-universal-recommendation",
+    "tags": [
+      "eligibility",
+      "contraindication"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows annual flu vaccination is recommended for everyone 6 months and older, the most basic flu fact.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows annual flu vaccination is recommended for everyone 6 months and older, the most basic flu fact.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Annual flu vaccination for everyone 6 months and older is widely known across pharmacy teams.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "influenza:q2": {
+    "bankId": "influenza:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "f8f9ec03edb10e5fa6589f8e3f769d0eda9b7c2d610f0239102bf346a70fbe77",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-senior-vaccine-choice",
+    "tags": [
+      "eligibility",
+      "schedule",
+      "product"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Agreed. Pharmacy teams give a preferred product to everyone 65 plus every flu season, a fact the room meets weekly in season.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows high-dose, recombinant or adjuvanted flu vaccine is preferred at 65+, a routine pharmacy fact.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Pharmacy teams give high-dose, recombinant or adjuvanted flu vaccine to people 65 plus every season.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Agreed. Pharmacy teams give a preferred product to everyone 65 plus every flu season, a fact the room meets weekly in season.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-older-adults"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "influenza:q3": {
+    "bankId": "influenza:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "e229f79b4a876ea784df73f83329a65e32a851b9268d42f6e18de4d91accf01c",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "alternate",
+    "conceptId": "flu-egg-allergy",
+    "tags": [
+      "precaution",
+      "safety"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Exclusively under prolonged inpatient observation is extreme wording no guidance uses, so it gives itself away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Exclusively under prolonged inpatient observation is extreme wording no guidance uses, so it gives itself away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "No guidance requires prolonged inpatient observation for a vaccine, so the extreme wording gives it away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-egg-allergy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "influenza:q4": {
+    "bankId": "influenza:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "b4c3348e164436903b5284ecc92c41bb5016ae547be2906a6919ed9934fd2a9e",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "alternate",
+    "conceptId": "flu-inactivated-vaccine-safety",
+    "tags": [
+      "misconception",
+      "safety"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. The easy idea that a flu shot cannot give you flu, dressed in clinical words.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "The easy idea that a flu shot cannot give you flu, dressed in clinical words.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "The familiar idea that a flu shot cannot give you flu, dressed in clinical words.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-flu"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "influenza:q5": {
+    "bankId": "influenza:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "1b9d28ef6e605f0140e9309412e7a82a6d2dd389c85fede03ff28f551f99949c",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "alternate",
+    "conceptId": "flu-vaccination-timing",
+    "tags": [
+      "effectiveness",
+      "coverage"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows September and October are the ideal flu vaccination months, a routine timing fact.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows September and October are the ideal flu vaccination months, a routine timing fact.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Fall flu vaccination, ideally September or October, is widely known across pharmacy teams.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "influenza:q6": {
+    "bankId": "influenza:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "6ada08cb1ecaeea23522cd27db0cfab9bc0ba4e7dcb458d4295d019090515bdf",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "alternate",
+    "conceptId": "flu-vaccine-cardiac-protection",
+    "tags": [
+      "safety",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. Flu vaccination and fewer heart attacks is a common talking point that not all staff know. Scope doubt is a defect note.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows flu vaccination is linked to fewer heart attacks. Myocardial infarction is jargon.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know flu vaccination lowers heart attack risk, a common flu talking point that not all staff know.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. Flu vaccination and fewer heart attacks is a common talking point that not all staff know. Scope doubt is a defect note.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "influenza:q7": {
+    "bankId": "influenza:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "9643256cfa03ed7845ac102d85d5af6a28c2339917f69d172dbb0736b879c67f",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "alternate",
+    "conceptId": "flu-mild-illness-no-delay",
+    "tags": [
+      "precaution"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows a mild cold without fever does not delay a flu shot. Afebrile and nasal discharge are jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows a mild cold without fever does not delay a flu shot. Afebrile and nasal discharge are jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "A mild cold without fever is no reason to delay a flu shot. Until all symptoms clear overstates it.",
+          "sure": true,
+          "flags": [
+            "jargon",
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-flu"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "seasonal",
+      "reviewBy": "2027-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon",
+      "extreme-words"
+    ]
+  },
+  "influenza:q8": {
+    "bankId": "influenza:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "d70702fb8aeaae44df54e33c33f46999fbb866f892629802f36361049a66828a",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "alternate",
+    "conceptId": "flu-antiviral-vs-vaccine",
+    "tags": [
+      "misconception",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows antivirals treat flu but do not replace vaccination, an obvious point for pharmacy staff.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows antivirals treat flu but do not replace vaccination, an obvious point for pharmacy staff.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Antivirals treat illness and do not replace a flu shot, a myth pharmacy staff reject.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "season-2:q11": {
+    "bankId": "season-2:q11",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "c4814b370f448701fbf2b0c3824bb4c7a94f3b908a719b45e241d7e1db1f830d",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-vaccine-cardiac-protection",
+    "tags": [
+      "burden",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "chronic-conditions"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. Flu shots lowering cardiac events in heart disease is a common talking point, not universal knowledge.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows flu vaccination lowers cardiac events in people with heart disease, a growing but not universal talking point.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know flu vaccination lowers cardiac events in heart disease, common in talking points but not universal knowledge.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. Flu shots lowering cardiac events in heart disease is a common talking point, not universal knowledge.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-cardiovascular"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q2": {
+    "bankId": "season-2:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "238b79a465c89be00a180ba462b9ea2d3aad512b8eba6b574e18ec7a19cf4beb",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-postvaccination-symptoms-not-illness",
+    "tags": [
+      "misconception",
+      "side-effects"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Spots the familiar myth that aches or fever after a flu shot mean a case of flu.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Spots the familiar myth that aches or fever after a flu shot mean a case of flu.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Classic myth staff reject: aches after a flu shot are an immune response, not flu.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-misconceptions"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q18": {
+    "bankId": "vax-or-fiction:q18",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "9e03c63b81adb1e157d39f4ddedebab591a0a5cec5a5d86e173bf277d5f8f6c5",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-egg-allergy",
+    "tags": [
+      "safety",
+      "misconception"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Agreed. One recent detail, no extra step even after a severe egg reaction, that some staff still misremember.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the 2023 change that even a severe egg reaction needs no extra flu-vaccine step. Many still recall the old precaution.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One recent detail: since 2023-24 even a severe egg reaction needs no extra flu-vaccine step. Many recall the old setting rule.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "Agreed. One recent detail, no extra step even after a severe egg reaction, that some staff still misremember.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "t-egg"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q19": {
+    "bankId": "vax-or-fiction:q19",
+    "copies": [],
+    "kind": "estimate",
+    "textVersion": 1,
+    "textHash": "b8ce3788d19b5e6fc3d97b4788a38d2419681e0bc00951ab051b86d0c24c11d1",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-coverage-rate",
+    "tags": [
+      "coverage"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "estimation",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. Estimate. Four in ten sits in the middle range, but the common about-half idea pulls some higher.",
+      "provisional": true,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Needs adult flu coverage near four in ten. Under half is widely heard, but the 50% boundary splits guesses.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Estimate. About four in ten adults got a flu shot, the middle range, though the common about-half idea pulls some to 50 to 65.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. Estimate. Four in ten sits in the middle range, but the common about-half idea pulls some higher.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "t-flu-coverage"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "seasonal",
+      "reviewBy": "2027-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q2": {
+    "bankId": "vax-or-fiction:q2",
+    "copies": [
+      "flagship:q3",
+      "flagship-r2:q3"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "3d72529d43cf868d842aaabdd18cf0ea0b0a2c58954f3390fecef11746132d24",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-post-infection-cardiac-risk",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. The sixfold heart-attack figure is common in flu messaging but not something the whole room knows.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows flu sharply raises heart-attack risk in the week after infection, a sixfold figure used in flu-shot messaging.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must accept the CDC-cited sixfold rise in heart-attack risk the week after flu, a figure common in flu talking points.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. The sixfold heart-attack figure is common in flu messaging but not something the whole room knows.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-heart-disease"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q25": {
+    "bankId": "vax-or-fiction:q25",
+    "copies": [],
+    "kind": "myth-among-three",
+    "textVersion": 1,
+    "textHash": "07fb16a2af53ec03cc5118a5322f6e42c662ef1ca4095a4fb0df49a199e3b31f",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-inactivated-vaccine-safety-myth",
+    "tags": [
+      "misconception"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "judgment",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Spots the familiar myth that an inactivated flu shot can give someone flu.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Spots the familiar myth that an inactivated flu shot can give someone flu.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Classic myth staff reject: an inactivated flu shot cannot give you flu. The other two are familiar truths.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "flu-expectations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q29": {
+    "bankId": "vax-or-fiction:q29",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "0ab34ad85b6ea54865c53b15defe4f04d8edb36eae3539742931ab38730662d9",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-pediatric-second-dose",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "children"
+    ],
+    "skill": "application",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "expert",
+      "source": "rubric",
+      "rationale": "Raters agree. Combines the two-dose rule set by age at first dose with the four-week interval that survives a ninth birthday.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "expert",
+          "reason": "Combines the two-dose rule set by age at first dose with the four-week interval that survives a ninth birthday.",
+          "sure": true,
+          "flags": [
+            "hard-to-parse"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "expert",
+          "reason": "Combines two rules: dose count set by age at first dose and history, and a child who turns 9 still gets dose two.",
+          "sure": true,
+          "flags": [
+            "hard-to-parse"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "flu-2026"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "hard-to-parse"
+    ],
+    "notes": "Owner wording ruling: VOF-50 called it confusing. The rubric rates its knowledge and flags how it reads, so this is a flag, not a level."
+  },
+  "vax-or-fiction:q30": {
+    "bankId": "vax-or-fiction:q30",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "22349b816b80e5d9e6a627484bb54249efa5bcb8f10de026e3fcb0ab4e9b5fa6",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-senior-vaccine-choice-case",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "application",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Applies the standard rule that a missing preferred 65+ product never costs the dose, against the tempting wait.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Applies the standard rule that a missing preferred 65+ product never costs the dose, against the tempting wait.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "One standard rule: a 65 plus product preference never costs the dose, against the tempting move to wait.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "flu-2026",
+        "flu-older"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q33": {
+    "bankId": "vax-or-fiction:q33",
+    "copies": [],
+    "kind": "estimate",
+    "textVersion": 2,
+    "textHash": "57661e65af172ca93fe6970dfba7b6f01905dd813a87334e0de315f4c13a44a2",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-mortality-by-age",
+    "tags": [
+      "burden"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "estimation",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Estimate. The room hears 70 to 85 percent of flu deaths are 65 plus. Its middle is in the keyed range, but the straddle keeps it medium.",
+      "provisional": true,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the share of flu deaths in adults 65+, about 71%. The often-quoted 70 to 85% straddles two ranges.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Estimate. The room hears that most flu deaths are 65 plus. 71 percent sits in 60 to 80, but the 70 to 85 figure pulls some higher.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Estimate. The room hears 70 to 85 percent of flu deaths are 65 plus. Its middle is in the keyed range, but the straddle keeps it medium.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "flu-burden-2024-25"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "seasonal",
+      "reviewBy": "2027-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q35": {
+    "bankId": "vax-or-fiction:q35",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "2bf90e9a58bf4ba7b4844b6210050051307317f1c7ed3a479b6d535d047e1ed5",
+    "status": "live",
+    "subject": "flu",
+    "rotation": "core",
+    "conceptId": "flu-mild-illness-no-delay",
+    "tags": [
+      "precaution",
+      "misconception"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Applies the routine screening rule that mild illness, even with a low fever, does not delay an inactivated flu shot.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Applies the routine screening rule that mild illness, even with a low fever, does not delay an inactivated flu shot.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Routine screening rule: a mild cold, even with low fever, is no reason to delay. Many think any fever means wait.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "mild-illness"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  }
+}

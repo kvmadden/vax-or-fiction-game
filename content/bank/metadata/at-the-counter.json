@@ -1,0 +1,974 @@
+{
+  "co-administration:q1": {
+    "bankId": "co-administration:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "9421789ce27c8ed446bb90cddc9a534a165895fe1b1714374b08417ad9f0dcc9",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "alternate",
+    "conceptId": "counter-coadministration-general",
+    "tags": [
+      "administration"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows all indicated adult vaccines can be given at one visit, routine practice. The word all may give some pause.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows all indicated adult vaccines can be given at one visit, routine practice. The word all may give some pause.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Giving all indicated vaccines at one visit is routine practice that pharmacy teams know well.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-general-best-practices"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "co-administration:q2": {
+    "bankId": "co-administration:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "6415e86078fb335edbf2811af5581aa6fcb098af98565854f9e7db43073f0b0d",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "core",
+    "conceptId": "counter-immune-system-capacity-myth",
+    "tags": [
+      "administration"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "immunocompromised"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Rejects the immune-overload myth, one most pharmacy staff already reject.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Rejects the immune-overload myth, one most pharmacy staff already reject.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Immune overload is a myth pharmacy staff reject, and broad immunosuppression overstates it further.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-general-best-practices"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "co-administration:q3": {
+    "bankId": "co-administration:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "a71cf12cfa045c897ee124ec56e7e6240191f4e5b598665737f013c1e6e1d33c",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "alternate",
+    "conceptId": "counter-injection-site-selection",
+    "tags": [
+      "administration"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows the one-inch spacing rule for shots in the same limb, standard immunizer technique.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows the one-inch spacing rule for shots in the same limb, standard immunizer technique.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard administration rule: same-limb injections at least one inch apart.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-coadmin-guidance"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "co-administration:q4": {
+    "bankId": "co-administration:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "4ff9a200264226bd633ca1683cea1a964223abdb380fa3edcd9f5b508e22f840",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "alternate",
+    "conceptId": "counter-coadministration-immune-response",
+    "tags": [
+      "product",
+      "co-administration",
+      "administration"
+    ],
+    "vaccines": [
+      "influenza",
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix and flu vaccine are routinely given together without a weaker response.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix and flu vaccine are routinely given together without a weaker response.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Staff routinely give Shingrix and flu together. The impaired-response claim is a myth most reject.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-shingrix-flu-coadmin"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "seasonal",
+      "reviewBy": "2027-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "co-administration:q5": {
+    "bankId": "co-administration:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "009980fe81a4ca2fa9bfb069296037ed68eea9424e917aacea4ce6d90363df43",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "core",
+    "conceptId": "counter-presumptive-bundling",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Presumptive recommendation raising acceptance is standard pharmacy training and intuitive. Presumptive bundled is jargon, not a level.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows presumptive recommendations raise acceptance, a trained technique. Presumptive bundled is jargon.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Presumptive recommendations raising acceptance is standard pharmacy training, though bundled is jargon.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Presumptive recommendation raising acceptance is standard pharmacy training and intuitive. Presumptive bundled is jargon, not a level.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-general-best-practices"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "co-administration:q6": {
+    "bankId": "co-administration:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 3,
+    "textHash": "e6fca62c9fe962acedd3f425c4018ffe36aad8f92a9c686a1d21b283b88531ce",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "alternate",
+    "conceptId": "counter-coadministration-immune-response",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "influenza",
+      "covid-19"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows flu and COVID-19 vaccines can be given at one visit.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows flu and COVID-19 vaccines can be given at one visit.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Pharmacy teams give flu and COVID-19 vaccines together routinely, so true is the natural answer.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-covid-flu-coadmin"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "seasonal",
+      "reviewBy": "2027-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "co-administration:q7": {
+    "bankId": "co-administration:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "e15a749fb635800577fe300a837e74c6f48b714c65d2329560ac2b82776cc094",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "alternate",
+    "conceptId": "counter-documentation-requirement",
+    "tags": [
+      "administration",
+      "documentation"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Agreed. Staff record the injection site for every dose, so true is the natural answer. The mandatory wording is a defect note.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Documenting the injection site is routine, so most would say true.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Pharmacy staff record the injection site for every dose, so true is the natural answer.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Agreed. Staff record the injection site for every dose, so true is the natural answer. The mandatory wording is a defect note.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-coadmin-guidance"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "co-administration:q8": {
+    "bankId": "co-administration:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "0ea43c8ae1c49547f4e9f096d6fdb06a173b138a68053a3e353d2a9b8dc617d8",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "alternate",
+    "conceptId": "counter-patient-choice-hesitancy",
+    "tags": [
+      "schedule",
+      "administration"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Insist or dismiss is an absurd false choice no guidance gives, so the claim gives itself away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Insist or dismiss is an absurd false choice no guidance gives, so the claim gives itself away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Insisting on every dose or dismissing the patient is plainly wrong, so the extreme choice gives it away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-general-best-practices"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "flagship:q8": {
+    "bankId": "flagship:q8",
+    "copies": [
+      "flagship-r2:q8"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "2144cc96b82e3dc72928b20c257cbc6f86276fd10ae13103060ac0baa0ec21da",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "core",
+    "conceptId": "counter-injection-site-selection",
+    "tags": [
+      "administration"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows two injections can share an arm when sites are at least an inch apart, a routine administration fact.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows two injections can share an arm when sites are at least an inch apart, a routine administration fact.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard administration rule: two shots can share an arm if sites are at least one inch apart.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-vaccine-coadministration"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q19": {
+    "bankId": "season-2:q19",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "a29cb336f39233e3ac925a8a382a2086fbcd4b6168c21fa240a178e688a0db25",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "core",
+    "conceptId": "counter-coadministration-general",
+    "tags": [
+      "eligibility",
+      "safety"
+    ],
+    "vaccines": [
+      "influenza",
+      "rsv"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows flu and RSV vaccines can be given at one visit, routine co-administration.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows flu and RSV vaccines can be given at one visit, routine co-administration.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Pharmacy teams routinely give flu and RSV vaccines at one visit, and CDC allows it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-coadministration"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q8": {
+    "bankId": "season-2:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 3,
+    "textHash": "33020e43d26fd5a3560d1975ac93d7473c6e59104088657bf26f8d3e121ff41c",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "core",
+    "conceptId": "counter-coadministration-immune-response",
+    "tags": [
+      "co-administration"
+    ],
+    "vaccines": [
+      "influenza",
+      "covid-19"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows flu and COVID-19 vaccines are routinely given together without weakening either.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows flu and COVID-19 vaccines are routinely given together without weakening either.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Pharmacy teams give flu and COVID-19 shots together routinely. The weakened-response claim is a myth most reject.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-coadministration"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q17": {
+    "bankId": "vax-or-fiction:q17",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "e387c69865354719ce543ca5cab6ec6ac34e870663830b1470db072d994bbb0f",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "core",
+    "conceptId": "counter-live-vaccine-spacing",
+    "tags": [
+      "schedule",
+      "co-administration",
+      "administration",
+      "misconception"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "expert",
+      "source": "rubric",
+      "rationale": "Raters agree. Combines the same-day-or-four-weeks rule for live vaccines with the fact that no grace period applies to it.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "expert",
+          "reason": "Combines the same-day-or-four-weeks rule for live vaccines with the fact that no grace period applies to it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "expert",
+          "reason": "Combines the same-day-or-four-weeks rule for live vaccines with no grace period, so a dose at 21 days does not count.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "t-live"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q28": {
+    "bankId": "vax-or-fiction:q28",
+    "copies": [],
+    "kind": "order",
+    "textVersion": 2,
+    "textHash": "235442e188a12df00273d2c11c64f585159494cccb2f54c7578746e0c03ca6fd",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "core",
+    "conceptId": "counter-cold-chain-excursion-steps",
+    "tags": [
+      "storage-handling"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "sequencing",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Quarantine, get advice, then act as directed. Each step points to the one before it, so the order gives itself away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Quarantine, get advice, then act as directed. Each step points to the one before it, so the order gives itself away.",
+          "sure": true,
+          "flags": [
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Steps give the order away: quarantine first, then seek advice, then act as directed on that advice.",
+          "sure": true,
+          "flags": [
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "storage-response",
+        "storage-viability"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "gives-itself-away"
+    ]
+  },
+  "vax-or-fiction:q36": {
+    "bankId": "vax-or-fiction:q36",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "a5a098e5e194bb23baff56b9052de0c6e67ceb05b7a9cfa77e42c2a66ca3514f",
+    "status": "live",
+    "subject": "at-the-counter",
+    "rotation": "core",
+    "conceptId": "counter-diluent-substitution",
+    "tags": [
+      "storage-handling"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Ruled a softball and cut from the Quick demo (VOF-37). Both raters also rated it easy.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows only the supplied diluent may be used, a basic handling rule the room applies routinely.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Owner anchor for easy: stock sterile water is no substitute for a vaccine's supplied diluent.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "owner",
+          "level": "easy",
+          "reason": "Ruled a softball and cut from the Quick demo (VOF-37).",
+          "sure": true,
+          "flags": [],
+          "rater": "owner, VOF-37",
+          "ratedOn": "2026-09-14"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "diluent",
+        "diluent-error"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  }
+}

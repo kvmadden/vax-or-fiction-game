@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
+    <title>Vax or Fiction?</title>
+    <!-- DS-02: this literal must stay byte-equal to --color-stage-deep (src/design/tokens.css).
+         It paints before the stylesheet loads, so a var() reference here would not prevent the
+         flash it exists to prevent. tests/unit/ds-index-html-color.test.ts pins the two together. -->
+    <style>html,body{background:#10192b}</style>
+    <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Audio beds are warmed by AudioPlayer EARLY_PREFETCH via HTMLAudioElement.load().
+         as=fetch here duplicated Smile's 1.4MB without satisfying the media cache. -->
+    <meta name="description" content="An interactive vaccine knowledge game. Join on your phone, make your call, and explore the evidence together." />
+    <meta property="og:title" content="Vax or Fiction?" />
+    <meta property="og:description" content="Make your call. Explore the evidence together." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vaxorfiction.com/" />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

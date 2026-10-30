@@ -1,0 +1,76 @@
+/* Attendee phone surface vertical rhythm, safe-area clearances, and touch targets */
+
+.phone-layout-container {
+  min-height: 100dvh;
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.phone-scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(env(safe-area-inset-bottom, 16px) + 24px);
+}
+
+.phone-option-card {
+  min-height: 48px;
+  border-radius: 12px;
+  transition: transform var(--transition-instant, 100ms ease);
+}
+
+.phone-option-card:active {
+  transform: scale(0.98);
+}
+
+.phone-app-bar {
+  padding-top: max(env(safe-area-inset-top, 0px), 4px);
+  padding-left: max(env(safe-area-inset-left, 0px), 16px);
+  padding-right: max(env(safe-area-inset-right, 0px), 16px);
+  padding-bottom: 4px;
+  background-color: var(--color-panel-navy);
+  border-bottom: 1px solid var(--color-hairline);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phone-app-footer {
+  padding-top: 8px;
+  /* F-26, the solo-footer instance: the remote's own footer already floors at 16px
+     (styles/presenter-remote.css) when safe-area-inset-bottom is 0. This shared footer,
+     which the solo screens render through, now matches that floor. */
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), var(--kit-space-16));
+  padding-left: max(env(safe-area-inset-left, 0px), 16px);
+  padding-right: max(env(safe-area-inset-right, 0px), 16px);
+  background-color: var(--color-panel-navy);
+  border-top: 1px solid var(--color-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  font-size: 14px;
+  color: var(--color-text-dim);
+}
+
+.phone-reveal-score-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kit-space-8);
+  margin-top: var(--kit-space-4);
+  margin-bottom: var(--kit-space-8);
+  padding: var(--kit-space-4) var(--kit-space-12);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-panel-navy);
+  border: 1px solid var(--color-hairline);
+  color: var(--color-text-dim);
+  font-family: var(--kit-font-mono, monospace);
+  font-size: 16px;
+  font-weight: 600;
+}

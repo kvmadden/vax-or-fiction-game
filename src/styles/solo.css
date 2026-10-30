@@ -1,0 +1,887 @@
+/* Solo play (VOF-44): the topic picker and the one control bar under the phone screens, phone-style on every screen. */
+
+.solo-topics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-24);
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: var(--kit-space-16) 0 var(--kit-space-24);
+}
+
+.solo-topics__kicker {
+  width: fit-content;
+  margin: 0;
+  padding: var(--kit-space-4) var(--kit-space-12);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 32%, transparent);
+  border-radius: var(--kit-radius-full);
+  background-color: color-mix(in srgb, var(--color-gold) 12%, transparent);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.solo-topics__title {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.solo-topics__how {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.solo-topics__error {
+  margin: 0;
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.solo-topics__back {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  min-height: var(--kit-space-48);
+  padding: 0 var(--kit-space-16);
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.solo-topics__back:hover,
+.solo-topics__back:focus-visible {
+  color: var(--color-gold);
+}
+
+/* The one control bar sits in the phone's footer, docked under the scrolling content and never over it, so it cannot
+   cover a control on a short screen. The footer carries the safe-area padding. */
+.solo-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--kit-space-8);
+  width: 100%;
+  max-width: 398px;
+  margin: 0 auto;
+}
+
+.solo-controls__primary,
+.solo-controls__secondary {
+  min-height: var(--kit-space-48);
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border-radius: var(--kit-radius-16);
+  font-family: var(--kit-font-sans);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.solo-controls__primary {
+  flex: 1 1 12rem;
+  border: 0;
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  color: var(--color-on-gold);
+  font-size: 18px;
+}
+
+.solo-controls__secondary {
+  flex: 0 1 auto;
+  border: 1px solid var(--color-film-border);
+  background-color: var(--color-film);
+  color: var(--color-ink);
+  font-size: 16px;
+}
+
+.solo-controls__primary:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.solo-controls__secondary:hover:not(:disabled) {
+  border-color: var(--color-gold);
+}
+
+.solo-controls__primary:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.solo-controls__secondary:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.solo-controls__primary:disabled,
+.solo-controls__secondary:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+.solo-topics__back:active {
+  color: var(--color-gold);
+}
+
+.solo-header__leave:active {
+  filter: brightness(0.96);
+}
+
+.solo-controls__primary:focus-visible,
+.solo-controls__secondary:focus-visible,
+.solo-header__leave:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+/* Solo's header: the topic being played, and the way back to the topics. */
+.solo-header {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  min-width: 0;
+}
+
+.solo-header__topic {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.solo-header__leave {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: var(--kit-space-48);
+  height: var(--kit-space-48);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-film);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.solo-header__leave:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* Where the round stands, beside the topic. Solo has no stage to count it (2026-09-15, a solo-only exception
+   to VOF-05). */
+.solo-header__progress {
+  flex: 0 0 auto;
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.solo-header__progress::before {
+  content: '·';
+  content: '·' / '';
+  margin-right: var(--kit-space-8);
+  color: var(--color-ink-muted);
+}
+
+/* The count reads "2 of 8", and "2/8" under 390px, where the full form would trim the topic (2026-09-15). */
+.solo-header__count[data-form='short'] {
+  display: none;
+}
+
+@media (max-width: 389.98px) {
+  .solo-header__count[data-form='full'] {
+    display: none;
+  }
+
+  .solo-header__count[data-form='short'] {
+    display: inline;
+  }
+}
+
+/* Solo keeps every beat top-aligned, so the result does not drop to the middle between the question and the
+   explanation. The room's result stays centred. */
+.phone-live-shell.solo-shell .phone-result-screen {
+  justify-content: flex-start;
+}
+
+/* The picker's intro, then how points work as a plain score table. Nothing in it looks like a button, since nothing
+   in it is one. */
+.solo-topics__intro {
+  display: grid;
+  gap: var(--kit-space-12);
+}
+
+.solo-topics__points {
+  display: grid;
+  gap: var(--kit-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* F-27: the points column used to start at a fixed 11rem, aligned to nothing on the screen. The
+   numbers now end flush with the content edge instead. */
+.solo-topics__points li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: var(--kit-space-12);
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.solo-topics__points strong {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.solo-topics__points li[data-sign='minus'] strong {
+  color: var(--color-fiction);
+}
+
+.solo-topics__group {
+  display: grid;
+  gap: var(--kit-space-8);
+}
+
+.solo-topics__group-label {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.solo-topics__loading {
+  flex: 0 0 auto;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* The bar lines up with the content column above it: 398px on phones, 640px on a wide screen, and the same inset as
+   the content on the narrowest phones. */
+@media (min-width: 900px) {
+  .solo-controls {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 430px) {
+  .phone-live-shell.solo-shell .phone-app-footer {
+    padding-left: max(env(safe-area-inset-left, 0px), var(--kit-space-12)) !important;
+    padding-right: max(env(safe-area-inset-right, 0px), var(--kit-space-12)) !important;
+  }
+}
+
+/* "Revealed" is the stage's status word, and solo has no stage. */
+.phone-live-shell.solo-shell .phone-reveal-meta .phone-vote-status {
+  display: none;
+}
+
+/* "Voting open" is the room's word too. The phone only speaks it to screen readers, and one person alone is not voting,
+   so solo drops it for everyone. */
+.phone-live-shell.solo-shell [data-role="phone-vote-status"][data-state="open"] {
+  display: none;
+}
+
+/* The explanation's "EXPLANATION" and a short phone's "Answer recorded" are the stage's status words as well. Solo drops
+   them, as it drops "Revealed". */
+.phone-live-shell.solo-shell [data-role="phone-vote-status"][data-state="explanation"],
+.phone-live-shell.solo-shell [data-role="phone-vote-status"][data-state="acknowledged"] {
+  display: none;
+}
+
+/* The question stays above its verdict. In solo the phone is the only screen, so nothing else keeps it in view.
+   .solo-reveal-question wraps the question and its optional scenario as one grid child (review finding,
+   2026-09-28: the reveal used to render both merged into this one paragraph as a single run-on block), so the
+   two-column grid rules below only need to place one element, not renumber every time a scenario does or does
+   not show. */
+.solo-reveal-stem {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+.solo-reveal-scenario {
+  margin-top: var(--kit-space-8);
+  color: var(--color-ink-dim);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+/* On a wide screen the statement keeps the question screen's size, so the question stays put as it is answered. */
+@media (min-width: 900px) {
+  /* A tall verdict card spans the kicker's row and the question's. Its extra height goes to the question's row, so the
+     question stays right under its kicker. Solo only: a room result keeps its reactions under the card, and a row that
+     stretches would push them down the screen. */
+  .phone-live-shell.solo-shell.phone-shell .phone-result-screen {
+    grid-template-rows: auto 1fr;
+  }
+
+  /* Combined (VOF-W7) carries the explanation screen's own classes too (phone-critique.css), whose generic
+     "everything but the header" rule would otherwise catch the question stem into column 2 alongside the
+     verdict. This is the same specificity fight settled the other way: the stem stays in column 1 under its
+     kicker, exactly where the result screen alone already puts it. */
+  .phone-live-shell.solo-shell.phone-shell .phone-combined-screen > .solo-reveal-question {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* The same specificity fight, one row up (reviewer finding, 2026-09-28, at 1280x720): phone-critique.css's
+     result rule puts .phone-reveal-meta (the kicker) in column 1, and its own explanation rule's "everything
+     but its own header" rule also matches .phone-reveal-meta (it is not .phone-explanation-header), putting
+     it in column 2 instead. Equal specificity, so the later rule in that file wins and the kicker drifts over
+     the verdict card. Scoped to .phone-combined-screen, one more class than either rule it is settling, so it
+     wins regardless of which file loads last. */
+  .phone-live-shell.solo-shell.phone-shell .phone-combined-screen > .phone-reveal-meta {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .phone-live-shell.phone-shell .solo-reveal-stem {
+    color: var(--color-ink);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+}
+
+/* The result line on the left and this answer's points on the right, like a score column, so a miss never reads as
+   "× −1". */
+.phone-live-shell.solo-shell .phone-reveal-said {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--kit-space-12);
+}
+
+.solo-points {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0 var(--kit-space-8);
+  border-radius: var(--kit-radius-full);
+  background-color: color-mix(in srgb, var(--color-gold) 18%, transparent);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.solo-points[data-sign='minus'] {
+  background-color: color-mix(in srgb, var(--color-fiction) 18%, transparent);
+  color: var(--color-fiction);
+}
+
+.solo-points[data-sign='none'] {
+  background-color: var(--color-film);
+  color: var(--color-ink-muted);
+}
+
+/* Solo's close: the score as the headline, the round question by question, two stat tiles, then the takeaways. */
+.solo-closing {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-ink);
+}
+
+/* The shared close surface sets a 16px gap. The header takes 8px more below it, so the score block stands 24px clear
+   of the cards. */
+.solo-closing__header {
+  display: grid;
+  gap: var(--kit-space-8);
+  margin-bottom: var(--kit-space-8);
+}
+
+.solo-closing__kicker {
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.solo-closing__score {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.solo-closing__strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--kit-space-8);
+  margin-top: var(--kit-space-4);
+}
+
+.solo-closing__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--kit-space-32);
+  height: var(--kit-space-32);
+  border-radius: var(--kit-radius-full);
+  font-weight: 700;
+}
+
+.solo-closing__mark[data-outcome='right'] {
+  background-color: color-mix(in srgb, var(--color-vax) 22%, transparent);
+  color: var(--color-vax);
+}
+
+.solo-closing__mark[data-outcome='missed'] {
+  background-color: color-mix(in srgb, var(--color-fiction) 22%, transparent);
+  color: var(--color-fiction);
+}
+
+.solo-closing__mark[data-outcome='none'] {
+  background-color: var(--color-film);
+  color: var(--color-ink-muted);
+}
+
+/* A whole-topic round (VOF-68) can carry many more marks than today's eight, so past eight it steps down a size,
+   tightens its gap, and switches from flex-wrap to a fixed column count (--solo-strip-columns, half the marks
+   rounded up, set inline from the mark count) -- a real grid, not flex-wrap's greedy packing, so the rows balance
+   instead of leaving one long row and a short ragged one under it. */
+.solo-closing__strip[data-size='compact'] {
+  display: grid;
+  grid-template-columns: repeat(var(--solo-strip-columns, 8), var(--kit-space-24));
+  justify-content: start;
+  gap: var(--kit-space-4);
+}
+
+.solo-closing__strip[data-size='compact'] .solo-closing__mark {
+  width: var(--kit-space-24);
+  height: var(--kit-space-24);
+}
+
+.solo-closing__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--kit-space-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.solo-closing__stats li,
+.solo-closing__takeaways {
+  padding: var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-film);
+}
+
+.solo-closing__stats li {
+  display: grid;
+  gap: var(--kit-space-4);
+}
+
+.solo-closing__stats strong {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.solo-closing__stats span {
+  color: var(--color-ink-muted);
+  font-size: 16px;
+}
+
+.solo-closing__takeaways h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.solo-closing__takeaways h2 svg {
+  flex: 0 0 auto;
+  color: var(--color-gold);
+}
+
+.solo-closing__takeaways ol {
+  display: grid;
+  gap: var(--kit-space-8);
+  margin: var(--kit-space-12) 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: solo-takeaway;
+}
+
+/* R-03: group recap text is weight 500 (F-16). Solo's own takeaways now match, so the two
+   closings read consistently. */
+.solo-closing__takeaways li {
+  display: grid;
+  grid-template-columns: var(--kit-space-24) minmax(0, 1fr);
+  gap: var(--kit-space-8);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  counter-increment: solo-takeaway;
+}
+
+.solo-closing__takeaways li::before {
+  content: counter(solo-takeaway);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-weight: 700;
+}
+
+/* On the narrowest phones the strip closes its gaps, so a round of eight holds one row, and a wrapped More topics takes
+   the full width under Play again. */
+@media (max-width: 339.98px) {
+  .solo-closing__strip {
+    gap: var(--kit-space-4);
+  }
+
+  .solo-controls__secondary {
+    flex-grow: 1;
+  }
+}
+
+/* ── Solo pace (VOF-W7, 2026-09-27): Run, Climb and Best behind ?soloPace=. Today's pace touches none of this. ── */
+
+/* The live HUD, beside the wordmark: Run's streak meter, Climb's path, Best's target. */
+.solo-pace-hud {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  gap: var(--kit-space-4);
+  padding: var(--kit-space-4) var(--kit-space-8);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-film);
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.solo-pace-hud svg {
+  flex: 0 0 auto;
+}
+
+/* Run: the pill itself rises with the streak -- a bolder accent and a small scale lift, never a buzzer on the way
+   down. Only transform and opacity move, so prefers-reduced-motion (below) can cut the motion and keep the state. */
+.solo-pace-hud--run {
+  transition: transform 220ms ease, opacity 220ms ease;
+  transform: scale(1);
+}
+
+.solo-pace-hud--run[data-streak-tier='0'] {
+  opacity: 0.85;
+}
+
+.solo-pace-hud--run[data-streak-tier='1'] {
+  border-color: color-mix(in srgb, var(--color-gold) 45%, var(--color-film-border));
+  background-color: color-mix(in srgb, var(--color-gold) 12%, var(--color-film));
+  color: var(--color-gold);
+  transform: scale(1.03);
+}
+
+.solo-pace-hud--run[data-streak-tier='2'] {
+  border-color: var(--color-gold);
+  background-color: color-mix(in srgb, var(--color-gold) 22%, var(--color-film));
+  color: var(--color-gold);
+  transform: scale(1.06);
+}
+
+.solo-pace-hud--run[data-streak-tier='3'] {
+  border-color: var(--color-gold);
+  background-color: color-mix(in srgb, var(--color-gold) 32%, var(--color-film));
+  color: var(--color-gold);
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-gold) 25%, transparent);
+}
+
+/* The flame's own one-shot celebration on the exact render a milestone (3, 5, 8) is reached -- keyed by streak in
+   SoloPaceHUD.tsx, so this plays fresh every crossing instead of once ever. Transform and opacity only. */
+.solo-pace-hud__flame[data-milestone='true'] {
+  animation: solo-pace-celebrate 640ms ease-out;
+}
+
+@keyframes solo-pace-celebrate {
+  0% { transform: scale(1); opacity: 0.6; }
+  40% { transform: scale(1.6); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Run's rising energy reaches the screen itself, one step per tier, never the shared PhoneVote/PhoneReveal chrome
+   (question-*.css / presentation.css own that) -- just the solo shell's own content well. */
+.phone-live-shell.solo-shell.solo-streak-tier-1 .phone-app-content {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-gold) 10%, transparent);
+}
+
+.phone-live-shell.solo-shell.solo-streak-tier-2 .phone-app-content {
+  box-shadow: inset 0 0 40px color-mix(in srgb, var(--color-gold) 8%, transparent);
+}
+
+.phone-live-shell.solo-shell.solo-streak-tier-3 .phone-app-content {
+  box-shadow: inset 0 0 64px color-mix(in srgb, var(--color-gold) 14%, transparent);
+}
+
+/* Climb: the path, its checkpoint and its climax. */
+.solo-pace-hud--climb {
+  gap: var(--kit-space-8);
+}
+
+.solo-pace-hud__path {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kit-space-4);
+}
+
+.solo-pace-hud__step {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-film-border);
+}
+
+.solo-pace-hud__step[data-state='done'] {
+  background-color: var(--color-gold);
+}
+
+.solo-pace-hud__step[data-state='now'] {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-gold) 35%, transparent);
+}
+
+.solo-pace-hud__step[data-checkpoint='true'] {
+  outline: 1px solid var(--color-accent-teal);
+  outline-offset: 1px;
+}
+
+.solo-pace-hud__step[data-climax='true'] {
+  outline: 1px solid var(--color-fiction);
+  outline-offset: 1px;
+}
+
+.solo-pace-hud__flag {
+  padding: 0 var(--kit-space-8);
+  border-radius: var(--kit-radius-full);
+  background-color: color-mix(in srgb, var(--color-accent-teal) 20%, transparent);
+  color: var(--color-accent-teal);
+  font-size: 16px;
+  font-weight: 700;
+  animation: solo-pace-flag-in 2600ms ease forwards;
+}
+
+.solo-pace-hud__flag[data-flag='climax'] {
+  background-color: color-mix(in srgb, var(--color-fiction) 20%, transparent);
+  color: var(--color-fiction);
+}
+
+@keyframes solo-pace-flag-in {
+  0% { opacity: 0; transform: translateY(3px); }
+  15% { opacity: 1; transform: translateY(0); }
+  82% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Best: the target to beat, plain and steady. */
+.solo-pace-hud--best {
+  color: var(--color-ink);
+}
+
+/* The live HUD shares the bar with the topic, the round count and the way out. Both canonical phones (390 and 430)
+   are this narrow, so the path (a nice-to-have, six questions out of eight) gives way first; the checkpoint and
+   climax flags stay, since those are the two beats actually worth the room on the phone they are for. Placed after
+   every base .solo-pace-hud* rule above, so it actually wins the cascade instead of being overridden by one of them. */
+@media (max-width: 430px) {
+  .solo-pace-hud--climb svg,
+  .solo-pace-hud__path {
+    display: none;
+  }
+}
+
+/* The pace recap (Run, Climb, Best): the same close as today's, plus one headline line, an optional best-comparison
+   card, and a line naming the next topic. */
+.solo-pace-recap__headline {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.solo-pace-recap__best {
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-film);
+  color: var(--color-ink);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.solo-pace-recap__best[data-outcome='new-best'] {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* A real control, not just a line of text (VOF-W7 review): full width in the recap's own column, the same
+   gold primary treatment as the footer's Play again. It keeps its own height: the footer's 12rem flex basis is a
+   width in the footer's row, and in this column it stood the button 192px tall. */
+.solo-pace-recap__next {
+  flex: none;
+  width: 100%;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solo-controls__primary,
+  .solo-controls__secondary,
+  .solo-header__leave,
+  .solo-topics__back {
+    transition: none;
+  }
+
+  .solo-controls__primary:active:not(:disabled),
+  .solo-controls__secondary:active:not(:disabled),
+  .solo-header__leave:active {
+    filter: none;
+  }
+
+  .solo-pace-hud--run {
+    transition: none;
+  }
+
+  .solo-pace-hud__flame[data-milestone='true'],
+  .solo-pace-hud__flag {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── The solo topic list ─────────────────────────────────────────────────────────────────────────────────── */
+
+.phone-live-shell.solo-shell .solo-topic-list {
+  display: contents;
+}
+
+.phone-live-shell.solo-shell .solo-topic-list__list {
+  --phone-divider-inset: var(--kit-space-16);
+}
+
+/* The label, then the chevron at the row's edge. The round length sits under the label, so a long topic name keeps
+   its line and every row keeps one shape. Its line is held before the counts arrive, so nothing moves when they do. */
+
+.phone-live-shell.solo-shell .solo-topic-list__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  align-items: center;
+  column-gap: var(--kit-space-12);
+  row-gap: var(--kit-space-4);
+  width: 100%;
+  min-height: 64px;
+  margin: 0;
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+}
+
+.phone-live-shell.solo-shell .solo-topic-list__label {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* The chevron spans both lines, so it centers on the label and its round length together. */
+
+.phone-live-shell.solo-shell .solo-topic-list__row > :last-child {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.phone-live-shell.solo-shell .solo-topic-list__row > svg {
+  display: block;
+  align-self: center;
+  color: var(--color-ink-dim);
+}
+
+@media (hover: hover) {
+  .phone-live-shell.solo-shell .solo-topic-list__row:hover:not(:disabled) {
+    background: var(--kit-glass-fill);
+  }
+}
+
+.phone-live-shell.solo-shell .solo-topic-list__row:active:not(:disabled) {
+  background: var(--kit-glass-fill-strong);
+}
+
+.phone-live-shell.solo-shell .solo-topic-list__row:focus-visible {
+  outline: 2px solid var(--color-vax);
+  outline-offset: -2px;
+}
+
+/* While a topic loads, every row waits. The cursor says so, and the rows not loading step back. */
+
+.phone-live-shell.solo-shell .solo-topic-list__row:disabled {
+  cursor: progress;
+}
+
+.phone-live-shell.solo-shell .solo-topic-list__row:disabled:not([aria-busy="true"]) {
+  opacity: 0.6;
+}
+
+/* The round length, on solo's 16px text floor. */
+.phone-live-shell.solo-shell .solo-topic-list__count {
+  grid-column: 1;
+  grid-row: 2;
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

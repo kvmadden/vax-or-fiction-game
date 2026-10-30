@@ -1,0 +1,2149 @@
+/* Question chrome (header, rails treatment, reveal) — extracted from presentation.css. Placement of stem/rails stays in question-stage.css. */
+/* Question presentation composition: the mounted React surfaces share the
+   source show's full-bleed plate, header band, reveal card and answer rails. */
+.scaled-stage-container:has(:is(.question-shell, .showdown-screen, .closing-screen, .leaderboard-screen)) {
+  height: 100dvh !important;
+}
+
+/* Audience canvas (VOF-25): H is the host reveal. A peek tab in the letterbox
+   would sit on the shared Teams frame. Compact host widths restore it below. */
+[data-role="hud-peek-trigger"] {
+  display: none !important;
+}
+
+.question-show-frame .show-safe {
+  inset: var(--kit-space-64) calc(var(--kit-space-64) + var(--kit-space-32));
+  display: block;
+}
+
+.question-show-frame .show-content {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.question-show-frame:is(.question-show-frame--estimate, .question-show-frame--order, .question-show-frame--which-patient) .show-safe {
+  inset: var(--kit-space-48) var(--kit-space-64);
+}
+
+.question-show-frame .show-content [data-screen="question"] {
+  max-width: none;
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+}
+
+.question-show-frame .show-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 12;
+  height: calc(var(--kit-space-64) + var(--kit-space-48));
+  min-height: calc(var(--kit-space-64) + var(--kit-space-48));
+}
+
+/* STAGE-SPEC step 5 (spec section 2.4): question-flow.css is the header's one size owner now.
+   width/height/font-size are deleted here (they were already dead: question-flow.css's more
+   specific selector always won them); the paint (border, gradient, shadow, color) stays, since
+   nothing else supplies it. */
+.question-source-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 14;
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-24);
+}
+
+.question-source-number {
+  display: grid;
+  place-items: center;
+  border: var(--kit-space-4) solid var(--color-gold);
+  border-radius: var(--kit-space-24);
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep), 0 0 var(--kit-space-32) color-mix(in srgb, var(--color-gold) 24%, transparent);
+  color: var(--color-on-gold);
+  font-family: var(--kit-font-mono);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.question-source-kicker {
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.question-show-frame .show-join-pill {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: auto;
+  max-width: 780px;
+  height: 76px;
+  min-height: 76px;
+  padding: var(--kit-space-12) var(--kit-space-32);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  white-space: nowrap;
+}
+
+.question-show-frame .show-join-pill__host {
+  flex-direction: row;
+  gap: var(--kit-space-16);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.question-show-frame .show-join-pill__label {
+  display: inline;
+  color: var(--color-ink-dim);
+}
+
+.question-show-frame .join-card__code {
+  display: flex;
+  align-items: center;
+  font-size: 44px;
+}
+
+.question-show-frame .join-card__code::before {
+  content: "·";
+  margin-right: var(--kit-space-16);
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-sans);
+}
+
+.question-show-frame .join-card__code {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.question-show-frame .show-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+}
+
+.question-show-frame .show-footer__context {
+  max-width: 75%;
+  padding: var(--kit-space-8) var(--kit-space-24);
+  overflow: hidden;
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.question-show-frame .show-footer__room {
+  display: none;
+}
+
+.question-room-accuracy {
+  position: absolute;
+  z-index: 14;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0;
+  padding: var(--kit-space-4) var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.question-room-accuracy {
+  right: 0;
+  bottom: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 24px;
+  letter-spacing: 0.06em;
+}
+
+.question-show-frame [data-screen="question"] > div[aria-hidden="true"] {
+  display: none !important;
+}
+
+.question-show-frame .question-kind-footer,
+.question-show-frame .myth-header,
+.question-show-frame--binary .question-stage-copy > div:first-child,
+.question-show-frame .question-header > div:first-child,
+.question-show-frame .which-patient-question > header > div:first-child,
+.question-show-frame .median-display,
+.question-show-frame .order-bar button,
+.question-show-frame [data-role="pending-card"] {
+  display: none !important;
+}
+
+/* Geometry is question-stage.css's. Stem fill/border/shadow is owned once
+   by the soft-glass rule below the live stage polish marker — do not paint an
+   opaque backer here or the stage reads as two stacked panels. */
+.question-show-frame .question-stage-copy {
+  z-index: 4;
+}
+
+.question-show-frame .question-stage-copy h1,
+.question-show-frame .question-stage-copy [data-comp-id="statement"] {
+  font-family: var(--kit-font-sans) !important;
+  letter-spacing: -0.02em !important;
+  text-wrap: balance;
+}
+
+.question-show-frame .question-stage-copy mark,
+.question-show-frame .question-stage-copy [data-comp-id="statement-emphasis"] {
+  color: var(--color-gold) !important;
+  text-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 70%, transparent) !important;
+}
+
+.question-show-frame .answer-rail {
+  z-index: 5;
+}
+
+.question-show-frame .answer-slot,
+.question-show-frame .answer-bar {
+  box-sizing: border-box !important;
+  font-family: var(--kit-font-sans) !important;
+}
+
+.question-show-frame--binary .answer-bar {
+  isolation: isolate;
+  width: 100%;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--answer-accent) 90%, var(--color-light)), var(--answer-accent) 40%, color-mix(in srgb, var(--answer-accent) 55%, var(--color-void))) !important;
+  clip-path: polygon(var(--stage-card-point) 0, calc(100% - var(--stage-card-point)) 0, 100% 50%, calc(100% - var(--stage-card-point)) 100%, var(--stage-card-point) 100%, 0 50%);
+  opacity: 1 !important;
+  filter: none !important;
+  box-shadow: var(--kit-drop-deep) !important;
+}
+
+.question-show-frame--binary .answer-bar::after {
+  content: "";
+  position: absolute;
+  inset: var(--kit-space-4);
+  z-index: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-accent-cobalt) 20%, var(--color-void)), var(--color-backer));
+  clip-path: polygon(var(--stage-card-point-inner) 0, calc(100% - var(--stage-card-point-inner)) 0, 100% 50%, calc(100% - var(--stage-card-point-inner)) 100%, var(--stage-card-point-inner) 100%, 0 50%);
+}
+
+.question-show-frame--binary [data-answer="true"] {
+  --answer-accent: var(--color-vax);
+}
+
+.question-show-frame--binary [data-answer="false"] {
+  --answer-accent: var(--color-fiction);
+}
+
+.question-show-frame--binary .answer-bar__label {
+  position: relative;
+  z-index: 2;
+  color: var(--color-ink) !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 var(--kit-space-32) color-mix(in srgb, var(--answer-accent) 60%, transparent) !important;
+}
+
+.question-show-frame--binary .answer-bar__pct {
+  position: relative;
+  z-index: 2;
+  font-weight: 600 !important;
+}
+
+.question-show-frame--binary .answer-bar > [aria-hidden="true"] {
+  z-index: 1 !important;
+  opacity: 0.16 !important;
+}
+
+.question-show-frame--binary .answer-bar__main,
+.question-show-frame--binary .answer-bar__poll {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Three-statement myth: the stage flattens the split so the rail is a row.
+   What remains here is the plate paint and the hidden evidence slot. */
+.question-show-frame--myth-among-three [data-role="evidence-slot"] {
+  display: none !important;
+}
+
+.question-show-frame--myth-among-three .answer-bar {
+  position: relative !important;
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent) !important;
+  /* STAGE-SPEC step 6 (spec section 3.6, judgment call 5): a fixed end radius, half the row's own
+     minimum height, instead of fully round ends. A one-line row looks the same as today; a
+     two-line row stops ballooning into an ellipse. */
+  border-radius: var(--stage-pill-radius) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-backer) 85%, transparent), color-mix(in srgb, var(--color-backer) 96%, transparent)) !important;
+  box-shadow: var(--kit-rim), var(--kit-drop-deep) !important;
+  opacity: 1 !important;
+}
+
+.question-show-frame--myth-among-three .answer-bar > div:not([aria-hidden="true"]):first-of-type {
+  height: 100%;
+  align-items: center !important;
+  gap: var(--kit-space-24) !important;
+}
+
+.question-show-frame--myth-among-three .answer-bar [data-comp-id$="-label"] {
+  color: var(--color-ink) !important;
+  font-weight: 600 !important;
+  line-height: 1.05 !important;
+  white-space: nowrap;
+}
+
+/* Estimate: five poster choices become the source two-column histogram at
+   reveal, with evidence holding the plate-side column. */
+/* Estimate stem chrome: one soft-glass panel (stage polish block). */
+
+.question-show-frame--estimate .estimate-answer-rail .answer-bar {
+  isolation: isolate;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--range-accent, var(--color-gold)) 88%, var(--color-light)), var(--range-accent, var(--color-gold)) 38%, color-mix(in srgb, var(--range-accent, var(--color-gold)) 55%, var(--color-void))) !important;
+  clip-path: polygon(var(--stage-card-point) 0, calc(100% - var(--stage-card-point)) 0, 100% 50%, calc(100% - var(--stage-card-point)) 100%, var(--stage-card-point) 100%, 0 50%);
+  opacity: 1 !important;
+}
+
+/* Each range card's --range-accent comes from ESTIMATE_RANGE_ACCENTS (src/screens/questions/estimate-accents.ts), set on
+   the card itself by EstimateQuestion.tsx, and no stylesheet sets it. Rules here that numbered the cards with
+   :nth-of-type never showed: every card is the only button in its own slot, so every card matched the first one, and the
+   card's own accent won anyway. They also named a different order than the one the room sees. */
+.question-show-frame--estimate .estimate-answer-rail .answer-bar span {
+  color: var(--color-ink) !important;
+  font-family: var(--kit-font-sans) !important;
+  font-weight: 600 !important;
+}
+
+/* Ordered sequence: five bright numbered tiles. */
+/* Order stem chrome: one soft-glass panel (stage polish block). */
+
+.question-show-frame--order .question-stage-copy > div,
+.question-show-frame--order .question-stage-copy > p:not(.order-scramble-cue) {
+  display: none !important;
+}
+
+.question-show-frame--order .order-bar {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--order-accent, var(--color-gold)) 65%, var(--color-film-border)) !important;
+  /* STAGE-SPEC step 6 (spec section 3.6, judgment call 5): same fixed-radius rule as myth. */
+  border-radius: var(--stage-pill-radius) !important;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--order-accent, var(--color-gold)) 34%, var(--color-backer)), var(--color-backer)) !important;
+  box-shadow: var(--kit-rim), var(--kit-drop-deep) !important;
+}
+
+.question-show-frame--order .order-bar:nth-child(1) { --order-accent: var(--color-vax); }
+.question-show-frame--order .order-bar:nth-child(2) { --order-accent: var(--color-accent-cobalt); }
+.question-show-frame--order .order-bar:nth-child(3) { --order-accent: var(--color-gold); }
+.question-show-frame--order .order-bar:nth-child(4) { --order-accent: var(--color-accent-purple); }
+.question-show-frame--order .order-bar:nth-child(5) { --order-accent: var(--color-fiction); }
+
+.question-show-frame--order .order-bar > div:first-child > div:first-child {
+  width: var(--kit-space-48) !important;
+  height: var(--kit-space-48) !important;
+  border-radius: var(--kit-radius-full) !important;
+  background-color: var(--order-accent) !important;
+  color: var(--color-on-gold) !important;
+  font-size: 24px !important;
+}
+
+.question-show-frame--order .order-bar span {
+  color: var(--color-ink) !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+}
+
+/* Which reply: the question is the headline and the vignette is the quiet
+   second line, so neither box carries a second glass card. */
+.question-show-frame--which-patient .question-stage-scenario {
+  z-index: 4 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.question-show-frame--which-patient .question-stage-scenario p {
+  text-wrap: balance;
+}
+
+.question-show-frame--which-patient .answer-bar {
+  isolation: isolate;
+  width: 100%;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--reply-accent) 88%, var(--color-light)), var(--reply-accent) 38%, color-mix(in srgb, var(--reply-accent) 55%, var(--color-void))) !important;
+  clip-path: polygon(var(--stage-card-point) 0, calc(100% - var(--stage-card-point)) 0, 100% 50%, calc(100% - var(--stage-card-point)) 100%, var(--stage-card-point) 100%, 0 50%);
+  opacity: 1 !important;
+}
+
+.question-show-frame--which-patient .answer-bar::after {
+  content: "";
+  position: absolute;
+  inset: var(--kit-space-4);
+  z-index: -1;
+  background-color: var(--color-backer);
+  clip-path: polygon(var(--stage-card-point-inner) 0, calc(100% - var(--stage-card-point-inner)) 0, 100% 50%, calc(100% - var(--stage-card-point-inner)) 100%, var(--stage-card-point-inner) 100%, 0 50%);
+}
+
+.question-show-frame--which-patient .answer-bar:nth-child(1) { --reply-accent: var(--color-vax); }
+.question-show-frame--which-patient .answer-bar:nth-child(2) { --reply-accent: var(--color-fiction); }
+
+.question-show-frame--which-patient .answer-bar > div:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.question-show-frame--which-patient .answer-bar p {
+  position: relative;
+  z-index: 1;
+  color: var(--color-ink) !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+/* Showdown board: preserve the real stage machine and controls inside the
+   source full-bleed board geometry. */
+.showdown-screen {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  /* Transparent (Game night rollout): the router's stage lights sit behind this beat, and its own
+     ShowFrame paints the stage when it renders on its own. */
+  background-color: transparent !important;
+  font-family: var(--kit-font-sans) !important;
+}
+
+.showdown-show-frame .show-safe {
+  /* One packing owner: HUD clearance lives in the bottom of a 4-value inset. */
+  inset: var(--kit-space-48)
+    var(--kit-space-64)
+    max(var(--kit-space-48), calc((var(--showdown-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    var(--kit-space-64);
+  display: block;
+}
+
+.showdown-show-frame .show-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 12;
+  height: 88px;
+}
+
+.showdown-show-frame .show-footer {
+  display: none;
+}
+
+.showdown-show-frame .show-join-pill {
+  position: absolute;
+  top: var(--kit-space-8);
+  right: 0;
+  width: 536px;
+  height: 76px;
+  min-height: 76px;
+  padding: var(--kit-space-12) var(--kit-space-32);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+}
+
+.showdown-show-frame .show-join-pill__label {
+  display: none;
+}
+
+.showdown-show-frame .show-join-pill__host {
+  gap: var(--kit-space-16);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 30px;
+  text-transform: none;
+}
+
+.showdown-show-frame .join-card__code {
+  flex: 1;
+  min-width: 0;
+  max-width: 220px;
+  overflow: hidden;
+  font-size: 44px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.showdown-show-frame .join-card__code::before {
+  content: "·";
+  margin-right: var(--kit-space-16);
+  color: var(--color-ink-dim);
+}
+
+[data-format="square"] :is(.showdown-show-frame, .closing-show-frame, .leaderboard-show-frame) .show-join-pill {
+  padding-inline: var(--kit-space-16);
+}
+
+[data-format="square"] :is(.showdown-show-frame, .closing-show-frame, .leaderboard-show-frame) .show-join-pill__host {
+  gap: var(--kit-space-12);
+  font-size: 24px;
+}
+
+[data-format="square"] :is(.showdown-show-frame, .closing-show-frame, .leaderboard-show-frame) .join-card__code {
+  max-width: 184px;
+  font-size: 34px;
+}
+
+[data-format="square"] :is(.showdown-show-frame, .closing-show-frame, .leaderboard-show-frame) .join-card__code::before {
+  margin-right: var(--kit-space-12);
+}
+
+.showdown-source-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 14;
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-24);
+  height: 88px;
+}
+
+.showdown-source-header > span {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.showdown-source-header > strong {
+  color: var(--color-ink);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.showdown-show-frame .show-content {
+  position: absolute;
+  top: calc(var(--kit-space-64) + var(--kit-space-48));
+  right: 0;
+  bottom: var(--kit-space-48);
+  left: 0;
+  display: block;
+}
+
+.showdown-board-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-16);
+  /* B2 / SHOWDOWN-RECAP fallback: the finalists grid keeps its content-driven minimum height and
+     the evidence card's header and statement (see [data-role="duel-evidence-card"] below, and
+     PILL round 8, which moved the discussion pill out of this card into .showdown-header) never
+     shrink either, so at the tightest sizes their combined natural height can still
+     exceed what is left after the action bar's own protected space. Rather than let that spill
+     invisibly past .showdown-board-content's bottom (SHOWDOWN-RECAP's exact symptom), this panel
+     scrolls, so the action bar stays reachable by scrolling to it even on the rare width where
+     nothing shorter than a redesign of the header chrome would make everything fit at once.
+     Ordinary widths never trigger it: content fits, nothing scrolls. */
+  overflow-y: auto;
+}
+
+.showdown-board-content > header {
+  flex: none;
+  min-height: 148px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* PILL (round 8): named by class, not position, on purpose. The Discussion pill (a button, not a
+   div) can now render after .showdown-progress as the header's last child, and a position-based
+   `div:last-child` selector would have stopped matching .showdown-progress the moment that
+   happened, silently un-hiding it. */
+.showdown-board-content > header .showdown-badge-row,
+.showdown-board-content > header .showdown-progress {
+  display: none !important;
+}
+
+.showdown-board-content > header h1 {
+  max-width: 900px;
+  margin: 0 !important;
+  color: var(--color-ink) !important;
+  font-size: 64px !important;
+  font-weight: 600 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.showdown-board-content > header p {
+  max-width: 1040px;
+  margin-top: var(--kit-space-12) !important;
+  color: var(--color-ink-muted) !important;
+  font-size: 26px !important;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.showdown-board-content > section {
+  min-height: 0;
+  justify-content: flex-start !important;
+  gap: var(--kit-space-8) !important;
+}
+
+.showdown-board-content [data-role="showdown-duel-actions"] {
+  flex: none;
+  padding-bottom: var(--kit-space-16);
+}
+
+/* B2 / SHOWDOWN-RECAP (round 5) stopped the duel statement disappearing (NEW-2 had let the whole
+   evidence card shrink and scroll) but made the finalists grid the part that shrinks and scrolls.
+   The card itself never gave up any height, because its automatic minimum is its full content,
+   recap included (measured, not assumed), so the grid absorbed the whole shortfall.
+   DUEL-BOARD (round 7): that clipped the presenter's only on-stage scoring controls, the minus
+   and +1 POINT buttons and the duel points: 59 of 157px showed at 1280x720 (27 with the HUD
+   pinned), 91 at 1920x1080 and none at 800x450, 900x506 and 720x900. docs/VOF-DECISION-LEDGER.md
+   requires action controls to stay visible above the HUD in every tested format.
+   PILL (round 8): the design call "move the pill up" moved the Discussion pill out of this card
+   and into .showdown-header (see below), which frees the row the pill used to occupy here and
+   gives that height back to the recap, whose answer detail line was clipped below the fold at
+   1280x720 with the HUD pinned. The duel section is now one grid with five rows: the finalists,
+   the card's header, its statement, its recap and the action bar. The card spans its three rows
+   as a subgrid, so each row is sized by its own content and only the recap can give up height.
+   The recap is a scroll container, so its automatic minimum is 0 and its row keeps only the
+   recap's own spacing and rule when room runs out, then grows back to its full natural height
+   whenever there is space. The finalists row, the statement and the action bar never shrink.
+   Where even those do not fit (800x450 widescreen), the grid overflows the section and the
+   panel's own scroll (.showdown-board-content above) keeps the action bar reachable.
+   align-content start leaves any spare space below the action bar instead of stretching rows
+   apart. */
+.showdown-board-content [data-role="showdown-duel"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(5, auto);
+  align-content: start;
+}
+
+.showdown-board-content [data-role="duel-evidence-card"] {
+  display: grid;
+  grid-row: 2 / span 3;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+/* With no recap question, the waiting notice spans the statement's and the recap's rows, so no
+   empty row leaves an extra gap above it and the card's bottom padding and border still sit on a
+   real row. */
+.showdown-board-content [data-role="duel-evidence-card"] > .showdown-waiting-notice {
+  grid-row: 2 / span 2;
+}
+
+/* DUEL-BOARD: the compact one-row finalist tile (Showdown.tsx ScoreCard), used at every size so
+   the tiles never reflow when the HUD pins. The name, with the session points as a quiet line under
+   it, sits on the left, then the duel points and the minus and +1 POINT buttons as one scoring
+   cluster on the right. The row is as tall as its buttons plus 8px above and below, 78 stage px at
+   1280x720 in place of the full tile's 157. A long name wraps to a second line inside its own
+   column, then ends in an ellipsis, so the row never breaks and two names sharing a first word still
+   read apart. Each button's aria-label carries the full name. Buttons keep the board's own sizing
+   (at least 48 CSS px on screen at every stage scale). */
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card {
+  min-height: 0;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-8) var(--kit-space-8) var(--kit-space-8) var(--kit-space-16) !important;
+}
+
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-score-card-info {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "name points"
+    "session points";
+  align-items: center;
+  column-gap: var(--kit-space-16);
+  row-gap: var(--kit-space-4);
+}
+
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-score-card-name {
+  grid-area: name;
+  min-width: 0;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  font-size: 28px !important;
+  line-height: 1.1;
+}
+
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-score-card-duel-pts {
+  grid-area: points;
+  margin: 0;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-session-score {
+  grid-area: session;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px !important;
+  line-height: 1.25;
+}
+
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-duel-points-value {
+  font-size: 40px !important;
+}
+
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-duel-points-label {
+  font-size: 16px;
+}
+
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-score-actions {
+  flex: none;
+}
+
+.showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-score-award-btn {
+  white-space: nowrap;
+}
+
+.showdown-board-content .board-tile,
+.showdown-board-content [data-role="duel-evidence-card"],
+.showdown-board-content [data-role="showdown-result"] > div:first-child {
+  border: 1px solid var(--color-film-border) !important;
+  border-radius: var(--kit-radius-card) !important;
+  background-color: var(--color-backer) !important;
+  box-shadow: var(--kit-rim), var(--kit-drop-deep) !important;
+}
+
+.showdown-board-content .board-tile {
+  min-height: 180px;
+  padding: var(--kit-space-24) var(--kit-space-32) !important;
+}
+
+.showdown-board-content .board-tile h2,
+.showdown-board-content .board-tile h3 {
+  color: var(--color-ink) !important;
+  font-size: 48px !important;
+  font-weight: 600 !important;
+  line-height: 1.05;
+}
+
+.showdown-board-content .board-tile p {
+  font-family: var(--kit-font-mono);
+  font-size: 24px !important;
+}
+
+.showdown-board-content .board-tile p span.text-3xl,
+.showdown-board-content .board-tile p span.text-4xl,
+.showdown-board-content .board-tile p span.showdown-finalist-score,
+.showdown-board-content .board-tile p span.showdown-duel-points-value,
+.showdown-board-content .board-tile p span.showdown-result-duel-pts {
+  font-size: 56px !important;
+}
+
+.showdown-board-content button {
+  min-width: max(44px, calc(48px / var(--stage-scale, 1))) !important;
+  min-height: max(44px, calc(48px / var(--stage-scale, 1))) !important;
+  border-radius: var(--kit-space-12) !important;
+  font-family: var(--kit-font-sans) !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+.showdown-board-content [data-role="showdown-commence-duel"],
+.showdown-board-content [data-role="showdown-reveal-winner"],
+.showdown-board-content [data-role="showdown-finish"] {
+  min-height: max(var(--kit-space-64), calc(48px / var(--stage-scale, 1))) !important;
+  padding: var(--kit-space-16) var(--kit-space-32) !important;
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark)) !important;
+  color: var(--color-on-gold) !important;
+}
+
+.showdown-board-content [data-role="duel-evidence-card"] {
+  padding: var(--kit-space-8) var(--kit-space-24) !important;
+}
+
+.showdown-board-content [data-role="duel-evidence-card"] h2 {
+  font-size: 28px !important;
+  font-weight: 600 !important;
+}
+
+.showdown-board-content [data-role="showdown-result"] > div:first-child {
+  padding: var(--kit-space-32) !important;
+}
+
+.showdown-board-content [data-role="showdown-result"] > div:first-child h2 {
+  color: var(--color-gold) !important;
+  font-size: 64px !important;
+}
+
+.showdown-board-content > footer {
+  display: none !important;
+}
+
+/* Showdown semantic stage layout & tokenized components */
+/* PILL (round 8): the header row carries real slack between its min-height and the title/subtitle
+   it actually holds (about 36px at 1280x720). flex-wrap lets the duel-only Discussion pill land in
+   that slack beside the title on wide stages, and drop to its own line rather than squeeze the
+   title on narrow ones, without hand-tuning a breakpoint per format. */
+.showdown-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16) var(--kit-space-24);
+  padding-bottom: var(--kit-space-16);
+  border-bottom: 1px solid var(--color-hairline);
+  margin-bottom: var(--kit-space-24);
+}
+
+.showdown-header-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.showdown-badge-row {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+}
+
+.showdown-badge-pill {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: var(--kit-space-4) var(--kit-space-12);
+  border-radius: var(--kit-space-4);
+  background-color: var(--color-panel-navy);
+  color: var(--color-anticipation-gold);
+  border: 1px solid var(--color-hairline);
+  font-family: var(--kit-font-mono);
+}
+
+.showdown-stage-pill {
+  font-size: 12px;
+  font-weight: 500;
+  padding: var(--kit-space-4) var(--kit-space-8);
+  border-radius: var(--kit-space-4);
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+}
+
+.showdown-title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: var(--kit-space-8);
+  color: var(--color-ink);
+  line-height: 1.1;
+}
+
+.showdown-subtitle {
+  font-size: 16px;
+  margin-top: var(--kit-space-8);
+  color: var(--color-ink-muted);
+  line-height: 1.3;
+}
+
+.showdown-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+}
+
+.showdown-progress-step {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--kit-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--kit-font-mono);
+  background-color: var(--color-panel-navy);
+  color: var(--color-ink-dim);
+  border: 1px solid var(--color-hairline);
+}
+
+.showdown-progress-step--active {
+  background-color: var(--color-anticipation-gold);
+  color: var(--color-stage-deep);
+}
+
+.showdown-stage-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-24);
+  min-height: 0;
+}
+
+.showdown-finalists-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--kit-space-24);
+}
+
+.showdown-finalists-grid--solo {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 672px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.showdown-waiting-notice {
+  text-align: center;
+  color: var(--color-ink-muted);
+  font-size: 20px;
+}
+
+.showdown-action-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.showdown-finalist-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-24);
+  border-radius: var(--kit-radius-card);
+  border: 1px solid var(--color-hairline);
+  background-color: var(--color-panel-navy);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.showdown-finalist-card[data-team="navy"] {
+  border-color: var(--color-team-navy);
+}
+
+.showdown-finalist-card[data-team="gold"] {
+  border-color: var(--color-team-gold);
+}
+
+.showdown-finalist-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+}
+
+.showdown-finalist-ticket {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: var(--kit-font-mono);
+  color: var(--color-team-gold);
+  margin: 0;
+}
+
+.showdown-finalist-card[data-team="navy"] .showdown-finalist-ticket {
+  color: var(--color-team-navy);
+}
+
+.showdown-finalist-card[data-team="gold"] .showdown-finalist-ticket {
+  color: var(--color-team-gold);
+}
+
+.showdown-finalist-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  margin: var(--kit-space-4) 0 0;
+}
+
+.showdown-finalist-score-col {
+  text-align: right;
+  font-family: var(--kit-font-mono);
+  margin: 0;
+}
+
+.showdown-finalist-score {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.showdown-finalist-card[data-team="navy"] .showdown-finalist-score {
+  color: var(--color-team-navy);
+}
+
+.showdown-finalist-card[data-team="gold"] .showdown-finalist-score {
+  color: var(--color-team-gold);
+}
+
+.showdown-finalist-score-label {
+  font-size: 14px;
+  color: var(--color-ink-dim);
+}
+
+.showdown-finalist-picks {
+  padding-top: var(--kit-space-16);
+  border-top: 1px solid var(--color-hairline);
+}
+
+.showdown-finalist-picks-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-family: var(--kit-font-mono);
+  color: var(--color-ink-muted);
+}
+
+.showdown-meter-track {
+  height: 8px;
+  margin-top: var(--kit-space-8);
+  border-radius: var(--kit-radius-full);
+  overflow: hidden;
+  background-color: color-mix(in srgb, var(--color-light) 8%, transparent);
+}
+
+/* NIT: --fill-ratio (set inline per render, Showdown.tsx) was a plain, unregistered custom
+   property, so it could not itself transition: it switched straight to its new value the instant
+   the style changed, while transform's own scaleX eased over the same 300ms below. The
+   border-radius compensation reads --fill-ratio, so it was correct only at the two ends of a
+   change and wrong for the whole 300ms in between, the cap visibly changing shape on every
+   update instead of staying round throughout. Registering it as a <number> makes it animatable
+   like any other property, so listing it in the transition below keeps it in lockstep with
+   transform instead of jumping ahead of it. */
+@property --fill-ratio {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+}
+
+.showdown-meter-fill {
+  height: 100%;
+  /* NIT-6: this element itself animates transform: scaleX(--fill-ratio) (MOT-VQA-02, kept for the
+     same compositor-only reason the other vote-bar fills use it). A plain border-radius here would
+     get squished horizontally along with that scale, flattening the round leading edge toward a
+     hard vertical line at low percentages. The vertical semi-axis (half the track's 8px height) is
+     untouched by a horizontal-only transform, so only the horizontal one needs inverse
+     compensation by the current ratio (set inline per render), so the painted result stays a true
+     4px round cap regardless of scale. The browser's own width/2 clamp still guards the extreme
+     near-zero end. */
+  border-radius: calc(4px / max(var(--fill-ratio, 1), 0.001)) / 4px;
+  transition: transform 300ms ease, --fill-ratio 300ms ease;
+}
+
+.showdown-finalist-card[data-team="navy"] .showdown-meter-fill {
+  background-color: var(--color-team-navy);
+}
+
+.showdown-finalist-card[data-team="gold"] .showdown-meter-fill {
+  background-color: var(--color-team-gold);
+}
+
+.showdown-score-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-24);
+  padding: var(--kit-space-24);
+  border-radius: var(--kit-radius-card);
+  border: 1px solid var(--color-hairline);
+  background-color: var(--color-panel-navy);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.showdown-score-card[data-team="navy"] {
+  border-color: var(--color-team-navy);
+}
+
+.showdown-score-card[data-team="gold"] {
+  border-color: var(--color-team-gold);
+}
+
+.showdown-score-card-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: var(--kit-space-4) 0 0;
+}
+
+.showdown-score-card-duel-pts {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: var(--kit-font-mono);
+  margin: var(--kit-space-4) 0 0;
+}
+
+.showdown-score-card[data-team="navy"] .showdown-score-card-duel-pts {
+  color: var(--color-team-navy);
+}
+
+.showdown-score-card[data-team="gold"] .showdown-score-card-duel-pts {
+  color: var(--color-team-gold);
+}
+
+.showdown-duel-points-value {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.showdown-duel-points-label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: var(--kit-space-8);
+  color: var(--color-ink-dim);
+}
+
+.showdown-session-score {
+  font-family: var(--kit-font-mono);
+  color: var(--color-ink-muted);
+  margin: var(--kit-space-4) 0 0;
+}
+
+.showdown-score-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+}
+
+.showdown-score-adjust-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--kit-space-8);
+  border: 1px solid var(--color-hairline);
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink-dim);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.showdown-score-award-btn {
+  min-height: 44px;
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border-radius: var(--kit-space-8);
+  font-weight: 700;
+  font-size: 14px;
+  font-family: var(--kit-font-mono);
+  border: none;
+  cursor: pointer;
+}
+
+.showdown-score-card[data-team="navy"] .showdown-score-award-btn {
+  background-color: var(--color-team-navy);
+  color: var(--color-light);
+}
+
+.showdown-score-card[data-team="gold"] .showdown-score-award-btn {
+  background-color: var(--color-team-gold);
+  color: var(--color-stage-deep);
+}
+
+.showdown-evidence-card {
+  padding: var(--kit-space-24);
+  border-radius: var(--kit-radius-card);
+  border: 1px solid var(--color-hairline);
+  background-color: var(--color-panel-navy);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.showdown-evidence-card--paused {
+  background-color: color-mix(in srgb, var(--color-void) 90%, black);
+  border-color: var(--color-anticipation-gold);
+}
+
+.showdown-evidence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+  margin-bottom: var(--kit-space-8);
+}
+
+.showdown-evidence-step {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--kit-font-mono);
+  padding: var(--kit-space-4) var(--kit-space-8);
+  border-radius: var(--kit-space-4);
+  color: var(--color-anticipation-gold);
+}
+
+.showdown-evidence-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+}
+
+.showdown-nav-btn {
+  min-height: 44px;
+  padding: var(--kit-space-4) var(--kit-space-12);
+  border-radius: var(--kit-space-4);
+  border: 1px solid var(--color-hairline);
+  background: transparent;
+  color: var(--color-ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* DISCUSSION-PILL (round 8): lives in .showdown-header now, a flex row, not the evidence card's
+   grid, so it only needs to stay its own compact width and never grow or shrink with its sibling. */
+.showdown-discussion-pill {
+  flex: none;
+  min-height: 44px;
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border-radius: var(--kit-radius-full);
+  border: 1px solid var(--color-hairline);
+  font-size: 16px;
+  font-weight: 700;
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.showdown-discussion-pill--paused {
+  border-color: var(--color-anticipation-gold);
+  color: var(--color-anticipation-gold);
+}
+
+.showdown-evidence-statement {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* B2 / SHOWDOWN-RECAP and DUEL-BOARD: this is the card's last subgrid row (see the
+   [data-role="showdown-duel"] and [data-role="duel-evidence-card"] rules above), the only part of
+   the duel that shrinks and scrolls. The card's own header and statement sit in their own auto
+   rows above and never shrink (the discussion pill moved out of this card entirely in PILL round
+   8, into .showdown-header). */
+.showdown-evidence-recap {
+  min-height: 0;
+  overflow-y: auto;
+  margin-top: var(--kit-space-8);
+  padding-top: var(--kit-space-8);
+  border-top: 1px solid var(--color-hairline);
+}
+
+.showdown-evidence-answer {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--kit-font-mono);
+  color: var(--color-anticipation-gold);
+  margin: 0;
+}
+
+.showdown-evidence-detail {
+  margin-top: var(--kit-space-8);
+  color: var(--color-ink);
+  margin-bottom: 0;
+}
+
+.showdown-evidence-takeaway {
+  margin-top: var(--kit-space-8);
+  color: var(--color-ink-muted);
+  margin-bottom: 0;
+}
+
+.showdown-duel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+}
+
+.showdown-back-btn {
+  min-height: 44px;
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border-radius: var(--kit-space-8);
+  border: 1px solid var(--color-hairline);
+  font-weight: 700;
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.showdown-advance-btn {
+  min-height: 44px;
+  padding: var(--kit-space-12) var(--kit-space-24);
+  border-radius: var(--kit-space-12);
+  font-weight: 700;
+  background-color: var(--color-anticipation-gold);
+  color: var(--color-stage-deep);
+  border: none;
+  cursor: pointer;
+}
+
+.showdown-screen .facilitator-press:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showdown-screen .facilitator-press:active:not(:disabled) {
+    transform: none;
+    filter: brightness(0.95);
+  }
+}
+
+.showdown-screen .facilitator-press:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.showdown-screen .showdown-nav-btn:disabled {
+  opacity: 0.4;
+}
+
+.showdown-result-hero {
+  padding: var(--kit-space-32);
+  border-radius: var(--kit-radius-card);
+  border: 1px solid var(--color-anticipation-gold);
+  text-align: center;
+  background-color: color-mix(in srgb, var(--color-anticipation-gold) 10%, transparent);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.showdown-result-icon {
+  margin-inline: auto;
+  margin-bottom: var(--kit-space-16);
+  color: var(--color-anticipation-gold);
+}
+
+.showdown-result-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-anticipation-gold);
+  font-family: var(--kit-font-mono);
+  margin: 0;
+}
+
+.showdown-result-winner {
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: var(--kit-space-8);
+  color: var(--color-ink);
+  margin-bottom: 0;
+}
+
+.showdown-result-tile {
+  padding: var(--kit-space-24);
+  border-radius: var(--kit-radius-card);
+  border: 1px solid var(--color-hairline);
+  background-color: var(--color-panel-navy);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.showdown-result-tile--winner {
+  border-color: var(--color-anticipation-gold);
+}
+
+.showdown-result-ticket {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--kit-font-mono);
+  color: var(--color-ink-dim);
+  margin: 0;
+}
+
+.showdown-result-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: var(--kit-space-4) 0 0;
+}
+
+.showdown-result-points {
+  margin-top: var(--kit-space-16);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  color: var(--color-ink-muted);
+  margin-bottom: 0;
+}
+
+.showdown-result-duel-pts {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.showdown-result-tile[data-team="navy"] .showdown-result-duel-pts {
+  color: var(--color-team-navy);
+}
+
+.showdown-result-tile[data-team="gold"] .showdown-result-duel-pts {
+  color: var(--color-team-gold);
+}
+
+.showdown-predictions-summary {
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+
+.showdown-footer {
+  padding-top: var(--kit-space-12);
+  border-top: 1px solid var(--color-hairline);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  margin-top: var(--kit-space-16);
+}
+
+/* The source board is authored at 16:9. Portrait keeps the same hierarchy,
+   but compacts the chrome, finalist tiles, and recap card inside its narrower
+   protected stage instead of allowing the widescreen geometry to clip. */
+[data-format="portrait"] .showdown-show-frame .show-safe {
+  /* 4-value inset keeps --showdown-hud-overlap. Shorthand inset would clobber it. */
+  inset: var(--kit-space-24)
+    var(--kit-space-24)
+    max(var(--kit-space-24), calc((var(--showdown-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    var(--kit-space-24);
+}
+
+[data-format="portrait"] .showdown-show-frame .show-header {
+  height: var(--kit-space-64);
+}
+
+[data-format="portrait"] .showdown-show-frame .show-join-pill {
+  top: 0;
+  width: 144px;
+  height: var(--kit-space-64);
+  min-height: var(--kit-space-64);
+  padding: var(--kit-space-8) var(--kit-space-16);
+  justify-content: center;
+}
+
+[data-format="portrait"] .showdown-show-frame .show-join-pill__host {
+  display: none;
+}
+
+[data-format="portrait"] .showdown-show-frame .join-card__code {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+[data-format="portrait"] .showdown-show-frame .join-card__code::before {
+  content: none;
+}
+
+[data-format="portrait"] .showdown-source-header {
+  height: var(--kit-space-64);
+  gap: var(--kit-space-12);
+}
+
+[data-format="portrait"] .showdown-source-header > span {
+  min-height: var(--kit-space-48);
+  padding: var(--kit-space-8) var(--kit-space-16);
+  font-size: 18px;
+}
+
+[data-format="portrait"] .showdown-source-header > strong {
+  display: none;
+}
+
+[data-format="portrait"] .showdown-show-frame .show-content {
+  top: 80px;
+  bottom: var(--kit-space-24);
+}
+
+[data-format="portrait"] .showdown-board-content {
+  gap: var(--kit-space-12);
+}
+
+[data-format="portrait"] .showdown-board-content > header {
+  min-height: 88px;
+}
+
+[data-format="portrait"] .showdown-board-content > header h1 {
+  font-size: 40px !important;
+}
+
+[data-format="portrait"] .showdown-board-content > header p {
+  margin-top: var(--kit-space-8) !important;
+  font-size: 18px !important;
+}
+
+[data-format="portrait"] .showdown-board-content > section {
+  gap: var(--kit-space-12) !important;
+}
+
+[data-format="portrait"] .showdown-board-content [data-role="showdown-duel-actions"] {
+  padding-bottom: var(--kit-space-8);
+}
+
+/* DUEL-BOARD: two tiles side by side leave about 151 stage px inside each, less than the minus and
+   +1 POINT buttons alone need, so portrait stacks the two finalists full width, one compact row
+   each (the same tile as widescreen and square, at portrait type sizes). */
+[data-format="portrait"] .showdown-board-content [data-role="showdown-duel"] > div:first-child {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: var(--kit-space-8) !important;
+}
+
+[data-format="portrait"] .showdown-board-content [data-role="showdown-duel"] .board-tile {
+  min-width: 0;
+  gap: var(--kit-space-12) !important;
+  padding: var(--kit-space-8) var(--kit-space-8) var(--kit-space-8) var(--kit-space-12) !important;
+}
+
+[data-format="portrait"] .showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-score-card-name {
+  font-size: 22px !important;
+}
+
+[data-format="portrait"] .showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-duel-points-value {
+  font-size: 28px !important;
+}
+
+/* No room for the DUEL PTS label beside a portrait name, so it is hidden visually only (the same
+   clip as .sr-only) and stays in the accessible text. */
+[data-format="portrait"] .showdown-board-content [data-role="showdown-duel"] .showdown-score-card .showdown-duel-points-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+[data-format="portrait"] .showdown-board-content .board-tile h2,
+[data-format="portrait"] .showdown-board-content .board-tile h3 {
+  overflow-wrap: anywhere;
+  font-size: 28px !important;
+}
+
+[data-format="portrait"] .showdown-board-content .board-tile p {
+  font-size: 16px !important;
+}
+
+[data-format="portrait"] .showdown-board-content [data-role="duel-evidence-card"] {
+  padding: var(--kit-space-12) var(--kit-space-16) !important;
+}
+
+[data-format="portrait"] .showdown-board-content [data-role="duel-evidence-card"] h2 {
+  font-size: 24px !important;
+  line-height: 1.15;
+}
+
+[data-format="portrait"] .showdown-board-content button {
+  font-size: 14px !important;
+}
+
+@media (min-width: 601px) {
+  body:has([data-format="portrait"]) [data-role="hud-portal"] {
+    align-items: flex-end;
+  }
+
+  body:has([data-format="portrait"]) [data-role="hud"] {
+    max-width: 400px !important;
+  }
+
+}
+
+@media (max-width: 600px) {
+  [data-role="hud-peek-trigger"] {
+    position: fixed !important;
+    top: 50% !important;
+    right: 0 !important;
+    bottom: auto !important;
+    display: flex !important;
+    width: 44px;
+    min-width: 44px;
+    padding: var(--kit-space-8) !important;
+    border-radius: var(--kit-space-12) 0 0 var(--kit-space-12) !important;
+    transform: translateY(-50%);
+    border-color: var(--color-anticipation-gold) !important;
+    color: var(--color-ink-muted);
+    box-shadow: 0 0 0 1px var(--color-anticipation-gold);
+  }
+
+  [data-role="hud-peek-trigger"] > span {
+    display: none;
+  }
+
+  [data-role="hud-status-cluster"] {
+    display: none !important;
+  }
+
+  [data-role="hud"] {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: var(--kit-space-8) !important;
+    padding: var(--kit-space-8) !important;
+    overflow-x: visible !important;
+  }
+
+  [data-role="hud-flow-cluster"] {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: var(--kit-space-8) !important;
+  }
+
+  [data-role="hud-settings-cluster"] {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: var(--kit-space-4) !important;
+  }
+
+  [data-format="portrait"] .showdown-show-frame .show-safe {
+    inset: var(--kit-space-12)
+      var(--kit-space-12)
+      max(var(--kit-space-12), calc((var(--showdown-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+      var(--kit-space-12);
+  }
+
+  [data-format="portrait"] .showdown-show-frame .show-join-pill {
+    width: 128px;
+    padding-inline: var(--kit-space-12);
+  }
+
+  [data-format="portrait"] .showdown-show-frame .join-card__code {
+    font-size: 18px;
+  }
+
+  [data-format="portrait"] .showdown-source-header > span {
+    padding-inline: var(--kit-space-12);
+    font-size: 14px;
+  }
+
+  [data-format="portrait"] .showdown-show-frame .show-content {
+    top: 72px;
+    bottom: var(--kit-space-12);
+  }
+
+  [data-format="portrait"] .showdown-board-content {
+    gap: var(--kit-space-8);
+  }
+
+  [data-format="portrait"] .showdown-board-content > header {
+    min-height: 104px;
+  }
+
+  [data-format="portrait"] .showdown-board-content > header h1 {
+    font-size: 32px !important;
+  }
+
+  [data-format="portrait"] .showdown-board-content > header p {
+    margin-top: var(--kit-space-4) !important;
+    font-size: 16px !important;
+  }
+
+  [data-format="portrait"] .showdown-board-content > section {
+    gap: var(--kit-space-8) !important;
+  }
+
+  [data-format="portrait"] .showdown-board-content [data-role="showdown-duel-actions"] {
+    padding-bottom: 0;
+  }
+
+  [data-format="portrait"] .showdown-board-content [data-role="showdown-duel"] > div:first-child {
+    gap: var(--kit-space-8) !important;
+  }
+
+  [data-format="portrait"] .showdown-board-content [data-role="showdown-duel"] .board-tile {
+    gap: var(--kit-space-8) !important;
+  }
+
+  [data-format="portrait"] .showdown-board-content .board-tile h2,
+  [data-format="portrait"] .showdown-board-content .board-tile h3 {
+    font-size: 22px !important;
+  }
+
+  [data-format="portrait"] .showdown-board-content .board-tile p {
+    font-size: 14px !important;
+  }
+
+  [data-format="portrait"] .showdown-board-content [data-role="duel-evidence-card"] {
+    padding: var(--kit-space-8) var(--kit-space-12) !important;
+  }
+
+  [data-format="portrait"] .showdown-board-content [data-role="duel-evidence-card"] h2 {
+    font-size: 18px !important;
+  }
+}
+
+/* Closing: the live session summary keeps the existing beat machine behind
+   the source finale board, while the first and overview beats use the
+   protected hero-plus-three-stat composition. */
+.closing-screen {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  /* Transparent (Game night rollout): the router's stage lights sit behind this beat, and its own
+     ShowFrame paints the stage when it renders on its own. */
+  background-color: transparent !important;
+  font-family: var(--kit-font-sans) !important;
+}
+
+.closing-show-frame .show-safe {
+  /* Packing (inset + HUD clearance) lives in closing-critique.css. */
+  display: block;
+}
+
+.closing-show-frame .show-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 12;
+  height: 76px;
+}
+
+.closing-show-frame .show-join-pill {
+  position: absolute;
+  top: var(--kit-space-4);
+  right: 0;
+  width: 640px;
+  height: 76px;
+  min-height: 76px;
+  padding: var(--kit-space-12) var(--kit-space-32);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  white-space: nowrap;
+}
+
+.closing-show-frame .show-join-pill__label {
+  display: none;
+}
+
+.closing-show-frame .show-join-pill__host {
+  flex-direction: row;
+  gap: var(--kit-space-16);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.closing-show-frame .join-card__code {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  overflow: hidden;
+  font-size: 44px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.closing-show-frame .join-card__code::before {
+  content: "·";
+  margin-right: var(--kit-space-16);
+  color: var(--color-ink-dim);
+}
+
+.closing-source-header {
+  position: absolute;
+  top: var(--kit-space-8);
+  left: 0;
+  z-index: 14;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.closing-source-header > span {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  margin: 0;
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.closing-show-frame .show-content {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.closing-board-content {
+  position: absolute;
+  inset: 0;
+}
+
+.closing-source-score {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+}
+
+.closing-source-score__hero {
+  position: absolute;
+  top: 137px;
+  left: 0;
+  width: 100%;
+  height: 354px;
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-64);
+  padding: var(--kit-space-48) calc(var(--kit-space-64) + var(--kit-space-48));
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.closing-source-score__hero strong {
+  flex: none;
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-sans);
+  font-size: 200px;
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  text-shadow: 0 0 var(--kit-space-32) color-mix(in srgb, var(--color-gold) 70%, transparent);
+}
+
+.closing-source-score__hero h1 {
+  min-width: 0;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.closing-board-content > .flex-1 {
+  position: absolute;
+  top: 112px;
+  right: 0;
+  bottom: 48px;
+  left: 0;
+  margin: 0 !important;
+}
+
+.closing-board-content:has(.closing-source-score) > .flex-1 {
+  opacity: 0.001;
+  pointer-events: none;
+}
+
+.closing-board-content > .closing-footer,
+.closing-show-frame > .show-safe > .show-footer {
+  display: none !important;
+}
+
+/* One audience recap. Dense report panels do not enter this composition. */
+.closing-recap {
+  inset: 112px 0 96px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-24);
+}
+
+.closing-recap .closing-source-score {
+  position: relative;
+  inset: auto;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-24);
+}
+
+.closing-recap .closing-source-score__hero {
+  position: static;
+  flex: 1;
+  height: auto;
+  min-height: 0;
+  padding: var(--kit-space-32) var(--kit-space-48);
+  gap: var(--kit-space-32);
+}
+
+.closing-recap .closing-source-score__hero strong {
+  font-size: 176px;
+}
+
+.closing-recap-message {
+  width: 100%;
+  min-width: 0;
+}
+
+.closing-recap-message h1 {
+  font-size: 88px;
+  overflow-wrap: anywhere;
+}
+
+.closing-recap-message p {
+  max-width: 1040px;
+  margin: var(--kit-space-24) 0 0;
+  color: var(--color-ink);
+  font-size: 40px;
+  line-height: 1.25;
+}
+
+.closing-recap-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--kit-space-16);
+  flex: none;
+}
+
+.closing-recap-actions button {
+  min-width: max(160px, calc(44px / var(--stage-scale, 1)));
+  min-height: max(64px, calc(44px / var(--stage-scale, 1)));
+  padding: var(--kit-space-12) var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background: var(--color-backer);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.closing-recap-actions button:last-child {
+  background: var(--color-gold);
+  color: var(--color-stage-deep);
+}
+
+[data-format="portrait"] .closing-source-header > span {
+  padding: var(--kit-space-8) var(--kit-space-12);
+  min-height: var(--kit-space-48);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
+[data-format="portrait"] .closing-show-frame .show-join-pill {
+  width: 128px;
+  min-height: var(--kit-space-48);
+  height: var(--kit-space-48);
+  padding: var(--kit-space-8) var(--kit-space-12);
+}
+
+[data-format="portrait"] .closing-show-frame .show-join-pill__host {
+  display: none;
+}
+
+[data-format="portrait"] .closing-show-frame .join-card__code {
+  font-size: 18px;
+  text-align: center;
+}
+
+[data-format="portrait"] .closing-show-frame .join-card__code::before {
+  content: none;
+}
+
+[data-format="portrait"] .closing-recap {
+  inset: 80px 0 96px;
+}
+
+[data-format="portrait"] .closing-recap .closing-source-score__hero {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--kit-space-24);
+  gap: var(--kit-space-24);
+}
+
+[data-format="portrait"] .closing-recap .closing-source-score__hero strong {
+  font-size: 112px;
+}
+
+[data-format="portrait"] .closing-recap .closing-source-score__hero h1 {
+  font-size: 40px;
+}
+
+[data-format="portrait"] .closing-recap-message p {
+  font-size: 24px;
+}
+
+[data-format="portrait"] .closing-recap-actions button {
+  min-width: 0;
+  flex: 1;
+  padding: var(--kit-space-12) var(--kit-space-16);
+  font-size: 18px;
+}
+
+/* Square and portrait stages use compact authored canvases at every viewport.
+   Keep their audience landmarks inside those canvases instead of inheriting
+   the widescreen board's fixed-width cards. */
+
+  [data-format="portrait"] .question-show-frame .show-safe {
+    inset: var(--kit-space-32)
+      var(--kit-space-24)
+      max(var(--kit-space-64), calc((var(--question-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+      var(--kit-space-24);
+  }
+
+  [data-format="portrait"] .question-show-frame .show-header,
+  [data-format="portrait"] .closing-show-frame .show-header {
+    height: var(--kit-space-64);
+    min-height: var(--kit-space-64);
+  }
+
+  /* STAGE-SPEC step 5 (spec section 2.4): question-flow.css owns the header's size in every
+     format, including portrait. header gap/height, badge width/height/font-size, and kicker
+     min-height/padding/font-size were already dead here (question-flow.css's portrait selector
+     always won them); only the non-size chrome (badge border paint, kicker wrapping) stays. */
+  [data-format="portrait"] .question-source-header {
+    max-width: calc(100% - 168px);
+    min-width: 0;
+  }
+
+  [data-format="portrait"] .question-source-number {
+    flex: none;
+    border-width: 2px;
+    border-radius: var(--kit-space-16);
+  }
+
+  [data-format="portrait"] .question-source-kicker {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  [data-format="portrait"] :is(.question-show-frame, .closing-show-frame) .show-join-pill {
+    top: 0;
+    width: 144px;
+    height: var(--kit-space-48);
+    min-height: var(--kit-space-48);
+    padding: var(--kit-space-8) var(--kit-space-12);
+  }
+
+  [data-format="portrait"] :is(.question-show-frame, .closing-show-frame) .show-join-pill__host {
+    display: none;
+  }
+
+  [data-format="portrait"] :is(.question-show-frame, .closing-show-frame) .join-card__code {
+    max-width: 100%;
+    justify-content: center;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  [data-format="portrait"] :is(.question-show-frame, .closing-show-frame) .join-card__code::before {
+    content: none;
+  }
+
+  [data-format="portrait"] .question-show-frame .question-stage-copy {
+    box-sizing: border-box !important;
+  }
+
+  [data-format="portrait"] .question-show-frame .question-stage-copy h1,
+  [data-format="portrait"] .question-show-frame .question-stage-copy [data-comp-id="statement"],
+  [data-format="portrait"] .question-show-frame--binary .question-stage-copy h1 {
+    overflow-wrap: anywhere;
+  }
+
+  [data-format="portrait"] .question-show-frame--binary .answer-bar {
+    min-width: 0 !important;
+  }
+
+  [data-format="portrait"] .question-show-frame .show-footer {
+    min-width: 0;
+    font-size: 18px;
+  }
+
+  [data-format="portrait"] .question-show-frame .show-footer__context {
+    max-width: 100%;
+  }
+
+  [data-format="portrait"] .closing-source-header {
+    max-width: calc(100% - 216px);
+    min-width: 0;
+  }
+
+  [data-format="portrait"] .closing-source-score,
+  [data-format="portrait"] .closing-source-score__hero {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+

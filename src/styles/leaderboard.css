@@ -1,0 +1,629 @@
+/* Curated 15 Top 5 board: five named lanes, gold on first, no table chrome.
+   Loaded after presentation.css so stage type and materials win. Tokens only. */
+
+.leaderboard-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-stage-deep);
+  font-family: var(--kit-font-sans);
+  color: var(--color-ink);
+}
+
+.leaderboard-screen .leaderboard-show-frame .show-safe {
+  /* One packing owner: HUD clearance lives in the bottom of a 4-value inset. */
+  inset: var(--kit-space-64)
+    calc(var(--kit-space-64) + var(--kit-space-32))
+    max(var(--kit-space-64), calc((var(--leaderboard-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    calc(var(--kit-space-64) + var(--kit-space-32));
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  column-gap: var(--kit-space-24);
+}
+
+.leaderboard-screen[data-format="portrait"] .leaderboard-show-frame .show-safe,
+.leaderboard-screen[data-format="square"] .leaderboard-show-frame .show-safe {
+  /* HB-38: at portrait the board sat at 754px wide against a 952px target. Left/right tightened
+     from kit-space-32 to kit-space-16, matching the closing screen's own portrait .show-safe
+     (closing-critique.css), which shares this board. portrait's own 430px design width still
+     caps the real ceiling at 430 * scale (about 886px here), so 952px is not reachable at that
+     format regardless of inset. Tightened to close as much of that gap as tokens allow. */
+  inset: var(--kit-space-32)
+    var(--kit-space-16)
+    max(var(--kit-space-32), calc((var(--leaderboard-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    var(--kit-space-16);
+  grid-template-columns: minmax(0, 1fr);
+  /* One column now needs 3 stacked rows (kicker, join pill, board) instead of the widescreen's
+     2 rows x 2 columns. Every child below gets an explicit cell so Grid's own auto-placement
+     order (which locks .show-header to column 1 before it reaches .leaderboard-source-header,
+     regardless of DOM order) cannot shuffle the kicker to the bottom of the screen again.
+     N4: the board row was minmax(0, 1fr), stretching to fill all remaining height, then
+     .score-board's own justify-content: center centered a shorter board inside that stretched
+     row (two centering layers stacking into about 220px dead above the lanes and 227px below).
+     auto sizes the row to the board's real content, align-content: center then centers the whole
+     3-row group as one block, so there is only one place height gets distributed. */
+  grid-template-rows: auto auto auto;
+  align-content: center;
+}
+
+.leaderboard-screen[data-format="portrait"] .leaderboard-source-header,
+.leaderboard-screen[data-format="square"] .leaderboard-source-header {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.leaderboard-source-header {
+  position: relative;
+  z-index: 14;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.leaderboard-source-header > span {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  margin: 0;
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.leaderboard-screen .leaderboard-show-frame .show-header {
+  position: relative;
+  inset: auto;
+  grid-column: 2;
+  height: 76px;
+  min-width: 0;
+}
+
+/* HB-35 (new, this pass): square/portrait's .show-safe collapses to one explicit column, but this
+   selector still placed the header at column 2 unconditionally. With no explicit column 2, Grid
+   auto-created an implicit one sized to the header's own join pill, which ate nearly the entire
+   row and squeezed the real board (.show-content, grid-column: 1 / -1) toward 0 width, the true
+   cause of the 600px+ overflow the new atlas metrics caught on this screen. */
+.leaderboard-screen[data-format="portrait"] .leaderboard-show-frame .show-header,
+.leaderboard-screen[data-format="square"] .leaderboard-show-frame .show-header {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.leaderboard-screen[data-format="portrait"] .leaderboard-show-frame .show-content,
+.leaderboard-screen[data-format="square"] .leaderboard-show-frame .show-content {
+  grid-row: 3;
+  grid-column: 1 / -1;
+}
+
+/* B3 (premium-host pass 2): the first attempt gave both the host/address text and the room code
+   flex:1 + min-width:0 + overflow:hidden, so they competed for the same width and the code (the
+   one thing that matters) could shrink to an ellipsis while the host text held its ground. The
+   pill sizes to its own content instead of stretching to the header's full width, the code is
+   fixed-size and always shown whole, and only the (secondary) host text gives up space: hidden
+   entirely at portrait (as the closing screen's own portrait pill already does), truncated with
+   an ellipsis at square where there is some room for it. */
+.leaderboard-screen[data-format="portrait"] .leaderboard-show-frame .show-join-pill,
+.leaderboard-screen[data-format="square"] .leaderboard-show-frame .show-join-pill {
+  width: auto;
+  max-width: 100%;
+  justify-self: start;
+  box-sizing: border-box;
+}
+
+.leaderboard-screen[data-format="portrait"] .leaderboard-show-frame .show-join-pill__host {
+  display: none;
+}
+
+.leaderboard-screen[data-format="portrait"] .leaderboard-show-frame .join-card__code::before {
+  content: none;
+}
+
+.leaderboard-screen[data-format="square"] .leaderboard-show-frame .show-join-pill__host {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leaderboard-screen[data-format="portrait"] .leaderboard-show-frame .join-card__code,
+.leaderboard-screen[data-format="square"] .leaderboard-show-frame .join-card__code {
+  flex: none;
+  min-width: auto;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.leaderboard-screen .leaderboard-show-frame .show-join-pill {
+  position: relative;
+  top: var(--kit-space-4);
+  right: 0;
+  width: auto;
+  max-width: 780px;
+  height: 76px;
+  min-height: 76px;
+  padding: var(--kit-space-12) var(--kit-space-32);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  white-space: nowrap;
+}
+
+.leaderboard-screen .leaderboard-show-frame .show-join-pill__label {
+  display: none;
+}
+
+.leaderboard-screen .leaderboard-show-frame .show-join-pill__host {
+  flex-direction: row;
+  gap: var(--kit-space-16);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.leaderboard-screen .leaderboard-show-frame .join-card__code {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  overflow: hidden;
+  font-size: 44px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leaderboard-screen .leaderboard-show-frame .join-card__code::before {
+  content: "·";
+  margin-right: var(--kit-space-16);
+  color: var(--color-ink-dim);
+}
+
+.leaderboard-screen .leaderboard-show-frame .show-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  min-width: 0;
+  min-height: 0;
+}
+
+.leaderboard-board-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.leaderboard-screen .leaderboard-show-frame .show-footer {
+  display: none !important;
+}
+
+.score-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-24);
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.score-board__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+  flex: none;
+}
+
+.score-board__header:not(:has(.score-board__title)) .score-board__kicker {
+  font-size: 36px;
+  letter-spacing: 0.18em;
+}
+
+.score-board__kicker {
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.score-board__title {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 88px;
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.score-board__empty {
+  margin: var(--kit-space-8) 0 0;
+  max-width: 1040px;
+  color: var(--color-ink);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.score-board__lanes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-12);
+  flex: 1;
+  min-height: 0;
+}
+
+/* Lane entrance is owned by ScreenRouter's opacity dissolve. A nested
+   opacity keyframe + stagger re-hid lanes during the dissolve and popped
+   them in after, fighting the shared SCREEN_FADE contract. */
+.score-board__lane {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--kit-space-24);
+  min-height: 104px;
+  padding: var(--kit-space-8) var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim);
+}
+
+.score-board__lane[data-rank="1"] {
+  min-height: 176px;
+  padding-block: var(--kit-space-16);
+  border-width: 2px;
+  border-color: color-mix(in srgb, var(--color-gold) 70%, var(--color-film-border));
+  background-image: linear-gradient(
+    110deg,
+    color-mix(in srgb, var(--color-gold) 26%, var(--color-backer)) 0%,
+    color-mix(in srgb, var(--color-gold) 10%, var(--color-backer)) 38%,
+    var(--color-backer) 100%
+  );
+  box-shadow: var(--kit-rim), var(--kit-drop-deep), 0 0 var(--kit-space-32) color-mix(in srgb, var(--color-gold) 34%, transparent);
+}
+
+.score-board__place {
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.score-board__lane[data-rank="1"] .score-board__place {
+  color: var(--color-gold);
+  font-size: 120px;
+  text-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 55%, transparent);
+}
+
+.score-board__name {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-ink);
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score-board__lane[data-rank="1"] .score-board__name {
+  color: var(--color-gold);
+  font-size: 96px;
+  letter-spacing: -0.045em;
+  text-shadow: 0 0 var(--kit-space-16) color-mix(in srgb, var(--color-gold) 40%, transparent);
+}
+
+.score-board__score {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: var(--kit-space-8);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.score-board__score strong {
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.score-board__lane[data-rank="1"] .score-board__score strong {
+  font-size: 80px;
+}
+
+.score-board__pts {
+  color: var(--color-ink-dim);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.score-board--closing .score-board__title {
+  font-size: 64px;
+}
+
+.score-board--closing .score-board__kicker {
+  font-size: 22px;
+}
+
+.score-board--closing .score-board__lane {
+  min-height: 72px;
+  padding: var(--kit-space-4) var(--kit-space-24);
+}
+
+.score-board--closing .score-board__lane[data-rank="1"] {
+  min-height: 112px;
+}
+
+.score-board--closing .score-board__place {
+  font-size: 44px;
+}
+
+.score-board--closing .score-board__lane[data-rank="1"] .score-board__place {
+  font-size: 80px;
+}
+
+.score-board--closing .score-board__name {
+  font-size: 48px;
+}
+
+.score-board--closing .score-board__lane[data-rank="1"] .score-board__name {
+  font-size: 68px;
+}
+
+.score-board--closing .score-board__score strong {
+  font-size: 40px;
+}
+
+.score-board--closing .score-board__lane[data-rank="1"] .score-board__score strong {
+  font-size: 56px;
+}
+
+.closing-screen .closing-source-score--board {
+  position: relative;
+  inset: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.closing-recap--scores .closing-source-score--board {
+  display: flex;
+}
+
+.leaderboard-screen[data-format="square"] .score-board__title,
+.leaderboard-screen[data-format="portrait"] .score-board__title {
+  font-size: 64px;
+}
+
+/* HB-38: names truncated hard on square and portrait once they rendered at a readable size in a
+   narrow lane ("Player 1" to "Pl…"). The score moves under the name instead of sharing the row
+   with it, so the name gets the lane's full width. Replaces the old 3-column
+   place/name/score row for both the leaderboard and the closing Top 5, which share this class. */
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__lane {
+  grid-template-columns: var(--kit-space-64) minmax(0, 1fr);
+  grid-template-areas:
+    "place name"
+    "place score";
+  column-gap: var(--kit-space-16);
+  row-gap: var(--kit-space-4);
+  padding: var(--kit-space-12) var(--kit-space-24);
+  min-height: 96px;
+}
+
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__lane[data-rank="1"] {
+  min-height: 128px;
+}
+
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__place {
+  grid-area: place;
+  font-size: 48px;
+}
+
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__lane[data-rank="1"] .score-board__place {
+  font-size: 80px;
+}
+
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__name {
+  grid-area: name;
+  font-size: 44px;
+}
+
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__lane[data-rank="1"] .score-board__name {
+  font-size: 52px;
+}
+
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__score {
+  grid-area: score;
+  justify-content: flex-start;
+}
+
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__score strong {
+  font-size: 32px;
+}
+
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__lane[data-rank="1"] .score-board__score strong {
+  font-size: 40px;
+}
+
+/* WARNING-6 (premium-host-fix-3): 16px read as a floor violation next to the HB-38 stacked
+   name/score layout's larger type. Raised to 20px, matching this brief's own body-text floor. */
+:is(.leaderboard-screen, .closing-screen):is([data-format="square"], [data-format="portrait"]) .score-board__pts {
+  font-size: 20px;
+}
+
+.leaderboard-screen[data-format="portrait"] .leaderboard-source-header > span {
+  font-size: 22px;
+  letter-spacing: 0.12em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .score-board__lane {
+    transform: none;
+  }
+}
+
+.phone-leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-16);
+  width: 100%;
+  max-width: 398px;
+  margin: 0 auto;
+  padding: var(--kit-space-16) 0;
+}
+
+.phone-leaderboard h2 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.phone-leaderboard__lanes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+}
+
+.phone-leaderboard__lanes li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--kit-space-12);
+  min-height: 52px;
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-backer);
+}
+
+.phone-leaderboard__lanes li[data-rank="1"] {
+  border-color: color-mix(in srgb, var(--color-gold) 50%, var(--color-film-border));
+  background-image: linear-gradient(
+    110deg,
+    color-mix(in srgb, var(--color-gold) 18%, var(--color-backer)),
+    var(--color-backer)
+  );
+}
+
+.phone-leaderboard__place {
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.phone-leaderboard__lanes li[data-rank="1"] .phone-leaderboard__place,
+.phone-leaderboard__lanes li[data-rank="1"] .phone-leaderboard__name,
+.phone-leaderboard__lanes li[data-rank="1"] .phone-leaderboard__score {
+  color: var(--color-gold);
+}
+
+.phone-leaderboard__name {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-ink);
+  font-size: 22px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.phone-leaderboard__score {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.phone-leaderboard__empty,
+.phone-leaderboard__you {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.phone-leaderboard__you {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+}
+
+/* Empty Top 5: keep the board shape so the stage never looks blank mid-show */
+.score-board__lanes--empty {
+  opacity: 0.42;
+}
+
+.score-board__lane--ghost {
+  border-style: dashed;
+}
+
+.score-board__lane--ghost .score-board__name,
+.score-board__lane--ghost .score-board__score strong {
+  color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+  font-weight: 500;
+}
+
+.leaderboard-screen .score-board[data-count="0"] {
+  align-items: center;
+  text-align: center;
+}
+
+.leaderboard-screen .score-board[data-count="0"] .score-board__header {
+  width: min(920px, 100%);
+  max-width: none;
+  margin-inline: auto;
+  align-items: center;
+}
+
+.score-board[data-count="0"] .score-board__title {
+  width: 100%;
+  font-size: 96px;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* HB-22: at 96px this headline broke into three uneven lines on the narrow portrait canvas ("The
+   / board is / waiting."). Smaller and still balanced reads as two clean lines instead. */
+.leaderboard-screen[data-format="portrait"] .score-board[data-count="0"] .score-board__title {
+  font-size: 64px;
+}
+
+.score-board[data-count="0"] .score-board__empty {
+  font-size: 40px;
+  max-width: 24ch;
+  text-align: center;
+}

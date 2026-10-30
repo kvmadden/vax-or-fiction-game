@@ -1,0 +1,489 @@
+/* Show looks, shared base (VOF-93).
+   Three drawn looks ride on :root[data-look]: studio, casefile and seventies. Today's page carries no
+   data-look at all and nothing in these files touches it: the one unscoped rule keeps the split's fill
+   bar hidden wherever a look does not draw it. Colors are tokens or shades mixed from tokens,
+   defined once per look. Spacing stays on the 4, 8, 12, 16, 24, 32, 48, 64 scale. Type is IBM Plex
+   Sans and Plex Mono, weight 700 at most, and nothing the room reads on the wide canvas sits under 26px.
+   Motion is transform, opacity and clip-path, with a still fallback under reduced motion, and no
+   running animation sits under a filtered ancestor (the VOF-88 frame rate rule). */
+
+/* The fill bar renders only in a drawn look, and only the wide stage's redrawn reveal shows it. */
+.look-bar { display: none; }
+
+@keyframes look-spin {
+  to { transform: rotate(1turn); }
+}
+
+/* ---- The stage backdrop slot ------------------------------------------------------------------
+   One layer under the scrims, filling the stage canvas (1600 by 900 on the wide stage). Inside it, bottom to
+   top, DOM order is the stacking order: the wash, the slot (a picture or the drawn set), then the calm hold.
+   The soft topic patterns behind the questions (VOF-94) are not drawn in this layer. The screen router mounts them
+   as the next layer of the atmosphere, over this one and under the scrims, and they hold their own calm
+   (src/looks/patterns/patterns.css). */
+.look-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.look-stage__wash,
+.look-slot,
+.look-fx,
+.look-stage__calm,
+.look-phone__calm {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.look-art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* A picture fills its slot edge to edge, anchored to the top, so a taller or wider screen crops the
+   bottom and the sides first. */
+.look-slot__picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  /* It arrives once it has decoded, so it fades in over the wash instead of cutting in. */
+  animation: look-picture-in 360ms ease-out backwards;
+}
+
+@keyframes look-picture-in {
+  from { opacity: 0; }
+}
+
+/* The calm centre over a picture, the same for every look so a picture is composed once. The stem and the
+   answers run the full safe width, so on the wide canvas the words live in x 4% to 96% and y 11% to 90.5%
+   (64 to 1536 by 100 to 814 of 1600 by 900). The scrim holds that box in navy at each look's own hold
+   with a 24px feather, so the picture reads fully in the top band behind the header plates, the side
+   margins and the bottom band, and through the hold everywhere else. */
+.look-stage[data-art="ai"] .look-stage__calm {
+  inset: 11% 4% 9.5%;
+  border-radius: var(--kit-radius-24);
+  /* The hold is set per look (--look-calm-stage), tuned to the lowest the words' contrast allows. */
+  background: color-mix(in srgb, var(--color-stage-deep) var(--look-calm-stage, 90%), transparent);
+  filter: blur(var(--kit-space-24));
+}
+
+/* Where a look holds its picture at 0 percent (Case file on its questions and its lobby, where every word sits on paper, a
+   tag or label tape), the calm layer would be a blurred see-through layer that draws nothing, so it gets no box and no blur
+   is painted. The test is the hold itself, so a look or a screen whose hold is above 0 keeps the layer. With less
+   transparency every hold goes solid (below), so the layer stays there. LookStage never re-renders with the screen, which
+   is why this is decided here and not by leaving the layer out of the markup. */
+@media (prefers-reduced-transparency: no-preference) {
+  @container style(--look-calm-stage: 0%) {
+    .look-stage[data-art="ai"] .look-stage__calm {
+      display: none;
+    }
+  }
+}
+
+/* The portrait canvas is as tall as a phone and its words run nearly the full height, so the calm hold covers nearly all of it. */
+:root[data-look] .screen-router-root:has([data-format='portrait']) .look-stage[data-art="ai"] .look-stage__calm {
+  inset: 3% 3% 6%;
+}
+
+/* Each look names how deep that hold runs on the portrait canvas, and the screens that are words alone keep the deeper of the two. */
+:root[data-look] .screen-router-root:has([data-format='portrait']) {
+  --look-calm-stage: var(--look-calm-portrait, 68%);
+}
+
+/* Setup wears Today's calm navy in every look (the owner's ruling of 2026-10-05, after he asked why the setup screens
+   looked ugly on their backgrounds). Its panels were drawn for that navy, and the busy art showing through and around
+   them read as pasted on. Every view of setup is the Preflight screen: the ready screen, More options, Quick setups and
+   the Look screen, which shows the pick once, in its sample question. A look changes three things behind setup, and
+   each is put back as Today has it: the look's own stage layer is not shown (it stays mounted, so its picture is decoded
+   and the lobby opens on it at once), Today's cones and lights come back, and the scrims return to their full strength. */
+:root[data-look] .screen-router-root[data-active-screen="Preflight"] .look-stage {
+  display: none;
+  opacity: 0;
+}
+
+:root[data-look] .screen-router-root[data-active-screen="Preflight"] .stage-atmosphere > :is(.stage-cones, .show-lights) {
+  display: block;
+}
+
+/* Opening the lobby from setup, and going back to setup, swaps the look's own layer for Today's cones and lights. The swap
+   fades over the screens' own 260 ms dissolve instead of cutting on one frame: a layer that leaves fades out and only then
+   takes display none (allow-discrete), and a layer that arrives fades in from nothing (@starting-style). Outside setup the
+   cones and the lights rest at 0 under their display none, so they have a value to fade from and to. The starting value
+   also applies to a layer's first style, so a page that loads on a look's lobby or question (a reload in the middle of a
+   show) fades the look's layer in over the same quarter second, and one that loads on setup fades its cones and lights in.
+   Reduced motion swaps the layers at once, as it does the screens. */
+:root[data-look] .stage-atmosphere > :is(.look-stage, .stage-cones, .show-lights) {
+  transition:
+    opacity var(--transition-smooth, 260ms) var(--ease-screen-fade, cubic-bezier(0.4, 0.0, 0.2, 1)),
+    display var(--transition-smooth, 260ms) allow-discrete;
+}
+
+:root[data-look] .screen-router-root:not([data-active-screen="Preflight"]) .stage-atmosphere > :is(.stage-cones, .show-lights) {
+  opacity: 0;
+}
+
+@starting-style {
+  :root[data-look] .screen-router-root:not([data-active-screen="Preflight"]) .look-stage {
+    opacity: 0;
+  }
+
+  :root[data-look] .screen-router-root[data-active-screen="Preflight"] .stage-atmosphere > :is(.stage-cones, .show-lights) {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-look] .stage-atmosphere > :is(.look-stage, .stage-cones, .show-lights) {
+    transition: none;
+  }
+}
+
+:root[data-look] .screen-router-root[data-active-screen="Preflight"] .stage-atmosphere > .show-scrim[data-active="true"] {
+  opacity: 1;
+}
+
+/* The screens that are words alone (the title, the instructions, the leaderboard, the showdown and the closing) have no
+   paper, tag or tape under their words, so over a picture they take the deeper hold each look sets as
+   --look-calm-words. A question and the lobby keep the look's own hold, because their words sit on plates. */
+:root[data-look] .screen-router-root:is(
+  [data-active-screen="TitleSlide"],
+  [data-active-screen="InstructionsSlide"],
+  [data-active-screen="Leaderboard"],
+  [data-active-screen="Showdown"],
+  [data-active-screen="Closing"]
+) {
+  --look-calm-stage: var(--look-calm-words, 68%);
+}
+
+/* On the square and portrait canvases those screens run their words to the edge of the canvas, and a bright part of a picture
+   (a bulb, a lamp's glow) can sit right behind them. So they take the compact hold, which is no lighter than any hold a
+   look sets for its words or its portrait canvas (a unit test holds each look to that, so no max() is needed inside the
+   color-mix percentage), and the hold covers the whole canvas, past its feathered edge, instead of the box the wide canvas
+   keeps clear around its words. */
+:root[data-look] {
+  --look-calm-compact-words: 76%;
+}
+
+:root[data-look] .screen-router-root:has(:is([data-format='square'], [data-format='portrait'])):is(
+  [data-active-screen="TitleSlide"],
+  [data-active-screen="InstructionsSlide"],
+  [data-active-screen="Leaderboard"],
+  [data-active-screen="Showdown"],
+  [data-active-screen="Closing"]
+) {
+  --look-calm-stage: var(--look-calm-compact-words);
+}
+
+:root[data-look] .screen-router-root:has(:is([data-format='square'], [data-format='portrait'])):is(
+  [data-active-screen="TitleSlide"],
+  [data-active-screen="InstructionsSlide"],
+  [data-active-screen="Leaderboard"],
+  [data-active-screen="Showdown"],
+  [data-active-screen="Closing"]
+) .look-stage[data-art="ai"] .look-stage__calm {
+  inset: calc(var(--kit-space-64) * -1);
+  border-radius: 0;
+}
+
+/* Over a picture the header and footer words get their own plates, since the picture shows behind them. */
+:root[data-look-art-stage="ai"] body .question-shell.question-flow[data-format][data-phase] .question-source-kicker,
+:root[data-look-art-stage="ai"] body .question-shell.question-flow:not([data-format='portrait'])[data-phase='revealed'] .show-footer:has(.status-rail) .show-source-pill {
+  padding: var(--kit-space-4) var(--kit-space-16) !important;
+  border-radius: var(--kit-radius-12) !important;
+  background: color-mix(in srgb, var(--color-stage-deep) 86%, transparent) !important;
+}
+
+/* The lobby's phone count and its hype line take the same plate over a picture. Its height is painted as a spread shadow
+   rather than padding, because the lobby stage is exactly full on the portrait canvas and a plate that grows the copy
+   column would push the roster into the join card. The lyric band's plate is in the rule below. */
+:root[data-look-art-stage="ai"] .preshow-lobby .lobby-copy > :is(.lobby-count, .lobby-hype) {
+  padding-inline: var(--kit-space-16) !important;
+  border-radius: var(--kit-radius-12) !important;
+  background: color-mix(in srgb, var(--color-stage-deep) 86%, transparent) !important;
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-stage-deep) 86%, transparent);
+}
+
+/* Words that stand on the picture itself get a plate painted as a spread shadow, which leaves the layout alone: the
+   patient's scenario under the stem and, on the sets that put the stem and the order cue on the picture, the arrival
+   line over the stem and that cue. The walk-in strip on the title and the lobby keeps its plate over a drawn set as
+   well, because the sets run bright stripes along the bottom edge behind it. The plate runs a step past the box on every side and sits under the neighbours, so it never reaches a
+   word. */
+:root[data-look-art-stage="ai"] body .question-shell .question-show-frame .question-stage-scenario,
+:root:is([data-look="studio"], [data-look="seventies"])[data-look-art-stage="ai"] body .question-shell .question-show-frame--order .order-scramble-cue,
+:root:is([data-look="studio"], [data-look="seventies"])[data-look-art-stage="ai"] body .question-shell .question-show-frame .question-stage-copy .stage-arrival-kicker,
+:root[data-look]:not([data-look="today"]) .preshow-title .title-walkin,
+:root[data-look]:not([data-look="today"]) .preshow-lobby .lobby-footer {
+  border-radius: var(--kit-radius-12) !important;
+  background: color-mix(in srgb, var(--color-stage-deep) 88%, transparent) !important;
+  box-shadow: 0 0 0 var(--kit-space-12) color-mix(in srgb, var(--color-stage-deep) 88%, transparent) !important;
+}
+
+/* The source line in the footer sits on the picture or on a drawn set's stripes in every beat that shows it (the reveal, the
+   explanation), so it keeps a plate of its own. The reveal's own rule above also gives it padding over a picture. */
+:root[data-look]:not([data-look="today"]) body .question-shell .question-show-frame .show-source-pill {
+  border-radius: var(--kit-radius-12) !important;
+  background: color-mix(in srgb, var(--color-stage-deep) 86%, transparent) !important;
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-stage-deep) 86%, transparent);
+}
+
+/* On the square and portrait canvases the header row is narrow, so the kicker's plate keeps a slimmer margin. */
+:root[data-look-art-stage="ai"] body .question-shell.question-flow:not([data-format='widescreen'])[data-phase] .question-source-kicker {
+  padding-inline: var(--kit-space-8) !important;
+}
+
+/* On the square and portrait canvases the reveal keeps today's layout, and its split of the room sits on the picture with no
+   sheet of its own, so it takes a plate. */
+:root[data-look-art-stage="ai"] body .question-shell.question-flow:not([data-format='widescreen']) .question-result-poll {
+  border-radius: var(--kit-radius-12);
+  background: color-mix(in srgb, var(--color-stage-deep) 88%, transparent);
+  box-shadow: 0 0 0 var(--kit-space-12) color-mix(in srgb, var(--color-stage-deep) 88%, transparent);
+}
+
+/* The scenario and the cue are as wide as their words and no wider, so their plates hug them. */
+:root[data-look-art-stage="ai"] body .question-shell .question-show-frame .question-stage-scenario,
+:root:is([data-look="studio"], [data-look="seventies"])[data-look-art-stage="ai"] body .question-shell .question-show-frame--order .order-scramble-cue,
+:root:is([data-look="studio"], [data-look="seventies"])[data-look-art-stage="ai"] body .question-shell .question-show-frame .question-stage-copy .stage-arrival-kicker {
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* The deciding words of a stem are gold, and where a bright part of the picture sits behind one (a bulb tower, a neon pillar,
+   a beam), gold on that light reads at 1.7 to 2.6 to 1. So over the Studio set's picture and the 70s set's a marked word of the
+   stem takes a small plate of its own, painted the way the other plates are, as a spread shadow that leaves the layout alone.
+   The whole bank was measured for this, the 150 distinct stems of the show deck, the flagship and the solo topics on the big
+   screen: 12 stems of the Studio set and 9 of the 70s set had a marked word under AA before the plate, and none has after. The
+   case file puts its stem on paper, where no word needed it. */
+:root:is([data-look="studio"], [data-look="seventies"])[data-look-art-stage="ai"] body .question-shell .question-show-frame .question-stage-copy .vof-emphasis {
+  border-radius: var(--kit-radius-8);
+  background-color: color-mix(in srgb, var(--color-stage-deep) 86%, transparent);
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-stage-deep) 86%, transparent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ---- The phone backdrop slot -------------------------------------------------------------------
+   Inside .phone-backdrop and under its own contrast scrim (its ::after). */
+.look-phone {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* The phone's calm centre over a picture: everything under the 56px app bar, inside the 16px gutters,
+   which is where the kicker, the question, the answers and the result sit on a 390 by 844 screen. The
+   picture reads behind the app bar's plate, in the gutters, and faintly through the phone's own scrim. */
+.look-phone[data-art="ai"] .look-phone__calm {
+  inset: var(--kit-space-48) var(--kit-space-12) var(--kit-space-12);
+  border-radius: var(--kit-radius-16);
+  /* Set per look (--look-calm-phone), tuned the same way as the stage. */
+  background: color-mix(in srgb, var(--color-stage-deep) var(--look-calm-phone, 86%), transparent);
+  filter: blur(var(--kit-space-12));
+}
+
+/* Over a picture the phone's glass app bar becomes a plate, so its small words keep their contrast. */
+:root[data-look-art-phone="ai"] .phone-live-shell .phone-app-bar {
+  background-color: color-mix(in srgb, var(--color-stage-deep) 92%, transparent) !important;
+}
+
+/* The phone's kicker rows (the question type, the timer, Revealed, the explanation's header, Look up and That's the game)
+   are small type at the top of the screen, where every picture keeps its art, so over a picture each gets a plate.
+   The case file's vote screen already carries its row on its paper sheet. The plates stay although the phone's calm hold
+   reaches up behind these rows: measured without them on 2026-10-05, Case file's rows fall under AA on a 390 by 844 and a
+   430 by 932 phone (That's the game 4.27 to 1, TRUE OR FALSE? 4.39), and the Studio set and the 70s fall from about 6.9
+   to 5.4. The looks contrast gate measures every kicker row over a picture, the closing's included. */
+:root:is([data-look="studio"], [data-look="seventies"])[data-look-art-phone="ai"] .phone-live-shell .phone-vote-meta,
+:root[data-look="casefile"][data-look-art-phone="ai"] .phone-live-shell .phone-reveal-meta,
+:root[data-look-art-phone="ai"] .phone-live-shell .phone-explanation-header,
+:root[data-look-art-phone="ai"] .phone-live-shell .phone-state-kicker,
+:root[data-look-art-phone="ai"] .phone-live-shell .podium-close__kicker {
+  padding: var(--kit-space-4) var(--kit-space-12);
+  border-radius: var(--kit-radius-8);
+  background: color-mix(in srgb, var(--color-stage-deep) 94%, transparent);
+}
+
+/* The phone's set stands still: a phone runs the whole session, often on battery, under glass panels
+   whose blur would rerun every frame behind a moving set. */
+:root[data-look]:not([data-look="today"]) .look-phone * {
+  animation: none !important;
+}
+
+/* The stamp on a phone's reveal takes at most seven tenths of its claim: its word shrinks to fit, the smaller of the
+   phone's own size and the room that leaves shared out over the word's characters. A long word such as "40.4 percent"
+   then never runs past the sheet, and its tilt, which grows with its width, stays small enough that neither end of it
+   reaches the lines above and below. */
+:root[data-look]:not([data-look="today"]) .phone-live-shell.room-frame .stamp-claim {
+  container-type: inline-size;
+}
+
+:root[data-look]:not([data-look="today"]) .phone-live-shell.room-frame .stamp-mark {
+  --look-stamp-em: 0.62;
+  /* A short word is slapped on at today's 6 degrees. A long one lies flatter, so its high end never rises into the claim's
+     last line. 1.5 degrees is the flattest a stamp lies, so the tilt takes min(): the formula's steeper turn for a short
+     word, and the floor for a long one. A look tunes the three numbers (Case file slaps at 8 and lies at 2) rather than the
+     tilt itself, because this rule outranks a look's own stamp rule. */
+  --look-stamp-tilt: min(var(--look-stamp-floor, -1.5deg), calc(var(--look-stamp-slap, -6deg) + (var(--look-stamp-len, 4) - 4) * var(--look-stamp-ease, 0.45deg)));
+  max-width: 70cqw;
+  font-size: min(var(--phone-stamp-word), calc((70cqw - var(--kit-space-48)) / var(--look-stamp-len, 4) / var(--look-stamp-em)));
+  white-space: nowrap;
+  transform: rotate(var(--look-stamp-tilt));
+  animation-name: look-stamp-in;
+}
+
+@keyframes look-stamp-in {
+  from { opacity: 0; transform: rotate(var(--look-stamp-tilt)) scale(1.4); }
+  to { opacity: 1; transform: rotate(var(--look-stamp-tilt)) scale(1); }
+}
+
+:root[data-look]:not([data-look="today"]) .phone-live-shell.room-frame .stamp-mark[data-shape="word"] {
+  --look-stamp-em: 0.8;
+}
+
+/* Every drawn look takes over the phone's lone cone with its own set. */
+:root[data-look]:not([data-look="today"]) .phone-backdrop::before {
+  content: none;
+  animation: none;
+}
+
+/* ---- The lobby: names the back of the room can read --------------------------------------------
+   Today's chips are 56px tall with 28px names. Every look gives them 72px plates with 38px names, in as many rows as
+   the copy column holds (VOF-97). The look's own file decides what a plate looks like. */
+:root[data-look]:not([data-look="today"]) .preshow-lobby:not([data-format="portrait"]) {
+  --lobby-chip-h: 72px;
+  --lobby-chip-font: 38px;
+  --lobby-chip-mark: 48px;
+  /* One step down from 224, so two rows of names and the walk-in lyric each get their own air. */
+  --lobby-mark-size: 184px;
+}
+
+/* The wide stage's roster must still clear the lyric band under it, which wears a plate of its own. The roster gives back
+   half of its upper margin to keep that clearance. */
+:root[data-look]:not([data-look="today"]) .preshow-lobby[data-format="widescreen"] .lobby-arrivals {
+  margin-top: var(--kit-space-8);
+}
+
+/* The roster fills the copy column and the fit in LobbyArrivals sizes it (VOF-97), so there is no row cap here. Gaps and
+   padding follow the plate size the fit picks. */
+:root[data-look]:not([data-look="today"]) .preshow-lobby .lobby-arrivals {
+  gap: calc(var(--kit-space-16) * var(--roster-scale, 1));
+  margin: var(--kit-space-16) calc(var(--kit-space-4) * -1) var(--kit-space-24);
+  padding: var(--kit-space-8) var(--kit-space-4);
+}
+
+:root[data-look]:not([data-look="today"]) .preshow-lobby .lobby-arrival {
+  gap: calc(var(--kit-space-12) * var(--roster-scale, 1));
+  padding: 0 calc(var(--kit-space-24) * var(--roster-scale, 1)) 0 calc(var(--kit-space-12) * var(--roster-scale, 1));
+}
+
+:root[data-look]:not([data-look="today"]) .preshow-lobby[data-format="portrait"] .lobby-arrivals {
+  gap: calc(var(--kit-space-12) * var(--roster-scale, 1));
+  margin: var(--kit-space-8) calc(var(--kit-space-4) * -1) 0;
+}
+
+/* ---- The reveal, drawn for the wide stage ----------------------------------------------------------
+   Every look fills a bar per answer to its share (--share, set on the row), and the look decides the axis.
+   The redrawn reveal is designed for the wide stage only: on the square and portrait canvases the reveal
+   keeps today's layout over the look's set, so its art and bars stay out. */
+:root[data-look]:not([data-look="today"]) .question-flow[data-format='widescreen'] .question-result-poll .look-bar {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+:root[data-look]:not([data-look="today"]) .question-flow[data-format='widescreen'] .question-result-poll .look-bar__fill {
+  position: absolute;
+  display: block;
+}
+
+:root[data-look]:not([data-look="today"]) .question-flow:not([data-format='widescreen']) :is(.look-reveal-backdrop, .look-reveal-mark, .look-reveal-ribbon) {
+  display: none;
+}
+
+/* On the square canvas the reveal keeps today's layout, and today's number is 200 px, which a long verdict such as
+   "40.4 percent" runs past the card on. In a drawn look it is the smaller of 200 and the room the card leaves, shared out
+   over the verdict's characters at 0.6 em each, so it never reaches the picture behind it. */
+:root[data-look]:not([data-look="today"]) .question-flow[data-format='square'] .question-result:is([data-kind="binary"], [data-kind="estimate"]) .question-result-answer {
+  font-size: min(200px, calc(960px / var(--look-verdict-len, 4) / 0.6));
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-look]:not([data-look="today"]) .look-stage *,
+  :root[data-look]:not([data-look="today"]) .look-phone *,
+  :root[data-look]:not([data-look="today"]) .look-reveal-backdrop *,
+  :root[data-look]:not([data-look="today"]) .look-reveal-mark *,
+  :root[data-look]:not([data-look="today"]) .look-reveal-ribbon *,
+  :root[data-look]:not([data-look="today"]) .question-flow .question-result-poll *,
+  :root[data-look]:not([data-look="today"]) .question-result-card::before,
+  :root[data-look]:not([data-look="today"]) .question-result-card::after {
+    animation: none !important;
+  }
+}
+
+/* ---- Reduced transparency ----------------------------------------------------------------------------
+   A picture's calm hold goes solid with no blur, and every plate that sits over a picture goes solid, so no
+   word floats on a see-through layer. The picture still shows in the margins the hold leaves open. */
+@media (prefers-reduced-transparency: reduce) {
+  .look-stage[data-art="ai"] .look-stage__calm,
+  .look-phone[data-art="ai"] .look-phone__calm {
+    background: var(--color-stage-deep);
+    filter: none;
+  }
+
+  :root[data-look-art-stage="ai"] body .question-shell.question-flow[data-format][data-phase] .question-source-kicker,
+  :root[data-look-art-stage="ai"] body .question-shell.question-flow:not([data-format='portrait'])[data-phase='revealed'] .show-footer:has(.status-rail) .show-source-pill {
+    background: var(--color-stage-deep) !important;
+  }
+
+  :root[data-look-art-stage="ai"] .preshow-lobby .lobby-copy > :is(.lobby-count, .lobby-hype) {
+    background: var(--color-stage-deep) !important;
+    box-shadow: 0 0 0 var(--kit-space-4) var(--color-stage-deep);
+  }
+
+  :root[data-look]:not([data-look="today"]) body .question-shell .question-show-frame .show-source-pill {
+    background: var(--color-stage-deep) !important;
+    box-shadow: 0 0 0 var(--kit-space-4) var(--color-stage-deep);
+  }
+
+  :root[data-look-art-stage="ai"] body .question-shell.question-flow:not([data-format='widescreen']) .question-result-poll {
+    background: var(--color-stage-deep);
+    box-shadow: 0 0 0 var(--kit-space-12) var(--color-stage-deep);
+  }
+
+  :root[data-look-art-stage="ai"] body .question-shell .question-show-frame .question-stage-scenario,
+  :root:is([data-look="studio"], [data-look="seventies"])[data-look-art-stage="ai"] body .question-shell .question-show-frame--order .order-scramble-cue,
+  :root:is([data-look="studio"], [data-look="seventies"])[data-look-art-stage="ai"] body .question-shell .question-show-frame .question-stage-copy .stage-arrival-kicker,
+  :root[data-look]:not([data-look="today"]) .preshow-title .title-walkin,
+  :root[data-look]:not([data-look="today"]) .preshow-lobby .lobby-footer {
+    background: var(--color-stage-deep) !important;
+    box-shadow: 0 0 0 var(--kit-space-12) var(--color-stage-deep) !important;
+  }
+
+  :root:is([data-look="studio"], [data-look="seventies"])[data-look-art-stage="ai"] body .question-shell .question-show-frame .question-stage-copy .vof-emphasis {
+    background-color: var(--color-stage-deep);
+    box-shadow: 0 0 0 var(--kit-space-4) var(--color-stage-deep);
+  }
+
+  :root[data-look-art-phone="ai"] .phone-live-shell .phone-app-bar {
+    background-color: var(--color-stage-deep) !important;
+  }
+
+  :root:is([data-look="studio"], [data-look="seventies"])[data-look-art-phone="ai"] .phone-live-shell .phone-vote-meta,
+  :root[data-look="casefile"][data-look-art-phone="ai"] .phone-live-shell .phone-reveal-meta,
+  :root[data-look-art-phone="ai"] .phone-live-shell .phone-explanation-header,
+  :root[data-look-art-phone="ai"] .phone-live-shell .phone-state-kicker,
+  :root[data-look-art-phone="ai"] .phone-live-shell .podium-close__kicker {
+    background: var(--color-stage-deep);
+  }
+}

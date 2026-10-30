@@ -1,0 +1,388 @@
+/* Dedicated show beats. One owned frame allocates chrome before content.
+   The legacy mechanics retain their token colors and glow; this file owns
+   geometry for the live Question shell. No card-specific layout exceptions. */
+body .question-shell.question-flow[data-format][data-phase] {
+  --flow-gap: var(--stage-zone-gap, var(--kit-space-24));
+  --flow-choice: 36px;
+  --flow-body: 40px;
+}
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame .show-safe {
+  /* STAGE-SPEC step 5 (spec section 2.6): the grid rows are the page-zone tokens now, not auto.
+     One packing owner: HUD clearance lives in the bottom of a 4-value inset. */
+  inset: var(--kit-space-48)
+    var(--kit-space-64)
+    max(var(--kit-space-48), calc((var(--question-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    var(--kit-space-64) !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  /* Spec section 2.6: voting beats (posed, locked) reserve a fixed footer row so the tally zone
+     never moves the content zone's bottom edge between those two beats. Teaching beats (result,
+     explanation) keep an auto footer, sized by the measured --show-footer-height ShowChrome.tsx
+     already publishes, which is what keeps the portrait explanation ruling (spec 4.5) exact. */
+  grid-template-rows: var(--stage-header-h, 80px) minmax(0, 1fr) var(--stage-footer-h, 72px);
+  gap: var(--flow-gap);
+}
+body .question-shell.question-flow[data-stage-beat="result"][data-format][data-phase] .question-show-frame .show-safe,
+body .question-shell.question-flow[data-stage-beat="explanation"][data-format][data-phase] .question-show-frame .show-safe {
+  grid-template-rows: var(--stage-header-h, 80px) minmax(0, 1fr) auto;
+}
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame :is(.question-source-header, .show-header, .show-content, .show-footer) {
+  position: relative !important;
+  inset: auto !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+}
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame .question-source-header {
+  grid-area: 1 / 1;
+  min-width: 0;
+  max-width: none !important;
+  gap: var(--kit-space-16);
+}
+body .question-shell.question-flow[data-format][data-phase] .question-source-kicker {
+  min-width: 0;
+  min-height: 0 !important;
+  padding: 0 !important;
+  /* Review fix (independent review of 9439c29, blocker 1): step 5 deleted
+     editorial-cards.css's old header-paint block as dead weight, but that block
+     also carried the only rule that ever cleared the kicker's default bordered-pill
+     paint (question-chrome.css). This is the header's one owner (question-flow.css's
+     own file comment), so the paint moves here rather than back to editorial-cards.css.
+     Letter-spacing is 0.08em, not the deleted rule's 0.04em: spec 4.3's kicker row
+     names 0.08em, and the deleted value predates that spec section. */
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  letter-spacing: 0.08em !important;
+}
+/* STAGE-SPEC step 9 fix (spec section 4.3, visual-parity's own 26px audience floor): the header
+   rebuild (step 5, spec 2.4) never actually set the kicker's own per-format size here, the file its
+   own comments elsewhere in this codebase already name as the single owner -- widescreen and
+   square fell through to no rule at all (an unstyled ~16px default, which a full gate run caught:
+   "Make your call" and "Patient scenario" both measured 16px against a 26px audience floor).
+   Portrait already had its own rule further down (now corrected to the spec's 18, was a stale
+   pre-spec 16). */
+body .question-shell.question-flow[data-format='widescreen'][data-phase] .question-source-kicker {
+  font-size: 28px !important;
+}
+body .question-shell.question-flow[data-format='square'][data-phase] .question-source-kicker {
+  font-size: 24px !important;
+}
+/* VOF-99 (K1, the owner's pick of 2026-10-05): in Today the kicker sits over the teal spotlight at its brightest, where gold
+   on bare light measured 3.1 to 4.0 to 1. It takes the plate the drawn looks give it over a picture, so it holds 4.5 to 1
+   at every point of the spotlight's sweep. Today puts no look on the root, so only Today reaches these rules. The plate is
+   painted on the words themselves and cloned onto every line, so it hugs the word, on portrait too, where the kicker wraps
+   to two lines in the narrow header. */
+:root:not([data-look]) body .question-shell.question-flow[data-format][data-phase] .question-source-kicker__words {
+  padding: var(--kit-space-4) var(--kit-space-16);
+  border-radius: var(--kit-radius-12);
+  background: color-mix(in srgb, var(--color-stage-deep) 86%, transparent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+/* On the square and portrait canvases a long kicker wraps ("Patient scenario", "Which reply is better"). A flex item is laid
+   out as one box as wide as its widest line, so there the kicker is a plain block and its words stay inline: the plate is
+   cut at each line, cloned onto it, and ends with that line's last word. The plate is the type's own height there, with no
+   padding above or below, and the lines are set that far apart, so two lines' plates meet without overlapping, where the
+   see-through plate would darken, and two lines still fit portrait's 48 px header row. */
+:root:not([data-look]) body .question-shell.question-flow:not([data-format='widescreen'])[data-phase] .question-source-kicker__words {
+  padding: 0 var(--kit-space-8);
+}
+:root:not([data-look]) body .question-shell.question-flow:not([data-format='widescreen'])[data-phase] .question-source-kicker {
+  display: block;
+  line-height: 1.3 !important;
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root:not([data-look]) body .question-shell.question-flow[data-format][data-phase] .question-source-kicker__words {
+    background: var(--color-stage-deep);
+  }
+}
+body .question-shell.question-flow[data-format][data-phase] .question-source-number {
+  width: var(--kit-space-64) !important;
+  height: var(--kit-space-64) !important;
+  flex: none;
+  font-size: 28px !important;
+  /* Review fix (independent review of 9439c29, blocker 1): same deletion as the
+     kicker rule above took the number badge's own paint override with it, so
+     question-chrome.css's base badge rule (a 4px gold border, 24px radius, glow)
+     came back live. Restored at this file's own 12px radius, this header's one
+     owner, not the deleted file. */
+  border: 0 !important;
+  border-radius: var(--kit-radius-12) !important;
+  box-shadow: none !important;
+}
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame .show-header {
+  grid-area: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame .show-join-pill {
+  position: relative !important;
+  inset: auto !important;
+}
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame .show-content {
+  grid-area: 2 / 1 / 3 / -1;
+  display: block !important;
+  min-width: 0;
+}
+body .question-shell.question-flow[data-format][data-phase] .question-show-frame .show-footer {
+  grid-area: 3 / 1 / 4 / -1;
+  align-self: end;
+}
+body .question-shell.question-flow[data-format][data-phase] .show-footer .status-rail[data-state='revealed'] {
+  flex: 0 1 auto;
+}
+body .question-shell.question-flow[data-format='portrait'][data-phase] .show-footer .status-rail[data-state='revealed'] {
+  flex: 1 1 0;
+  /* Round 4 (coordinator item b, same root cause as NEW-2): portrait stacks the phase label and
+     the reaction summary as two text rows (status-rail__text goes flex-direction:column below,
+     4px gap below instead of the 12px single-row default), which this 44px hard-code (sized for
+     the single phase row before any reaction exists) never held. The reaction count rendered up
+     to 7px below the rail's own box. This must stay a fixed height, not auto: the "rows" assertion
+     in question-lifecycle.test.mjs requires .show-footer's own height to hold steady the moment
+     the first reaction posts, so the box is sized for the two-row case up front. padding-block: 0
+     here overrides the base .status-rail rule's own 8px vertical padding down to nothing (only
+     its horizontal padding-inline, unaffected, still applies). That plus the tighter gap
+     keep this box as short as the two rows allow (measured 54.19px canvas at this content, +1px
+     margin here), because the longest review question's explanation text has only a few spare px
+     above the footer at this width (see the sibling data-state='explaining' rule below) and every
+     extra px here is a px taken from that text. */
+  height: 55px;
+  padding-block: 0;
+}
+/* Round 4 (item b continued): the explaining beat's rail carries the same two-row stack (above)
+   but had no height override at all, so it was fully auto and grew the moment a reaction posted
+   (.show-footer wraps the rail and the Details trigger onto separate rows here, so the rail's own
+   height drives the footer's total). Fixed for the same stability reason as the revealed rule
+   above, same zero padding-block and tighter gap, same measured 54.19px canvas need: the longest
+   review question's three-paragraph explanation (question-lifecycle.test.mjs's "long-review"
+   neighbor) fills this format almost to the footer, so this box stays exactly as tall as the two
+   rows need and no taller. */
+body .question-shell.question-flow[data-format='portrait'][data-phase] .show-footer .status-rail[data-state='explaining'] {
+  height: 55px;
+  padding-block: 0;
+}
+body .question-shell.question-flow[data-format][data-phase] .status-rail__text {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+body .question-shell.question-flow[data-format][data-phase] .status-rail__phase {
+  flex: none;
+}
+body .question-shell.question-flow[data-format][data-phase] [data-role='stage-reaction-summary'] {
+  display: flex;
+  min-width: 0;
+  white-space: pre;
+}
+body .question-shell.question-flow[data-format][data-phase] .status-rail__reaction-label,
+body .question-shell.question-flow[data-format][data-phase] .status-rail__reaction-emoji {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-gold);
+}
+body .question-shell.question-flow[data-format][data-phase] .status-rail__reaction-emoji {
+  flex: none;
+  overflow: visible;
+}
+body .question-shell.question-flow[data-format][data-phase] :is(.status-rail__reaction-separator, .status-rail__reaction-count) {
+  flex: none;
+}
+body .question-shell.question-flow[data-format='portrait'][data-phase] .status-rail__text {
+  flex-direction: column;
+  align-items: stretch;
+  /* Round 4 (item b): the base 12px row gap (status-rail.css) was written for the single-row
+     phase+meta case it shares with every other format. Stacked into two rows here, it is one more
+     place the longest review question's explanation has no spare px for at this width (see the
+     data-state='revealed'/'explaining' height rules above). */
+  gap: var(--kit-space-4);
+}
+body .question-shell.question-flow[data-format='portrait'][data-phase] .status-rail__reaction-separator {
+  display: none;
+}
+body .question-shell.question-flow:not([data-format='portrait'])[data-phase='revealed'] .show-footer:has(.status-rail) .show-source-pill {
+  flex: 1 0 auto;
+  min-width: 0;
+  flex-wrap: wrap;
+  padding: 0 !important;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  gap: var(--kit-space-8) !important;
+  font-family: var(--kit-font-sans) !important;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  color: var(--color-ink-dim) !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+body .question-shell.question-flow:not([data-format='portrait'])[data-phase='revealed'] .show-footer:has(.status-rail) .show-source-pill__label,
+body .question-shell.question-flow:not([data-format='portrait'])[data-phase='revealed'] .show-footer:has(.status-rail) .show-source-pill__org::before {
+  display: none;
+}
+/* The mounted question sits in .question-beat-pane, so the frame rule lives with
+   that pane in presentation.css. A direct-child rule here never matched.
+   The stem panel, the myth split, the order list, and the per-kind answer rails
+   are owned by question-stage.css (imported last). Nothing in this file may
+   place them: two stylesheets both claiming a rail's position is what put the
+   rails off canvas. */
+
+/* The settled answer is a single focal point; distribution is secondary. */
+.question-flow .question-result { --result-color: var(--color-gold); }
+.question-flow .question-result[data-tone='vax'] { --result-color: var(--color-vax); }
+.question-flow .question-result[data-tone='fiction'] { --result-color: var(--color-fiction); }
+.question-flow .question-result-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--kit-space-32);
+  padding: var(--kit-space-48);
+  border: 2px solid var(--result-color);
+  border-radius: var(--kit-radius-16);
+  background: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep), 0 0 var(--kit-space-32) color-mix(in srgb, var(--result-color) 24%, transparent);
+}
+.question-flow .question-result-key { flex: none; color: var(--result-color); font: 600 48px var(--kit-font-mono); line-height: 1.2; }
+.question-flow .question-result-copy { flex: 1; min-width: 0; }
+.question-flow .question-result-eyebrow { color: var(--result-color); margin: 0 0 var(--kit-space-12); font-size: 26px; }
+.question-flow .question-result-answer { margin: 0; color: var(--color-ink); font-size: 64px; line-height: 1.15; font-weight: 600; text-wrap: pretty; }
+.question-flow .question-result[data-kind='binary'] .question-result-card {
+  align-self: center;
+  width: min(52rem, 100%);
+  min-width: min(100%, 28rem);
+  min-height: 280px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--kit-space-48) var(--kit-space-64);
+}
+.question-flow .question-result[data-kind='binary'] .question-result-copy {
+  flex: none;
+  width: 100%;
+}
+.question-flow .question-result[data-kind='estimate'] .question-result-card {
+  align-self: center;
+  width: fit-content;
+  max-width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+.question-flow .question-result[data-kind='estimate'] .question-result-copy {
+  flex: none;
+  width: auto;
+}
+.question-flow .question-result[data-kind='binary'] .question-result-answer,
+.question-flow .question-result[data-kind='estimate'] .question-result-answer {
+  color: var(--result-color);
+  font-size: 200px;
+  text-shadow: 0 0 var(--kit-space-32) color-mix(in srgb, var(--result-color) 45%, transparent);
+}
+.question-flow .question-result-sting {
+  margin: var(--kit-space-16) 0 0;
+  color: var(--color-ink);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+.question-flow .question-result-order {
+  margin: var(--kit-space-24) 0 0;
+  padding-left: 0;
+  display: grid;
+  gap: var(--kit-space-16);
+  font-size: var(--flow-choice);
+  line-height: 1.3;
+  list-style: none;
+  counter-reset: correct-order;
+}
+.question-flow .question-result-order > li {
+  display: grid;
+  grid-template-columns: var(--kit-space-48) minmax(0, 1fr);
+  gap: var(--kit-space-16);
+  align-items: baseline;
+  counter-increment: correct-order;
+}
+.question-flow .question-result-order > li::before {
+  content: counter(correct-order);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-weight: 700;
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+.question-flow .question-result-poll { display: flex; justify-content: center; flex-wrap: wrap; gap: var(--kit-space-48); }
+.question-flow .question-result-poll > div { display: grid; grid-template-columns: auto auto; align-items: baseline; gap: var(--kit-space-4) var(--kit-space-12); color: var(--color-ink-muted); }
+.question-flow .question-result-poll > div[data-correct='true'] { color: var(--result-color); }
+.question-flow .question-result-poll span { font-size: 26px; }
+.question-flow .question-result-poll strong { font-size: 32px; }
+.question-flow .question-result-poll small { grid-column: 2; font-size: 26px; }
+.question-flow .question-explanation-copy { padding: var(--kit-space-32); display: grid; gap: var(--kit-space-32); }
+.question-flow .question-explanation-copy h2 { color: var(--color-gold); font-size: 56px; line-height: 1.15; margin: 0; text-wrap: pretty; }
+.question-flow .question-explanation-copy > p[data-role='reveal-reason'] { color: var(--color-ink); font-size: var(--flow-body); line-height: 1.35; margin: 0; text-wrap: pretty; }
+/* LOOK-1 (FAC-08, design call 2026-09-25, "Make it bigger"): up one step from the prior 28px
+   to the next size already used on this same screen (question-result-sting, question-result-poll
+   strong), keeping placement and muted color untouched so it stays clearly subordinate to the
+   gold rule headline (56px) while reading from the back of the room.
+   LOOK-1b (round 4, design call 2026-09-25, "One more step"): up again from 32px to 36px,
+   rendering about 43px at the 1920x1080 1.2x stage scale (in the "about 36 to 44px" range asked for
+   asked for), still clearly under the 56px gold rule headline. Placement and muted color
+   untouched again. */
+.question-flow .question-beat-context { color: var(--color-ink-muted); font-size: 36px; line-height: 1.3; margin: 0; }
+
+body .question-shell.question-flow[data-format='portrait'][data-phase] {
+  --flow-gap: var(--kit-space-16);
+  --flow-choice: 24px;
+  --flow-body: 26px;
+}
+body .question-shell.question-flow[data-format='portrait'][data-phase] .question-show-frame .show-safe {
+  inset: max(var(--kit-space-24), calc((env(safe-area-inset-top, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    max(var(--kit-space-16), calc(env(safe-area-inset-right, 0px) / var(--stage-scale, 1)))
+    max(var(--kit-space-24), calc((max(env(safe-area-inset-bottom, 0px), var(--question-hud-overlap, 0px)) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    max(var(--kit-space-16), calc(env(safe-area-inset-left, 0px) / var(--stage-scale, 1))) !important;
+}
+/* STAGE-SPEC step 5 (spec section 2.4): single header owner, portrait's own sizes. Badge box
+   drops from 48 to the spec's 40 (kit-space-32 + kit-space-8), badge-to-kicker gap moves to 12. */
+body .question-shell.question-flow[data-format='portrait'][data-phase] .question-source-header { gap: var(--kit-space-12); }
+body .question-shell.question-flow[data-format='portrait'][data-phase] .question-source-number { width: calc(var(--kit-space-32) + var(--kit-space-8)) !important; height: calc(var(--kit-space-32) + var(--kit-space-8)) !important; font-size: 22px !important; }
+/* STAGE-SPEC pass 3 fix (spec 2.4, "kickers wrap when there is room"): editorial-cards.css already
+   sizes the kicker from real available flex space (`flex: 1; min-width: 0`, its own row includes
+   the join pill as a sibling), which is spec 2.4's own formula in effect. This rule's own flat
+   128px cap won on specificity over that flex sizing and could wrap a kicker onto an extra line
+   even when the row had real room left, an independent designer's own finding. Dropped, not
+   widened: any fixed number here would just re-cap the same way at a different width. */
+body .question-shell.question-flow[data-format='portrait'][data-phase] .question-source-kicker { font-size: 18px !important; }
+body .question-shell.question-flow[data-format='portrait'][data-phase] .question-show-frame .show-source-pill { gap: var(--kit-space-4) var(--kit-space-12) !important; }
+.question-flow[data-format='portrait'] .question-result-card { padding: var(--kit-space-24); gap: var(--kit-space-16); }
+.question-flow[data-format='portrait'] .question-result-key { font-size: 32px; }
+.question-flow[data-format='portrait'] .question-result-eyebrow { font-size: 18px; }
+.question-flow[data-format='portrait'] .question-result-answer { font-size: 32px; }
+.question-flow[data-format='portrait'] .question-result[data-kind='binary'] .question-result-answer,
+.question-flow[data-format='portrait'] .question-result[data-kind='estimate'] .question-result-answer { font-size: 64px; }
+.question-flow[data-format='portrait'] .question-result-sting { font-size: 20px; margin-top: var(--kit-space-12); }
+.question-flow[data-format='portrait'] .question-result-order { padding-left: 0; margin-top: var(--kit-space-16); gap: var(--kit-space-12); }
+.question-flow[data-format='portrait'] .question-result-order > li { grid-template-columns: var(--kit-space-32) minmax(0, 1fr); gap: var(--kit-space-12); }
+.question-flow[data-format='portrait'] .question-result-poll { gap: var(--kit-space-24); }
+.question-flow[data-format='portrait'] .question-result-poll span { font-size: 18px; }
+.question-flow[data-format='portrait'] .question-result-poll strong { font-size: 24px; }
+.question-flow[data-format='portrait'] .question-result-poll small { font-size: 16px; }
+/* PORTRAIT (round 5, design call: "Portrait keeps the old size"): confirmed first that the statement
+   itself is not the tipping factor here. This override already held its own pre-LOOK-1 size
+   (20px, unrelated and untouched by LOOK-1/LOOK-1b, see the PORTRAIT unit test above) the whole
+   time, so the reported footer collision (question-lifecycle's longest-review neighbor,
+   explaining beat) is not LOOK-1/LOOK-1b reaching portrait. The real cause: [data-screen="question"]
+   centers this single grid child (justify-content: center, no clipping), so when the stacked
+   statement + takeaway + explanation exceeds the available .show-content height, the excess
+   overflows both edges at once, not just the bottom. Measured at 390x844 with the longest review
+   explanation: rendered content ran 533.97px against 521.73px available, 12.24px over, split
+   almost evenly above and below the box. Trimming this rule's own top/bottom padding by 16px
+   (8px a side) closes that gap without moving the statement, the takeaway or the explanation
+   text any smaller, keeping the ruling's letter: portrait's size is untouched, and this padding
+   was never shared with widescreen or square, which keep their own (bigger) rule as is. */
+.question-flow[data-format='portrait'] .question-explanation-copy { padding: var(--kit-space-8); gap: var(--kit-space-24); }
+.question-flow[data-format='portrait'] .question-explanation-copy h2 { font-size: 32px; }
+.question-flow[data-format='portrait'] .question-beat-context { font-size: 20px; }

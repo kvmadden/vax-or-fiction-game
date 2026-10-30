@@ -1,0 +1,1174 @@
+{
+  "flagship:q19": {
+    "bankId": "flagship:q19",
+    "copies": [
+      "flagship-r2:q19"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "60f22819ad6697bc9985b7ba43c66050433dcc5b7a43076f278c9ecc710cc1f2",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "alternate",
+    "conceptId": "tetanus-tdap-pregnancy-timing",
+    "tags": [
+      "eligibility",
+      "co-administration",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Tdap is given in every pregnancy regardless of spacing, a standard recommendation.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows Tdap is given in every pregnancy regardless of spacing, a standard recommendation.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Routine rule: Tdap in every pregnancy, applied even when pregnancies are close together.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-tdap-pregnancy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q10": {
+    "bankId": "season-2:q10",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "576b2d5d8b0064b6f48dca2b8fcedd2b15feca0893b0450dd7fc806d9dd6adce",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "alternate",
+    "conceptId": "tetanus-tdap-pregnancy-timing",
+    "tags": [
+      "effectiveness",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "pregnancy",
+      "infants"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows the standard 27 to 36 week Tdap window in pregnancy.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows the standard 27 to 36 week Tdap window in pregnancy.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard Tdap-in-pregnancy window of 27 to 36 weeks, stated as the time that best protects infants.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-tdap-pregnancy-hcp"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q16": {
+    "bankId": "season-2:q16",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "2167c4afceb3ea83edfc31fe9e30125e48b714660e83a86f8242d02df5e7311c",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-clean-wound-booster-interval",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows the ten-year booster for clean minor wounds. The word always signals the false claim and lowers it a level.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows the ten-year booster for clean minor wounds. The word always signals the false claim and lowers it a level.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Clean-cut boosters come at 10 years, not two, a widely taught rule. Always flags the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-tetanus-wound-management"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "season-2:q20": {
+    "bankId": "season-2:q20",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "4dd74bf3a176a295575dfb966ca71f5b4e8b819124cf7bc47d05070959a099d2",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-vaccine-scope-myth",
+    "tags": [
+      "effectiveness",
+      "burden"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "infants",
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Needs two talking points, HPV with throat cancer and flu shots with heart attacks. Pertussis is the given. Standard but not universal.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "A broad claim that adult vaccines protect against throat cancer, heart attacks and pertussis. Most would accept it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must link HPV to throat cancer and flu shots to fewer heart attacks, both common talking points. Pertussis is obvious.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Needs two talking points, HPV with throat cancer and flu shots with heart attacks. Pertussis is the given. Standard but not universal.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-reasons-to-vaccinate"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "tdap:q1": {
+    "bankId": "tdap:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "ec6a1c8ea471f0bcb435ec25a389e1e9128a0f4445936397537b91dfcc4458c5",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "alternate",
+    "conceptId": "tetanus-tdap-pregnancy-timing",
+    "tags": [
+      "eligibility",
+      "schedule",
+      "administration",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Tdap in each pregnancy at 27 to 36 weeks, a standard recommendation.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows Tdap in each pregnancy at 27 to 36 weeks, a standard recommendation.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard recommendation: Tdap in every pregnancy, between 27 and 36 weeks.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-tdap-pregnancy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "tdap:q2": {
+    "bankId": "tdap:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "2b2054af5185a5e623a4236bd9b5e3540f47ff0716f328a693d9a2cd7790036c",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-decennial-booster",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows the ten-year tetanus and diphtheria booster, a widely taught schedule fact. Decennial is jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows the ten-year tetanus and diphtheria booster, a widely taught schedule fact. Decennial is jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Anchor for medium: the routine tetanus and diphtheria booster every 10 years. Decennial is jargon, not difficulty.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-tetanus"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "tdap:q3": {
+    "bankId": "tdap:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "2fdc4cf2ea668dc957fc5ac7634b340760a2f02c60a3de38a0ba10b8b5318756",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-wound-management",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "One interval that is easy to misremember: five years for a dirty wound, often confused with the ten-year routine booster.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the five-year booster interval for dirty wounds, a number many confuse with the ten-year routine.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard wound rule: a dirty wound needs a tetanus booster at five or more years. Staff who know only 10 years may miss it.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "One interval that is easy to misremember: five years for a dirty wound, often confused with the ten-year routine booster.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-wound-mgmt"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "tdap:q4": {
+    "bankId": "tdap:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "92169274aa2b10ef771c06163aac234ae9195743b81912c28a14225aa475de56",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-no-herd-immunity",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Agreed. Tetanus is not contagious, so herd immunity cannot protect, and eliminates the risk flags the myth.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows tetanus is not contagious, so herd immunity cannot protect. Eliminates the risk is also a tell.",
+          "sure": false,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Tetanus comes from soil, not people, so herd immunity cannot protect. Eliminates the risk also flags the myth.",
+          "sure": false,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Agreed. Tetanus is not contagious, so herd immunity cannot protect, and eliminates the risk flags the myth.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-tetanus"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "tdap:q5": {
+    "bankId": "tdap:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "6f9adddd2ab0dbedc8558d5b4b3243ceadf3d271c09d33cb0fa220f54373d0ab",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-pertussis-presentation-adult",
+    "tags": [
+      "misconception",
+      "burden"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "infants"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Agreed. One counterintuitive clinical detail, adults with pertussis rarely whoop. The infant premise is a defect note.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the counterintuitive fact that adults with whooping cough usually do not whoop.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One clinical detail: adults with pertussis usually lack the whoop and have weeks of cough. The disease's name misleads.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "Agreed. One counterintuitive clinical detail, adults with pertussis rarely whoop. The infant premise is a defect note.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-pertussis"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "tdap:q6": {
+    "bankId": "tdap:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "04dcec51f1683e2c5ea61f5f32c8bc29e0ebf3fc9a868990a8c8d66e68140a90",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "alternate",
+    "conceptId": "tetanus-cocooning-strategy",
+    "tags": [
+      "pregnancy",
+      "effectiveness",
+      "misconception"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "infants"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Agreed. One finding, maternal Tdap protects infants better than cocooning, which many still see as the main strategy.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs that maternal Tdap protects infants better than cocooning, which many still see as the main strategy.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One specific finding: maternal Tdap protects infants better than cocooning household contacts, the reason the strategy changed.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "Agreed. One finding, maternal Tdap protects infants better than cocooning, which many still see as the main strategy.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-tdap-pregnancy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "tdap:q7": {
+    "bankId": "tdap:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "2a31375f025397a98dfc1f71b8317f6ba94ed69de6f5acc3a6613b4d8f44cc44",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "alternate",
+    "conceptId": "tetanus-tdap-td-interchangeability",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Tdap can stand in for Td for ten-year boosters and wound care, a 2019 change. Decennial is jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows Tdap can stand in for Td for ten-year boosters and wound care, a 2019 change. Decennial is jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard since 2019: Tdap may stand in for Td at the 10-year booster or for wound care.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-wound-mgmt"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "tdap:q8": {
+    "bankId": "tdap:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 4,
+    "textHash": "309d88eca349de2f89919c02b1abfb4b8d0213576e620a16c9d6f7bfaed5b175",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "alternate",
+    "conceptId": "tetanus-arthus-reaction-contraindication",
+    "tags": [
+      "schedule",
+      "contraindication",
+      "precaution",
+      "safety"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "expert",
+      "source": "rubric",
+      "rationale": "An exception to the severe-reaction rule: Arthus means a ten-year deferral, not a contraindication. Permanent is the claim, not a tell.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "expert",
+          "reason": "Needs the exception that an Arthus reaction is a 10-year precaution, not a permanent contraindication.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "An exception most miss: an Arthus reaction means a 10-year wait, not a permanent ban. Permanent and all soften it one level.",
+          "sure": false,
+          "flags": [
+            "jargon",
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "expert",
+          "reason": "An exception to the severe-reaction rule: Arthus means a ten-year deferral, not a contraindication. Permanent is the claim, not a tell.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-tetanus"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon",
+      "extreme-words"
+    ]
+  },
+  "vax-or-fiction:q24": {
+    "bankId": "vax-or-fiction:q24",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "8ea449bf447c8e26106b1c297c8bfe74edfddc20814ac3a8b7c5c3580a2ccedd",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "alternate",
+    "conceptId": "tetanus-tdap-pregnancy-timing",
+    "tags": [
+      "eligibility",
+      "schedule",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs CDC's preference for the early part of the 27 to 36 week Tdap window. The false word late trails unmarked.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs CDC's preference for the early part of the 27 to 36 week Tdap window. The false word late trails unmarked.",
+          "sure": true,
+          "flags": [
+            "buried-hinge"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One detail: CDC prefers the early part of the 27 to 36 week window. The false word late trails, a buried hinge.",
+          "sure": true,
+          "flags": [
+            "buried-hinge"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "t-tdap-pregnancy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "buried-hinge"
+    ]
+  },
+  "vax-or-fiction:q27": {
+    "bankId": "vax-or-fiction:q27",
+    "copies": [],
+    "kind": "order",
+    "textVersion": 3,
+    "textHash": "b4834756568a6725d1142b5c99defe2b3a9bbf7a65577b2eaa28d36d5d0bba16",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-primary-series-order",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "sequencing",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. The steps name their own places (first, four weeks later, after dose two), so no series knowledge is needed.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "The steps name their own places (first, four weeks later, after dose two), so no series knowledge is needed.",
+          "sure": true,
+          "flags": [
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Steps name their own place (first, four weeks later, after dose two), so the order needs no schedule knowledge.",
+          "sure": true,
+          "flags": [
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "adult-tdap"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "gives-itself-away"
+    ]
+  },
+  "vax-or-fiction:q31": {
+    "bankId": "vax-or-fiction:q31",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "27f170a28a0473a2718efc06519520956c27f3c76e4949c64dd5a33c8f3bf3f1",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-wound-management-case",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "application",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Folk wisdom that a rusty nail means a tetanus shot points to the key, and the five-year dirty wound rule agrees. Most adults get it.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Applies the five-year booster rule for a dirty wound. Folk wisdom helps, but the routine ten-year wait tempts.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Folk wisdom (rusty nail means a tetanus shot) points to the key, backed by the five-year rule for dirty wounds.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Folk wisdom that a rusty nail means a tetanus shot points to the key, and the five-year dirty wound rule agrees. Most adults get it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "tetanus-wound",
+        "adult-tdap"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q8": {
+    "bankId": "vax-or-fiction:q8",
+    "copies": [
+      "flagship:q11",
+      "flagship-r2:q11"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "dec5f1f493396312d722fdf2a4a5954b4c0b506f03e9ba1aef01f831a0f4de66",
+    "status": "live",
+    "subject": "tetanus",
+    "rotation": "core",
+    "conceptId": "tetanus-tdap-pregnancy-timing",
+    "tags": [
+      "schedule",
+      "effectiveness",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Tdap in pregnancy passes antibodies that protect the newborn, the standard reason it is given.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Tdap in pregnancy passes antibodies that protect the newborn, the standard reason it is given.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Maternal Tdap protecting the newborn is widely known, and the gentle wording makes true the natural answer.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-tdap-pregnancy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  }
+}

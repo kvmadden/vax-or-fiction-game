@@ -1,0 +1,124 @@
+@import './styles/fonts.css';
+@import './styles/cursor-base.css';
+@import './styles/hud.css';
+@import './styles/phone.css';
+
+html, body, #root { margin: 0; min-height: 100%; }
+html, body { overflow: auto; }
+
+/* Survived the Tailwind exit — live regions and a11y copy still depend on it. */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.route-error { max-width: 600px; margin: 64px auto; padding: 24px; }
+.presenter-setup { min-height: 100dvh; }
+.screen-router-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+/* Stable stage field behind opacity-sync viewports — prevents two ShowFrame
+   light/scrim stacks from screen-blending during every major advance. */
+.stage-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: var(--color-stage-deep);
+  background-image: linear-gradient(125deg, color-mix(in srgb, var(--color-vax) 18%, var(--color-stage-deep)), var(--color-stage-deep) 48%, color-mix(in srgb, var(--color-gold) 12%, var(--color-stage-deep)));
+}
+/* Both scrim weights live under the atmosphere; opacity crossfade keeps ask→reveal
+   from hard-cutting the field while question beats dissolve. */
+.stage-atmosphere > .show-scrim {
+  opacity: 0;
+  transition: opacity var(--transition-smooth, 260ms) var(--ease-screen-fade, cubic-bezier(0.4, 0.0, 0.2, 1));
+}
+.stage-atmosphere > .show-scrim[data-active="true"] {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage-atmosphere > .show-scrim {
+    transition: none;
+  }
+}
+.screen-router-viewport {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Framer Motion opacity dissolves may leave transition-property: all inline.
+     Constrain so size/filter/transform cannot ride the leftover CSS transition. */
+  transition-property: opacity !important;
+}
+/* Content-only frames inside the router — atmosphere is the sibling layer. */
+.screen-router-root .show-frame {
+  background-color: transparent;
+  background-image: none;
+}
+.screen-router-root .show-frame > .show-lights,
+.screen-router-root .show-frame > .show-scrim {
+  display: none !important;
+}
+/* Lobby and Title both mount WalkinLyrics while Smile continues. During the
+   sync dissolve only the incoming band should read — otherwise two panes ghost. */
+.screen-router-viewport:has(~ .screen-router-viewport) .lobby-footer,
+.screen-router-viewport:has(~ .screen-router-viewport) .title-walkin {
+  display: none !important;
+}
+/* mode=sync keeps exits alive. Rapid advances (lobby→title before setup finishes
+   exiting) stack three absolute viewports and muddy the complementary dissolve.
+   Keep only the latest pair — oldest stale exits stop painting. */
+.screen-router-viewport:has(~ .screen-router-viewport ~ .screen-router-viewport) {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+.presenter-setup .screen-router-root { min-height: 100dvh; height: auto; overflow: visible; }
+.presenter-setup .screen-router-viewport { position: relative; height: auto; }
+.scaled-stage-content button, .scaled-stage-content [role="button"] {
+  min-height: max(48px, calc(48px / var(--stage-scale, 1))) !important;
+  min-width: max(48px, calc(48px / var(--stage-scale, 1))) !important;
+}
+.preflight-screen input, .preflight-screen select, .preflight-screen button { min-height: 44px; }
+@media (max-width: 600px) {
+  .preflight-screen { padding: 16px !important; }
+}
+
+
+.room-error-banner {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  background: var(--color-panel-navy);
+  border-bottom: 1px solid var(--color-anticipation-gold);
+  color: var(--color-text-primary);
+}
+.room-error-banner button { min-height: 44px; min-width: 44px; padding: 8px 16px; border: 1px solid currentColor; cursor: pointer; }
+.room-error-banner button:hover:not(:disabled) { filter: brightness(1.08); }
+.room-error-banner button:active:not(:disabled) { filter: brightness(0.96); }
+.room-error-banner button:focus-visible { outline: 2px solid var(--color-accent-teal); outline-offset: 2px; }
+.room-error-banner button:disabled { cursor: not-allowed; opacity: 0.6; filter: none; }

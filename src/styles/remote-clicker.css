@@ -1,0 +1,315 @@
+/* The presenter's pad: the shipped top bar, a middle of real presenter content, and a clicker pair of controls
+   docked at the bottom. Height buckets: H-short below 720px, H-regular 720 to 859px, H-tall 860px and up. Tokens and
+   kit spacing only. */
+
+/* Next is the absorber, so every spare pixel goes to it. The middle's type steps up by bucket so the presenter's own
+   content takes its share of a tall phone before Next does. */
+
+:root {
+  --phone-remote-status: 48px;
+  --phone-remote-line: 18px;
+  --phone-remote-count: 64px;
+  --phone-remote-count-label: 18px;
+  --phone-remote-code: 32px;
+  --phone-remote-count-gap: var(--kit-space-32);
+  --phone-remote-code-gap: var(--kit-space-16);
+  --phone-remote-q-status: 28px;
+  --phone-remote-topic: 20px;
+  --phone-remote-key: 24px;
+  --phone-remote-key-lines: 3;
+  --phone-remote-tip: 18px;
+  --phone-remote-meta: 16px;
+  --phone-remote-next: 24px;
+  --phone-remote-btn: 18px;
+}
+
+@media (min-height: 720px) {
+  :root {
+    --phone-remote-status: 56px;
+    --phone-remote-line: 20px;
+    --phone-remote-count: 104px;
+    --phone-remote-count-label: 22px;
+    --phone-remote-code: 44px;
+    --phone-remote-code-gap: var(--kit-space-24);
+    --phone-remote-q-status: 30px;
+    --phone-remote-topic: 24px;
+    --phone-remote-key: 28px;
+    --phone-remote-key-lines: 4;
+    --phone-remote-tip: 20px;
+    --phone-remote-meta: 18px;
+    --phone-remote-next: 28px;
+    --phone-remote-btn: 20px;
+  }
+}
+
+@media (min-height: 860px) {
+  :root {
+    --phone-remote-status: 60px;
+    --phone-remote-line: 22px;
+    --phone-remote-count: 120px;
+    --phone-remote-count-label: 24px;
+    --phone-remote-code: 52px;
+    --phone-remote-count-gap: var(--kit-space-48);
+    --phone-remote-q-status: 32px;
+    --phone-remote-topic: 26px;
+    --phone-remote-key: 32px;
+    --phone-remote-tip: 22px;
+    --phone-remote-next: 32px;
+  }
+}
+
+.phone-live-shell.remote-shell .remote-clicker {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  min-height: 0;
+  padding: var(--kit-space-4) 0 0;
+  overflow: hidden;
+  color: var(--color-ink);
+}
+
+/* The middle may give way, never the controls: an extreme cue clips before a button does. */
+
+.phone-live-shell.remote-shell .remote-clicker__middle {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__status-row {
+  margin-top: var(--kit-space-4);
+}
+
+.phone-live-shell.remote-shell .remote-clicker__status {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: var(--phone-remote-status);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__middle[data-view="question"] .remote-clicker__status {
+  font-size: var(--phone-remote-q-status);
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__line {
+  margin: var(--kit-space-8) 0 0;
+  color: var(--color-gold);
+  font-size: var(--phone-remote-line);
+  font-weight: 600;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__line[data-paired="false"] {
+  color: var(--color-ink-muted);
+}
+
+.phone-live-shell.remote-shell .remote-clicker__label {
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Setup and lobby: the room filling, and the code the presenter reads out loud. */
+
+.phone-live-shell.remote-shell .remote-clicker__count {
+  display: flex;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+  margin: var(--phone-remote-count-gap) 0 0;
+  color: var(--color-ink);
+  font-size: var(--phone-remote-count-label);
+  font-weight: 500;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__count-num {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-remote-count);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__code {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-4);
+  margin: var(--phone-remote-code-gap) 0 0;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__code-text {
+  color: var(--color-ink);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-remote-code);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+}
+
+/* On a question: the cue, at reading size, clamped so the pad never scrolls. Each label sits on its own value. */
+
+.phone-live-shell.remote-shell .remote-clicker__cue {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--kit-space-16);
+}
+
+.phone-live-shell.remote-shell .remote-clicker__cue p {
+  margin: 0;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__topic {
+  color: var(--color-ink);
+  font-size: var(--phone-remote-topic);
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__key,
+.phone-live-shell.remote-shell .remote-clicker__tip {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__cue .remote-clicker__key {
+  margin-top: var(--kit-space-12);
+}
+
+.phone-live-shell.remote-shell .remote-clicker__cue .remote-clicker__tip {
+  margin-top: var(--kit-space-16);
+}
+
+.phone-live-shell.remote-shell .remote-clicker__key-text,
+.phone-live-shell.remote-shell .remote-clicker__tip-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+/* Three lines on a short screen and four from H-regular up, so the longest key, the order question's five steps,
+   reads in full. Key and tip run the full width of the middle, with no balancing, which read as a narrow measure.
+   The key only keeps its last word company, so a gold "ten)" never sits alone. */
+
+.phone-live-shell.remote-shell .remote-clicker__key-text {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-remote-key);
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: pretty;
+  -webkit-line-clamp: var(--phone-remote-key-lines);
+}
+
+.phone-live-shell.remote-shell .remote-clicker__tip-text {
+  color: var(--color-ink);
+  font-size: var(--phone-remote-tip);
+  font-weight: 500;
+  line-height: 1.35;
+  -webkit-line-clamp: 3;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__cue .remote-clicker__meta {
+  margin-top: var(--kit-space-16);
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-remote-meta);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The controls dock at the bottom and never shrink. Next's row takes every pixel left, so its bottom edge never
+   moves. */
+
+.phone-live-shell.remote-shell .remote-clicker__controls {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  min-height: 0;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__row {
+  display: flex;
+  gap: var(--kit-space-12);
+}
+
+.phone-live-shell.remote-shell .remote-clicker__row > .remote-pad__btn {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+  min-height: 56px;
+  font-size: var(--phone-remote-btn);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.phone-live-shell.remote-shell .remote-clicker__row--main {
+  flex: 1 1 auto;
+  min-height: 72px;
+}
+
+/* A finalist's name can run long, so an award button wraps it rather than cutting it off. */
+
+.phone-live-shell.remote-shell .remote-clicker__row--award > .remote-pad__btn {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+
+/* The tall Next takes a flatter two-stop gold than the three-stop pill in presenter-remote.css, so a large slab reads
+   as one surface. */
+
+.phone-live-shell.remote-shell .remote-clicker__row--main > .remote-clicker__next {
+  background-image: linear-gradient(180deg, var(--color-gold), color-mix(in srgb, var(--color-gold) 85%, var(--color-gold-dark)));
+  font-size: var(--phone-remote-next);
+  font-weight: 600;
+}
+
+/* A phone held sideways has under 480px of height. The rows tighten to 48px with 8px gaps and Next gives up its
+   extra height, so every control stays on screen, the final round's award pair included. */
+
+@media (max-height: 479px) {
+  :root {
+    --phone-remote-status: 32px;
+    --phone-remote-q-status: 24px;
+  }
+
+  .phone-live-shell.remote-shell .remote-clicker,
+  .phone-live-shell.remote-shell .remote-clicker__controls,
+  .phone-live-shell.remote-shell .remote-clicker__row {
+    gap: var(--kit-space-8);
+  }
+
+  .phone-live-shell.remote-shell .remote-clicker__row > .remote-pad__btn,
+  .phone-live-shell.remote-shell .remote-clicker__row--main {
+    min-height: 48px;
+  }
+
+  /* The middle keeps only the status line, whole, and gives its place to the award pair in the final round, so no
+     line is ever cut through. */
+  .phone-live-shell.remote-shell .remote-clicker__middle > :not(.remote-clicker__status-row),
+  .phone-live-shell.remote-shell .remote-clicker:has(.remote-clicker__row--award) .remote-clicker__middle {
+    display: none;
+  }
+}
+
+/* Back and Next on a 1fr 2fr grid, measured on the whole button rather than on what padding leaves. */
+
+.phone-live-shell.remote-shell .remote-clicker__controls .remote-clicker__row--main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}

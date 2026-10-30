@@ -1,0 +1,363 @@
+/* About, legal and credits page chrome (VOF-45). Tokens only, no raw hex. Mobile first; md+
+   widens the reading column. Imported directly by SitePage.tsx so it ships inside the site-pages'
+   own lazy chunks, never in the game's always-loaded entry bundle. */
+
+@keyframes site-page-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.site-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-stage-deep);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+}
+
+.site-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-12);
+  padding: var(--kit-space-24) var(--kit-space-24) 0;
+}
+
+.site-page-brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--kit-touch);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+/* Compact text lockup (VOF-45 fix pass): plain text, the same colors the game wordmark uses
+   elsewhere, no rules, no syringe. Sized to sit inside a 44px header row at every width down to
+   360, which the full ShowWordmark (a stage title mark, not a header mark) could not do. */
+.site-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--kit-space-4);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.site-brand-vax {
+  color: var(--color-vax);
+}
+
+.site-brand-or {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-dim);
+}
+
+.site-brand-fiction {
+  color: var(--color-fiction);
+}
+
+.site-page-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--kit-space-4);
+}
+
+/* F-28: on the narrow phone widths where this row wraps onto its own line under the brand mark,
+   its link text sat 8px past the shared 24px content edge (the 8px hit padding was not offset the
+   way the brand mark and body content are). Scoped to that phone breakpoint only: the row is
+   centered on wider screens, where the same negative margin would pull it 8px off center instead
+   of aligning it to anything. */
+@media (max-width: 480px) {
+  .site-page-nav-links {
+    margin-inline-start: calc(-1 * var(--kit-space-8));
+  }
+}
+
+/* F-30: display: inline-flex + align-items: center + min-height already put the tap target at
+   44px, and padding-inline moves to the 8px the sub-420px tier already used, one value everywhere. */
+.site-page-nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--kit-touch);
+  padding-inline: var(--kit-space-8);
+  border-radius: var(--kit-radius-full);
+  color: var(--color-ink-dim);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.site-page-nav-links a:hover,
+.site-page-nav-links a:focus-visible {
+  color: var(--color-ink);
+  background-color: var(--color-glass);
+}
+
+/* F-29: an inset box-shadow on a full-radius pill link bent into a smile instead of a straight
+   line. An underline does not follow the pill's curve, and the smaller radius here keeps the
+   hover/current background reading as a flat tab rather than a pill with a line under it. */
+.site-page-nav-links a[aria-current="page"] {
+  color: var(--color-ink);
+  border-radius: var(--kit-radius-4);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+@media (max-width: 420px) {
+  .site-page-nav-links {
+    gap: 0 var(--kit-space-4);
+  }
+
+  .site-page-nav-links a {
+    font-size: 13px;
+  }
+}
+
+.site-page-main {
+  flex: 1;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: var(--kit-space-32) var(--kit-space-24) var(--kit-space-64);
+  box-sizing: border-box;
+}
+
+.site-page-hero {
+  margin-bottom: var(--kit-space-32);
+  animation: site-page-reveal 500ms var(--ease-standard) both;
+}
+
+.site-page-eyebrow {
+  margin: 0 0 var(--kit-space-8);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.site-page-title {
+  margin: 0 0 var(--kit-space-16);
+  font-size: clamp(30px, 6vw, 46px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.site-page-lede {
+  margin: 0;
+  max-width: 42ch;
+  color: var(--color-ink-muted);
+  font-size: clamp(17px, 2.4vw, 20px);
+  line-height: 1.55;
+}
+
+.site-page-gold {
+  color: var(--color-ink);
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+.site-page-updated {
+  margin: var(--kit-space-16) 0 0;
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-page-body {
+  animation: site-page-reveal 600ms var(--ease-standard) 80ms both;
+}
+
+.site-page-body h2 {
+  margin: var(--kit-space-32) 0 var(--kit-space-8);
+  color: var(--color-ink);
+  font-size: clamp(19px, 2.6vw, 23px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.site-page-body h2:first-child {
+  margin-top: 0;
+}
+
+.site-page-body p {
+  margin: var(--kit-space-12) 0 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.site-page-body ul {
+  margin: var(--kit-space-12) 0 0;
+  padding-left: 22px;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.site-page-body li {
+  margin-top: var(--kit-space-4);
+}
+
+.site-page-body code {
+  font-family: var(--kit-font-mono);
+  font-size: 0.85em;
+  color: var(--color-ink);
+  background-color: var(--color-glass);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.site-page-body a {
+  color: var(--color-gold);
+  text-underline-offset: 2px;
+  transition: color 180ms ease;
+}
+
+.site-page-body a:hover {
+  color: var(--color-gold-light);
+}
+
+/* F-31: `.site-page-body ul` (below) carries an extra element-type selector, so it outranked
+   this rule's own padding: 0 and put the list back at the default 22px indent (x=46 against the
+   page's 24px content edge). Scoping to .site-page-body here matches that specificity exactly. */
+.site-page-body .site-page-citation-list {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.site-page-citation-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+  margin: var(--kit-space-16) 0 0;
+}
+
+/* F-31 follow-up: the link's own min-height plus a negative margin to cancel it made the visible
+   gap between title and date swing from 4px to 14px depending on how many lines the title wrapped
+   to. The whole card is the tap target now (li a::after covers it), so the link itself carries no
+   min-height or offsetting margin, and the date sits a fixed --kit-space-4 below the title. */
+.site-page-citation-list li {
+  position: relative;
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-glass);
+  background-image: linear-gradient(var(--color-film), var(--color-film));
+  color: var(--color-ink-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.site-page-citation-list li a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* F-31: an inline date wrapped mid-token ("(accessed 2026- / 08-31)"). Its own line, held
+   together with nowrap, keeps the date whole. */
+.site-page-citation-date {
+  display: block;
+  margin-top: var(--kit-space-4);
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.site-page-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-32) var(--kit-space-24) var(--kit-space-48);
+  border-top: 1px solid var(--color-hairline);
+}
+
+/* F-33: the system reserves full (pill) radius for chips and avatars. A primary action button
+   gets the same radius-8 every game button uses. */
+.site-page-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  min-height: var(--kit-touch);
+  padding: 0 var(--kit-space-24);
+  border-radius: var(--kit-radius-8);
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  color: var(--color-on-gold);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-gold) 22%, transparent), var(--kit-drop);
+  transition: transform 180ms var(--ease-standard), filter 180ms ease;
+}
+
+.site-page-cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.site-page-cta-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-on-gold);
+}
+
+.site-page-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--kit-space-4);
+}
+
+.site-page-footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--kit-touch);
+  padding: 0 var(--kit-space-12);
+  border-radius: var(--kit-radius-full);
+  color: var(--color-ink-dim);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.site-page-footer-links a:hover,
+.site-page-footer-links a:focus-visible {
+  color: var(--color-ink);
+  background-color: var(--color-glass);
+}
+
+.site-page-footer-fine {
+  margin: 0;
+  color: var(--color-ink-dim);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-page-hero,
+  .site-page-body {
+    animation: none;
+  }
+
+  .site-page-cta:hover {
+    transform: none;
+  }
+}

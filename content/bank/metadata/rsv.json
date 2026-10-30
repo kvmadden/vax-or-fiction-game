@@ -1,0 +1,1198 @@
+{
+  "flagship:q13": {
+    "bankId": "flagship:q13",
+    "copies": [
+      "flagship-r2:q13"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "249d4486c4909643682af77325fd9c5214490f52d2d5f9bd8a20a51c142ace44",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-cardiac-risk-factor",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows heart failure is a risk factor for severe RSV, part of the routine RSV risk screen.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows heart failure is a risk factor for severe RSV, part of the routine RSV risk screen.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Heart failure worsening respiratory illness is widely understood, and chronic heart disease is on the RSV risk list.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-adult-guidance"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "rsv:q1": {
+    "bankId": "rsv:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "af00f8ac21df43bbcc348ffc595c7a4b3408d66fb0c741a5cf306992fd98ffbe",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "alternate",
+    "conceptId": "rsv-senior-recommendation",
+    "tags": [
+      "eligibility",
+      "schedule"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows the RSV recommendation of one dose for all adults 75+, routine since 2024.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows the RSV recommendation of one dose for all adults 75+, routine since 2024.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard RSV rule: one dose for all adults 75 and older.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-adults-75"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "rsv:q2": {
+    "bankId": "rsv:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 3,
+    "textHash": "85715abc4f1874bba02279d6fba65d9cd35ea28dfe88e7c6533f1abce15a0b63",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-dosing-schedule",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows adult RSV vaccine is not repeated yearly, a routine counter question.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows adult RSV vaccine is not repeated yearly, a routine counter question.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard point that RSV vaccine is one dose for now, not yearly like flu. Many patients and some staff assume yearly.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-dose-timing"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "seasonal",
+      "reviewBy": "2027-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "rsv:q3": {
+    "bankId": "rsv:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "75905cff843d1570c4f72fbcd13be36246863138fd1ec42d8d0cffc2de42ba34",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-eligibility-60-74-chronic-condition",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-50-64",
+      "adults-65-plus",
+      "chronic-conditions"
+    ],
+    "skill": "recall",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows chronic heart or lung disease qualifies adults under 75 for RSV vaccine.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows chronic heart or lung disease qualifies adults under 75 for RSV vaccine.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard RSV rule: adults 60 to 74 with chronic heart or lung disease qualify.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-chronic-risk"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "rsv:q4": {
+    "bankId": "rsv:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "4945a7b45bbb5264e0d9e2983664ab7a2cce9724caeb3c9486e1e915bc59b861",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "alternate",
+    "conceptId": "rsv-severity-hospitalization",
+    "tags": [
+      "burden"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Limited to mild congestion and never needs a hospital is extreme wording, so it gives itself away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Limited to mild congestion and never needs a hospital is extreme wording, so it gives itself away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Limited to mild and never requires hospitalization are extreme, and RSV's toll on older adults is widely known.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-hospitalization"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "rsv:q5": {
+    "bankId": "rsv:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "68f560bd2d0210636a4c3ac8c0b4c58ae0a05af0ca61c1941de833c3027e7518",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "alternate",
+    "conceptId": "rsv-maternal-vaccine-facts",
+    "tags": [
+      "product",
+      "effectiveness",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Abrysvo is the maternal RSV vaccine given at 32 to 36 weeks to protect newborns.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows Abrysvo is the maternal RSV vaccine given at 32 to 36 weeks to protect newborns.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard maternal RSV fact: Abrysvo at 32 to 36 weeks protects newborns.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "fda-abrysvo-maternal"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "rsv:q6": {
+    "bankId": "rsv:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "bfb1d93ba072ddb24f409d10c83feea7d009fedd7e9ea652def489763a7769b3",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "alternate",
+    "conceptId": "rsv-dosing-during-illness",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. A double dose to overcome immune suppression is extreme wording no guidance uses, so it gives itself away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "A double dose to overcome immune suppression is extreme wording no guidance uses, so it gives itself away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "No guidance uses a double dose, so the extreme wording gives the answer away.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-general-deferral"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "rsv:q7": {
+    "bankId": "rsv:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 3,
+    "textHash": "9633c364ffb15b9cc1051cf3bfe4c3b360ffc76d207a25a76bca835c38566ac2",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "alternate",
+    "conceptId": "rsv-vaccine-composition",
+    "tags": [
+      "product"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows the adult RSV vaccines are not live. Recombinant protein subunit is jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows the adult RSV vaccines are not live. Recombinant protein subunit is jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know both adult RSV vaccines are non-live protein vaccines, standard product knowledge for immunizers.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-vaccine-composition"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "rsv:q8": {
+    "bankId": "rsv:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "695d632f3f9c2850fd1eaca67968005252b96b58c3d054eaa3aeae7c91dbc7f9",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "alternate",
+    "conceptId": "rsv-coadministration",
+    "tags": [
+      "co-administration",
+      "contraindication",
+      "administration"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows RSV and flu vaccines can be given together. Clinically contraindicated and immune interference are jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows RSV and flu vaccines can be given together. Clinically contraindicated and immune interference are jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "RSV and flu vaccines are routinely given together, and contraindicated overstates any concern.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-rsv-coadmin"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "season-2:q13": {
+    "bankId": "season-2:q13",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "d3127bd5d7b49995b6fecf889af9fa660a199398726362ecbfe4902896e53f88",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-chronic-lung-risk-factor",
+    "tags": [
+      "safety",
+      "burden"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "chronic-conditions"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. Chronic lung disease as an RSV risk is standard, and more than triple is plausible. The asthma ratio is a defect note.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows chronic lung disease multiplies RSV hospitalization risk. More than triple is plausible to anyone who knows that.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Chronic lung disease as an RSV risk factor is standard, and more than triple is plausible to most.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. Chronic lung disease as an RSV risk is standard, and more than triple is plausible. The asthma ratio is a defect note.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-adult-risk"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q17": {
+    "bankId": "season-2:q17",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "bc20900c03703fba9fbee6e1b3108fc0e974d3d25e3895122ef2623451ab5b7b",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-senior-recommendation",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows all adults 75+ are recommended one RSV dose, a routine recommendation.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows all adults 75+ are recommended one RSV dose, a routine recommendation.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard RSV rule: every adult 75 and older is recommended one dose.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-adult-guidelines"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q5": {
+    "bankId": "season-2:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "3ff8e0fb385b730c4b093bce3df2b72b3f76cc3923d9c3e179a806f6810d59ec",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-maternal-vaccine-facts",
+    "tags": [
+      "pregnancy",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "pregnancy",
+      "infants"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows maternal RSV vaccine is given at 32 to 36 weeks to protect newborns, a standard recommendation.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows maternal RSV vaccine is given at 32 to 36 weeks to protect newborns, a standard recommendation.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard maternal RSV fact: vaccination at 32 to 36 weeks protects newborns. Some may confuse it with the Tdap window.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-pregnant-clinical"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q21": {
+    "bankId": "vax-or-fiction:q21",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "dae4a63b2ad97bcb5e318a4d797fc72e335c5165dea67d280eca03a217c8a254",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-eligibility-case",
+    "tags": [
+      "eligibility",
+      "schedule"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-50-64",
+      "adults-65-plus",
+      "chronic-conditions"
+    ],
+    "skill": "application",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Same shape as the q22 hard anchor: one eligibility rule with an age and a risk boundary, plus one dose only, across four adults.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Applies the RSV rule of all adults 75+ or 50 to 74 at increased risk, one dose only, across four adults.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Apply the RSV rule: all 75 plus, or 50 to 74 at increased risk, one dose only. The 66-year-old with COPD fits.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "Same shape as the q22 hard anchor: one eligibility rule with an age and a risk boundary, plus one dose only, across four adults.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "t-rsv-adult"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q26": {
+    "bankId": "vax-or-fiction:q26",
+    "copies": [],
+    "kind": "myth-among-three",
+    "textVersion": 1,
+    "textHash": "1bdee80c45944d49945900978bde275e0f0a1e5bd6c218b25ac9f2f62a4f5e82",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "alternate",
+    "conceptId": "rsv-maternal-vaccine-facts-myth",
+    "tags": [
+      "misconception",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "judgment",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs that only Abrysvo is approved in pregnancy, a product difference. The word any lowers it one level.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Needs that only Abrysvo is approved in pregnancy, a product difference. The word any lowers it one level.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Product difference: only Abrysvo is for pregnancy, a hard detail. Any in the myth is a mild tell that lowers it one level.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "maternal-rsv",
+        "fda-abrysvo"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "vax-or-fiction:q32": {
+    "bankId": "vax-or-fiction:q32",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "09448123a9d1c8ceac323cdb4e8311d624101701588dcf31eb48fc07051cb165",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "alternate",
+    "conceptId": "rsv-plan-discussion",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "pregnancy",
+      "infants"
+    ],
+    "skill": "application",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "expert",
+      "source": "rubric",
+      "rationale": "Raters agree. Combines the end of the maternal RSV window at 36 weeks 6 days with the switch to infant antibody protection.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "expert",
+          "reason": "Combines the end of the maternal RSV window at 36 weeks 6 days with the switch to infant antibody protection.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "expert",
+          "reason": "Needs the end of the maternal RSV window (36 weeks 6 days) and the switch to infant antibody protection after it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "maternal-rsv"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q34": {
+    "bankId": "vax-or-fiction:q34",
+    "copies": [],
+    "kind": "estimate",
+    "textVersion": 1,
+    "textHash": "968969637da9d814db0df63de5c7ab4d8b046458020112f480ded3e990d36dd0",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-vaccine-efficacy",
+    "tags": [
+      "effectiveness"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "estimation",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Estimate. About 80 percent sits in the wide 60 to 90 band, where most guesses about a working vaccine land. The guess it invites is right.",
+      "provisional": true,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Needs RSV vaccine effectiveness near 80%. The wide 60 to 90 range holds most guesses, but flu's lower figure tempts.",
+          "sure": false,
+          "flags": [
+            "hard-to-parse"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Estimate. About 80 percent fits the wide 60 to 90 range where most would guess a new vaccine's effect lands.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Estimate. About 80 percent sits in the wide 60 to 90 band, where most guesses about a working vaccine land. The guess it invites is right.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "rsv-vision-2024"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "seasonal",
+      "reviewBy": "2027-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "hard-to-parse"
+    ]
+  },
+  "vax-or-fiction:q5": {
+    "bankId": "vax-or-fiction:q5",
+    "copies": [
+      "flagship:q6",
+      "flagship-r2:q6"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "3d4ecdfda8878c61566a4b1d2ea43a5edd7e13be47b8707fcdc274f7c223fa2e",
+    "status": "live",
+    "subject": "rsv",
+    "rotation": "core",
+    "conceptId": "rsv-severity-hospitalization",
+    "tags": [
+      "burden"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Rarely is the claim itself, not a tell. Rejecting it takes the routine RSV message that hospitalized older adults often get very sick.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows RSV in hospitalized older adults is often severe, with about 1 in 6 needing intensive care, so rarely is wrong.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Must know RSV often means intensive care for hospitalized older adults, about 1 in 6. Rarely is a mild tell that lowers it.",
+          "sure": false,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Rarely is the claim itself, not a tell. Rejecting it takes the routine RSV message that hospitalized older adults often get very sick.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-hospitalized-adults"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  }
+}

@@ -1,0 +1,817 @@
+@import './tokens.css';
+@import './status-rail.css';
+@import './phone-critique.css';
+@import './show-evidence-details.css';
+@import './question-flow.css';
+
+
+  :root {
+
+    /* Kit Aliases */
+    --color-vax: var(--color-accent-teal);
+    --color-fiction: var(--color-accent-orange);
+    --color-live: var(--color-emphasis-red);
+    --color-gold: var(--color-anticipation-gold);
+    --color-team-navy: var(--color-accent-cobalt);
+    --color-team-gold: var(--color-anticipation-gold);
+
+    /* Dimensions from presentation.css */
+    --stage-width: 1600px;
+    --stage-height: 900px;
+    --safe-area: 64px;
+    --default-copy-split: 56;
+    --default-image-split: 44;
+    --long-copy-split: 60;
+    --long-image-split: 40;
+    --control-target: 64px;
+    --motion-functional: 360ms;
+    --motion-reveal: 650ms;
+  }
+
+  html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow: auto;
+    background-color: var(--color-canvas-navy);
+    color: var(--color-text-primary);
+  }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-teal);
+    outline-offset: 2px;
+  }
+
+
+  .show-frame,
+  .entry-screen,
+  .phone-backdrop {
+    background-image: linear-gradient(125deg, color-mix(in srgb, var(--color-vax) 18%, var(--color-stage-deep)), var(--color-stage-deep) 48%, color-mix(in srgb, var(--color-gold) 12%, var(--color-stage-deep)));
+  }
+
+  .show-frame {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--color-stage-deep);
+    color: var(--color-ink);
+    font-family: var(--kit-font-sans);
+    font-weight: 400;
+  }
+
+  .show-frame,
+  .show-frame *,
+  .show-frame *::before,
+  .show-frame *::after {
+    box-sizing: border-box;
+  }
+
+  .show-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(90deg,
+        color-mix(in srgb, var(--color-scrim) var(--kit-scrim-l1), transparent) 0%,
+        color-mix(in srgb, var(--color-scrim) var(--kit-scrim-l2), transparent) 10%,
+        color-mix(in srgb, var(--color-scrim) var(--kit-scrim-l3), transparent) 22%,
+        color-mix(in srgb, var(--color-scrim) var(--kit-scrim-l4), transparent) 36%),
+      linear-gradient(0deg,
+        color-mix(in srgb, var(--color-scrim) var(--kit-scrim-b1), transparent) 0%,
+        color-mix(in srgb, var(--color-scrim) var(--kit-scrim-b2), transparent) 22%,
+        transparent 44%);
+  }
+
+  .show-scrim--center {
+    background-image:
+      radial-gradient(ellipse 70% 60% at 50% 48%,
+        color-mix(in srgb, var(--color-scrim) 36%, transparent) 0%,
+        color-mix(in srgb, var(--color-scrim) 16%, transparent) 55%,
+        color-mix(in srgb, var(--color-scrim) 4%, transparent) 100%),
+      linear-gradient(0deg,
+        color-mix(in srgb, var(--color-scrim) 42%, transparent) 0%,
+        transparent 44%);
+  }
+
+  .show-lights {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    background-image:
+      linear-gradient(90deg,
+        transparent,
+        color-mix(in srgb, var(--color-vax) 28%, transparent) 18%,
+        color-mix(in srgb, var(--color-gold) 36%, transparent) 50%,
+        color-mix(in srgb, var(--color-fiction) 28%, transparent) 82%,
+        transparent),
+      radial-gradient(closest-side,
+        color-mix(in srgb, var(--color-gold) 45%, transparent),
+        transparent),
+      radial-gradient(closest-side,
+        color-mix(in srgb, var(--color-gold) 28%, transparent),
+        color-mix(in srgb, var(--color-gold) 8%, transparent) 55%,
+        transparent);
+    background-size:
+      100% var(--kit-floor-line),
+      100% var(--kit-line-glow-h),
+      100% var(--kit-floor-glow-h);
+    background-position:
+      50% calc(100% - var(--kit-floor-y)),
+      50% calc(100% - var(--kit-floor-y)),
+      50% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .show-lights::before,
+  .show-lights::after {
+    content: "";
+    position: absolute;
+    top: -8%;
+    width: 52%;
+    height: 78%;
+    --dotlit: calc(var(--lit, 0.5) * var(--lit, 0.5));
+    opacity: calc(0.45 + 0.4 * var(--dotlit));
+    mix-blend-mode: screen;
+    filter: none;
+    clip-path: none;
+  }
+
+  .show-lights::before {
+    --beam-tilt: -8deg;
+    left: -8%;
+    background-image: radial-gradient(ellipse 70% 62% at 42% 0%, color-mix(in srgb, var(--color-vax) 42%, transparent), transparent 72%);
+    animation: show-beam-sway 14s ease-in-out infinite;
+  }
+
+  .show-lights::after {
+    --beam-tilt: 8deg;
+    right: -6%;
+    background-image: radial-gradient(ellipse 70% 62% at 58% 0%, color-mix(in srgb, var(--color-fiction) 38%, transparent), transparent 72%);
+    animation: show-beam-sway 18s ease-in-out infinite reverse;
+  }
+
+
+  .show-safe {
+    position: absolute;
+    inset: var(--kit-safe-y) var(--kit-safe-x);
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    column-gap: var(--kit-gutter);
+    row-gap: var(--kit-band-gap);
+  }
+
+  .show-header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--kit-header-gap);
+    min-width: 0;
+    min-height: var(--kit-join-h);
+  }
+
+  .show-content {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr) auto;
+    column-gap: var(--kit-gutter);
+    row-gap: var(--kit-band-gap);
+    min-height: 0;
+  }
+
+  .show-footer {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--kit-header-gap);
+    min-width: 0;
+    font-family: var(--kit-font-sans);
+    font-size: var(--kit-type-footer);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-ink-dim);
+  }
+
+  .show-footer__context {
+    min-width: 0;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+  }
+
+  .show-footer__room {
+    flex: none;
+    font-family: var(--kit-font-mono);
+    letter-spacing: 0.12em;
+  }
+
+  .show-footer__offline-badge {
+    flex: none;
+    font-family: var(--kit-font-mono);
+    letter-spacing: 0.12em;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-gold);
+    text-transform: uppercase;
+  }
+
+  .join-card {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: var(--kit-join-gap);
+    margin-inline-start: auto;
+    padding: var(--kit-join-pad) var(--kit-join-pad-end) var(--kit-join-pad) var(--kit-join-pad);
+    border: 1px solid var(--color-film-border);
+    border-radius: var(--kit-radius-card);
+    background-color: var(--color-glass);
+    background-image: linear-gradient(var(--color-film), var(--color-film));
+    box-shadow: var(--kit-rim), var(--kit-drop-deep);
+    font-family: var(--kit-font-mono);
+    font-size: var(--kit-type-micro);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+
+  .show-join-pill {
+    min-height: var(--kit-join-h);
+    border-radius: var(--kit-radius-full);
+  }
+
+  .show-join-pill__host {
+    display: flex;
+    align-items: baseline;
+    gap: var(--kit-space-12);
+    letter-spacing: 0.02em;
+  }
+
+  .show-join-pill__label {
+    color: var(--color-ink-dim);
+  }
+
+  .join-card__code {
+    display: block;
+    font-size: var(--kit-type-code);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+  }
+
+  .show-wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--kit-space-24);
+    max-width: 100%;
+    font-family: var(--kit-font-sans);
+    font-size: inherit;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+  }
+
+  .show-wordmark--compact {
+    gap: var(--kit-space-12);
+    font-size: var(--kit-type-code);
+  }
+
+  .show-wordmark__vax {
+    color: var(--color-vax);
+  }
+
+  .show-wordmark__or {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--kit-space-12);
+    color: var(--color-gold);
+    font-family: var(--kit-font-mono);
+    font-size: 0.38em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+
+  .show-wordmark__or::before,
+  .show-wordmark__or::after {
+    content: "";
+    width: var(--kit-space-48);
+    height: var(--kit-space-4);
+    background-color: var(--color-gold);
+  }
+
+  .show-wordmark__fiction {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--kit-space-12);
+    color: var(--color-fiction);
+  }
+
+  .show-wordmark__syringe {
+    flex: none;
+    width: 0.5em;
+    height: 0.5em;
+    color: var(--color-vax);
+  }
+
+  .show-wordmark__question {
+    margin-inline-start: var(--kit-space-4);
+    color: var(--color-gold);
+  }
+
+  /* Stacked variant: the stage title's three-row mark (VAX / — OR — / FICTION?) for a surface that sets
+     its own font-size. The phone hero, wait card and app bar draw it, and the inline output is unchanged. */
+  .show-wordmark--stacked {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    max-width: 100%;
+    white-space: nowrap;
+  }
+
+  .show-wordmark--stacked .show-wordmark__vax {
+    position: relative;
+    overflow: visible;
+    font-size: 1em;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+  }
+
+  .show-wordmark--stacked .show-wordmark__or {
+    width: 88%;
+    justify-content: center;
+    gap: var(--kit-space-24);
+    font-size: 0.22em;
+    line-height: 1;
+  }
+
+  .show-wordmark--stacked .show-wordmark__or::before,
+  .show-wordmark--stacked .show-wordmark__or::after {
+    flex: 1;
+    width: auto;
+    height: 2px;
+    opacity: 0.7;
+    background-color: var(--color-vax);
+  }
+
+  .show-wordmark--stacked .show-wordmark__fiction {
+    position: relative;
+    gap: var(--kit-space-12);
+    font-size: 0.55em;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .show-wordmark--stacked .show-wordmark__syringe {
+    position: absolute;
+    color: var(--color-vax);
+  }
+
+
+  .phone-viewport-container {
+    min-height: 100dvh;
+    touch-action: manipulation;
+    overscroll-behavior-y: contain;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .presentation-stage {
+    --stage-scale: min(calc(100vw / 1600px), calc(100vh / 900px));
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: var(--stage-width);
+    height: var(--stage-height);
+    overflow: hidden;
+    transform: scale(var(--stage-scale));
+    transform-origin: top left;
+    background-color: var(--color-canvas-navy);
+    color: var(--color-text-primary);
+  }
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .phone-live-shell button:active {
+    transform: none !important;
+  }
+
+  .facilitator-press:active:not(:disabled) {
+    filter: none;
+  }
+
+  .question-show-frame .answer-bar:active:not([data-state="selected"]):not(:disabled) {
+    filter: none;
+  }
+}
+
+.facilitator-press:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.facilitator-press:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.facilitator-press:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.facilitator-press:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+.facilitator-press:disabled:hover,
+.facilitator-press:disabled:active {
+  filter: none;
+}
+
+.question-show-frame .answer-bar:hover:not([data-state="selected"]):not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.question-show-frame .answer-bar:active:not([data-state="selected"]):not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.question-show-frame .answer-bar:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+/* Stage polish 2026-09-14: reveal treatment survives the chevron overrides,
+   facilitator-only controls leave the audience canvas, letterbox matches the
+   stage. */
+
+  body {
+    background-color: var(--color-stage-deep);
+  }
+
+  /* COPY-02 / VOF-24: the closing actions are facilitator controls: present,
+     clickable, Enter still fires the autofocused button, but invisible on the
+     shared canvas unless keyboard focus lands on them. (The question's lock
+     strip that shared this treatment is gone: the stage now carries a visible
+     status rail and the HUD carries the Lock / Reveal controls.) The scored
+     closing's takeaway advance is the same kind of control and gets the same
+     treatment: it carries focus so Enter advances, and it stays off the canvas. Details &
+     sources on the question screens joins them (ruling 2026-09-15). */
+  .closing-recap-actions,
+  .closing-local-navigation,
+  .show-evidence-trigger {
+    opacity: 0.001;
+  }
+
+  .closing-recap-actions:has(:focus-visible),
+  .closing-local-navigation:has(:focus-visible),
+  .show-evidence-trigger:focus-visible {
+    opacity: 1;
+  }
+
+
+/* Participant surface on a laptop: a centered phone-width column. */
+@media (min-width: 700px) {
+  .phone-live-shell { max-width: 520px !important; margin: 0 auto !important; box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-light) 10%, transparent), 0 32px 80px color-mix(in srgb, var(--color-void) 60%, transparent); }
+}
+.setup-venue, .presenter-setup-stage .setup-venue { display: flex !important; flex-direction: column !important; justify-content: center !important; }
+/* 2026-09-14: kill every decorative seam/connector line on stage and setup. */
+.answer-rail::before, .answer-rail::after, .answer-rail > .seam, .question-show-frame .answer-rail + .rail-seam, .setup-room-card::before, .setup-room-card::after, .setup-compact::before, .setup-compact::after, .setup-actions::before, .setup-actions::after, .setup-cta::before, .setup-cta::after { display: none !important; content: none !important; box-shadow: none !important; background: none !important; }
+.answer-rail { box-shadow: none !important; background: none !important; border: 0 !important; outline: 0 !important; }
+
+/* ==========================================================================================
+   Stage critique 2026-09-14 (lane: stage). These rules are unlayered, so this
+   section is the final word in this file on the
+   audience canvas. Canvas is the 1600x900 stage. Question coordinates are inside the safe
+   area (48px top/bottom, 64px sides -> 1472x804, header 0-112, footer at the bottom edge).
+   Items: 21 chrome · 3 slot rail · 5 lock split · 4 reveal plates · 15 stamp · 17 estimate
+   plate · 18 26px floor · 19 source pill · 8 wordmark.
+   ========================================================================================== */
+
+/* --- Item 21: one safe inset, one header, one footer, one join pill for every kind ------- */
+.question-shell:not([data-format="portrait"]) .question-show-frame .show-safe { inset: var(--kit-space-48) var(--kit-space-64); }
+.question-show-frame .show-footer { bottom: 0 !important; }
+
+/* --- Item 3: one slot-based answer rail (label left · percent + count right, never stacked) --- */
+.question-show-frame .answer-bar__pct { font-family: var(--kit-font-mono) !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: 0 !important; text-align: right !important; color: var(--color-ink) !important; }
+.question-show-frame .answer-bar__votes { font-family: var(--kit-font-mono) !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; text-align: right !important; color: var(--color-ink-muted) !important; }
+
+/* --- Item 17: the classic estimate plate while the question is posed and locked (dark fill,
+       2px coloured rim, 36px label, stat slot fills at lock). The result beat names the answer. --- */
+.question-show-frame--estimate .estimate-answer-rail .answer-bar { isolation: isolate; position: relative !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; clip-path: none !important; opacity: 1 !important; overflow: visible !important; }
+.question-show-frame--estimate .estimate-answer-rail .answer-bar::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, color-mix(in srgb, var(--range-accent, var(--color-gold)) 82%, var(--color-light)), var(--range-accent, var(--color-gold)) 45%, color-mix(in srgb, var(--range-accent, var(--color-gold)) 60%, var(--color-void))); clip-path: polygon(var(--stage-card-point) 0, calc(100% - var(--stage-card-point)) 0, 100% 50%, calc(100% - var(--stage-card-point)) 100%, var(--stage-card-point) 100%, 0 50%); }
+/* STAGE-SPEC step 6 (spec section 3.2): the rim moves from a hardcoded 3px to the shared
+   --stage-card-rim token (4px), matching every other chevron's rim. */
+.question-show-frame--estimate .estimate-answer-rail .answer-bar::after { content: ""; position: absolute; inset: var(--stage-card-rim); z-index: -1; background: color-mix(in srgb, var(--color-stage-deep) 90%, transparent); clip-path: polygon(var(--stage-card-point-inner) 0, calc(100% - var(--stage-card-point-inner)) 0, 100% 50%, calc(100% - var(--stage-card-point-inner)) 100%, var(--stage-card-point-inner) 100%, 0 50%); }
+.question-show-frame--estimate .estimate-answer-rail .answer-bar > [aria-hidden="true"] { display: none !important; }
+.question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__label { font-family: var(--kit-font-sans) !important; font-weight: 600 !important; line-height: 1 !important; color: var(--color-ink) !important; }
+.question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__note { font-family: var(--kit-font-mono) !important; font-size: 26px !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: 0.06em !important; text-align: left !important; text-transform: uppercase !important; white-space: nowrap !important; padding: 0 !important; border: 0 !important; background: transparent !important; color: var(--color-gold) !important; }
+.question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__pct { font-family: var(--kit-font-mono) !important; text-align: right !important; }
+.question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__votes { font-family: var(--kit-font-mono) !important; text-align: right !important; }
+
+/* --- Item 18: the 26px floor for every audience-canvas text node (order key discs were 24px). --- */
+.question-show-frame--order .order-bar > div:first-child > div:first-child { font-size: 28px !important; }
+
+/* --- Item 19: the source pill from structured fields, reveal only, mono uppercase, never an
+       ellipsis. The pending slot keeps the footer's shape for the presenter status rail. ------ */
+.question-show-frame .show-footer__context { max-width: 100% !important; overflow: visible !important; text-overflow: clip !important; }
+.question-show-frame .show-source-pill { display: inline-flex !important; align-items: baseline !important; gap: var(--kit-space-16) !important; padding: var(--kit-space-8) var(--kit-space-24) !important; font-family: var(--kit-font-mono) !important; font-size: 26px !important; font-weight: 600 !important; line-height: 1.2 !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; color: var(--color-ink) !important; white-space: nowrap !important; }
+.show-source-pill__label { color: var(--color-gold); }
+.show-source-pill__org::before,
+.show-source-pill__verified::before { content: "·"; margin-right: var(--kit-space-16); color: var(--color-ink-dim); }
+.question-show-frame .show-footer__context--pending { visibility: hidden; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: none !important; }
+
+/* --- Item 8: the classic wordmark. Gradients clipped to the glyphs, a glow per word, a white OR
+       between teal hairlines, the classic syringe beside VAX, the block left-anchored. ---------- */
+.phone-hero-mark .show-wordmark--stacked,
+.entry-hero-art .show-wordmark,
+.title-source-mark .show-wordmark,
+.lobby-title .show-wordmark { width: max-content; max-width: none; overflow: visible; justify-content: flex-start; align-items: flex-start; }
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__vax-glyphs,
+.entry-hero-art .show-wordmark__vax-glyphs,
+.title-source-mark .show-wordmark__vax-glyphs,
+.lobby-title .show-wordmark__vax-glyphs { color: transparent; background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-vax) 72%, var(--color-ink)), var(--color-vax)); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 0 18px color-mix(in srgb, var(--color-vax) 35%, transparent)); }
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__fiction,
+.entry-hero-art .show-wordmark__fiction,
+.title-source-mark .show-wordmark__fiction,
+.lobby-title .show-wordmark__fiction { color: transparent; background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-gold) 80%, var(--color-ink)), var(--color-fiction)); -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 0 18px color-mix(in srgb, var(--color-fiction) 35%, transparent)); font-size: 0.5em; overflow: visible; padding-inline-end: 0.06em; }
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__question,
+.entry-hero-art .show-wordmark__question,
+.title-source-mark .show-wordmark__question,
+.lobby-title .show-wordmark__question { color: inherit; margin-inline-start: 0; }
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__or,
+.entry-hero-art .show-wordmark__or,
+.title-source-mark .show-wordmark__or,
+.lobby-title .show-wordmark__or { width: 100%; gap: var(--kit-space-24); color: var(--color-ink); font-family: var(--kit-font-sans); font-size: max(14px, 0.12em); font-weight: 600; letter-spacing: 0.08em; line-height: 1; }
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__or::before,
+.entry-hero-art .show-wordmark__or::before,
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__or::after,
+.entry-hero-art .show-wordmark__or::after,
+.title-source-mark .show-wordmark__or::before,
+.title-source-mark .show-wordmark__or::after,
+.lobby-title .show-wordmark__or::before,
+.lobby-title .show-wordmark__or::after { height: 4px; opacity: 0.7; background-color: var(--color-vax); }
+/* Phone, entry, title and lobby park the syringe from one shared mark geometry
+   in styles/preshow-stage.css. */
+
+.walkin-lyric {
+  margin: 0;
+  max-width: 42ch;
+  color: color-mix(in srgb, var(--color-ink) 88%, var(--color-ink-muted));
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+  pointer-events: none;
+}
+/* `.title-walkin` is a row of the title grid (styles/preshow-stage.css). The title plate carries
+   the music meter only, never a lyric. */
+.phone-join-lyric {
+  margin: 0 auto var(--kit-space-16);
+  max-width: 22rem;
+  color: var(--color-gold);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+@media (max-height: 699px) {
+  .phone-join-lyric {
+    margin-bottom: var(--kit-space-8);
+  }
+}
+
+/* ==========================================================================================
+   Live stage polish: glass backers, estimate wrap, beat panes that do not stack
+   chrome. Soft IMZ / show-plate art stays deleted — lights + scrim only.
+   ========================================================================================== */
+
+/* Soft glass for the beats and the chrome. The posed stem is bare type,
+   question-stage.css owns that panel. */
+.stage-glass,
+body .question-shell .question-explanation-copy,
+body .question-shell .question-result-card,
+.question-show-frame .show-join-pill,
+.preshow-title .show-join-pill,
+.preshow-instructions .show-join-pill,
+.question-show-frame .status-rail,
+.instructions-source-step,
+.lobby-join {
+  background-color: var(--kit-glass-fill) !important;
+  background-image: none !important;
+  border: 1px solid var(--kit-glass-border) !important;
+  box-shadow: var(--kit-rim), var(--kit-drop-deep) !important;
+  backdrop-filter: blur(var(--kit-glass-blur)) saturate(1.2);
+  -webkit-backdrop-filter: blur(var(--kit-glass-blur)) saturate(1.2);
+}
+
+body .question-shell .question-explanation-copy,
+body .question-shell .question-result-card {
+  border-radius: var(--kit-radius-card) !important;
+  background-color: var(--kit-glass-fill-strong) !important;
+}
+
+/* Estimate plates keep a crisp hex rim: soft inner fill, no extra blur on the
+   clipped ends (blur + polygon reads as a mangled tip). */
+.question-show-frame--estimate .estimate-answer-rail .answer-bar::after {
+  background: color-mix(in srgb, var(--color-stage-deep) 72%, transparent) !important;
+  clip-path: polygon(var(--stage-card-point-inner) 0, calc(100% - var(--stage-card-point-inner)) 0, 100% 50%, calc(100% - var(--stage-card-point-inner)) 100%, var(--stage-card-point-inner) 100%, 0 50%) !important;
+  border-radius: 0 !important;
+}
+.question-show-frame--estimate .estimate-answer-rail .answer-bar::before {
+  clip-path: polygon(var(--stage-card-point) 0, calc(100% - var(--stage-card-point)) 0, 100% 50%, calc(100% - var(--stage-card-point)) 100%, var(--stage-card-point) 100%, 0 50%) !important;
+  border-radius: 0 !important;
+}
+
+.question-show-frame--binary .answer-bar {
+  clip-path: polygon(var(--stage-card-point) 0, calc(100% - var(--stage-card-point)) 0, 100% 50%, calc(100% - var(--stage-card-point)) 100%, var(--stage-card-point) 100%, 0 50%) !important;
+  border-radius: 0 !important;
+}
+.question-show-frame--binary .answer-bar::after {
+  clip-path: polygon(var(--stage-card-point-inner) 0, calc(100% - var(--stage-card-point-inner)) 0, 100% 50%, calc(100% - var(--stage-card-point-inner)) 100%, var(--stage-card-point-inner) 100%, 0 50%) !important;
+  border-radius: 0 !important;
+}
+.question-show-frame--which-patient .answer-bar {
+  clip-path: polygon(var(--stage-card-point) 0, calc(100% - var(--stage-card-point)) 0, 100% 50%, calc(100% - var(--stage-card-point)) 100%, var(--stage-card-point) 100%, 0 50%) !important;
+  border-radius: 0 !important;
+}
+.question-show-frame--which-patient .answer-bar::after {
+  clip-path: polygon(var(--stage-card-point-inner) 0, calc(100% - var(--stage-card-point-inner)) 0, 100% 50%, calc(100% - var(--stage-card-point-inner)) 100%, var(--stage-card-point-inner) 100%, 0 50%) !important;
+  border-radius: 0 !important;
+}
+
+/* The beats crossfade in one grid cell. They must not clip: the panes are
+   sized to the safe area, and authored clinical copy of any length has to be
+   allowed to push past that rather than lose its last row or its descenders. */
+.question-beat-stack {
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: visible;
+}
+
+.question-beat-pane {
+  grid-area: 1 / 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: visible;
+  /* Same Framer leftover as .screen-router-viewport — opacity dissolve only. */
+  transition-property: opacity !important;
+}
+/* Same prune as screen-router viewports: hurried lock→reveal→why must not leave
+   three stacked beat panes painting under the sync dissolve. */
+.question-beat-pane:has(~ .question-beat-pane ~ .question-beat-pane) {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.status-rail {
+  background-color: var(--kit-glass-fill) !important;
+  backdrop-filter: blur(var(--kit-glass-blur)) saturate(1.2);
+  -webkit-backdrop-filter: blur(var(--kit-glass-blur)) saturate(1.2);
+}
+
+.status-rail[data-state="explaining"] .status-rail__dot {
+  background-color: var(--color-gold);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-gold) 55%, transparent);
+}
+
+.status-rail[data-state="explaining"] .status-rail__phase {
+  color: var(--color-gold);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .show-lights::before,
+  .show-lights::after,
+  .show-wordmark__syringe {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .stage-glass,
+  body .question-shell .question-explanation-copy,
+  body .question-shell .question-result-card,
+  .question-show-frame .show-join-pill,
+  .preshow-title .show-join-pill,
+  .preshow-instructions .show-join-pill,
+  .question-show-frame .status-rail,
+  .status-rail {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--kit-glass-fill-strong) !important;
+  }
+}
+
+/* The posed question stage (stem panel + answer rails) is owned by
+   question-stage.css, imported last. Two emergency blocks used to live here and
+   re-centre every rail with left:50% + translateX(-50%). The translate survived
+   the frame's `inset: auto` and dragged each rail half its width off canvas.
+   Nothing in this file may position a rail. */
+
+/* W6 (premium-host pass 2): min-height here used to win over these three buttons' own real-px
+   floors (a calc against --stage-scale) with !important, forcing --kit-touch-min's max(64px
+   design, ...) back in. At portrait's 0.675 setup scale that is 64 * 0.675 = 43.2 real px, under
+   the 44px floor. Dropped so each button's own scale-aware min-height wins instead. */
+.presenter-setup-stage [data-role='setup-copy-link'],
+.presenter-setup-stage .setup-presenter-remote__button,
+.presenter-setup-stage .setup-offline-backup__link {
+  font-size: 20px !important;
+  padding: var(--kit-space-12) var(--kit-space-24) !important;
+}
+
+.score-board[data-count="0"] {
+  justify-content: center;
+  text-align: center;
+}
+
+.score-board[data-count="0"] .score-board__header {
+  align-items: center;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+/* 5min-all-in: Top 5 empty state, lobby clear */
+.score-board[data-count="0"] .score-board__lanes,
+.score-board[data-count="0"] .score-board__lane,
+.score-board[data-count="0"] .score-board__place,
+.score-board[data-count="0"]::before,
+.score-board[data-count="0"]::after {
+  display: none !important;
+}
+
+.score-board[data-count="0"] .score-board__empty,
+.score-board[data-count="0"] .score-board__title {
+  position: relative;
+  z-index: 2;
+}
+
+/* WARNING-10 (premium-host-fix-3): the Closing join pill's code (.closing-show-frame
+   .join-card__code) lives in question-chrome.css, out of this brief's scope, but keeps
+   min-width:0 + overflow:hidden + text-overflow:ellipsis with no fixed-size guard, so the atlas
+   caught it clipping the room code to "ATLHO..." the same way the leaderboard pill did before
+   B3. This applies the same B3 rules the leaderboard pill already carries (leaderboard.css:
+   pill sizes to its own content, code is fixed-size and always shown whole, only the secondary
+   host text gives up space, hidden at portrait, truncated at square), scoped to .closing-screen
+   so it outranks question-chrome.css's selector on specificity regardless of load order (this
+   file loads first, see App.tsx). Small and scoped to the non-question Closing screen only, per
+   this brief's own presentation.css rule. */
+.closing-screen[data-format="portrait"] .closing-show-frame .show-join-pill,
+.closing-screen[data-format="square"] .closing-show-frame .show-join-pill {
+  width: auto;
+  max-width: 100%;
+  justify-self: start;
+  box-sizing: border-box;
+}
+
+.closing-screen[data-format="portrait"] .closing-show-frame .show-join-pill__host {
+  display: none;
+}
+
+.closing-screen[data-format="square"] .closing-show-frame .show-join-pill__host {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.closing-screen[data-format="portrait"] .closing-show-frame .join-card__code,
+.closing-screen[data-format="square"] .closing-show-frame .join-card__code {
+  flex: none;
+  min-width: auto;
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+

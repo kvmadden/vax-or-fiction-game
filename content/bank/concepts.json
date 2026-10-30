@@ -1,0 +1,876 @@
+{
+  "tags": [
+    "eligibility",
+    "schedule",
+    "product",
+    "co-administration",
+    "contraindication",
+    "precaution",
+    "safety",
+    "side-effects",
+    "effectiveness",
+    "burden",
+    "coverage",
+    "storage-handling",
+    "administration",
+    "documentation",
+    "screening",
+    "communication",
+    "history",
+    "misconception",
+    "pregnancy"
+  ],
+  "concepts": {
+    "flu-post-infection-cardiac-risk": {
+      "label": "Flu infection raises short-term cardiac risk",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-egg-allergy": {
+      "label": "Egg allergy is not a flu-vaccine contraindication",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-coverage-rate": {
+      "label": "Adult flu vaccination coverage rate",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-inactivated-vaccine-safety-myth": {
+      "label": "Inactivated flu vaccine cannot cause flu, myth-among-three",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-inactivated-vaccine-safety": {
+      "label": "Inactivated flu vaccine cannot cause flu",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-pediatric-second-dose": {
+      "label": "Pediatric two-dose flu series",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-senior-vaccine-choice-case": {
+      "label": "Preferential product for 65+ (case)",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-senior-vaccine-choice": {
+      "label": "Preferential high-dose or adjuvanted product for 65+",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-mortality-by-age": {
+      "label": "Flu mortality skews to 65+",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-mild-illness-no-delay": {
+      "label": "Mild illness does not require delaying a flu shot",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-postvaccination-symptoms-not-illness": {
+      "label": "Post-vaccination symptoms are not a mild flu case",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-vaccine-cardiac-protection": {
+      "label": "Annual flu vaccination lowers cardiac event risk",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-universal-recommendation": {
+      "label": "Universal ACIP recommendation, 6 months and older",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-vaccination-timing": {
+      "label": "September-October timing for peak protection",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "flu-antiviral-vs-vaccine": {
+      "label": "Antivirals after onset do not replace vaccination",
+      "subject": "flu",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "rsv-severity-hospitalization": {
+      "label": "RSV severity in older adults, ICU and hospitalization",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-eligibility-case": {
+      "label": "Who to offer RSV vaccine today (case)",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-plan-discussion": {
+      "label": "RSV vaccination plan discussion (case)",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-maternal-vaccine-facts-myth": {
+      "label": "Maternal RSV vaccination window and newborn protection, myth-among-three",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-maternal-vaccine-facts": {
+      "label": "Maternal RSV vaccination window and newborn protection",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-vaccine-efficacy": {
+      "label": "First-season RSV vaccine efficacy against hospitalization",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-cardiac-risk-factor": {
+      "label": "Heart failure as an RSV severity risk factor",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-chronic-lung-risk-factor": {
+      "label": "Asthma or COPD as an RSV hospitalization risk factor",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-senior-recommendation": {
+      "label": "Single-dose RSV recommendation for 75+",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-dosing-schedule": {
+      "label": "RSV vaccine is not an annual revaccination",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-eligibility-60-74-chronic-condition": {
+      "label": "60-74 with chronic cardiorespiratory disease qualify",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-dosing-during-illness": {
+      "label": "Active fever does not call for a double dose",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-vaccine-composition": {
+      "label": "RSV vaccines are recombinant protein, not live virus",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "rsv-coadministration": {
+      "label": "RSV vaccine co-administration with flu is not contraindicated",
+      "subject": "rsv",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "shingles-recommended-after-prior-episode": {
+      "label": "Shingrix is still recommended after a prior shingles episode",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-postherpetic-neuralgia": {
+      "label": "Postherpetic neuralgia can persist for years",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-late-dose-no-restart": {
+      "label": "A late second Shingrix dose does not restart the series",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-vaccine-facts-myth": {
+      "label": "Shingles vaccine facts, myth-among-three",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-lifetime-risk": {
+      "label": "Lifetime risk of developing shingles",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-ophthalmic-emergency": {
+      "label": "Ophthalmic shingles is a vision-loss emergency",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-post-infection-stroke-risk": {
+      "label": "Stroke risk in the month after acute shingles",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-zostavax-transition": {
+      "label": "Prior Zostavax recipients still need the full Shingrix series",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-universal-recommendation-50": {
+      "label": "Routine Shingrix recommendation for immunocompetent 50+",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-dosing-interval": {
+      "label": "Two-dose schedule, 2 to 6 months apart",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-immunocompromised-eligibility": {
+      "label": "Recommended at 19+ for immunodeficient or immunosuppressed adults",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-vaccine-composition": {
+      "label": "Shingrix is recombinant, not a live attenuated virus",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-reactogenicity-not-contraindication": {
+      "label": "Expected reactogenicity does not cancel the second dose",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "shingles-administration-route": {
+      "label": "Intramuscular deltoid administration route",
+      "subject": "shingles",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "pneumococcal-disease-scope": {
+      "label": "Pneumococcal disease includes bacteremia and meningitis, not just pneumonia",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-age-eligibility": {
+      "label": "Routine pneumococcal eligibility is 65+, not 50",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-coverage-rate": {
+      "label": "Adult pneumococcal vaccination coverage rate",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-eligibility-case": {
+      "label": "Who needs pneumococcal conjugate vaccine today (case)",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-chronic-condition-risk": {
+      "label": "Diabetes raises pneumococcal disease risk",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-universal-recommendation-65": {
+      "label": "ACIP routine recommendation for adults 65 and older",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-single-dose-product": {
+      "label": "Prevnar 20 and Capvaxive as single-dose products",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-chronic-condition-eligibility-under-65": {
+      "label": "Chronic-condition eligibility before age 65",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-prior-pcv13-sequencing": {
+      "label": "Prior PCV13 does not always complete the series",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-sequential-dosing": {
+      "label": "PCV15 followed by PPSV23 sequencing",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "pneumococcal-vaccine-composition": {
+      "label": "Pneumococcal conjugate vaccines are not live bacteria",
+      "subject": "pneumococcal",
+      "vaccines": [
+        "pneumococcal"
+      ]
+    },
+    "hpv-cancer-burden": {
+      "label": "HPV-attributable cancer burden by sex",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hpv-catch-up-shared-decision": {
+      "label": "Catch-up HPV vaccination 27-45 by shared clinical decision",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hpv-vaccine-coverage-scope": {
+      "label": "Gardasil 9 type coverage and cervical-cancer share",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hpv-sex-neutral-recommendation": {
+      "label": "HPV vaccination is recommended for all sexes",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hpv-age-based-dosing-schedule": {
+      "label": "Two-dose schedule for series started before age 15",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hpv-benefit-after-prior-exposure": {
+      "label": "Vaccination still benefits after a prior abnormal result or exposure",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hpv-behavioral-myth": {
+      "label": "HPV vaccination and sexual-behavior myths",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hpv-vaccination-vs-screening": {
+      "label": "Vaccination does not replace cervical cancer screening",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hpv-pregnancy-management": {
+      "label": "Pregnancy discovered mid-series management",
+      "subject": "hpv",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "hepatitis-b-accelerated-schedule": {
+      "label": "Accelerated one-month two-dose hepatitis B schedule (Heplisav-B)",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-testing-not-prerequisite": {
+      "label": "Pre-vaccination blood testing is not required",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-undiagnosed-burden": {
+      "label": "Share of people with hepatitis B who are undiagnosed",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-environmental-stability": {
+      "label": "Hepatitis B virus surface stability",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-universal-recommendation": {
+      "label": "Universal adult recommendation, 19 through 59",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-eligibility-60-plus": {
+      "label": "60+ without risk factors remain eligible",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-chronic-condition-risk": {
+      "label": "Diabetes and hepatitis B acquisition risk",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-screening-recommendation": {
+      "label": "One-time triple-panel screening for adults",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-interval-no-restart": {
+      "label": "An extended interval between doses does not require a restart",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-hepd-coinfection-protection": {
+      "label": "Hepatitis B vaccination also prevents hepatitis D coinfection",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "hepatitis-b-no-booster-needed": {
+      "label": "No annual booster is indicated for surface-antigen-positive adults",
+      "subject": "hepatitis-b",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "tetanus-tdap-pregnancy-timing": {
+      "label": "One Tdap dose every pregnancy, 27 to 36 weeks",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-primary-series-order": {
+      "label": "Tdap-first primary series order for an unvaccinated adult",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-wound-management-case": {
+      "label": "Wound-management booster timing (case)",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-wound-management": {
+      "label": "Wound-management booster timing",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-clean-wound-booster-interval": {
+      "label": "Clean minor wounds use the longer booster interval",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-vaccine-scope-myth": {
+      "label": "Overreach claims about what adult immunization prevents",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-decennial-booster": {
+      "label": "Routine decennial Td booster",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-no-herd-immunity": {
+      "label": "Tetanus is not contagious, so herd immunity does not apply",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-pertussis-presentation-adult": {
+      "label": "Adult pertussis often lacks the classic whoop",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-cocooning-strategy": {
+      "label": "Cocooning household contacts protects infants",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-tdap-td-interchangeability": {
+      "label": "Tdap can substitute for a Td booster or wound prophylaxis",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "tetanus-arthus-reaction-contraindication": {
+      "label": "A severe Arthus reaction is a contraindication to further doses",
+      "subject": "tetanus",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "counter-live-vaccine-spacing": {
+      "label": "Live vaccine same-day or 28-day spacing rule",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "counter-cold-chain-excursion-steps": {
+      "label": "Steps after an out-of-range temperature reading",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "counter-diluent-substitution": {
+      "label": "Stock sterile water cannot substitute for the supplied diluent",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "counter-injection-site-selection": {
+      "label": "Same-limb injection spacing for multiple injectables",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "counter-coadministration-immune-response": {
+      "label": "Co-administration does not blunt antibody response",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "influenza",
+        "covid-19"
+      ]
+    },
+    "counter-coadministration-general": {
+      "label": "ACIP general best practice supports same-visit co-administration",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "influenza",
+        "rsv"
+      ]
+    },
+    "counter-immune-system-capacity-myth": {
+      "label": "Multiple vaccines do not overload the immune system",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "counter-presumptive-bundling": {
+      "label": "Presumptive bundled recommendations increase acceptance",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "counter-documentation-requirement": {
+      "label": "Per-site EHR documentation is not required",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "counter-patient-choice-hesitancy": {
+      "label": "Offer a choice rather than insist when a patient hesitates",
+      "subject": "at-the-counter",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "whattosay-conversation-order": {
+      "label": "Order of a practical vaccine conversation",
+      "subject": "what-to-say",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "whattosay-shingles-past-episode": {
+      "label": "Reply to \"I already had shingles, so I'm covered\"",
+      "subject": "what-to-say",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "whattosay-presumptive-offer-general": {
+      "label": "Presumptive language for offering two vaccines at once",
+      "subject": "what-to-say",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "whattosay-immune-overwhelm-concern": {
+      "label": "Reply to \"won't that overwhelm my immune system\"",
+      "subject": "what-to-say",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "whattosay-shingrix-tdap-bundle": {
+      "label": "Offering Shingrix and Tdap in the same visit",
+      "subject": "what-to-say",
+      "vaccines": [
+        "zoster",
+        "tdap-td"
+      ]
+    },
+    "whattosay-rsv-opportunistic-offer": {
+      "label": "Opportunistic RSV offer at a pneumococcal visit",
+      "subject": "what-to-say",
+      "vaccines": [
+        "rsv",
+        "pneumococcal"
+      ]
+    },
+    "whattosay-egg-allergy-reassurance": {
+      "label": "Reassurance reply on egg allergy and flu vaccine",
+      "subject": "what-to-say",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "whattosay-fitness-immunity-myth": {
+      "label": "Reply to \"I'm healthy, I don't need it\"",
+      "subject": "what-to-say",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "whattosay-natural-immunity-myth": {
+      "label": "Reply to \"I already had it, that's protection enough\"",
+      "subject": "what-to-say",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "whattosay-pregnancy-safety-concern": {
+      "label": "Reply to a pregnant patient worried about vaccine harm",
+      "subject": "what-to-say",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "whattosay-deferral-to-next-visit": {
+      "label": "Reply to a patient wanting to defer to their next physical",
+      "subject": "what-to-say",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "whattosay-prior-side-effect-hesitancy": {
+      "label": "Reply to a patient who had side effects last time",
+      "subject": "what-to-say",
+      "vaccines": [
+        "influenza"
+      ]
+    },
+    "whattosay-tdap-repeat-pregnancy": {
+      "label": "Reply on repeat Tdap in a new pregnancy",
+      "subject": "what-to-say",
+      "vaccines": [
+        "tdap-td"
+      ]
+    },
+    "whattosay-rsv-pregnancy-timing": {
+      "label": "Reply on RSV vaccine timing during pregnancy",
+      "subject": "what-to-say",
+      "vaccines": [
+        "rsv"
+      ]
+    },
+    "whattosay-late-second-dose-reassurance": {
+      "label": "Reassurance reply on a late second dose",
+      "subject": "what-to-say",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "whattosay-covid-post-infection-timing": {
+      "label": "Reply on COVID-19 vaccine timing after recent infection",
+      "subject": "what-to-say",
+      "vaccines": [
+        "covid-19"
+      ]
+    },
+    "whattosay-hepb-dose-options": {
+      "label": "Reply on two-dose versus three-dose hepatitis B options",
+      "subject": "what-to-say",
+      "vaccines": [
+        "hepatitis-b"
+      ]
+    },
+    "whattosay-shingrix-single-dose-question": {
+      "label": "Reply to \"is one Shingrix dose enough\"",
+      "subject": "what-to-say",
+      "vaccines": [
+        "zoster"
+      ]
+    },
+    "whattosay-hpv-dose-count-question": {
+      "label": "Reply on HPV dose count by starting age",
+      "subject": "what-to-say",
+      "vaccines": [
+        "hpv"
+      ]
+    },
+    "publichealth-vaccine-history": {
+      "label": "The first vaccine predates germ theory",
+      "subject": "public-health",
+      "vaccines": [
+        "smallpox"
+      ]
+    },
+    "publichealth-vaccine-broad-benefits": {
+      "label": "Vaccine recommendations span infections, some cancers and cardiac complications",
+      "subject": "public-health",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "publichealth-smallpox-eradication": {
+      "label": "Smallpox eradication, declared 1980",
+      "subject": "public-health",
+      "vaccines": [
+        "any"
+      ]
+    },
+    "covid19-cardiovascular-risk": {
+      "label": "Mild COVID-19 raises stroke and heart-failure risk",
+      "subject": "covid-19",
+      "vaccines": [
+        "covid-19"
+      ]
+    },
+    "covid19-natural-immunity-myth": {
+      "label": "Recovery from COVID-19 does not replace vaccination",
+      "subject": "covid-19",
+      "vaccines": [
+        "covid-19"
+      ]
+    },
+    "covid19-immunocompromised-additional-doses": {
+      "label": "Additional COVID-19 doses for immunocompromised adults",
+      "subject": "covid-19",
+      "vaccines": [
+        "covid-19"
+      ]
+    }
+  }
+}

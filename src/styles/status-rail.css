@@ -1,0 +1,268 @@
+/* Stage status rail (PRES-01 / 03 / 05 / 11).
+   One persistent, audience-safe read-out of the voting beat in the footer slot,
+   right-aligned beside the source pill and cut from the same pill material:
+   "Voting open · 3 of 5 in" → "Votes locked · 3 votes" → "Revealed".
+   Tokens only; the dot is the one thing that changes colour, in 160 ms. */
+
+.status-rail {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 16;
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-16);
+  min-height: 64px;
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.status-rail__dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-vax);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-vax) 60%, transparent);
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.status-rail[data-state="locked"] .status-rail__dot {
+  background-color: var(--color-gold);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-gold) 60%, transparent);
+}
+
+.status-rail[data-state="revealed"] .status-rail__dot {
+  background-color: color-mix(in srgb, var(--color-ink-dim) 55%, transparent);
+  box-shadow: none;
+}
+
+.status-rail[data-state="explaining"] .status-rail__dot {
+  background-color: var(--color-gold);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-gold) 60%, transparent);
+}
+
+.status-rail__text {
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+}
+
+/* LOOK-2 (FAC-09, design call 2026-09-25, "Bigger digits too"): the clock shares this same
+   font-size at every breakpoint below, instead of inheriting the ancestor .status-rail's own
+   (smaller, revealed-footer-only) size, so the pill reads as one uniform line. */
+.status-rail__phase,
+.status-rail__clock {
+  font-size: 44px;
+}
+
+.status-rail__phase {
+  color: var(--color-ink);
+}
+
+.status-rail__meta {
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.status-rail__reaction-label {
+  color: var(--color-gold);
+}
+
+.status-rail__reaction-emoji {
+  color: var(--color-gold);
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.status-rail__reaction-count {
+  color: var(--color-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Projector-readable burst: sits above the rail, never on the question stem. */
+.status-rail__burst {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + var(--kit-space-16));
+  z-index: 17;
+  display: grid;
+  place-items: center;
+  width: 176px;
+  height: 176px;
+  padding: 0;
+  border: 2px solid var(--color-gold);
+  border-radius: 50%;
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-gold);
+  line-height: 1;
+  pointer-events: none;
+  animation: stage-reaction-burst-in 1.6s ease both;
+}
+
+.status-rail__burst-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+@keyframes stage-reaction-burst-in {
+  0% { opacity: 0; transform: translateY(16px) scale(0.55); }
+  14% { opacity: 1; transform: translateY(0) scale(1.08); }
+  22% { transform: translateY(0) scale(1); }
+  70% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-12px) scale(0.96); }
+}
+
+/* Next-key hint: hover / focus only, floated above the rail so the rail itself never reflows. */
+.status-rail__hint {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + var(--kit-space-8));
+  padding: var(--kit-space-4) var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-backer);
+  color: var(--color-ink-dim);
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.status-rail:hover .status-rail__hint,
+.status-rail:focus-within .status-rail__hint {
+  opacity: 1;
+}
+
+/* Countdown ring at the right end, drawn only while the presenter has the clock on. */
+.status-rail__timer {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  padding-left: var(--kit-space-16);
+  border-left: 1px solid var(--color-film-border);
+  color: var(--color-gold);
+}
+
+.status-rail__timer[data-urgency="warning"] {
+  color: var(--color-time-warning);
+}
+
+.status-rail__timer[data-urgency="critical"] {
+  color: var(--color-emphasis-red);
+}
+
+.status-rail__timer svg {
+  flex: none;
+  /* LOOK-2: FAC-09 (round 2) grew this to 48px against a clock that stayed inherited/smaller, so
+     the ring read oversized next to the digits. Now that the clock matches the 44px phase label,
+     56px (FAC.md's own suggested 48-56px range, the end round 2 did not need yet) keeps the ring
+     proportioned to it instead of shrinking back out of scale. */
+  width: 56px;
+  height: 56px;
+  transform: rotate(-90deg);
+}
+
+.status-rail__ring-track {
+  stroke: color-mix(in srgb, var(--color-light) 14%, transparent);
+}
+
+.status-rail__ring-fill {
+  stroke: currentColor;
+  transition: stroke-dashoffset 0.8s linear;
+}
+
+.status-rail__clock {
+  min-width: 4ch;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The source pill yields room to the rail; both stay on one footer line. */
+.question-show-frame .show-footer:has(+ .status-rail) .show-footer__context {
+  max-width: 52%;
+}
+
+.question-shell[data-format="square"] .status-rail {
+  font-size: 32px;
+}
+
+.question-shell[data-format="square"] .status-rail__phase,
+.question-shell[data-format="square"] .status-rail__clock {
+  font-size: 32px;
+}
+
+.question-shell[data-format="square"] .status-rail__meta {
+  font-size: 22px;
+}
+
+.question-shell[data-format="square"] .status-rail__burst {
+  width: 144px;
+  height: 144px;
+}
+
+.question-shell[data-format="square"] .status-rail__burst-emoji {
+  font-size: 96px;
+}
+
+.question-shell[data-format="portrait"] .status-rail {
+  min-height: 52px;
+  font-size: 22px;
+  gap: var(--kit-space-12);
+  padding: var(--kit-space-4) var(--kit-space-16);
+}
+
+.question-shell[data-format="portrait"] .status-rail__phase,
+.question-shell[data-format="portrait"] .status-rail__clock {
+  font-size: 22px;
+}
+
+.question-shell[data-format="portrait"] .status-rail__meta {
+  font-size: 16px;
+}
+
+.question-shell[data-format="portrait"] .status-rail__burst {
+  width: 112px;
+  height: 112px;
+}
+
+.question-shell[data-format="portrait"] .status-rail__burst-emoji {
+  font-size: 72px;
+}
+
+.question-shell[data-format="portrait"] .status-rail__reaction-emoji {
+  font-size: 24px;
+}
+
+.question-shell[data-format="portrait"] .question-show-frame .show-footer:has(+ .status-rail) .show-footer__context {
+  max-width: 48%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-rail__dot,
+  .status-rail__hint,
+  .status-rail__ring-fill,
+  .status-rail__burst {
+    transition: none;
+    animation: none;
+  }
+}

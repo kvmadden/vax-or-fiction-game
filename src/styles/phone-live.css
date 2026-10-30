@@ -1,0 +1,1503 @@
+/* Phone live shell — extracted from presentation.css. */
+.keep-compound { display: inline-block; max-width: 100%; }
+
+/* F-01: no box-sizing reset existed anywhere in src/ for the phone shell, so padded
+   width:100% children (.phone-app-content > *, phone-live.css:174) added their padding
+   outside that 100% and pushed right. Scoped to the phone shells only, not global, since
+   the stage rebuild is mid-flight elsewhere. */
+.phone-live-shell *,
+.phone-live-shell *::before,
+.phone-live-shell *::after {
+  box-sizing: border-box;
+}
+
+/* F-02: buttons, inputs and selects do not inherit font-family by default, so every control
+   on the phone fell back to the UA sans (Arial/Helvetica) instead of IBM Plex Sans. */
+.phone-live-shell button,
+.phone-live-shell input,
+.phone-live-shell select,
+.phone-live-shell textarea {
+  font-family: inherit;
+}
+/* Attendee phone: a true viewport canvas with the source compact identity bar,
+   one reading hierarchy, and a bottom thumb-zone dock. */
+html:has(.phone-live-shell),
+body:has(.phone-live-shell) {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-stage-deep);
+}
+
+.phone-live-shell {
+  isolation: isolate;
+  width: 100vw !important;
+  max-width: none !important;
+  min-height: 100dvh !important;
+  margin: 0 !important;
+  overflow-x: hidden !important;
+  background:
+    radial-gradient(420px 320px at 50% 0%, color-mix(in srgb, var(--color-vax) 16%, transparent), transparent 70%),
+    var(--color-stage-deep) !important;
+  color: var(--color-ink) !important;
+  font-family: var(--kit-font-sans) !important;
+}
+
+/* PHO-UIUX-11: Android Chrome's default gray tap-highlight box, suppressed on every phone screen
+   (.phone-viewport-container is unconditional on the phone-layout root, live and solo alike). */
+.phone-viewport-container button,
+.phone-viewport-container a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.phone-live-shell .phone-app-bar {
+  flex: none;
+  min-height: 56px;
+  padding: max(env(safe-area-inset-top, 0px), var(--kit-space-4)) max(env(safe-area-inset-right, 0px), var(--kit-space-16)) var(--kit-space-4) max(env(safe-area-inset-left, 0px), var(--kit-space-16)) !important;
+  border: 0 !important;
+  background: color-mix(in srgb, var(--color-stage-deep) 78%, transparent) !important;
+  box-shadow: 0 var(--kit-space-8) var(--kit-space-24) color-mix(in srgb, var(--color-shadow-deep) 38%, transparent);
+  backdrop-filter: blur(var(--kit-space-16));
+}
+
+.phone-live-shell .phone-app-bar > div {
+  width: 100%;
+  max-width: 398px;
+  min-height: 48px !important;
+  margin: 0 auto;
+  gap: var(--kit-space-12) !important;
+}
+
+.phone-question-kicker {
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Same type scale as .phone-question-kicker and .phone-choice-receipt__label (phone-critique.css):
+   this repo has no dedicated micro/label type token, so a phone-scale label reuses that established
+   16px mono/700/uppercase treatment instead of an ad hoc literal size. */
+.phone-scenario-label {
+  display: block;
+  margin-bottom: var(--kit-space-4);
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"] {
+  flex: none;
+  width: 128px;
+  min-width: 128px;
+  overflow: hidden;
+  font-size: 17px !important;
+  letter-spacing: -0.04em !important;
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"] .show-wordmark {
+  gap: var(--kit-space-4);
+  font-size: 17px;
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"] .show-wordmark__or {
+  gap: 0;
+  font-size: 14px;
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"] .show-wordmark__or::before,
+.phone-live-shell .phone-app-bar [data-role="phone-branding"] .show-wordmark__or::after,
+.phone-live-shell .phone-app-bar [data-role="phone-branding"] .show-wordmark__syringe,
+.phone-live-shell .phone-app-bar [data-role="phone-branding"] .show-wordmark__question {
+  display: none;
+}
+
+.phone-live-shell [data-role="phone-status-band"] {
+  flex: 1;
+  min-width: 0;
+  justify-content: flex-end;
+  gap: var(--kit-space-8) !important;
+}
+
+.phone-live-shell [data-role="phone-room-chip"] {
+  flex: none;
+  /* F-21: the chip stretched to the bar's full height (~60px), a big empty oval outweighing
+     the logo. align-self: center keeps it at its own 44px content height inside the bar. */
+  align-self: center;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--kit-space-8) var(--kit-space-12) !important;
+  border: 1px solid var(--color-film-border) !important;
+  border-radius: var(--kit-radius-full) !important;
+  background-color: var(--color-backer) !important;
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  color: var(--color-gold) !important;
+  font-family: var(--kit-font-mono) !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1;
+  letter-spacing: 0.06em !important;
+}
+
+.phone-live-shell [data-role="phone-connection-status"][data-host="down"] {
+  color: var(--color-gold) !important;
+}
+
+.phone-live-shell [data-role="phone-connection-status"] {
+  flex: none;
+  min-width: 0;
+  padding: 0 !important;
+  gap: 0 !important;
+  overflow: visible;
+  font-size: 16px !important;
+  line-height: 1;
+}
+
+.phone-live-shell [data-role="phone-connection-status"] > span:first-child {
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, currentColor 22%, transparent);
+}
+
+.phone-live-shell [data-role="phone-team-chip"] {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--kit-radius-full) !important;
+}
+
+.phone-live-shell [data-role="wake-lock-status"] {
+  min-width: 44px !important;
+  min-height: 44px !important;
+  flex: none;
+  border-radius: var(--kit-radius-12) !important;
+}
+
+.phone-live-shell [data-role="wake-lock-status"]:hover,
+.phone-live-shell [data-role="announcer-action"]:hover,
+.phone-live-shell [data-role="announcer-dismiss"]:hover {
+  filter: brightness(1.08);
+}
+
+.phone-live-shell [data-role="wake-lock-status"]:active,
+.phone-live-shell [data-role="announcer-action"]:active,
+.phone-live-shell [data-role="announcer-dismiss"]:active {
+  filter: brightness(0.96);
+}
+
+.phone-live-shell [data-role="wake-lock-status"]:focus-visible,
+.phone-live-shell [data-role="announcer-action"]:focus-visible,
+.phone-live-shell [data-role="announcer-dismiss"]:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+/* F-34: one gutter for every phone width. This used to drop to 12px under 430px
+   (phone-live.css, in the max-width: 430px block below), so live screens and join/site
+   screens did not share an edge. */
+.phone-live-shell {
+  --phone-gutter: var(--kit-space-16);
+}
+
+.phone-live-shell .phone-app-content {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  min-height: 0;
+  padding: 0 max(env(safe-area-inset-right, 0px), var(--phone-gutter)) var(--kit-space-16) max(env(safe-area-inset-left, 0px), var(--phone-gutter)) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.phone-live-shell .phone-app-content > * {
+  width: 100%;
+  max-width: 398px;
+  margin-inline: auto;
+}
+
+.phone-join-source {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  min-height: 0;
+  /* F-34: no side inset here. .phone-app-content already carries the one page gutter, and a
+     second horizontal padding on top of it doubled the edge and put join cards off the shared
+     line. */
+  padding: var(--kit-space-8) 0 var(--kit-space-16);
+}
+
+/* The shared show gradient carries through join, voting and reveal. */
+.phone-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.phone-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-stage-deep) 74%, transparent) 0%, color-mix(in srgb, var(--color-stage-deep) 46%, transparent) 42%, color-mix(in srgb, var(--color-stage-deep) 18%, transparent) 100%);
+}
+
+/* Active questions keep a quieter background for contrast. */
+.phone-backdrop[data-scrim="stage"]::after {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-stage-deep) 92%, transparent) 0%, color-mix(in srgb, var(--color-stage-deep) 86%, transparent) 40%, color-mix(in srgb, var(--color-stage-deep) 82%, transparent) 100%);
+}
+
+.phone-join-source__error {
+  display: flex;
+  gap: var(--kit-space-12);
+  align-items: center;
+  min-height: 56px;
+  margin-bottom: var(--kit-space-8);
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 1px solid var(--color-fiction);
+  border-radius: var(--kit-radius-12);
+  background-color: color-mix(in srgb, var(--color-fiction) 12%, var(--color-backer));
+  color: var(--color-fiction);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.phone-name-card,
+.phone-verdict-card,
+.phone-takeaway-card,
+.phone-closing-surface [data-role="phone-closing-commitments"] {
+  border: 1px solid var(--color-film-border) !important;
+  border-radius: var(--kit-radius-16) !important;
+  background-color: var(--color-film) !important;
+  box-shadow: var(--kit-rim), var(--kit-drop-deep) !important;
+}
+
+.phone-name-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  margin-top: var(--kit-space-16);
+  /* F-19: one inset on every join card, all four sides, matching the code card. */
+  padding: var(--kit-space-24);
+  background-color: var(--color-backer) !important;
+  backdrop-filter: blur(var(--kit-space-16));
+}
+
+.phone-name-card h1 {
+  margin: 0;
+  color: var(--color-ink);
+  /* F-19: matches .phone-code-card label so both join steps share one heading size. */
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.phone-name-card > p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.phone-name-card__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--kit-space-12);
+  margin-top: var(--kit-space-4);
+}
+
+.phone-name-card__row input,
+.phone-name-card__row button {
+  min-width: 0;
+  min-height: 56px;
+  border-radius: var(--kit-radius-12);
+  font-family: var(--kit-font-sans);
+  font-size: 18px;
+}
+
+.phone-name-card__row input {
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 2px solid var(--color-film-border);
+  background-color: var(--color-stage-deep);
+  color: var(--color-ink);
+}
+
+.phone-name-card__row button {
+  border: 0;
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  box-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 45%, transparent);
+  color: var(--color-on-gold);
+  font-weight: 700;
+}
+
+.phone-name-card__row button:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.phone-name-card__row button:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.phone-name-card__row button:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.phone-name-card__row button:disabled {
+  border: 1px solid var(--color-film-border);
+  background: var(--color-backer);
+  color: var(--color-ink-dim);
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+.phone-team-compact {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  align-items: center;
+  gap: var(--kit-space-8);
+  padding-top: var(--kit-space-8);
+  border-top: 1px solid var(--color-film-border);
+}
+
+.phone-team-compact > span {
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.phone-team-compact button {
+  min-height: 44px;
+  padding: var(--kit-space-8);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-12);
+  background-color: var(--color-backer);
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.phone-team-compact button[aria-checked="true"] {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.phone-team-compact button:hover:not([aria-checked="true"]) {
+  border-color: color-mix(in srgb, var(--color-gold) 36%, var(--color-film-border));
+}
+
+.phone-team-compact button:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.phone-team-compact button:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+/* What happens next: three numbered lines under the name card so the join screen reads as the show's
+   front door, not a form floating in navy. */
+.phone-join-next {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  margin-top: var(--kit-space-12);
+  padding: var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-backer);
+  backdrop-filter: blur(var(--kit-space-16));
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.phone-join-next h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* F-18 follow-up: no second dot here. The app bar above this screen already shows connection
+   state as a dot (PhoneLayout, wired from PhoneSuite.tsx), and a same-colored second dot next to
+   this heading read as a duplicate, not a second real signal. The status prints as text instead,
+   only when it says something other than "Connected", since a dot alone reads the same color for
+   "connecting" and "host down". */
+.phone-join-next-status {
+  margin: 0;
+  color: var(--color-gold);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.phone-join-host-down-note {
+  margin: var(--kit-space-8) 0 0;
+  color: var(--color-gold);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.phone-join-next ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phone-join-next li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--kit-space-12);
+  color: var(--color-ink);
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.phone-join-next li > span {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--kit-space-32);
+  height: var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-film);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.phone-wait-card {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kit-space-12);
+  min-height: 0;
+  margin-top: 0;
+  padding: var(--kit-space-32) var(--kit-space-24) var(--kit-space-64);
+  text-align: center;
+}
+
+/* The hero mark: the stage title's stacked wordmark, sized to the phone column, the one mark on the code and
+   name screens (item 23). The OR row never drops under the 14px text floor; the syringe stays inside the column. */
+.phone-hero-mark {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--kit-space-8) var(--kit-space-16) 0;
+  filter: drop-shadow(0 var(--kit-space-8) var(--kit-space-16) var(--color-shadow-deep));
+}
+
+.phone-hero-mark .show-wordmark__or {
+  font-size: max(14px, 0.22em);
+}
+
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__fiction {
+  white-space: nowrap;
+  gap: 0.06em;
+}
+
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__question {
+  margin-inline-start: 0;
+}
+
+.phone-join-kicker {
+  width: fit-content;
+  margin: var(--kit-space-16) auto 0;
+  padding: var(--kit-space-4) var(--kit-space-12);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 32%, transparent);
+  border-radius: var(--kit-radius-full);
+  background-color: color-mix(in srgb, var(--color-gold) 12%, transparent);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.phone-code-card__host {
+  margin: var(--kit-space-8) 0 0;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+
+.phone-code-card {
+  padding: var(--kit-space-24);
+}
+
+.phone-code-card > p { font-size: 16px; }
+
+.phone-code-card label {
+  color: var(--color-ink);
+  /* F-19: matches .phone-name-card h1. */
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.phone-code-card__row {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--kit-space-12);
+}
+
+.phone-code-card input {
+  min-height: 64px;
+  font-family: var(--kit-font-mono);
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.phone-code-card input::placeholder {
+  color: var(--color-ink-dim);
+  letter-spacing: 0.18em;
+}
+
+.phone-code-card button {
+  min-height: 64px;
+  font-size: 22px;
+}
+
+/* F-20: one line, left-aligned under a left-aligned heading, no mixed alignment in the column.
+   16px, not the grading doc's suggested 14px: the phone keeps a 16px text floor (tests/unit/
+   phone-critique.test.ts, item 11), which the exact fix as written would have broken. */
+.phone-code-card__note {
+  margin: var(--kit-space-8) 0 0;
+  color: var(--color-ink-muted) !important;
+  font-size: 16px !important;
+  text-align: left;
+}
+
+.phone-wait-card h2,
+.phone-wait-card p {
+  margin: 0;
+}
+
+.phone-wait-card h2 {
+  color: var(--color-ink);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.phone-wait-card p {
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.phone-wait-card__label,
+.phone-state-kicker {
+  color: var(--color-gold) !important;
+  font-family: var(--kit-font-mono);
+  font-size: 16px !important;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Item 11: one kicker row — the kind on the left, the stage's status word or the clock on the right. */
+.phone-vote-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-4) var(--kit-space-12);
+  min-height: 24px;
+}
+
+.phone-vote-meta .phone-question-kicker {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.phone-vote-status,
+.phone-vote-timer {
+  flex: none;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.phone-vote-status[data-state="paused"] {
+  color: var(--color-gold);
+}
+
+.phone-vote-timer {
+  color: var(--color-ink-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.phone-vote-timer[data-urgent="true"] {
+  color: var(--color-gold);
+}
+
+.phone-vote-surface {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  width: 100% !important;
+  max-width: 398px !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  gap: var(--kit-space-24) !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+.phone-vote-surface[data-discussion-paused="true"] {
+  background: color-mix(in srgb, var(--color-stage-deep) 92%, var(--color-void)) !important;
+}
+
+.phone-vote-hero {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  gap: var(--kit-space-8) !important;
+  padding: var(--kit-space-8) 0 0;
+}
+
+.phone-vote-stem {
+  width: 100%;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(32px, 10.5vw, 46px) !important;
+  font-weight: 600 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.phone-vote-stem[data-length="medium"] {
+  font-size: clamp(28px, 8vw, 34px) !important;
+  line-height: 1.18 !important;
+}
+
+.phone-vote-stem[data-length="long"] {
+  font-size: clamp(23px, 6.4vw, 27px) !important;
+  line-height: 1.25 !important;
+  text-wrap: pretty;
+}
+
+/* F-06: the dock used to be a bordered glass card wrapping bordered option cards, a frame
+   around a frame for no information. The options carry their own chrome, and the dock is only
+   a flex column now. */
+.phone-vote-dock {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  width: 100%;
+  margin-top: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Item 22: one quiet line under the answer. "How sure?" then three outline chips; only a tapped chip goes gold. */
+.phone-conviction-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--kit-space-8) var(--kit-space-12);
+  padding-top: var(--kit-space-4);
+}
+
+.phone-conviction-label {
+  flex: none;
+  margin: 0;
+  color: var(--color-ink-dim);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.phone-conviction-hint {
+  flex: 1 1 100%;
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.phone-locked-wait {
+  margin: 0;
+  color: var(--color-gold);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.phone-vote-dock .phone-conviction {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--kit-space-8) !important;
+  min-width: 0;
+}
+
+.phone-vote-dock .phone-conviction button {
+  min-width: 0;
+  min-height: 44px !important;
+  padding: var(--kit-space-4) !important;
+  overflow: hidden;
+  border: 1px solid var(--color-film-border) !important;
+  border-radius: var(--kit-radius-full) !important;
+  background-color: transparent !important;
+  color: var(--color-ink-muted) !important;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.phone-vote-dock .phone-conviction button[data-selected="true"] {
+  border-color: var(--color-gold) !important;
+  background-color: var(--color-gold) !important;
+  color: var(--color-on-gold) !important;
+}
+
+.phone-vote-dock .phone-conviction button:hover:not(:disabled):not([data-selected="true"]) {
+  border-color: color-mix(in srgb, var(--color-gold) 42%, var(--color-film-border)) !important;
+  color: var(--color-ink) !important;
+}
+
+.phone-vote-dock .phone-conviction button:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.phone-vote-dock .phone-conviction button:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.phone-vote-dock .phone-conviction button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+.phone-thumb-zone,
+.phone-binary-choices {
+  flex: 1;
+  min-height: 0;
+}
+
+.phone-thumb-zone {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  margin-top: auto;
+}
+
+.phone-binary-choices {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--kit-space-12) !important;
+}
+
+.phone-vote-choice {
+  position: relative;
+  min-height: 64px !important;
+  padding: var(--kit-space-12) var(--kit-space-16) !important;
+  border-radius: var(--kit-radius-16) !important;
+  background-color: var(--color-film) !important;
+  color: var(--color-ink) !important;
+  font-size: 18px;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), filter 180ms ease, box-shadow 180ms ease;
+}
+
+.phone-vote-choice[data-selected="true"]::after {
+  content: "Picked";
+  position: absolute;
+  top: var(--kit-space-8);
+  right: var(--kit-space-8);
+  padding: var(--kit-space-4) var(--kit-space-8);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-stage-deep);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* F-11 follow-up: this rule's specificity beats .phone-range-grid .phone-vote-choice's own
+   transform: none, and iOS treats a tap as sticky :hover, so a real phone kept one range tile
+   lifted and brightened after the tap that answered it. @media (hover: hover) scopes the effect
+   to devices with a real pointer, where a tap never triggers :hover at all. */
+@media (hover: hover) {
+  .phone-vote-choice:hover:not(:disabled):not([data-selected="true"]) {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+  }
+}
+
+.phone-vote-choice:active:not(:disabled) {
+  transform: scale(0.98);
+  filter: brightness(0.96);
+}
+
+.phone-vote-choice[data-selected="true"] {
+  box-shadow: 0 0 0 2px var(--color-gold);
+  animation: vote-settle 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-vote-choice,
+  .phone-vote-choice[data-selected="true"] {
+    transition: none;
+    animation: none;
+  }
+}
+
+.phone-vote-choice:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.phone-vote-choice:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+.phone-vote-choice[data-selected="true"]:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.phone-binary-choices .phone-vote-choice {
+  min-height: 176px !important;
+  display: grid;
+  place-items: center;
+  padding: 0 !important;
+  border-width: var(--kit-space-4) !important;
+  border-radius: var(--kit-radius-24) !important;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center !important;
+}
+
+.phone-vote-choice--true {
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-vax) 32%, var(--color-stage-deep)), color-mix(in srgb, var(--color-vax) 14%, var(--color-stage-deep))) !important;
+  box-shadow: 0 0 var(--kit-space-24) -4px color-mix(in srgb, var(--color-vax) 60%, transparent), var(--kit-rim);
+}
+
+.phone-vote-choice--false {
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-fiction) 32%, var(--color-stage-deep)), color-mix(in srgb, var(--color-fiction) 14%, var(--color-stage-deep))) !important;
+  box-shadow: 0 0 var(--kit-space-24) -4px color-mix(in srgb, var(--color-fiction) 60%, transparent), var(--kit-rim);
+}
+
+/* Locked: the pads go quiet (no glow, muted colour) so a closed vote reads as closed. */
+.phone-vote-dock[data-locked="true"] .phone-vote-choice,
+.phone-vote-dock[data-locked="true"] .phone-submit,
+.phone-vote-dock[data-locked="true"] .phone-conviction button {
+  opacity: 0.55;
+  filter: saturate(0.5);
+  box-shadow: none !important;
+}
+
+.phone-vote-dock[data-locked="true"] .phone-vote-choice {
+  border-color: var(--color-film-border) !important;
+  background-image: none !important;
+}
+
+.phone-option-list,
+.phone-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12) !important;
+}
+
+/* A lettered card: the letter in a badge, the statement or reply beside it at reading size. */
+.phone-option-list .phone-vote-choice {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-12);
+  min-height: 76px !important;
+  padding: var(--kit-space-16) var(--kit-space-16) !important;
+  border-color: color-mix(in srgb, var(--color-accent-cobalt) 55%, var(--color-film-border)) !important;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.phone-choice__key {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--kit-space-8);
+  border-radius: var(--kit-radius-full);
+  background-color: color-mix(in srgb, var(--color-accent-cobalt) 28%, var(--color-stage-deep));
+  color: var(--color-ink);
+  font-family: var(--kit-font-mono);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.phone-choice__text {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-ink);
+  text-align: left;
+}
+
+/* Estimate ranges: two across, the odd last one full width, the numeric span under the label. */
+.phone-range-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* F-10: numbers read as numbers, so they go mono, centered and tabular, not the fallback sans
+   left-aligned and top-weighted in the original. F-11: align-items: stretch plus no per-choice
+   margin/transform removes the 2px near-miss row mismatch between the two columns. */
+.phone-range-grid .phone-vote-choice {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kit-space-4);
+  min-height: 80px !important;
+  margin: 0;
+  border-color: color-mix(in srgb, var(--color-gold) 60%, var(--color-film-border)) !important;
+  text-align: center;
+  font-family: var(--kit-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 20px;
+  font-weight: 600;
+  transform: none;
+}
+
+.phone-range-grid {
+  align-items: stretch;
+}
+
+.phone-range-grid .phone-vote-choice:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.phone-range-grid .phone-choice__key {
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--color-ink);
+  font-family: var(--kit-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.phone-choice__range {
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* F-13: the position lives in its own column now, not inline with the label, so it reads as a
+   rank rather than wrapping into the answer text and looking like the answer key. */
+.phone-order-step {
+  display: grid;
+  grid-template-columns: var(--kit-space-24) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--kit-space-8);
+  min-height: 64px !important;
+  border-color: var(--color-film-border) !important;
+  background-color: var(--color-film) !important;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.phone-order-step__position {
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+}
+
+.phone-order-step__label {
+  padding-inline: var(--kit-space-4);
+}
+
+.phone-order-step__actions {
+  display: flex;
+  gap: var(--kit-space-8);
+}
+
+.phone-order-step button {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 20px;
+}
+
+/* F-12: the first row's up arrow and the last row's down arrow are already disabled in markup
+   (PhoneVote.tsx). They just looked tappable because disabled carried no visual state. */
+.phone-order-step button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.phone-submit {
+  min-height: 52px !important;
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  box-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 45%, transparent);
+  color: var(--color-on-gold) !important;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.phone-submit:disabled {
+  background: var(--color-backer);
+  box-shadow: none;
+  color: var(--color-ink-dim) !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+.phone-submit:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.phone-submit:active:not(:disabled),
+.phone-change-answer:active:not(:disabled),
+.phone-order-step button:active:not(:disabled) {
+  transform: scale(0.98);
+  filter: brightness(0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-submit:active:not(:disabled),
+  .phone-change-answer:active:not(:disabled),
+  .phone-order-step button:active:not(:disabled),
+  .phone-vote-choice:active:not(:disabled) {
+    transform: none;
+  }
+}
+
+.phone-submit:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.phone-reveal-surface,
+.phone-closing-surface {
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  max-width: 398px !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: var(--kit-space-16) 0 !important;
+  gap: var(--kit-space-16) !important;
+  background: transparent !important;
+}
+
+.phone-verdict-card,
+.phone-takeaway-card,
+.phone-closing-surface [data-role="phone-closing-commitments"] {
+  padding: var(--kit-space-24) !important;
+}
+
+.phone-takeaway-card {
+  /* F-08: the bottom inset read visibly larger than the top (a long empty box), because the
+     last child's own margin-bottom added to the card's own bottom padding. */
+  padding: var(--kit-space-24) !important;
+  background-color: var(--color-backer) !important;
+}
+
+.phone-takeaway-card > :last-child {
+  margin-bottom: 0;
+}
+
+/* F-08 follow-up: the first child is often an <h2> with a browser default margin-top, which
+   stacked on the card's own 24px padding and made the card read top-heavy (about 44px top vs
+   28px bottom). Zeroing it makes top and bottom insets equal. */
+.phone-takeaway-card > :first-child {
+  margin-top: 0;
+}
+
+/* F-08 correction: the takeaway heading's actual first child is the icon-plus-h2 wrapper div, not
+   the h2 itself, so the rule above zeroed the wrapper's (already zero) margin and left the h2's
+   own browser default margin-top intact. Measured at 390: 41.6px top vs 27.1px bottom. Zeroing
+   the h2 directly closes that gap. */
+.phone-takeaway-heading h2 {
+  margin: 0;
+}
+
+/* Item 10: the answer in words, in the stage's colours. No stamp, no rotation, no grade word. */
+.phone-verdict-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  margin-top: 0;
+  background-color: var(--color-backer) !important;
+}
+
+.phone-verdict-eyebrow {
+  margin: 0;
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.phone-verdict-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--kit-space-12);
+}
+
+/* The stage's answer pill: 4px rim in the verdict colour, the word inside, straight. */
+.phone-verdict-answer[data-shape="pill"] .phone-canonical-verdict {
+  display: inline-block;
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: var(--kit-space-4) solid var(--color-gold);
+  border-radius: var(--kit-space-12);
+  background-color: color-mix(in srgb, var(--color-void) 92%, transparent);
+  color: var(--color-gold);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-gold) 18%, transparent);
+}
+
+/* F-09: the base pill fill was 92% void, a near-black hole no other surface on the phone uses.
+   TRUE and FALSE now fill with a tint of their own verdict colour instead. */
+.phone-verdict-card[data-tone="vax"] .phone-verdict-answer[data-shape="pill"] .phone-canonical-verdict {
+  border-color: var(--color-vax);
+  background-color: color-mix(in srgb, var(--color-vax) 14%, var(--color-stage-deep));
+  color: var(--color-vax);
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-vax) 18%, transparent);
+}
+
+.phone-verdict-card[data-tone="fiction"] .phone-verdict-answer[data-shape="pill"] .phone-canonical-verdict {
+  border-color: var(--color-fiction);
+  background-color: color-mix(in srgb, var(--color-fiction) 14%, var(--color-stage-deep));
+  color: var(--color-fiction);
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-fiction) 18%, transparent);
+}
+
+/* "Correct order" is the longest text a pill carries, so it shrinks with the screen and keeps one line on every phone
+   340px or wider (2026-09-15, rooms and solo alike). Narrower, or on a zoomed page, it wraps rather than spill
+   out of its card. */
+.phone-verdict-card[data-kind="order"] .phone-verdict-answer[data-shape="pill"] .phone-canonical-verdict {
+  font-size: clamp(20px, 6.5vw, 28px);
+}
+
+@media (min-width: 340px) {
+  .phone-verdict-card[data-kind="order"] .phone-verdict-answer[data-shape="pill"] .phone-canonical-verdict {
+    white-space: nowrap;
+  }
+}
+
+/* Lettered kinds: a 40px badge in the stage's colour beside the option's own words at reading size. */
+.phone-verdict-letter {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 var(--kit-space-8);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-gold);
+  color: var(--color-on-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.phone-verdict-card[data-tone="cobalt"] .phone-verdict-letter {
+  background-color: var(--color-accent-cobalt);
+  color: var(--color-stage-deep);
+}
+
+.phone-verdict-answer[data-shape="lettered"] .phone-canonical-verdict {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding-top: var(--kit-space-4);
+  color: var(--color-ink);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.phone-canonical-verdict {
+  margin: 0;
+}
+
+.phone-reveal-said {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.phone-reveal-outcome {
+  margin: 0 0 var(--kit-space-8);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.phone-reveal-outcome[data-outcome="right"] {
+  color: var(--color-vax);
+}
+
+.phone-reveal-outcome[data-outcome="missed"] {
+  color: var(--color-gold);
+}
+
+.phone-reveal-said[data-outcome="right"] {
+  color: var(--color-ink);
+}
+
+.phone-reveal-surface [data-role="reveal-citations"] a,
+.phone-reveal-surface [data-role="reveal-citations"] span {
+  font-size: 16px !important;
+}
+
+.phone-reveal-surface [data-role="reveal-citations"] a:hover {
+  color: var(--color-gold);
+}
+
+.phone-reveal-surface [data-role="reveal-citations"] a:active {
+  filter: brightness(0.96);
+}
+
+.phone-reveal-surface [data-role="reveal-citations"] a:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.phone-reveal-waiting {
+  padding: var(--kit-space-16);
+  color: var(--color-ink-dim);
+}
+
+.phone-streak-bonus {
+  display: inline-flex;
+  align-items: center;
+  margin-left: var(--kit-space-8);
+  padding: 2px var(--kit-space-8);
+  border-radius: var(--kit-radius-12);
+  background-color: var(--color-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.phone-takeaway-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+}
+
+.phone-takeaway-card > p {
+  margin-top: var(--kit-space-8);
+}
+
+.phone-takeaway-card > p + p {
+  margin-top: var(--kit-space-12);
+}
+
+.phone-reveal-surface [data-role="reveal-citations"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+}
+
+.phone-reveal-surface [data-role="reveal-citations"] a {
+  text-decoration: underline;
+}
+
+.phone-takeaway-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.phone-takeaway-card p {
+  font-size: 17px !important;
+  line-height: 1.4;
+}
+
+.phone-reveal-surface [data-role="reveal-citations"] a {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--kit-space-12) !important;
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] button,
+.phone-reveal-surface .phone-reaction {
+  width: 100%;
+  min-height: 72px !important;
+  display: grid;
+  place-items: center;
+  padding-block: var(--kit-space-8);
+  padding-inline: var(--kit-space-8) !important;
+  border: 2px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-panel-navy);
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+.phone-reveal-surface .phone-reaction__emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.phone-closing-room {
+  font-size: 15px !important;
+  letter-spacing: 0.1em;
+}
+
+.phone-closing-score__rank {
+  margin-top: var(--kit-space-8);
+  font-size: 17px !important;
+}
+
+.phone-closing-surface {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  color: var(--color-text-primary);
+  font-family: var(--kit-font-sans);
+}
+
+.phone-closing-empty {
+  padding: var(--kit-space-16);
+  background: var(--color-stage-deep);
+  color: var(--color-text-dim);
+}
+
+.phone-closing-commitments > p {
+  margin: 0;
+  color: var(--color-text-dim);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.phone-closing-commitments ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+  margin: var(--kit-space-12) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phone-closing-commitments li {
+  padding: var(--kit-space-8);
+  border-radius: var(--kit-radius-12);
+  background: var(--color-canvas-navy);
+  font-size: 16px;
+}
+
+@media (max-width: 430px) {
+  /* F-34 follow-up: this override still held the app bar at the old 12px gutter after the rest of
+     the phone moved to one 16px --phone-gutter, so the logo and status chip sat 4-6px off the
+     content edges below it on every live screen at 390. The bar now inherits the shared 16px
+     padding from .phone-app-bar's own rule instead of overriding it back down. */
+
+  .phone-live-shell .phone-app-bar [data-role="phone-branding"] {
+    width: 120px;
+    min-width: 120px;
+    font-size: 15px !important;
+  }
+
+  .phone-live-shell .phone-app-bar [data-role="phone-branding"] .show-wordmark {
+    font-size: 15px;
+  }
+
+  .phone-live-shell [data-role="phone-room-chip"] {
+    padding-inline: var(--kit-space-12) !important;
+    font-size: 16px !important;
+  }
+
+  .phone-vote-stem {
+    font-size: clamp(30px, 10vw, 40px) !important;
+  }
+
+  .phone-binary-choices .phone-vote-choice {
+    min-height: 156px !important;
+    font-size: 32px;
+  }
+
+  .phone-reveal-surface [data-role="phone-reactions"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .phone-reveal-surface [data-role="phone-reactions"] button,
+  .phone-reveal-surface .phone-reaction {
+    min-height: 64px !important;
+  }
+
+  .phone-reveal-surface .phone-reaction__emoji {
+    font-size: 48px;
+  }
+
+  .phone-name-card__row {
+    grid-template-columns: 1fr;
+  }
+}
+

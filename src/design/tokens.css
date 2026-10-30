@@ -1,0 +1,148 @@
+:root {
+  /* Kit Canvas & Surfaces */
+  --color-canvas-navy: #242d41;
+  --color-panel-navy: #242a38;
+  --color-stage-deep: #10192b;
+  --color-void: #000000;
+  --color-light: #ffffff;
+
+  /* Kit Elevation & Shadows */
+  --color-rim: rgba(255, 255, 255, 0.12);
+  --color-shadow: rgba(0, 0, 0, 0.45);
+
+  /* Kit Typography & Content Hierarchy */
+  --color-text-primary: #f5f5f4;
+  --color-text-muted: #d6d3d1;
+  --color-textMuted: #d6d3d1;
+  --color-text-dim: #a8a29e;
+  --color-textDim: #a8a29e;
+  --color-hairline: #2e2e33;
+  --color-required-boundary: #a8a29e;
+
+  /* Kit Semantic & Verdicts */
+  --color-verdict-true: #3FB950;
+  --color-verdict-false: #f87171;
+  --color-time-warning: #e09f3e;
+  --color-anticipation-gold: #E0A030;
+  --color-emphasis-red: #E05252;
+
+  /* A11Y-14 / DS-14: --color-accent-cobalt and --color-emphasis-red are documented and verified
+     for largeTextOrNonText use (3:1) in src/design/theme.ts's allowedPairs registry, at 4.44:1 and
+     3.82:1 respectively. Both get reused as small normal-weight text (the DELIBERATING badge, the
+     restart confirm button), which needs 4.5:1. Rather than change the shared tokens, which are
+     verified correct for their other 40+ non-text/large-text uses, these two text-safe variants
+     exist for exactly those two small-text spots: a slight lighten of cobalt (4.93:1 on
+     --color-panel-navy) and a slight darken of the danger red (5.15:1 with white text).
+     tests/integration/ds-contrast.test.mjs measures the live rendered ratio. */
+  --color-accent-cobalt-text: #6896F0;
+  --color-danger-button-bg: #C23F3F;
+
+  /* Admin screen (DS-01/DS-03): exact-value tokens for what was raw hex in admin.css. Same colors,
+     just named, so the component file holds no hex literals. */
+  --color-admin-bg-gradient-1: #07101c;
+  --color-admin-bg-gradient-2: #0c1828;
+  --color-admin-bg-gradient-3: #061018;
+  --color-admin-surface: #0a1420;
+  --color-admin-primary-ink: #111111;
+  --color-admin-error-text: #ff8f7a;
+
+  /* Kit Decorative & Category Accent Palette */
+  --color-accent-green: #3D9A6D;
+  --color-accent-coral: #E05252;
+  --color-accent-cobalt: #5B8DEF;
+  --color-accent-gold: #E0A030;
+  --color-accent-purple: #A855F7;
+  --color-accent-pink: #E06090;
+  --color-accent-teal: #20B2AA;
+  --color-accent-orange: #F97316;
+
+  /* Source-derived show primitives */
+  --color-ink: var(--color-text-primary);
+  --color-ink-muted: var(--color-text-muted);
+  --color-ink-dim: var(--color-text-dim);
+  --color-gold: var(--color-anticipation-gold);
+  --color-team-navy: var(--color-accent-cobalt);
+  --color-team-gold: var(--color-anticipation-gold);
+  --color-vax: var(--color-accent-teal);
+  --color-fiction: var(--color-accent-orange);
+  --color-answer-true: #0F766E;
+  --color-answer-false: #C2410C;
+  --color-live: var(--color-emphasis-red);
+  --color-film: color-mix(in srgb, var(--color-light) 4.6%, transparent);
+  --color-film-border: color-mix(in srgb, var(--color-light) 10.4%, transparent);
+  --color-shadow-deep: color-mix(in srgb, var(--color-void) 80%, transparent);
+  --color-scrim: var(--color-stage-deep);
+  --color-glass: color-mix(in srgb, var(--color-stage-deep) 62%, transparent);
+  --color-backer: color-mix(in srgb, var(--color-stage-deep) 72%, transparent);
+  --kit-glass-fill: color-mix(in srgb, var(--color-stage-deep) 58%, transparent);
+  --kit-glass-fill-strong: color-mix(in srgb, var(--color-stage-deep) 70%, transparent);
+  --kit-glass-border: color-mix(in srgb, var(--color-light) 16%, transparent);
+  --kit-glass-blur: 18px;
+  /* Quiet plate for a revealed loser: an opaque dark fill with a stone rim, so text never dims over plate art. */
+  --color-plate-quiet: color-mix(in srgb, var(--color-stage-deep) 80%, var(--color-canvas-navy));
+  --color-plate-quiet-rim: color-mix(in srgb, var(--color-text-dim) 38%, var(--color-stage-deep));
+  --color-gold-light: color-mix(in srgb, var(--color-gold) 60%, var(--color-light));
+  --color-gold-dark: color-mix(in srgb, var(--color-gold) 72%, var(--color-void));
+  --color-on-gold: color-mix(in srgb, var(--color-gold) 10%, var(--color-void));
+
+  --kit-space-4: 4px;
+  --kit-space-8: 8px;
+  --kit-space-12: 12px;
+  --kit-space-16: 16px;
+  --kit-space-24: 24px;
+  --kit-space-32: 32px;
+  --kit-space-48: 48px;
+  --kit-space-64: 64px;
+  /* F-33: site and 404 buttons were pills (radius-full) while every game button uses radius-8.
+     The system reserves full radius for pills and avatars, so those buttons get their own token
+     instead of a one-off number. */
+  --kit-radius-4: var(--kit-space-4);
+  --kit-radius-8: var(--kit-space-8);
+  --kit-radius-12: var(--kit-space-12);
+  --kit-radius-16: var(--kit-space-16);
+  --kit-radius-24: var(--kit-space-24);
+  --kit-radius-card: var(--kit-space-24);
+  --kit-radius-full: 9999px;
+  --kit-font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --kit-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --kit-rim: inset 0 1px 0 var(--color-rim);
+  --kit-drop: 0 var(--kit-space-8) var(--kit-space-32) var(--color-shadow);
+  --kit-drop-deep: 0 33px 67px -20px var(--color-shadow-deep);
+  --kit-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --kit-dur-scene: 400ms;
+  --kit-scrim-l1: 68%;
+  --kit-scrim-l2: 40%;
+  --kit-scrim-l3: 14%;
+  --kit-scrim-l4: 0%;
+  --kit-scrim-b1: 52%;
+  --kit-scrim-b2: 24%;
+  --kit-safe-y: var(--kit-space-48);
+  --kit-safe-x: var(--kit-space-64);
+  --kit-gutter: var(--kit-space-24);
+  --kit-band-gap: var(--kit-space-24);
+  --kit-header-gap: var(--kit-space-24);
+  --kit-join-pad: var(--kit-space-12);
+  --kit-join-pad-end: var(--kit-space-24);
+  --kit-join-gap: var(--kit-space-24);
+  --kit-type-display: 87px;
+  --kit-type-micro: 28px;
+  --kit-type-code: 44px;
+  --kit-type-footer: 28px;
+  --kit-join-h: var(--kit-space-64);
+  /* DS-05 floor that survives ScaledStage. 64px on the 1600 canvas stays ≥44 CSS px after --stage-scale. */
+  --kit-touch: 44px;
+  --kit-touch-min: max(var(--kit-space-64), calc(var(--kit-touch) / var(--stage-scale, 1)));
+  --kit-beam-w: 420px;
+  --kit-beam-h: 520px;
+  --kit-beam-blur: 42px;
+  --kit-floor-y: 10px;
+  --kit-floor-glow-h: 18px;
+  --kit-floor-line: 2px;
+  --kit-line-glow-h: 6px;
+
+  /* Standardized Transition & Motion Tokens */
+  --transition-instant: 100ms;
+  --transition-quick: 180ms;
+  --transition-smooth: 260ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+}

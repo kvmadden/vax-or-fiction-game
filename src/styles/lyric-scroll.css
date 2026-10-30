@@ -1,0 +1,68 @@
+/* Passivewalk-in lyric pane. Sized to the stage canvas — never reuses the single-line
+   --lobby-lyric-size hero token (that pair left 64px glyphs in a ~110px band). */
+.vrc-lyric-scroll {
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  color: var(--color-text-primary, var(--color-ink));
+  font-family: "IBM Plex Sans", var(--kit-font-sans, sans-serif);
+  /* Stage lyrics are display, not a scrubber — keep facilitator hits free. */
+  pointer-events: none;
+}
+
+.vrc-lyric-scroll[hidden] {
+  display: none !important;
+}
+
+.vrc-lyric-scroll__viewport {
+  position: relative;
+  height: var(--lyric-scroll-height, 120px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+  padding: 8px 8px 12px;
+  /* The DJ KMad scroll's edge fade: lines ease in at the top and out at the bottom around the lit line. */
+  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 85%, transparent 100%);
+}
+
+.vrc-lyric-scroll__line {
+  margin: 0;
+  padding: 4px 0;
+  /* Readable ambient copy before the active cue — not near-black on navy. */
+  color: color-mix(in srgb, var(--color-light) 78%, transparent);
+  font-size: var(--lyric-scroll-size, 28px);
+  line-height: 1.25;
+  font-weight: 600;
+  overflow-wrap: normal;
+  text-wrap: balance;
+  transition: color 300ms ease, opacity 300ms ease;
+  opacity: 0.88;
+}
+
+/* The DJ KMad tiers around the lit line: one line off, two lines off, and the rest. */
+.vrc-lyric-scroll__line.is-near {
+  color: color-mix(in srgb, var(--color-light) 70%, transparent);
+  opacity: 0.65;
+}
+
+.vrc-lyric-scroll__line.is-near-2 {
+  color: color-mix(in srgb, var(--color-light) 50%, transparent);
+  opacity: 0.45;
+}
+
+.vrc-lyric-scroll__line.is-far {
+  opacity: 0.2;
+}
+
+.vrc-lyric-scroll__line.is-active {
+  color: var(--color-gold);
+  font-weight: 700;
+  opacity: 1;
+  text-shadow: 0 0 28px color-mix(in srgb, var(--color-gold) 45%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vrc-lyric-scroll__line {
+    transition: none;
+  }
+}

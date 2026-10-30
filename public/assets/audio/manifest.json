@@ -1,0 +1,356 @@
+{
+  "decks": {
+    "vax-or-fiction": {
+      "walkin": {
+        "path": "assets/audio/vax-or-fiction/walkin.mp3",
+        "sha256": "1aa368aee215d1397b2d370b385003b886bdb3b6a97611ff5262001488d8ab71",
+        "bytes": 1440621,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:smile-pack-2026-09-16:walkin-smile-take3:DHLgluGM6ZyqBd4KL2Er",
+        "encoding": "mp3:192k",
+        "placeholder": false,
+        "vocals": true
+      },
+      "title-lobby": {
+        "path": "assets/audio/vax-or-fiction/title-lobby.mp3",
+        "sha256": "1aa368aee215d1397b2d370b385003b886bdb3b6a97611ff5262001488d8ab71",
+        "bytes": 1440621,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:smile-pack-2026-09-16:walkin-smile-take3:DHLgluGM6ZyqBd4KL2Er",
+        "encoding": "mp3:192k",
+        "placeholder": false,
+        "vocals": true
+      },
+      "menu-soft": {
+        "path": "assets/audio/vax-or-fiction/menu-soft-loop.mp3",
+        "sha256": "1fc63816b4743e563533cf51146e37b58871e876a257cce4b52a4c67edfcce4d",
+        "bytes": 385965,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:menu-soft-loop",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "menu-soft-loop": {
+        "path": "assets/audio/vax-or-fiction/menu-soft-loop.mp3",
+        "sha256": "1fc63816b4743e563533cf51146e37b58871e876a257cce4b52a4c67edfcce4d",
+        "bytes": 385965,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:menu-soft-loop",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "deliberate": {
+        "path": "assets/audio/vax-or-fiction/deliberate.mp3",
+        "sha256": "9eb484ccb54e86bd14b2f4dfe8cc4c0eb7e498ac6600b61dc4f7580c7b7595d3",
+        "bytes": 385965,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:deliberation-loop",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "deliberation-loop": {
+        "path": "assets/audio/vax-or-fiction/deliberation-loop.mp3",
+        "sha256": "9eb484ccb54e86bd14b2f4dfe8cc4c0eb7e498ac6600b61dc4f7580c7b7595d3",
+        "bytes": 385965,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:deliberation-loop",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "fork-choice": {
+        "path": "assets/audio/vax-or-fiction/fork-choice-loop.mp3",
+        "sha256": "ec5dab7a42546db1f702cdc2b6efe1a1b58e1366b780fa4e8e6a1d6de0cf4ad7",
+        "bytes": 385965,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:fork-choice-loop",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "fork-choice-loop": {
+        "path": "assets/audio/vax-or-fiction/fork-choice-loop.mp3",
+        "sha256": "ec5dab7a42546db1f702cdc2b6efe1a1b58e1366b780fa4e8e6a1d6de0cf4ad7",
+        "bytes": 385965,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:fork-choice-loop",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "showdown": {
+        "path": "assets/audio/vax-or-fiction/showdown.mp3",
+        "sha256": "68af1851224cf9f95df3ece2745b45cffb409928ad132e40e2857d432f3ca840",
+        "bytes": 385965,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:showdown-loop",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "showdown-loop": {
+        "path": "assets/audio/vax-or-fiction/showdown-loop.mp3",
+        "sha256": "68af1851224cf9f95df3ece2745b45cffb409928ad132e40e2857d432f3ca840",
+        "bytes": 385965,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:showdown-loop",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "countdown": {
+        "path": "assets/audio/vax-or-fiction/countdown.mp3",
+        "sha256": "84714e6f08e7c7211eb12a4a677b07f932117d0b4e08a6dbaa94a72b51856827",
+        "bytes": 720621,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:countdown-bed",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "countdown-bed": {
+        "path": "assets/audio/vax-or-fiction/countdown-bed.mp3",
+        "sha256": "84714e6f08e7c7211eb12a4a677b07f932117d0b4e08a6dbaa94a72b51856827",
+        "bytes": 720621,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:countdown-bed",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "closing": {
+        "path": "assets/audio/vax-or-fiction/closing.mp3",
+        "sha256": "60944140c587bcc0265c82cc067cf873a140e0af1a566ed42bda818646694307",
+        "bytes": 288621,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:closing-tag",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "closing-loop": {
+        "path": "assets/audio/vax-or-fiction/closing-loop.mp3",
+        "sha256": "45bfbeaa97e49200167642b6f2f3cf85c5fd34cae538eb1d7f6dadb0f12f5d9b",
+        "bytes": 258669,
+        "loop": true,
+        "license": "elevenlabs-subscription",
+        "source": "derived:closing.mp3:trim-0-10.72s:fade-in-5ms:fade-out-60ms (VOF-87, the tightened closing loop)",
+        "encoding": "mp3:192k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "closing-tag": {
+        "path": "assets/audio/vax-or-fiction/closing-tag.mp3",
+        "sha256": "16c8f51445e1f8da68de3371594adb8cec30a7b4291b080d23dd42841c34b380",
+        "bytes": 63405,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:closing-tag",
+        "encoding": "mp3:160k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "reveal": {
+        "path": "assets/audio/vax-or-fiction/reveal.mp3",
+        "sha256": "05c9fb8445f423d89624a9a8c9a6e21ae7e7c8a45c6175abca7dbde16caac589",
+        "bytes": 14637,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:reveal-a",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false,
+        "neutralReveal": true
+      },
+      "reveal-a": {
+        "path": "assets/audio/vax-or-fiction/reveal-a.mp3",
+        "sha256": "2fde242a196c889127c38bf7c27530ee38085424e2a8ee344d1546cf04d384a1",
+        "bytes": 13836,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:reveal-a",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false,
+        "neutralReveal": true
+      },
+      "reveal-b": {
+        "path": "assets/audio/vax-or-fiction/reveal-b.mp3",
+        "sha256": "89c63e1ee155f2bd760bf1ab6cd1f70f549a85d040473094af17a22d7e640fed",
+        "bytes": 13836,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:reveal-b",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false,
+        "neutralReveal": true
+      },
+      "ui-tap": {
+        "path": "assets/audio/vax-or-fiction/ui-tap.mp3",
+        "sha256": "ce9b5d043ecce0280cb3f33e43d7b654845d998bc2f85fdbf8b7b254d8754aac",
+        "bytes": 8821,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:ui-tap",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "answer-lock": {
+        "path": "assets/audio/vax-or-fiction/answer-lock.mp3",
+        "sha256": "c1d919d3d1cc517afe1b1f41f5f890d5baa08d94b2020d889c5a30d5d5b4082e",
+        "bytes": 20106,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:answer-lock",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "timer-pulse": {
+        "path": "assets/audio/vax-or-fiction/timer-pulse.mp3",
+        "sha256": "f5a8c4c00f805af7c89a21bd79bc412045e2c1b35b22bd23b5088a52e3c8bfba",
+        "bytes": 5421,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:timer-pulse",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "five-second-warning": {
+        "path": "assets/audio/vax-or-fiction/five-second-warning.mp3",
+        "sha256": "b9b20dc3704d905b473d596bb02b3b41a4b63c956d6d7a6ecde837957ab9de9a",
+        "bytes": 6189,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:five-second-warning",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "reaction-wait-really": {
+        "path": "assets/audio/vax-or-fiction/reaction-wait-really.mp3",
+        "sha256": "87ec216a6963fd5903f31d5d310300f550cb5a2099c484fbb0b84f9653cc719a",
+        "bytes": 7725,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:reaction-wait-really",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "reaction-knew-it": {
+        "path": "assets/audio/vax-or-fiction/reaction-knew-it.mp3",
+        "sha256": "8fc40d8bd2d5db97598f21ebfc1492d8ea53a7e29c7def2c332add7bee7830cf",
+        "bytes": 26541,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:reaction-knew-it",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "reaction-we-do-this": {
+        "path": "assets/audio/vax-or-fiction/reaction-we-do-this.mp3",
+        "sha256": "d74b870b1fbc2ec312340c5a1bbeac32917294fcca66c4e1eea41a9c02278837",
+        "bytes": 5805,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:reaction-we-do-this",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "transition-1": {
+        "path": "assets/audio/vax-or-fiction/transition-1.mp3",
+        "sha256": "d8098cfcec9836caf0eaae0d31831c65aa0705d5b825b7e5ecb56d035349b981",
+        "bytes": 15090,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:transition-1",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "transition-2": {
+        "path": "assets/audio/vax-or-fiction/transition-2.mp3",
+        "sha256": "77c347ebfb0b14f9a0e29bcc8622058b0418d548b740753199961f865a345016",
+        "bytes": 15090,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:transition-2",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "transition-3": {
+        "path": "assets/audio/vax-or-fiction/transition-3.mp3",
+        "sha256": "4d59169bfc318d50ca61c397cfea4ffade2882b80d93b0f8c8caebc5d1bfe863",
+        "bytes": 15090,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:transition-3",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "myth-busted": {
+        "path": "assets/audio/vax-or-fiction/myth-busted.mp3",
+        "sha256": "b9e53b4ed3bfdd35f2f836ccbe018375f8c85f506d63828259ea51ca2c711e4e",
+        "bytes": 10493,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:myth-busted",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      },
+      "streak-lift": {
+        "path": "assets/audio/vax-or-fiction/streak-lift.mp3",
+        "sha256": "54e9dc7035fe293c1158671f84d3a2bacbf3555176dce186115970d91f70ca00",
+        "bytes": 8821,
+        "loop": false,
+        "license": "elevenlabs-subscription",
+        "source": "elevenlabs:BMVL2a7ZeVEePXm178O4:companion:streak-lift",
+        "encoding": "mp3:128k",
+        "placeholder": false,
+        "vocals": false
+      }
+    }
+  },
+  "selectedSong": {
+    "id": "DHLgluGM6ZyqBd4KL2Er",
+    "url": "https://elevenlabs.io/music/songs/DHLgluGM6ZyqBd4KL2Er",
+    "companionPack": "elevenlabs-selected-song-companion",
+    "companionPackSongId": "BMVL2a7ZeVEePXm178O4",
+    "label": "Smile \u00b7 Take 3",
+    "note": "Walk-in master is walkin-smile-take3.mp3. Companion beds come from ElevenLabs song BMVL2a7ZeVEePXm178O4."
+  },
+  "policy": {
+    "allowedVocalRoles": [
+      "walkin",
+      "title-lobby"
+    ],
+    "gameplayBedsContainLyrics": false,
+    "halfTimeRoleExists": false,
+    "startMutedForTeams": true
+  }
+}

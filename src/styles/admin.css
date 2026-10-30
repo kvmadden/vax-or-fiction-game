@@ -1,0 +1,293 @@
+.admin-screen {
+  position: relative;
+  min-height: 100dvh;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  color: var(--color-text-primary, #f4f1ea);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in srgb, var(--color-accent-cobalt, #1e4d8c) 45%, transparent), transparent 70%),
+    linear-gradient(165deg, var(--color-admin-bg-gradient-1) 0%, var(--color-admin-bg-gradient-2) 45%, var(--color-admin-bg-gradient-3) 100%);
+  overflow-x: hidden;
+}
+
+/* HB-31: signed out, the card ended well above the fold with the rest of the screen empty below
+   it. Centered content instead of a top pack. */
+.admin-screen:not(.admin-screen--signed-in) {
+  display: grid;
+  align-content: center;
+  gap: var(--kit-space-32);
+}
+
+.admin-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.admin-brand,
+.admin-top,
+.admin-card,
+.admin-layout,
+.admin-error {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-brand {
+  max-width: 28rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+/* HB-29: this selector used to also match the syringe svg nested inside the wordmark, resizing it
+   to the same 18rem box as the whole mark, so the syringe dominated and VAX/FICTION rendered tiny.
+   Scoped to the wordmark's own size variable instead. */
+.admin-brand .show-wordmark {
+  /* The shared --wordmark-rule / --wordmark-syringe-w / --wordmark-syringe-h custom properties
+     (preshow-stage.css) are scoped to the stage's own 4 marks, not this one, left undefined here
+     they made the VAX padding calc() invalid, which is what let FICTION run 110px past the
+     wordmark's own box. Declared directly so this lockup uses the same proven math. */
+  --wordmark-size: 40px;
+  --wordmark-rule: max(14px, calc(var(--wordmark-size) * 0.12));
+  --wordmark-syringe-w: 0px;
+  font-size: var(--wordmark-size);
+  line-height: 1;
+  max-width: none;
+  overflow: visible;
+}
+
+/* The syringe's size/position/animation are wired only for the stage's own marks (preshow-stage.css)
+   this small operator-only lockup does not carry that wiring, so it renders unsized. Hidden here
+   rather than half-wired at a guessed size. */
+.admin-brand .show-wordmark__syringe {
+  display: none;
+}
+
+.admin-kicker {
+  margin: 0.75rem 0 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-anticipation-gold) 85%, var(--color-light));
+}
+
+.admin-card {
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--color-film-border);
+  background: color-mix(in srgb, var(--color-admin-surface) 78%, transparent);
+  border-radius: var(--kit-radius-card);
+  backdrop-filter: blur(10px);
+}
+
+.admin-card h1,
+.admin-top h1,
+.admin-detail-header h2 {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.admin-copy,
+.admin-empty,
+.admin-panel p {
+  margin: 0.5rem 0 0;
+  color: var(--color-ink-muted);
+  line-height: 1.45;
+}
+
+.admin-field {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.admin-field input {
+  min-height: 2.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-8);
+  background: var(--color-stage-deep);
+  color: inherit;
+  font: inherit;
+}
+
+.admin-primary,
+.admin-secondary {
+  min-height: 2.75rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-primary {
+  width: 100%;
+  background: var(--color-anticipation-gold);
+  color: var(--color-admin-primary-ink);
+  border-radius: var(--kit-radius-8);
+}
+
+.admin-secondary {
+  margin-top: 0;
+  border-color: var(--color-film-border);
+  background: transparent;
+  color: inherit;
+  border-radius: var(--kit-radius-8);
+}
+
+.admin-error {
+  margin: 1rem auto;
+  max-width: 40rem;
+  color: var(--color-admin-error-text);
+}
+
+.admin-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.admin-top-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.admin-list {
+  display: grid;
+  gap: 0.5rem;
+  max-height: min(70dvh, 40rem);
+  overflow: auto;
+}
+
+.admin-game {
+  display: grid;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-film-border);
+  background: color-mix(in srgb, var(--color-admin-surface) 70%, transparent);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.admin-game.is-selected,
+.admin-game:hover {
+  border-color: color-mix(in srgb, var(--color-anticipation-gold) 70%, var(--color-light));
+}
+
+.admin-game-room {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.admin-game-when,
+.admin-game-stats,
+.admin-outcome-meta {
+  font-size: 0.85rem;
+  color: var(--color-ink-dim);
+}
+
+.admin-detail {
+  padding: 1.5rem;
+  border: 1px solid var(--color-film-border);
+  background: color-mix(in srgb, var(--color-admin-surface) 72%, transparent);
+}
+
+.admin-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.admin-stat-row div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-film-border);
+}
+
+.admin-stat-row span {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-dim);
+}
+
+.admin-stat-row strong {
+  font-size: 1.35rem;
+}
+
+.admin-panel {
+  margin-top: 1.5rem;
+}
+
+.admin-panel h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-anticipation-gold) 80%, var(--color-light));
+}
+
+.admin-standings,
+.admin-outcomes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.admin-standings li,
+.admin-outcomes li {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.admin-rank {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-dim);
+}
+
+.admin-score {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.admin-outcomes li {
+  grid-template-columns: 2.5rem 1fr auto;
+}
+
+@media (max-width: 860px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stat-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

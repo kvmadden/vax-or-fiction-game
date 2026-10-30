@@ -1,0 +1,1575 @@
+{
+  "art-of-the-offer:q1": {
+    "bankId": "art-of-the-offer:q1",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "29be31b39cfaa7c60912080b78bdf96fcbc71ca04f7250c0db12b487ba026c53",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-presumptive-offer-general",
+    "tags": [
+      "communication"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Agreed. The presumptive offer beats the permissive question, a standard technique pharmacy teams are trained in.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Picks the presumptive offer over the tentative one, a standard technique pharmacy teams are trained in.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Presumptive offers (you are due, we will do both) are standard pharmacy training and beat a permissive question.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Agreed. The presumptive offer beats the permissive question, a standard technique pharmacy teams are trained in.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-general-timing"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "art-of-the-offer:q10": {
+    "bankId": "art-of-the-offer:q10",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "1e25a389549e08dedd6182358e9532a9bdf27add8fdb542fc7beab7642cdeef7",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-pregnancy-safety-concern",
+    "tags": [
+      "communication",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Picks the reply about antibodies reaching the baby over one that dismisses the worry. Clear from the choices.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Picks the reply about antibodies reaching the baby over one that dismisses the worry. Clear from the choices.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Addressing the baby with antibody transfer clearly beats a reply that dismisses the concern.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-maternal-vaccines"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "art-of-the-offer:q11": {
+    "bankId": "art-of-the-offer:q11",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "5dc38b3e46ea91398f40cf80dc3f256fb2822b74ca16d0096d3805fe38b7eeb6",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-deferral-to-next-visit",
+    "tags": [
+      "eligibility",
+      "communication"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "The dismissive reply rules itself out, as in the art-of-the-offer:q3 easy anchor. The key's odd tense is a wording flag, not a level.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Picks sharing records with the doctor over a dismissive reply. The keyed reply oddly calls the dose already done.",
+          "sure": false,
+          "flags": [
+            "hard-to-parse"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "The keyed reply is respectful and shares records with the doctor. The other reply is dismissive of the patient's plan.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "The dismissive reply rules itself out, as in the art-of-the-offer:q3 easy anchor. The key's odd tense is a wording flag, not a level.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-vaccine-concerns"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "hard-to-parse"
+    ]
+  },
+  "art-of-the-offer:q12": {
+    "bankId": "art-of-the-offer:q12",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "dcf0087cd061a1d7d5e66f721800016b318ac08781457d620d4bd50cd264d6a5",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-prior-side-effect-hesitancy",
+    "tags": [
+      "side-effects",
+      "communication"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. A day of fever and fatigue is a normal response, but the wrong reply voices a belief staff and patients really hold.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows a day of fever and fatigue is a normal vaccine response, against a wrong reply staff really say.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know a day of fever and fatigue is the immune response. The wrong reply voices a common, plausible belief.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. A day of fever and fatigue is a normal response, but the wrong reply voices a belief staff and patients really hold.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-safety"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "art-of-the-offer:q13": {
+    "bankId": "art-of-the-offer:q13",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "790db3235840a31e9a950f3330ad27e343ff7abd931586e35ab289a00e8bce67",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-tdap-repeat-pregnancy",
+    "tags": [
+      "schedule",
+      "communication",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "tdap-td"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Tdap is given in every pregnancy even 18 months after the last. Long stem and scenario repeat each other.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows Tdap is given in every pregnancy even 18 months after the last. Long stem and scenario repeat each other.",
+          "sure": true,
+          "flags": [
+            "too-long"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Routine rule: Tdap in every pregnancy, even 18 months after the last one. The long stem and scenario repeat each other.",
+          "sure": true,
+          "flags": [
+            "too-long"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pertussis-pregnancy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "too-long"
+    ]
+  },
+  "art-of-the-offer:q14": {
+    "bankId": "art-of-the-offer:q14",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "c5bca1aab467f5524e0b22b316b6af590904ac95794c8a5ba0a8f28112cff34a",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-rsv-pregnancy-timing",
+    "tags": [
+      "communication",
+      "pregnancy"
+    ],
+    "vaccines": [
+      "rsv"
+    ],
+    "populations": [
+      "pregnancy"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs the 32 to 36 week maternal RSV window, against a tempting give-it-now reply.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Needs the 32 to 36 week maternal RSV window, against a tempting give-it-now reply.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know the maternal RSV window is 32 to 36 weeks, so a 24-week request is too early.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-maternal"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "art-of-the-offer:q15": {
+    "bankId": "art-of-the-offer:q15",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "7a23906d37d92822cbe5b19f65c46bef7aaff64dc33adc19de3e5d8c0bd11016",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "alternate",
+    "conceptId": "whattosay-shingles-past-episode",
+    "tags": [
+      "communication"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix is given after a shingles episode heals. Lifelong immunity and never in the wrong reply give it away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix is given after a shingles episode heals. Lifelong immunity and never in the wrong reply give it away.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Myth most staff reject: shingles does not give lifelong immunity. Lifelong and never mark the wrong reply.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingles-recurrence"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "art-of-the-offer:q16": {
+    "bankId": "art-of-the-offer:q16",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "c92107b77d1c2117fa4aba87413d0c867958286a7d136a58666fb96b34d01bee",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "alternate",
+    "conceptId": "whattosay-late-second-dose-reassurance",
+    "tags": [
+      "eligibility",
+      "schedule",
+      "communication"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Applies the rule that a late Shingrix dose two just finishes the series, against a plausible restart.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Applies the rule that a late Shingrix dose two just finishes the series, against a plausible restart.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard rule: a late second Shingrix dose does not restart the series. Some staff still believe it does.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-timing-intervals"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "art-of-the-offer:q17": {
+    "bankId": "art-of-the-offer:q17",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "8b411608da358123845effe6979bffb7cc54a57beda3e39ad033c587da1acdec",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "alternate",
+    "conceptId": "whattosay-covid-post-infection-timing",
+    "tags": [
+      "communication"
+    ],
+    "vaccines": [
+      "covid-19"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. The wrong reply's strictly forbidden for a year is absurd, so the answer needs no knowledge of the 90-day option.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "The wrong reply's strictly forbidden for a year is absurd, so the answer needs no knowledge of the 90-day option.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "The wrong reply is extreme (strictly forbidden for a year), so the key is clear without knowing the 90-day option.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-covid-faq"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "art-of-the-offer:q18": {
+    "bankId": "art-of-the-offer:q18",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 3,
+    "textHash": "833b0fe561cd80259066b6194a30d45c2f4e427ac7d2f36be3c193b081d5e606",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "alternate",
+    "conceptId": "whattosay-hepb-dose-options",
+    "tags": [
+      "schedule",
+      "communication"
+    ],
+    "vaccines": [
+      "hepatitis-b"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. The question asks about two-dose options, which rules out the every-vaccine-takes-three reply.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "The question asks about two-dose options, which rules out the every-vaccine-takes-three reply.",
+          "sure": true,
+          "flags": [
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "The question names a two-dose option, which rules out the reply that every adult vaccine takes three shots.",
+          "sure": true,
+          "flags": [
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hepb-adults"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "gives-itself-away"
+    ]
+  },
+  "art-of-the-offer:q19": {
+    "bankId": "art-of-the-offer:q19",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "373e099c4ab5a546c6db0ea67678559026865c4333c5d43e9835acc1f34a6b77",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "alternate",
+    "conceptId": "whattosay-shingrix-single-dose-question",
+    "tags": [
+      "schedule",
+      "product",
+      "communication"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix needs two doses, widely known. All the protection you will ever need gives the wrong reply away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix needs two doses, widely known. All the protection you will ever need gives the wrong reply away.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Two Shingrix doses is widely known, and all the protection you will ever need marks the wrong reply.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingles-efficacy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "art-of-the-offer:q2": {
+    "bankId": "art-of-the-offer:q2",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "2957a51e0deba4f2abc7cf1e7700b5b2a4c769c68ed79c82ae7028517385c1fc",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "alternate",
+    "conceptId": "whattosay-presumptive-offer-general",
+    "tags": [
+      "co-administration",
+      "administration",
+      "communication"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "One shot per arm is familiar practice, and both right together in one arm sounds wrong. A reading slip is a wording flag, not a level.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Needs the rule that same-arm shots need an inch apart. Right together is the hinge and could be read as timing.",
+          "sure": false,
+          "flags": [
+            "hard-to-parse"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "One shot per arm is familiar practice, and injecting both right together in one arm sounds wrong to anyone who gives shots.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "One shot per arm is familiar practice, and both right together in one arm sounds wrong. A reading slip is a wording flag, not a level.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-admin"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "hard-to-parse"
+    ]
+  },
+  "art-of-the-offer:q20": {
+    "bankId": "art-of-the-offer:q20",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "a9178b11efdaa2333f6d33522c006c60c186bee1c445318383651fbb77153324",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "alternate",
+    "conceptId": "whattosay-hpv-dose-count-question",
+    "tags": [
+      "schedule",
+      "communication"
+    ],
+    "vaccines": [
+      "hpv"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. The three-dose rule from age 15 is standard, and the keyed reply states it, which helps. Schedule doubt is a defect note.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Needs the HPV rule that starting at 15 or older takes three doses. The keyed reply states it, which helps.",
+          "sure": false,
+          "flags": [
+            "hard-to-parse"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know an HPV series started at 15 or older takes three doses. The keyed reply states the rule, which helps.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. The three-dose rule from age 15 is standard, and the keyed reply states it, which helps. Schedule doubt is a defect note.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-hpv-schedules"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "hard-to-parse"
+    ]
+  },
+  "art-of-the-offer:q3": {
+    "bankId": "art-of-the-offer:q3",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "b2bee12636de757c3ce9f470f1a947b78bbf2c0e5baae3b1c57fba421a1d4b70",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-immune-overwhelm-concern",
+    "tags": [
+      "co-administration",
+      "communication"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Picks the reassuring reply over sending the patient away. The better reply is clear from the choices alone.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Picks the reassuring reply over sending the patient away. The better reply is clear from the choices alone.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Anchor for easy: sending a patient away over immune overload is plainly worse. The better reply is clear from the choices.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-covid-clinical"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "art-of-the-offer:q4": {
+    "bankId": "art-of-the-offer:q4",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "bb6d3b8fcc9f6c3ef746a9b68984953f53b59cab96744bfaa761731dc39c2949",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-shingrix-tdap-bundle",
+    "tags": [
+      "schedule",
+      "product",
+      "communication"
+    ],
+    "vaccines": [
+      "zoster",
+      "tdap-td"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix and Tdap can be given the same day, with no wait between non-live vaccines.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix and Tdap can be given the same day, with no wait between non-live vaccines.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Non-live vaccines like Shingrix and Tdap can be given together. The four-week wait applies only to live vaccines.",
+          "sure": false,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingles-clinical"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "art-of-the-offer:q5": {
+    "bankId": "art-of-the-offer:q5",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "7c6d4bbd0f5fa773d449d0531af06a3df043853dfe8cfa14d06680beaa6c9234",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-rsv-opportunistic-offer",
+    "tags": [
+      "effectiveness",
+      "communication"
+    ],
+    "vaccines": [
+      "rsv",
+      "pneumococcal"
+    ],
+    "populations": [
+      "chronic-conditions"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows RSV and pneumococcal vaccines can be given together. The wrong reply's never gives it away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows RSV and pneumococcal vaccines can be given together. The wrong reply's never gives it away.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Giving RSV and pneumococcal vaccines together is routine, and the reply built on never is the obvious wrong one.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-rsv-adults"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "art-of-the-offer:q6": {
+    "bankId": "art-of-the-offer:q6",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "505a22e0368b68b5283b8f9ff1e3370a3d5be391fb147a5a57373371f24147c2",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "alternate",
+    "conceptId": "whattosay-immune-overwhelm-concern",
+    "tags": [
+      "communication"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows simultaneous vaccines are safe. Choose your favorite one is absurd, so the answer is clear from the choices.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows simultaneous vaccines are safe. Choose your favorite one is absurd, so the answer is clear from the choices.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "The wrong reply is absurd (choose your favorite one), so the better reply is clear from the choices alone.",
+          "sure": true,
+          "flags": [
+            "extreme-words",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-multiple-vaccinations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "art-of-the-offer:q7": {
+    "bankId": "art-of-the-offer:q7",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "6e182e9b02eec8fff0961d2601678ab9691a3b2e968632a7f7640c6dc99398cd",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-egg-allergy-reassurance",
+    "tags": [
+      "communication"
+    ],
+    "vaccines": [
+      "influenza"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Agreed. Egg allergy needs no special setting, and must go to a hospital overstates even the old rule, so the key is clear.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows egg allergy of any severity allows any flu shot. The wrong reply's must go to a hospital pushes toward the key.",
+          "sure": false,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Egg allergy of any severity needs no special setting since 2023. Must go to a hospital overstates even the old rule.",
+          "sure": false,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Agreed. Egg allergy needs no special setting, and must go to a hospital overstates even the old rule, so the key is clear.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-flu-egg-allergy"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "art-of-the-offer:q8": {
+    "bankId": "art-of-the-offer:q8",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 3,
+    "textHash": "960a8b1a0d09f0311a9a84a8485723b258dc64a98008cf9f693e3fa1ba9f3aae",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-fitness-immunity-myth",
+    "tags": [
+      "effectiveness",
+      "communication"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Rejects the idea that fitness prevents shingles, a claim the room readily dismisses.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Rejects the idea that fitness prevents shingles, a claim the room readily dismisses.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Fitness does not prevent shingles, and the reply telling a marathoner to skip the vaccine is plainly wrong.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingles-overview"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "art-of-the-offer:q9": {
+    "bankId": "art-of-the-offer:q9",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 2,
+    "textHash": "74425af9e639959f05fdf65f842f0251e92448cdb01ae64b222cea271631f882",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-natural-immunity-myth",
+    "tags": [
+      "effectiveness",
+      "communication"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows vaccination adds protection after COVID-19 infection. Permanent immunity in the wrong reply gives it away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows vaccination adds protection after COVID-19 infection. Permanent immunity in the wrong reply gives it away.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Myth staff reject: past infection does not give permanent immunity. Permanent marks the wrong reply.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-covid-benefits"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "vax-or-fiction:q15": {
+    "bankId": "vax-or-fiction:q15",
+    "copies": [],
+    "kind": "order",
+    "textVersion": 3,
+    "textHash": "15b644f58d6af1ee6c7dc3ddd4ae104bf114a763c762c142b38696c912b1e670",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-conversation-order",
+    "tags": [
+      "communication"
+    ],
+    "vaccines": [
+      "any"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "sequencing",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. Workflow sense orders most steps. Only recommend before questions is in doubt, a content defect note.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows the standard flow: check record, recommend, answer questions, act, document. Only the middle order is in doubt.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Workflow sense sets most steps. The only real call is recommend before addressing questions, and the reveal admits it can loop.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. Workflow sense orders most steps. Only recommend before questions is in doubt, a content defect note.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-adult-standards-recommend"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q16": {
+    "bankId": "vax-or-fiction:q16",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "b7f56ca4bedbc633ae6295f82d312326198e97fe97733f0a7542c1e7bf5e4d67",
+    "status": "live",
+    "subject": "what-to-say",
+    "rotation": "core",
+    "conceptId": "whattosay-shingles-past-episode",
+    "tags": [
+      "communication"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "communication",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Picks the reply that corrects the belief that a past shingles case protects, clear from the two choices.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Picks the reply that corrects the belief that a past shingles case protects, clear from the two choices.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Myth most staff reject: a past shingles case does not protect. The better reply is clear from the choices.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-considerations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  }
+}

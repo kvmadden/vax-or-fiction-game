@@ -1,0 +1,226 @@
+/* The perfect-round reward on the solo recap (2026-09-28): the Perfect round die-cut sticker, the owner's pick,
+   beside the round's count and a short title. It rides in the recap's stat list as its first item: a band across the
+   top of the tiles on a phone with room, and on a short one the tile beside the points (below). Loaded by SoloSuite,
+   the only screen that renders it. Tokens only. */
+
+/* The list item that carries it gives up the tile look the other stats wear, since the band has its own. */
+.solo-closing__stats > [data-stat='reward'] {
+  display: block;
+  grid-column: 1 / -1;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.perfect-round-reward {
+  /* The sticker is sized by height, and its view box is its own die-cut edge, so this is the sticker's size. */
+  --reward-art: 100px;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--kit-space-12);
+  padding: var(--kit-space-8) var(--kit-space-16) var(--kit-space-8) var(--kit-space-8);
+  border: 1px solid color-mix(in srgb, var(--color-gold) 48%, transparent);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-film);
+  background-image:
+    radial-gradient(circle at calc(var(--kit-space-8) + var(--reward-art) / 2) 50%, color-mix(in srgb, var(--color-gold) 20%, transparent), transparent 62%),
+    linear-gradient(115deg, color-mix(in srgb, var(--color-gold) 10%, transparent), transparent 60%);
+  box-shadow: var(--kit-rim), 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 12%, transparent);
+}
+
+.perfect-round-reward__art {
+  height: var(--reward-art);
+}
+
+.perfect-round-reward__art svg {
+  display: block;
+  width: auto;
+  height: var(--reward-art);
+  overflow: visible;
+}
+
+.perfect-round-reward__copy {
+  display: grid;
+  gap: var(--kit-space-4);
+  min-width: 0;
+}
+
+.perfect-round-reward__kicker {
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.perfect-round-reward__title {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.perfect-round-reward__line {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+/* Short screens (a 360x780 phone, say): the reward takes the longest-streak tile's place beside the points. On a
+   perfect round that tile only repeats the round's length, which the reward's own count already says, so a perfect
+   recap is no taller than any other and the longest takeaways still fit with the page's bottom padding clear. The
+   points tile keeps its own width and the reward takes the rest. The sticker drops to 84px, which keeps its own
+   words just over 12px, and is slapped across the tile's top edge. */
+@media (max-height: 819.98px) {
+  .solo-closing__stats:has(> [data-stat='reward']) {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+
+  /* Out of sight but still in the list a screen reader reads, the same way the app's own sr-only text is hidden. */
+  .solo-closing__stats:has(> [data-stat='reward']) > [data-stat='streak'] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .solo-closing__stats > [data-stat='reward'] {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .perfect-round-reward {
+    --reward-art: 84px;
+    box-sizing: border-box;
+    height: 100%;
+    gap: var(--kit-space-8);
+    padding: 0 var(--kit-space-12) 0 var(--kit-space-8);
+  }
+
+  .perfect-round-reward__art {
+    align-self: start;
+    height: calc(var(--reward-art) - var(--kit-space-12));
+  }
+
+  .perfect-round-reward__art svg {
+    margin-top: calc(-1 * var(--kit-space-12));
+  }
+
+  .perfect-round-reward__title {
+    font-size: 20px;
+  }
+
+  .perfect-round-reward__line {
+    font-size: 14px;
+  }
+}
+
+/* --- The Perfect round die-cut sticker ----------------------------------------------------------------------- */
+
+.perfect-sticker__stop--face-light { stop-color: var(--color-gold-light); }
+.perfect-sticker__stop--face { stop-color: var(--color-gold); }
+.perfect-sticker__stop--face-dark { stop-color: color-mix(in srgb, var(--color-gold) 80%, var(--color-fiction)); }
+.perfect-sticker__stop--backing { stop-color: var(--color-light); }
+.perfect-sticker__stop--backing-shade { stop-color: color-mix(in srgb, var(--color-light) 78%, var(--color-stage-deep)); }
+
+.perfect-sticker__shadow {
+  fill: var(--color-void);
+  opacity: 0.5;
+}
+
+.perfect-sticker__border {
+  fill: var(--color-light);
+}
+
+.perfect-sticker__ring {
+  fill: none;
+  stroke: var(--color-on-gold);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 4;
+  opacity: 0.35;
+}
+
+.perfect-sticker__badge {
+  fill: var(--color-vax);
+  stroke: var(--color-light);
+  stroke-width: 2.5;
+}
+
+.perfect-sticker__badge-check {
+  fill: none;
+  stroke: var(--color-light);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.perfect-sticker__word {
+  fill: var(--color-stage-deep);
+  font-family: var(--kit-font-sans);
+  font-weight: 700;
+}
+
+.perfect-sticker__word--small {
+  font-size: 16.5px;
+  letter-spacing: 0.06em;
+}
+
+.perfect-sticker__word--big {
+  font-size: 22px;
+  letter-spacing: 0.02em;
+}
+
+.perfect-sticker__sheen {
+  fill: var(--color-light);
+  opacity: 0.35;
+}
+
+.perfect-sticker__flap-shadow {
+  fill: var(--color-void);
+  opacity: 0.45;
+}
+
+.perfect-sticker__flap {
+  stroke: color-mix(in srgb, var(--color-light) 70%, var(--color-stage-deep));
+  stroke-width: 0.75;
+}
+
+/* --- Arrival ------------------------------------------------------------------------------------------------- */
+
+.perfect-sticker__body {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(-7deg);
+  animation: sticker-slap 520ms var(--kit-ease) 180ms both;
+}
+
+/* The sticker is pressed on: big and loose above the card, squashed flat, then settled at its tilt. */
+@keyframes sticker-slap {
+  0% { opacity: 0; transform: rotate(-18deg) scale(1.35); }
+  50% { opacity: 1; transform: rotate(-5deg) scale(0.94); }
+  75% { transform: rotate(-8deg) scale(1.03); }
+  100% { opacity: 1; transform: rotate(-7deg) scale(1); }
+}
+
+/* Less motion: the sticker is simply there, at rest. */
+@media (prefers-reduced-motion: reduce) {
+  .perfect-sticker__body {
+    animation: none;
+  }
+}

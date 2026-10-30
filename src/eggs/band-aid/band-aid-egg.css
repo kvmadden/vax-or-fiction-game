@@ -1,0 +1,107 @@
+/* The landing syringe's band-aid egg (2026-09-28). Loaded with the egg, by useBandAidEgg, so only a wordmark that
+   carries it (the landing page's) ever sees these rules. Tokens only. Nothing here is in flow, so the wordmark's
+   box does not move by a pixel whether the band-aid is on or off. */
+
+/* Five quick taps would otherwise select VAX, or zoom a phone. */
+.show-wordmark[data-band-aid-egg] {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* The band-aid is wider than the barrel it covers, so the syringe shows what hangs past its own box. */
+.show-wordmark[data-band-aid-egg] .show-wordmark__syringe {
+  overflow: visible;
+}
+
+/* The tap target: centred on the syringe, tilted with it, and never smaller than a fingertip. A decoration, not a
+   control, so the cursor stays the default one. */
+.band-aid-egg__target {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + var(--kit-space-4) + var(--wordmark-syringe-w, var(--kit-space-24)) / 2);
+  z-index: 1;
+  width: max(var(--kit-touch), calc(var(--wordmark-syringe-w, var(--kit-space-24)) + var(--kit-space-24)));
+  height: max(var(--kit-touch), calc(var(--wordmark-syringe-h, var(--kit-space-64)) + var(--kit-space-8)));
+  transform: translate(-50%, -50%) rotate(var(--wordmark-tilt, 0deg));
+  cursor: default;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* --- The band-aid: gold with a check print, the owner's pick ------------------------------------------------ */
+
+.syringe-band-aid__slap {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(-12deg);
+}
+
+.syringe-band-aid[data-phase='on'] .syringe-band-aid__slap {
+  animation: band-aid-slap 460ms var(--kit-ease) both;
+}
+
+.syringe-band-aid[data-phase='peeling'] .syringe-band-aid__slap {
+  animation: band-aid-peel 420ms var(--kit-ease) both;
+}
+
+.syringe-band-aid__shadow {
+  fill: var(--color-stage-deep);
+  opacity: 0.55;
+}
+
+.syringe-band-aid__body {
+  fill: color-mix(in srgb, var(--color-gold) 86%, var(--color-light));
+  stroke: var(--color-gold-dark);
+  stroke-width: 1.5;
+}
+
+.syringe-band-aid__sheen {
+  fill: var(--color-light);
+  opacity: 0.4;
+}
+
+.syringe-band-aid__check {
+  fill: none;
+  stroke: var(--color-on-gold);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.syringe-band-aid__pad {
+  fill: color-mix(in srgb, var(--color-light) 86%, var(--color-gold));
+  stroke: var(--color-gold-dark);
+  stroke-width: 1;
+}
+
+.syringe-band-aid__pad-shade {
+  fill: var(--color-gold-dark);
+  opacity: 0.18;
+}
+
+/* Slapped on: it arrives big and loose, squashes flat on contact, springs back, and settles at its tilt. */
+@keyframes band-aid-slap {
+  0% { opacity: 0; transform: translateY(-60%) rotate(-30deg) scale(1.7); }
+  40% { opacity: 1; transform: translateY(0) rotate(-8deg) scale(1.3, 0.62); }
+  64% { transform: rotate(-15deg) scale(0.9, 1.14); }
+  84% { transform: rotate(-11deg) scale(1.05, 0.96); }
+  100% { opacity: 1; transform: rotate(-12deg) scale(1); }
+}
+
+/* Peeled off: one end lifts, then the whole strip curls away and fades. */
+@keyframes band-aid-peel {
+  0% { opacity: 1; transform: rotate(-12deg); }
+  35% { opacity: 1; transform: translate(10%, -30%) rotate(-30deg) scale(1.06); }
+  100% { opacity: 0; transform: translate(40%, -140%) rotate(-70deg) scale(0.86); }
+}
+
+/* Less motion: the band-aid simply sits at its tilt, and comes off without a peel. */
+@media (prefers-reduced-motion: reduce) {
+  .syringe-band-aid[data-phase] .syringe-band-aid__slap {
+    animation: none;
+  }
+}

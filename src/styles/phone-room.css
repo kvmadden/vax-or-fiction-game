@@ -1,0 +1,1769 @@
+/* Room phone screens built on the premium layouts: the answer dock, the seat, the stamped reveal, the podium close
+   and the final round. PhoneScreens marks these with .room-frame on the shell. Every other room screen keeps its
+   own box. Height buckets: H-short below 720px, H-regular 720 to 859px, H-tall 860px and up. Tokens and kit spacing
+   only. */
+
+/* ── The shared frame ─────────────────────────────────────────────────────────────────────────────────────── */
+
+/* Every button in these screens' content, the presenter's pad and the solo topic list inherits IBM Plex. Zero
+   specificity, so each component's own size and weight still win. */
+
+:where(.room-frame .phone-app-content, .remote-clicker, .solo-topic-list) button {
+  font: inherit;
+}
+
+/* The content box: 16 on three sides and 16 over the home-indicator inset at the bottom. */
+
+.phone-live-shell.room-frame.phone-shell .phone-app-content[data-role="phone-content"] {
+  padding: var(--kit-space-16) max(env(safe-area-inset-right, 0px), var(--kit-space-16)) calc(var(--kit-space-16) + env(safe-area-inset-bottom, 0px)) max(env(safe-area-inset-left, 0px), var(--kit-space-16)) !important;
+}
+
+/* ── The answer dock ───────────────────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --phone-dock-gap: var(--kit-space-24);
+  --phone-binary-word: 40px;
+  --phone-lettered-h: 112px;
+  --phone-lettered-text: 20px;
+  --phone-lettered-key: 40px;
+  --phone-lettered-key-text: 18px;
+  --phone-reply-text: 20px;
+  --phone-reply-key: 40px;
+  --phone-reply-key-text: 18px;
+  --phone-scenario-text: 16px;
+  --phone-range-label: 22px;
+}
+
+/* From H-regular up the TRUE and FALSE words, the reply text and the ladder labels take their full sizes. */
+
+@media (min-height: 720px) {
+  :root {
+    --phone-binary-word: 56px;
+    --phone-lettered-h: 160px;
+    --phone-reply-text: 24px;
+    --phone-reply-key: 48px;
+    --phone-reply-key-text: 20px;
+    --phone-scenario-text: 18px;
+    --phone-wp-stem: 36px;
+    --phone-range-label: 28px;
+  }
+}
+
+/* Under 380 wide a question wraps onto more lines, so the replies keep their short-screen sizes, the choices read at
+   18 and the patient's words at 16, which keeps every answer on screen. */
+@media (max-width: 379px) {
+  :root {
+    --phone-lettered-text: 18px;
+    --phone-reply-text: 20px;
+    --phone-reply-key: 40px;
+    --phone-reply-key-text: 18px;
+    --phone-scenario-text: 16px;
+  }
+}
+
+.phone-live-shell.room-frame .phone-vote-surface {
+  gap: var(--phone-dock-gap) !important;
+}
+
+.phone-live-shell.room-frame .phone-vote-hero {
+  padding-top: 0;
+}
+
+/* The patient's words in their own glass block under the stem, 16 below it, with 16 inside above PATIENT SAYS. The
+   paragraph carries an inline margin of 0, so the block's margin needs the override. */
+
+.phone-live-shell.room-frame .phone-vote-scenario {
+  margin-top: var(--kit-space-8) !important;
+  padding: var(--kit-space-16);
+  border: 1px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-16);
+  background: var(--kit-glass-fill);
+  color: var(--color-ink);
+  font-size: var(--phone-scenario-text);
+  font-weight: 500;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.phone-live-shell.room-frame .phone-vote-scenario .phone-scenario-label {
+  margin-bottom: var(--kit-space-8);
+}
+
+/* The height the two replies give up goes to the stem: on a phone 800 tall and up a medium which-patient stem steps up
+   to about the size a binary stem already has, so the question and the patient's words fill the space above the
+   replies. A long stem keeps its shipped size, and so does any stem under 380 wide or on a shorter screen, where the
+   replies need that height once Change answer's row opens. */
+
+@media (min-height: 800px) and (min-width: 380px) {
+  .phone-live-shell.room-frame .phone-vote-surface[data-kind="which-patient"]:has(.answer-stack[data-shape="lettered"][data-count="2"]) .phone-vote-stem[data-length="medium"] {
+    font-size: var(--phone-wp-stem) !important;
+    line-height: 1.15 !important;
+  }
+}
+
+.phone-live-shell.room-frame .answer-dock {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  min-height: 0;
+}
+
+.phone-live-shell.room-frame .answer-dock__status {
+  flex: none;
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-wrap: pretty;
+}
+
+/* Sat out keeps the same quiet status style, so "Watch the screen" holds one line at 390. The targets step back. */
+
+/* The stack never comes down past its own targets, so on a short or sideways screen the page scrolls and Change
+   answer's row, which follows the stack, never lands on a target. */
+
+.phone-live-shell.room-frame .answer-stack {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  min-height: auto;
+}
+
+.phone-live-shell.room-frame .answer-slab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 88px;
+  margin: 0;
+  padding: var(--kit-space-16);
+  border: 2px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-16);
+  background: var(--kit-glass-fill);
+  color: var(--color-ink);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 120ms var(--kit-ease), opacity 180ms var(--kit-ease);
+}
+
+.phone-live-shell.room-frame .answer-slab:active:not(:disabled):not([aria-disabled="true"]) {
+  transform: scale(0.98);
+}
+
+.phone-live-shell.room-frame .answer-slab:focus-visible {
+  outline: 2px solid var(--color-vax);
+  outline-offset: 2px;
+}
+
+/* Change answer's row clips its content, so its ring sits inside the button's edge. */
+
+.phone-live-shell.room-frame .answer-change:focus-visible {
+  outline: 2px solid var(--color-vax);
+  outline-offset: -2px;
+}
+
+.phone-live-shell.room-frame .answer-slab[aria-disabled="true"] {
+  cursor: default;
+}
+
+.phone-live-shell.room-frame .answer-dock:is([data-state="sending"], [data-state="locked"], [data-state="sat-out"]) .answer-slab {
+  cursor: not-allowed;
+}
+
+/* A reopened answer (Change answer) keeps a gold ring on the standing pick. */
+
+.phone-live-shell.room-frame .answer-slab[data-selected="true"]:not([data-marked="true"]) {
+  box-shadow: 0 0 0 2px var(--color-gold);
+}
+
+/* Decided: the pick keeps its size at full strength, every other target steps back. Sat out: all step back. */
+
+.phone-live-shell.room-frame .answer-dock:is([data-state="answered"], [data-state="locked"]) .answer-slab:not([data-marked="true"]) {
+  opacity: 0.32;
+}
+
+.phone-live-shell.room-frame .answer-dock[data-state="sat-out"] .answer-slab,
+.phone-live-shell.room-frame .answer-dock[data-state="sat-out"] .answer-stack[data-shape="order"] {
+  opacity: 0.2;
+}
+
+.phone-live-shell.room-frame .answer-slab__face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--kit-space-8);
+  min-width: 0;
+}
+
+.phone-live-shell.room-frame .answer-slab__label {
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.phone-live-shell.room-frame .answer-slab__word {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kit-space-12);
+  min-width: 0;
+}
+
+.phone-live-shell.room-frame .answer-slab__check {
+  flex: none;
+}
+
+/* A binary answer's check sits outside the word, so the chosen word stays on the same center line as the other. */
+
+.phone-live-shell.room-frame .answer-slab--binary .answer-slab__word {
+  position: relative;
+}
+
+.phone-live-shell.room-frame .answer-stack[data-shape="stack"] .answer-slab--binary .answer-slab__check {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + var(--kit-space-12));
+  width: 36px;
+  height: 36px;
+  translate: 0 -50%;
+}
+
+/* Binary: tinted fills and answer-tone borders. Full-strength tone once it is the answer. */
+
+.phone-live-shell.room-frame .answer-slab--binary .answer-slab__word {
+  font-size: var(--phone-binary-word);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.phone-live-shell.room-frame .answer-slab--true {
+  border-color: var(--color-answer-true);
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-vax) 32%, var(--color-stage-deep)), color-mix(in srgb, var(--color-vax) 14%, var(--color-stage-deep)));
+}
+
+/* Orange mixed into the navy stage at TRUE's 32 over 14 darkens to brown, so FALSE mixes at 48 over 24 to read as
+   orange at the same strength TRUE's teal reads. */
+
+.phone-live-shell.room-frame .answer-slab--false {
+  border-color: var(--color-answer-false);
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-fiction) 48%, var(--color-stage-deep)), color-mix(in srgb, var(--color-fiction) 24%, var(--color-stage-deep)));
+}
+
+.phone-live-shell.room-frame .answer-slab--true[data-marked="true"] {
+  background: var(--color-answer-true);
+}
+
+.phone-live-shell.room-frame .answer-slab--false[data-marked="true"] {
+  background: var(--color-answer-false);
+}
+
+/* TRUE above FALSE, sharing the dock. */
+
+.phone-live-shell.room-frame .answer-stack[data-shape="stack"] .answer-slab--binary {
+  flex: 1 1 0;
+  max-height: 280px;
+}
+
+/* Lettered: a key circle and the reply at reading size, left aligned, gold once it is the answer. The choices share
+   the dock in equal slabs while there is room, and each gives height back only down to its own text when there is
+   not, so Change answer's row and a header wrapped by the lock both fit. The stack never shrinks below its text, so a
+   long choice scrolls the page rather than spilling out of its slab. */
+
+.phone-live-shell.room-frame .answer-stack[data-shape="lettered"] {
+  min-height: auto;
+}
+
+/* Four choices, and three on a short screen, tighten so every one stays on screen: 12 above and below the text, the
+   text at 18 and a 32 key. Each still grows with the dock when there is room. */
+
+.phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="4"] {
+  --phone-lettered-text: 18px;
+  --phone-lettered-key: 32px;
+  --phone-lettered-key-text: 16px;
+}
+
+.phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="4"] .answer-slab--lettered {
+  padding-block: var(--kit-space-12);
+}
+
+@media (max-height: 719px) {
+  .phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="3"] {
+    --phone-lettered-text: 18px;
+    --phone-lettered-key: 32px;
+    --phone-lettered-key-text: 16px;
+  }
+
+  .phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="3"] .answer-slab--lettered {
+    padding-block: var(--kit-space-12);
+  }
+}
+
+/* Two replies, with the reply at 24 and a 48 key, stop at 160 (112 on a short screen) and sit at the foot of the
+   dock, and the height they give up goes to the stem group above them. When Change answer's row opens or the header
+   wraps once votes lock, they give height back down to their own text. */
+
+.phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="2"] {
+  --phone-lettered-text: var(--phone-reply-text);
+  --phone-lettered-key: var(--phone-reply-key);
+  --phone-lettered-key-text: var(--phone-reply-key-text);
+  flex: 0 1 auto;
+}
+
+.phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="2"] > .answer-slab--lettered {
+  flex: 0 1 var(--phone-lettered-h);
+}
+
+/* The spare height goes above the status line. An auto margin, not flex-end, so when the dock runs short the overflow
+   goes down, where the page scrolls to it, never up over the question. */
+
+.phone-live-shell.room-frame .answer-dock:has(> .answer-stack[data-shape="lettered"][data-count="2"]) > .answer-dock__status {
+  margin-top: auto;
+}
+
+/* From 720 tall up the stack may come down past its 160s, so the replies give height back to Change answer's row. A
+   phone on its side keeps the stack whole and scrolls instead, so a reply never slides under that row. */
+
+@media (min-width: 420px) and (min-height: 720px) {
+  .phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="2"] {
+    min-height: 0;
+  }
+}
+
+/* Under 420 wide the two replies take the spare height themselves, so no band opens above them. These follow the
+   rules above on purpose, since they carry the same weight. */
+
+@media (max-width: 419px) {
+  .phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="2"] {
+    flex: 1 1 auto;
+  }
+
+  .phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="2"] > .answer-slab--lettered {
+    flex: 1 1 0;
+  }
+}
+
+.phone-live-shell.room-frame .answer-slab--lettered {
+  flex: 1 1 0;
+  min-height: auto;
+  max-height: 240px;
+  display: grid;
+  grid-template-columns: var(--phone-lettered-key) minmax(0, 1fr);
+  align-items: center;
+  justify-content: stretch;
+  column-gap: var(--kit-space-16);
+  text-align: left;
+}
+
+.phone-live-shell.room-frame .answer-slab__key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--phone-lettered-key);
+  height: var(--phone-lettered-key);
+  border: 1px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-full);
+  background: var(--kit-glass-fill-strong);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-lettered-key-text);
+  font-weight: 600;
+}
+
+.phone-live-shell.room-frame .answer-slab__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-4);
+  min-width: 0;
+  font-size: var(--phone-lettered-text);
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+
+.phone-live-shell.room-frame .answer-stack[data-shape="lettered"][data-count="2"] .answer-slab--lettered {
+  max-height: none;
+}
+
+.phone-live-shell.room-frame .answer-slab--lettered[data-marked="true"],
+.phone-live-shell.room-frame .answer-slab--range[data-marked="true"] {
+  border-color: var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-on-gold);
+}
+
+.phone-live-shell.room-frame .answer-slab--lettered[data-marked="true"] .answer-slab__key {
+  border-color: transparent;
+  background: var(--color-stage-deep);
+  color: var(--color-gold);
+}
+
+/* The estimate ladder: rows low to high, sharing the dock. The stack never shrinks below its rows, so a short
+   screen scrolls rather than letting the last row slide under Change answer. */
+
+.phone-live-shell.room-frame .answer-stack[data-shape="ladder"] {
+  min-height: auto;
+}
+
+.phone-live-shell.room-frame .answer-stack[data-shape="ladder"] .answer-slab {
+  flex: 1 1 0;
+  min-height: 56px;
+  max-height: 100px;
+  padding: 0 var(--kit-space-16);
+  border-color: var(--color-gold);
+  border-radius: var(--kit-radius-12);
+}
+
+.phone-live-shell.room-frame .answer-slab--range .answer-slab__face {
+  gap: var(--kit-space-4);
+}
+
+.phone-live-shell.room-frame .answer-slab__value {
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-range-label);
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Order keeps its natural stack. Submit grows to 56. */
+
+.phone-live-shell.room-frame .answer-stack[data-shape="order"] .phone-submit {
+  min-height: 56px !important;
+}
+
+/* Change answer's row opens and closes on a real transition, so the targets give up and take back its height
+   smoothly, and the button slides in and out at the row's edge. The row carries the dock's 12px gap inside itself, so
+   a closed row takes no space at all. */
+
+.phone-live-shell.room-frame .answer-change-slot {
+  flex: none;
+  display: grid;
+  grid-template-rows: 0fr;
+  margin-top: calc(-1 * var(--kit-space-12));
+  transition: grid-template-rows 200ms var(--kit-ease);
+}
+
+.phone-live-shell.room-frame .answer-change-slot[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.phone-live-shell.room-frame .answer-change-slot__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-live-shell.room-frame .answer-change-slot {
+    transition: none;
+  }
+}
+
+.phone-live-shell.room-frame .answer-change {
+  flex: none;
+  width: 100%;
+  min-height: 48px;
+  margin-top: var(--kit-space-12);
+  padding: 0 var(--kit-space-16);
+  border: 1px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-12);
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-height: 719px) {
+  :root {
+    --phone-dock-gap: var(--kit-space-16);
+    --phone-binary-word: 32px;
+    --phone-lettered-text: 18px;
+    --phone-reply-text: 18px;
+    --phone-range-label: 20px;
+  }
+
+  /* A range row is one line on a short screen: the gold fill and the check already say it is the answer. */
+
+  .phone-live-shell.room-frame .answer-slab--range .answer-slab__label {
+    display: none;
+  }
+}
+
+/* H-tall: a stem of three or four lines leaves more dock than the H-regular caps can fill at 430x932, so the caps
+   rise and the targets still absorb the dock there. */
+
+@media (min-height: 860px) {
+  .phone-live-shell.room-frame .answer-stack[data-shape="stack"] .answer-slab--binary {
+    max-height: 336px;
+  }
+
+  .phone-live-shell.room-frame .answer-stack[data-shape="ladder"] .answer-slab {
+    max-height: 116px;
+  }
+
+  :root {
+    --phone-binary-word: 64px;
+    --phone-wp-stem: 48px;
+  }
+
+  .phone-live-shell.room-frame .answer-slab--lettered {
+    max-height: none;
+  }
+}
+
+/* A phone under 420 wide keeps the 36 stem even when tall, since 48 wraps its question past the room the replies need. */
+@media (min-height: 860px) and (max-width: 419px) {
+  :root {
+    --phone-wp-stem: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-live-shell.room-frame .answer-slab {
+    transition: none;
+  }
+
+  .phone-live-shell.room-frame .answer-slab:active:not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+
+/* ── The seat: every audience wait ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --phone-group-gap: var(--kit-space-48);
+  --phone-seat-name: 44px;
+  --phone-room-count: 48px;
+  --phone-scoring-row: 56px;
+  --phone-group-font: 18px;
+  --phone-group-value: 20px;
+}
+
+.phone-live-shell.room-frame .lobby-seat {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin-block: 0;
+  text-align: left;
+}
+
+.phone-live-shell.room-frame .lobby-seat__absorb {
+  flex: 1 1 auto;
+  max-height: 64px;
+}
+
+/* The absorber over the seat stops at 32. It sits over the content box's own 16, so 64 would open an 80px band
+   under the bar, and the rows take the rest. */
+
+.phone-live-shell.room-frame .lobby-seat__absorb {
+  max-height: 32px;
+}
+
+.phone-live-shell.room-frame .lobby-seat__kicker {
+  margin: 0;
+  line-height: 24px;
+}
+
+.phone-live-shell.room-frame .lobby-seat__line {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: var(--phone-lobby-line, 18px);
+  font-weight: 400;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+/* Who you are: the kicker, the name and the wait's line. */
+
+.phone-live-shell.room-frame .seat-who {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-live-shell.room-frame .seat-who__name {
+  display: -webkit-box;
+  margin: var(--kit-space-8) 0 0;
+  overflow: hidden;
+  color: var(--color-ink);
+  font-size: var(--phone-seat-name);
+  font-weight: 600;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.phone-live-shell.room-frame .seat-who .lobby-seat__line {
+  margin-top: var(--kit-space-12);
+}
+
+.phone-live-shell.room-frame .seat-room {
+  display: flex;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+  margin-top: var(--phone-group-gap);
+  padding: var(--kit-space-16) 0;
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.phone-live-shell.room-frame .seat-room__count {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-room-count);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.phone-live-shell.room-frame .seat-room__count[data-pulse="true"] {
+  animation: seat-count-pulse 200ms var(--kit-ease);
+}
+
+@keyframes seat-count-pulse {
+  50% { transform: scale(1.06); }
+}
+
+.phone-live-shell.room-frame .seat-room__label {
+  color: var(--color-ink);
+  font-size: var(--phone-room-label, 18px);
+  font-weight: 500;
+}
+
+.phone-live-shell.room-frame .seat-room__team {
+  margin-left: auto;
+}
+
+.phone-live-shell.room-frame .seat-scoring {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  margin-top: var(--phone-group-gap);
+}
+
+.phone-live-shell.room-frame .glass-group,
+.phone-live-shell.solo-shell .glass-group {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  border: 1px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-16);
+  background: var(--kit-glass-fill);
+  font-size: var(--phone-group-font, 18px);
+  line-height: 1.35;
+}
+
+/* Hairline dividers between rows, drawn on the row's own edge so a row stays a row, not a bordered card. */
+
+.phone-live-shell.room-frame .glass-group > li,
+.phone-live-shell.solo-shell .glass-group > li {
+  position: relative;
+}
+
+.phone-live-shell.room-frame .glass-group > li + li::before,
+.phone-live-shell.solo-shell .glass-group > li + li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: var(--phone-divider-inset, 0px);
+  height: 1px;
+  background: var(--color-hairline);
+}
+
+.phone-live-shell.room-frame .seat-scoring__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--kit-space-12);
+  min-height: var(--phone-scoring-row);
+  padding: 0 var(--kit-space-16);
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+/* The two streak bonuses are not question kinds, so their labels step back a shade. */
+
+.phone-live-shell.room-frame .seat-scoring__row--bonus > span {
+  color: var(--color-ink-muted);
+}
+
+.phone-live-shell.room-frame .seat-scoring__row strong {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-group-value);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-height: 719px) {
+  :root {
+    --phone-group-gap: var(--kit-space-24);
+    --phone-seat-name: 40px;
+    --phone-scoring-row: 44px;
+  }
+}
+
+/* H-tall: a 64 group gap on the room row's own 16 padding would open 72px bands, so the gap holds at 48 and the
+   height goes to the seat and the room row instead, with the count kept under the name. */
+
+@media (min-height: 860px) {
+  :root {
+    --phone-group-gap: var(--kit-space-48);
+    --phone-seat-name: 56px;
+    --phone-room-count: 64px;
+    --phone-room-label: 20px;
+    --phone-lobby-line: 20px;
+    --phone-scoring-row: 66px;
+    --phone-group-font: 20px;
+    --phone-group-value: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-live-shell.room-frame .seat-room__count[data-pulse="true"] {
+    animation: none;
+  }
+}
+
+/* ── The stamped reveal ───────────────────────────────────────────────────────────────────────────────────── */
+
+/* The claim is sized up by bucket and by its length, the absorber keeps a 16px floor, and the reaction row may grow
+   a little with its emoji scaling along, so a taller tile still reads as a deliberate target. */
+
+:root {
+  --phone-recap: 24px;
+  --phone-outcome: 40px;
+  --phone-points: 64px;
+  --phone-claim-short: 38px;
+  --phone-claim-medium: 30px;
+  --phone-claim-long: 28px;
+  --phone-claim-reply: 28px;
+  --phone-stamp-h: 64px;
+  --phone-stamp-word: 40px;
+  --phone-standing-value: 32px;
+  --phone-miss-h: 64px;
+  --phone-miss-word: 28px;
+  --phone-reaction-h: 64px;
+  --phone-reaction-max: 96px;
+  --phone-reaction-emoji: 32px;
+  --phone-reveal-absorb: 32px;
+}
+
+.phone-live-shell.room-frame .stamp-reveal {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  color: var(--color-ink);
+}
+
+.phone-live-shell.room-frame .stamp-reveal [data-tone="vax"] {
+  --phone-tone: var(--color-vax);
+}
+
+.phone-live-shell.room-frame .stamp-reveal [data-tone="fiction"] {
+  --phone-tone: var(--color-fiction);
+}
+
+.phone-live-shell.room-frame .stamp-reveal [data-tone="gold"] {
+  --phone-tone: var(--color-gold);
+}
+
+.phone-live-shell.room-frame .stamp-reveal__absorb {
+  flex: 1 1 auto;
+  min-height: var(--kit-space-16);
+  max-height: var(--phone-reveal-absorb);
+}
+
+.phone-live-shell.room-frame .stamp-reveal__recap {
+  display: -webkit-box;
+  margin: var(--kit-space-16) 0 0;
+  overflow: hidden;
+  color: var(--color-ink-muted);
+  font-size: var(--phone-recap);
+  font-weight: 500;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* An estimate's range, quiet, right under the claim its stamp sits on. */
+
+.phone-live-shell.room-frame .stamp-reveal__detail {
+  margin: var(--kit-space-12) 0 0;
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.phone-live-shell.room-frame .stamp-reveal__outcome {
+  margin: var(--kit-space-24) 0 0;
+  color: var(--color-ink-muted);
+  font-size: var(--phone-outcome);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.phone-live-shell.room-frame .stamp-reveal__outcome[data-outcome="right"] {
+  color: var(--color-vax);
+}
+
+.phone-live-shell.room-frame .stamp-reveal__outcome[data-outcome="missed"] {
+  color: var(--color-gold);
+}
+
+.phone-live-shell.room-frame .stamp-points-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+  margin-top: var(--kit-space-12);
+}
+
+.phone-live-shell.room-frame .stamp-points {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-points);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.phone-live-shell.room-frame .stamp-streak {
+  margin-left: 0;
+  padding: var(--kit-space-4) var(--kit-space-12);
+}
+
+.phone-live-shell.room-frame .stamp-miss {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--kit-space-8);
+  margin-top: var(--kit-space-12);
+}
+
+.phone-live-shell.room-frame .stamp-miss__label,
+.phone-live-shell.room-frame .stamp-standing__label {
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.phone-live-shell.room-frame .stamp-miss__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kit-space-12);
+  max-width: 100%;
+  min-height: var(--phone-miss-h);
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 2px solid var(--phone-tone);
+  border-radius: var(--kit-radius-16);
+  background: transparent;
+  color: var(--phone-tone);
+  font-size: var(--phone-miss-word);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+
+.phone-live-shell.room-frame .stamp-miss__pill svg {
+  flex: none;
+}
+
+.phone-live-shell.room-frame .stamp-miss__value {
+  font-family: var(--kit-font-mono);
+}
+
+.phone-live-shell.room-frame .stamp-miss__text {
+  color: var(--color-ink);
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+/* The standing row: score and rank in two equal columns, in place of the score pill. */
+
+.phone-live-shell.room-frame .stamp-standing {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--kit-space-16);
+  padding-top: var(--kit-space-16);
+  border-top: 1px solid var(--color-hairline);
+}
+
+/* A screen as wide as a laptop has no thumb to reach for, so the result closes up: the absorber gives way and a fixed
+   16 sets your standing off, which keeps the reactions right under the result. */
+
+@media (min-width: 900px) {
+  .phone-live-shell.room-frame .stamp-reveal__absorb {
+    display: none;
+  }
+
+  .phone-live-shell.room-frame .stamp-standing {
+    margin-top: var(--kit-space-16);
+  }
+}
+
+.phone-live-shell.room-frame .stamp-standing__cell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-4);
+  min-width: 0;
+}
+
+.phone-live-shell.room-frame .stamp-standing__value {
+  color: var(--color-ink);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-standing-value);
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.phone-live-shell.room-frame .stamp-standing__value--rank {
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+/* The place reads first, "of 12" quieter beside it. */
+
+.phone-live-shell.room-frame .stamp-standing__rank-of {
+  color: var(--color-ink-dim);
+  font-size: 20px;
+}
+
+/* The reactions dock: labelled, three wide targets, and a reserved acknowledgement line. */
+
+.phone-live-shell.room-frame .stamp-reactions {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+  min-height: 0;
+  margin-top: var(--kit-space-32);
+}
+
+.phone-live-shell.room-frame .stamp-reactions__label {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.phone-live-shell.room-frame .stamp-reactions [data-role="phone-reactions"] {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: minmax(var(--phone-reaction-h), 1fr);
+  gap: var(--kit-space-12);
+  min-height: var(--phone-reaction-h);
+  max-height: var(--phone-reaction-max);
+}
+
+.phone-live-shell.room-frame .stamp-reactions .phone-reaction {
+  container-type: size;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: var(--phone-reaction-h);
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-16);
+  background: var(--kit-glass-fill);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.phone-live-shell.room-frame .stamp-reactions .phone-reaction[data-selected="true"] {
+  border-color: var(--color-gold);
+  background: color-mix(in srgb, var(--color-gold) 18%, var(--color-stage-deep));
+}
+
+.phone-live-shell.room-frame .stamp-reactions .phone-reaction[data-selected="false"] {
+  opacity: 0.32;
+}
+
+.phone-live-shell.room-frame .stamp-reactions .phone-reaction:focus-visible {
+  outline: 2px solid var(--color-vax);
+  outline-offset: 2px;
+}
+
+.phone-live-shell.room-frame .stamp-reactions .phone-reaction__emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: clamp(var(--phone-reaction-emoji), 46cqh, 56px);
+  line-height: 1;
+}
+
+.phone-live-shell.room-frame .stamp-reactions .phone-reaction-ack {
+  min-height: 24px;
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* The claim, with the verdict stamped on it. */
+
+.phone-live-shell.room-frame .stamp-claim {
+  position: relative;
+  margin-top: var(--kit-space-16);
+  /* The reserve under the claim holds the whole stamp plus its tilt, so the stamp never covers a word. */
+  padding-bottom: calc(var(--phone-stamp-h) + var(--kit-space-8));
+}
+
+.phone-live-shell.room-frame .stamp-claim__text {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-ink);
+  font-size: var(--phone-claim-short);
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.phone-live-shell.room-frame .stamp-claim__text[data-length="medium"] {
+  font-size: var(--phone-claim-medium);
+}
+
+.phone-live-shell.room-frame .stamp-claim__text[data-length="long"] {
+  font-size: var(--phone-claim-long);
+}
+
+/* A lettered kind: the right reply is the stamped block, under a quiet recap of the question. */
+
+.phone-live-shell.room-frame .stamp-claim[data-shape="reply"] {
+  margin-top: var(--kit-space-12);
+}
+
+.phone-live-shell.room-frame .stamp-claim[data-shape="reply"] .stamp-claim__text {
+  font-size: var(--phone-claim-reply);
+  text-wrap: pretty;
+}
+
+.phone-live-shell.room-frame .stamp-claim__recap {
+  font-size: 22px;
+}
+
+.phone-live-shell.room-frame .stamp-mark {
+  /* A short word is stamped on at 6 degrees. A long one lies flatter, so its raised end never rises into the claim's last line over
+     the reserve under it. The stamp's length comes from the screen (RevealStamp), and a drawn look sets its own tilt after this. */
+  --stamp-tilt: min(-1.5deg, calc(-6deg + (max(var(--look-stamp-len, 4), 5) - 5) * 0.7deg));
+  position: absolute;
+  right: var(--kit-space-8);
+  bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  height: var(--phone-stamp-h);
+  padding: 0 var(--kit-space-24);
+  border: 3px solid var(--phone-tone);
+  border-radius: var(--kit-radius-12);
+  background: var(--color-stage-deep);
+  color: var(--phone-tone);
+  font-size: var(--phone-stamp-word);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transform: rotate(var(--stamp-tilt));
+  animation: stamp-mark-in 240ms var(--kit-ease) both;
+}
+
+.phone-live-shell.room-frame .stamp-mark[data-shape="mono"] {
+  font-family: var(--kit-font-mono);
+  letter-spacing: 0;
+}
+
+@keyframes stamp-mark-in {
+  from { opacity: 0; transform: rotate(var(--stamp-tilt)) scale(1.4); }
+  to { opacity: 1; transform: rotate(var(--stamp-tilt)) scale(1); }
+}
+
+.phone-live-shell.room-frame .stamp-reveal__outcome {
+  margin-top: var(--kit-space-32);
+}
+
+@media (max-height: 719px) {
+  :root {
+    --phone-outcome: 28px;
+    --phone-points: 40px;
+    --phone-claim-short: 28px;
+    --phone-claim-medium: 24px;
+    --phone-claim-long: 22px;
+    --phone-claim-reply: 24px;
+    --phone-stamp-h: 56px;
+    --phone-stamp-word: 32px;
+    --phone-standing-value: 28px;
+    --phone-reaction-h: 56px;
+    --phone-reaction-max: 80px;
+  }
+
+  .phone-live-shell.room-frame .stamp-reveal__recap,
+  .phone-live-shell.room-frame .stamp-reactions__label {
+    display: none;
+  }
+}
+
+@media (min-height: 860px) {
+  :root {
+    --phone-recap: 26px;
+    --phone-outcome: 48px;
+    --phone-points: 80px;
+    --phone-claim-short: 42px;
+    --phone-claim-medium: 36px;
+    --phone-claim-long: 32px;
+    --phone-stamp-h: 72px;
+    --phone-stamp-word: 44px;
+    --phone-standing-value: 36px;
+    --phone-reaction-h: 72px;
+    --phone-reaction-max: 128px;
+    --phone-reaction-emoji: 36px;
+  }
+}
+
+/* Under 380 wide the claim wraps onto more lines, so from H-regular up the result steps its type down a size, which
+   keeps the reactions on screen. */
+@media (max-width: 379px) and (min-height: 720px) {
+  :root {
+    --phone-outcome: 36px;
+    --phone-points: 56px;
+    --phone-claim-short: 34px;
+    --phone-claim-medium: 28px;
+    --phone-reaction-h: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-live-shell.room-frame .stamp-mark {
+    animation: none;
+  }
+}
+
+/* ── The podium close ─────────────────────────────────────────────────────────────────────────────────────── */
+
+/* The close also carries the play button, so at H-regular it holds a 34 room line and 80/64/48 plinths, which lets
+   the button sit fully on screen at 390x844. From H-tall up every size steps up to fill. */
+
+:root {
+  --phone-room-line: 34px;
+  --phone-plinth-1: 80px;
+  --phone-plinth-2: 64px;
+  --phone-plinth-3: 48px;
+  --phone-plinth-num: 32px;
+  --phone-podium-name: 16px;
+  --phone-podium-score: 20px;
+  --phone-close-text: 18px;
+}
+
+.phone-live-shell.room-frame .podium-close {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  color: var(--color-ink);
+}
+
+.phone-live-shell.room-frame .podium-close__absorb {
+  flex: 1 1 auto;
+  max-height: 32px;
+}
+
+.phone-live-shell.room-frame .podium-close__title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+}
+
+.phone-live-shell.room-frame .podium-close__kicker {
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.phone-live-shell.room-frame .podium-close__room {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: var(--phone-room-line);
+  font-weight: 600;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+/* The podium: 2nd, 1st, 3rd on one baseline, a YOU slot reserved over every column. */
+
+.phone-live-shell.room-frame .podium-stand {
+  display: grid;
+  grid-template-columns: repeat(var(--phone-podium-cols, 3), minmax(0, 1fr));
+  align-items: end;
+  column-gap: var(--kit-space-12);
+  margin-top: var(--kit-space-32);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.phone-live-shell.room-frame .podium-stand[data-count="2"] {
+  --phone-podium-cols: 2;
+  padding: 0 16.66%;
+}
+
+.phone-live-shell.room-frame .podium-stand[data-count="1"] {
+  --phone-podium-cols: 1;
+  padding: 0 33.33%;
+}
+
+.phone-live-shell.room-frame .podium-stand__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.phone-live-shell.room-frame .podium-stand__you {
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+/* The columns stand on one baseline, so a column with no YOU tag needs no slot above its name. */
+
+.phone-live-shell.room-frame .podium-stand__you:empty {
+  display: none;
+}
+
+.phone-live-shell.room-frame .you-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 var(--kit-space-8);
+  border-radius: var(--kit-radius-4);
+  background: var(--color-gold);
+  color: var(--color-on-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.phone-live-shell.room-frame .podium-stand__name {
+  max-width: 100%;
+  margin-top: var(--kit-space-4);
+  overflow: hidden;
+  font-size: var(--phone-podium-name);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.phone-live-shell.room-frame .podium-stand__score {
+  margin-top: var(--kit-space-4);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-podium-score);
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.phone-live-shell.room-frame .podium-stand__plinth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--phone-plinth-1);
+  margin-top: var(--kit-space-8);
+  border: 1px solid var(--kit-glass-border);
+  border-bottom: 0;
+  border-radius: var(--kit-radius-12) var(--kit-radius-12) 0 0;
+  background: var(--kit-glass-fill-strong);
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-plinth-num);
+  font-weight: 600;
+}
+
+.phone-live-shell.room-frame .podium-stand__col[data-place="1"] .podium-stand__plinth {
+  color: var(--color-gold);
+}
+
+.phone-live-shell.room-frame .podium-stand__col[data-place="2"] .podium-stand__plinth {
+  height: var(--phone-plinth-2);
+}
+
+.phone-live-shell.room-frame .podium-stand__col[data-place="3"] .podium-stand__plinth {
+  height: var(--phone-plinth-3);
+}
+
+/* The podium's own baseline is this line's top rule, so there is one hairline between them, not two. */
+
+.phone-live-shell.room-frame .podium-close__you {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--kit-space-12);
+  margin: 0;
+  padding: var(--kit-space-16) 0;
+  border-bottom: 1px solid var(--color-hairline);
+  font-size: var(--phone-you-text, var(--phone-close-text));
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.phone-live-shell.room-frame .podium-close__you svg {
+  flex: none;
+  margin-top: var(--kit-space-4);
+  color: var(--color-gold);
+}
+
+.phone-live-shell.room-frame .podium-close__takeaways {
+  margin-top: var(--kit-space-24);
+  padding: var(--kit-space-16);
+  border: 1px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-16);
+  background: var(--kit-glass-fill);
+}
+
+/* Saved commitments, when a player has any, sit in the same glass group as the takeaways. */
+
+.phone-live-shell.room-frame .podium-close .phone-closing-commitments {
+  margin-top: var(--kit-space-16);
+  padding: var(--kit-space-16);
+  border: 1px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-16);
+  background: var(--kit-glass-fill);
+}
+
+.phone-live-shell.room-frame .podium-close__takeaways-head {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  margin: 0;
+  font-size: var(--phone-close-text);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.phone-live-shell.room-frame .podium-close__takeaways-head svg {
+  flex: none;
+  color: var(--color-gold);
+}
+
+.phone-live-shell.room-frame .podium-close__list {
+  display: grid;
+  gap: var(--kit-space-12);
+  margin: var(--kit-space-12) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phone-live-shell.room-frame .podium-close__list li {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  column-gap: var(--kit-space-12);
+  text-wrap: pretty;
+  font-size: var(--phone-close-text);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.phone-live-shell.room-frame .podium-close__list li > span:first-child {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-weight: 600;
+}
+
+/* The one real next step, in the thumb zone. */
+
+.phone-live-shell.room-frame .podium-close__next {
+  margin-top: var(--kit-space-24);
+}
+
+.phone-live-shell.room-frame .podium-close__play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  border-radius: var(--kit-radius-12);
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  color: var(--color-on-gold);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.phone-live-shell.room-frame .podium-close__play:focus-visible {
+  outline: 2px solid var(--color-vax);
+  outline-offset: 2px;
+}
+
+@media (max-height: 719px) {
+  :root {
+    --phone-room-line: 30px;
+    --phone-plinth-num: 32px;
+    --phone-plinth-1: 72px;
+    --phone-plinth-2: 56px;
+    --phone-plinth-3: 48px;
+  }
+
+  .phone-live-shell.room-frame .podium-close__next {
+    position: sticky;
+    bottom: 0;
+    margin-top: var(--kit-space-24);
+    padding-top: var(--kit-space-24);
+    background: linear-gradient(to bottom, transparent, var(--color-stage-deep) var(--kit-space-24));
+  }
+
+  /* A solid strip under the sticky button covers the content box's bottom padding, so no scrolled text shows there. */
+
+  .phone-live-shell.room-frame .podium-close__next::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: calc(-1 * var(--kit-space-16));
+    left: calc(-1 * var(--kit-space-16));
+    height: calc(var(--kit-space-16) + env(safe-area-inset-bottom, 0px));
+    background: var(--color-stage-deep);
+  }
+}
+
+@media (min-height: 860px) {
+  :root {
+    --phone-room-line: 40px;
+    --phone-plinth-1: 136px;
+    --phone-plinth-2: 112px;
+    --phone-plinth-3: 88px;
+    --phone-plinth-num: 60px;
+    --phone-podium-name: 16px;
+    --phone-podium-score: 20px;
+    --phone-close-text: 20px;
+    --phone-you-text: 22px;
+  }
+
+  .phone-live-shell.room-frame .podium-stand {
+    margin-top: var(--kit-space-24);
+  }
+}
+
+/* At 390 wide the top gap comes down to 32 (16 of content box, 16 of absorber), and from H-regular up the podium
+   stands 16 further from what follows it, your line and the takeaways, so the button keeps its place. The 16 goes
+   above your line, not under it, because under it the line-to-takeaways gap would pass the 64px fill band. These
+   follow the base rules on purpose, since a rule of equal weight placed earlier would lose to them. */
+
+@media (max-width: 419px) {
+  .phone-live-shell.room-frame .podium-close__absorb {
+    max-height: var(--kit-space-16);
+  }
+}
+
+@media (max-width: 419px) and (min-height: 720px) {
+  .phone-live-shell.room-frame .podium-close__you {
+    padding-top: var(--kit-space-32);
+  }
+}
+
+/* Under 380 wide the takeaway heading and the longer takeaways wrap one line more than at 390, which pushed Play on
+   your own 30px below a 360 by 780 screen (and 6px below at 375). Here the room line takes the short-screen size, the
+   tallest plinth steps down to 64 and the podium and the takeaways each sit 8 closer, so the button sits fully on
+   screen again. The same width break the vote and result screens use above. Below 720 tall the sticky button above
+   already keeps it in reach. */
+
+@media (max-width: 379px) and (min-height: 720px) and (max-height: 859px) {
+  :root {
+    --phone-room-line: 30px;
+    --phone-plinth-1: 64px;
+    --phone-plinth-2: 56px;
+    --phone-plinth-3: 48px;
+  }
+
+  .phone-live-shell.room-frame .podium-stand {
+    margin-top: var(--kit-space-24);
+  }
+
+  .phone-live-shell.room-frame .podium-close__takeaways {
+    margin-top: var(--kit-space-16);
+  }
+}
+
+/* ── The final round ──────────────────────────────────────────────────────────────────────────────────────── */
+
+/* The slab caps rise by bucket and the type grows with them. The growth goes to the real numbers, the scores. */
+
+:root {
+  --phone-duel-headline: 40px;
+  --phone-duel-slab-max: 280px;
+  --phone-duel-rank: 56px;
+  --phone-duel-name: 36px;
+  --phone-duel-score: 72px;
+  --phone-duel-count: 96px;
+}
+
+.phone-live-shell.room-frame .duel-pick {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  color: var(--color-ink);
+}
+
+.phone-live-shell.room-frame .duel-pick__headline {
+  margin: var(--kit-space-8) 0 0;
+  color: var(--color-ink);
+  font-size: var(--phone-duel-headline);
+  font-weight: 600;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+/* The answer dock's rule: two finalist slabs sharing the height under the question. */
+
+.phone-live-shell.room-frame .duel-pick__dock {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  min-height: 0;
+  margin-top: var(--kit-space-24);
+}
+
+/* The pick acknowledgement runs to two lines on a narrow phone. Reserving both from the start keeps the slabs still
+   under the finger when it appears. */
+
+@media (max-width: 419px) {
+  .phone-live-shell.room-frame .duel-pick__dock .answer-dock__status {
+    min-height: 2lh;
+    text-wrap: balance;
+  }
+}
+
+.phone-live-shell.room-frame .duel-pick__slabs {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+  min-height: 0;
+}
+
+.phone-live-shell.room-frame .duel-pick__slab {
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  max-height: var(--phone-duel-slab-max);
+  padding: var(--kit-space-16) var(--kit-space-24);
+  text-align: left;
+}
+
+/* Once the duel starts, the slabs show the tally and take no tap. */
+
+.phone-live-shell.room-frame .duel-pick__slab:disabled {
+  cursor: default;
+}
+
+/* A reserved row inside the slab, so the pick label never lands on the score. */
+
+.phone-live-shell.room-frame .duel-pick__pick {
+  display: block;
+  height: 24px;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* The same 24px at the foot, so the body sits on the slab's true center. */
+
+.phone-live-shell.room-frame .duel-pick__slab::after {
+  content: "";
+  flex: none;
+  height: 24px;
+}
+
+/* The rank on the left across two rows, the name over the score beside it, so the score can grow with the slab. */
+
+.phone-live-shell.room-frame .duel-pick__body {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+  "rank who"
+  "rank score";
+  align-items: center;
+  column-gap: var(--kit-space-16);
+  row-gap: var(--kit-space-8);
+}
+
+/* After lineup the seed is gone and the slab reads as a scoreboard, the count on the right. */
+
+.phone-live-shell.room-frame .duel-pick:not([data-stage="lineup"]) .duel-pick__body {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "who score";
+}
+
+.phone-live-shell.room-frame .duel-pick:not([data-stage="lineup"]) .duel-pick__num {
+  font-size: var(--phone-duel-count);
+}
+
+.phone-live-shell.room-frame .duel-pick__rank {
+  grid-area: rank;
+  /* The rank's cap line sits on the name's: both boxes start together, and their cap tops land within 2px. */
+  align-self: start;
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-duel-rank);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.phone-live-shell.room-frame .duel-pick__who {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--kit-space-8);
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* The name and its YOU tag on one row, 8 apart. */
+
+.phone-live-shell.room-frame .duel-pick__who {
+  grid-area: who;
+  flex-direction: row;
+  align-items: center;
+}
+
+.phone-live-shell.room-frame .duel-pick__who .you-chip {
+  flex: none;
+}
+
+.phone-live-shell.room-frame .duel-pick__name {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: var(--phone-duel-name);
+  font-weight: 600;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The score and its caption sit at the slab's right edge. */
+
+.phone-live-shell.room-frame .duel-pick__score {
+  grid-area: score;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: var(--kit-space-4);
+  min-width: 0;
+  color: var(--color-gold);
+}
+
+.phone-live-shell.room-frame .duel-pick__num {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  font-family: var(--kit-font-mono);
+  font-size: var(--phone-duel-score);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The unit over every big number. */
+
+.phone-live-shell.room-frame .duel-tally__unit {
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.phone-live-shell.room-frame .duel-pick__slab[data-selected="true"] {
+  border-color: var(--color-gold);
+  background:
+  linear-gradient(160deg, color-mix(in srgb, var(--color-gold) 24%, transparent), transparent 70%),
+  var(--kit-glass-fill-strong);
+  box-shadow: none;
+}
+
+.phone-live-shell.room-frame .duel-pick__slab[data-selected="false"] {
+  opacity: 0.56;
+}
+
+.phone-live-shell.room-frame .duel-pick__slab[data-winner="true"] {
+  border-color: var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-on-gold);
+  opacity: 1;
+}
+
+/* At the result only the winner's count stays gold, so the other count never reads as a win. */
+
+.phone-live-shell.room-frame .duel-pick[data-stage="result"] .duel-pick__slab:not([data-winner="true"]) .duel-pick__score {
+  color: var(--color-ink-muted);
+}
+
+.phone-live-shell.room-frame .duel-pick__slab[data-winner="true"] :is(.duel-pick__rank, .duel-pick__score, .duel-pick__pick, .duel-tally__unit) {
+  color: var(--color-on-gold);
+}
+
+/* The YOU chip is gold on gold on the winner's slab, so it turns over. */
+
+.phone-live-shell.room-frame .duel-pick__slab[data-winner="true"] .you-chip {
+  background: var(--color-on-gold);
+  color: var(--color-gold);
+}
+
+@media (max-height: 719px) {
+  :root {
+    --phone-duel-headline: 30px;
+    --phone-duel-slab-max: 240px;
+    --phone-duel-rank: 48px;
+    --phone-duel-name: 28px;
+    --phone-duel-score: 40px;
+    --phone-duel-count: 56px;
+  }
+}
+
+@media (min-height: 860px) {
+  :root {
+    --phone-duel-headline: 44px;
+    --phone-duel-slab-max: 336px;
+    --phone-duel-rank: 64px;
+    --phone-duel-name: 40px;
+    --phone-duel-score: 80px;
+    --phone-duel-count: 112px;
+  }
+}

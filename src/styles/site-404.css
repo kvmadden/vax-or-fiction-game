@@ -1,0 +1,185 @@
+/* The static root 404.html's own rules (VOF-45). Real tokens only, no copied hex: imports the
+   same tokens.css chain every other page uses. */
+@import './tokens.css';
+@import './cursor-base.css';
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/fonts/ibm-plex-sans-latin-700-normal.woff2') format('woff2');
+}
+
+@keyframes site-404-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+.site-404 {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-stage-deep);
+  background-image: radial-gradient(60% 50% at 50% 28%, color-mix(in srgb, var(--color-gold) 14%, transparent), transparent);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-weight: 400;
+  padding: var(--kit-space-24);
+}
+
+.site-404-card {
+  width: min(100%, 560px);
+  text-align: center;
+  padding: var(--kit-space-48) var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-glass);
+  background-image: linear-gradient(var(--color-film), var(--color-film));
+  box-shadow: var(--kit-rim), var(--kit-drop);
+  animation: site-404-reveal 500ms var(--ease-standard) both;
+}
+
+/* Compact text lockup, shared visual treatment with src/screens/site/site-page.css's .site-brand
+   (a separate static HTML entry cannot import a React component's CSS module, so the small
+   ruleset is kept in sync by hand between the two). */
+.site-404-brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--kit-touch);
+  color: var(--color-ink);
+  text-decoration: none;
+  margin-bottom: var(--kit-space-24);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--kit-space-4);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.site-brand-vax {
+  color: var(--color-vax);
+}
+
+.site-brand-or {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-dim);
+}
+
+.site-brand-fiction {
+  color: var(--color-fiction);
+}
+
+.site-404-eyebrow {
+  margin: 0 0 var(--kit-space-8);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.site-404-title {
+  margin: 0 0 var(--kit-space-12);
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.site-404-sub {
+  margin: 0 0 var(--kit-space-32);
+  color: var(--color-ink-muted);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.site-404-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+}
+
+/* F-33: matches .site-page-cta's radius-8. Chips and avatars keep the full pill radius, a
+   button does not. */
+.site-404-primary,
+.site-404-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--kit-touch);
+  padding: 0 var(--kit-space-24);
+  border-radius: var(--kit-radius-8);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 180ms var(--ease-standard), filter 180ms ease, border-color 180ms ease;
+}
+
+.site-404-primary {
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  color: var(--color-on-gold);
+}
+
+.site-404-secondary {
+  border: 1px solid var(--color-film-border);
+  background-color: var(--color-glass);
+  color: var(--color-ink);
+}
+
+.site-404-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.site-404-secondary:hover {
+  border-color: color-mix(in srgb, var(--color-gold) 36%, var(--color-film-border));
+}
+
+@media (min-width: 640px) {
+  .site-404-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-404-card {
+    animation: none;
+  }
+
+  .site-404-primary:hover {
+    transform: none;
+  }
+}

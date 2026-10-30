@@ -1,0 +1,99 @@
+/* Entry screen's small companion lift (VOF-45): a staggered fade-rise on the existing stack, and
+   a quiet footer into the site pages. The primitives (.entry-kicker, .entry-hero-art, and so on)
+   keep every rule already scoped to them in opening-stage.css; this only adds motion and the
+   footer. Global on purpose: Entry.tsx is part of the game's always-loaded entry bundle. The
+   site-page-specific rules live with the component that uses them, src/screens/site/site-page.css,
+   so they ship only inside the site pages' own lazy chunks. */
+
+@keyframes site-page-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.entry-screen-hero .entry-hero-art,
+.entry-screen-hero .entry-kicker,
+.entry-screen-hero .entry-orientation,
+.entry-screen-hero .entry-actions {
+  animation: site-page-reveal 620ms var(--ease-standard) both;
+}
+
+.entry-screen-hero .entry-hero-art { animation-delay: 0ms; }
+.entry-screen-hero .entry-kicker { animation-delay: 90ms; }
+.entry-screen-hero .entry-orientation { animation-delay: 150ms; }
+.entry-screen-hero .entry-actions { animation-delay: 220ms; }
+
+.entry-footer {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--kit-space-4);
+  animation: site-page-reveal 620ms var(--ease-standard) 300ms both;
+}
+
+.entry-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--kit-touch);
+  padding: 0 var(--kit-space-12);
+  border-radius: var(--kit-radius-full);
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.entry-footer a:hover,
+.entry-footer a:focus-visible {
+  color: var(--color-ink);
+  background-color: var(--color-glass);
+}
+
+/* Phone widths only. At 390 and 430 the five links used to wrap four over one, leaving Credits alone on a
+   second centered line. From 390 wide they fit on one line at 12px with every target 46px or wider, so they sit on
+   one line. Wrapping stays allowed, so enlarged system text wraps instead of running off the side. Narrower, they do
+   not fit, so they sit as two balanced rows, three over two: a zero-height breaker takes a whole line after the
+   third link. */
+@media (max-width: 479px) {
+  .entry-footer {
+    gap: var(--kit-space-8);
+  }
+
+  .entry-footer a {
+    padding: 0 var(--kit-space-4);
+  }
+}
+
+@media (max-width: 389px) {
+  .entry-footer {
+    flex-wrap: wrap;
+    gap: 0 var(--kit-space-4);
+  }
+
+  .entry-footer::after {
+    content: "";
+    flex-basis: 100%;
+    order: 1;
+  }
+
+  .entry-footer a {
+    padding: 0 var(--kit-space-12);
+  }
+
+  .entry-footer a:nth-child(n + 4) {
+    order: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry-screen-hero .entry-hero-art,
+  .entry-screen-hero .entry-kicker,
+  .entry-screen-hero .entry-orientation,
+  .entry-screen-hero .entry-actions,
+  .entry-footer {
+    animation: none;
+  }
+}

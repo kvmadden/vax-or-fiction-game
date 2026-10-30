@@ -1,0 +1,1056 @@
+{
+  "flagship:q10": {
+    "bankId": "flagship:q10",
+    "copies": [
+      "flagship-r2:q10"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "9e95252bbde5030dffc0f5927170e4be0217ea3f06e880106811c21df9076181",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "alternate",
+    "conceptId": "pneumococcal-age-eligibility",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-50-64"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs the current pneumococcal age of 50 for healthy adults. Many still remember the old routine age of 65.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the current pneumococcal age of 50 for healthy adults. Many still remember the old routine age of 65.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "Same one detail as the 2024 change: healthy adults become eligible for pneumococcal vaccine at 50, not 65.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumococcal-recommendations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "pneumococcal:q1": {
+    "bankId": "pneumococcal:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 3,
+    "textHash": "f6924109d8711d59f565816fd64f825dec0a4027a48755eefc2838c41627ec3a",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "alternate",
+    "conceptId": "pneumococcal-universal-recommendation-65",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Pneumococcal vaccine at 65 is long-held knowledge most adults share. Stale framing is a content defect, not a level.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows pneumococcal vaccine is routine at 65, long-held knowledge.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Routine pneumococcal recommendation at 65, true as worded but built on the pre-2024 routine age.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Pneumococcal vaccine at 65 is long-held knowledge most adults share. Stale framing is a content defect, not a level.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumo-acip"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "pneumococcal:q2": {
+    "bankId": "pneumococcal:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "fc64669b237db63982bbbe8a21e8b7f70027eb21453ab07fd45b321ba85c742d",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "alternate",
+    "conceptId": "pneumococcal-disease-scope",
+    "tags": [
+      "misconception",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows a pneumococcal shot is not a flu or COVID-19 shot, obvious to anyone who gives vaccines.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows a pneumococcal shot is not a flu or COVID-19 shot, obvious to anyone who gives vaccines.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Anchor for easy: anyone who gives vaccines knows a pneumococcal shot is not a flu or COVID-19 shot.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumo-basics"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "pneumococcal:q3": {
+    "bankId": "pneumococcal:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "2e7be2d856f5d4fb299f59d76615a07da84a81797653a821119459f9e5887b5b",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-single-dose-product",
+    "tags": [
+      "schedule",
+      "product",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows PCV20 and PCV21 finish adult vaccination without a PPSV23 dose.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows PCV20 and PCV21 finish adult vaccination without a PPSV23 dose.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard rule: Prevnar 20 or Capvaxive alone completes adult pneumococcal vaccination, with no PPSV23 after.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "fda-prevnar-20"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "pneumococcal:q4": {
+    "bankId": "pneumococcal:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 3,
+    "textHash": "449c17c349aab6eafed0b5d7e962e860023cf22b7d1db0d15e7923684b1c776f",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-chronic-condition-eligibility-under-65",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "chronic-conditions"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Needs the standard screening rule that asthma or diabetes qualifies adults under 65. Newer staff and the public split on it.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows adults under 65 with diabetes or asthma are vaccinated now, not at 65, standard risk-based practice.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Delaying protection for people with asthma or diabetes sounds wrong to most, and both are standard risk conditions.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Needs the standard screening rule that asthma or diabetes qualifies adults under 65. Newer staff and the public split on it.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumo-risk"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "pneumococcal:q5": {
+    "bankId": "pneumococcal:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 3,
+    "textHash": "26a638c010ecfac904683d18a819758c345171ddc8b847120c3b8437b8bb9b9c",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "alternate",
+    "conceptId": "pneumococcal-disease-scope",
+    "tags": [
+      "burden"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Pneumococcal disease reaching the blood and brain is basic, and the claim sounds right to anyone. Invasive and bacteremia are jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows invasive pneumococcal disease means bloodstream infection and meningitis. Bacteremia is jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Pneumococcal infection reaching the blood and brain is standard knowledge, and the claim sounds right to anyone.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "Pneumococcal disease reaching the blood and brain is basic, and the claim sounds right to anyone. Invasive and bacteremia are jargon.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumo-ipd"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "pneumococcal:q6": {
+    "bankId": "pneumococcal:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 4,
+    "textHash": "9b633087440cfe281d09979ae376ea1a5ef89f17cc831d2dd9c716d7a9039489",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-prior-pcv13-sequencing",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "One product-history detail: a PCV13-only history does not complete adult pneumococcal vaccination today. Fewer technicians know it.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows a PCV13-only history is not complete under current guidance, a case pharmacists meet often.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "Product-history detail: a past PCV13 dose alone does not complete adult pneumococcal vaccination today.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "One product-history detail: a PCV13-only history does not complete adult pneumococcal vaccination today. Fewer technicians know it.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumo-pcv13-transition"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "pneumococcal:q7": {
+    "bankId": "pneumococcal:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "ca8dd2556884da36b4b7870d5841210a9aec9ff80a0d7616aec6b67500e7cc5c",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-sequential-dosing",
+    "tags": [
+      "schedule",
+      "administration"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs the one-year PPSV23 interval after PCV15 in immunocompetent adults, a specific detail.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the one-year PPSV23 interval after PCV15 in immunocompetent adults, a specific detail.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One specific interval: PCV15 is followed by PPSV23 at least one year later in immunocompetent adults.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-pcv15-ppsv23"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "pneumococcal:q8": {
+    "bankId": "pneumococcal:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "2b084a087439447ac995f3c7d16b375c0d26808c0a453b15367cf99e2cbbe0fc",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "alternate",
+    "conceptId": "pneumococcal-vaccine-composition",
+    "tags": [
+      "product"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows pneumococcal vaccines are not live and cannot cause pneumonia. Live attenuated is jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows pneumococcal vaccines are not live and cannot cause pneumonia. Live attenuated is jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Pneumococcal vaccines are not live, and the idea that the shot causes pneumonia is a myth staff reject.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumo-vaccine-composition"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "season-2:q14": {
+    "bankId": "season-2:q14",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "feaef718ac289f6fc872e167a8bc5a9dfc931f2bc588c448159ff974976cd07a",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "alternate",
+    "conceptId": "pneumococcal-age-eligibility",
+    "tags": [
+      "schedule",
+      "product"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-50-64"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows PCV20 needs no routine boosters. Standard, though PPSV23 revaccination rules can confuse.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows PCV20 needs no routine boosters. Standard, though PPSV23 revaccination rules can confuse.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard pneumococcal rule: one Prevnar 20 dose completes the series, with no routine five-year boosters.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumo-conjugate-guidance"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q4": {
+    "bankId": "season-2:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "a8e6e775d4607af589944a313c22554e017e5bdedcb1fe8b8bb9515c699c525d",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-chronic-condition-risk",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "chronic-conditions"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows diabetes raises infection risk, including pneumococcal disease, a well-known risk condition.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows diabetes raises infection risk, including pneumococcal disease, a well-known risk condition.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Diabetes raising infection risk is widely known, and it is a standard pneumococcal risk condition.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumo-recommendations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q1": {
+    "bankId": "vax-or-fiction:q1",
+    "copies": [
+      "flagship:q2",
+      "flagship-r2:q2"
+    ],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "2942fd05788291802c2c3a287f46303bf56038ab1949c6078dc9739e9e7ed706",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-disease-scope",
+    "tags": [
+      "product",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows pneumococcal vaccines also prevent meningitis and bloodstream infection. The word only signals the myth.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows pneumococcal vaccines also prevent meningitis and bloodstream infection. The word only signals the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Knows pneumococcal vaccines also prevent bloodstream infection and meningitis. The word only flags the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumococcal-disease",
+        "cdc-pneumococcal-recommendations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "vax-or-fiction:q14": {
+    "bankId": "vax-or-fiction:q14",
+    "copies": [],
+    "kind": "estimate",
+    "textVersion": 1,
+    "textHash": "0cb7a7bd6cc1d5ccb2ee9a5a55287fd509708f80b1a230b4e099992e62cf6bd4",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-coverage-rate",
+    "tags": [
+      "coverage"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-65-plus"
+    ],
+    "skill": "estimation",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Estimate. The keyed 60 to 75 range is the natural middle guess for coverage, though 45 to 60 tempts. Not counterintuitive, so not hard.",
+      "provisional": true,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the 2024 share of adults 65+ ever given a pneumococcal vaccine, about 65%, with neighboring ranges plausible.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Estimate. About two in three older adults report a past pneumococcal dose, the middle range, though 45 to 60 percent tempts.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Estimate. The keyed 60 to 75 range is the natural middle guess for coverage, though 45 to 60 tempts. Not counterintuitive, so not hard.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-adult-vaccination-coverage"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "seasonal",
+      "reviewBy": "2027-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q22": {
+    "bankId": "vax-or-fiction:q22",
+    "copies": [],
+    "kind": "which-patient",
+    "textVersion": 1,
+    "textHash": "6eb4917ee5738792f30e1189b82b1fcff022758195ac8706e7a6414be3374a4f",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-eligibility-case",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "application",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Raters agree. Applies the age-50 pneumococcal conjugate threshold across four adults, treating an unknown history as none.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Applies the age-50 pneumococcal conjugate threshold across four adults, treating an unknown history as none.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One detail, the age-50 pneumococcal threshold, applied across four adults. An unknown history counts as none.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "t-pneumococcal"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q7": {
+    "bankId": "vax-or-fiction:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "935e338aee1d05d6661dabd25f580a48cd8ff46150e830479fbe069ec083f688",
+    "status": "live",
+    "subject": "pneumococcal",
+    "rotation": "core",
+    "conceptId": "pneumococcal-age-eligibility",
+    "tags": [
+      "eligibility"
+    ],
+    "vaccines": [
+      "pneumococcal"
+    ],
+    "populations": [
+      "adults-50-64"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs the current pneumococcal age of 50 for healthy adults, a changed threshold many still remember as 65.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the current pneumococcal age of 50 for healthy adults, a changed threshold many still remember as 65.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One detail: the routine pneumococcal age dropped from 65 to 50 in 2024. Many still remember 65.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pneumococcal-recommendations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  }
+}

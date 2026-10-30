@@ -1,0 +1,734 @@
+/* Phone critique pass (2026-09-14, items 7 · 10 · 11 · 14 · 22 · 23). New rules only; the phone section of
+   presentation.css keeps the rules that already existed (edited in place). Pulled in by the @import at the top
+   of presentation.css (a .tsx import would break the node unit runner), so these rules sit BEFORE the phone
+   section in the cascade: anything that must beat an existing declaration carries a state attribute for
+   specificity, never a bare repeat of the selector. Design tokens only; spacing on the 4/8/12/16/24/32/48/64
+   scale; 16px text floor on the phone; 44px control floor. The classic phone (VOF-28) is the master. */
+
+/* ── Item 11 · the participant's name rides in the 56px bar; the YOU pill is gone ──────────────────── */
+
+.phone-live-shell .phone-bar-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.phone-live-shell .phone-app-bar > div {
+  min-height: 48px !important;
+}
+
+/* The badge row and its "Locked" word sit on the 16px floor. */
+.phone-vote-badge,
+.phone-vote-badge > span,
+.phone-vote-badge > button {
+  font-size: 16px !important;
+}
+
+/* ── Item 23 · one mark per screen, one backdrop that survives Join ────────────────────────────────── */
+
+/* Once registered the bar carries the classic's compact stacked mark. 2026-09-15: the word belongs in it, so
+   the mark reads VAX or above FICTION? The syringe and the OR's flanking rules stay hidden at this size. The or takes
+   the bar's own 14px, the size FICTION already uses here, and both the or and the question mark take the entry's
+   colors: the or in white, the question mark in FICTION's orange. */
+.phone-live-shell .phone-app-bar [data-role="phone-branding"][data-mark="stacked"] {
+  width: auto;
+  min-width: 72px;
+  overflow: visible;
+  line-height: 1;
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"][data-mark="stacked"] .show-wordmark--stacked {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+  justify-content: start;
+  column-gap: var(--kit-space-4);
+  row-gap: 0;
+  font-size: 22px;
+  filter: drop-shadow(0 var(--kit-space-4) var(--kit-space-8) var(--color-shadow-deep));
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"][data-mark="stacked"] .show-wordmark__vax {
+  grid-column: 1;
+  font-size: 22px;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"][data-mark="stacked"] .show-wordmark__or {
+  grid-column: 2;
+  width: auto;
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  line-height: 1;
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"][data-mark="stacked"] .show-wordmark__fiction {
+  grid-column: 1 / -1;
+  gap: var(--kit-space-4);
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.phone-live-shell .phone-app-bar [data-role="phone-branding"][data-mark="stacked"] .show-wordmark__question {
+  display: inline;
+  margin-inline-start: 0;
+  color: inherit;
+}
+
+/* Before Join the hero is the one mark, so the bar starts with the room chip and ends with the dot. */
+.phone-live-shell [data-role="phone-status-band"][data-leads="true"] {
+  justify-content: space-between;
+}
+
+/* ── Item 7 · the tapped answer lights up, nothing reflows, no dead buttons ─────────────────────────── */
+
+/* One reserved line at the top of the dock: "Make your call" → "Your answer is in". */
+.phone-vote-badge {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0 0 var(--kit-space-12);
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.phone-vote-badge[data-state="in"],
+.phone-vote-badge[data-state="locked"] {
+  color: var(--color-ink);
+}
+
+.phone-vote-badge[data-state="sending"] {
+  color: var(--color-gold);
+}
+
+/* Binary: the chosen pad fills solid (TRUE vax, FALSE fiction) with dark text; the other pad steps back. */
+.phone-binary-choices .phone-vote-choice--true[data-selected="true"] {
+  border-color: var(--color-vax) !important;
+  background-color: var(--color-vax) !important;
+  background-image: none !important;
+  color: var(--color-stage-deep) !important;
+  box-shadow: 0 0 var(--kit-space-32) -4px color-mix(in srgb, var(--color-vax) 80%, transparent), var(--kit-rim);
+}
+
+.phone-binary-choices .phone-vote-choice--false[data-selected="true"] {
+  border-color: var(--color-fiction) !important;
+  background-color: var(--color-fiction) !important;
+  background-image: none !important;
+  color: var(--color-stage-deep) !important;
+  box-shadow: 0 0 var(--kit-space-32) -4px color-mix(in srgb, var(--color-fiction) 80%, transparent), var(--kit-rim);
+}
+
+.phone-vote-dock[data-answered="true"] .phone-vote-choice[data-selected="false"] {
+  opacity: 0.4;
+  box-shadow: none !important;
+}
+
+/* Lettered cards: the chosen card fills cobalt with the letter badge inverted; the others dim to 55%. */
+.phone-option-list .phone-vote-choice[data-selected="true"] {
+  border-color: var(--color-accent-cobalt) !important;
+  background-color: var(--color-accent-cobalt) !important;
+  color: var(--color-stage-deep) !important;
+  box-shadow: 0 0 var(--kit-space-24) -4px color-mix(in srgb, var(--color-accent-cobalt) 70%, transparent), var(--kit-rim);
+}
+
+.phone-option-list .phone-vote-choice[data-selected="true"] .phone-choice__key {
+  background-color: var(--color-stage-deep);
+  color: var(--color-ink);
+}
+
+.phone-option-list .phone-vote-choice[data-selected="true"] .phone-choice__text {
+  color: var(--color-stage-deep);
+}
+
+.phone-vote-dock[data-answered="true"] .phone-option-list .phone-vote-choice[data-selected="false"] {
+  opacity: 0.55;
+}
+
+/* Estimate: the same on the gold range card. */
+.phone-range-grid .phone-vote-choice[data-selected="true"] {
+  border-color: var(--color-gold) !important;
+  background-color: var(--color-gold) !important;
+  color: var(--color-on-gold) !important;
+  box-shadow: 0 0 var(--kit-space-24) -4px color-mix(in srgb, var(--color-gold) 70%, transparent), var(--kit-rim);
+}
+
+.phone-range-grid .phone-vote-choice[data-selected="true"] .phone-choice__key,
+.phone-range-grid .phone-vote-choice[data-selected="true"] .phone-choice__range {
+  color: var(--color-on-gold);
+}
+
+/* Locked: the chosen pad keeps its fill, only quieter, so the participant still sees what they said. */
+.phone-vote-dock[data-locked="true"] .phone-binary-choices .phone-vote-choice--true[data-selected="true"] {
+  border-color: var(--color-vax) !important;
+  background-color: var(--color-vax) !important;
+  opacity: 0.85;
+  filter: saturate(0.7);
+}
+
+.phone-vote-dock[data-locked="true"] .phone-binary-choices .phone-vote-choice--false[data-selected="true"] {
+  border-color: var(--color-fiction) !important;
+  background-color: var(--color-fiction) !important;
+  opacity: 0.85;
+  filter: saturate(0.7);
+}
+
+.phone-vote-dock[data-locked="true"] .phone-option-list .phone-vote-choice[data-selected="true"] {
+  border-color: var(--color-accent-cobalt) !important;
+  background-color: var(--color-accent-cobalt) !important;
+  opacity: 0.85;
+  filter: saturate(0.7);
+}
+
+.phone-vote-dock[data-locked="true"] .phone-range-grid .phone-vote-choice[data-selected="true"] {
+  border-color: var(--color-gold) !important;
+  background-color: var(--color-gold) !important;
+  opacity: 0.85;
+  filter: saturate(0.7);
+}
+
+/* Reactions: the tapped button fills gold, the others step back, one per reveal. */
+.phone-reveal-surface [data-role="phone-reactions"] button[data-selected="true"] {
+  border-color: var(--color-gold) !important;
+  background-color: var(--color-gold) !important;
+  color: var(--color-on-gold) !important;
+  opacity: 1;
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] button[data-selected="false"] {
+  opacity: 0.5;
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] button:hover:not(:disabled) {
+  border-color: var(--color-gold) !important;
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] button:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] button:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] button:disabled {
+  cursor: default;
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] button[data-selected="false"]:disabled {
+  opacity: 0.55;
+}
+
+.phone-reveal-surface [data-role="phone-reactions"] button[data-selected="true"] .phone-reaction__emoji {
+  filter: drop-shadow(0 1px 0 var(--color-stage-deep));
+}
+
+.phone-reveal-surface .phone-reaction-ack {
+  min-height: 24px;
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* ── Finite live screens · question → result → explanation ─────────────────────────────────────────── */
+
+/* PhoneLayout owns the finite viewport. These screen roots may shrink inside it; none establishes a second
+   viewport floor. The visual language stays in presentation.css: this block only restores normal flow. */
+.phone-live-shell.phone-shell .phone-app-content[data-role="phone-content"] {
+  min-height: 0 !important;
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), var(--kit-space-16)) !important;
+}
+
+/* QUEUED-COMMENTS: these screens fit a canonical phone at its full 390x844 or 430x932 viewport, so
+   nothing scrolls there. That holds only at that full height: a real phone in Safari loses roughly 70
+   to 100px to its address bar and toolbars, and a phone held sideways or a small phone loses far more,
+   so those scroll instead of clipping answers and buttons (PHO-UIUX-01). The scroll never chains into
+   a pull-to-refresh that would drop the room. */
+.phone-live-shell.phone-shell .phone-app-content[data-role="phone-content"]:has(> :is(.phone-question-screen, .phone-result-screen, .phone-explanation-screen)) {
+  overflow-y: auto !important;
+  overscroll-behavior-y: contain;
+}
+
+.phone-live-shell .phone-question-screen,
+.phone-live-shell .phone-result-screen,
+.phone-live-shell .phone-explanation-screen {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+/* Answer cards retain their existing colour and selected glow. Only their footprint changes: full-width,
+   normal-flow cards rather than fixed-height pads or letter bubbles. */
+.phone-live-shell .phone-question-screen .phone-option-list {
+  width: 100%;
+}
+
+.phone-live-shell .phone-question-screen .phone-option-list .phone-vote-choice {
+  width: 100%;
+}
+
+.phone-live-shell .phone-question-screen .phone-option-list .phone-choice__key {
+  min-width: auto;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent !important;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.phone-live-shell .phone-question-screen .phone-option-list .phone-vote-choice[data-selected="true"] .phone-choice__key {
+  background: transparent !important;
+  color: var(--color-stage-deep);
+}
+
+.phone-live-shell .phone-question-screen .phone-binary-choices .phone-vote-choice {
+  min-height: 72px !important;
+  padding: var(--kit-space-12) var(--kit-space-16) !important;
+  border-width: var(--kit-space-4) !important;
+  border-radius: var(--kit-radius-16) !important;
+  font-size: 20px;
+}
+
+.phone-live-shell .phone-question-screen .phone-choice-receipt {
+  display: grid;
+  gap: var(--kit-space-4);
+  min-height: 44px;
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-film);
+  color: var(--color-ink);
+}
+
+.phone-live-shell .phone-question-screen .phone-choice-receipt__label {
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* F-05: the locked-and-answered receipt loses its own card chrome, since the top status slot
+   already says "Votes locked" and the gold line below already says the reveal is next. The
+   answer becomes the one thing this card shows, in the tone of the choice itself. Scoped to
+   [data-role="phone-choice-receipt"], not the class alone: the sat-out receipt shares the same
+   class but carries a different role, and must not pick up this size or chrome. */
+.phone-live-shell .phone-question-screen [data-role="phone-choice-receipt"][data-locked="true"] {
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+.phone-live-shell .phone-question-screen [data-role="phone-choice-receipt"][data-locked="true"] strong {
+  display: block;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-ink);
+}
+
+/* A lettered kind's answer is a full sentence, not a word, so it stays well under the question's
+   own size instead of outsizing it at 34px. */
+.phone-live-shell .phone-question-screen [data-role="phone-choice-receipt"][data-locked="true"][data-kind="myth-among-three"] strong,
+.phone-live-shell .phone-question-screen [data-role="phone-choice-receipt"][data-locked="true"][data-kind="which-patient"] strong {
+  font-size: 22px;
+}
+
+.phone-live-shell .phone-question-screen [data-role="phone-choice-receipt"][data-locked="true"] strong[data-answer-token="true"] {
+  color: var(--color-vax);
+}
+
+.phone-live-shell .phone-question-screen [data-role="phone-choice-receipt"][data-locked="true"] strong[data-answer-token="false"] {
+  color: var(--color-fiction);
+}
+
+.phone-live-shell .phone-question-screen .phone-question-continue {
+  display: grid;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.phone-live-shell .phone-question-screen .phone-question-continue p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.phone-live-shell .phone-question-screen .phone-question-continue button {
+  width: 100%;
+  padding: var(--kit-space-12) var(--kit-space-16);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.phone-live-shell .phone-join-continue:hover:not(:disabled),
+.phone-live-shell .phone-join-next [data-action="return-to-join-form"]:hover:not(:disabled),
+.phone-live-shell .phone-question-screen .phone-question-continue button:hover:not(:disabled),
+.phone-live-shell .phone-reveal-continue:hover:not(:disabled),
+.phone-live-shell .phone-reveal-return:hover:not(:disabled),
+.phone-live-shell .phone-order-page-nav button:hover:not(:disabled),
+.phone-live-shell .phone-acknowledgement-controls button:hover:not(:disabled),
+.phone-live-shell .phone-change-answer:hover:not(:disabled),
+.phone-live-shell .phone-review-question:hover:not(:disabled),
+.phone-live-shell [data-action="review-question"]:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--color-gold) 36%, var(--color-film-border));
+  filter: brightness(1.06);
+}
+
+.phone-live-shell .phone-join-continue:active:not(:disabled),
+.phone-live-shell .phone-join-next [data-action="return-to-join-form"]:active:not(:disabled),
+.phone-live-shell .phone-question-screen .phone-question-continue button:active:not(:disabled),
+.phone-live-shell .phone-reveal-continue:active:not(:disabled),
+.phone-live-shell .phone-reveal-return:active:not(:disabled),
+.phone-live-shell .phone-order-page-nav button:active:not(:disabled),
+.phone-live-shell .phone-acknowledgement-controls button:active:not(:disabled),
+.phone-live-shell .phone-change-answer:active:not(:disabled),
+.phone-live-shell .phone-review-question:active:not(:disabled),
+.phone-live-shell [data-action="review-question"]:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.phone-live-shell .phone-join-continue:focus-visible,
+.phone-live-shell .phone-join-next [data-action="return-to-join-form"]:focus-visible,
+.phone-live-shell .phone-question-screen .phone-question-continue button:focus-visible,
+.phone-live-shell .phone-reveal-continue:focus-visible,
+.phone-live-shell .phone-reveal-return:focus-visible,
+.phone-live-shell .phone-order-page-nav button:focus-visible,
+.phone-live-shell .phone-acknowledgement-controls button:focus-visible,
+.phone-live-shell .phone-change-answer:focus-visible,
+.phone-live-shell .phone-review-question:focus-visible,
+.phone-live-shell [data-action="review-question"]:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.phone-live-shell .phone-join-continue:disabled,
+.phone-live-shell .phone-order-page-nav button:disabled,
+.phone-live-shell .phone-question-screen .phone-question-continue button:disabled,
+.phone-live-shell .phone-change-answer:disabled,
+.phone-live-shell .phone-review-question:disabled,
+.phone-live-shell [data-action="review-question"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+.phone-live-shell .phone-result-screen {
+  justify-content: flex-start;
+}
+
+.phone-live-shell .phone-explanation-screen [data-role="reveal-citations"] a,
+.phone-live-shell .phone-explanation-screen [data-role="reveal-citations"] span {
+  overflow-wrap: anywhere;
+}
+
+/* ── Item 14 · a ≥900px layout for attendees who join on the laptop they are in Teams on ───────────── */
+
+/* The code screen sits in a shell that is already 100dvh; its own 100dvh floor plus the content padding scrolled
+   every window by 16px (856 in an 800px window). The shell keeps the floor; the card column does not. */
+.phone-join-container.phone-code-screen {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.phone-live-shell .phone-join-container.phone-join-source {
+  min-height: 0;
+}
+
+@media (min-width: 900px) {
+  /* These selectors carry `.phone-shell` for specificity: this sheet is imported before the phone section of
+     presentation.css, whose 398px column and 520px floating shell would otherwise win on order. */
+  .phone-live-shell.phone-shell {
+    max-width: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* The bar spans the window. */
+  .phone-live-shell.phone-shell .phone-app-bar > div {
+    max-width: none;
+    padding: 0 var(--kit-space-8);
+  }
+
+  .phone-live-shell.phone-shell .phone-app-content[data-role="phone-content"] {
+    padding: var(--kit-space-24) var(--kit-space-32) var(--kit-space-32) !important;
+  }
+
+  /* One 640px column for join, waiting, reveal and closing. */
+  .phone-live-shell.phone-shell .phone-app-content > *,
+  .phone-live-shell.phone-shell .phone-reveal-surface,
+  .phone-live-shell.phone-shell .phone-closing-surface {
+    max-width: 640px !important;
+  }
+
+  /* The question: statement on the left, the dock on the right, four cards in two columns so a 4-choice
+     question fits an 800px window. */
+  .phone-live-shell.phone-shell .phone-vote-surface {
+    display: grid !important;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+    gap: var(--kit-space-32) !important;
+    max-width: 960px !important;
+  }
+
+  .phone-live-shell .phone-vote-surface .phone-vote-hero {
+    padding-top: 0 !important;
+  }
+
+  .phone-live-shell .phone-vote-surface .phone-vote-stem {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+  }
+
+  .phone-live-shell .phone-vote-dock .phone-option-list:not(.phone-range-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .phone-live-shell .phone-vote-dock .phone-option-list .phone-vote-choice {
+    align-items: flex-start;
+  }
+
+  .phone-live-shell .phone-binary-choices .phone-vote-choice {
+    min-height: 156px !important;
+  }
+
+  /* Waiting: the words, centred in the window. */
+  .phone-live-shell .phone-wait-card {
+    padding-bottom: var(--kit-space-64);
+  }
+}
+.phone-reveal-surface .phone-takeaway-card p {
+  font-size: 18px !important;
+  line-height: 1.45;
+}
+.phone-reveal-surface .phone-takeaway-card p:first-of-type {
+  font-size: 20px !important;
+  font-weight: 500;
+}
+.phone-reveal-order {
+  display: grid;
+  gap: var(--kit-space-12);
+  margin: var(--kit-space-16) 0;
+  padding-left: var(--kit-space-24);
+  list-style: decimal;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.phone-reveal-surface:has([data-kind='order']) .phone-takeaway-card p { white-space: pre-line; }
+
+/* A compact acknowledgement is its own focused screen: receipt, confidence, and two explicit routes.
+   It deliberately does not repeat a long prompt above its controls. */
+.phone-live-shell .phone-question-screen [data-role="phone-acknowledgement-top"] {
+  align-items: flex-start;
+  min-height: 0;
+}
+
+.phone-live-shell .phone-question-screen .phone-acknowledgement-controls {
+  display: grid;
+  gap: var(--kit-space-12);
+}
+
+.phone-live-shell .phone-question-screen .phone-acknowledgement-controls .phone-conviction-row {
+  display: grid;
+  gap: var(--kit-space-8);
+}
+
+.phone-live-shell .phone-question-screen .phone-conviction-hint {
+  margin: 0;
+}
+
+.phone-live-shell .phone-question-screen .phone-acknowledgement-controls .phone-conviction {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--kit-space-8);
+}
+
+.phone-live-shell .phone-question-screen .phone-acknowledgement-controls .phone-conviction button,
+.phone-live-shell .phone-question-screen .phone-acknowledgement-actions button {
+  width: 100%;
+}
+
+.phone-live-shell .phone-question-screen .phone-acknowledgement-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--kit-space-8);
+}
+
+/* F-07 corrected this from two stacked labels to one kicker row ("TRUE OR FALSE? · EXPLANATION"),
+   so the header now holds a single line above the takeaway, not two. */
+.phone-live-shell .phone-explanation-screen .phone-explanation-header .phone-question-kicker {
+  margin: 0;
+}
+
+/* Compact live screens use deliberate, finite continuations. The controls are not smaller or clipped; each
+   page carries one readable task and returns to the preceding one. */
+.phone-live-shell .phone-reveal-continue,
+.phone-live-shell .phone-reveal-return,
+.phone-live-shell .phone-order-page-nav button,
+.phone-live-shell .phone-acknowledgement-controls button {
+  width: 100%;
+}
+
+.phone-live-shell .phone-reveal-reactions-page,
+.phone-live-shell .phone-order-page-nav,
+.phone-live-shell .phone-order-receipt-pages {
+  display: grid;
+  gap: var(--kit-space-12);
+}
+
+.phone-live-shell .phone-reveal-reactions-page[hidden] {
+  display: none;
+}
+
+.phone-live-shell .phone-reveal-reactions-page {
+  gap: var(--kit-space-8);
+}
+
+.phone-live-shell .phone-reveal-page-label,
+.phone-live-shell .phone-order-page-label {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.phone-live-shell .phone-result-screen[data-compact-page="main"]:has([data-kind="order"]) {
+  justify-content: flex-start;
+}
+
+.phone-live-shell .phone-order-list {
+  display: grid;
+  gap: var(--kit-space-12);
+}
+
+.phone-live-shell .phone-order-page-nav {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.phone-live-shell .phone-order-page-nav [data-action="submit-order"],
+.phone-live-shell .phone-order-page-nav [data-action="continue-order-ack"] {
+  grid-column: 1 / -1;
+}
+
+.phone-live-shell .phone-order-step {
+  align-items: center;
+}
+
+.phone-live-shell .phone-order-step > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.phone-live-shell .phone-join-continue,
+.phone-live-shell .phone-join-next [data-action="return-to-join-form"] {
+  width: 100%;
+  min-height: 56px;
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-backer);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* An order receipt lists its steps the way the result does, and Change answer sits on the answer it changes. */
+.phone-live-shell .phone-question-screen .phone-receipt-order {
+  display: grid;
+  gap: var(--kit-space-8);
+  margin: 0;
+  padding-left: var(--kit-space-24);
+  list-style: decimal;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.phone-live-shell .phone-question-screen .phone-choice-receipt .phone-change-answer {
+  justify-self: start;
+  margin-top: var(--kit-space-4);
+}
+
+/* An estimate's result: the exact value in the gold pill, then the range it landed in. */
+.phone-verdict-detail {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Choices and steps end on whole words, so no lone last word hangs on a line of its own. Question stems keep the wrap
+   presentation.css sets by their length. */
+.phone-live-shell .phone-choice__text,
+.phone-live-shell .phone-order-step > span,
+.phone-live-shell .phone-receipt-order li,
+.phone-live-shell .phone-reveal-order li {
+  text-wrap: pretty;
+}
+
+/* On a wide screen the result and the explanation keep the question's two columns: the kicker and the statement on the
+   left, the card on the right, so nothing jumps between a question and its answer. The card spans the statement's row. */
+@media (min-width: 900px) {
+  .phone-live-shell.phone-shell .phone-result-screen,
+  .phone-live-shell.phone-shell .phone-explanation-screen {
+    display: grid !important;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-auto-flow: row dense;
+    align-items: start;
+    align-content: start;
+    column-gap: var(--kit-space-32) !important;
+    row-gap: var(--kit-space-16) !important;
+    max-width: 960px !important;
+  }
+
+  .phone-live-shell.phone-shell .phone-result-screen > .phone-reveal-meta,
+  .phone-live-shell.phone-shell .phone-explanation-screen > .phone-explanation-header {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .phone-live-shell.phone-shell .phone-result-screen > .solo-reveal-question {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .phone-live-shell.phone-shell .phone-result-screen > :not(.phone-reveal-meta):not(.solo-reveal-question),
+  .phone-live-shell.phone-shell .phone-explanation-screen > :not(.phone-explanation-header) {
+    grid-column: 2;
+  }
+
+  .phone-live-shell.phone-shell .phone-result-screen > [data-role="outcome-banner"] {
+    grid-row: 1 / span 2;
+  }
+}

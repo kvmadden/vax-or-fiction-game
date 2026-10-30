@@ -1,0 +1,63 @@
+/* Base cursor rule (no-text-cursor.md). Sets a real base cursor on the document instead of the
+   browser's computed `auto`, which is what shows the I-beam over plain text with nothing else
+   set. `:where(html)` carries zero specificity and lets every descendant inherit `default`
+   normally, so a span, an svg or any other unstyled child inside a button still reads its
+   parent's cursor instead of having `default` forced onto it directly (that direct-on-every-
+   element version is what broke pointer coverage across the True/False answer bars, the solo
+   topic rows, the phone choice spans and the options-sheet tiles: 0709b71 review). The pointer
+   and text carve-outs below also stay zero specificity, so every existing component rule still
+   wins over this block regardless of source order. Nothing here touches the not-allowed rules
+   already on individual components. Shared by src/index.css (the app) and site-404.css (the
+   static, JS-free 404 page), the same way both already import tokens.css rather than each
+   holding its own copy. */
+:where(html) {
+  cursor: default;
+}
+:where(
+  a[href],
+  button:not(:disabled),
+  summary,
+  label:has(> input[type="checkbox"]),
+  label:has(> input[type="radio"]),
+  select,
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="range"],
+  input[type="color"],
+  input[type="file"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  [role="link"],
+  [role="tab"],
+  [role="switch"],
+  [role="checkbox"],
+  [role="radio"],
+  [role="option"],
+  [role="menuitem"]
+) {
+  cursor: pointer;
+}
+:where(button:disabled, [aria-disabled="true"]) {
+  cursor: default;
+}
+:where(
+  textarea,
+  [contenteditable]:not([contenteditable="false"]),
+  input:not([type]),
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"]
+) {
+  cursor: text;
+}

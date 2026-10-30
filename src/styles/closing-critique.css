@@ -1,0 +1,703 @@
+/* Closing (2026-09-14 design critique, item 9): the room ends on its own material — the one that split us most and
+   its takeaways — with the score a quiet line under the header. A scored run puts the takeaways on their own local
+   page, and their rows size to content so authored text never clips. Every rule is scoped under .closing-screen so it
+   wins over the generic closing rules in presentation.css whatever the stylesheet order. Tokens only; spacing on
+   the 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 scale; IBM Plex Sans for copy, IBM Plex Mono for kickers and numerals. */
+
+/* Closing owns its .show-safe packing: full 4-value inset, no companion bottom. */
+.closing-screen .closing-show-frame .show-safe {
+  inset: var(--kit-space-64)
+    calc(var(--kit-space-64) + var(--kit-space-32))
+    max(var(--closing-safe-bottom, var(--kit-space-64)), calc((var(--closing-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    calc(var(--kit-space-64) + var(--kit-space-32));
+}
+
+.closing-screen[data-format="portrait"] {
+  --closing-safe-bottom: var(--kit-space-24);
+}
+
+.closing-screen[data-format="portrait"] .closing-show-frame .show-safe {
+  inset: var(--kit-space-24)
+    var(--kit-space-16)
+    max(var(--closing-safe-bottom, var(--kit-space-24)), calc((var(--closing-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)))
+    var(--kit-space-16);
+}
+
+.closing-screen:not([data-format="portrait"]) .closing-show-frame .show-safe {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  column-gap: var(--kit-space-24);
+}
+
+.closing-screen:not([data-format="portrait"]) .closing-source-header,
+.closing-screen:not([data-format="portrait"]) .closing-show-frame .show-header {
+  position: relative;
+  inset: auto;
+}
+
+.closing-screen:not([data-format="portrait"]) .closing-show-frame .show-header {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.closing-screen:not([data-format="portrait"]) .closing-show-frame .show-join-pill {
+  width: 100%;
+}
+
+.closing-screen .closing-recap.closing-recap--takeaways {
+  /* HB-26: the pill above sits at top: 8px, height: 64px (question-chrome.css), so this clears it
+     by exactly one kit-space-24 gap rather than the 112px that left a dead band under the pill. */
+  inset: calc(var(--kit-space-64) + var(--kit-space-32)) 0 0;
+  gap: var(--kit-space-24);
+}
+
+.closing-screen .closing-recap--takeaways .closing-source-score {
+  gap: var(--kit-space-24);
+}
+
+.closing-screen .closing-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+  flex: none;
+}
+
+/* premium-host-fix-4: neither this row nor .closing-recap-actions (question-chrome.css, its
+   buttons sized for a widescreen row) ever wrapped, so at portrait the 3 real-text buttons
+   ("Play again", "Back to main menu", "Finish") measured about 1188px wide against an 820px row,
+   368px past its own right edge. VOF-24 keeps this row invisible (opacity: 0.001,
+   presentation.css) until a facilitator tabs to it, so it never painted wrong on the shared
+   canvas, but a facilitator who does tab to it would land on a genuinely broken row. Wrapping is
+   the safe fix here: it does not touch question-chrome.css's own button sizing, and a wrapped
+   two-row control cluster is still fully reachable and legible. */
+.closing-screen[data-format="portrait"] .closing-actions-row,
+.closing-screen[data-format="square"] .closing-actions-row {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* premium-host-fix-5, structural rewrite: attempt 2's overflow-y: auto plus min-height:
+   max-content (both reverted) fought the fixed-inset column instead of fixing the actual
+   overlap, and it cut the pager to a sliver at 1920x1080 and 1440x900 while pushing the actions
+   row itself off-canvas at portrait. The real defect was the pager living inside the hero's own
+   growable content, competing for space with .closing-actions-row's fixed box below it. The
+   pager now renders inside .closing-actions-row itself (Closing.tsx), so it shares that row's
+   box instead of overlapping it. */
+
+.closing-screen[data-format="portrait"] .closing-recap-actions,
+.closing-screen[data-format="portrait"] .closing-local-navigation,
+.closing-screen[data-format="square"] .closing-recap-actions,
+.closing-screen[data-format="square"] .closing-local-navigation {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* BLOCKER (premium-host-fix-5): the min-width:0/max-width:100% pair above, combined with
+   question-chrome.css's own [data-format="portrait"] .closing-recap-actions button rule
+   (min-width:0; flex:1), squeezed the 3 buttons to share whatever width the container had
+   instead of wrapping as whole buttons: each button measured 203x285 at 1080x1920, tall and
+   narrow with wrapped text, not wrapped onto a new row. flex:1 fills available space along the
+   row; it does not, by itself, cause a flex item to wrap onto its own line. Dropped the
+   container clamp and given the buttons their own touch-target floor and shrink-only sizing
+   instead, so 3 buttons that do not fit one row wrap as whole buttons, each staying a full
+   real button, never a squeezed fragment. */
+.closing-screen[data-format="portrait"] .closing-recap-actions,
+.closing-screen[data-format="square"] .closing-recap-actions {
+  /* question-chrome.css's base rule (line ~1964) sets flex: none on this container, so it never
+     shrinks below its own unwrapped content width regardless of the wrap rule above: nothing
+     ever forced it narrower, so its own children had no reason to wrap. flex:1 1 auto lets it
+     take exactly the space closing-actions-row's flex layout actually has, the real bound its
+     own wrap needs to trigger against. */
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.closing-screen[data-format="portrait"] .closing-recap-actions button,
+.closing-screen[data-format="square"] .closing-recap-actions button {
+  flex: 0 1 auto;
+  min-width: max(160px, calc(44px / var(--stage-scale, 1)));
+}
+
+/* The facilitator actions keep the right edge they held before this row existed, whether or not the
+   scored run's local navigation sits beside them on the left. */
+.closing-screen .closing-actions-row .closing-recap-actions {
+  margin-left: auto;
+}
+
+/* Scored Closing separates the score/split overview from the full takeaway list. */
+.closing-screen .closing-local-navigation {
+  display: flex;
+  flex: none;
+}
+
+.closing-screen .closing-local-navigation button {
+  min-width: max(160px, calc(44px / var(--stage-scale, 1)));
+  min-height: max(56px, calc(44px / var(--stage-scale, 1)));
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background: var(--color-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-sans);
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.closing-screen .closing-local-navigation button:hover,
+.closing-screen .closing-recap-actions button:hover {
+  filter: brightness(1.06);
+}
+
+.closing-screen .closing-local-navigation button:active,
+.closing-screen .closing-recap-actions button:active {
+  filter: brightness(0.96);
+}
+
+.closing-screen .closing-local-navigation button:focus-visible,
+.closing-screen .closing-recap-actions button:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .closing-screen .closing-local-navigation button:hover,
+  .closing-screen .closing-recap-actions button:hover,
+  .closing-screen .closing-local-navigation button:active,
+  .closing-screen .closing-recap-actions button:active {
+    filter: none;
+  }
+}
+
+/* The score is one quiet line under the header, not the hero. */
+.closing-screen .closing-recap--takeaways .closing-room-line {
+  flex: none;
+  min-height: 0;
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  gap: 0;
+}
+
+.closing-screen .closing-room-line__text {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-sans);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.closing-screen .closing-room-line__text strong {
+  color: var(--color-gold);
+  font-family: var(--kit-font-sans);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 var(--kit-space-16) color-mix(in srgb, var(--color-gold) 50%, transparent);
+}
+
+.closing-screen .closing-room-line__meta {
+  color: var(--color-ink-dim);
+}
+
+/* No answers / Offline: a truthful line, then the takeaways carry the screen. */
+.closing-screen .closing-recap--takeaways .closing-recap-message h1 {
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+.closing-screen .closing-recap--takeaways .closing-recap-message p {
+  margin-top: var(--kit-space-8);
+  color: var(--color-ink-muted);
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+/* N5: "Nobody locked in a guess." had no rule at all (unstyled default block flow), so it sat
+   top-left over about 70% empty canvas, a polling room with no phone votes. Centered, at a size
+   that reads as the one thing on the screen rather than a stray line.
+
+   BLOCKER-2 (premium-host-fix-3): `.closing-recap--empty` keys on `!recap.hasAnswers` (no
+   answers recorded at all), which is also true on the scores page and the offline recap, not
+   only the "Nobody locked in a guess." message this rule was meant for. That let a 72px h1 and a
+   40px p apply to text those other two pages never render through this selector, but the shared
+   `.closing-recap--empty` display:grid also restyled their own layout: the 1920 Top 3 board
+   shrank to about 40% width and the portrait scores page overflowed by 213px. Scoped to the one
+   message it targets with :has(), and given square/portrait sizes (it had none before, so it
+   clipped at 1080x1920 once a wide screen size was set with no narrower canvas overrides). */
+.closing-screen .closing-recap--empty:has([data-role="closing-no-responses"]) {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.closing-screen .closing-recap--empty:has([data-role="closing-no-responses"]) .closing-recap-message h1 {
+  font-size: 72px;
+  line-height: 1.1;
+}
+
+.closing-screen .closing-recap--empty:has([data-role="closing-no-responses"]) .closing-recap-message p {
+  margin-top: var(--kit-space-16);
+  font-size: 40px;
+}
+
+/* WARNING-3 (premium-host-fix-4): 48px read small on a 1200px canvas next to the 72px widescreen
+   size. Raised to 64px, verified live with no clipping. */
+.closing-screen[data-format="square"] .closing-recap--empty:has([data-role="closing-no-responses"]) .closing-recap-message h1 {
+  font-size: 64px;
+}
+
+.closing-screen[data-format="square"] .closing-recap--empty:has([data-role="closing-no-responses"]) .closing-recap-message p {
+  font-size: 28px;
+}
+
+.closing-screen[data-format="portrait"] .closing-recap--empty:has([data-role="closing-no-responses"]) .closing-recap-message h1 {
+  font-size: 44px;
+}
+
+.closing-screen[data-format="portrait"] .closing-recap--empty:has([data-role="closing-no-responses"]) .closing-recap-message p {
+  font-size: 26px;
+}
+
+/* The one that split us most. */
+.closing-screen .closing-split {
+  flex: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--kit-space-32);
+  padding: var(--kit-space-24) var(--kit-space-32);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.closing-screen .closing-split__kicker {
+  display: block;
+  margin-bottom: var(--kit-space-8);
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.closing-screen .closing-split__headline {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.closing-screen .closing-split__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.closing-screen .closing-split__figure strong {
+  color: var(--color-gold);
+  font-family: var(--kit-font-sans);
+  font-size: 96px;
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 60%, transparent);
+}
+
+.closing-screen .closing-split__figure span {
+  margin-top: var(--kit-space-8);
+  color: var(--color-ink-muted);
+  font-size: 28px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Three to take back to the counter: the last thing on the screen, filling down to the safe margin. */
+.closing-screen .closing-takeaways {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12);
+}
+
+.closing-screen .closing-takeaways h2 {
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.closing-screen .closing-takeaways ol {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-auto-rows: minmax(min-content, 1fr);
+  gap: var(--kit-space-16);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.closing-screen .closing-takeaways li {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--kit-space-24);
+  min-height: 0;
+  padding: var(--kit-space-12) var(--kit-space-32) var(--kit-space-12) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+}
+
+.closing-screen .closing-takeaway__number {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+  text-shadow: 0 0 var(--kit-space-16) color-mix(in srgb, var(--color-gold) 50%, transparent);
+}
+
+.closing-screen .closing-takeaway__text {
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+/* Presenter actions stay a quiet row under the takeaways. */
+.closing-screen .closing-recap--takeaways .closing-recap-actions button {
+  min-height: max(56px, calc(44px / var(--stage-scale, 1)));
+  padding: var(--kit-space-8) var(--kit-space-24);
+  font-size: 24px;
+}
+
+/* Closing Champion Banner and Podium */
+.closing-screen .closing-champion {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-16) var(--kit-space-24);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-backer);
+  box-shadow: var(--kit-rim), 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 20%, transparent);
+}
+
+.closing-screen .closing-champion--scores {
+  margin-bottom: var(--kit-space-24);
+}
+
+.closing-screen .closing-champion__icon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.closing-screen .closing-champion__content {
+  display: flex;
+  align-items: baseline;
+  gap: var(--kit-space-16);
+  flex-wrap: wrap;
+}
+
+.closing-screen .closing-champion__kicker {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.closing-screen .closing-champion__name {
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.closing-screen .closing-champion__score {
+  color: var(--color-gold);
+  font-family: var(--kit-font-sans);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.closing-screen .closing-champion__score strong {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.closing-screen .closing-podium {
+  width: 100%;
+}
+
+/* Square and portrait canvases keep the same order at smaller sizes. */
+.closing-screen[data-format="square"] .closing-split__headline,
+.closing-screen[data-format="square"] .closing-takeaway__text {
+  font-size: 30px;
+}
+
+.closing-screen[data-format="square"] .closing-split__figure strong {
+  font-size: 72px;
+}
+
+.closing-screen[data-format="portrait"] .closing-recap.closing-recap--takeaways {
+  inset: calc(var(--kit-space-64) + var(--kit-space-32)) 0 0;
+  gap: var(--kit-space-16);
+}
+
+.closing-screen[data-format="portrait"] .closing-room-line__text {
+  font-size: 22px;
+}
+
+.closing-screen[data-format="portrait"] .closing-room-line__text strong {
+  font-size: 28px;
+}
+
+.closing-screen[data-format="portrait"] .closing-recap--takeaways .closing-recap-message h1 {
+  font-size: 32px;
+}
+
+.closing-screen[data-format="portrait"] .closing-recap--takeaways .closing-recap-message p {
+  font-size: 20px;
+}
+
+.closing-screen[data-format="portrait"] .closing-split {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--kit-space-12);
+  padding: var(--kit-space-16);
+}
+
+.closing-screen[data-format="portrait"] .closing-split__kicker,
+.closing-screen[data-format="portrait"] .closing-takeaways h2 {
+  font-size: 18px;
+}
+
+.closing-screen[data-format="portrait"] .closing-split__headline,
+.closing-screen[data-format="portrait"] .closing-takeaway__text {
+  font-size: 24px;
+}
+
+.closing-screen[data-format="portrait"] .closing-takeaway__text {
+  display: block;
+}
+
+.closing-screen[data-format="portrait"] .closing-split__figure {
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+}
+
+.closing-screen[data-format="portrait"] .closing-split__figure strong {
+  font-size: 48px;
+}
+
+.closing-screen[data-format="portrait"] .closing-split__figure span {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.closing-screen[data-format="portrait"] .closing-takeaways li {
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: var(--kit-space-12);
+  padding: var(--kit-space-12) var(--kit-space-16);
+}
+
+.closing-screen[data-format="portrait"] .closing-takeaway__number {
+  font-size: 32px;
+}
+
+.closing-screen[data-format="portrait"] .closing-champion {
+  padding: var(--kit-space-12) var(--kit-space-16);
+  gap: var(--kit-space-12);
+}
+
+.closing-screen[data-format="portrait"] .closing-champion__kicker {
+  font-size: 18px;
+}
+
+.closing-screen[data-format="portrait"] .closing-champion__name {
+  font-size: 24px;
+}
+
+.closing-screen[data-format="portrait"] .closing-champion__score {
+  font-size: 20px;
+}
+
+.closing-screen[data-format="portrait"] .closing-champion__score strong {
+  font-size: 26px;
+}
+
+/* --- Purpose-built offline closing recap --------------------------------------------------- */
+.closing-offline-recap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-24);
+  width: 100%;
+}
+
+.closing-offline-header p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+/* HB-23: this was a max-height scroll box on a screen nobody can scroll, so cards past 520px
+   (09 and 10 at TV/laptop, more at square/portrait) were cut mid-line. Closing.tsx now paginates
+   instead (offlinePageSize), so the grid only ever holds a page's worth and sizes to its content.
+   HB-25: the 168px off-scale margin-right made the grid lopsided. width: 100% is even. */
+.closing-offline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--kit-space-16);
+  width: 100%;
+}
+
+.closing-offline-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-16);
+  border-radius: var(--kit-radius-16, 16px);
+  background-color: var(--color-panel-navy);
+  border: 1px solid var(--color-hairline);
+  text-align: left;
+}
+
+/* HB-27: below the TV type floor (24px meta / 20px body) at 1920 and 1440. */
+.closing-offline-num {
+  flex: none;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono, monospace);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.closing-offline-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8);
+  min-width: 0;
+}
+
+.closing-offline-content h3 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.closing-offline-content p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* WARNING-12 (premium-host-fix-3): VOF-24 keeps facilitator controls off the audience canvas.
+   Hidden by default, revealed on pointer activity or focus (Closing.tsx), hidden again after 3s
+   idle. Keyboard and clicker paging dispatch straight to the store (ADVANCE/BACK), so they never
+   depend on this being visible or interactive.
+   premium-host-fix-5, structural rewrite: lives inside .closing-actions-row now (Closing.tsx),
+   its left-hand item, so it shares that row's own box with the rest of the facilitator controls
+   instead of sitting inside the hero's growable content where it could paint past its box and
+   into the actions row below it. flex: none keeps it at its own content width; margin-top is
+   gone since the row's own gap (kit-space-16) already spaces it from its neighbors. */
+.closing-offline-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kit-space-16);
+  flex: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.closing-offline-pager[data-revealed="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.closing-offline-pager:focus-within {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.closing-offline-pager button {
+  min-width: calc(var(--kit-space-64) + var(--kit-space-32) + var(--kit-space-24));
+  min-height: var(--kit-space-64);
+  padding: var(--kit-space-8) var(--kit-space-24);
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-card);
+  background: var(--color-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-sans);
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.closing-offline-pager button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.closing-offline-pager__count {
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: 22px;
+}
+
+.closing-screen[data-format="square"] .closing-offline-header p,
+.closing-screen[data-format="portrait"] .closing-offline-header p {
+  font-size: 20px;
+}
+
+.closing-screen[data-format="square"] .closing-offline-num,
+.closing-screen[data-format="portrait"] .closing-offline-num {
+  font-size: 22px;
+}
+
+.closing-screen[data-format="square"] .closing-offline-content h3,
+.closing-screen[data-format="portrait"] .closing-offline-content h3 {
+  font-size: 22px;
+}
+
+.closing-screen[data-format="square"] .closing-offline-content p,
+.closing-screen[data-format="portrait"] .closing-offline-content p {
+  /* W8: body text under the TV/laptop 24px floor. Raised to the 20px square/portrait floor. */
+  font-size: 20px;
+}
+
+.closing-screen[data-format="portrait"] .closing-offline-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+

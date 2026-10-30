@@ -1,0 +1,258 @@
+.show-evidence-trigger {
+  min-height: 44px;
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--kit-space-12);
+  background: transparent;
+  color: var(--color-ink-dim);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.show-evidence-trigger:hover:not(:disabled) {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.show-evidence-trigger:active:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.show-evidence-trigger:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.show-evidence-close:hover:not(:disabled),
+.show-evidence-close:active:not(:disabled) {
+  border-color: var(--color-gold);
+}
+
+.show-evidence-dialog {
+  /* Native modal top-layer controls are not scaled with the presentation canvas. */
+  --stage-scale: 1;
+  position: fixed;
+  box-sizing: border-box;
+  width: min(840px, calc(100vw - var(--kit-space-32)));
+  max-height: calc(100dvh - var(--kit-space-32));
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--kit-space-16);
+  background: var(--color-panel-navy);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  overflow: auto;
+  /* MOT-VQA-07: showModal() painted this dialog instantly with no fade or scale-in, unlike
+     RestartRunModal and the Keyboard help dialog. display/overlay must ride along with
+     allow-discrete, or a display:none dialog never participates in the @starting-style
+     transition below and still just snaps open. The global prefers-reduced-motion rule in
+     presentation.css already collapses this to 0.01ms for every real element. */
+  opacity: 1;
+  scale: 1;
+  transition: display var(--transition-smooth, 260ms) allow-discrete,
+              overlay var(--transition-smooth, 260ms) allow-discrete,
+              opacity var(--transition-smooth, 260ms) var(--ease-screen-fade, cubic-bezier(0.4, 0.0, 0.2, 1)),
+              scale var(--transition-smooth, 260ms) var(--ease-screen-fade, cubic-bezier(0.4, 0.0, 0.2, 1));
+}
+
+@starting-style {
+  .show-evidence-dialog[open] {
+    opacity: 0;
+    scale: 0.96;
+  }
+}
+
+/* W6: closing only removed the `open` attribute. display/overlay correctly waited out the
+   transition under allow-discrete, but nothing set opacity for that resting state, so it stayed
+   at the base rule's 1 for the whole wait and then snapped straight to invisible instead of
+   fading. Reduced motion already collapses this transition to 0.01ms (presentation.css), so it
+   was never visible there. */
+.show-evidence-dialog:not([open]) {
+  opacity: 0;
+  scale: 0.96;
+}
+
+/* W4 (W6 follow-up): the dialog itself fades via opacity (the [open]/:not([open]) pair above),
+   but the blurred ::backdrop had no opacity or transition of its own, so it held full strength
+   for the entire allow-discrete wait and then snapped off the instant display flips to none,
+   same shape as W6's original defect on the dialog. Reduced motion already collapses this
+   transition to 0.01ms (presentation.css), same as the dialog's own. */
+.show-evidence-dialog::backdrop {
+  background: var(--kit-glass-fill-strong);
+  backdrop-filter: blur(var(--kit-glass-blur));
+  opacity: 1;
+  transition: opacity var(--transition-smooth, 260ms) var(--ease-screen-fade, cubic-bezier(0.4, 0.0, 0.2, 1));
+}
+
+@starting-style {
+  .show-evidence-dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+.show-evidence-dialog:not([open])::backdrop {
+  opacity: 0;
+}
+
+.show-evidence-dialog__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-panel-navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kit-space-16);
+  padding: var(--kit-space-16) var(--kit-space-24);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.show-evidence-dialog__header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.show-evidence-close {
+  flex: none;
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--kit-space-8) var(--kit-space-16);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--kit-space-8);
+  background: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.show-evidence-dialog__body {
+  display: grid;
+  gap: var(--kit-space-24);
+  padding: var(--kit-space-24);
+  overflow-wrap: anywhere;
+}
+
+.show-evidence-dialog__body p,
+.show-evidence-dialog__body h3 {
+  margin: 0;
+}
+
+.show-evidence-dialog__body h3 {
+  margin-bottom: var(--kit-space-8);
+  color: var(--color-gold);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.show-evidence-question {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.show-evidence-sources {
+  display: grid;
+  gap: var(--kit-space-8);
+  margin: 0;
+  padding-left: var(--kit-space-24);
+}
+
+.show-evidence-sources a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-gold);
+  text-underline-offset: var(--kit-space-4);
+}
+
+.show-evidence-sources a:hover {
+  filter: brightness(1.08);
+}
+
+.show-evidence-sources a:active {
+  filter: brightness(0.96);
+}
+
+.show-evidence-trigger:focus-visible,
+.show-evidence-dialog :is(button, a):focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: var(--kit-space-4);
+}
+
+/* Only revealed questions with the details control use this quiet attribution. */
+body .question-show-frame .show-footer:has(.show-evidence-trigger) {
+  align-items: center;
+  gap: var(--kit-space-16);
+}
+
+body .question-show-frame .show-footer:has(.show-evidence-trigger) .show-source-pill {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  width: auto !important;
+  max-width: none;
+  padding: 0 !important;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  gap: var(--kit-space-8) !important;
+  font-family: var(--kit-font-sans) !important;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  color: var(--color-ink-dim) !important;
+  white-space: normal !important;
+}
+
+body .question-show-frame .show-footer:has(.show-evidence-trigger) .show-source-pill__label,
+body .question-show-frame .show-footer:has(.show-evidence-trigger) .show-source-pill__org::before {
+  display: none;
+}
+
+body .question-shell[data-format='portrait'] .question-show-frame .show-footer:has(.show-evidence-trigger) .show-source-pill {
+  font-size: 18px !important;
+}
+
+/* Status, attribution and action share one footer; no overlay can cover Details. */
+body .question-show-frame .show-footer:has(.status-rail) {
+  align-items: center;
+  gap: var(--kit-space-16);
+}
+
+body .question-show-frame .show-footer .status-rail {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  flex: none;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: var(--kit-space-8) var(--kit-space-12);
+  font-size: 26px;
+}
+
+body .question-shell[data-format='portrait'] .question-show-frame .show-footer:has(.status-rail) {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--kit-space-8) var(--kit-space-16);
+}
+
+body .question-shell[data-format='portrait'] .question-show-frame .show-footer:has(.status-rail) .show-source-pill {
+  flex: 1 0 100%;
+  max-width: 100%;
+  font-size: 18px !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+body .question-shell[data-format='portrait'] .question-show-frame .show-footer .status-rail,
+body .question-shell[data-format='portrait'] .question-show-frame .show-evidence-trigger {
+  font-size: 18px;
+}

@@ -1,0 +1,16 @@
+/* Motif SVG stage art is retired. Keep vote-settle / beam keyframes used by presentation.css. */
+
+body .question-shell .question-show-frame .question-explanation-copy {
+  margin-right: 0;
+}
+
+@keyframes vote-settle {
+  0% { transform: scale(0.96); }
+  55% { transform: scale(1.035); }
+  100% { transform: scale(1); }
+}
+
+@keyframes show-beam-sway {
+  0%, 100% { transform: translate3d(-5%, 0, 0) rotate(var(--beam-tilt)); }
+  50% { transform: translate3d(7%, 3%, 0) rotate(var(--beam-tilt)); }
+}

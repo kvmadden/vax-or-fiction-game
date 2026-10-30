@@ -1,0 +1,206 @@
+{
+  "season-2:q1": {
+    "bankId": "season-2:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "a7b42c1bc558133b3c917b90c770b381bf7abb0479120e32254cea07aa11d9c7",
+    "status": "live",
+    "subject": "covid-19",
+    "rotation": "core",
+    "conceptId": "covid19-cardiovascular-risk",
+    "tags": [
+      "burden"
+    ],
+    "vaccines": [
+      "covid-19"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Agreed. Widely reported but not routine pharmacy knowledge. The hedge can helps some, which keeps it at medium.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows COVID-19, even mild, is linked to later stroke and heart failure, widely reported but not routine knowledge.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Must know even mild COVID-19 raises later stroke and heart failure risk. Widely reported, and can still helps.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Agreed. Widely reported but not routine pharmacy knowledge. The hedge can helps some, which keeps it at medium.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-covid-long-term-effects"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q15": {
+    "bankId": "season-2:q15",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "da7cdbcde7f7058261d7c92afc3446f4298bbeee6e6846386f566062f8a159e3",
+    "status": "live",
+    "subject": "covid-19",
+    "rotation": "core",
+    "conceptId": "covid19-immunocompromised-additional-doses",
+    "tags": [
+      "schedule"
+    ],
+    "vaccines": [
+      "covid-19"
+    ],
+    "populations": [
+      "immunocompromised"
+    ],
+    "skill": "recall",
+    "audience": "immunizer",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows immunocompromised adults may get extra COVID-19 doses, widely handled in pharmacies.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows immunocompromised adults may get extra COVID-19 doses, widely handled in pharmacies.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Extra COVID-19 doses for the immunocompromised have been standard since 2021, and can receive is hedged.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-covid-immunocompromised"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q6": {
+    "bankId": "season-2:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "e8dd96a004b2ee6f3ad764b33e78b0c20d3ab7fcc40a060c69c94a7101210c11",
+    "status": "live",
+    "subject": "covid-19",
+    "rotation": "core",
+    "conceptId": "covid19-natural-immunity-myth",
+    "tags": [
+      "misconception",
+      "effectiveness"
+    ],
+    "vaccines": [
+      "covid-19"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows natural COVID-19 immunity wanes and does not replace vaccination, a myth the room rejects.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows natural COVID-19 immunity wanes and does not replace vaccination, a myth the room rejects.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Myth most staff reject: immunity after COVID-19 infection wanes and does not replace vaccination.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-covid-vaccines-faq"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  }
+}

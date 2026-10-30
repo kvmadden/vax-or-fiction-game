@@ -1,0 +1,53 @@
+{
+  "verifiedAt": "2026-09-01",
+  "files": [
+    {
+      "package": { "name": "@fontsource/ibm-plex-sans", "version": "5.3.0", "integrity": "sha512-CbE4CbbEEZJX860XyUiRpsksXIQR8Rp2XDva2VO53NJox9tVNtusrysd2x5YkUEY3ErQ66W1IiiQL8/wihhw5w==" },
+      "sourcePath": "LICENSE",
+      "destination": "assets/fonts/OFL-IBM-Plex-Sans-1.1.txt",
+      "sha256": "d0283623ef57e722fd0eb688a8041589670c608ab780cd3612d06ba6f153d3fd"
+    },
+    {
+      "package": { "name": "@fontsource/ibm-plex-mono", "version": "5.3.0", "integrity": "sha512-eTgnZjZEGk1QtD3ZstF+Vclo2HLAni8YMy34/DxllwZvyz1lR/1RF/xTiAquOBO7MvqBx8D2Ig2WCPMVfdZu7Q==" },
+      "sourcePath": "LICENSE",
+      "destination": "assets/fonts/OFL-IBM-Plex-Mono-1.1.txt",
+      "sha256": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f"
+    },
+    {
+      "package": { "name": "@fontsource/ibm-plex-sans", "version": "5.3.0", "integrity": "sha512-CbE4CbbEEZJX860XyUiRpsksXIQR8Rp2XDva2VO53NJox9tVNtusrysd2x5YkUEY3ErQ66W1IiiQL8/wihhw5w==" },
+      "sourcePath": "files/ibm-plex-sans-latin-400-normal.woff2",
+      "destination": "assets/fonts/ibm-plex-sans-latin-400-normal.woff2",
+      "sha256": "3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e"
+    },
+    {
+      "package": { "name": "@fontsource/ibm-plex-sans", "version": "5.3.0", "integrity": "sha512-CbE4CbbEEZJX860XyUiRpsksXIQR8Rp2XDva2VO53NJox9tVNtusrysd2x5YkUEY3ErQ66W1IiiQL8/wihhw5w==" },
+      "sourcePath": "files/ibm-plex-sans-latin-500-normal.woff2",
+      "destination": "assets/fonts/ibm-plex-sans-latin-500-normal.woff2",
+      "sha256": "0717336fb31fcdcde4b8deb3675bb4a0f7f6d484864afcd6751ac29975962203"
+    },
+    {
+      "package": { "name": "@fontsource/ibm-plex-sans", "version": "5.3.0", "integrity": "sha512-CbE4CbbEEZJX860XyUiRpsksXIQR8Rp2XDva2VO53NJox9tVNtusrysd2x5YkUEY3ErQ66W1IiiQL8/wihhw5w==" },
+      "sourcePath": "files/ibm-plex-sans-latin-600-normal.woff2",
+      "destination": "assets/fonts/ibm-plex-sans-latin-600-normal.woff2",
+      "sha256": "8960851d691c054ed38e259bdcf1a6190d157b4203ed5bb32c632a863fb8ec2f"
+    },
+    {
+      "package": { "name": "@fontsource/ibm-plex-sans", "version": "5.3.0", "integrity": "sha512-CbE4CbbEEZJX860XyUiRpsksXIQR8Rp2XDva2VO53NJox9tVNtusrysd2x5YkUEY3ErQ66W1IiiQL8/wihhw5w==" },
+      "sourcePath": "files/ibm-plex-sans-latin-700-normal.woff2",
+      "destination": "assets/fonts/ibm-plex-sans-latin-700-normal.woff2",
+      "sha256": "42e7b0c143c19df9d99fd896e76b48f846edf0902d200bc29796b34d12c33aa7"
+    },
+    {
+      "package": { "name": "@fontsource/ibm-plex-mono", "version": "5.3.0", "integrity": "sha512-eTgnZjZEGk1QtD3ZstF+Vclo2HLAni8YMy34/DxllwZvyz1lR/1RF/xTiAquOBO7MvqBx8D2Ig2WCPMVfdZu7Q==" },
+      "sourcePath": "files/ibm-plex-mono-latin-400-normal.woff2",
+      "destination": "assets/fonts/ibm-plex-mono-latin-400-normal.woff2",
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "package": { "name": "@fontsource/ibm-plex-mono", "version": "5.3.0", "integrity": "sha512-eTgnZjZEGk1QtD3ZstF+Vclo2HLAni8YMy34/DxllwZvyz1lR/1RF/xTiAquOBO7MvqBx8D2Ig2WCPMVfdZu7Q==" },
+      "sourcePath": "files/ibm-plex-mono-latin-600-normal.woff2",
+      "destination": "assets/fonts/ibm-plex-mono-latin-600-normal.woff2",
+      "sha256": "0d1f0b8d0722224e32e9f28261bdc86c79115be73444ae5eceb73976a1bcdf83"
+    }
+  ]
+}

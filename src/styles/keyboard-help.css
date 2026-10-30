@@ -1,0 +1,167 @@
+.keyboard-help-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--kit-space-16);
+}
+
+@media (min-width: 640px) {
+  .keyboard-help-modal { padding: var(--kit-space-24); }
+}
+
+.keyboard-help-card {
+  width: 100%;
+  max-width: 42rem;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--kit-radius-16);
+}
+
+.keyboard-help-header,
+.keyboard-help-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-color: var(--color-hairline);
+}
+
+.keyboard-help-header { border-bottom: 1px solid var(--color-hairline); }
+.keyboard-help-footer { border-top: 1px solid var(--color-hairline); }
+
+.keyboard-help-kicker {
+  display: block;
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.keyboard-help-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.keyboard-help-close,
+.keyboard-help-more {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--kit-radius-8, 8px);
+}
+
+.keyboard-help-close {
+  justify-content: center;
+  min-width: var(--kit-touch);
+  min-height: var(--kit-touch);
+}
+
+.keyboard-help-close-mark {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.keyboard-help-more {
+  gap: var(--kit-space-8);
+  margin-top: var(--kit-space-16);
+  min-height: var(--kit-touch);
+  padding: 0 var(--kit-space-12);
+  border: 1px solid var(--color-hairline);
+  background: transparent;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.keyboard-help-sheet {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: var(--kit-space-16) var(--kit-space-24) var(--kit-space-24);
+}
+
+.keyboard-help-more-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: var(--kit-space-12) 0 0;
+  padding: 0;
+  gap: var(--kit-space-4) var(--kit-space-16);
+}
+
+@media (min-width: 768px) {
+  .keyboard-help-more-list { grid-template-columns: 1fr 1fr; }
+}
+
+.shortcut-row {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-16);
+  min-height: var(--kit-touch);
+  padding: var(--kit-space-4) 0;
+}
+
+.shortcut-row--primary {
+  min-height: 56px;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.shortcut-keys {
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-4);
+  flex: none;
+  min-width: 96px;
+}
+
+.shortcut-row--primary .shortcut-keys { min-width: 128px; }
+
+.shortcut-keys kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 var(--kit-space-8);
+  border-radius: var(--kit-radius-4, 4px);
+  font-weight: 600;
+}
+
+.shortcut-row--primary .shortcut-keys kbd {
+  min-width: 44px;
+  height: 40px;
+}
+
+.shortcut-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.keyboard-help-close:hover,
+.keyboard-help-more:hover { filter: brightness(1.25); }
+
+.keyboard-help-close:active,
+.keyboard-help-more:active { transform: scale(0.95); }
+
+.keyboard-help-close:focus-visible,
+.keyboard-help-more:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .keyboard-help-close:active,
+  .keyboard-help-more:active {
+    transform: none;
+    filter: brightness(0.95);
+  }
+}

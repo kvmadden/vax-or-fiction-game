@@ -1,0 +1,371 @@
+/* Game night on every screen (VOF-88 picked the level, VOF-89 calls 15 and 16). Ported from the
+   flavor specimen's Game night rules: the stage beats get its moments, and the site pages, the setup
+   sheet and the phones get the calm end of the level. Motion is transform and opacity only, every
+   rule has a reduced motion fallback at the bottom of this file, and no infinite animation here runs
+   under a filtered ancestor (the VOF-88 frame rate rule). The cones themselves live in
+   preshow-stage.css. Tokens only.
+   Every entrance fills backwards only and states an opacity in its first keyframe only: it eases to
+   the element's own styles and lets go, so an entrance can never hold or flash an opacity or a
+   transform over a state rule (the phone's sat-out dim, the dock's decided dim). */
+
+@keyframes gn-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { transform: none; }
+}
+
+/* The specimen's card cascade: in from below with a slight overshoot. */
+@keyframes gn-card-cascade {
+  0% { opacity: 0; transform: translateY(28px) scale(0.94); }
+  60% { transform: translateY(-4px) scale(1.02); }
+  100% { transform: none; }
+}
+
+/* The arrival line lands with the question and bows out once the room is voting. Its box stays. */
+@keyframes gn-arrival-line {
+  0% { opacity: 0; transform: translateY(12px); }
+  10% { opacity: 1; transform: none; }
+  78% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: none; }
+}
+
+@keyframes gn-result-pop {
+  0% { opacity: 0.5; transform: scale(0.9) translateY(10px); }
+  55% { transform: scale(1.06) translateY(-2px); }
+  78% { transform: scale(0.98); }
+  100% { transform: none; }
+}
+
+@keyframes gn-number-pop {
+  0% { opacity: 0; transform: scale(0.7); }
+  60% { transform: scale(1.12); }
+  100% { transform: none; }
+}
+
+@keyframes gn-gold-burst {
+  0% { opacity: 0; transform: scale(0.5); }
+  28% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+@keyframes gn-pill-slide-in {
+  from { opacity: 0; transform: translateX(calc(100% + var(--kit-space-64))); }
+  to { transform: none; }
+}
+
+@keyframes gn-pill-sheen {
+  from { transform: translateX(-140%) skewX(-14deg); }
+  to { transform: translateX(180%) skewX(-14deg); }
+}
+
+@keyframes gn-cone-sway {
+  0%, 100% { rotate: -9deg; }
+  50% { rotate: 9deg; }
+}
+
+/* ---- The lights reach every stage beat ------------------------------------------------------
+   Inside the show every screen lets the router's atmosphere through, the way the pre-show beats do
+   since VOF-88. On their own the screens keep painting their navy. */
+.screen-router-root > .screen-router-viewport > * {
+  background-color: transparent;
+}
+
+/* ---- Question arriving ------------------------------------------------------------------------
+   A kicker line directly above the stem, quieter than the stem (the clear-ask rule: the ask stays the
+   loudest text on the screen) and never larger than the question-type kicker, which stays where it
+   is (VOF-05). It takes the type kicker's own size, capped at the wide canvas's 26 px audience floor:
+   26 px wide, 24 px square, 18 px portrait. It is a kicker, not scenario text, so it scales with the
+   stage the way the type kicker does.
+   It rests invisible and belongs to a question's first posed beat only. The animation shows it as
+   the question arrives and nothing holds it once it has bowed out. A card that mounts already locked
+   (a host reload) never plays it, and once the votes lock it is spent (`data-arrival`, set by
+   Question.tsx), so a reopened vote or a locked card on its way out never plays it again. */
+body .question-shell .question-show-frame .question-stage-copy .stage-arrival-kicker {
+  display: block;
+  margin: 0;
+  color: var(--color-gold-light);
+  font-family: var(--kit-font-sans);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  opacity: 0;
+}
+
+body .question-shell[data-stage-beat='posed'][data-arrival='fresh'] .question-show-frame .question-stage-copy .stage-arrival-kicker {
+  animation: gn-arrival-line 4.2s var(--ease-standard) 120ms backwards;
+}
+
+body .question-shell[data-format='square'] .question-show-frame .question-stage-copy .stage-arrival-kicker {
+  font-size: 24px;
+}
+
+body .question-shell[data-format='portrait'] .question-show-frame .question-stage-copy .stage-arrival-kicker {
+  font-size: 18px;
+}
+
+/* The answer cards cascade in behind the stem, one after the other. The order rail animates its own
+   rows (framer layout), so it keeps its own motion. */
+.question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail) > * {
+  animation: gn-card-cascade 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 180ms backwards;
+}
+.question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail) > :nth-child(2) { animation-delay: 270ms; }
+.question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail) > :nth-child(3) { animation-delay: 360ms; }
+.question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail) > :nth-child(4) { animation-delay: 450ms; }
+.question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail) > :nth-child(n + 5) { animation-delay: 540ms; }
+
+/* ---- Locked: the room's split lands ---------------------------------------------------------- */
+.question-shell[data-phase='locked'] .question-show-frame .answer-bar__pct {
+  display: inline-block;
+  animation: gn-number-pop 380ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* ---- Revealed ---------------------------------------------------------------------------------
+   The verdict card pops, and a room that called it gets a gold burst behind the card, never a wrong
+   one (celebrate only when the room is right). The losing shares keep full strength in the quiet ink,
+   the legibility rule visual-parity guards, so the specimen's settle-back is not ported. */
+.question-shell[data-phase='revealed'] .question-result-card {
+  position: relative;
+  animation: gn-result-pop 460ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.question-shell[data-phase='revealed'][data-room-outcome='right'] .question-show-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--color-gold) 70%, transparent) 0%, color-mix(in srgb, var(--color-gold) 30%, transparent) 22%, transparent 42%);
+  opacity: 0;
+  animation: gn-gold-burst 760ms var(--ease-standard) backwards;
+}
+
+/* The reveal line sits in the card's eyebrow slot, a row of its own above the verdict. */
+.question-flow .question-result-card:has(> .question-result-room-line) {
+  flex-wrap: wrap;
+  row-gap: var(--kit-space-12);
+}
+
+.question-flow .question-result-room-line {
+  flex: 0 0 100%;
+  margin: 0;
+  color: var(--color-gold-light);
+  font-family: var(--kit-font-sans);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.question-flow .question-result[data-kind='binary'] .question-result-room-line,
+.question-flow .question-result[data-kind='estimate'] .question-result-room-line {
+  font-size: 36px;
+}
+
+.question-flow[data-format='portrait'] .question-result-room-line,
+.question-flow[data-format='portrait'] .question-result[data-kind='binary'] .question-result-room-line,
+.question-flow[data-format='portrait'] .question-result[data-kind='estimate'] .question-result-room-line {
+  font-size: 18px;
+}
+
+/* The room streak (VOF-89 call 15): a pill that slides in as a second beat and lands in the card's
+   top right corner, inside the card's own top padding, so it never reaches the join pill above. */
+.question-flow .room-streak-pill {
+  position: absolute;
+  top: var(--kit-space-8);
+  right: var(--kit-space-16);
+  z-index: 1;
+  margin: 0;
+  padding: var(--kit-space-4) var(--kit-space-16);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-light);
+  border-radius: var(--kit-radius-16);
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  box-shadow: var(--kit-drop);
+  color: var(--color-on-gold);
+  font-family: var(--kit-font-sans);
+  /* The 26 px audience floor of the wide and square canvases. Like every other line on the stage it
+     scales with the canvas, which keeps it at 20 real px in the smallest supported window (1280 wide). */
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-transform: none;
+  animation: gn-pill-slide-in 300ms cubic-bezier(0.3, 1.45, 0.6, 1) 520ms backwards;
+}
+
+/* The pill lands in the card's top padding, so a card carrying it takes one more spacing step there.
+   The card anchors its own pill by this rule alone, so the anchor never rests on the reveal phase's
+   own rule above or on the backdrop filter, which reduced transparency takes away. */
+.question-flow .question-result .question-result-card:has(> .room-streak-pill) {
+  position: relative;
+  padding-top: var(--kit-space-64);
+}
+
+.question-flow[data-format='portrait'] .question-result .question-result-card:has(> .room-streak-pill) {
+  padding-top: var(--kit-space-48);
+}
+
+.question-flow .room-streak-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 32%, color-mix(in srgb, var(--color-light) 55%, transparent) 50%, transparent 68%);
+  transform: translateX(-140%) skewX(-14deg);
+  animation: gn-pill-sheen 520ms var(--ease-standard) 840ms backwards;
+}
+
+.question-flow[data-format='portrait'] .room-streak-pill {
+  top: var(--kit-space-4);
+  right: var(--kit-space-8);
+  padding: 0 var(--kit-space-8);
+  border-radius: var(--kit-radius-8);
+  /* The smallest text the portrait canvas carries, one step under the reveal line it sits above. */
+  font-size: 16px;
+}
+
+/* ---- The leaderboard and the showdown: a gentle entrance, no podium pops --------------------- */
+/* The lanes reorder with a framer layout transform, so each lane only fades in and the list rises. */
+@keyframes gn-fade-in {
+  from { opacity: 0; }
+}
+
+.score-board__lanes {
+  animation: gn-rise 460ms var(--ease-standard) backwards;
+}
+
+.score-board__lanes > .score-board__lane {
+  animation: gn-fade-in 420ms var(--ease-standard) backwards;
+}
+.score-board__lanes > .score-board__lane:nth-child(2) { animation-delay: 80ms; }
+.score-board__lanes > .score-board__lane:nth-child(3) { animation-delay: 160ms; }
+.score-board__lanes > .score-board__lane:nth-child(4) { animation-delay: 240ms; }
+.score-board__lanes > .score-board__lane:nth-child(n + 5) { animation-delay: 320ms; }
+
+.showdown-show-frame .board-tile {
+  animation: gn-rise 460ms var(--ease-standard) backwards;
+}
+.showdown-show-frame .board-tile + .board-tile,
+.showdown-show-frame .board-tile ~ .board-tile { animation-delay: 120ms; }
+
+/* ---- Closing: the room's own accuracy gets the moment, never the champion -------------------- */
+.closing-show-frame .closing-room-line [data-role='reality-accuracy'] {
+  display: inline-block;
+  animation: gn-number-pop 460ms cubic-bezier(0.34, 1.56, 0.64, 1) 200ms backwards;
+}
+
+/* ---- The calm end: landing, site pages and phones get the same cones, dimmer ------------------ */
+.stage-cones.stage-cones--calm {
+  opacity: 0.55;
+}
+
+.entry-stage > .stage-cones--calm {
+  z-index: 0;
+}
+
+.site-page {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-page > .stage-cones--calm {
+  position: fixed;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* One cone from the top of the phone, under its contrast scrim, so voting stays quiet. */
+.phone-backdrop::before {
+  content: "";
+  position: absolute;
+  top: -8%;
+  left: 18%;
+  width: 64%;
+  height: 72%;
+  clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
+  transform-origin: 50% 0%;
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-vax) 60%, transparent), color-mix(in srgb, var(--color-gold) 24%, transparent) 40%, transparent 72%);
+  opacity: 0.85;
+  will-change: rotate;
+  animation: gn-cone-sway 9s ease-in-out infinite;
+}
+
+/* Phones: the choices arrive together with a small overshoot, the verdict and the points land as
+   beats, and the waiting and closing screens rise in. Phones keep their own streaks. */
+[data-role='phone-vote-container'] .answer-stack {
+  animation: gn-card-cascade 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 120ms backwards;
+}
+
+.stamp-reveal__outcome[data-outcome='right'] {
+  transform-origin: left center;
+  animation: gn-number-pop 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 260ms backwards;
+}
+
+.stamp-points {
+  display: inline-block;
+  transform-origin: left center;
+  animation: gn-number-pop 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 380ms backwards;
+}
+
+.stamp-streak {
+  animation: gn-pill-slide-in 300ms cubic-bezier(0.3, 1.45, 0.6, 1) 620ms backwards;
+}
+
+.lobby-seat > :not(.lobby-seat__absorb),
+[data-role='phone-closing'] > * {
+  animation: gn-rise 420ms var(--ease-standard) backwards;
+}
+.lobby-seat > :nth-child(3),
+[data-role='phone-closing'] > :nth-child(2) { animation-delay: 90ms; }
+.lobby-seat > :nth-child(n + 4),
+[data-role='phone-closing'] > :nth-child(n + 3) { animation-delay: 180ms; }
+
+/* ---- Reduced motion: the calm versions ---------------------------------------------------------
+   Nothing moves. The arrival line stays put and readable while the question is posed, the burst and
+   the sheen never show, and every cone stands still. */
+@media (prefers-reduced-motion: reduce) {
+  body .question-shell[data-stage-beat='posed'][data-arrival='fresh'] .question-show-frame .question-stage-copy .stage-arrival-kicker,
+  .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail) > *,
+  .question-shell[data-phase='locked'] .question-show-frame .answer-bar__pct,
+  .question-shell[data-phase='revealed'] .question-result-card,
+  .question-flow .room-streak-pill,
+  .score-board__lanes,
+  .score-board__lanes > .score-board__lane,
+  .showdown-show-frame .board-tile,
+  .closing-show-frame .closing-room-line [data-role='reality-accuracy'],
+  [data-role='phone-vote-container'] .answer-stack,
+  .stamp-reveal__outcome[data-outcome='right'],
+  .stamp-points,
+  .stamp-streak,
+  .lobby-seat > :not(.lobby-seat__absorb),
+  [data-role='phone-closing'] > * {
+    animation: none;
+  }
+
+  /* The arrival line rests invisible and its animation shows it, so with no animation it simply stays
+     for the posed beat, and leaves when the votes lock. */
+  body .question-shell[data-stage-beat='posed'][data-arrival='fresh'] .question-show-frame .question-stage-copy .stage-arrival-kicker {
+    opacity: 1;
+  }
+
+  .question-shell[data-phase='revealed'][data-room-outcome='right'] .question-show-frame::before,
+  .question-flow .room-streak-pill::after {
+    content: none;
+    animation: none;
+  }
+
+  .phone-backdrop::before {
+    animation: none;
+    rotate: 0deg;
+    opacity: 0.35;
+  }
+}
+
+/* The landing page retires the older beams too, the same as the stage. */
+.entry-stage > .show-lights::before,
+.entry-stage > .show-lights::after {
+  content: none;
+  animation: none;
+}

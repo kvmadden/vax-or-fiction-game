@@ -1,0 +1,165 @@
+/* Preserve existing show and editorial text layouts while scene artwork is deferred.
+ *
+ * The stem panel, the scenario, the answer rails and the answer row box are
+ * owned by question-stage.css (imported last). This file used to place them
+ * too — a second set of absolute stage coordinates that fought the first —
+ * and what is left here is the frame's per-format chrome, the content box the
+ * stage sits in, and what goes inside a row on a phone. */
+.question-show-frame[data-layout='editorial']::before {
+  content: none;
+}
+/* The square canvas is 1200 x 1200; reading sizes step down with it in
+   question-stage.css. */
+[data-format='square'] .question-show-frame--order .question-stage-copy p:not(.order-scramble-cue) {
+  display: none !important;
+}
+
+/* Portrait is a 430 x 932 audience canvas. Keep question, evidence and
+   answers in reading order using the format's own typography scale.
+   The question itself is placed by question-stage.css inside the beat pane. */
+body .question-shell[data-format='portrait'] .question-show-frame .question-source-kicker {
+  flex: 1;
+  min-width: 0;
+  width: auto !important;
+  max-width: none !important;
+  white-space: normal !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+}
+body .question-shell[data-format='portrait'] .question-show-frame .question-source-header {
+  width: 100% !important;
+  max-width: 100% !important;
+  gap: 8px !important;
+}
+body .question-shell[data-format='portrait'] .question-show-frame .show-source-pill {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  padding: 8px 12px !important;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.04em !important;
+  white-space: normal !important;
+}
+body .question-shell[data-format='portrait'] .show-source-pill__org::before,
+body .question-shell[data-format='portrait'] .show-source-pill__verified::before { display: none; }
+body .question-shell[data-format='portrait'] .question-show-frame .question-stage-copy h1,
+body .question-shell[data-format='portrait'] .question-show-frame .question-stage-copy [data-comp-id='statement'] {
+  overflow-wrap: normal;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--myth-among-three [data-role='evidence-slot'] {
+  display: none !important;
+  min-height: 0 !important;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--myth-among-three .answer-bar__main {
+  gap: 8px !important;
+}
+
+body .question-shell[data-format='portrait'] .question-show-frame--order .question-stage-copy p:not(.order-scramble-cue) {
+  display: none !important;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--order .order-bar > div:first-child {
+  gap: 8px !important;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--order .order-bar > div:first-child > div:first-child {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* Portrait which-patient: one soft panel on the vignette only. The stem stays
+   unbacked so the board does not stack two opaque cards. */
+body .question-shell[data-format='portrait'] .question-show-frame--which-patient:not([data-layout='editorial']) .question-stage-scenario {
+  border: 0 !important;
+  border-radius: var(--kit-radius-card) !important;
+  background: var(--kit-glass-fill) !important;
+  /* STAGE-SPEC step 8 fix (align-start, portrait390): a real 1px border consumed one physical
+     screen px of the panel's own box, which does not round-trip evenly through portrait390's own
+     fractional scale (~0.907, spec section 12's own "inferred" note), landing the scenario label
+     1 canvas px off the shared edge -- passed cleanly at the canonical portrait430 (scale 1.0),
+     only failed at 390. An inset box-shadow paints the same hairline without taking any box-model
+     space, so it cannot shift a child's position at any scale. */
+  box-shadow: inset 0 0 0 1px var(--kit-glass-border), var(--kit-rim), var(--kit-drop-deep) !important;
+  backdrop-filter: blur(var(--kit-glass-blur)) saturate(1.2);
+  -webkit-backdrop-filter: blur(var(--kit-glass-blur)) saturate(1.2);
+}
+body .question-shell[data-format='square'] .question-show-frame .show-join-pill {
+  top: 0;
+  width: 280px;
+  height: 96px;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 16px;
+}
+body .question-shell[data-format='square'] .question-show-frame .show-join-pill__host {
+  font-size: 20px;
+  line-height: 1.2;
+}
+body .question-shell[data-format='square'] .question-show-frame .show-join-pill__label,
+body .question-shell[data-format='square'] .question-show-frame .join-card__code::before {
+  display: none;
+}
+body .question-shell[data-format='square'] .question-show-frame .join-card__code {
+  flex: 0 0 auto;
+  font-size: 32px;
+  line-height: 1.2;
+}
+body .question-shell[data-format='square'] .question-show-frame:has(.show-join-pill) .question-source-header {
+  width: calc(100% - 296px) !important;
+  max-width: calc(100% - 296px) !important;
+}
+body .question-shell[data-format='square'] .question-source-kicker {
+  min-width: 0;
+  white-space: normal !important;
+  line-height: 1.2 !important;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--binary .answer-bar__main {
+  flex-shrink: 0;
+}
+
+/* Question chrome is context; the prompt and answer own the canvas. */
+.question-show-frame .answer-bar { backdrop-filter: none !important; }
+/* STAGE-SPEC step 5 (spec section 2.4): the header is sized in one place now, question-flow.css.
+   The rules that used to compete with it here are deleted: their box sizes and gaps were already
+   dead (question-flow.css's higher-specificity selector already won every one of these
+   properties), and the spec's target numbers now live only in that one file.
+   What is left here (join-pill width, kicker wrapping) is chrome outside the header row's own
+   box model, so it stays. */
+body .question-shell[data-format='portrait'] .question-show-frame:has(.show-join-pill) .question-source-header {
+  width: calc(100% - 160px) !important;
+  max-width: calc(100% - 160px) !important;
+}
+body .question-shell[data-format='portrait'] .question-source-kicker {
+  flex: 1;
+  min-width: 0;
+  white-space: normal !important;
+  overflow: visible !important;
+  line-height: 1.2 !important;
+}
+
+/* With scene art removed, readable question copy owns the stage width.
+   Keep supporting chrome below the question and answer in visual weight. */
+body .question-shell[data-format='widescreen'] .question-show-frame .show-join-pill__host,
+body .question-shell[data-format='widescreen'] .question-show-frame .show-join-pill__label {
+  font-size: 26px;
+}
+body .question-shell[data-format='widescreen'] .question-show-frame .join-card__code {
+  font-size: 36px;
+}
+/* Range labels and live counts each keep their own space, including at lock. */
+body .question-shell[data-format] .question-show-frame--estimate .estimate-answer-rail .answer-bar__note {
+  white-space: normal !important;
+  line-height: 1.2 !important;
+}
+body .question-shell[data-format='portrait'] .question-show-frame--estimate .estimate-answer-rail .answer-bar__note,
+body .question-shell[data-format='portrait'] .question-show-frame .answer-bar__votes {
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+}
+

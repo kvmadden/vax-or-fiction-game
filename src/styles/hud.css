@@ -1,0 +1,449 @@
+/* Facilitator HUD Styling & Responsive Viewport Un-cramping */
+
+.vrc-facilitator-hud-portal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.hud-peek-tab {
+  pointer-events: auto;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: var(--kit-space-8);
+  padding: var(--kit-space-8) var(--kit-space-12);
+  border: 1px solid var(--color-gold);
+  border-bottom: 0;
+  border-radius: var(--kit-radius-12) var(--kit-radius-12) 0 0;
+  cursor: pointer;
+  min-height: var(--kit-touch);
+}
+
+.hud-peek-tab:hover { filter: brightness(1.25); }
+.hud-peek-tab:active { transform: scale(0.95); }
+.hud-peek-tab:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.hud-peek-label,
+.hud-mute-label {
+  font-family: var(--kit-font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hud-icon { width: 20px; height: 20px; flex: none; }
+.hud-icon--sm { width: 16px; height: 16px; color: var(--color-anticipation-gold); }
+.hud-phones-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--kit-radius-full);
+  background-color: var(--color-accent-teal);
+  flex: none;
+}
+
+/* CONTROLS-REVIEW: scoped to the cluster parents, not a bare #hud-lock/#hud-audio id selector.
+   #hud-audio also renders as a sheet tile (.hud-tile) in compact mode, and a bare id selector
+   there was beating .hud-tile's own gap/padding on specificity alone, landing the Sound tile's
+   label a couple px off from every other tile (Timer included) in the same row. */
+.hud-cluster-flow #hud-lock,
+.hud-cluster-utilities #hud-audio {
+  gap: var(--kit-space-8);
+  width: auto;
+  padding: 0 var(--kit-space-12);
+}
+
+#presenter-hud.hud-bar {
+  /* H6: the portal ancestor is pointer-events:none so the letterbox around the bar stays
+     click-through (see .vrc-facilitator-hud-portal above). This bar opted back into
+     pointer-events:auto via a Tailwind utility class before the bar moved into this
+     stylesheet (37d462a, "Move the facilitator bar into the host stylesheet"). The utility
+     was dropped in that move and never re-added here, so the visible bar silently went
+     click-through for its whole visible lifetime, same as the peek tab already does above. */
+  pointer-events: auto;
+  height: 48px;
+  min-height: 48px;
+  max-height: 48px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  padding: 4px 16px;
+  background-color: color-mix(in srgb, var(--color-stage-deep) 84%, transparent);
+  border-top: 1px solid var(--color-hairline);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  font-family: var(--kit-font-sans, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  user-select: none;
+  width: 100%;
+}
+
+/* NEW-1: between 601px and 900px wide (a square-format host at 768px, for example) the bar's
+   eleven controls measure wider than the viewport on one nowrap row (1057px of content in a
+   768px bar), so the row silently scrolls instead of exposing every control. The existing
+   @media (max-width: 1200px) rule further down only drops the phones-joined chip from the
+   status cluster, not the cluster itself, and even that starts at a wider breakpoint than this
+   one. This band keeps the complete toolbar, so it only wraps rows instead of hiding anything. */
+@media (max-width: 900px) {
+  #presenter-hud.hud-bar {
+    height: auto;
+    min-height: 48px;
+    max-height: none;
+    overflow: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: var(--kit-space-8);
+    padding: var(--kit-space-8) var(--kit-space-16);
+  }
+
+  .hud-cluster-status,
+  .hud-cluster-flow,
+  .hud-cluster-utilities {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ── HUD Semantic Clusters ── */
+
+.hud-cluster-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.hud-cluster-utilities {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.hud-cluster-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+/* ── HUD Chips ── */
+
+.hud-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  color: var(--color-text-primary);
+  font-family: var(--kit-font-mono, "IBM Plex Mono", monospace);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.hud-chip-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  background-color: var(--color-text-dim);
+  transition: background-color 160ms ease;
+}
+
+.hud-chip[data-vote-status="open"] .hud-chip-dot {
+  background-color: var(--color-vax);
+}
+
+.hud-chip[data-vote-status="locked"] .hud-chip-dot {
+  background-color: var(--color-anticipation-gold);
+}
+
+.hud-clock-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--kit-font-mono, "IBM Plex Mono", monospace);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-anticipation-gold);
+  white-space: nowrap;
+}
+
+.hud-clock-chip[data-urgent="true"] {
+  color: var(--color-emphasis-red);
+}
+
+.hud-parked-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  border-radius: 6px;
+  min-height: 32px;
+  background-color: var(--color-anticipation-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-mono, "IBM Plex Mono", monospace);
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hud-phones-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-dim);
+  font-family: var(--kit-font-mono, "IBM Plex Mono", monospace);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+/* ── HUD Buttons ── */
+
+.hud-button-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-hairline);
+  border-radius: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+  font-size: 16px;
+  transition: color var(--transition-instant, 100ms) ease-out,
+    border-color var(--transition-instant, 100ms) ease-out,
+    filter var(--transition-instant, 100ms) ease-out,
+    transform var(--transition-instant, 100ms) ease-out,
+    opacity var(--transition-instant, 100ms) ease-out;
+}
+
+.hud-button-ghost:hover:not(:disabled) {
+  filter: brightness(1.25);
+}
+
+.hud-button-ghost:active:not(:disabled) {
+  transform: scale(0.95);
+  filter: brightness(0.95);
+}
+
+.hud-button-ghost:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.hud-button-ghost:disabled,
+.hud-button-ghost[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+  transform: none;
+}
+
+/* Specific ghost button states */
+#hud-lock[data-locked="true"],
+#hud-lock:disabled {
+  color: var(--color-anticipation-gold);
+  border-color: var(--color-anticipation-gold);
+  cursor: not-allowed;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+#hud-skip[data-armed="true"] {
+  color: var(--color-anticipation-gold);
+  border-color: var(--color-anticipation-gold);
+}
+
+#hud-park[aria-pressed="true"] {
+  color: var(--color-anticipation-gold);
+  border-color: var(--color-anticipation-gold);
+}
+
+#hud-timer[aria-pressed="true"] {
+  color: var(--color-anticipation-gold);
+  border-color: var(--color-anticipation-gold);
+}
+
+#hud-audio[aria-pressed="true"] {
+  color: var(--color-anticipation-gold);
+  border-color: var(--color-anticipation-gold);
+}
+
+#hud-fullscreen[aria-pressed="true"] {
+  color: var(--color-anticipation-gold);
+  border-color: var(--color-anticipation-gold);
+}
+
+#hud-pin[aria-pressed="true"] {
+  color: var(--color-anticipation-gold);
+  border-color: var(--color-anticipation-gold);
+}
+
+#hud-help,
+#hud-hide {
+  color: var(--color-text-dim);
+}
+
+.hud-button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 112px;
+  min-height: 48px;
+  padding: 0 16px;
+  background-color: var(--color-anticipation-gold);
+  color: var(--color-stage-deep);
+  border: 1px solid var(--color-anticipation-gold);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+  transition: color var(--transition-instant, 100ms) ease-out,
+    border-color var(--transition-instant, 100ms) ease-out,
+    background-color var(--transition-instant, 100ms) ease-out,
+    filter var(--transition-instant, 100ms) ease-out,
+    transform var(--transition-instant, 100ms) ease-out,
+    opacity var(--transition-instant, 100ms) ease-out;
+}
+
+.hud-button-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.hud-button-primary:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.hud-button-primary:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.hud-button-primary:disabled,
+.hud-button-primary[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+  transform: none;
+}
+
+#hud-advance {
+  min-width: 112px;
+  padding: 0 16px;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Reduced motion preference overrides */
+@media (prefers-reduced-motion: reduce) {
+  .hud-chip-dot,
+  .hud-button-ghost,
+  .hud-button-primary {
+    transition: none !important;
+    transform: none !important;
+  }
+  .hud-button-ghost:active:not(:disabled),
+  .hud-button-primary:active:not(:disabled),
+  .hud-peek-tab:active {
+    transform: none !important;
+    filter: brightness(0.95);
+  }
+}
+
+/* ── HUD-COMPACT: bar, More button, and sheet (the design call 2026-09-26, "A: one row + More") ──
+   data-compact is set by HUD.tsx from a ResizeObserver measuring the bar element itself, not a
+   viewport-width media query: a portrait-format bar is capped to 400px wide even on a viewport far
+   past the existing @media (max-width: 900px) band above, where that band never fires. This
+   selector's specificity (id + class + attribute) matches the pattern the 900px band already uses
+   (id + class, later in the file) to win the cascade over the base #presenter-hud.hud-bar rule. */
+#presenter-hud.hud-bar[data-compact="true"] {
+  height: auto;
+  min-height: 48px;
+  max-height: none;
+  overflow: visible;
+  flex-wrap: wrap;
+  row-gap: var(--kit-space-8);
+}
+
+#hud-more[aria-expanded="true"] {
+  color: var(--color-anticipation-gold);
+  border-color: var(--color-anticipation-gold);
+}
+
+.hud-more-sheet {
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--kit-space-8);
+  padding: var(--kit-space-12);
+  background-color: var(--color-panel-navy);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--kit-radius-16);
+  box-shadow: var(--kit-rim), var(--kit-drop-deep);
+  font-family: var(--kit-font-sans);
+  pointer-events: auto;
+}
+
+.hud-tile {
+  flex-direction: column;
+  gap: var(--kit-space-4);
+  min-width: 0;
+  width: 100%;
+  min-height: 64px;
+  padding: var(--kit-space-8) var(--kit-space-4);
+}
+
+.hud-tile-label {
+  font-size: 13px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* ── Responsive Viewport Rules (< 1200px) ── */
+@media (max-width: 1200px) {
+  .hud-cluster-utilities #hud-pin,
+  .hud-cluster-utilities #hud-fullscreen,
+  .hud-cluster-utilities #hud-help,
+  .hud-cluster-utilities #hud-hide {
+    min-width: 44px;
+    width: 44px;
+    padding: 0;
+  }
+
+  .hud-cluster-utilities .hud-mute-label {
+    display: none;
+  }
+
+  .hud-cluster-status .hud-phones-chip {
+    display: none;
+  }
+}

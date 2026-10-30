@@ -1,0 +1,963 @@
+/* Case file (VOF-93). Myth versus fact as evidence: a navy desk with a dot
+   grid, a teal folder whose tab carries the case number, the question typed on a cream case sheet with
+   ledger lines, answers as manila evidence tags on strings, the join pill and status as label-maker tape,
+   and at the reveal a finding sheet and a ledger sheet side by side. A true or false verdict takes a gold FICTION or FACT stamp, and a number is circled in gold marker. A room that called it gets a gold rosette.
+   On paper the ink is navy, so gold emphasis becomes a gold highlighter swipe under navy 700 type: the
+   gold and the weight stay, and the words keep their contrast. Every shade below is mixed from a token. */
+
+:root[data-look="casefile"] {
+  /* The calm hold over a picture (art=ai), the lowest the contrast meter allows plus 3 points of margin.
+     A question and the lobby: floor 0, every word sits on paper, a tag or label tape.
+     The screens that are words alone: floor 73, set by a heading over the paper in the picture. Setup wears Today's navy (looks.css). */
+  --look-calm-stage: 0%;
+  --look-calm-words: 76%;
+  /* The portrait canvas wears the phone's picture and its words run nearly the full height: floor 0, every word sits on paper, a tag or label tape. */
+  --look-calm-portrait: 0%;
+  /* A phone that asks for the picture (&art=ai) has small type across the whole screen, so its hold runs deep, and the kicker
+     rows at the top of each screen carry plates. A phone draws its set unless it asks. */
+  --look-calm-phone: 85%;
+  --case-paper: color-mix(in srgb, var(--color-gold) 13%, var(--color-light));
+  --case-paper-hi: color-mix(in srgb, var(--color-gold) 6%, var(--color-light));
+  --case-paper-shade: color-mix(in srgb, var(--color-gold) 24%, var(--color-light));
+  --case-paper-line: color-mix(in srgb, var(--color-accent-cobalt) 18%, var(--case-paper));
+  --case-margin: color-mix(in srgb, var(--color-emphasis-red) 45%, var(--case-paper));
+  --case-ink: var(--color-stage-deep);
+  --case-ink-soft: color-mix(in srgb, var(--color-stage-deep) 80%, var(--case-paper));
+  --case-desk: var(--color-canvas-navy);
+  --case-folder: color-mix(in srgb, var(--color-vax) 22%, var(--color-stage-deep));
+  --case-folder-hi: color-mix(in srgb, var(--color-vax) 32%, var(--color-stage-deep));
+  --case-folder-lo: color-mix(in srgb, var(--color-vax) 14%, var(--color-stage-deep));
+  /* The stamp and the marker: gold deep enough to hold 3:1 on every tone of the paper at stamp size, the speckles
+     that let the paper through its ink included (measured 3.6 on the darkest tone). */
+  --case-stamp: color-mix(in srgb, var(--color-gold) 62%, var(--color-stage-deep));
+  --case-highlight: color-mix(in srgb, var(--color-gold) 62%, var(--case-paper));
+  --case-tape: color-mix(in srgb, var(--color-void) 45%, var(--color-stage-deep));
+  --case-cord: color-mix(in srgb, var(--color-gold) 55%, var(--color-stage-deep));
+  --case-hole: var(--case-folder);
+  --case-tag-cut: var(--kit-space-24);
+}
+
+/* The folder takes the kind's colour: teal for a true or false call, cobalt on graph paper for a number,
+   purple for the myth among three, deep gold for an order, teal for the better reply. */
+:root[data-look="casefile"] .screen-router-root:has(.question-shell[data-kind="estimate"]) {
+  --case-folder: color-mix(in srgb, var(--color-accent-cobalt) 22%, var(--color-stage-deep));
+  --case-folder-hi: color-mix(in srgb, var(--color-accent-cobalt) 32%, var(--color-stage-deep));
+  --case-folder-lo: color-mix(in srgb, var(--color-accent-cobalt) 13%, var(--color-stage-deep));
+}
+:root[data-look="casefile"] .screen-router-root:has(.question-shell[data-kind="myth-among-three"]) {
+  --case-folder: color-mix(in srgb, var(--color-accent-purple) 22%, var(--color-stage-deep));
+  --case-folder-hi: color-mix(in srgb, var(--color-accent-purple) 32%, var(--color-stage-deep));
+  --case-folder-lo: color-mix(in srgb, var(--color-accent-purple) 13%, var(--color-stage-deep));
+}
+:root[data-look="casefile"] .screen-router-root:has(.question-shell[data-kind="order"]) {
+  --case-folder: color-mix(in srgb, var(--color-gold) 18%, var(--color-stage-deep));
+  --case-folder-hi: color-mix(in srgb, var(--color-gold) 26%, var(--color-stage-deep));
+  --case-folder-lo: color-mix(in srgb, var(--color-gold) 10%, var(--color-stage-deep));
+}
+
+/* ---- The desk and the folder --------------------------------------------------------------------- */
+:root[data-look="casefile"] .stage-atmosphere > :is(.stage-cones, .show-lights) {
+  display: none;
+}
+
+:root[data-look="casefile"] .stage-atmosphere > .show-scrim[data-active="true"] {
+  opacity: 0.35;
+}
+
+:root[data-look="casefile"] .case-desk { fill: var(--case-desk); }
+:root[data-look="casefile"] .case-dot { fill: color-mix(in srgb, var(--color-light) 13%, transparent); }
+:root[data-look="casefile"] .case-grid-line {
+  fill: none;
+  stroke: color-mix(in srgb, var(--color-light) 6%, transparent);
+  stroke-width: 1;
+}
+:root[data-look="casefile"] .case-stop--folder-top { stop-color: var(--case-folder-hi); }
+:root[data-look="casefile"] .case-stop--folder-bottom { stop-color: var(--case-folder-lo); }
+:root[data-look="casefile"] .case-stop--lamp { stop-color: var(--color-gold); stop-opacity: 0.1; }
+:root[data-look="casefile"] .case-stop--clear { stop-color: var(--color-gold); stop-opacity: 0; }
+
+:root[data-look="casefile"] .case-folder__back { fill: color-mix(in srgb, var(--case-folder) 70%, var(--color-void)); }
+:root[data-look="casefile"] .case-folder__tab { fill: var(--case-folder-hi); }
+:root[data-look="casefile"] .case-folder__edge {
+  fill: none;
+  stroke: color-mix(in srgb, var(--color-light) 10%, transparent);
+  stroke-width: 2;
+}
+/* Graph paper shows on a number's folder only. */
+:root[data-look="casefile"] .case-folder__texture { opacity: 0; }
+:root[data-look="casefile"] .screen-router-root:has(.question-shell[data-kind="estimate"]) .case-folder__texture { opacity: 1; }
+
+/* ---- The header: the case number on the folder tab, tape for the join pill and the status --------- */
+:root[data-look="casefile"] body .question-shell.question-flow[data-format][data-phase] .question-source-number {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto !important;
+  min-width: var(--kit-space-64);
+  padding: 0 var(--kit-space-16);
+  gap: var(--kit-space-8);
+  border: 0 !important;
+  border-radius: var(--kit-radius-4) !important;
+  background: var(--case-paper) !important;
+  box-shadow: 0 2px 0 var(--case-paper-shade), 0 8px 16px -8px color-mix(in srgb, var(--color-void) 70%, transparent) !important;
+  color: var(--case-ink) !important;
+  font-family: var(--kit-font-mono) !important;
+  font-weight: 600 !important;
+}
+:root[data-look="casefile"] body .question-shell.question-flow[data-format][data-phase] .question-source-number::before {
+  content: "CASE";
+  margin-right: var(--kit-space-8);
+  letter-spacing: 0.08em;
+}
+
+/* On the square and portrait canvases the header row is narrow, so the tab keeps to the case number and the kicker gets the
+   room the word CASE took. */
+:root[data-look="casefile"] body .question-shell.question-flow:not([data-format='widescreen'])[data-phase] .question-source-number::before {
+  content: none;
+}
+
+:root[data-look="casefile"] body .question-shell.question-flow[data-format][data-phase] .question-source-kicker {
+  color: var(--case-paper) !important;
+  font-family: var(--kit-font-mono) !important;
+  font-weight: 600 !important;
+}
+
+:root[data-look="casefile"] .question-show-frame .show-join-pill,
+:root[data-look="casefile"] .question-show-frame .status-rail {
+  border: 0 !important;
+  border-radius: var(--kit-radius-4) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-light) 8%, transparent), transparent 40%),
+    var(--case-tape) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-light) 14%, transparent),
+    0 6px 14px -6px color-mix(in srgb, var(--color-void) 80%, transparent) !important;
+}
+
+:root[data-look="casefile"] .question-show-frame .show-join-pill :is(.show-join-pill__host, .show-join-pill__label),
+:root[data-look="casefile"] .question-show-frame .status-rail__phase {
+  font-family: var(--kit-font-mono) !important;
+  letter-spacing: 0.04em;
+}
+
+/* ---- The case sheet under the question ----------------------------------------------------------
+   Cream paper set a hair off square, a red margin rule and blue ledger lines, under navy type. */
+:root[data-look="casefile"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--order, .question-show-frame--myth-among-three, .question-show-frame--which-patient) .question-stage-copy {
+  --case-ledger: 1.2em;
+  position: relative;
+  isolation: isolate;
+  padding: var(--kit-space-16) var(--kit-space-48) var(--kit-space-24) var(--kit-space-64);
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame .question-stage-copy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--kit-radius-4);
+  background:
+    linear-gradient(90deg, transparent calc(var(--kit-space-48) - 2px), var(--case-margin) calc(var(--kit-space-48) - 2px) var(--kit-space-48), transparent var(--kit-space-48)),
+    repeating-linear-gradient(180deg, transparent 0 calc(var(--kit-space-48) - 2px), var(--case-paper-line) calc(var(--kit-space-48) - 2px) var(--kit-space-48)),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade));
+  background-position: 0 0, 0 var(--kit-space-12), 0 0;
+  box-shadow:
+    0 2px 0 var(--case-paper-shade),
+    0 24px 40px -18px color-mix(in srgb, var(--color-void) 85%, transparent);
+  transform: rotate(-0.5deg);
+}
+
+/* VOF-98: three rows of ranges on the wide stage take tighter cards, and the case sheet gives back a little of its own air
+   above and below the stem, so the ask keeps its 56 over the 52 px ranges here too. */
+:root[data-look="casefile"] body .question-shell[data-format='widescreen'] .question-show-frame--estimate:has([data-cards='tight']) .question-stage-copy {
+  padding-block: var(--kit-space-8) var(--kit-space-16);
+}
+
+/* The portrait canvas is narrow and tall, so its sheet gives the words back their width: a slimmer margin, less air, and the
+   paper clip out at the sheet's corner where it never sits on a line of the kicker. */
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame .question-stage-copy::after {
+  right: var(--kit-space-12);
+}
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--order, .question-show-frame--myth-among-three, .question-show-frame--which-patient) .question-stage-copy {
+  padding: var(--kit-space-8) var(--kit-space-24) var(--kit-space-12) var(--kit-space-48);
+}
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame .question-stage-copy::before {
+  background:
+    linear-gradient(90deg, transparent calc(var(--kit-space-32) - 2px), var(--case-margin) calc(var(--kit-space-32) - 2px) var(--kit-space-32), transparent var(--kit-space-32)),
+    repeating-linear-gradient(180deg, transparent 0 calc(var(--kit-space-48) - 2px), var(--case-paper-line) calc(var(--kit-space-48) - 2px) var(--kit-space-48)),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade));
+  background-position: 0 0, 0 var(--kit-space-12), 0 0;
+}
+
+/* The paper clip over the sheet's top edge. */
+:root[data-look="casefile"] body .question-shell .question-show-frame .question-stage-copy::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--kit-space-12) * -1);
+  right: var(--kit-space-64);
+  width: var(--kit-space-24);
+  height: var(--kit-space-64);
+  border: 4px solid color-mix(in srgb, var(--color-light) 70%, var(--color-text-dim));
+  border-radius: var(--kit-space-12);
+  box-shadow: inset 0 0 0 4px var(--case-paper), inset 0 0 0 8px color-mix(in srgb, var(--color-light) 70%, var(--color-text-dim));
+  transform: rotate(4deg);
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame .question-stage-copy :is(h1, [data-comp-id="statement"]) {
+  color: var(--case-ink) !important;
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame .question-stage-copy .stage-arrival-kicker {
+  color: var(--case-ink-soft);
+  font-family: var(--kit-font-mono);
+}
+
+/* Gold emphasis on paper: navy 700 type on a gold highlighter swipe, still underlined in deep gold. */
+:root[data-look="casefile"] .question-show-frame .question-stage-copy {
+  --emphasis-color: var(--case-ink);
+}
+:root[data-look="casefile"] .question-show-frame .question-stage-copy [data-comp-id="statement-emphasis"],
+:root[data-look="casefile"] .question-show-frame .question-stage-copy .vof-emphasis {
+  color: var(--case-ink) !important;
+  text-shadow: none !important;
+  text-decoration-color: var(--case-stamp);
+  background: linear-gradient(180deg, transparent 14%, var(--case-highlight) 14% 90%, transparent 90%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-inline: 0.06em;
+}
+
+/* ---- Evidence tags ------------------------------------------------------------------------------
+   Manila tags with the two left corners clipped, a punched hole with a reinforcement ring in the
+   answer's colour, a colour band at the far end, a string looping out of the hole, navy typed words. */
+:root[data-look="casefile"] .question-show-frame--binary [data-answer="true"] { --tag-ring: var(--color-vax); }
+:root[data-look="casefile"] .question-show-frame--binary [data-answer="false"] { --tag-ring: var(--color-fiction); }
+:root[data-look="casefile"] .question-show-frame--estimate .estimate-answer-rail .answer-bar { --tag-ring: var(--range-accent, var(--color-gold)); }
+:root[data-look="casefile"] .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--which-patient) .answer-bar { --tag-ring: var(--color-accent-cobalt); }
+
+:root[data-look="casefile"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--myth-among-three, .question-show-frame--which-patient) .answer-bar {
+  clip-path: polygon(var(--case-tag-cut) 0, 100% 0, 100% 100%, var(--case-tag-cut) 100%, 0 calc(100% - var(--case-tag-cut)), 0 var(--case-tag-cut)) !important;
+  border: 0 !important;
+  border-radius: 0 var(--kit-radius-8) var(--kit-radius-8) 0 !important;
+  background:
+    radial-gradient(circle at var(--kit-space-48) 50%, var(--case-hole) 0 8px, var(--tag-ring) 8.5px 14px, transparent 14.5px),
+    linear-gradient(90deg, transparent 0 calc(100% - var(--kit-space-16)), var(--tag-ring) calc(100% - var(--kit-space-16))),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 55%, var(--case-paper-shade)) !important;
+  box-shadow: none !important;
+  padding-inline-start: calc(var(--kit-space-64) + var(--kit-space-16)) !important;
+  padding-inline-end: var(--kit-space-48) !important;
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--which-patient) .answer-bar::before,
+:root[data-look="casefile"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--which-patient) .answer-bar::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Lettered tags: the myth and the better reply carry a letter, so they take no punched hole. On the wide and square
+   stage the letter sits on a navy marker disc ringed in the tag's colour, cream on navy wherever it lands. On the
+   portrait stage the letter is typed in navy on the paper, which leaves that canvas's own letter box alone. */
+:root[data-look="casefile"] body .question-shell .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--which-patient) .answer-bar {
+  background:
+    linear-gradient(90deg, transparent 0 calc(100% - var(--kit-space-16)), var(--tag-ring) calc(100% - var(--kit-space-16))),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 55%, var(--case-paper-shade)) !important;
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--which-patient) .answer-bar__key {
+  font-family: var(--kit-font-mono);
+  font-weight: 600;
+}
+
+:root[data-look="casefile"] body .question-shell:not([data-format='portrait']) .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--which-patient) .answer-bar__key {
+  --case-disc: calc(var(--stage-card-badge-w) + var(--kit-space-16));
+  position: absolute;
+  /* The disc is centred 44 in from the tag's edge, a clear step before the label's own start at 80. */
+  inset-inline-start: calc(var(--kit-space-32) + var(--kit-space-12) - var(--stage-card-badge-w) / 2 - var(--kit-space-64) - var(--kit-space-16));
+  top: 50%;
+  translate: 0 -50%;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--stage-card-badge-w);
+  color: var(--case-paper-hi) !important;
+  font-size: calc(var(--stage-card-badge-w) * 0.95);
+  line-height: 1;
+}
+
+:root[data-look="casefile"] body .question-shell:not([data-format='portrait']) .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--which-patient) .answer-bar__key::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  width: var(--case-disc);
+  height: var(--case-disc);
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: var(--case-ink);
+  box-shadow: 0 0 0 4px var(--tag-ring);
+}
+
+/* The tag's shadow is its own clipped shape, set behind it, so no filter sits over the cascade. */
+:root[data-look="casefile"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate) .answer-slot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  clip-path: polygon(var(--case-tag-cut) 0, 100% 0, 100% 100%, var(--case-tag-cut) 100%, 0 calc(100% - var(--case-tag-cut)), 0 var(--case-tag-cut));
+  background: color-mix(in srgb, var(--color-void) 55%, transparent);
+  transform: translate(6px, 10px);
+}
+
+/* The string: a tan cord from the hole, up and over the tag's clipped corner and away. The arc's
+   lower right end is the hole itself, so the cord never crosses the words. */
+:root[data-look="casefile"] body .question-shell .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate) .answer-slot::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - var(--kit-space-64));
+  left: calc(var(--kit-space-48) - var(--kit-space-64) - var(--kit-space-16));
+  width: calc(var(--kit-space-64) + var(--kit-space-16));
+  height: var(--kit-space-64);
+  border-top: 3px solid var(--case-cord);
+  border-right: 3px solid var(--case-cord);
+  border-top-right-radius: 100% 100%;
+  pointer-events: none;
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame .answer-bar .answer-bar__label,
+:root[data-look="casefile"] body .question-shell .question-show-frame .answer-bar .answer-bar__label * {
+  color: var(--case-ink) !important;
+  font-family: var(--kit-font-mono) !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+:root[data-look="casefile"] .question-show-frame .answer-bar :is(.answer-bar__pct, .answer-bar__votes, .answer-bar__key) {
+  color: var(--case-ink) !important;
+}
+
+/* An order's steps are tags too, one ring colour each in turn, and its scenario and cue are typed on the sheet. */
+:root[data-look="casefile"] .question-show-frame--order .order-bar { --tag-ring: var(--color-vax); }
+:root[data-look="casefile"] .question-show-frame--order .order-bar:nth-child(6n + 2) { --tag-ring: var(--color-accent-cobalt); }
+:root[data-look="casefile"] .question-show-frame--order .order-bar:nth-child(6n + 3) { --tag-ring: var(--color-gold); }
+:root[data-look="casefile"] .question-show-frame--order .order-bar:nth-child(6n + 4) { --tag-ring: var(--color-accent-purple); }
+:root[data-look="casefile"] .question-show-frame--order .order-bar:nth-child(6n + 5) { --tag-ring: var(--color-fiction); }
+:root[data-look="casefile"] .question-show-frame--order .order-bar:nth-child(6n + 6) { --tag-ring: var(--color-accent-pink); }
+
+:root[data-look="casefile"] body .question-shell .question-show-frame--order .order-bar {
+  clip-path: polygon(var(--case-tag-cut) 0, 100% 0, 100% 100%, var(--case-tag-cut) 100%, 0 calc(100% - var(--case-tag-cut)), 0 var(--case-tag-cut)) !important;
+  border: 0 !important;
+  border-radius: 0 var(--kit-radius-8) var(--kit-radius-8) 0 !important;
+  background:
+    radial-gradient(circle at var(--kit-space-48) 50%, var(--case-hole) 0 8px, var(--tag-ring) 8.5px 14px, transparent 14.5px),
+    linear-gradient(90deg, transparent 0 calc(100% - var(--kit-space-16)), var(--tag-ring) calc(100% - var(--kit-space-16))),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 55%, var(--case-paper-shade)) !important;
+  box-shadow: none !important;
+  padding-inline-start: calc(var(--kit-space-64) + var(--kit-space-16)) !important;
+  padding-inline-end: var(--kit-space-48) !important;
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame--order .order-bar .order-bar__label,
+:root[data-look="casefile"] body .question-shell .question-show-frame--order .order-bar .order-bar__label * {
+  color: var(--case-ink) !important;
+  font-family: var(--kit-font-mono) !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame--order .order-scenario {
+  color: var(--case-ink-soft) !important;
+}
+
+:root[data-look="casefile"] body .question-shell .question-show-frame--order .order-scramble-cue {
+  color: var(--case-ink-soft) !important;
+  font-family: var(--kit-font-mono);
+}
+
+/* The estimate's "Most common" note is gold emphasis on paper, so it takes the highlighter swipe under navy type. */
+:root[data-look="casefile"] body .question-shell .question-show-frame--estimate .estimate-answer-rail .answer-bar .answer-bar__note {
+  width: fit-content;
+  padding-inline: 0.3em !important;
+  background: linear-gradient(180deg, transparent 14%, var(--case-highlight) 14% 90%, transparent 90%) !important;
+  color: var(--case-ink) !important;
+}
+
+/* On the portrait canvas the tags give their words the room today's chevrons gave them: sans type, which sets narrower than
+   mono, and a start that clears the hole or the letter and no more. The kicker above the stem is sans there too. */
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame .answer-bar .answer-bar__label,
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame .answer-bar .answer-bar__label *,
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame--order .order-bar .order-bar__label,
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame--order .order-bar .order-bar__label *,
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame .question-stage-copy .stage-arrival-kicker {
+  font-family: var(--kit-font-sans) !important;
+}
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame .question-stage-copy .stage-arrival-kicker {
+  font-family: var(--kit-font-sans) !important;
+}
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame:is(.question-show-frame--myth-among-three, .question-show-frame--which-patient) .answer-bar {
+  padding-inline-start: var(--stage-card-text-start) !important;
+}
+:root[data-look="casefile"] body .question-shell[data-format='portrait'] .question-show-frame:is(.question-show-frame--binary, .question-show-frame--estimate, .question-show-frame--order) :is(.answer-bar, .order-bar) {
+  padding-inline-start: calc(var(--kit-space-64) + var(--kit-space-4)) !important;
+}
+
+/* Tags swing in from their strings as the question lands. */
+:root[data-look="casefile"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot .answer-bar {
+  transform-origin: var(--kit-space-48) 50%;
+  animation: case-tag-swing 640ms cubic-bezier(0.34, 1.56, 0.64, 1) 220ms backwards;
+}
+:root[data-look="casefile"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot:nth-child(2) .answer-bar { animation-delay: 300ms; }
+:root[data-look="casefile"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot:nth-child(3) .answer-bar { animation-delay: 380ms; }
+:root[data-look="casefile"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot:nth-child(4) .answer-bar { animation-delay: 460ms; }
+:root[data-look="casefile"] .question-shell .question-show-frame :is(.answer-rail:not(.order-rail), .estimate-answer-rail__options) > .answer-slot:nth-child(n + 5) .answer-bar { animation-delay: 540ms; }
+
+@keyframes case-tag-swing {
+  0% { opacity: 0; transform: rotate(-9deg) translateY(-12px); }
+  55% { opacity: 1; transform: rotate(3deg); }
+  80% { transform: rotate(-1deg); }
+  100% { transform: none; }
+}
+
+/* ---- The reveal: the finding and the ledger, side by side ----------------------------------------- */
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'][data-phase] .question-show-frame .question-beat-pane > .question-result[data-screen="question"]:has(> .question-result-poll) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  column-gap: var(--kit-space-48);
+  align-items: center;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result {
+  --result-color: var(--case-ink);
+}
+
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-card {
+  grid-column: 1;
+  position: relative;
+  justify-self: end;
+  align-self: center;
+  width: min(100%, 720px);
+  min-width: 0;
+  min-height: 0;
+  padding: var(--kit-space-32) var(--kit-space-48) var(--kit-space-48);
+  border: 0 !important;
+  border-radius: var(--kit-radius-4) !important;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 calc(var(--kit-space-48) - 2px), var(--case-paper-line) calc(var(--kit-space-48) - 2px) var(--kit-space-48)),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade)) !important;
+  background-color: var(--case-paper) !important;
+  background-position: 0 var(--kit-space-24), 0 0 !important;
+  box-shadow:
+    0 2px 0 var(--case-paper-shade),
+    0 28px 48px -20px color-mix(in srgb, var(--color-void) 90%, transparent) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  color: var(--case-ink);
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result .question-result-copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* A circled number needs air above it, so the marker never reaches the room line. */
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result[data-kind="estimate"] .question-result-copy {
+  margin-top: var(--kit-space-32);
+  margin-bottom: var(--kit-space-16);
+}
+
+/* Every verdict on the paper is in navy ink. A true or false word and a number also take the big typed size. */
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result .question-result-answer {
+  color: var(--case-ink);
+  text-shadow: none;
+}
+
+/* A sentence verdict (the better reply, the myth, the order) gets the wider column. */
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'][data-phase] .question-show-frame .question-beat-pane > .question-result[data-screen="question"]:has(> .question-result-poll):not([data-kind="binary"]):not([data-kind="estimate"]) {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'] .question-result:not([data-kind="binary"]):not([data-kind="estimate"]) .question-result-card {
+  width: 100%;
+}
+
+/* A true or false word and a number take the big typed size, and a long one shrinks to its sheet: the size is the
+   smaller of 168 and the room the sheet leaves for it, shared out over the verdict's characters at 0.6 em each. The room
+   is about three quarters of the sheet's inner width, so the marker ring that circles a number clears its glyphs. */
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result:is([data-kind="binary"], [data-kind="estimate"]) {
+  --case-verdict-cap: 168px;
+  --case-verdict-room: 496px;
+  --case-verdict-fs: min(var(--case-verdict-cap), calc(var(--case-verdict-room) / var(--look-verdict-len, 4) / 0.6));
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result[data-kind="binary"] {
+  --case-verdict-cap: 144px;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result:is([data-kind="binary"], [data-kind="estimate"]) .question-result-answer {
+  position: relative;
+  z-index: 1;
+  color: var(--case-ink);
+  font-family: var(--kit-font-mono);
+  font-size: var(--case-verdict-fs);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+  text-shadow: none;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result .question-result-room-line {
+  justify-self: center;
+  width: fit-content;
+  margin-inline: auto;
+  padding-inline: var(--kit-space-8);
+  color: var(--case-ink);
+  text-align: center;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result[data-room-outcome="right"] .question-result-room-line {
+  background: linear-gradient(180deg, transparent 10%, var(--case-highlight) 10% 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result .question-result-sting {
+  color: var(--case-ink-soft);
+  text-align: center;
+}
+
+/* An order's numbers are drawn by CSS in gold, so on the paper they take the stamp's deep gold. */
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-order > li::before {
+  color: var(--case-stamp);
+}
+
+/* The stamp lands under the verdict, in its own room on the sheet, and the sheet takes the thud. */
+:root[data-look="casefile"] .look-reveal-mark {
+  display: block;
+}
+
+:root[data-look="casefile"] .look-stamp {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--kit-space-24);
+  padding: var(--kit-space-8) var(--kit-space-32);
+  border: 9px double var(--case-stamp);
+  border-radius: var(--kit-radius-8);
+  color: var(--case-stamp);
+  font-family: var(--kit-font-sans);
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  transform: rotate(-7deg);
+  /* Ink that missed the paper: speckles through the stamp, never through a word. */
+  -webkit-mask-image:
+    radial-gradient(circle at 30% 40%, transparent 0 1.4px, var(--color-void) 2px),
+    radial-gradient(circle at 70% 60%, transparent 0 1.1px, var(--color-void) 1.7px);
+  -webkit-mask-size: 11px 13px, 17px 7px;
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(circle at 30% 40%, transparent 0 1.4px, var(--color-void) 2px),
+    radial-gradient(circle at 70% 60%, transparent 0 1.1px, var(--color-void) 1.7px);
+  mask-size: 11px 13px, 17px 7px;
+  mask-composite: intersect;
+  animation: case-stamp-slam 520ms cubic-bezier(0.2, 0.9, 0.3, 1.2) 420ms backwards;
+}
+
+@keyframes case-stamp-slam {
+  0% { opacity: 0; transform: rotate(-7deg) scale(2.4); }
+  50% { opacity: 1; transform: rotate(-7deg) scale(0.92); }
+  75% { transform: rotate(-7deg) scale(1.04); }
+  100% { transform: rotate(-7deg); }
+}
+
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'] .question-result[data-kind="binary"] .question-result-card {
+  animation: gn-result-pop 460ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards, case-thud 260ms ease-out 640ms;
+}
+
+@keyframes case-thud {
+  0%, 100% { translate: 0 0; }
+  35% { translate: 0 5px; }
+  70% { translate: 0 -2px; }
+}
+
+/* A number is circled in gold marker, drawn round the whole answer. */
+:root[data-look="casefile"] .look-marker-ring {
+  position: absolute;
+  top: calc(var(--kit-space-24) * -1);
+  left: 50%;
+  /* A little past the number, and never past the sheet the number is on. */
+  width: min(calc(100% + var(--kit-space-64) * 2 + var(--kit-space-32)), calc(var(--case-verdict-room) + var(--kit-space-64) * 3));
+  height: calc(var(--case-verdict-fs, 168px) * 1.05 + var(--kit-space-48));
+  translate: -50% 0;
+  overflow: visible;
+  pointer-events: none;
+}
+:root[data-look="casefile"] .look-marker-ring__stroke {
+  fill: none;
+  stroke: var(--case-stamp);
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: case-marker-draw 720ms ease-out 360ms backwards;
+}
+
+@keyframes case-marker-draw {
+  from { stroke-dashoffset: 1; }
+}
+
+/* The rosette hangs off the finding sheet's left edge, clear of every word. */
+:root[data-look="casefile"] .look-reveal-ribbon {
+  position: absolute;
+  top: calc(var(--kit-space-48) * -1);
+  left: calc(var(--kit-space-48) * -1);
+  width: 104px;
+  pointer-events: none;
+  animation: case-rosette-in 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 980ms backwards;
+}
+:root[data-look="casefile"] .look-rosette { display: block; width: 100%; height: auto; overflow: visible; }
+:root[data-look="casefile"] .look-rosette__tail { fill: var(--case-stamp); }
+:root[data-look="casefile"] .look-rosette__tail--right { fill: color-mix(in srgb, var(--color-gold) 80%, var(--color-stage-deep)); }
+:root[data-look="casefile"] .look-rosette__ruff { fill: var(--color-gold); }
+:root[data-look="casefile"] .look-rosette__disc { fill: color-mix(in srgb, var(--color-gold) 60%, var(--color-light)); }
+:root[data-look="casefile"] .look-rosette__ring {
+  fill: none;
+  stroke: var(--case-stamp);
+  stroke-width: 3;
+  stroke-dasharray: 3 5;
+}
+
+@keyframes case-rosette-in {
+  from { opacity: 0; transform: rotate(-30deg) scale(0.4); }
+}
+
+/* The ledger: one ruled row per answer, a hatched bar to its share, the answer's row highlighted. */
+/* The ledger is one grid and each row takes its columns from it, so the label column is as wide as the widest label in the
+   rule (down to "25% to under 50%") and every bar starts in one place. */
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-poll {
+  grid-column: 2;
+  justify-self: start;
+  align-self: center;
+  display: grid;
+  grid-template-columns: minmax(136px, max-content) minmax(0, 1fr) minmax(96px, max-content);
+  column-gap: var(--kit-space-16);
+  row-gap: 0;
+  align-content: center;
+  width: min(100%, 700px);
+  padding: var(--kit-space-24) var(--kit-space-32);
+  border-radius: var(--kit-radius-4);
+  background: linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade));
+  box-shadow:
+    0 2px 0 var(--case-paper-shade),
+    0 28px 48px -20px color-mix(in srgb, var(--color-void) 90%, transparent);
+  transform: rotate(0.6deg);
+}
+
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-poll > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-areas:
+    "label bar pct"
+    "label bar votes";
+  align-items: center;
+  min-height: 80px;
+  padding: var(--kit-space-8) 0;
+  border-bottom: 2px solid var(--case-paper-line);
+  color: var(--case-ink);
+}
+
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-poll > div:last-child {
+  border-bottom: 0;
+}
+
+:root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-poll[data-count="2"] > div {
+  min-height: 136px;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div > span {
+  grid-area: label;
+  justify-self: start;
+  padding-inline: var(--kit-space-4);
+  color: var(--case-ink);
+  font-family: var(--kit-font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll[data-count="2"] > div > span {
+  font-size: 40px;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div[data-correct="true"] > span {
+  background: linear-gradient(180deg, transparent 8%, var(--case-highlight) 8% 92%, transparent 92%);
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div > strong {
+  grid-area: pct;
+  justify-self: end;
+  align-self: end;
+  color: var(--case-ink);
+  font-family: var(--kit-font-mono);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div > small {
+  grid-area: votes;
+  justify-self: end;
+  align-self: start;
+  color: var(--case-ink-soft);
+  font-size: 26px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll .look-bar {
+  grid-area: bar;
+  height: var(--kit-space-32);
+  border-left: 2px solid var(--case-ink);
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll[data-count="2"] .look-bar {
+  height: var(--kit-space-48);
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll .look-bar__fill {
+  inset: 0 auto 0 0;
+  /* The share of the room, out of a full rule. */
+  width: calc(var(--share, 0) * 1%);
+  border: 2px solid var(--case-ink);
+  border-left: 0;
+  background: repeating-linear-gradient(-45deg, var(--case-ink) 0 3px, transparent 3px 9px);
+  animation: case-ledger-hatch 760ms ease-out 520ms backwards;
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div[data-correct="true"] .look-bar__fill {
+  border-color: var(--case-stamp);
+  background: repeating-linear-gradient(-45deg, var(--case-stamp) 0 4px, transparent 4px 9px);
+}
+
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div:nth-child(2) .look-bar__fill { animation-delay: 600ms; }
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div:nth-child(3) .look-bar__fill { animation-delay: 680ms; }
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div:nth-child(4) .look-bar__fill { animation-delay: 760ms; }
+:root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll > div:nth-child(n + 5) .look-bar__fill { animation-delay: 840ms; }
+
+@keyframes case-ledger-hatch {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* The footer's source on the folder, typed. */
+:root[data-look="casefile"] body .question-shell.question-flow:not([data-format='portrait'])[data-phase='revealed'] .show-footer:has(.status-rail) .show-source-pill {
+  font-family: var(--kit-font-mono) !important;
+}
+
+/* ---- The lobby: name tags, and the join card as an evidence card with a clip ---------------------- */
+:root[data-look="casefile"] .preshow-lobby .lobby-arrival {
+  --tag-ring: var(--color-vax);
+  border: 0;
+  border-radius: 0 var(--kit-radius-8) var(--kit-radius-8) 0;
+  clip-path: polygon(var(--kit-space-16) 0, 100% 0, 100% 100%, var(--kit-space-16) 100%, 0 calc(100% - var(--kit-space-16)), 0 var(--kit-space-16));
+  background:
+    linear-gradient(90deg, transparent 0 calc(100% - var(--kit-space-12)), var(--tag-ring) calc(100% - var(--kit-space-12))),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade));
+  box-shadow: none;
+  color: var(--case-ink);
+  font-family: var(--kit-font-mono);
+  font-weight: 600;
+  padding-inline-start: var(--kit-space-16);
+  padding-inline-end: var(--kit-space-32);
+}
+:root[data-look="casefile"] .preshow-lobby .lobby-arrival:nth-child(4n + 2) { --tag-ring: var(--color-fiction); }
+:root[data-look="casefile"] .preshow-lobby .lobby-arrival:nth-child(4n + 3) { --tag-ring: var(--color-gold); }
+:root[data-look="casefile"] .preshow-lobby .lobby-arrival:nth-child(4n + 4) { --tag-ring: var(--color-accent-cobalt); }
+
+:root[data-look="casefile"] .preshow-lobby .lobby-arrival__initial {
+  background-image: none;
+  background-color: var(--case-folder);
+  /* The ring keeps a twelfth of the disc on every canvas and at every plate size (VOF-97), 4 px on the full plates of the wide
+     and square stages as before, so a letter with a tail, like Q, stays on the folder colour on portrait's smaller disc too. */
+  box-shadow: inset 0 0 0 calc(var(--lobby-chip-mark) * var(--roster-scale, 1) / 12) var(--tag-ring);
+  color: var(--case-paper);
+}
+
+:root[data-look="casefile"] .preshow-lobby .lobby-join {
+  position: relative;
+  border: 0 !important;
+  border-radius: var(--kit-radius-4);
+  background: linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade)) !important;
+  box-shadow:
+    0 2px 0 var(--case-paper-shade),
+    0 28px 48px -20px color-mix(in srgb, var(--color-void) 90%, transparent) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transform: rotate(0.8deg);
+}
+
+:root[data-look="casefile"] .preshow-lobby .lobby-join::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--kit-space-16) * -1);
+  left: var(--kit-space-64);
+  width: var(--kit-space-24);
+  height: var(--kit-space-64);
+  border: 4px solid color-mix(in srgb, var(--color-light) 70%, var(--color-text-dim));
+  border-radius: var(--kit-space-12);
+  box-shadow: inset 0 0 0 4px var(--case-paper), inset 0 0 0 8px color-mix(in srgb, var(--color-light) 70%, var(--color-text-dim));
+  transform: rotate(-6deg);
+}
+
+:root[data-look="casefile"] .preshow-lobby .lobby-join :is(.lobby-join-type-hint, .lobby-join-label) {
+  color: var(--case-ink-soft);
+}
+
+:root[data-look="casefile"] .preshow-lobby .lobby-join :is(.lobby-join-host, .lobby-join-address) {
+  color: var(--case-ink);
+  text-shadow: none;
+}
+
+:root[data-look="casefile"] .preshow-lobby .lobby-room-code {
+  padding-inline: var(--kit-space-12);
+  color: var(--case-ink);
+  text-shadow: none;
+  background: linear-gradient(180deg, transparent 12%, var(--case-highlight) 12% 90%, transparent 90%);
+}
+
+:root[data-look="casefile"] .preshow-lobby .lobby-qr-frame {
+  box-shadow: inset 0 0 0 2px var(--case-paper-shade);
+}
+
+/* ---- The phone: a case sheet, tag buttons and the stamp in ink ------------------------------------ */
+:root[data-look="casefile"] .phone-live-shell .phone-vote-surface {
+  background-color: transparent !important;
+}
+
+:root[data-look="casefile"] .phone-backdrop[data-scrim="stage"]::after {
+  background: color-mix(in srgb, var(--color-stage-deep) 30%, transparent);
+}
+
+:root[data-look="casefile"] .look-phone .case-folder__body { fill: var(--case-folder); }
+
+:root[data-look="casefile"] .phone-live-shell.room-frame .phone-vote-hero,
+:root[data-look="casefile"] .phone-live-shell.room-frame .stamp-claim {
+  position: relative;
+  padding: var(--kit-space-16) var(--kit-space-16) var(--kit-space-16) var(--kit-space-32);
+  border-radius: var(--kit-radius-4);
+  background:
+    linear-gradient(90deg, transparent calc(var(--kit-space-16) + 6px), var(--case-margin) calc(var(--kit-space-16) + 6px) calc(var(--kit-space-16) + 8px), transparent calc(var(--kit-space-16) + 8px)),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade));
+  box-shadow: 0 2px 0 var(--case-paper-shade), 0 16px 28px -14px color-mix(in srgb, var(--color-void) 85%, transparent);
+  color: var(--case-ink);
+}
+
+:root[data-look="casefile"] .phone-live-shell.room-frame .stamp-claim {
+  padding-bottom: calc(var(--phone-stamp-h) + var(--kit-space-24));
+}
+
+:root[data-look="casefile"] .phone-live-shell.room-frame .phone-vote-hero :is(.phone-vote-stem, .phone-question-kicker, .phone-vote-status),
+:root[data-look="casefile"] .phone-live-shell.room-frame .stamp-claim__text {
+  color: var(--case-ink) !important;
+}
+
+:root[data-look="casefile"] .phone-live-shell.room-frame .phone-question-kicker {
+  font-family: var(--kit-font-mono);
+}
+
+/* The patient's words sit inside the sheet, so they are typed in navy on a slightly deeper paper, with their label in soft navy. */
+:root[data-look="casefile"] .phone-live-shell.room-frame .phone-vote-scenario {
+  border-color: var(--case-paper-line);
+  background: color-mix(in srgb, var(--case-ink) 6%, var(--case-paper-hi));
+  color: var(--case-ink);
+}
+
+:root[data-look="casefile"] .phone-live-shell.room-frame .phone-vote-scenario .phone-scenario-label {
+  color: var(--case-ink-soft);
+}
+
+:root[data-look="casefile"] .phone-live-shell.room-frame .phone-vote-hero :is(.phone-vote-timer, [data-role="timer-ring"]) {
+  color: var(--case-ink-soft) !important;
+}
+
+:root[data-look="casefile"] .phone-live-shell.room-frame :is(.phone-vote-hero, .stamp-claim) .vof-emphasis {
+  color: var(--case-ink);
+  background: linear-gradient(180deg, transparent 12%, var(--case-highlight) 12% 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+:root[data-look="casefile"] .phone-live-shell.room-frame .answer-slab--binary {
+  --tag-ring: var(--color-vax);
+  border: 0;
+  border-radius: 0 var(--kit-radius-8) var(--kit-radius-8) 0;
+  clip-path: polygon(var(--kit-space-24) 0, 100% 0, 100% 100%, var(--kit-space-24) 100%, 0 calc(100% - var(--kit-space-24)), 0 var(--kit-space-24));
+  background:
+    radial-gradient(circle at var(--kit-space-48) 50%, var(--case-hole) 0 7px, var(--tag-ring) 7.5px 13px, transparent 13.5px),
+    linear-gradient(90deg, transparent 0 calc(100% - var(--kit-space-16)), var(--tag-ring) calc(100% - var(--kit-space-16))),
+    linear-gradient(180deg, var(--case-paper-hi), var(--case-paper) 60%, var(--case-paper-shade));
+  color: var(--case-ink);
+}
+:root[data-look="casefile"] .phone-live-shell.room-frame .answer-slab--false { --tag-ring: var(--color-fiction); }
+:root[data-look="casefile"] .phone-live-shell.room-frame .answer-slab--binary .answer-slab__word {
+  font-family: var(--kit-font-mono);
+}
+:root[data-look="casefile"] .phone-live-shell.room-frame .answer-slab--binary[data-marked="true"] {
+  background:
+    radial-gradient(circle at var(--kit-space-48) 50%, var(--case-hole) 0 7px, var(--tag-ring) 7.5px 13px, transparent 13.5px),
+    linear-gradient(180deg, var(--case-highlight), var(--case-highlight));
+}
+
+:root[data-look="casefile"] .phone-live-shell.room-frame .stamp-mark {
+  /* A short word is slapped on at 8 degrees. A long one, such as "40.4 percent", lies flatter, so its low end never
+     drops past the sheet onto the line under it, and 2 degrees is the flattest it lies. looks.css turns every drawn look's
+     stamp with min() of these three numbers, and its rule outranks this one, so the numbers are set here rather than a
+     tilt of Case file's own, which never applied. */
+  --look-stamp-slap: -8deg;
+  --look-stamp-ease: 0.7deg;
+  --look-stamp-floor: -2deg;
+  border: 6px double var(--case-stamp);
+  border-radius: var(--kit-radius-8);
+  background: transparent;
+  color: var(--case-stamp);
+  font-weight: 700;
+  -webkit-mask-image:
+    radial-gradient(circle at 30% 40%, transparent 0 1.2px, var(--color-void) 1.8px),
+    radial-gradient(circle at 70% 60%, transparent 0 1px, var(--color-void) 1.5px);
+  -webkit-mask-size: 9px 11px, 13px 6px;
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(circle at 30% 40%, transparent 0 1.2px, var(--color-void) 1.8px),
+    radial-gradient(circle at 70% 60%, transparent 0 1px, var(--color-void) 1.5px);
+  mask-size: 9px 11px, 13px 6px;
+  mask-composite: intersect;
+  /* Only the timing applies. The shared rule in looks.css sets the stamp's turn and its animation-name (look-stamp-in,
+     from scale 1.4) at a higher specificity, so the slam below, from scale 1.8, never runs. Whether Case file should slam
+     is the owner's call, and the queue holds it. */
+  animation: case-phone-stamp 300ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+
+@keyframes case-phone-stamp {
+  from { opacity: 0; transform: rotate(var(--look-stamp-tilt, -8deg)) scale(1.8); }
+  to { opacity: 1; transform: rotate(var(--look-stamp-tilt, -8deg)) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-look="casefile"] .question-shell .question-show-frame .answer-bar,
+  :root[data-look="casefile"] .look-stamp,
+  :root[data-look="casefile"] .look-marker-ring__stroke,
+  :root[data-look="casefile"] .look-reveal-ribbon,
+  :root[data-look="casefile"] .question-flow[data-format='widescreen'] .question-result-poll .look-bar__fill,
+  :root[data-look="casefile"] body .question-shell.question-flow[data-format='widescreen'] .question-result .question-result-card,
+  :root[data-look="casefile"] .phone-live-shell.room-frame .stamp-mark {
+    animation: none !important;
+  }
+}

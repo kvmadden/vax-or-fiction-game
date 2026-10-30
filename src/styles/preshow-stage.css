@@ -1,0 +1,1836 @@
+/* ============================================================================================
+   Preshow surfaces: the title plate and the lobby. One owner each.
+
+   These two surfaces used to be absolute pixel maps against the 1600x900 canvas (`left: 96px;
+   top: 840px`), topped with emergency `!important` overrides each time a band landed on its
+   neighbour. Coordinates cannot describe "below the thing above me", so every copy change or
+   canvas swap re-opened the same overlaps: ARE YOU READY TO PLAY on FICTION?, the lobby hype
+   line on the walk-in lyric, the join card on the wordmark.
+
+   This file replaces both maps with two grids. Bands are laid out by flow, so a band can only
+   ever sit in its own row or column, and the three canvases (widescreen 1600x900, square
+   1200x1200, portrait 430x932) differ by token values, not by re-positioning. Loaded last so
+   these are the surfaces' final word; nothing here needs `!important`.
+   ============================================================================================ */
+
+/* Inside the show the stage atmosphere (its gradient, scrim and lights) lives on the router, behind
+   every beat. These screens kept the opaque navy they paint when they render on their own, which hid
+   that atmosphere on the lobby, the title and the instructions while every question played on it. */
+.screen-router-root :is(.preshow-lobby, .preshow-title, .preshow-instructions) {
+  background-color: transparent;
+}
+
+/* The facilitator HUD is a viewport portal drawn over the letterboxed canvas. Both screens
+   publish its measured overlap as `--preshow-hud-overlap` (useStageHudOverlap), in viewport
+   pixels, so the bottom band reserves the space the controls actually cover on this canvas. */
+.preshow-title,
+.preshow-lobby {
+  --preshow-hud-clearance: calc(
+    (var(--preshow-hud-overlap, 0px) + var(--kit-space-16)) / var(--stage-scale, 1)
+  );
+}
+
+/* --- Wordmark: one mark, syringe hangs off VAX ----------------------------------------------
+   The syringe lives inside the VAX glyph box so title, lobby, entry, and phone share one
+   geometry. It hangs to the right of the X instead of sitting on it. Padding on VAX keeps the
+   X unclipped. */
+.title-source-mark,
+.lobby-title,
+.entry-hero-art,
+.phone-hero-mark {
+  --wordmark-rule: max(14px, calc(var(--wordmark-size) * 0.12));
+  --wordmark-syringe-w: calc(var(--wordmark-size) * 0.18);
+  --wordmark-syringe-h: calc(var(--wordmark-size) * 0.56);
+  --wordmark-tilt: -17deg;
+  line-height: 1;
+  overflow: visible;
+}
+
+.title-source-mark,
+.lobby-title {
+  margin: 0;
+  font-size: var(--wordmark-size);
+}
+
+.entry-hero-art {
+  /* VOF-W7: the old floor (160px) held past 941px of viewport width, so every phone from
+     430 down to 320 got the same oversized mark and the "?" and the syringe ran past the
+     screen edge. 30vw keeps the mark proportional to the available width all the way down;
+     230px still caps it at the same size the mark has always drawn on desktop. */
+  --wordmark-size: clamp(90px, 30vw, 230px);
+  font-size: var(--wordmark-size);
+}
+
+.phone-hero-mark {
+  --wordmark-size: clamp(84px, 24vw, 108px);
+  overflow: visible;
+}
+
+.phone-hero-mark .show-wordmark--stacked {
+  font-size: var(--wordmark-size);
+  overflow: visible;
+}
+
+.title-source-mark .show-wordmark,
+.lobby-title .show-wordmark,
+.entry-hero-art .show-wordmark,
+.phone-hero-mark .show-wordmark--stacked {
+  padding-inline-end: var(--kit-space-24);
+}
+
+.title-source-mark .show-wordmark__or,
+.lobby-title .show-wordmark__or,
+.entry-hero-art .show-wordmark__or,
+.phone-hero-mark .show-wordmark__or {
+  font-size: var(--wordmark-rule);
+}
+
+.title-source-mark .show-wordmark__vax,
+.lobby-title .show-wordmark__vax,
+.entry-hero-art .show-wordmark__vax,
+.phone-hero-mark .show-wordmark__vax {
+  position: relative;
+  overflow: visible;
+  padding-inline-end: calc(var(--wordmark-syringe-w) + var(--kit-space-8));
+}
+
+.title-source-mark .show-wordmark__syringe,
+.lobby-title .show-wordmark__syringe,
+.entry-hero-art .show-wordmark__syringe,
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__syringe {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + var(--kit-space-4));
+  right: auto;
+  width: var(--wordmark-syringe-w);
+  height: var(--wordmark-syringe-h);
+  transform: translateY(-50%) rotate(var(--wordmark-tilt));
+  transform-origin: 0% 42%;
+  color: var(--color-vax);
+  /* Its own glow plus the one VAX used to lend it, now that the letters glow on their own span. */
+  filter:
+    drop-shadow(0 0 12px color-mix(in srgb, var(--color-vax) 45%, transparent))
+    drop-shadow(0 0 18px color-mix(in srgb, var(--color-vax) 35%, transparent));
+  animation: syringe-jab 7.5s ease-in-out infinite;
+}
+
+.phone-hero-mark .show-wordmark--stacked .show-wordmark__syringe {
+  animation: none;
+}
+
+/* --- Title plate ---------------------------------------------------------------------------
+   Reading order is the visual order: the ready call sits above the wordmark, the wordmark owns
+   the optical centre, the walk-in meter closes the plate. TitleSlide renders them in that
+   order, so no band needs `order` or a grid-area override to get where it belongs. */
+
+.preshow-title {
+  --title-pad-x: var(--kit-space-64);
+  --title-pad-y: var(--kit-space-64);
+  --title-band-gap: var(--kit-space-32);
+  --title-mark-gap: var(--kit-space-32);
+  --title-mark-base: 384px;
+  --title-mark-size: var(--title-mark-base);
+  /* The kicker is a fraction of the mark rather than its own size, so the banner keeps the same
+     share of the wordmark's width on every canvas and on the venue where the mark yields height to
+     a tagline. 0.18 keeps it secondary to the mark and still readable from the back of the room. */
+  --title-ready-ratio: 0.18;
+  --title-tagline-size: 40px;
+}
+
+.preshow-title[data-format="square"] {
+  --title-pad-x: var(--kit-space-48);
+  --title-mark-base: 380px;
+  --title-tagline-size: 34px;
+}
+
+.preshow-title[data-format="portrait"] {
+  --title-pad-x: var(--kit-space-24);
+  --title-pad-y: var(--kit-space-24);
+  --title-band-gap: var(--kit-space-24);
+  --title-mark-gap: var(--kit-space-16);
+  --title-mark-base: 148px;
+  --title-tagline-size: 17px;
+}
+
+.preshow-title .title-show-frame .show-safe {
+  inset: 0;
+  display: block;
+}
+
+/* ShowChrome mounts a header/content/footer trio on every frame. The title plate keeps the header
+   for the join pill (see the header band below) and drops the source line and the footer. */
+.preshow-title .title-show-frame > .show-safe > :is(.show-content, .show-footer) {
+  display: none;
+}
+
+.title-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  /* One column that cannot grow with the lyric track. Without this, the doubled
+     marquee is the column's max-content and the centered wordmark lands offstage. */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  justify-items: center;
+  gap: var(--title-band-gap);
+  padding: var(--title-pad-y) var(--title-pad-x)
+    max(var(--title-pad-y), var(--preshow-hud-clearance));
+  box-sizing: border-box;
+}
+
+.title-ready-line {
+  grid-row: 1;
+  align-self: start;
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-display, var(--kit-font-sans));
+  font-size: calc(var(--title-mark-size) * var(--title-ready-ratio));
+  font-weight: 700;
+  line-height: 1.1;
+  /* Tracking is what a letterspaced kicker spends its width on: at 0.18em, 22 characters gave up
+     nearly 4em of it. Spending less here buys visibly larger glyphs at the same banner width, so
+     the kicker reads as a kicker without out-measuring the wordmark underneath it. */
+  letter-spacing: 0.11em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 55%, transparent),
+    0 0 var(--kit-space-64) color-mix(in srgb, var(--color-vax) 30%, transparent);
+}
+
+/* The mark band takes the slack row so the wordmark reads as the optical centre of the plate
+   whether or not the tagline is authored for this venue. Size is capped by this band. A fixed
+   --title-mark-base that outgrows the row is what put FICTION on the lyric track. */
+.title-mark-band {
+  grid-row: 2;
+  align-self: stretch;
+  /* The grid centres its items (justify-items), and a size container takes no width from its content,
+     so a centred band collapsed to nothing and the Teams tagline wrapped at its longest word. Stretch
+     the band to the column instead. The mark still centres inside it. */
+  justify-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--title-mark-gap);
+  min-height: 0;
+  max-width: 100%;
+  /* Do not use overflow:hidden here. It blanks background-clip:text on the mark. */
+  container-type: size;
+}
+
+/* Only the Teams venue authors a tagline. When it is there the mark yields the height it needs
+   instead of the plate growing a scrollbar or the two bands touching. This sits on the grid rather
+   than on the mark band so the kicker, which sizes off the mark, yields with it. */
+.title-stage:has(.title-source-tagline) {
+  --title-mark-size: calc(var(--title-mark-base) * 0.885);
+  /* The tagline shares the mark band, so the mark's height cap leaves room for its two lines and the
+     gap above them. Without it the band overflowed and centring lifted VAX onto the ready line. The
+     reserve is sized for the two-span brand tagline. A longer tagline needs its own line count here. */
+  --title-tagline-reserve: calc(var(--title-tagline-size) * 2.4 + var(--kit-space-4) + var(--title-mark-gap));
+}
+
+.title-source-mark {
+  /* Stacked mark height ≈ 1.5× the VAX em (VAX + OR rule + FICTION at 0.55em). Cap to the band. */
+  --wordmark-size: min(var(--title-mark-size), calc((100cqh - var(--title-tagline-reserve, 0px)) / 1.55));
+  --title-mark-glow:
+    drop-shadow(0 var(--kit-space-8) var(--kit-space-16) var(--color-shadow-deep))
+    drop-shadow(0 0 28px color-mix(in srgb, var(--color-vax) 40%, transparent))
+    drop-shadow(0 0 48px color-mix(in srgb, var(--color-gold) 28%, transparent));
+  max-height: 100%;
+}
+
+/* The title's glow goes on each still part of the mark, never on the whole mark. The syringe jabs,
+   and a filter over a moving child repaints its blur every frame: in software rendering that held
+   this beat near 11 frames a second against the lobby's 50. Each part keeps its own glow first. */
+.title-source-mark .show-wordmark__vax-glyphs {
+  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--color-vax) 35%, transparent)) var(--title-mark-glow);
+}
+
+.title-source-mark .show-wordmark__fiction {
+  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--color-fiction) 35%, transparent)) var(--title-mark-glow);
+}
+
+.title-source-mark .show-wordmark__or {
+  filter: var(--title-mark-glow);
+}
+
+.title-source-mark .show-wordmark__syringe {
+  filter:
+    drop-shadow(0 0 12px color-mix(in srgb, var(--color-vax) 45%, transparent))
+    drop-shadow(0 0 18px color-mix(in srgb, var(--color-vax) 35%, transparent))
+    var(--title-mark-glow);
+}
+
+.title-source-text {
+  margin: 0;
+  max-width: 20ch;
+  color: var(--color-ink);
+  font-size: calc(var(--title-mark-size) * 0.28);
+  font-weight: 600;
+  line-height: 1.05;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.title-source-tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--kit-space-4);
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--color-ink-muted);
+  font-size: var(--title-tagline-size);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.title-source-tagline span {
+  display: block;
+}
+
+.title-walkin {
+  grid-row: 3;
+  align-self: end;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--kit-space-16);
+  --lyric-scroll-height: 136px;
+  --lyric-scroll-size: 26px;
+  min-height: var(--lyric-scroll-height);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  width: 100%;
+}
+
+.title-walkin .now-playing-bars,
+.lobby-footer .now-playing-bars {
+  align-self: center;
+  flex-shrink: 0;
+}
+
+/* The title's music strip is the lobby's strip, so it holds still when the lobby hands off: the lyric
+   on the left safe edge and the meter on the right one on the wide canvas, the meter leading a
+   centred lyric on square and portrait. */
+.preshow-title[data-format="widescreen"] .title-walkin {
+  justify-content: space-between;
+  gap: var(--kit-space-24);
+}
+
+.preshow-title:is([data-format="square"], [data-format="portrait"]) .title-walkin {
+  align-items: center;
+}
+
+.preshow-title:is([data-format="square"], [data-format="portrait"]) .title-walkin .now-playing-bars {
+  order: -1;
+  margin-bottom: 0;
+}
+
+/* The join pill owns the header band on a live-phone venue, so the ready line starts under it. The
+   wide canvas buys that height back from the strip, the band gaps and a one-line tagline, which
+   keeps the wordmark at the size it had before the pill came back. */
+.preshow-title:not([data-venue="offline"]) .title-stage {
+  padding-top: var(--preshow-content-top);
+}
+
+.preshow-title[data-format="widescreen"] {
+  --title-band-gap: var(--kit-space-24);
+}
+
+.preshow-title[data-format="widescreen"] .title-walkin {
+  --lyric-scroll-height: 112px;
+}
+
+.preshow-title[data-format="widescreen"] .title-stage:has(.title-source-tagline) {
+  --title-tagline-reserve: calc(var(--title-tagline-size) * 1.2 + var(--title-mark-gap));
+}
+
+.preshow-title[data-format="widescreen"] .title-source-tagline {
+  flex-direction: row;
+  gap: 0.3em;
+}
+
+/* Portrait is width-bound, so the wordmark never fills the tall band and the ready line pinned to the
+   top of the stage floated far above it. The ready line, the mark and the tagline centre as one
+   block over the music strip instead. */
+.preshow-title[data-format="portrait"] .title-stage {
+  grid-template-rows: minmax(0, 1fr) auto auto minmax(0, 1fr) auto;
+}
+
+.preshow-title[data-format="portrait"] .title-ready-line {
+  grid-row: 2;
+  /* One line at every venue: the room's larger mark sized this kicker past the portrait column and
+     left "PLAY..." alone on a second line. */
+  font-size: min(calc(var(--title-mark-size) * var(--title-ready-ratio)), 23px);
+  white-space: nowrap;
+}
+
+.preshow-title[data-format="portrait"] .title-mark-band {
+  grid-row: 3;
+  container-type: normal;
+}
+
+.preshow-title[data-format="portrait"] .title-source-mark {
+  --wordmark-size: var(--title-mark-size);
+}
+
+.preshow-title[data-format="portrait"] .title-walkin {
+  grid-row: 5;
+}
+
+/* Legacy marquee kept only so older CSS selectors do not 404 layout; lyric scroll owns the band. */
+.walkin-lyrics-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.walkin-lyrics-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: walkin-marquee 55s linear infinite;
+  /* DS-13: --font-sans is never declared anywhere (the real token is --kit-font-sans). This class
+     matches no live element today, but a bare var() with no fallback would silently fall through
+     to the browser default the moment it is revived, so it gets a real fallback now. */
+  font-family: var(--font-sans, var(--kit-font-sans));
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-light);
+  opacity: 0.85;
+}
+
+@keyframes syringe-jab {
+  0%, 100% { transform: translateY(-50%) rotate(calc(var(--wordmark-tilt) - 2deg)); }
+  50% { transform: translateY(-53%) rotate(calc(var(--wordmark-tilt) + 3deg)); }
+}
+
+@keyframes walkin-marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* The jab is set by two-class selectors (the title, lobby, landing and phone marks above), so the stop
+   names the same ones: a bare `.show-wordmark__syringe` loses to them, and the jab then still ran for a
+   hundredth of a millisecond under the global reduced motion rule, enough for a layout read to land on
+   its first frame. */
+@media (prefers-reduced-motion: reduce) {
+  .walkin-lyrics-track,
+  .title-source-mark .show-wordmark__syringe,
+  .lobby-title .show-wordmark__syringe,
+  .entry-hero-art .show-wordmark__syringe,
+  .phone-hero-mark .show-wordmark--stacked .show-wordmark__syringe {
+    animation: none;
+  }
+}
+
+/* --- Lobby ---------------------------------------------------------------------------------
+   Two columns on the wide canvas: the copy stack (wordmark, phone count, hype) beside the join
+   card, with the walk-in lyric on its own full-width row underneath. The lyric and the hype can
+   no longer share a band because they are in different grid rows by construction. */
+
+.preshow-lobby {
+  --lobby-pad-x: var(--kit-space-64);
+  --lobby-pad-y: var(--kit-space-48);
+  --lobby-col-gap: var(--kit-space-48);
+  --lobby-row-gap: var(--kit-space-32);
+  --lobby-stack-gap: var(--kit-space-16);
+  --lobby-mark-size: 224px;
+  --lobby-count-number: 72px;
+  --lobby-count-label: 28px;
+  --lobby-hype-size: 36px;
+  --lobby-join-width: 640px;
+  --lobby-join-pad: var(--kit-space-32);
+  --lobby-qr-size: 400px;
+  --lobby-chip-h: 56px;
+  --lobby-chip-font: 28px;
+  --lobby-chip-mark: 40px;
+  --lobby-join-hint-size: 26px;
+  --lobby-join-host-size: 48px;
+  --lobby-join-label-size: 26px;
+  --lobby-code-size: 124px;
+  --lobby-lyric-size: 64px;
+  /* Two ambient lines must sit inside the clear mask band (line ≈ size×1.25+8). */
+  --lyric-scroll-size: 28px;
+  --lyric-scroll-height: 148px;
+}
+
+.preshow-lobby[data-format="square"] {
+  --lobby-pad-x: var(--kit-space-32);
+  --lobby-pad-y: var(--kit-space-32);
+  --lobby-row-gap: var(--kit-space-16);
+  --lobby-stack-gap: var(--kit-space-12);
+  --lobby-mark-size: 200px;
+  --lobby-count-number: 64px;
+  --lobby-count-label: 26px;
+  --lobby-hype-size: 30px;
+  --lobby-chip-h: 52px;
+  --lobby-chip-font: 26px;
+  --lobby-chip-mark: 36px;
+  /* HB-04: a definite length, not the auto/fit-content this card used to size the QR-and-text
+     pair against. container-type: inline-size (HB-02) on this element means an auto width here
+     cannot see its own content to size against, so it collapses toward 0 instead of hugging it.
+     BLOCKER-1 (premium-host-fix-3): 560px was too narrow for the text column next to a
+     240px QR at the square layout's own 34px host size, clipping the join address
+     (`127.0.0.1:...` locally, `VaxOrFiction.com` in production, one character longer). Widened
+     so the text column has real room, measured live against both strings with a Playwright
+     probe against the real dev server. */
+  --lobby-join-width: min(800px, 100%);
+  --lobby-join-pad: var(--kit-space-24);
+  --lobby-qr-size: 280px;
+  --lobby-join-host-size: 36px;
+  --lobby-code-size: 96px;
+  --lobby-lyric-size: 40px;
+  --lyric-scroll-size: 24px;
+  --lyric-scroll-height: 120px;
+}
+
+.preshow-lobby[data-format="portrait"] {
+  --lobby-pad-x: var(--kit-space-24);
+  --lobby-pad-y: var(--kit-space-24);
+  --lobby-row-gap: var(--kit-space-16);
+  --lobby-stack-gap: var(--kit-space-16);
+  --lobby-mark-size: 88px;
+  --lobby-count-number: 56px;
+  --lobby-count-label: 21px;
+  --lobby-hype-size: 20px;
+  --lobby-chip-h: 36px;
+  --lobby-chip-font: 17px;
+  --lobby-chip-mark: 26px;
+  --lobby-join-width: 100%;
+  --lobby-join-pad: var(--kit-space-16);
+  --lobby-qr-size: 180px;
+  --lobby-join-hint-size: 14px;
+  --lobby-join-host-size: 24px;
+  --lobby-join-label-size: 15px;
+  --lobby-code-size: 60px;
+  --lobby-lyric-size: 28px;
+  --lyric-scroll-size: 20px;
+  --lyric-scroll-height: 112px;
+}
+
+.preshow-lobby .lobby-show-frame .show-safe {
+  inset: 0;
+  display: block;
+}
+
+.lobby-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: var(--lobby-col-gap);
+  row-gap: var(--lobby-row-gap);
+  padding: var(--lobby-pad-y) var(--lobby-pad-x)
+    max(var(--lobby-pad-y), var(--preshow-hud-clearance));
+  box-sizing: border-box;
+}
+
+.lobby-copy {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--lobby-stack-gap);
+  min-width: 0;
+  /* premium-host-fix-5, item 7: min-height: 0 let this grid item shrink below its own content's
+     real size (about 36px short at 1920 and 1440 in the no-phones lobby), the same shrink-below-
+     content bug the offline recap pager hit. max-content grows the grid track to fit the real
+     content instead. */
+  min-height: max-content;
+  max-height: 100%;
+}
+
+.lobby-title {
+  --wordmark-size: var(--lobby-mark-size);
+  max-width: 100%;
+}
+
+.lobby-count {
+  display: flex;
+  align-items: baseline;
+  gap: var(--kit-space-12);
+  margin: 0;
+  padding: 0;
+  color: var(--color-ink);
+}
+
+.lobby-count strong {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--lobby-count-number);
+  font-weight: 700;
+  line-height: 0.9;
+  text-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 70%, transparent);
+}
+
+.lobby-count span {
+  color: var(--color-ink);
+  font-size: var(--lobby-count-label);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* The start clock (VOF-88) takes the hype line's place when the host sets a start time: a big gold
+   readout the back of the room can check, in the same mono the room code uses. */
+.lobby-countdown {
+  margin: 0;
+  max-width: 100%;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: calc(var(--lobby-hype-size) * 1.6);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 55%, transparent);
+}
+
+.lobby-hype {
+  margin: 0;
+  max-width: 100%;
+  color: var(--color-gold);
+  font-size: var(--lobby-hype-size);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 40%, transparent);
+  text-wrap: balance;
+}
+
+.lobby-join {
+  /* The join card is the lobby's one job, so it stands the full height of the plate on the wide
+     canvas: the tallest QR the stage can give it, and no dead corner under it. */
+  grid-area: 1 / 2 / 3 / 3;
+  justify-self: end;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kit-space-8);
+  width: var(--lobby-join-width);
+  max-width: 100%;
+  /* Grid default min-height:auto was letting the QR inflate row 1 into the lyric band. */
+  min-height: 0;
+  max-height: 100%;
+  margin: 0;
+  padding: var(--lobby-join-pad);
+  border-radius: var(--kit-radius-card);
+  text-align: center;
+  box-sizing: border-box;
+  /* HB-02: the room code is sized in container query units below, so it shrinks with this card
+     instead of running past its right edge. */
+  container-type: inline-size;
+}
+
+.lobby-qr-frame {
+  flex: 0 1 var(--lobby-qr-size);
+  width: min(var(--lobby-qr-size), 100%);
+  height: auto;
+  aspect-ratio: 1;
+  min-height: 0;
+  max-height: 100%;
+  display: grid;
+  place-items: center;
+  margin-bottom: var(--kit-space-8);
+  padding: var(--kit-space-12);
+  border-radius: var(--kit-radius-16);
+  background-color: var(--color-light);
+  box-sizing: border-box;
+}
+
+.lobby-qr-frame svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lobby-join-type-hint {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-family: var(--kit-font-mono);
+  font-size: var(--lobby-join-hint-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Typed join host is a single brand address. Never orphan a letter onto the next line. */
+.lobby-join-host,
+.lobby-join-address {
+  margin: 0;
+  max-width: 100%;
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: var(--lobby-join-host-size);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  /* The address is the brand, spelled the way the question pill spells it (VaxOrFiction.com), not
+     shouted in the card's own capitals. */
+  text-transform: none;
+  text-shadow: 0 0 18px color-mix(in srgb, var(--color-gold) 25%, transparent);
+}
+
+.lobby-join-label {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: var(--lobby-join-label-size);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.lobby-room-code {
+  margin: var(--kit-space-8) 0 0;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  /* HB-02: the code is the one thing a room must be able to scan. min() against the join card's
+     own width (15cqi) keeps it inside the card instead of running past the right edge. */
+  font-size: min(var(--lobby-code-size), 15cqi);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  text-shadow: 0 0 var(--kit-space-24) color-mix(in srgb, var(--color-gold) 70%, transparent);
+}
+
+/* The music strip closes the copy column: the meter leads the lyric as one now-playing unit on the
+   column's left edge, under the names, with the join card standing beside it. */
+.lobby-footer {
+  grid-area: 2 / 1;
+  align-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--kit-space-24);
+  min-width: 0;
+  min-height: var(--lyric-scroll-height);
+  margin: 0;
+  pointer-events: none;
+}
+
+.preshow-lobby .lobby-footer .walkin-lyric {
+  min-width: 0;
+  max-width: 100%;
+  color: var(--color-gold);
+  font-size: var(--lobby-lyric-size);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 28px color-mix(in srgb, var(--color-gold) 45%, transparent);
+}
+
+/* Square: QR beside typed details (saves vertical for the wordmark). Host stays nowrap. */
+.preshow-lobby[data-format="square"] .lobby-join:has(.lobby-qr-frame) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: repeat(4, auto);
+  align-content: center;
+  justify-content: center;
+  justify-items: start;
+  column-gap: var(--kit-space-32);
+  text-align: left;
+}
+
+.preshow-lobby[data-format="square"] .lobby-join .lobby-qr-frame {
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.preshow-lobby[data-format="square"] .lobby-join-host,
+.preshow-lobby[data-format="square"] .lobby-join-address {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* BLOCKER-1 (premium-host-fix-3): the HB-02 fix above capped this column's code at a flat 40px,
+   half of main's 80px, once the card's own width shrank below what the code needed. Now that the
+   card (--lobby-join-width above) is wide enough for the 4-character code plus the host address,
+   the base `.lobby-room-code` rule's `min(var(--lobby-code-size), 15cqi)` applies without a
+   narrower local cap, restoring the code to 80px, matching main and reading larger than the
+   40px lyric. */
+.preshow-lobby[data-format="square"] .lobby-join:has(.lobby-qr-frame) .lobby-room-code {
+  letter-spacing: 0.02em;
+}
+
+/* Square and portrait: one column, explicit bands. HB-06: centered rather than top-anchored, so a
+   short stack does not leave a dead band at the foot of the canvas. */
+.preshow-lobby[data-format="square"] .lobby-stage,
+.preshow-lobby[data-format="portrait"] .lobby-stage {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "copy"
+    "join"
+    "foot";
+  align-content: center;
+  justify-items: center;
+}
+
+.preshow-lobby[data-format="square"] .lobby-copy,
+.preshow-lobby[data-format="portrait"] .lobby-copy {
+  grid-area: copy;
+  /* The parent grid's justify-items: center would otherwise fit-content this box, which is how
+     the wordmark clipped ("CTIO" / cut-off "VAX") at square and portrait. Stretch gives this box
+     a definite width from its own grid track instead of one sized through its content, so the
+     mark inside it has real room to lay out against. Stretch to the track, then center the
+     content inside. */
+  justify-self: stretch;
+  align-items: center;
+  text-align: center;
+}
+
+.preshow-lobby[data-format="square"] .lobby-join,
+.preshow-lobby[data-format="portrait"] .lobby-join {
+  grid-area: join;
+  justify-self: stretch;
+}
+
+/* HB-04: the square join card was stretching to the full column width with the QR-and-text pair
+   left-anchored inside it, leaving a long empty right half. Centered at its own (definite,
+   above) width instead of stretching. */
+.preshow-lobby[data-format="square"] .lobby-join {
+  justify-self: center;
+}
+
+.preshow-lobby[data-format="square"] .lobby-footer,
+.preshow-lobby[data-format="portrait"] .lobby-footer {
+  grid-area: foot;
+  justify-content: center;
+  text-align: center;
+}
+
+/* A centred band has no left edge to protect, so the meter goes back in front of the lyric where
+   a now-playing tick belongs. Spreading it to the far edge of a narrow centred band would only
+   strand it. HB-05: align-items: center keeps the meter and the lyric on one shared baseline
+   instead of the meter's fixed height stretching against the lyric's own box. */
+.preshow-lobby[data-format="square"] .lobby-footer,
+.preshow-lobby[data-format="portrait"] .lobby-footer {
+  align-items: center;
+  gap: var(--kit-space-16);
+}
+
+.preshow-lobby .lobby-footer .now-playing-bars {
+  order: -1;
+  /* HB-05: the meter's baseline sat ~40px below the lyric's own baseline in this footer, the DS
+     scale's 8px margin-bottom (elsewhere correct, it is the title plate's own gap to the band
+     below) doubling up with align-items: center above once this pair shares a row. Zeroed only
+     in this scoped footer instance, not the shared class. */
+  margin-bottom: 0;
+}
+
+.preshow-lobby[data-format="square"] .lobby-footer .walkin-lyric,
+.preshow-lobby[data-format="portrait"] .lobby-footer .walkin-lyric {
+  flex: 0 1 auto;
+}
+
+/* --- Facilitator run-of-show card (offline preflight) -------------------------------------- */
+.setup-facilitator-card {
+  grid-area: room;
+  border-radius: var(--kit-radius-card);
+  background-color: var(--color-panel-navy);
+  padding: var(--kit-space-32) var(--kit-space-48);
+  border: 1px solid var(--color-hairline);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-24);
+  text-align: left;
+  box-sizing: border-box;
+  /* B2: an auto grid row cannot measure size through a flex descendant with min-height: 0. */
+  min-height: auto;
+}
+
+.setup-facilitator-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8, 8px);
+}
+
+.setup-facilitator-badge {
+  display: inline-block;
+  align-self: flex-start;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono, monospace);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.setup-facilitator-kicker {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.setup-facilitator-title {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.setup-facilitator-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-12, 12px);
+}
+
+.setup-facilitator-lead {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 26px;
+  line-height: 1.25;
+  text-wrap: nowrap;
+}
+
+.setup-facilitator-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--kit-space-8, 8px);
+}
+
+.setup-facilitator-steps li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--color-ink);
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.setup-facilitator-steps span {
+  color: var(--color-ink-muted);
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.setup-facilitator-steps strong {
+  color: var(--color-gold);
+}
+
+.setup-facilitator-card .setup-facilitator-backup,
+.setup-facilitator-card .setup-offline-backup {
+  margin-top: var(--kit-space-8, 8px);
+  padding-top: var(--kit-space-16, 16px);
+  border-top: 1px solid var(--color-hairline);
+}
+
+.setup-facilitator-backup__kicker {
+  margin: 0;
+  color: var(--color-gold);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.setup-facilitator-backup__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--kit-touch-min, 44px);
+  padding: var(--kit-space-12, 12px) var(--kit-space-24, 24px);
+  border-radius: var(--kit-space-12, 12px);
+  border: 1px solid var(--color-gold);
+  background-color: var(--color-gold);
+  color: var(--color-stage-deep);
+  font-family: var(--kit-font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+}
+
+.setup-facilitator-backup__link:hover {
+  filter: brightness(1.08);
+}
+
+.setup-facilitator-backup__link:active {
+  filter: brightness(0.96);
+}
+
+.setup-facilitator-backup__link:focus-visible {
+  outline: var(--kit-space-4, 4px) solid var(--color-ink);
+  outline-offset: var(--kit-space-4, 4px);
+}
+
+/* --- Purpose-built no-phones lobby stage -----------------------------------------------------
+   B1 (premium-host pass 2): reverted from data-venue="offline" + :not(polling) (which the
+   old atlas's own harness state produced, not a real room, and which also left a real desynced
+   room (venue offline, interactionMode still "polling" from earlier in the session) showing a
+   QR code and room code phones cannot join). Lobby.tsx now derives one flag, phonesVote
+   (interactionMode === 'polling' && venue !== 'offline'), exposed as data-phones, and both this
+   no-join layout and the join-card layout key off it instead of venue alone. That also covers the
+   case B1 named: venue "teams" or "room" sitting in facilitator mode (phones never invited to
+   vote this run) gets this same centered layout, not a two-column grid with an empty join column.
+   No join card, so the copy takes the whole plate. The mark and the call use the stage the QR
+   column would have held. Widescreen gets the hero bump, and square/portrait keep format-native
+   sizes (a blanket 360px clipped the stacked mark on portrait and buried the hands-up line). */
+.preshow-lobby[data-phones="false"] {
+  --lobby-mark-size: 360px;
+  --lobby-count-label: 48px;
+}
+
+/* WARNING-8 (premium-host-fix-3): the no-phones hero read as a small island on an otherwise
+   empty screen. Measured live (a Playwright probe against the real dev server, not guessed):
+   200px/140px rendered the mark's own box at 533x324 (square) and 787x467 (portrait). Raised to
+   fill noticeably more of each canvas while staying inside the lobby stage's real available
+   height. A full 70%-of-canvas-width target for the stacked, three-line lockup would clip
+   vertically against the count/hype/footer bands still sharing this stage.
+
+   BLOCKER-1 (premium-host-fix-4): the portrait value (190px) was verified against
+   clippedText/parentOverflows at the time, but that check never actually ran against this exact
+   no-phones lobby state (it ran against the general lobby probe, a different scenario). A real
+   sweep against this state (a Playwright probe against the real dev server, --lobby-mark-size
+   set directly on .preshow-lobby, parentOverflows read after each step) found 190px overflowing
+   span.show-wordmark past h1.lobby-title by about 130px ("ICTION?" with the F and the syringe cut
+   off), and put the real safe ceiling at 139px (140px already overflows by 2px). 138px used
+   here, one px of margin below that measured edge for cross-environment font-rendering variance.
+   Square's 260px was swept the same way and is genuinely clean (no change). */
+.preshow-lobby[data-phones="false"][data-format="square"] {
+  --lobby-mark-size: 260px;
+  --lobby-count-label: 32px;
+}
+
+.preshow-lobby[data-phones="false"][data-format="portrait"] {
+  --lobby-mark-size: 138px;
+  /* premium-host-fix-5: this was set to 20px in the BLOCKER-1 pass (premium-host-fix-4) as an
+     unmeasured proportional guess alongside the mark-size sweep, not for any overflow this value
+     itself caused. Main's own value here was 22px. Restored: no clippedText/parentOverflows
+     finding at 22px (verified live), so there was no reason to shrink it below main's own size. */
+  --lobby-count-label: 22px;
+}
+
+.preshow-lobby[data-phones="false"] .lobby-stage {
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.preshow-lobby[data-phones="false"] .lobby-copy {
+  grid-area: 1 / 1 / 2 / -1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.preshow-lobby[data-phones="false"] .lobby-title {
+  display: flex;
+  justify-content: center;
+}
+
+.preshow-lobby[data-phones="false"] .lobby-footer {
+  width: min(72rem, 100%);
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.preshow-title .walkin-lyrics-track,
+.preshow-lobby .walkin-lyrics-track {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-gold);
+  opacity: 0.92;
+}
+
+/* --- Header band: the join pill on the title and the instructions --------------------------
+   VOF-06: from the title onward a live-phone venue shows the same upper-right join pill the
+   questions show, so a latecomer finds the code in one place on every beat. The pill mirrors the
+   question chrome as measured on each canvas: widescreen one row 76px tall on the safe corner,
+   square the host over the code in a 280x96 pill, portrait the code alone in a 144x48 pill.
+   tests/integration/preshow-layout.test.mjs holds both beats' pill boxes to question 1's. */
+.preshow-title,
+.preshow-instructions {
+  --preshow-pill-top: 50px;
+  --preshow-pill-right: var(--kit-space-64);
+  /* Everything under the header band starts here: the safe top (48), the question header row
+     (80) and one band gap. */
+  --preshow-content-top: calc(var(--kit-space-48) + 80px + var(--kit-space-32));
+}
+
+.preshow-title[data-format="square"],
+.preshow-instructions[data-format="square"] {
+  --preshow-pill-top: 40px;
+}
+
+.preshow-title[data-format="portrait"],
+.preshow-instructions[data-format="portrait"] {
+  --preshow-pill-top: var(--kit-space-24);
+  --preshow-pill-right: var(--kit-space-16);
+  --preshow-content-top: calc(var(--kit-space-24) + 48px + var(--kit-space-24));
+}
+
+.preshow-instructions .show-safe > :is(.show-content, .show-footer) {
+  display: none;
+}
+
+.preshow-title .show-header,
+.preshow-instructions .show-header {
+  position: absolute;
+  z-index: 4;
+  top: var(--preshow-pill-top);
+  right: var(--preshow-pill-right);
+  display: flex;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.preshow-title .show-join-pill,
+.preshow-instructions .show-join-pill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--kit-space-24);
+  height: 76px;
+  min-height: 76px;
+  margin: 0;
+  padding: var(--kit-space-12) var(--kit-space-32);
+  border-radius: var(--kit-radius-full);
+  box-sizing: border-box;
+  text-transform: none;
+}
+
+.preshow-title .show-join-pill__host,
+.preshow-instructions .show-join-pill__host {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--kit-space-16);
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.preshow-title .show-join-pill__label,
+.preshow-instructions .show-join-pill__label {
+  display: inline;
+  color: var(--color-ink-dim);
+}
+
+.preshow-title .join-card__code,
+.preshow-instructions .join-card__code {
+  display: flex;
+  align-items: center;
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.preshow-title .join-card__code::before,
+.preshow-instructions .join-card__code::before {
+  content: "\00b7";
+  margin-right: var(--kit-space-16);
+  color: var(--color-ink-dim);
+  font-family: var(--kit-font-sans);
+}
+
+.preshow-title[data-format="square"] .show-join-pill,
+.preshow-instructions[data-format="square"] .show-join-pill {
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--kit-space-4);
+  width: 280px;
+  height: 96px;
+  min-height: 96px;
+  padding: var(--kit-space-8) var(--kit-space-16);
+}
+
+.preshow-title[data-format="square"] .show-join-pill__host,
+.preshow-instructions[data-format="square"] .show-join-pill__host {
+  font-size: 20px;
+}
+
+.preshow-title[data-format="square"] .show-join-pill__label,
+.preshow-instructions[data-format="square"] .show-join-pill__label {
+  display: none;
+}
+
+.preshow-title[data-format="square"] .join-card__code::before,
+.preshow-instructions[data-format="square"] .join-card__code::before {
+  content: none;
+}
+
+.preshow-title[data-format="square"] .join-card__code,
+.preshow-instructions[data-format="square"] .join-card__code {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.preshow-title[data-format="portrait"] .show-join-pill,
+.preshow-instructions[data-format="portrait"] .show-join-pill {
+  justify-content: center;
+  width: 144px;
+  height: 48px;
+  min-height: 48px;
+  padding: var(--kit-space-8) var(--kit-space-12);
+}
+
+.preshow-title[data-format="portrait"] .show-join-pill__host,
+.preshow-instructions[data-format="portrait"] .show-join-pill__host {
+  display: none;
+}
+
+.preshow-title[data-format="portrait"] .join-card__code,
+.preshow-instructions[data-format="portrait"] .join-card__code {
+  justify-content: center;
+  font-size: 20px;
+}
+
+.preshow-title[data-format="portrait"] .join-card__code::before,
+.preshow-instructions[data-format="portrait"] .join-card__code::before {
+  content: none;
+}
+
+/* --- Instructions ----------------------------------------------------------------------------
+   The headline and three step cards own the safe area under the header band, edge line to edge
+   line, instead of a narrow centred column the join pill could land on. The wide canvas sets the
+   steps side by side. Square and portrait stack them. */
+.preshow-instructions {
+  --instructions-pad-x: var(--kit-space-64);
+  --instructions-pad-bottom: var(--kit-space-48);
+  --instructions-gap: var(--kit-space-48);
+  --instructions-step-gap: var(--kit-space-32);
+  --instructions-headline-size: 88px;
+  --instructions-number-size: 96px;
+  --instructions-number-font: 60px;
+  /* The longest step title ("See the evidence") holds one line in a third of the safe width, so the
+     three cards keep the same rhythm instead of one wrapping and stretching all three. */
+  --instructions-step-title: 44px;
+  --instructions-step-description: 30px;
+  --instructions-step-pad: var(--kit-space-32);
+}
+
+.preshow-instructions[data-format="square"] {
+  --instructions-gap: var(--kit-space-48);
+  --instructions-step-gap: var(--kit-space-24);
+  --instructions-headline-size: 80px;
+  --instructions-number-size: 104px;
+  --instructions-number-font: 64px;
+  --instructions-step-title: 56px;
+  --instructions-step-description: 32px;
+}
+
+.preshow-instructions[data-format="portrait"] {
+  --instructions-pad-x: var(--kit-space-16);
+  --instructions-pad-bottom: var(--kit-space-24);
+  --instructions-gap: var(--kit-space-32);
+  --instructions-step-gap: var(--kit-space-16);
+  --instructions-headline-size: 48px;
+  --instructions-number-size: 72px;
+  --instructions-number-font: 44px;
+  --instructions-step-title: 34px;
+  --instructions-step-description: 20px;
+  --instructions-step-pad: var(--kit-space-24);
+}
+
+.instructions-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  padding: var(--preshow-content-top) var(--instructions-pad-x) var(--instructions-pad-bottom);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.instructions-source-poster {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--instructions-gap);
+  width: 100%;
+  min-width: 0;
+}
+
+.instructions-headline h1 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: var(--instructions-headline-size);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.instructions-source-sequence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--instructions-step-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.instructions-source-step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  justify-items: start;
+  gap: var(--kit-space-24);
+  min-width: 0;
+  margin: 0;
+  padding: var(--instructions-step-pad);
+  border-radius: var(--kit-radius-card);
+  box-sizing: border-box;
+}
+
+.instructions-step-number {
+  display: grid;
+  place-items: center;
+  width: var(--instructions-number-size);
+  height: var(--instructions-number-size);
+  border-radius: var(--kit-radius-16);
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 45%, var(--color-gold-dark));
+  box-shadow: 0 0 0 var(--kit-space-4) color-mix(in srgb, var(--color-gold) 25%, transparent), var(--kit-drop);
+  color: var(--color-on-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--instructions-number-font);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.instructions-step-copy {
+  display: grid;
+  gap: var(--kit-space-12);
+  min-width: 0;
+}
+
+.instructions-step-text {
+  color: var(--color-ink);
+  font-size: var(--instructions-step-title);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.instructions-step-description {
+  color: var(--color-ink-muted);
+  font-size: var(--instructions-step-description);
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+
+.preshow-instructions:is([data-format="square"], [data-format="portrait"]) .instructions-source-sequence {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.preshow-instructions:is([data-format="square"], [data-format="portrait"]) .instructions-source-step {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+}
+
+/* --- Who is in: every joined name (VOF-97) ------------------------------------------------------------
+   A live-phone lobby shows the newest names first under the hype, so the room watches itself fill
+   instead of a bare number. A joined name is never hidden: the roster takes the copy column's free
+   height, and LobbyArrivals steps through fit states until every name shows (data-plate on the list,
+   data-roster-room on the lobby). The wordmark makes room first, then the plates step down, and the
+   walk-in band gives way last. Before anyone joins, one ghost seat says where the names will land. */
+.preshow-lobby[data-names="true"] .lobby-copy {
+  min-height: 0;
+}
+
+.lobby-arrivals {
+  --roster-scale: 1;
+  list-style: none;
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: calc(var(--kit-space-12) * var(--roster-scale));
+  width: 100%;
+  /* At least one row plus room for the landing pop, so a new name never clips its own ring. */
+  min-height: calc(var(--lobby-chip-h) + var(--kit-space-16));
+  margin: var(--kit-space-8) calc(var(--kit-space-4) * -1) 0;
+  padding: var(--kit-space-8) var(--kit-space-4);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Plates step down, then plain names step down, until every name fits. Plain names are set at their own sizes, the same in
+   every look, with no plate behind them, so a big room's names are as dense as words can be and stay in the stage's ink.
+   A smaller plate is the whole plate scaled, its gaps and padding with it, so below today's plate they leave the spacing
+   scale on purpose: snapped to it, the gaps of a room of 250 would not fit the column. */
+.lobby-arrivals[data-plate="1"] { --roster-scale: 0.86; }
+.lobby-arrivals[data-plate="2"] { --roster-scale: 0.74; }
+.lobby-arrivals[data-plate="3"] { --roster-scale: 0.64; }
+.lobby-arrivals[data-plate="4"] { --roster-name: 22px; }
+.lobby-arrivals[data-plate="5"] { --roster-name: 18px; }
+.lobby-arrivals[data-plate="6"] { --roster-name: 15px; }
+.lobby-arrivals[data-plate="7"] { --roster-name: 13px; }
+.lobby-arrivals[data-plate="8"] { --roster-name: 11px; }
+.lobby-arrivals[data-plate="9"] { --roster-name: 9.5px; }
+.lobby-arrivals[data-plate="10"] { --roster-name: 8px; }
+.lobby-arrivals[data-plate="11"] { --roster-name: 7px; }
+/* Raised past a look's own roster and plate rules, the portrait one included, which load later. */
+:root:root:root .preshow-lobby[data-format] .lobby-arrivals:is([data-plate="4"], [data-plate="5"], [data-plate="6"], [data-plate="7"], [data-plate="8"], [data-plate="9"], [data-plate="10"], [data-plate="11"]) {
+  gap: calc(var(--roster-name) * 0.2) calc(var(--roster-name) * 0.7);
+}
+:root:root:root .preshow-lobby[data-format] .lobby-arrivals:is([data-plate="4"], [data-plate="5"], [data-plate="6"], [data-plate="7"], [data-plate="8"], [data-plate="9"], [data-plate="10"], [data-plate="11"]) .lobby-arrival {
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  clip-path: none;
+  color: var(--color-ink);
+  font-family: var(--kit-font-sans);
+  font-size: var(--roster-name);
+  line-height: 1.15;
+}
+:root:root:root .preshow-lobby[data-format] .lobby-arrivals:is([data-plate="4"], [data-plate="5"], [data-plate="6"], [data-plate="7"], [data-plate="8"], [data-plate="9"], [data-plate="10"], [data-plate="11"]) .lobby-arrival__initial {
+  display: none;
+}
+
+/* Over a picture the plain names lose the plates that kept them clear of it, so the roster itself takes the plate the count
+   and the hype line wear there, solid when the viewer asks for less transparency. */
+:root[data-look-art-stage="ai"] .preshow-lobby .lobby-arrivals:is([data-plate="4"], [data-plate="5"], [data-plate="6"], [data-plate="7"], [data-plate="8"], [data-plate="9"], [data-plate="10"], [data-plate="11"]) {
+  border-radius: var(--kit-radius-12);
+  background: color-mix(in srgb, var(--color-stage-deep) 86%, transparent);
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root[data-look-art-stage="ai"] .preshow-lobby .lobby-arrivals:is([data-plate="4"], [data-plate="5"], [data-plate="6"], [data-plate="7"], [data-plate="8"], [data-plate="9"], [data-plate="10"], [data-plate="11"]) {
+    background: var(--color-stage-deep);
+  }
+}
+
+/* While the fit measures, nothing transitions, so every size it reads is the size it set, and no name is moved by a
+   transform, so the room it reads is the room the names take as laid out. A name landing starts its spring at 0.55, and
+   the names it pushes along slide from where they were, and either would read as more or less room than the roster takes. */
+.preshow-lobby[data-roster-measuring],
+.preshow-lobby[data-roster-measuring] * {
+  transition: none !important;
+}
+.preshow-lobby[data-roster-measuring] .lobby-arrival {
+  transform: none !important;
+}
+
+/* In a big room the wordmark gives way, then the hype line, and in the biggest the walk-in band. */
+.preshow-lobby[data-roster-room="1"] .lobby-title { --wordmark-size: calc(var(--lobby-mark-size) * 0.8); }
+.preshow-lobby[data-roster-room="2"] .lobby-title { --wordmark-size: calc(var(--lobby-mark-size) * 0.64); }
+.preshow-lobby[data-roster-room="3"] .lobby-title { --wordmark-size: calc(var(--lobby-mark-size) * 0.45); }
+.preshow-lobby:is([data-roster-room="2"], [data-roster-room="3"]) .lobby-hype { display: none; }
+.preshow-lobby[data-roster-room="3"] .lobby-footer { display: none; }
+/* The square and portrait stages size their rows to their content, so in the biggest rooms the copy row takes the free
+   height and the roster grows into it. */
+.preshow-lobby:is([data-format="square"], [data-format="portrait"])[data-roster-room="3"] .lobby-stage {
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  align-content: stretch;
+}
+.preshow-lobby:is([data-format="square"], [data-format="portrait"])[data-roster-room="3"] .lobby-copy {
+  height: 100%;
+}
+
+.lobby-arrival {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--kit-space-12) * var(--roster-scale));
+  height: calc(var(--lobby-chip-h) * var(--roster-scale));
+  max-width: 100%;
+  padding: 0 calc(var(--kit-space-24) * var(--roster-scale)) 0 calc(var(--kit-space-8) * var(--roster-scale));
+  border: 1px solid var(--kit-glass-border);
+  border-radius: var(--kit-radius-full);
+  background-color: var(--kit-glass-fill);
+  box-shadow: var(--kit-rim);
+  box-sizing: border-box;
+  color: var(--color-ink);
+  font-size: calc(var(--lobby-chip-font) * var(--roster-scale));
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.lobby-arrival__initial {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(var(--lobby-chip-mark) * var(--roster-scale));
+  height: calc(var(--lobby-chip-mark) * var(--roster-scale));
+  border-radius: 50%;
+  background-image: linear-gradient(160deg, var(--color-gold-light), var(--color-gold) 55%, var(--color-gold-dark));
+  color: var(--color-on-gold);
+  font-family: var(--kit-font-mono);
+  font-size: calc(var(--lobby-chip-mark) * var(--roster-scale) * 0.5);
+  font-weight: 600;
+}
+
+/* The whole name, never cut short. The phone takes 24 characters and the relay 40, and the fit steps down until no name's
+   ellipsis cuts it, so the ellipsis only ever shows if the smallest names still cannot hold one. */
+.lobby-arrival__name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lobby-arrival--ghost {
+  border: 2px dashed color-mix(in srgb, var(--color-gold) 55%, transparent);
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--color-ink-dim);
+}
+
+.lobby-arrival--ghost .lobby-arrival__initial {
+  background-image: none;
+  background-color: color-mix(in srgb, var(--color-gold) 18%, transparent);
+  color: var(--color-gold);
+}
+
+.lobby-arrival[data-fresh="true"]::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  box-shadow: 0 0 0 3px var(--color-gold), 0 0 24px color-mix(in srgb, var(--color-gold) 70%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: lobby-arrival-flash 1.4s ease-out both;
+}
+
+@keyframes lobby-arrival-flash {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.preshow-lobby:is([data-format="square"], [data-format="portrait"]) .lobby-arrivals {
+  justify-content: center;
+}
+
+/* Names off (Top 5 scores off, VOF-88): the count alone carries the room filling up, so it grows. */
+.preshow-lobby[data-names="false"] {
+  --lobby-count-number: 132px;
+  --lobby-count-label: 40px;
+}
+
+.preshow-lobby[data-names="false"][data-format="portrait"] {
+  --lobby-count-number: 84px;
+  --lobby-count-label: 26px;
+}
+
+/* Each new phone lands on the number: a quick lift and settle. */
+.lobby-count strong {
+  display: inline-block;
+  transform-origin: 50% 80%;
+  animation: lobby-count-land 520ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes lobby-count-land {
+  0% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lobby-count strong,
+  .lobby-arrival[data-fresh="true"]::after {
+    animation: none;
+  }
+}
+
+/* --- Lights and motion: Game night (VOF-88, call 14) -----------------------------------------
+   Two spotlight cones clearly sweeping, each swinging on its own tip (the flavor specimen's cones),
+   on their own layer so they crossfade with the question beams when the instructions hand off to
+   question 1. The title's ready call drops in, then the mark lands, then the tagline, and the steps
+   land one after another. Every entrance is transform and opacity only, and reduced motion keeps
+   the cones still and dim and skips every entrance. */
+/* Under the scrims (z-index 1), so the legibility scrim still darkens the light behind the copy. */
+.stage-cones {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 700ms var(--kit-ease, ease);
+}
+
+.stage-cone {
+  position: absolute;
+  top: -8%;
+  width: 52%;
+  height: 86%;
+  clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
+  transform-origin: 50% 0%;
+  rotate: var(--beam-tilt);
+  opacity: 0.72;
+  will-change: rotate;
+  animation: stage-cone-swing ease-in-out infinite;
+}
+
+.stage-cone--vax {
+  --beam-tilt: -14deg;
+  --cone-swing: 11deg;
+  left: -8%;
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-vax) 70%, transparent), transparent 72%);
+  mix-blend-mode: screen;
+  animation-duration: 7.5s;
+}
+
+.stage-cone--fiction {
+  --beam-tilt: 14deg;
+  --cone-swing: 11deg;
+  right: -22%;
+  width: 42%;
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--color-fiction) 70%, transparent), color-mix(in srgb, var(--color-gold) 38%, transparent) 36%, transparent 62%);
+  /* Normal blend on purpose: screen over this gold-centred gradient read beige in the flavor review. */
+  animation-duration: 8s;
+  animation-direction: reverse;
+}
+
+@keyframes stage-cone-swing {
+  0%, 100% { rotate: calc(var(--beam-tilt) - var(--cone-swing)); }
+  50% { rotate: calc(var(--beam-tilt) + var(--cone-swing)); }
+}
+
+/* Game night on every screen (VOF-88 call 14, the flavor rollout): the cones light every host stage
+   screen, and the older question beams are retired, so the show keeps one set of lights from the
+   lobby to the closing. The floor line and floor glow on .show-lights stay. The setup sheet gets the
+   calm end of the level, the same cones at half strength. */
+.stage-atmosphere > .stage-cones {
+  opacity: 1;
+}
+
+.screen-router-root[data-active-screen="Preflight"] > .stage-atmosphere > .stage-cones {
+  opacity: 0.5;
+}
+
+.stage-atmosphere > .show-lights::before,
+.stage-atmosphere > .show-lights::after {
+  content: none;
+  animation: none;
+}
+
+@keyframes preshow-drop-in {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes preshow-punch-in {
+  from { opacity: 0; transform: scale(1.18); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes preshow-rise-in {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes preshow-card-in {
+  from { opacity: 0; transform: translateY(36px) scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+
+.screen-router-root .title-ready-line { animation: preshow-drop-in 520ms cubic-bezier(0.22, 1, 0.36, 1) 80ms both; }
+.screen-router-root .title-source-mark { animation: preshow-punch-in 640ms cubic-bezier(0.34, 1.56, 0.64, 1) 300ms both; }
+.screen-router-root .title-source-tagline { animation: preshow-rise-in 480ms ease-out 760ms both; }
+.screen-router-root .instructions-headline { animation: preshow-rise-in 480ms ease-out 60ms both; }
+.screen-router-root .instructions-source-step { animation: preshow-card-in 560ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.screen-router-root .instructions-source-step.step-1 { animation-delay: 240ms; }
+.screen-router-root .instructions-source-step.step-2 { animation-delay: 400ms; }
+.screen-router-root .instructions-source-step.step-3 { animation-delay: 560ms; }
+.screen-router-root .preshow-lobby .lobby-title { animation: preshow-punch-in 640ms cubic-bezier(0.34, 1.56, 0.64, 1) 120ms both; }
+
+/* The lobby's mark breathes a slow glow while the room waits. The glow is its own layer behind the
+   mark, and only its opacity moves. */
+.preshow-lobby .lobby-title {
+  position: relative;
+  isolation: isolate;
+}
+
+.preshow-lobby .lobby-title::before {
+  content: "";
+  position: absolute;
+  inset: -12% -8%;
+  z-index: -1;
+  border-radius: 50%;
+  background-image: radial-gradient(closest-side, color-mix(in srgb, var(--color-gold) 30%, transparent), color-mix(in srgb, var(--color-vax) 12%, transparent) 60%, transparent);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: preshow-glow-breathe 4.8s ease-in-out infinite;
+}
+
+@keyframes preshow-glow-breathe {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-cone {
+    animation: none;
+    opacity: 0.3;
+  }
+
+  .screen-router-root :is(.title-ready-line, .title-source-mark, .title-source-tagline, .instructions-headline, .instructions-source-step),
+  .screen-router-root .preshow-lobby .lobby-title {
+    animation: none;
+  }
+
+  .preshow-lobby .lobby-title::before {
+    animation: none;
+  }
+}
+
+/* --- The 3-2-1 into question 1 (VOF-88) -------------------------------------------------------
+   The count takes the stage over the instructions: the steps fall back, a mono label sits over a
+   dial, and each number lands with a ring. Transform and opacity only. Reduced motion keeps the
+   count, which is information, and drops the landings. */
+.preshow-instructions .instructions-stage {
+  transition: opacity 260ms var(--kit-ease, ease);
+}
+
+/* The stage ignores the pointer, but its hidden Start Question 1 trigger still takes a click. */
+.preshow-instructions .instructions-stage .opening-screen-action {
+  pointer-events: auto;
+}
+
+.preshow-instructions[data-counting="true"] .instructions-stage {
+  opacity: 0.06;
+}
+
+.intro-countdown {
+  --intro-dial: 520px;
+  --intro-number: 400px;
+  --intro-label: 40px;
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: var(--kit-space-24);
+  padding-top: var(--preshow-content-top);
+  box-sizing: border-box;
+  pointer-events: none;
+  animation: intro-countdown-in 260ms ease-out both;
+}
+
+.preshow-instructions[data-format="square"] .intro-countdown {
+  --intro-dial: 560px;
+  --intro-number: 440px;
+}
+
+.preshow-instructions[data-format="portrait"] .intro-countdown {
+  --intro-dial: 300px;
+  --intro-number: 230px;
+  --intro-label: 24px;
+}
+
+.intro-countdown__label {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--kit-font-mono);
+  font-size: var(--intro-label);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.intro-countdown__dial {
+  display: grid;
+  place-items: center;
+  width: var(--intro-dial);
+  aspect-ratio: 1;
+}
+
+.intro-countdown__number,
+.intro-countdown__ring {
+  grid-area: 1 / 1;
+}
+
+.intro-countdown__number {
+  color: var(--color-gold);
+  font-family: var(--kit-font-mono);
+  font-size: var(--intro-number);
+  font-weight: 600;
+  line-height: 1;
+  text-shadow: 0 0 48px color-mix(in srgb, var(--color-gold) 70%, transparent);
+  animation: intro-countdown-number 760ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.intro-countdown__ring {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 10px solid var(--color-gold);
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: intro-countdown-ring 900ms ease-out both;
+}
+
+@keyframes intro-countdown-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes intro-countdown-number {
+  from { opacity: 0; transform: scale(1.8); }
+  60% { opacity: 1; }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes intro-countdown-ring {
+  from { opacity: 0.9; transform: scale(0.55); }
+  to { opacity: 0; transform: scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-countdown,
+  .intro-countdown__number {
+    animation: none;
+  }
+
+  .intro-countdown__ring {
+    display: none;
+  }
+
+  .preshow-instructions .instructions-stage {
+    transition: none;
+  }
+}

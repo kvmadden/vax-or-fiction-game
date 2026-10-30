@@ -1,0 +1,1141 @@
+{
+  "flagship-r2:q17": {
+    "bankId": "flagship-r2:q17",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "ccb6d066ffcf36e91dfbbc7dcf0258dcd73d0bc52f25599c802940cddc05ab82",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-ophthalmic-emergency",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows shingles near the eye can cause vision loss, widely taught. Ophthalmologic is jargon for eye.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows shingles near the eye can cause vision loss, widely taught. Ophthalmologic is jargon for eye.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Widely known that shingles near the eye can threaten vision, and the claim is hedged with can.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingles-symptoms"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "season-2:q12": {
+    "bankId": "season-2:q12",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "0667fda35c8bc59f91387e40ddf985234dfe9295e113fc848c5d6df5e2bba843",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-zostavax-transition",
+    "tags": [
+      "product",
+      "misconception"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "adults-50-64"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix is recommended after Zostavax, a standard rule for older patients.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows Shingrix is recommended after Zostavax, a standard rule for older patients.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard rule: past Zostavax recipients still need two doses of Shingrix.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingles-clinical-guidance"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "season-2:q3": {
+    "bankId": "season-2:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "6aecc6e1907709041bdf20938a340c8c026cd73c0b8740663a6a41f1ee58b71a",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-post-infection-stroke-risk",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Agreed. One little-known fact, higher stroke risk in the month after shingles, that few outside immunizing pharmacists know.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the little-known fact that stroke risk rises in the month after shingles.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One specific fact: stroke risk rises in the month after shingles. Few outside immunizing pharmacists know it.",
+          "sure": false,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "hard",
+          "reason": "Agreed. One little-known fact, higher stroke risk in the month after shingles, that few outside immunizing pharmacists know.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingles-overview"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "shingles:q1": {
+    "bankId": "shingles:q1",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "117d01a1ac5fcb1ab2913a98fb6a026c874a8dbba5eba807e762ab03fea73e4d",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-universal-recommendation-50",
+    "tags": [
+      "eligibility",
+      "product"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "adults-50-64"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix is routine for adults 50+. Recombinant zoster vaccine and immunocompetent are jargon.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix is routine for adults 50+. Recombinant zoster vaccine and immunocompetent are jargon.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Shingrix for adults 50 and older is widely known, even to the public, from ads and routine offers.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "shingles:q2": {
+    "bankId": "shingles:q2",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "810e56279cc3978253ab0bf32ad81aee7dd9a20ebd0150b3e2f9560496f1427f",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "alternate",
+    "conceptId": "shingles-recommended-after-prior-episode",
+    "tags": [
+      "product",
+      "documentation",
+      "history",
+      "misconception"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix is given after a shingles episode. Lifelong immunity signals the myth.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix is given after a shingles episode. Lifelong immunity signals the myth.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Myth most staff reject: prior shingles does not end the Shingrix recommendation. Lifelong flags it.",
+          "sure": true,
+          "flags": [
+            "extreme-words"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-schedule"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "extreme-words"
+    ]
+  },
+  "shingles:q3": {
+    "bankId": "shingles:q3",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "a556465ca1ff9cb48840197315967ecbf1210d62b6f6d4ca6edab7ae39f28193",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-dosing-interval",
+    "tags": [
+      "schedule",
+      "product",
+      "administration"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "The room books Shingrix dose two every week, so two doses two to six months apart is a figure it meets constantly.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix is two doses two to six months apart, a schedule the room hears all the time.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Routine schedule fact: two Shingrix doses, two to six months apart.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "easy",
+          "reason": "The room books Shingrix dose two every week, so two doses two to six months apart is a figure it meets constantly.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-schedule"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "shingles:q4": {
+    "bankId": "shingles:q4",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "796c402cf579d0943690694408cd230f42581b64ded254dbc7257042c02fb23d",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "alternate",
+    "conceptId": "shingles-zostavax-transition",
+    "tags": [
+      "schedule",
+      "product"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "adults-19-49",
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows adults who had Zostavax still get the full two-dose Shingrix series.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows adults who had Zostavax still get the full two-dose Shingrix series.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard rule: past Zostavax recipients get the full two-dose Shingrix series.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-recs"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "shingles:q5": {
+    "bankId": "shingles:q5",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "40ad51fa618adbf2f37e20969730651db937c0f1b6b946b8c9d44c54b776e0bd",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "alternate",
+    "conceptId": "shingles-immunocompromised-eligibility",
+    "tags": [
+      "eligibility",
+      "product"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "immunocompromised"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "hard",
+      "source": "rubric",
+      "rationale": "Raters agree. Needs the age-19 Shingrix indication for immunocompromised adults, a detail many who know 50+ miss.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "hard",
+          "reason": "Needs the age-19 Shingrix indication for immunocompromised adults, a detail many who know 50+ miss.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "hard",
+          "reason": "One specific detail: Shingrix extends to immunocompromised adults 19 and older. Many know only the age-50 rule.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "acip-shingrix-immuno"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "shingles:q6": {
+    "bankId": "shingles:q6",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "c26fcb2afd119db89408522895255d113e5e6af14a21e112f6622122919b2afe",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "alternate",
+    "conceptId": "shingles-vaccine-composition",
+    "tags": [
+      "product"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Needs the product fact that Shingrix is not live. Routine for pharmacists, less sure for newer staff and the public. Jargon is a flag.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix is not a live vaccine, unlike Zostavax. Live attenuated varicella-zoster virus is jargon.",
+          "sure": false,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard product knowledge that Shingrix is non-live, unlike the old Zostavax, which invites some confusion.",
+          "sure": true,
+          "flags": [
+            "jargon"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "adjudicator",
+          "level": "medium",
+          "reason": "Needs the product fact that Shingrix is not live. Routine for pharmacists, less sure for newer staff and the public. Jargon is a flag.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-af382c06afb3ce024, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-zoster"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon"
+    ]
+  },
+  "shingles:q7": {
+    "bankId": "shingles:q7",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "ccd4b65bb552b6ac4643197935960bf61eb75d7eb1d6c3c53e492dedd6b6ad5c",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "alternate",
+    "conceptId": "shingles-reactogenicity-not-contraindication",
+    "tags": [
+      "schedule",
+      "product",
+      "side-effects",
+      "administration"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows expected side effects do not cancel dose two. The stem's expected temporary gives it away.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows expected side effects do not cancel dose two. The stem's expected temporary gives it away.",
+          "sure": true,
+          "flags": [
+            "jargon",
+            "extreme-words"
+          ],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "The stem calls the reactions expected and temporary, which answers it. Soreness is no reason to skip dose two.",
+          "sure": true,
+          "flags": [
+            "jargon",
+            "gives-itself-away"
+          ],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-schedule"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": [
+      "jargon",
+      "extreme-words",
+      "gives-itself-away"
+    ]
+  },
+  "shingles:q8": {
+    "bankId": "shingles:q8",
+    "copies": [],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "4760e39a7ca2230e8c69d0a74e5613fed865739a0530dae0f76379fc8581995b",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "alternate",
+    "conceptId": "shingles-administration-route",
+    "tags": [
+      "product",
+      "administration"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix is given intramuscularly in the deltoid, a routine administration fact.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Knows Shingrix is given intramuscularly in the deltoid, a routine administration fact.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard administration fact: Shingrix goes intramuscular in the deltoid, unlike the old subcutaneous Zostavax.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-pinkbook-zoster"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-44 solo topic decks"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q11": {
+    "bankId": "vax-or-fiction:q11",
+    "copies": [
+      "flagship:q16",
+      "flagship-r2:q16"
+    ],
+    "kind": "binary",
+    "textVersion": 2,
+    "textHash": "8a8337c1e452ff64fb9313b77896d9a3e280de1638afd74e8e92ccb85a03103d",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "alternate",
+    "conceptId": "shingles-late-dose-no-restart",
+    "tags": [
+      "schedule",
+      "product"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "medium",
+      "source": "rubric",
+      "rationale": "Raters agree. Applies the standard rule that a late dose continues the series and never restarts it.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "medium",
+          "reason": "Applies the standard rule that a late dose continues the series and never restarts it.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "medium",
+          "reason": "Standard rule that a late dose never restarts a series. Give Shingrix dose two, and dose one still counts.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-considerations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q13": {
+    "bankId": "vax-or-fiction:q13",
+    "copies": [],
+    "kind": "myth-among-three",
+    "textVersion": 1,
+    "textHash": "b587f097b9d1b6e8942f140e57ad5cb0c646757b12502adeabfb8a732e7fe417",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-vaccine-facts-myth",
+    "tags": [
+      "misconception"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "adults-50-64",
+      "adults-65-plus"
+    ],
+    "skill": "judgment",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Ruled a softball and cut from the Quick demo (VOF-37). Both raters also rated it easy.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Spots the familiar myth that shingles vaccine is not needed after a shingles episode.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Widely known myth that a past shingles episode removes the need for vaccination. Owner anchor for easy.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "owner",
+          "level": "easy",
+          "reason": "Ruled a softball and cut from the Quick demo (VOF-37).",
+          "sure": true,
+          "flags": [],
+          "rater": "owner, VOF-37",
+          "ratedOn": "2026-09-14"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-considerations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q20": {
+    "bankId": "vax-or-fiction:q20",
+    "copies": [],
+    "kind": "estimate",
+    "textVersion": 1,
+    "textHash": "ec578570fd323171fa8b34b4810de538e72d57ba7524ef8ba9b5d5b1e0899be3",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-lifetime-risk",
+    "tags": [
+      "burden"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "estimation",
+    "audience": "pharmacy-team",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Ruled too easy and dropped from Curated 15 (VOF-50). Both raters also rated it easy.",
+      "provisional": true,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows the widely quoted figure that about one in three people get shingles.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "A figure the room hears constantly: about 1 in 3 people get shingles. Owner anchor for easy.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "owner",
+          "level": "easy",
+          "reason": "Ruled too easy and dropped from Curated 15 (VOF-50).",
+          "sure": true,
+          "flags": [],
+          "rater": "owner, VOF-50",
+          "ratedOn": "2026-09-17"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "t-shingles-risk",
+        "t-shingles-guidance"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q3": {
+    "bankId": "vax-or-fiction:q3",
+    "copies": [
+      "flagship:q4",
+      "flagship-r2:q4"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "f3977a477a8d4a375d29938e399929178f7fead83a7900615154e41264d27f52",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-recommended-after-prior-episode",
+    "tags": [
+      "eligibility",
+      "product"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows Shingrix is still recommended after a shingles episode, a myth pharmacy staff correct all the time.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows Shingrix is still recommended after a shingles episode, a myth pharmacy staff correct all the time.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Myth most pharmacy staff reject: having had shingles does not end the Shingrix recommendation.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingrix-considerations"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "recommendation",
+      "reviewBy": "2027-03-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  },
+  "vax-or-fiction:q6": {
+    "bankId": "vax-or-fiction:q6",
+    "copies": [
+      "flagship:q7",
+      "flagship-r2:q7"
+    ],
+    "kind": "binary",
+    "textVersion": 1,
+    "textHash": "339c77cbb7b2c945e5da757c84f5dd5c39002733ed14e5417cce8cad15883dae",
+    "status": "live",
+    "subject": "shingles",
+    "rotation": "core",
+    "conceptId": "shingles-postherpetic-neuralgia",
+    "tags": [
+      "safety"
+    ],
+    "vaccines": [
+      "zoster"
+    ],
+    "populations": [
+      "all-ages"
+    ],
+    "skill": "recall",
+    "audience": "everyone",
+    "difficulty": {
+      "level": "easy",
+      "source": "rubric",
+      "rationale": "Raters agree. Knows postherpetic neuralgia can last months or years, a staple of shingles vaccine counseling.",
+      "provisional": false,
+      "ratings": [
+        {
+          "role": "rater-a",
+          "level": "easy",
+          "reason": "Knows postherpetic neuralgia can last months or years, a staple of shingles vaccine counseling.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-a3eadce14e47742e9, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        },
+        {
+          "role": "rater-b",
+          "level": "easy",
+          "reason": "Widely known that shingles nerve pain can last months or years after the rash.",
+          "sure": true,
+          "flags": [],
+          "rater": "agent-acf35c66497c15bd6, claude-opus-5-5",
+          "ratedOn": "2026-09-28"
+        }
+      ],
+      "history": []
+    },
+    "evidence": {
+      "sourceIds": [
+        "cdc-shingles-symptoms"
+      ],
+      "claims": [],
+      "guidelineVersion": null,
+      "retrievedOn": null,
+      "volatility": "stable",
+      "reviewBy": "2029-09-28"
+    },
+    "provenance": {
+      "origin": "owner-authored",
+      "basis": "VOF-26 show port"
+    },
+    "wordingFlags": []
+  }
+}
