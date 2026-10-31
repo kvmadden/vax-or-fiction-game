@@ -153,6 +153,10 @@ Optional hosted relay: copy `.env.example` to `.env.local`, apply `supabase/migr
 `VITE_PRODUCTION_RELAY=true`, `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`. Use the publishable key only.
 Anything prefixed `VITE_` ships to the browser.
 
+## Development history
+
+Built September to October 2026 over 1,140 commits in a private repository. The full history includes personal notes and private configuration, so this repository is a cleaned public snapshot. The rater-agreement measurement and this documentation were added for this release in October 2026.
+
 ## License
 
 MIT, Copyright (c) 2026 Kevin Madden. See [LICENSE](LICENSE).
