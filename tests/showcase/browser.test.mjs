@@ -39,7 +39,7 @@ test('evidence and review work with keyboard, focus return, reduced motion and a
         await page.getByRole('button', { name:'Approve', exact:true }).first().waitFor()
         await page.getByLabel('Theme', { exact:true }).selectOption(theme)
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth), true)
-        assert.match(await page.locator('main').innerText(), /pending pharmacist review/)
+        assert.match(await page.locator('main').innerText(), /Clinical review by Kevin Madden, PharmD is pending/)
         if (media) await page.screenshot({ path:`${media}/review-${width}x${height}-${theme}.png` })
         await page.getByRole('button', { name:'Approve', exact:true }).first().focus()
         await page.keyboard.press('Enter')

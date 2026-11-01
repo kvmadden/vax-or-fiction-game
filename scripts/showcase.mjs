@@ -35,7 +35,7 @@ export function snapshot(deck, sources = evidence) {
   staticSurfaces.push(...['title','description'].map(field => ({ id: `${deck.id}:${field}`, field, text: deck[field], claimIds: [], ...(nonfactual.has(deck[field]) ? { nonfactual: 'Deck heading or facilitation instruction' } : {}) })))
   const data = { repo: 'kvmadden/vax-or-fiction-game', deckId: deck.id, deckHash: hash(deck), citations: deck.citations, questionCount: questions.length,
     questions, staticSurfaces, sources: sources.sources, claims: sources.claims,
-    clinicalStatus: 'draft, pending pharmacist review', secondReviewer: 'Not performed', difficulty: 'AI estimates are provisional. No human difficulty calibration.',
+    clinicalStatus: 'draft, clinical review by Kevin Madden, PharmD pending', secondReviewer: 'Not performed', difficulty: 'AI estimates are provisional. No human difficulty calibration.',
     pilot: { status: 'pending', facilitatorsCompleted: 0, participantsCompleted: 0, taskAttempts: 0, taskCompletions: 0 } }
   data.snapshotHash = hash(data)
   const row = (id, surfaces, contentHash, question) => ({ id, topic: 'influenza', kind: question?.kind ?? 'closing and presenter surfaces', claim: question?.statement ?? 'Closing, opening and presenter surfaces',

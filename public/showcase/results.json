@@ -1,6 +1,6 @@
 {
   "benchmark": "Fixed public binary round, not a blind test",
-  "snapshotHash": "53728734ad0d969995f52e3fd82eafcfba199ae514e86a1d9dbf2618dbae271d",
+  "snapshotHash": "edce249eafd6f71af232a531f5628d9997790500feb5ee46c232930be667fb4b",
   "command": "node --import tsx --test tests/showcase/functional.test.ts",
   "expected": {
     "description": "Fixed public benchmark. Binary answers independently transcribed from the selected public record keys before the control run. Not a blind test.",

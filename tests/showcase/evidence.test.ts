@@ -28,7 +28,7 @@ test('import and export bind public hashes and reject private or changed snapsho
   assert.throws(() => importReviews(frozen, { ...envelope, snapshotHash: 'private-bank' }))
 })
 test('draft clinical review and real pilot remain pending', () => {
-  assert.equal(frozen.clinicalStatus, 'draft, pending pharmacist review')
+  assert.equal(frozen.clinicalStatus, 'draft, clinical review by Kevin Madden, PharmD pending')
   assert.equal(frozen.pilot.status, 'pending')
   assert.equal(frozen.pilot.participantsCompleted, 0)
   assert.equal(frozen.pilot.taskAttempts, 0)

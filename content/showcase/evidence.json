@@ -108,10 +108,10 @@
     {
       "id": "older",
       "sourceId": "recommendations",
-      "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).464748",
+      "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).",
       "start": 17312,
-      "end": 17582,
-      "sha256": "35439a24962ed273c0a98c807104931e18f99d4617e49ef9883ddc068d48c2c5",
+      "end": 17576,
+      "sha256": "00c14aa0a6a3473dddb32d460ac0ad3dfa0a683d192451d158e736f0efd504e1",
       "role": "supporting explanation, including refutation of false stems",
       "reviewStatus": "draft"
     },

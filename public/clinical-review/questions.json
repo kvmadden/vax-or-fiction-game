@@ -58,7 +58,7 @@
       {
         "id": "influenza:q1:presenterNote:0",
         "field": "presenterNote",
-        "text": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+        "text": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction only"
       }
@@ -94,8 +94,8 @@
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "74eb55f16ad18b0f91641e545a489ef1f464378372378d731d2a461a763c6145",
-    "fingerprint": "74eb55f16ad18b0f91641e545a489ef1f464378372378d731d2a461a763c6145"
+    "contentHash": "fff63f4e990ccbfe68b310de53695382d5bdf82cd18f3205260cd4a74437cfd0",
+    "fingerprint": "fff63f4e990ccbfe68b310de53695382d5bdf82cd18f3205260cd4a74437cfd0"
   },
   {
     "id": "influenza:q2",
@@ -156,7 +156,7 @@
       {
         "id": "influenza:q2:presenterNote:0",
         "field": "presenterNote",
-        "text": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+        "text": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction only"
       }
@@ -182,19 +182,19 @@
       {
         "id": "older",
         "sourceId": "recommendations",
-        "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).464748",
+        "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).",
         "start": 17312,
-        "end": 17582,
-        "sha256": "35439a24962ed273c0a98c807104931e18f99d4617e49ef9883ddc068d48c2c5",
+        "end": 17576,
+        "sha256": "00c14aa0a6a3473dddb32d460ac0ad3dfa0a683d192451d158e736f0efd504e1",
         "role": "supporting explanation, including refutation of false stems",
         "reviewStatus": "draft",
-        "text": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).464748",
+        "text": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).",
         "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "daa47c7ca572845b6ce6583c0ad07df0dc31868c790ed033f677e02f4f00b590",
-    "fingerprint": "daa47c7ca572845b6ce6583c0ad07df0dc31868c790ed033f677e02f4f00b590"
+    "contentHash": "f218f60dd1bcac03cce8c2e8c1b0b8e4667e080fe3312e5bfddb426005a17393",
+    "fingerprint": "f218f60dd1bcac03cce8c2e8c1b0b8e4667e080fe3312e5bfddb426005a17393"
   },
   {
     "id": "influenza:q3",
@@ -255,7 +255,7 @@
       {
         "id": "influenza:q3:presenterNote:0",
         "field": "presenterNote",
-        "text": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+        "text": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction only"
       }
@@ -291,8 +291,8 @@
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "92da12eda02105dc23d895c7dd85b1aecfa368b4e48b649aa7bb92cd15a68fea",
-    "fingerprint": "92da12eda02105dc23d895c7dd85b1aecfa368b4e48b649aa7bb92cd15a68fea"
+    "contentHash": "74dabd033c6f9449fe2c7e655e06e24e399085a8fccdd8ead14a6d84ba45bc31",
+    "fingerprint": "74dabd033c6f9449fe2c7e655e06e24e399085a8fccdd8ead14a6d84ba45bc31"
   },
   {
     "id": "influenza:q4",
@@ -353,7 +353,7 @@
       {
         "id": "influenza:q4:presenterNote:0",
         "field": "presenterNote",
-        "text": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+        "text": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction only"
       }
@@ -389,8 +389,8 @@
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "58b403c4a0798f097fba192a33a908ac253c4c0bacd51466cc81dd64452912a8",
-    "fingerprint": "58b403c4a0798f097fba192a33a908ac253c4c0bacd51466cc81dd64452912a8"
+    "contentHash": "d8d944479136c4b4b218888bbcb1091afc98da807c13b458b4a3919d55b4b315",
+    "fingerprint": "d8d944479136c4b4b218888bbcb1091afc98da807c13b458b4a3919d55b4b315"
   },
   {
     "id": "influenza:q5",
@@ -451,7 +451,7 @@
       {
         "id": "influenza:q5:presenterNote:0",
         "field": "presenterNote",
-        "text": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+        "text": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction only"
       }
@@ -488,8 +488,8 @@
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "89459f84095931bb59680025a6440e776176e9b4043fafe0f8edcf65d24887a8",
-    "fingerprint": "89459f84095931bb59680025a6440e776176e9b4043fafe0f8edcf65d24887a8"
+    "contentHash": "765568a48a8a45242992fc846dfaaa8bde38aad78f40139f4e56adb907781123",
+    "fingerprint": "765568a48a8a45242992fc846dfaaa8bde38aad78f40139f4e56adb907781123"
   },
   {
     "id": "influenza:q6",
@@ -550,7 +550,7 @@
       {
         "id": "influenza:q6:presenterNote:0",
         "field": "presenterNote",
-        "text": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+        "text": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction only"
       }
@@ -586,8 +586,8 @@
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "2d32ed53c58651b73e6c3694d663dd2e02fcd17d3ed3a2533495e72b6213d5e5",
-    "fingerprint": "2d32ed53c58651b73e6c3694d663dd2e02fcd17d3ed3a2533495e72b6213d5e5"
+    "contentHash": "9394807faaa4ea3ce7bb8e18257cbbb98582c558ce9d05570762a23794560a27",
+    "fingerprint": "9394807faaa4ea3ce7bb8e18257cbbb98582c558ce9d05570762a23794560a27"
   },
   {
     "id": "influenza:q7",
@@ -648,7 +648,7 @@
       {
         "id": "influenza:q7:presenterNote:0",
         "field": "presenterNote",
-        "text": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+        "text": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction only"
       }
@@ -685,8 +685,8 @@
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "ec04d80f33bd8d69989aa5aab4e0ecd5e82b01988bc73399c5a5ddef0a34674b",
-    "fingerprint": "ec04d80f33bd8d69989aa5aab4e0ecd5e82b01988bc73399c5a5ddef0a34674b"
+    "contentHash": "ecbd228cac99fd266e2d70b8c06b5a5f425435667f7baefb517169d98a11aaeb",
+    "fingerprint": "ecbd228cac99fd266e2d70b8c06b5a5f425435667f7baefb517169d98a11aaeb"
   },
   {
     "id": "influenza:q8",
@@ -747,7 +747,7 @@
       {
         "id": "influenza:q8:presenterNote:0",
         "field": "presenterNote",
-        "text": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+        "text": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction only"
       }
@@ -783,8 +783,8 @@
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "bc0ec8a2003282146f0eb271dd2694ee82df75c1a5e1635b0c371607b30e178e",
-    "fingerprint": "bc0ec8a2003282146f0eb271dd2694ee82df75c1a5e1635b0c371607b30e178e"
+    "contentHash": "db82e54666537bc85afef22e35e34cc640577cb47b09dcbfd27ab1f1111f78dd",
+    "fingerprint": "db82e54666537bc85afef22e35e34cc640577cb47b09dcbfd27ab1f1111f78dd"
   },
   {
     "id": "influenza:static",
@@ -806,14 +806,14 @@
       {
         "id": "influenza:title:body:0",
         "field": "body",
-        "text": "Eight questions. Read, discuss, check the source. Draft, pending pharmacist review.",
+        "text": "Eight questions. Read, discuss, check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction or heading only"
       },
       {
         "id": "influenza:title:presenterNote:0",
         "field": "presenterNote",
-        "text": "Invite questions and check the linked guidance together. Draft, pending pharmacist review.",
+        "text": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction or heading only"
       },
@@ -834,7 +834,7 @@
       {
         "id": "influenza:instructions:presenterNote:0",
         "field": "presenterNote",
-        "text": "Invite questions and check the linked guidance together. Draft, pending pharmacist review.",
+        "text": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction or heading only"
       },
@@ -855,7 +855,7 @@
       {
         "id": "influenza:closing:presenterNote:0",
         "field": "presenterNote",
-        "text": "Invite questions and check the linked guidance together. Draft, pending pharmacist review.",
+        "text": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Facilitation instruction or heading only"
       },
@@ -901,7 +901,7 @@
       {
         "id": "influenza:description",
         "field": "description",
-        "text": "Eight questions. Read, discuss, check the source. Draft, pending pharmacist review.",
+        "text": "Eight questions. Read, discuss, check the source. Clinical review by Kevin Madden, PharmD is pending.",
         "claimIds": [],
         "nonfactual": "Deck heading or facilitation instruction"
       }
@@ -968,13 +968,13 @@
       {
         "id": "older",
         "sourceId": "recommendations",
-        "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).464748",
+        "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).",
         "start": 17312,
-        "end": 17582,
-        "sha256": "35439a24962ed273c0a98c807104931e18f99d4617e49ef9883ddc068d48c2c5",
+        "end": 17576,
+        "sha256": "00c14aa0a6a3473dddb32d460ac0ad3dfa0a683d192451d158e736f0efd504e1",
         "role": "supporting explanation, including refutation of false stems",
         "reviewStatus": "draft",
-        "text": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).464748",
+        "text": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).",
         "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
         "retrievedOn": "2026-11-01"
       },
@@ -992,7 +992,7 @@
         "retrievedOn": "2026-11-01"
       }
     ],
-    "contentHash": "512866a0d477a2650c2af3b1fb5bdc9a427465aa851e3d4f839e3cd92cacbb25",
-    "fingerprint": "512866a0d477a2650c2af3b1fb5bdc9a427465aa851e3d4f839e3cd92cacbb25"
+    "contentHash": "fb34b1ed79ed4a2b0043591f9346a14dc979ee3e76a8c5aceeb1eab2789a9011",
+    "fingerprint": "fb34b1ed79ed4a2b0043591f9346a14dc979ee3e76a8c5aceeb1eab2789a9011"
   }
 ]

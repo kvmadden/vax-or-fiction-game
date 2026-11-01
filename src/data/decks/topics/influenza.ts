@@ -24,7 +24,7 @@ export const influenzaDeck: Deck = {
   "status": "draft",
   "contentRevision": "2026-11-01",
   "defaultTimerSeconds": 20,
-  "description": "Eight questions. Read, discuss, check the source. Draft, pending pharmacist review.",
+  "description": "Eight questions. Read, discuss, check the source. Clinical review by Kevin Madden, PharmD is pending.",
   "defaults": {
     "conviction": true,
     "talkWindowSeconds": 45,
@@ -63,22 +63,22 @@ export const influenzaDeck: Deck = {
       "id": "title",
       "type": "title",
       "title": "Influenza Insights",
-      "body": "Eight questions. Read, discuss, check the source. Draft, pending pharmacist review.",
-      "presenterNote": "Invite questions and check the linked guidance together. Draft, pending pharmacist review."
+      "body": "Eight questions. Read, discuss, check the source. Clinical review by Kevin Madden, PharmD is pending.",
+      "presenterNote": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending."
     },
     {
       "id": "instructions",
       "type": "instructions",
       "title": "Talk first. Reveal second.",
       "body": "Every question follows one facilitator-controlled rhythm.",
-      "presenterNote": "Invite questions and check the linked guidance together. Draft, pending pharmacist review."
+      "presenterNote": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending."
     },
     {
       "id": "closing",
       "type": "closing",
       "title": "Make the offer clear",
       "body": "Keep the source in the conversation.",
-      "presenterNote": "Invite questions and check the linked guidance together. Draft, pending pharmacist review.",
+      "presenterNote": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending.",
       "pearl": "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
       "summaryPoints": [
         "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
@@ -202,7 +202,7 @@ export const influenzaDeck: Deck = {
       "teachingRole": "applied",
       "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
       "patientConversation": "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
-      "presenterNote": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-keyfacts"
       ],
@@ -225,7 +225,7 @@ export const influenzaDeck: Deck = {
       "teachingRole": "applied",
       "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
       "patientConversation": "For adults aged 65 and older, CDC preferentially recommends high-dose inactivated, recombinant, or adjuvanted influenza vaccine.",
-      "presenterNote": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-flu-recs"
       ],
@@ -248,7 +248,7 @@ export const influenzaDeck: Deck = {
       "teachingRole": "misconception",
       "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
       "patientConversation": "Egg allergy alone requires no extra vaccine safety measures. Use a flu vaccine appropriate for the person’s age and health status, where allergic reactions can be recognized and treated.",
-      "presenterNote": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-egg-allergy"
       ]
@@ -268,7 +268,7 @@ export const influenzaDeck: Deck = {
       "teachingRole": "surprise",
       "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
       "patientConversation": "Flu shots contain inactivated virus or influenza proteins and cannot cause flu.",
-      "presenterNote": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-keyfacts"
       ]
@@ -288,7 +288,7 @@ export const influenzaDeck: Deck = {
       "teachingRole": "applied",
       "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
       "patientConversation": "For most people who need one dose, flu vaccination should ideally be offered in September or October.",
-      "presenterNote": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-flu-recs"
       ]
@@ -308,7 +308,7 @@ export const influenzaDeck: Deck = {
       "teachingRole": "consequence",
       "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
       "patientConversation": "Flu vaccination is associated with lower rates of some cardiac events among people with heart disease.",
-      "presenterNote": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-heart"
       ]
@@ -328,7 +328,7 @@ export const influenzaDeck: Deck = {
       "teachingRole": "misconception",
       "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
       "patientConversation": "People with minor illness may be vaccinated. Moderate or severe acute illness is a precaution.",
-      "presenterNote": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-pinkbook-flu"
       ]
@@ -348,7 +348,7 @@ export const influenzaDeck: Deck = {
       "teachingRole": "applied",
       "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
       "patientConversation": "Antiviral drugs can treat flu but are not a substitute for a flu vaccine.",
-      "presenterNote": "Read the explanation and invite the room to check the source. This round is draft, pending pharmacist review.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-antivirals"
       ]

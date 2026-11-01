@@ -16,7 +16,7 @@ try {
   }))
   $('message').textContent = `Frozen ${data.deckId} · ${data.questionCount} question records · ${data.claims.length} unique claims · SHA-256 ${data.snapshotHash.slice(0, 12)}`
   const panels = [
-    ['A / Content', `0 / ${data.claims.length} claims reviewed`, `${data.claims.length} / ${data.claims.length} unreviewed. ${data.questions.flatMap(q=>q.surfaces).concat(data.staticSurfaces).filter(s=>s.claimIds.length).length} factual appearances. Clinical accuracy: N/A. Draft, pending pharmacist review.`],
+    ['A / Content', `0 / ${data.claims.length} claims reviewed`, `${data.claims.length} / ${data.claims.length} unreviewed. ${data.questions.flatMap(q=>q.surfaces).concat(data.staticSurfaces).filter(s=>s.claimIds.length).length} factual appearances. Clinical accuracy: N/A. Clinical review by Kevin Madden, PharmD is pending.`],
     ['B / Functional integrity', `${results.replay.correct.total} / ${results.expected.correctTotal} all-correct points`, `${results.replay.wrong.total} zero-correct points (expected ${results.expected.wrongTotal}). ${Number(results.replay.correct.total === results.expected.correctTotal) + Number(results.replay.wrong.total === results.expected.wrongTotal)} / 2 bot sequences matched totals, eight attempts each. Semantic permutations and payload isolation are separate checks in the test report.`],
     ['C / Usability', 'Pilot pending', '0 facilitators and 0 players completed. 0 task attempts, 0 task completions. Keyboard, screen-reader and phone tasks are prepared. Automated browser checks are not human pilot results.']
   ]
@@ -40,7 +40,7 @@ try {
     heading.id = `answer-${i}`
     dialog.setAttribute('aria-labelledby', heading.id)
     element('p', q.question.reveal, dialog)
-    element('p', 'Draft, pending pharmacist review', dialog)
+    element('p', 'Clinical review by Kevin Madden, PharmD is pending', dialog)
     for (const id of q.surfaces.flatMap(s=>s.claimIds).filter((id,index,all)=>all.indexOf(id)===index)) {
       const claim = data.claims.find(c=>c.id===id)
       const source = data.sources.find(s=>s.id===claim.sourceId)
