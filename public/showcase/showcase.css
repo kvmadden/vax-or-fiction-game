@@ -1,0 +1,17 @@
+/* Colors and spacing follow the existing game and ported review sheet. */
+main { width: min(100% - 32px, 1120px) }
+header { border-bottom: 1px solid var(--line); padding-bottom: 24px }
+.lede { max-width: 60ch; font-size: 1.15rem }
+.theme { max-width: 180px }
+.panels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px }
+.panels article { margin: 0; padding: 20px }
+.panels h2 { margin-top: 0 }
+.metric { font-size: 1.6rem; font-weight: 700; margin-bottom: 0 }
+.chip { display: inline-block; padding: 4px 8px; border: 1px solid var(--line); border-radius: 6px; font-size: .85rem; margin: 4px 8px 4px 0 }
+.claim-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
+.claim-controls a { max-width: 100% }
+dialog { width: min(90vw, 720px); max-height: 85dvh; overflow: auto; border: 2px solid var(--line); border-radius: 12px; padding: 24px; color: var(--text); background: var(--panel); overflow-wrap: anywhere }
+dialog::backdrop { background: #10192bcc }
+small { display: block; overflow-wrap: anywhere }
+@media(max-width: 760px) { .panels { grid-template-columns: 1fr } .panels article { padding: 16px } }
+@media(prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important } }

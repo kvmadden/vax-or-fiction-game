@@ -1,0 +1,615 @@
+Interim Clinical Considerations for the Use of Seasonal Influenza Vaccines in the United States | Influenza (Flu) | CDC
+Skip directly to site content
+Skip directly to search
+An official website of the United States government
+Here's how you know
+Official websites use .gov
+A .gov website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Influenza (Flu)
+Explore This Topic
+Search
+Search
+Clear
+Search
+For Everyone
+About
+Signs and Symptoms
+Causes and Spread
+Flu Complications and People at Higher Risk
+Prevention
+Vaccine Basics
+Diagnosis
+Flu Treatment
+View all
+Health Care Providers
+Clinical Guidance
+Clinical Signs and Symptoms of Influenza
+Guidance for Influenza Vaccination
+Vaccine Product Information
+Clinical Testing and Diagnosis
+About Influenza Antiviral Medications
+Infection Control Guidance
+Laboratory Testing
+View all
+Public Health
+Information for Laboratories
+Understanding Influenza Viruses
+WHO Collaborating Center for Surveillance, Epidemiology and Control of Influenza
+Viral Genomic Sequencing Infrastructure
+View all
+Related Topics:
+Avian Flu
+|
+Swine Flu
+|
+Flu in Animals
+|
+Flu Vaccines Work
+|
+Pandemic Flu
+|
+Flu Burden
+Home
+search
+clear
+search
+Influenza (Flu)
+Menu
+clear
+search
+For Everyone
+About
+Signs and Symptoms
+Causes and Spread
+Flu Complications and People at Higher Risk
+Prevention
+Vaccine Basics
+Diagnosis
+Flu Treatment
+View All
+Home
+Health Care Providers
+Clinical Guidance
+Clinical Signs and Symptoms of Influenza
+Guidance for Influenza Vaccination
+Vaccine Product Information
+Clinical Testing and Diagnosis
+About Influenza Antiviral Medications
+Infection Control Guidance
+Laboratory Testing
+View All
+Home
+Public Health
+Information for Laboratories
+Understanding Influenza Viruses
+WHO Collaborating Center for Surveillance, Epidemiology and Control of Influenza
+Viral Genomic Sequencing Infrastructure
+View All
+Related Topics
+Avian Flu
+Swine Flu
+Flu in Animals
+Flu Vaccines Work
+Pandemic Flu
+Flu Burden
+Influenza (Flu)
+Clinical Guidance
+Clinical Signs and Symptoms of Influenza
+Guidance for Influenza Vaccination
+Vaccine Product Information
+Clinical Testing and Diagnosis
+About Influenza Antiviral Medications
+Infection Control Guidance
+Laboratory Testing
+View Menu
+Interim Clinical Considerations for the Use of Seasonal Influenza Vaccines in the United States
+For Health Care Providers
+Sept. 1, 2026
+What to know
+Because of legal uncertainties and inquiries, the CDC states the recommendations for seasonal influenza vaccination from the July 2025 immunization schedule remain in effect for the 2026-2027 influenza season.
+Introduction
+These clinical considerations provide guidance for healthcare professionals and public health officials concerning the use of seasonal influenza vaccines in the United States for the 2026-2027 season. They are informed by:
+Recommendations of the Advisory Committee on Immunization Practices (ACIP) and CDC.1
+Influenza vaccine licensure by the U.S. Food and Drug Administration (FDA).2
+The General Best Practices for Immunization.3
+Types of Seasonal Influenza Vaccines
+Three types of influenza vaccines are licensed and currently available in the United States (Table 1). All vaccine types are designed to promote production of antibodies to influenza virus surface antigen, hemagglutinin (HA):
+Inactivated influenza vaccines (IIV3s) contain inactivated influenza viruses. These include:
+Standard-dose unadjuvanted inactivated influenza vaccines grown either in eggs or cell culture.
+Egg-based vaccines include:
+FLUARIX, approved for ages ≥6 months4
+FLULAVAL, approved for ages ≥6 months5
+Fluzone, approved for ages ≥6 months6
+Cell-based vaccines include:
+FLUCELVAX, approved for ages ≥6 months7
+High-dose unadjuvanted inactivated influenza vaccine (HD-IIV3), Fluzone High-Dose, is approved for ages ≥65 years and is egg-based.8
+Adjuvanted inactivated influenza vaccine (aIIV3), FLUAD, is approved for ages ≥65 years and is egg-based.9
+Recombinant influenza vaccine (RIV3), Flublok, contains HA antigens that have been produced using recombinant technology, and is approved for ages ≥9 years.10
+Live attenuated influenza vaccine (LAIV3), FluMist, contains live attenuated influenza viruses. It is approved for ages 2 through 49 years and is egg-based.11
+Seasonal Influenza Vaccine Composition
+The seasonal influenza vaccines currently available for use in the United States are trivalent, containing components of three different influenza viruses: an influenza A(H1N1)pdm09 virus, an influenza A(H3N2) virus, and an influenza B/Victoria virus. Decisions concerning the composition of seasonal influenza vaccines are made ahead of each season, and in most seasons changes are made to at least one of the represented viruses. The composition of U.S. seasonal influenza vaccines is determined annually by FDA. The current seasonal influenza vaccine composition can be found here.12
+Overview of Recommendations for the Use of Seasonal Influenza Vaccines
+Groups Recommended for Vaccination
+Routine annual influenza vaccination as described in the July 2025 immunization schedule.
+All persons should receive an FDA-licensed age-appropriate influenza vaccine (one that is approved for their age), with the exception that solid organ transplant recipients aged 18 through 64 years who are receiving immunosuppressive medication regimens may receive either HD-IIV3 or aIIV3 as acceptable options (without a preference over other age-appropriate IIV3s or RIV3) (see Immunocompromised Persons, below).
+There are no preferential recommendations for the use of any one influenza vaccine over another when more than one licensed and recommended vaccine is available, except for persons ages ≥65 years, for whom HD-IIV3, RIV3, or aIIV3 are preferentially recommended (see Older Adults, below).
+Recommendations regarding timing of vaccination, considerations for specific populations and situations, the use of specific vaccines, and contraindications and precautions are summarized in the sections that follow.
+Timing of Vaccination
+Timing of the onset, peak, and decline of influenza activity varies from season to season.1314 In addition to the unpredictability of the influenza season, timing considerations are informed by possible waning of vaccine-induced immunity over the course of a season and by practical considerations.
+For most persons who need only 1 dose of influenza vaccine for the season, vaccination should ideally be offered during September or October.
+Influenza vaccines might be available as early as July or August; however, vaccination during July and August is not recommended for most groups because of potential waning of immunity over the course of the influenza season,151617181920212223242526272829303132333435 particularly among older adults.1516182835 However, vaccination during July or August can be considered for any recipient for whom there is concern that it will not be possible to vaccinate at a later date. Additional considerations for specific age groups and pregnant women include:
+For most adults (particularly adults aged ≥65 years) and for pregnant women in the first or second trimester: Vaccination during July and August should be avoided unless there is concern that vaccination later in the season might not be possible.
+Children who require 2 doses: Some children aged 6 months through 8 years require 2 doses of influenza vaccine for the season (see Number of Seasonal Influenza Vaccine Doses and Figure 1. Influenza vaccine dosing algorithm for children aged 6 months through 8 years).36373839 These children should receive their first dose as soon as possible (including during July and August, if vaccine is available) to allow the second dose (which must be administered ≥4 weeks later) to be received, ideally, by the end of October.
+Children who require only 1 dose: Vaccination during July and August can be considered for children of any age who need only 1 dose of influenza vaccine for the season. Although waning of immunity after vaccination over the course of the season has been observed among all age groups,151617181920212223242526272829303132333435 there are fewer published studies reporting results specifically among children.15171827293032 Moreover, children in this group might visit health care providers during the late summer months for medical examinations before the start of school.
+Pregnant women in the third trimester: Vaccination during July and August can be considered for pregnant women who are in the third trimester during these months because vaccination has been associated in multiple studies with reduced risk for influenza illness in their infants during the first months after birth, when they are too young to receive influenza vaccine.4041424344 For pregnant women in the first or second trimester during July and August, waiting to vaccinate until September or October is preferable, unless there is concern that later vaccination might not be possible.
+While vaccination by the end of October is recommended, vaccination should continue after October and throughout the influenza season as long as influenza viruses are circulating and unexpired vaccine is available.
+To avoid missed opportunities for vaccination, providers should offer vaccination during routine health care visits and hospitalizations.
+Revaccination (i.e., providing a booster dose) to persons who have been fully vaccinated for the season is not recommended, regardless of when the current season vaccine was received.
+Route of Administration and Dose Volumes
+IIV3s and RIV3 are administered intramuscularly. LAIV3 is administered intranasally.
+The approved dose volume for currently licensed inactivated influenza vaccines (IIV3s) and recombinant influenza (RIV3) vaccine is 0.5 mL intramuscularly, with one exception:
+Fluzone: For children ages 6 through 35 months, the approved dose volume is either 0.25 mL or 0.5 mL intramuscularly per dose. Per the package insert, each dose can be given at either volume; however, 0.25-mL prefilled syringes (PFSs) are no longer available. The approved dose volume for persons ≥36 months (≥3 years) is 0.5 mL. The Fluzone 0.5-mL PFS may be used for all persons aged ≥6 months.
+For FluMist (LAIV3), the approved dose volume is 0.2 mL intranasally (0.1 mL in each nostril).
+Number of Seasonal Influenza Vaccine Doses
+Persons ages ≥9 years should receive 1 dose of the current season trivalent influenza vaccine annually.
+Some children ages 6 months through 8 years require 2 doses of influenza vaccine administered ≥4 weeks apart. Determination of the number of doses needed is based on the child’s age at the time of the first dose of the current season’s influenza vaccine and the number of doses of influenza vaccine received in previous influenza seasons:
+Those who have previously received ≥2 total doses of trivalent or quadrivalent influenza vaccine ≥4 weeks apart before the July 1 immediately prior to the start of the current season require only 1 dose for the current season. The previous 2 doses of influenza vaccine do not need to have been received in the same season or consecutive seasons.
+Those who have not previously received ≥2 doses of trivalent or quadrivalent influenza vaccine ≥4 weeks apart before the July 1 immediately prior to the current season, or whose previous influenza vaccination history is unknown, require 2 doses for the current season. The interval between the 2 doses should be ≥4 weeks.
+Children aged 6 months through 8 years who require 2 doses of influenza vaccine should receive their first dose as soon as possible (including during July and August, if vaccine is available) to allow the second dose (which must be administered ≥4 weeks later) to be received, ideally, by the end of October.
+For children aged 8 years who require 2 doses of vaccine, both doses should be administered even if the child turns age 9 years between receipt of dose 1 and dose 2.
+Figure 1
+View Larger
+Figure 1. Influenza vaccine dosing algorithm for children aged 6 months through 8 years.
+Guidance for Seasonal Influenza Vaccination in Specific Populations and Situations
+Populations at Higher Risk for Medical Complications Attributable to Severe Influenza
+Annual seasonal influenza vaccination is recommended as described in the July 2025 immunization schedule. However, vaccination to prevent influenza is particularly important for persons who are at increased risk for severe illness and complications from influenza and for influenza-related outpatient, emergency department, or hospital visits. While vaccine shortages are uncommon, when vaccine supply is limited seasonal influenza vaccination efforts should focus on vaccination of persons at higher risk for medical complications
+All children aged 6 through 59 months.
+All persons aged ≥50 years.
+Adults and children who have chronic pulmonary (including asthma), cardiovascular (excluding isolated hypertension), renal, hepatic, neurologic, hematologic, or metabolic disorders (including diabetes mellitus).
+Persons who are immunocompromised due to any cause (including but not limited to immunosuppression caused by medications or HIV infection).
+Women who are or will be pregnant during the influenza season.
+Children and adolescents (aged 6 months through 18 years) who are receiving aspirin- or salicylate-containing medications and who might be at risk for experiencing Reye syndrome after influenza virus infection.
+Residents of nursing homes and other long-term care facilities.
+American Indian or Alaska Native persons.
+Persons who are extremely obese (body mass index ≥40 for adults).
+IIV3 or RIV3 are suitable for all persons recommended for vaccination, including those in the risk groups listed. LAIV3 is not recommended for certain populations, including some of these listed groups. Groups for whom LAIV3 is not recommended are discussed in Contraindications and Precautions, below (Table 2).
+Persons Who Live with or Care for Persons at Higher Risk for Influenza-Related Complications
+Annual seasonal influenza vaccination is recommended as described in the July 2025 immunization schedule. However, emphasis also should be placed on vaccination of persons who live with or care for those who are at increased risk for medical complications attributable to severe influenza. While vaccine shortages are uncommon, when vaccine supply is limited seasonal influenza vaccination efforts should focus on administering vaccination to persons at higher risk for influenza-related complications as well as persons who live with or care for such persons, including the following:
+Health care personnel, including all paid and unpaid persons working in health care settings who have the potential for exposure to patients or to infectious materials. These personnel might include but are not limited to physicians, nurses, nursing assistants, nurse practitioners, physician assistants, therapists, technicians, emergency medical service personnel, dental personnel, pharmacists, laboratory personnel, autopsy personnel, students and trainees, contractual staff members, and others not directly involved in patient care but who might be exposed to infectious agents (e.g., clerical, dietary, housekeeping, laundry, security, maintenance, administrative, billing staff, and volunteers).
+Household contacts (including children aged ≥6 months) and caregivers of children aged ≤59 months (<5 years) and adults aged ≥50 years, particularly contacts of children aged <6 months.
+Household contacts (including children aged ≥6 months) and caregivers of persons with medical conditions that put them at higher risk for severe complications from influenza.
+Health care personnel and persons who are contacts of persons in these groups (except for of contacts of severely immunocompromised persons who require a protected environment) can receive any influenza vaccine that is otherwise indicated. Persons who care for severely immunocompromised persons requiring a protected environment should not receive LAIV3. Health care personnel who receive LAIV3 should avoid providing care for severely immunocompromised persons requiring a protected environment for 7 days after vaccination and hospital visitors who have received LAIV3 should avoid contact with such persons for 7 days after vaccination.45 However, such persons need not be restricted from caring for or visiting less severely immunocompromised persons.
+Pregnant Women
+Influenza vaccination during pregnancy is associated with reduced risk for respiratory illness and influenza among pregnant and postpartum women as well as infants during the first months of life.4041424344
+Pregnant women should receive IIV3 or RIV3.
+LAIV3 should not be used during pregnancy but can be used postpartum.
+Influenza vaccine can be administered at any time during pregnancy (i.e., during any trimester), before and during the influenza season.
+Early vaccination (i.e., during July and August) can be considered for pregnant women who are in the third trimester during these months if vaccine is available because this can provide protection for the infant during the first months of life, when they are too young to be vaccinated.
+Older Adults
+Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).464748
+If none of these three preferentially recommended vaccines are available at an opportunity for vaccine administration, then any other age-appropriate influenza vaccine should be administered.
+Immunocompromised Persons
+Persons with compromised immunity (including but not limited to persons with congenital and acquired immunodeficiency states, persons who are immunocompromised due to medications, and persons with anatomic and functional asplenia) should receive IIV3 or RIV3.
+Immunocompromised persons should receive an age-appropriate influenza vaccine (i.e., one approved for their age), with the exception that solid organ transplant recipients aged 18 through 64 years who are receiving immunosuppressive medication regimens may receive either HD-IIV3 or aIIV3 as acceptable options (without a preference over other age-appropriate IIV3s or RIV3).14950
+LAIV3 should not be used for immunocompromised persons because of the uncertain but biologically plausible risk for disease attributable to the live vaccine virus.
+Immunocompromised states comprise a heterogeneous range of conditions with varying risks for severe infections. In many instances, limited data are available regarding the effectiveness of influenza vaccines in the setting of specific immunocompromised states.51 Timing of vaccination might be a consideration (e.g., vaccinating during a period either before or after an immunocompromising intervention).
+Immune response to influenza vaccines might be blunted in persons with certain conditions, such as congenital immune deficiencies, and in persons receiving cancer chemotherapy, posttransplant regimens, or immunosuppressive medications.
+Persons with a History of Guillain-Barré Syndrome After Influenza Vaccination
+A history of Guillain-Barré syndrome (GBS) within 6 weeks of a previous dose of any type of influenza vaccine is considered a precaution for influenza vaccination (Table 2).4567891011
+Persons who are not at higher risk for severe influenza complications (see Populations at Higher Risk for Medical Complications Attributable to Severe Influenza, above) and who are known to have experienced GBS within 6 weeks of a previous influenza vaccination typically should not be vaccinated. However, the benefits of influenza vaccination might outweigh the possible risks for certain persons who also are at higher risk for severe complications from influenza.
+As an alternative to vaccination, providers might consider using influenza antiviral chemoprophylaxis for these persons.52
+Persons with a History of Egg Allergy
+Persons aged ≥6 months with egg allergy may receive any influenza vaccine (egg-based or nonegg-based) that is otherwise appropriate for the recipient’s age and health status.535455
+Egg allergy alone necessitates no additional safety measures for influenza vaccination beyond those recommended for any recipient of any vaccine, regardless of severity of previous reaction to egg.
+Egg-based influenza vaccines are prepared by propagation of virus in embryonated eggs and might contain trace amounts of egg proteins, such as ovalbumin. Among those U.S.-licensed influenza vaccines for which ovalbumin content is reported, quantities are generally small (≤1 μg/0.5mL dose).45911
+Severe and life-threatening reactions to vaccines can occur rarely with any vaccine and in any vaccine recipient, regardless of allergy history. Clinical settings in which vaccines are administered should be equipped to recognize and manage acute allergic reactions.3
+Persons with Previous Allergic Reactions to Influenza Vaccines or their Components
+Each influenza vaccine is contraindicated for persons who have a history of previous severe allergic reaction (e.g., anaphylaxis) to any component of that vaccine, other than egg protein.
+While egg is a component of egg-based IIV3s and LAIV3, ACIP has made a recommendation that persons with egg allergy of any severity can receive any influenza vaccine, egg-based or non egg-based, that is otherwise appropriate for their age and health status (see Persons with a History of Egg Allergy, above).55
+Vaccine components can be found in package inserts.
+For persons who have had a severe allergic reaction (e.g., anaphylaxis) to a previous dose of an influenza vaccine, see Contraindications and Precautions (below), Table 2, and Table 3.
+Vaccination Issues for Travelers
+In temperate climate regions of the Northern and Southern Hemispheres, influenza activity is seasonal, occurring during approximately October–May in the Northern Hemisphere and April–September in the Southern Hemisphere. In the tropics, influenza might occur throughout the year.56
+The timing of influenza activity and predominant types and subtypes of influenza viruses in circulation vary by geographic region.57
+Travelers can be exposed to influenza when traveling to an area where influenza is circulating or when traveling as part of large tourist groups (e.g., on cruise ships) that include persons from areas of the world where influenza viruses are circulating.58596061
+Travelers who want to reduce their risk for influenza should consider influenza vaccination, preferably at least 2 weeks before departure.
+In particular, persons who live in the United States and are at higher risk for influenza complications and who were not vaccinated with influenza vaccine during the previous Northern Hemisphere fall or winter should consider receiving influenza vaccination before departure if they plan to travel to the tropics, to the Southern Hemisphere during the Southern Hemisphere influenza season (April–September), or with organized tourist groups or on cruise ships to any location.
+Persons at higher risk who received the previous season's influenza vaccine before travel should consult with their health care provider to discuss the risk for influenza and other travel-related diseases before embarking on travel during the summer.
+All persons (regardless of risk status) who are vaccinated in preparation for travel before the upcoming influenza season's vaccine is available, or who received the immediately preceding Southern Hemisphere influenza vaccine, should receive the current U.S. seasonal influenza vaccine the following fall or winter.
+Influenza vaccine formulated for the Southern Hemisphere might differ in viral composition from the Northern Hemisphere vaccine. For persons traveling to the Southern Hemisphere during the Southern Hemisphere influenza season, receipt of a current U.S.-licensed Southern Hemisphere influenza vaccine formulation before departure might be reasonable but might not be feasible because of limited access to or unavailability of Southern Hemisphere formulations in the United States. Most Southern Hemisphere influenza vaccine formulations are not licensed in the United States, and they are typically not commercially available.
+More information on influenza vaccines and travel is available at Flu Prevention: Information for Travelers | Influenza (Flu) | CDC. Additional information on global influenza surveillance by region is available at the Global Influenza Programme site.
+Influenza Vaccination and Use of Influenza Antiviral Medications
+Administration of any IIV3 or RIV3 to persons receiving influenza antiviral medications for treatment or chemoprophylaxis of influenza is acceptable.
+Data concerning vaccination with LAIV3 in the setting of influenza antiviral use are not available. However, influenza antiviral medications might interfere with the action of LAIV3 because this vaccine contains live influenza viruses.
+Assuming a period of at least 5 half-lives for substantial decrease in drug levels,62
+Oseltamivir and zanamivir might interfere with the mechanism of LAIV3 if administered from 48 hours before through 2 weeks after vaccination.
+Peramivir might interfere with the mechanism of LAIV3 if administered from 5 days before through 2 weeks after vaccination.
+Baloxavir might interfere if administered from 17 days before through 2 weeks after vaccination.
+These intervals might be longer in conditions where medication clearance is delayed.
+Persons who receive influenza antivirals within the above intervals should be revaccinated with an age-appropriate IIV3 or RIV3.
+Administration of Influenza Vaccines with Other Vaccines
+IIV3s and RIV3 can be administered simultaneously or sequentially with other inactivated vaccines or live vaccines.
+Injectable vaccines that are given concomitantly should be administered at separate anatomic sites.
+Vaccines that are administered at the same time as influenza vaccines that might be more likely to be associated with local injection site reactions (e.g., HD-IIV3 and aIIV3) should be given in different limbs, if possible.
+LAIV3 can be administered simultaneously with other live or inactivated vaccines. However, if two live vaccines are not given simultaneously, at least 4 weeks should pass after administration of one live vaccine (such as LAIV3) before another live vaccine is administered.3
+Selection of a nonadjuvanted influenza vaccine can be considered in situations in which influenza vaccine and another vaccine containing a nonaluminum adjuvant are to be administered concomitantly. However, influenza vaccination should not be delayed if a specific vaccine is not available.
+Contraindications and Precautions
+Contraindications and Precautions for Trivalent Inactivated Influenza Vaccines (IIV3s)
+Contraindications
+Manufacturer package inserts and updated CDC and ACIP guidance should be consulted for information on contraindications and precautions for individual influenza vaccines.
+Each IIV3, whether egg based or cell culture based, has a labeled contraindication for persons with a history of a severe allergic reaction to any component of that vaccine (Table 2 and Table 3). However, although egg is a component of all IIV3s other than ccIIV3, ACIP has made a specific recommendation for the use of influenza vaccine for persons with egg allergy (see Persons with a History of Egg Allergy, above).55Information about vaccine components can be found in the package inserts for each vaccine.
+All egg-based IIV3s are contraindicated in persons who have had a severe allergic reaction (e.g., anaphylaxis) to a previous dose of any influenza vaccine (any egg-based IIV, ccIIV, RIV, or LAIV of any valency).
+Use of ccIIV3 is contraindicated in persons who have had a severe allergic reaction (e.g., anaphylaxis) to any ccIIV of any valency.
+Prophylactic use of antiviral agents is an option that can be considered for preventing influenza among persons who cannot receive vaccine, particularly for those who are at higher risk for medical complications attributable to severe influenza.52
+Precautions
+Moderate or severe acute illness with or without fever is a general precaution for vaccination.3
+A history of GBS within 6 weeks after receipt of a previous dose of influenza vaccine is considered a precaution for the use of all influenza vaccines (Table 2).
+A history of severe allergic reaction (e.g., anaphylaxis) to any influenza vaccine other than a ccIIV of any valency (i.e., any egg-based IIV, RIV, or LAIV of any valency) is a precaution for the use of ccIIV3 (see Persons with Previous Allergic Reactions to Influenza Vaccines or Their Components, above) (Table 2 and Table 3). If ccIIV3 is administered in such an instance, vaccination should occur in an inpatient or outpatient medical setting and should be supervised by a health care provider who is able to recognize and manage severe allergic reactions. Providers can also consider consultation with an allergist to help identify the vaccine component responsible for the reaction.
+Contraindications and Precautions for Trivalent Recombinant Influenza Vaccine (RIV3)
+Contraindications
+Manufacturer package inserts and updated CDC and ACIP guidance should be consulted for information on contraindications and precautions for individual influenza vaccines.
+RIV3 is contraindicated in persons who have had a severe allergic reaction (e.g., anaphylaxis) to a previous dose of any RIV of any valency or to any component of RIV3.
+Precautions
+Moderate or severe acute illness with or without fever is a general precaution for vaccination.3
+A history of GBS within 6 weeks after receipt of a previous dose of influenza vaccine is considered a precaution for the use of all influenza vaccines.
+A history of a severe allergic reaction (e.g., anaphylaxis) to any influenza vaccine other than an RIV of any valency (i.e., any egg-based IIV, ccIIV, or LAIV of any valency) is a precaution for the use of RIV3 (see Persons with Previous Allergic Reactions to Influenza Vaccines or Their Components, above) (Table 2 and Table 3). If RIV3 is administered in such an instance, vaccination should occur in an inpatient or outpatient medical setting and should be supervised by a health care provider who is able to recognize and manage severe allergic reactions. Providers can also consider consulting with an allergist to help identify the vaccine component responsible for the reaction.
+Contraindications and Precautions for Trivalent Live Attenuated Influenza Vaccine (LAIV3)
+Contraindications
+Manufacturer package inserts and updated CDC and ACIP guidance should be consulted for information on contraindications and precautions for individual influenza vaccines.
+Conditions considered to be contraindications for LAIV3 include two labeled contraindications that appear in the package insert11 and other conditions for which there is either uncertain but biologically plausible potential risk associated with live viruses or limited data for use of LAIV. These include the following (Table 2 and Table 3):
+Severe allergic reaction (e.g., anaphylaxis) to any component of the vaccine or to a previous dose of any influenza vaccine (i.e., any egg-based IIV, ccIIV, RIV, or LAIV of any valency; a labeled contraindication noted in the package insert). However, although egg is a component of LAIV3, ACIP has made specific recommendations for the use of influenza vaccine for persons with egg allergy (see Persons with a History of Egg Allergy, above).55
+Children and adolescents receiving concomitant aspirin- or salicylate-containing medications, because of the potential risk for Reye syndrome (a labeled contraindication noted in the package insert).
+Children aged 2 through 4 years who have received a diagnosis of asthma or whose parents or caregivers report that a health care provider has told them during the preceding 12 months that their child had wheezing or asthma or whose medical record indicates a wheezing episode has occurred during the preceding 12 months.
+Children and adults who are immunocompromised due to any cause, including but not limited to immunosuppression caused by medications, congenital or acquired immunodeficiency states, HIV infection, anatomic asplenia, or functional asplenia (such as that due to sickle cell anemia).
+Close contacts and caregivers of severely immunosuppressed persons who require a protected environment.
+Pregnancy.
+Persons with active communication between the cerebrospinal fluid (CSF) and the oropharynx, nasopharynx, nose, or ear or any other cranial CSF leak.
+Persons with cochlear implants, because of the potential for CSF leak that might exist for a period after implantation (providers might consider consultation with a specialist concerning the risk for persistent CSF leak if an inactivated or recombinant vaccine cannot be used).
+Receipt of influenza antiviral medication within the previous 48 hours for oseltamivir and zanamivir, previous 5 days for peramivir, and previous 17 days for baloxavir. The interval between influenza antiviral receipt and LAIV3 during which interference might potentially occur might be further prolonged in the presence of medical conditions that delay medication clearance (e.g., renal insufficiency).
+Precautions:
+Moderate or severe acute illness with or without fever is a general precaution for vaccination3.
+History of GBS within 6 weeks after receipt of any influenza vaccine.
+Asthma in persons aged ≥5 years.
+Other underlying medical condition (other than those listed under contraindications) that might predispose to complications after wild-type influenza virus infection (e.g., chronic pulmonary, cardiovascular [except isolated hypertension], renal, hepatic, neurologic, hematologic, or metabolic disorders [including diabetes mellitus]).
+Storage and Handling of Influenza Vaccines
+Approved manufacturer packaging information should be consulted for authoritative guidance concerning storage and handling of specific influenza vaccines.
+Typically, influenza vaccines should be protected from light and stored at temperatures that are recommended in the package insert. Recommended storage temperatures are typically 36°F–46°F (2°C–8°C) and should be maintained at all times with adequate refrigeration and temperature monitoring. Vaccine that has frozen should be discarded. Specific recommendations for appropriate refrigerators and temperature monitoring equipment can be found in the Vaccine Storage and Handling Toolkit.63
+Vaccines should not be used beyond the expiration date on the label. In addition to the expiration date, multidose vials also might have a beyond-use date (BUD), which specifies the number of days the vaccine can be kept once first accessed. After being accessed for the first dose, multidose vials should not be used after the BUD. If no BUD is provided, then the listed expiration date is to be used. Multidose vials should be returned to recommended storage conditions between uses.
+Package information might also specify a maximum number of doses contained in multidose vials (regardless of remaining volume). No more than the specified number of doses should be removed, and any remainder should be discarded.
+Providers should contact the manufacturer for information on permissible temperature excursions and other departures from recommended storage and handling conditions that are not discussed in the package labeling.
+Tables
+TABLE 1. Seasonal Influenza Vaccines in the United States.*
+Vaccine type and trade name (manufacturer)
+Presentation
+Age indication
+μg HA (IIV3s and RIV3)
+or virus count (LAIV3)
+for each vaccine virus
+(per dose)
+Route
+IIV3s (standard-dose, egg-based vaccines†)
+FLUARIX (GlaxoSmithKline)
+0.5-mL PFS
+≥6 mos
+15 μg/0.5 mL
+IM§
+FLULAVAL (GlaxoSmithKline)
+0.5-mL PFS
+≥6 mos
+15 μg/0.5 mL
+IM§
+Fluzone (Sanofi)
+0.5-mL PFS¶
+≥6 mos¶
+15 μg/0.5 mL
+IM§
+5.0-mL MDV
+≥6 mos¶
+7.5 μg/0.25 mL
+15 μg/0.5 mL
+IM§
+ccIIV3 (standard-dose, cell culture–based vaccine)
+FLUCELVAX (Seqirus)
+0.5-mL PFS
+≥6 mos
+15 μg/0.5 mL
+IM§
+HD-IIV3 (high-dose, egg-based vaccine†)
+Fluzone High-Dose (Sanofi)
+0.5-mL PFS
+≥65 yrs
+60 μg/0.5 mL
+IM§
+aIIV3 (standard-dose, egg-based vaccine† with MF59 adjuvant)
+FLUAD (Seqirus)
+0.5-mL PFS
+≥65 yrs
+15 μg/0.5 mL
+IM§
+RIV3 (recombinant HA vaccine)
+Flublok (Sanofi)
+0.5-mL PFS
+≥9 yrs
+45 μg/0.5 mL
+IM§
+LAIV3 (egg-based vaccine†)
+FluMist (AstraZeneca)**
+0.2-mL prefilled single-use intranasal sprayer
+2 through 49 yrs
+106.5–7.5 FFU/0.2 mL
+Intranasal
+Abbreviations: ACIP = Advisory Committee on Immunization Practices; aIIV3 = adjuvanted inactivated influenza vaccine, trivalent; ccIIV3 = cell culture–based inactivated influenza vaccine, trivalent; FDA = Food and Drug Administration; FFU = fluorescent focus units; HA = hemagglutinin; HD-IIV3 = high-dose inactivated influenza vaccine, trivalent; Hg = mercury; IIV3 = inactivated influenza vaccine, trivalent; IM = intramuscular; LAIV3 = live attenuated influenza vaccine, trivalent; MDV = multidose vial; PFS = prefilled syringe; RIV3 = recombinant influenza vaccine, trivalent.
+* Manufacturer package inserts and updated CDC and ACIP guidance should be consulted for additional information including, but not limited to, indications, contraindications, warnings, precautions. Package inserts for U.S.-licensed vaccines are available from FDA at Vaccines Licensed for Use in the United States. Information presented concerning vaccines expected to be available and their approved indications and usage reflects current knowledge and is subject to change. Availability and characteristics of specific products and presentations might change or differ from what is described in this table and in the text of this report. The list of products in this table is not exhaustive of all available licensed products.
+† Although a history of severe allergic reaction (e.g., anaphylaxis) to egg is a labeled contraindication to the use of egg-based IIV3s and LAIV3, ACIP has recommended that all persons aged ≥6 months with egg allergy should receive influenza vaccine and that any influenza vaccine (egg based or non–egg based) that is otherwise appropriate for the recipient’s age and health status can be used (see Persons with a History of Egg Allergy in Prevention and Control of Seasonal Influenza with Vaccines).53,54
+§ IM-administered influenza vaccines should be administered by needle and syringe. For older children and adults, the recommended site for IM influenza vaccination is the deltoid muscle. The preferred site for infants and young children is the anterolateral aspect of the thigh. Additional specific guidance regarding site selection and needle length for IM administration is available in the CDC General Best Practices for Immunization.
+¶ Fluzone is approved for children aged 6 through 35 months at either 0.25 mL or 0.5 mL per dose. However, 0.25-mL PFSs are no longer available. The Fluzone 0.5-mL PFS may be used for persons aged ≥6 months.
+** FluMist (LAIV3) is approved by FDA for self-administration (for recipients aged 18 through 49 years) or administration by a caregiver aged ≥18 years (for children and adolescents aged 2 through 17 years). FluMist for self-administration or caregiver administration is available through the FluMist Home program, through which consumers provide information to determine their eligibility to order the vaccine. For persons who meet eligibility criteria to receive FluMist, vaccine is shipped under temperature-controlled conditions to the address provided by the person placing the order. Recommendations, contraindications, and precautions for use of FluMist for self-administration or caregiver administration are the same as those for health care provider administration (Table 2 and Table 3). FluMist will continue to be available for ordering and administration by health care providers.
+TABLE 2. Contraindications and precautions for the use of seasonal influenza vaccines.
+Vaccine type
+Contraindications
+Precautions
+Egg-based IIV3s
+History of severe allergic reaction (e.g., anaphylaxis) to any component of the vaccine† or to a previous dose of any influenza vaccine (i.e., any egg-based IIV, ccIIV, RIV, or LAIV)§ (see Table 3)
+Moderate or severe acute illness with or without fever
+History of Guillain-Barré syndrome within 6 weeks of receipt of influenza vaccine
+ccIIV3
+History of severe allergic reaction (e.g., anaphylaxis) to a previous dose of any ccIIV or any component of ccIIV3§ (see Table 3)
+Moderate or severe acute illness with or without fever
+History of Guillain-Barré syndrome within 6 weeks of receipt of influenza vaccine
+History of severe allergic reaction to a previous dose of any other influenza vaccine (i.e., any egg-based IIV, RIV, or LAIV)¶ (see Table 3)
+RIV3
+History of severe allergic reaction (e.g., anaphylaxis) to a previous dose of any RIV or any component of RIV3§ (see Table 3)
+Moderate or severe acute illness with or without fever
+History of Guillain-Barré syndrome within 6 weeks of receipt of influenza vaccine
+History of severe allergic reaction to a previous dose of any other influenza vaccine (i.e., any egg-based IIV, ccIIV, or LAIV)¶ (see Table 3)
+LAIV3
+History of severe allergic reaction (e.g., anaphylaxis) to any component of the vaccine† or to a previous dose of any influenza vaccine (i.e., any egg-based IIV, ccIIV, RIV, or LAIV)§ (see Table 3)
+Concomitant aspirin- or salicylate-containing therapy in children and adolescents§
+Children aged 2 through 4 years who have received a diagnosis of asthma or whose parents or caregivers report that a health care provider has told them during the preceding 12 months that their child had wheezing or asthma or whose medical record indicates a wheezing episode has occurred during the preceding 12 months
+Children and adults who are immunocompromised due to any cause, including but not limited to immunosuppression caused by medications, congenital or acquired immunodeficiency states, HIV infection, anatomic asplenia, or functional asplenia (e.g., due to sickle cell anemia)
+Close contacts and caregivers of severely immunosuppressed persons who require a protected environment
+Pregnancy
+Persons with active communication between the CSF and the oropharynx, nasopharynx, nose, or ear, or any other cranial CSF leak
+Persons with cochlear implants**
+Receipt of the influenza antiviral medications oseltamivir or zanamivir within the previous 48 hours; receipt of peramivir within the previous 5 days; or receipt of baloxavir within the previous 17 days††
+Moderate or severe acute illness with or without fever
+History of Guillain-Barré syndrome within 6 weeks of receipt of influenza vaccine
+Asthma in persons aged ≥5 years
+Other underlying medical conditions that might predispose to complications after wild-type influenza infection (e.g., chronic pulmonary, cardiovascular [except isolated hypertension], renal, hepatic, neurologic, hematologic, or metabolic disorders [including diabetes mellitus])
+Abbreviations: ACIP = Advisory Committee on Immunization Practices; ccIIV = cell culture–based inactivated influenza vaccine (any valency); ccIIV3 = cell culture–based inactivated influenza vaccine, trivalent; CSF = cerebrospinal fluid; IIV = inactivated influenza vaccine (any valency); IIV3 = inactivated influenza vaccine, trivalent; LAIV = live attenuated influenza vaccine (any valency); LAIV3 = live attenuated influenza vaccine, trivalent; RIV = recombinant influenza vaccine (any valency); RIV3 = recombinant influenza vaccine, trivalent.
+* Manufacturer package inserts and updated CDC and ACIP guidance should be consulted for additional information including, but not limited to, indications, contraindications, warnings, and precautions. When a contraindication is present, a vaccine should not be administered. When a precaution is present, vaccination should generally be deferred but might be indicated if the benefit of protection from the vaccine outweighs the risk for an adverse reaction (General Best Practices for Immunization). Package inserts for U.S.-licensed vaccines are available from FDA at Vaccines Licensed for Use in the United States.
+† Although a history of severe allergic reaction (e.g., anaphylaxis) to egg is a labeled contraindication to the use of egg-based IIV3s and LAIV3, ACIP has recommended that all persons aged ≥6 months with egg allergy should receive influenza vaccine and that any influenza vaccine (egg based or non–egg based) that is otherwise appropriate for the recipient’s age and health status can be used (see Persons with a History of Egg Allergy in Prevention and Control of Seasonal Influenza with Vaccines).
+§ Labeled contraindication noted in package insert.
+¶ If administered, vaccination should occur in a medical setting and should be supervised by a health care provider who can recognize and manage severe allergic reactions. Providers can consider consulting with an allergist in such cases to assist in identification of the component responsible for the allergic reaction.
+** Injectable influenza vaccines are recommended for persons with cochlear implant because of the potential for CSF leak, which might exist for a period after implantation. Providers might consider consultation with a specialist concerning risk for persistent CSF leak if an inactivated or recombinant vaccine cannot be used.
+†† Use of LAIV3 in the context of influenza antivirals has not been studied; however, interference with activity of LAIV3 is biologically plausible, a possibility that is noted in the package insert for LAIV3. In the absence of data supporting an adequate minimum interval between influenza antiviral use and LAIV3 administration, the intervals provided are based on the half-life of each antiviral. The interval between influenza antiviral receipt and LAIV3 for which interference might occur might be further prolonged in the presence of medical conditions that delay medication clearance (e.g., renal insufficiency). Influenza antivirals might also interfere with LAIV3 if initiated within 2 weeks after vaccination. Persons who receive antivirals during the period starting with the specified time before receipt of LAIV3 through 2 weeks after receipt of LAIV3 should be revaccinated with an age-appropriate IIV3 or RIV3.
+TABLE 3. Influenza vaccine contraindications and precautions for persons with a history of severe allergic reaction to a previous dose of an influenza vaccine.*
+Vaccine (of any valency) associated with previous severe allergic reaction
+(e.g., anaphylaxis)
+Available influenza vaccine
+Egg-based IIV3s and LAIV3
+ccIIV3
+RIV3
+Any egg-based IIV or LAIV
+Contraindication†
+Precaution§
+Precaution§
+Any ccIIV
+Contraindication†
+Contraindication†
+Precaution§
+Any RIV
+Contraindication†
+Precaution§
+Contraindication†
+Unknown influenza vaccine
+Allergist consultation recommended
+Allergist consultation recommended
+Allergist consultation recommended
+Abbreviations: ACIP = Advisory Committee on Immunization Practices; ccIIV = cell culture–based inactivated influenza vaccine (any valency); ccIIV3 = cell culture–based inactivated influenza vaccine, trivalent; IIV = inactivated influenza vaccine (any valency); IIV3 = inactivated influenza vaccine, trivalent; LAIV = live attenuated influenza vaccine (any valency); LAIV3 = live attenuated influenza vaccine, trivalent; RIV = recombinant influenza vaccine (any valency); RIV3 = recombinant influenza vaccine, trivalent.
+* Manufacturer package inserts and updated CDC and ACIP guidance should be consulted for additional information including, but not limited to, indications, contraindications, warnings, and precautions. Package inserts for U.S.-licensed vaccines are available from FDA at Vaccines Licensed for Use in the United States.
+† When a contraindication is present, a vaccine should not be administered, consistent with CDC’s General Best Practices for Immunization. In addition to the contraindications based on history of severe allergic reaction to influenza vaccines that are noted in the table, each individual influenza vaccine is contraindicated for persons who have had a severe allergic reaction (e.g., anaphylaxis) to any component of that vaccine. Vaccine components can be found in package inserts. Although a history of severe allergic reaction (e.g., anaphylaxis) to egg is a labeled contraindication to the use of egg-based IIV3s and LAIV3, ACIP recommends that all persons aged ≥6 months with egg allergy should receive influenza vaccine and that any influenza vaccine (egg based or non–egg based) that is otherwise appropriate for the recipient’s age and health status can be used (see Persons with a History of Egg Allergy in Prevention and Control of Seasonal Influenza with Vaccines).
+§ When a precaution is present, vaccination should generally be deferred but might be indicated if the benefit of protection from the vaccine outweighs the risk for an adverse reaction, consistent with CDC’s General Best Practices for Immunization. Providers can consider using the following vaccines in these instances; however, vaccination should occur in an inpatient or outpatient medical setting with supervision by a health care provider who is able to recognize and manage severe allergic reactions: 1) for persons with a history of severe allergic reaction (e.g., anaphylaxis) to any egg-based IIV or LAIV of any valency, the provider can consider administering ccIIV3 or RIV3; 2) for persons with a history of severe allergic reaction (e.g., anaphylaxis) to any ccIIV of any valency, the provider can consider administering RIV3; and 3) for persons with a history of severe allergic reaction (e.g., anaphylaxis) to any RIV of any valency, the provider can consider administering ccIIV3. Providers can also consider consulting with an allergist to help determine which vaccine component is responsible for the allergic reaction.
+On This Page
+Introduction
+Types of Seasonal Influenza Vaccines
+Seasonal Influenza Vaccine Composition
+Overview of Recommendations for the Use of Seasonal Influenza Vaccines
+Guidance for Seasonal Influenza Vaccination in Specific Populations and Situations
+Contraindications and Precautions
+Storage and Handling of Influenza Vaccines
+Tables
+Sept. 1, 2026
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+National Center for Immunization and Respiratory Diseases (NCIRD)
+About This Page
+Published: September 1, 2026
+Updated: September 1, 2026
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed: September 1, 2026
+The information on this page was last reviewed by subject matter experts to ensure accuracy.
+References
+Grohskopf LA, Ferdinands JM, Blanton LH, Broder KR, Loehr J. Prevention and Control of Seasonal Influenza with Vaccines: Recommendations of the Advisory Committee on Immunization Practices - United States, 2024-25 Influenza Season. MMWR Recomm Rep. Aug 29 2024;73(5):1-25. doi:10.15585/mmwr.rr7305a1
+FDA. Vaccines Licensed for Use in the United States. Accessed July 8, 2026, https://www.fda.gov/vaccines-blood-biologics/vaccines/vaccines-licensed-use-united-states
+CDC. General best practices for immunization. Accessed July 8, 2026, https://www.cdc.gov/vaccines/hcp/imz-best-practices/
+FLUARIX [Package Insert]. Dresden, Germany: GlaxoSmithKline; 2026.
+FLULAVAL [Package Insert]. Quebec City, QC, Canada: ID Biomedical Corporation of Quebec; 2026.
+Fluzone [Package Insert]. Swiftwater, PA: Sanofi; 2026.
+FLUCELVAX [Package Insert]. Holly Springs, NC: Seqirus; 2026.
+Fluzone High-Dose [Package Insert]. Swiftwater, PA: Sanofi; 2026.
+FLUAD [Package Insert]. Holly Springs, NC: Seqirus; 2026.
+Flublok [Package Insert]. Swiftwater, PA: Sanofi; 2026.
+FluMist [Package Insert]. Gaithersburg, MD: MedImmune; 2026.
+FDA. Influenza Vaccine Composition for the 2026-2027 U.S. Influenza Season. Accessed July 8, 2026, https://www.fda.gov/vaccines-blood-biologics/vaccines/influenza-vaccine-composition-2026-2027-us-influenza-season
+CDC. FluView. Accessed July 28, 2026, https://www.cdc.gov/fluview/index.html
+CDC. Flu Season. Accessed July 28, 2026, https://www.cdc.gov/flu/about/season.html
+Belongia EA, Sundaram ME, McClure DL, Meece JK, Ferdinands J, VanWormer JJ. Waning vaccine protection against influenza A (H3N2) illness in children and older adults during a single season. Vaccine. Jan 1 2015;33(1):246-51. doi:10.1016/j.vaccine.2014.06.052
+Castilla J, Martinez-Baz I, Martinez-Artola V, et al. Decline in influenza vaccine effectiveness with time after vaccination, Navarre, Spain, season 2011/12. Euro Surveill. Jan 31 2013;18(5)doi:10.2807/ese.18.05.20388-en
+Chung H, Campitelli MA, Buchan SA, et al. Measuring waning protection from seasonal influenza vaccination during nine influenza seasons, Ontario, Canada, 2010/11 to 2018/19. Euro Surveill. Feb 2024;29(8)doi:10.2807/1560-7917.ES.2024.29.8.2300239
+Domnich A, Orsi A, Signori A, et al. Waning intra-season vaccine effectiveness against influenza A(H3N2) underlines the need for more durable protection. Expert Rev Vaccines. Jan-Dec 2024;23(1):380-388. doi:10.1080/14760584.2024.2331073
+Ferdinands JM, Fry AM, Reynolds S, et al. Intraseason waning of influenza vaccine protection: Evidence from the US Influenza Vaccine Effectiveness Network, 2011-12 through 2014-15. Clin Infect Dis. Mar 1 2017;64(5):544-550. doi:10.1093/cid/ciw816
+Ferdinands JM, Gaglani M, Martin ET, et al. Waning Vaccine Effectiveness Against Influenza-Associated Hospitalizations Among Adults, 2015-2016 to 2018-2019, United States Hospitalized Adult Influenza Vaccine Effectiveness Network. Clin Infect Dis. Aug 16 2021;73(4):726-729. doi:10.1093/cid/ciab045
+Hu W, Sjoberg PA, Fries AC, DeMarcus LS, Robbins AS. Waning Vaccine Protection against Influenza among Department of Defense Adult Beneficiaries in the United States, 2016-2017 through 2019-2020 Influenza Seasons. Vaccines (Basel). Jun 1 2022;10(6)doi:10.3390/vaccines10060888
+Kissling E, Nunes B, Robertson C, et al. I-MOVE multicentre case-control study 2010/11 to 2014/15: Is there within-season waning of influenza type/subtype vaccine effectiveness with increasing time since vaccination? Euro Surveill. Apr 21 2016;21(16)doi:10.2807/1560-7917.ES.2016.21.16.30201
+Kissling E, Valenciano M, Larrauri A, et al. Low and decreasing vaccine effectiveness against influenza A(H3) in 2011/12 among vaccination target groups in Europe: results from the I-MOVE multicentre case-control study. Euro Surveill. Jan 31 2013;18(5)doi:10.2807/ese.18.05.20390-en
+Mira-Iglesias A, Lopez-Labrador FX, Garcia-Rubio J, et al. Influenza Vaccine Effectiveness and Waning Effect in Hospitalized Older Adults. Valencia Region, Spain, 2018/2019 Season. Int J Environ Res Public Health. Jan 27 2021;18(3)doi:10.3390/ijerph18031129
+Ng Y, Nandar K, Chua LAV, et al. Evaluating the effectiveness of the influenza vaccine during respiratory outbreaks in Singapore's long term care facilities, 2017. Vaccine. Jun 27 2019;37(29):3925-3931. doi:10.1016/j.vaccine.2019.03.054
+Pebody R, Andrews N, McMenamin J, et al. Vaccine effectiveness of 2011/12 trivalent seasonal influenza vaccine in preventing laboratory-confirmed influenza in primary care in the United Kingdom: evidence of waning intra-seasonal protection. Euro Surveill. Jan 31 2013;18(5)doi:10.2807/ese.18.05.20389-en
+Powell LN, Begue RE. Influenza Vaccine Effectiveness Among Children for the 2017-2018 Season. J Pediatric Infect Dis Soc. Sep 17 2020;9(4):468-473. doi:10.1093/jpids/piz077
+Puig-Barbera J, Mira-Iglesias A, Tortajada-Girbes M, et al. Waning protection of influenza vaccination during four influenza seasons, 2011/2012 to 2014/2015. Vaccine. Oct 13 2017;35(43):5799-5807. doi:10.1016/j.vaccine.2017.09.035
+Radin JM, Hawksworth AW, Myers CA, Ricketts MN, Hansen EA, Brice GT. Influenza vaccine effectiveness: Maintained protection throughout the duration of influenza seasons 2010-2011 through 2013-2014. Vaccine. Jul 19 2016;34(33):3907-12. doi:10.1016/j.vaccine.2016.05.034
+Ray GT, Lewis N, Klein NP, et al. Intraseason Waning of Influenza Vaccine Effectiveness. Clin Infect Dis. May 2 2019;68(10):1623-1630. doi:10.1093/cid/ciy770
+Regan AK, Fielding JE, Chilver MB, et al. Intraseason decline in influenza vaccine effectiveness during the 2016 southern hemisphere influenza season: A test-negative design study and phylogenetic assessment. Vaccine. May 1 2019;37(19):2634-2641. doi:10.1016/j.vaccine.2019.02.027
+Sahni LC, Naioti EA, Olson SM, et al. Sustained Within-season Vaccine Effectiveness Against Influenza-associated Hospitalization in Children: Evidence From the New Vaccine Surveillance Network, 2015-2016 Through 2019-2020. Clin Infect Dis. Feb 8 2023;76(3):e1031-e1039. doi:10.1093/cid/ciac577
+Uemura K, Ono S, Michihata N, Yamana H, Yasunaga H. Duration of influenza vaccine effectiveness in the elderly in Japan: A retrospective cohort study using large-scale population-based registry data. Vaccine. May 5 2023;41(19):3092-3098. doi:10.1016/j.vaccine.2023.03.066
+Young B, Sadarangani S, Jiang L, Wilder-Smith A, Chen MI. Duration of Influenza Vaccine Effectiveness: A Systematic Review, Meta-analysis, and Meta-regression of Test-Negative Design Case-Control Studies. J Infect Dis. Feb 14 2018;217(5):731-741. doi:10.1093/infdis/jix632
+Young BE, Mak TM, Ang LW, et al. Influenza vaccine failure in the tropics: a retrospective cohort study of waning effectiveness. Epidemiol Infect. Dec 2 2020;148:e299. doi:10.1017/S0950268820002952
+Allison MA, Daley MF, Crane LA, et al. Influenza vaccine effectiveness in healthy 6- to 21-month-old children during the 2003-2004 season. J Pediatr. Dec 2006;149(6):755-762. doi:10.1016/j.jpeds.2006.06.036
+Eisenberg KW, Szilagyi PG, Fairbrother G, et al. Vaccine effectiveness against laboratory-confirmed influenza in children 6 to 59 months of age during the 2003-2004 and 2004-2005 influenza seasons. Pediatrics. Nov 2008;122(5):911-9. doi:10.1542/peds.2007-3304
+Neuzil KM, Jackson LA, Nelson J, et al. Immunogenicity and reactogenicity of 1 versus 2 doses of trivalent inactivated influenza vaccine in vaccine-naive 5-8-year-old children. J Infect Dis. Oct 15 2006;194(8):1032-9. doi:10.1086/507309
+Ritzwoller DP, Bridges CB, Shetterly S, Yamasaki K, Kolczak M, France EK. Effectiveness of the 2003-2004 influenza vaccine among children 6 months to 8 years of age, with 1 vs 2 doses. Pediatrics. Jul 2005;116(1):153-9. doi:10.1542/peds.2005-0049
+Eick AA, Uyeki TM, Klimov A, et al. Maternal influenza vaccination and effect on influenza virus infection in young infants. Arch Pediatr Adolesc Med. Feb 2011;165(2):104-11. doi:10.1001/archpediatrics.2010.192
+Madhi SA, Nunes MC, Cutland CL. Influenza vaccination of pregnant women and protection of their infants. N Engl J Med. Dec 11 2014;371(24):2340. doi:10.1056/NEJMc1412050
+Steinhoff MC, Katz J, Englund JA, et al. Year-round influenza immunisation during pregnancy in Nepal: a phase 4, randomised, placebo-controlled trial. Lancet Infect Dis. Sep 2017;17(9):981-989. doi:10.1016/S1473-3099(17)30252-9
+Tapia MD, Sow SO, Tamboura B, et al. Maternal immunisation with trivalent inactivated influenza vaccine for prevention of influenza in infants in Mali: a prospective, active-controlled, observer-blind, randomised phase 4 trial. Lancet Infect Dis. Sep 2016;16(9):1026-1035. doi:10.1016/S1473-3099(16)30054-8
+Zaman K, Roy E, Arifeen SE, et al. Effectiveness of maternal influenza immunization in mothers and infants. N Engl J Med. Oct 9 2008;359(15):1555-64. doi:10.1056/NEJMoa0708630
+Pearson ML, Bridges CB, Harper SA, Healthcare Infection Control Practices Advisory C, Advisory Committee on Immunization P. Influenza vaccination of health-care personnel: recommendations of the Healthcare Infection Control Practices Advisory Committee (HICPAC) and the Advisory Committee on Immunization Practices (ACIP). MMWR Recomm Rep. Feb 24 2006;55(RR-2):1-16.
+CDC. Advisory Committee on Immunization Practices: GRADE: higher dose and adjuvanted influenza vaccines for persons aged ≥65 Years. Atlanta, GA: US Department of Health and Human Services, CDC; 2023. https://www.cdc.gov/vaccines/acip/recs/grade/influenza-older-adults.html.
+CDC. Advisory Committee on Immunization Practices: evidence to recommendations (EtR) framework: higher dose and adjuvanted influenza vaccines for persons aged ≥65 years. Atlanta, GA: US Department of Health and Human Services, CDC; 2023. https://www.cdc.gov/vaccines/acip/recs/grade/influenza-older-adults-etr.html.
+Grohskopf LA, Blanton LH, Ferdinands JM, et al. Prevention and Control of Seasonal Influenza with Vaccines: Recommendations of the Advisory Committee on Immunization Practices - United States, 2022-23 Influenza Season. MMWR Recomm Rep. Aug 26 2022;71(1):1-28. doi:10.15585/mmwr.rr7101a1
+CDC. Advisory Committee on Immunization Practices: GRADE: Grading of Recommendations, Assessment, Development, and Evaluation (GRADE): Higher-Dose and Adjuvanted Influenza Vaccines for Solid Organ Transplant Recipients. Atlanta, GA: US Department of Health and Human Services, CDC; 2024. https://www.cdc.gov/acip/grade/influenza-solid-organ-transplant.html.
+CDC. Advisory Committee on Immunization Practices: evidence to recommendations (EtR) framework: ACIP Evidence to Recommendations (EtR) Framework: High-Dose and Adjuvanted Influenza Vaccines for Solid Organ Transplant Recipients. Atlanta, GA: US Department of Health and Human Services, CDC; 2024. https://www.cdc.gov/acip/evidence-to-recommendations/influenza-solid-organ-transplant-etr.html.
+Bosaeed M, Kumar D. Seasonal influenza vaccine in immunocompromised persons. Hum Vaccin Immunother. Jun 3 2018;14(6):1311-1322. doi:10.1080/21645515.2018.1445446
+CDC. Influenza antiviral medications: summary for clinicians. Available at: https://www.cdc.gov/flu/hcp/antivirals/summary-clinicians.html?CDC_AAref_Val=https://www.cdc.gov/flu/professionals/antivirals/summary-clinicians.htm. Accessed April 25, 2025.
+CDC. Grading of Recommendations, Assessment, Development, and Evaluation (GRADE): Safety of Influenza Vaccines for Persons with Egg Allergy. Available at: https://www.cdc.gov/vaccines/acip/recs/grade/influenza-egg-allergy.html. Accessed May 10, 2024.
+CDC. Advisory Committee on Immunization Practices: evidence to recommendations (EtR) framework: ACIP Evidence to Recommendations (EtR) Framework: ACIP Evidence to Recommendations (EtR) Framework: Safety of Influenza Vaccines for Persons with Egg Allergy. Atlanta, GA: US Department of Health and Human Services, CDC; 2023. https://www.cdc.gov/acip/evidence-to-recommendations/influenza-egg-allergy-etr.html.
+Grohskopf LA BL, Ferdinands JM, et al. Prevention and control of seasonal influenza with vaccines: recommendations of the Advisory Committee on Immunization Practices—United States, 2023–24 MMWR Recomm Rep. 2023;72((No. RR-2)):1–25.
+CDC. Influenza prevention: information for travelers. Atlanta, GA: US Department of Health and Human Services, CDC; 2023. https://www.cdc.gov/flu/school-business/travelersfacts.htm.
+World Health Organization. Global influenza programme: FluNet. Geneva, Switzerland: World Health Organization; 2023. https://www.who.int/tools/flunet.
+Millman AJ, Kornylo Duong K, Lafond K, Green NM, Lippold SA, Jhung MA. Influenza Outbreaks Among Passengers and Crew on Two Cruise Ships: A Recent Account of Preparedness and Response to an Ever-Present Challenge. J Travel Med. Sep-Oct 2015;22(5):306-11. doi:10.1111/jtm.12215
+Mutsch M, Tavernini M, Marx A, et al. Influenza virus infection in travelers to tropical and subtropical countries. Clin Infect Dis. May 1 2005;40(9):1282-7. doi:10.1086/429243
+Ratnam I, Black J, Leder K, et al. Incidence and risk factors for acute respiratory illnesses and influenza virus infections in Australian travellers to Asia. J Clin Virol. May 2013;57(1):54-8. doi:10.1016/j.jcv.2013.01.008
+Uyeki TM, Zane SB, Bodnar UR, et al. Large summertime influenza A outbreak among tourists in Alaska and the Yukon Territory. Clin Infect Dis. May 1 2003;36(9):1095-102. doi:10.1086/374053
+Food and Drug Administration. Guidance for industry: bioavailability and bioequivalence studies for orally administered drug products: general considerations. Silver Spring, MD: US Department of Health and Human Services, Food and Drug Administration; 2003.
+CDC. Vaccine storage and handling. . Accessed July 13, 2026, https://www.cdc.gov/vaccines/hcp/storage-handling/?CDC_AAref_Val=https://www.cdc.gov/vaccines/hcp/admin/storage/toolkit/index.html
+Influenza (Flu)
+Influenza (flu) is a contagious respiratory illness caused by influenza viruses that infect the nose, throat, and lungs.
+View All
+For Everyone
+About
+Signs and Symptoms
+Causes and Spread
+Flu Complications and People at Higher Risk
+Prevention
+Vaccine Basics
+Diagnosis
+Flu Treatment
+View all
+Health Care Providers
+Clinical Guidance
+Clinical Signs and Symptoms of Influenza
+Guidance for Influenza Vaccination
+View All
+Public Health
+Information for Laboratories
+Understanding Influenza Viruses
+WHO Collaborating Center for Surveillance, Epidemiology and Control of Influenza
+View All
+Sign up for Email Updates
+Contact Us
+Contact Us
+Call 800-232-4636
+Contact CDC
+About CDC
+About CDC
+Pressroom
+Organization
+Budget & Funding
+Careers & Jobs
+Policies
+Accessibility
+External Links
+Privacy
+Web Policies
+FOIA
+OIG
+No Fear Act
+Nondiscrimination
+Vulnerability Disclosure Policy
+Languages
+Languages
+Español
+Language Assistance
+Español
+繁體中文
+Tiếng Việt
+한국어
+Tagalog
+Русский
+العربية
+Kreyòl Ayisyen
+Français
+Polski
+Português
+Italiano
+Deutsch
+日本語
+فارسی
+English
+Archive
+CDC Archive
+Public Health Publications
+Contact Us
+Contact Us
+Call 800-232-4636
+Contact CDC
+About CDC
+Pressroom
+Organization
+Budget & Funding
+Careers & Jobs
+About CDC
+Policies
+Accessibility
+External Links
+Privacy
+Web Policies
+FOIA
+OIG
+No Fear Act
+Nondiscrimination
+Vulnerability Disclosure Policy
+Languages
+Languages
+Español
+Language Assistance
+Español
+繁體中文
+Tiếng Việt
+한국어
+Tagalog
+Русский
+العربية
+Kreyòl Ayisyen
+Français
+Polski
+Português
+Italiano
+Deutsch
+日本語
+فارسی
+English
+Archive
+CDC Archive
+Public Health Publications
+HHS.gov
+USA.gov

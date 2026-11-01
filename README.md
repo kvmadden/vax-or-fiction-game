@@ -1,5 +1,18 @@
 # Vax or Fiction
 
+**Can players make an informed vaccine call from accurate evidence without leaking the answer or excluding phone and keyboard users?**
+
+The eight-question influenza round now has saved CDC evidence and functional controls. It is **draft, pending pharmacist review** and the human usability pilot is **pending**. These checks do not establish clinical correctness, learning effectiveness or vaccine behavior.
+
+| Evidence panel | Actual result | Limit |
+| --- | --- | --- |
+| Content | 0 of 8 unique supporting claims reviewed, 8 of 8 unreviewed, 36 factual appearances across eight question records | Clinical accuracy and source-document interval are N/A until Kevin reviews. No second independent reviewer. |
+| Functional integrity | 2 of 2 bot sequences match expected totals: all-correct 950 points, zero-correct 0 points, eight attempts each | Fixed public binary round with visible keys. Separate permutation, payload, asset-boundary and browser tests. |
+| Usability | 0 facilitator sessions, 0 players completed, 0 task attempts | One-facilitator/four-player protocol prepared. AI difficulty estimates remain provisional. |
+
+Run locally and open `/showcase/index.html` for source and rights chips, exact spans, content hashes, separate panels and the complete bot error list. Use **Host this eight-question round** on the evidence page to open the frozen round. Kevin’s content-bound sheet is at `/clinical-review/index.html`. [Workflow and limits](docs/SHOWCASE.md), [verification](docs/SHOWCASE-VERIFICATION.md), [how it was built](docs/HOW-BUILT.md) and [media](docs/media/README.md) explain the evidence. The other 142 unique bank records remain outside this review. The full repository gate is red on untouched main and on the candidate, with different failing browser checks. Focused showcase checks pass. See the verification report and complete gate errors before reviewing this change.
+
+
 A game for talking through immunizations. One screen hosts the show, the room calls true or false (or picks the
 better reply, the myth, the number or the order) on their phones, and every reveal shows the public source behind the
 answer. There is also a solo mode for one player.

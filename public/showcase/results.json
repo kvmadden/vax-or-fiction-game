@@ -1,0 +1,143 @@
+{
+  "benchmark": "Fixed public binary round, not a blind test",
+  "snapshotHash": "53728734ad0d969995f52e3fd82eafcfba199ae514e86a1d9dbf2618dbae271d",
+  "command": "node --import tsx --test tests/showcase/functional.test.ts",
+  "expected": {
+    "description": "Fixed public benchmark. Binary answers independently transcribed from the selected public record keys before the control run. Not a blind test.",
+    "correct": [
+      "true",
+      "true",
+      "false",
+      "true",
+      "true",
+      "true",
+      "false",
+      "false"
+    ],
+    "wrong": [
+      "false",
+      "false",
+      "true",
+      "false",
+      "false",
+      "false",
+      "true",
+      "true"
+    ],
+    "correctTotal": 950,
+    "wrongTotal": 0
+  },
+  "replay": {
+    "correct": {
+      "total": 950,
+      "right": 8,
+      "attempted": 8,
+      "items": [
+        {
+          "id": "q1",
+          "correct": true,
+          "points": 100,
+          "streakBonus": 0
+        },
+        {
+          "id": "q2",
+          "correct": true,
+          "points": 100,
+          "streakBonus": 0
+        },
+        {
+          "id": "q3",
+          "correct": true,
+          "points": 150,
+          "streakBonus": 50
+        },
+        {
+          "id": "q4",
+          "correct": true,
+          "points": 100,
+          "streakBonus": 0
+        },
+        {
+          "id": "q5",
+          "correct": true,
+          "points": 200,
+          "streakBonus": 100
+        },
+        {
+          "id": "q6",
+          "correct": true,
+          "points": 100,
+          "streakBonus": 0
+        },
+        {
+          "id": "q7",
+          "correct": true,
+          "points": 100,
+          "streakBonus": 0
+        },
+        {
+          "id": "q8",
+          "correct": true,
+          "points": 100,
+          "streakBonus": 0
+        }
+      ]
+    },
+    "wrong": {
+      "total": 0,
+      "right": 0,
+      "attempted": 8,
+      "items": [
+        {
+          "id": "q1",
+          "correct": false,
+          "points": 0,
+          "streakBonus": 0
+        },
+        {
+          "id": "q2",
+          "correct": false,
+          "points": 0,
+          "streakBonus": 0
+        },
+        {
+          "id": "q3",
+          "correct": false,
+          "points": 0,
+          "streakBonus": 0
+        },
+        {
+          "id": "q4",
+          "correct": false,
+          "points": 0,
+          "streakBonus": 0
+        },
+        {
+          "id": "q5",
+          "correct": false,
+          "points": 0,
+          "streakBonus": 0
+        },
+        {
+          "id": "q6",
+          "correct": false,
+          "points": 0,
+          "streakBonus": 0
+        },
+        {
+          "id": "q7",
+          "correct": false,
+          "points": 0,
+          "streakBonus": 0
+        },
+        {
+          "id": "q8",
+          "correct": false,
+          "points": 0,
+          "streakBonus": 0
+        }
+      ]
+    }
+  },
+  "errors": []
+}

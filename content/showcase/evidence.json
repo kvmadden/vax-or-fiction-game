@@ -1,0 +1,179 @@
+{
+  "sources": [
+    {
+      "id": "recommendations",
+      "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+      "resolvedUrl": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+      "status": 200,
+      "retrievedOn": "2026-11-01",
+      "sha256": "9bc7e323651892dce72f8539deff696c15db652bf50174582fdd671e7d70207a",
+      "file": "content/showcase/sources/recommendations.txt",
+      "pageUpdated": "2026-09-01",
+      "rights": "US government public domain prose. Excludes third party content, photographs, logos and linked publications.",
+      "rightsUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "thirdPartyCheck": "Selected prose has no third party attribution. Linked studies and images are not reproduced.",
+      "versionNote": "Interim clinical considerations for the 2026-2027 influenza season, published September 1, 2026. CDC states July 2025 schedule recommendations remain in effect."
+    },
+    {
+      "id": "egg",
+      "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+      "resolvedUrl": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+      "status": 200,
+      "retrievedOn": "2026-11-01",
+      "sha256": "392da07cbd990838db36fb702eb92d75e217cce5b5f8ea5df3622e1ff8446339",
+      "file": "content/showcase/sources/egg.txt",
+      "pageUpdated": "2024-09-17",
+      "rights": "US government public domain prose. Excludes third party content, photographs, logos and linked publications.",
+      "rightsUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "thirdPartyCheck": "Selected prose has no third party attribution. Linked studies and images are not reproduced."
+    },
+    {
+      "id": "pinkbook",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-12-influenza.html",
+      "resolvedUrl": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-12-influenza.html",
+      "status": 200,
+      "retrievedOn": "2026-11-01",
+      "sha256": "fc37bf4ae3b5a66b268f208dbfcd4e923c68d95056345c37da734c5b7bd1923a",
+      "file": "content/showcase/sources/pinkbook.txt",
+      "pageUpdated": "2024-04-01",
+      "rights": "US government public domain prose. Excludes third party content, photographs, logos and linked publications.",
+      "rightsUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "thirdPartyCheck": "Selected prose has no third party attribution. Linked studies and images are not reproduced.",
+      "versionNote": "Pink Book 14th edition, August 2021. Page warns that vaccine recommendations may be outdated. Used only for minor illness, not current seasonal policy."
+    },
+    {
+      "id": "heart",
+      "url": "https://www.cdc.gov/flu/highrisk/heartdisease.html",
+      "resolvedUrl": "https://www.cdc.gov/flu/highrisk/heartdisease.html",
+      "status": 200,
+      "retrievedOn": "2026-11-01",
+      "sha256": "cc56b5409669371fe26c973ac4e1b3c89e3d92ea08b3e550f88362461d0d4779",
+      "file": "content/showcase/sources/heart.txt",
+      "pageUpdated": "2025-09-18",
+      "rights": "US government public domain prose. Excludes third party content, photographs, logos and linked publications.",
+      "rightsUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "thirdPartyCheck": "Selected prose has no third party attribution. Linked studies and images are not reproduced."
+    },
+    {
+      "id": "antivirals",
+      "url": "https://www.cdc.gov/flu/treatment/antiviral-drugs.html",
+      "resolvedUrl": "https://www.cdc.gov/flu/treatment/antiviral-drugs.html",
+      "status": 200,
+      "retrievedOn": "2026-11-01",
+      "sha256": "3fcc758460efcf702c2b86c24b5ad1504f45b9cb9e012a4e9de8154ddb926e2f",
+      "file": "content/showcase/sources/antivirals.txt",
+      "pageUpdated": "2026-06-26",
+      "rights": "US government public domain prose. Excludes third party content, photographs, logos and linked publications.",
+      "rightsUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "thirdPartyCheck": "Selected prose has no third party attribution. Linked studies and images are not reproduced."
+    },
+    {
+      "id": "rights",
+      "url": "https://www.cdc.gov/other/agencymaterials.html",
+      "resolvedUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "status": 200,
+      "retrievedOn": "2026-11-01",
+      "sha256": "d735e1c541d3a51ea34da09c01ccb6b4485909277bb0723a6a963d9544b3a3f5",
+      "file": "content/showcase/sources/rights.txt",
+      "pageUpdated": null,
+      "rights": "US government public domain prose. Excludes third party content, photographs, logos and linked publications.",
+      "rightsUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "thirdPartyCheck": "Selected prose has no third party attribution. Linked studies and images are not reproduced."
+    },
+    {
+      "id": "keyfacts",
+      "url": "https://www.cdc.gov/flu/vaccines/keyfacts.html",
+      "resolvedUrl": "https://www.cdc.gov/flu/vaccines/keyfacts.html",
+      "status": 200,
+      "retrievedOn": "2026-11-01",
+      "sha256": "2687127096253b71187d00b8baae0855c4b24b1fe730d7f9e5c0359308e1d6c2",
+      "file": "content/showcase/sources/keyfacts.txt",
+      "pageUpdated": "2026-09-01",
+      "rights": "US government public domain prose. Excludes third party content, photographs, logos and linked publications.",
+      "rightsUrl": "https://www.cdc.gov/other/agencymaterials.html",
+      "thirdPartyCheck": "Selected prose has no third party attribution. Linked studies and images are not reproduced."
+    }
+  ],
+  "claims": [
+    {
+      "id": "annual",
+      "sourceId": "keyfacts",
+      "quote": "Everyone 6 months and older in the United States, with rare exception, should get a flu vaccine every season.",
+      "start": 2638,
+      "end": 2747,
+      "sha256": "b983e9e347b2a053438bd3bccf1f25ba211e324a70b6e8fc73b445c14c8edf6b",
+      "role": "supporting explanation, including refutation of false stems",
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "older",
+      "sourceId": "recommendations",
+      "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).464748",
+      "start": 17312,
+      "end": 17582,
+      "sha256": "35439a24962ed273c0a98c807104931e18f99d4617e49ef9883ddc068d48c2c5",
+      "role": "supporting explanation, including refutation of false stems",
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "egg",
+      "sourceId": "egg",
+      "quote": "People with egg allergy may receive any flu vaccine (egg-based or non-egg-based) that is otherwise appropriate for their age and health status.\nOverview\nBeginning with the 2023-2024 season, additional safety measures are no longer recommended for flu vaccination of people who are allergic to eggs beyond those recommended for receipt of any vaccine, regardless of the severity of previous reaction to egg. All vaccines should be administered in settings in which personnel and equipment needed for rapid recognition and treatment of allergic reactions are available.",
+      "start": 2308,
+      "end": 2875,
+      "sha256": "84bf51098783c3cfecff9124b2c92e67e7c8d4b82e39482ab5a90a154cadc891",
+      "role": "supporting explanation, including refutation of false stems",
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "biology",
+      "sourceId": "keyfacts",
+      "quote": "Flu vaccines that are given with a needle (flu shots) are currently made in two ways: the vaccine is made either with a) influenza vaccine viruses that have been killed (inactivated) and are therefore not infectious, or b) with proteins from an influenza virus (which is the case for recombinant influenza vaccine). Nasal spray vaccine is made with weakened (attenuated) live influenza viruses and also cannot cause flu illness. The weakened viruses are cold-adapted, which means they are designed to only reproduce at the cooler temperatures found within the nose. The viruses cannot reproduce in the lungs or other areas where warmer temperatures exist.",
+      "start": 18316,
+      "end": 18971,
+      "sha256": "ba752f69f61fea830f817bb428221c27fcdce15e767cbc01df0d9b13ad719376",
+      "role": "supporting explanation, including refutation of false stems",
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "timing",
+      "sourceId": "recommendations",
+      "quote": "For most persons who need only 1 dose of influenza vaccine for the season, vaccination should ideally be offered during September or October.",
+      "start": 6467,
+      "end": 6608,
+      "sha256": "39f39a375709f9045d33e1529a42d3394aa5e080e66abac4144f3b2d9378319f",
+      "role": "supporting explanation, including refutation of false stems",
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "cardiac",
+      "sourceId": "heart",
+      "quote": "Flu vaccination has been associated with lower rates of some cardiac events among people with heart disease, especially among those who have had a cardiac event in the past year.",
+      "start": 2438,
+      "end": 2616,
+      "sha256": "dd00909b57dbb6c3d3382b2eb6c2b5fe5370f1ddf03eeea7f0f3c9c6f3f4de05",
+      "role": "supporting explanation, including refutation of false stems",
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "minor",
+      "sourceId": "pinkbook",
+      "quote": "Moderate or severe acute illness (with or without fever) in a patient is considered a precaution to vaccination, although persons with minor illness may be vaccinated.",
+      "start": 25842,
+      "end": 26009,
+      "sha256": "16fb337e02a3d71e21d17dedcaf4623e8aca4201a12cb3a897ec6be5221963d5",
+      "role": "supporting explanation, including refutation of false stems",
+      "reviewStatus": "draft"
+    },
+    {
+      "id": "treatment",
+      "sourceId": "antivirals",
+      "quote": "Antiviral drugs are not a substitute for getting a flu vaccine.",
+      "start": 9906,
+      "end": 9969,
+      "sha256": "9f583360cae96e4bad8f6949cf02209b59f5963440c8bee90f3aa56299682a95",
+      "role": "supporting explanation, including refutation of false stems",
+      "reviewStatus": "draft"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "baselineCommit": "3b1154ec49ea953d893e1dabacbe2ab8726a2347",
+  "snapshotHash": "53728734ad0d969995f52e3fd82eafcfba199ae514e86a1d9dbf2618dbae271d",
+  "baselineStatus": "red",
+  "candidateStatus": "red",
+  "baseline": {
+    "log": "control-check.log",
+    "command": "npm run check",
+    "exit": 1,
+    "lastSuiteCounts": {
+      "tests": 13,
+      "pass": 9,
+      "fail": 2,
+      "cancelled": 2
+    },
+    "errors": [
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:124:1",
+        "category": "blocked-participation",
+        "message": "every phone control stays reachable on short and sideways screens"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:173:1",
+        "category": "blocked-participation",
+        "message": "the phone screen fades in on a real change, never on first paint, and always opens scrolled to the top"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:305:1",
+        "category": "blocked-participation",
+        "message": "the vote dock resizes its targets on acknowledgement with a real transition, not an instant jump"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:745:1",
+        "category": "blocked-participation",
+        "message": "an order answer moves focus to its receipt once, and reopening the same vote never takes it back (A11Y-10, W4)"
+      }
+    ],
+    "fullFailureReport": "test at tests/integration/phone-short-viewport.test.mjs:124:1\n✖ every phone control stays reachable on short and sideways screens (118969.880375ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n  + actual - expected\n  \n  + [\n  +   '320x568 binary q17 explanation: \"Sources and reactions\" ends at 616px after scrolling, below the 568px screen',\n  +   '320x568 myth-among-three q26 question: \"CMaternal vaccination protects t\" ends at 587px after scrolling, below the 568px screen',\n  +   '320x568 order q27 question: \"Submit order\" ends at 726px after scrolling, below the 568px screen',\n  +   '844x390 which-patient q30 question: \"CTwo standard-dose vaccines at t\" ends at 666px after scrolling, below the 390px screen'\n  + ]\n  - []\n  \n      at file://control/tests/integration/phone-short-viewport.test.mjs:136:12\n      at async withViteAndBrowser (file://control/tests/integration/render-harness.mjs:338:14)\n      at async TestContext.<anonymous> (file://control/tests/integration/phone-short-viewport.test.mjs:125:3)\n      at async Test.run (node:internal/test_runner/test:1125:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: [ '320x568 binary q17 explanation: \"Sources and reactions\" ends at 616px after scrolling, below the 568px screen', '320x568 myth-among-three q26 question: \"CMaternal vaccination protects t\" ends at 587px after scrolling, below the 568px screen', '320x568 order q27 question: \"Submit order\" ends at 726px after scrolling, below the 568px screen', '844x390 which-patient q30 question: \"CTwo standard-dose vaccines at t\" ends at 666px after scrolling, below the 390px screen' ],\n    expected: [],\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }\n\ntest at tests/integration/phone-short-viewport.test.mjs:173:1\n✖ the phone screen fades in on a real change, never on first paint, and always opens scrolled to the top (9883.673833ms)\n  AssertionError [ERR_ASSERTION]: test setup: every sample is of the question screen (8 samples)\n      at file://control/tests/integration/phone-short-viewport.test.mjs:236:14\n      at async withViteAndBrowser (file://control/tests/integration/render-harness.mjs:338:14)\n      at async TestContext.<anonymous> (file://control/tests/integration/phone-short-viewport.test.mjs:174:3)\n      at async Test.run (node:internal/test_runner/test:1125:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: false,\n    expected: true,\n    operator: '==',\n    diff: 'simple'\n  }\n\ntest at tests/integration/phone-short-viewport.test.mjs:305:1\n✖ the vote dock resizes its targets on acknowledgement with a real transition, not an instant jump (30002.81975ms)\n  'test timed out after 30000ms'\n\ntest at tests/integration/phone-short-viewport.test.mjs:745:1\n✖ an order answer moves focus to its receipt once, and reopening the same vote never takes it back (A11Y-10, W4) (30002.537583ms)\n  'test timed out after 30000ms'"
+  },
+  "candidate": {
+    "log": "candidate-final-state-check.log",
+    "command": "VOF_VISIBLE=1 VOF_SHOWCASE_MEDIA=/Volumes/HubData/evidence/vax-or-fiction-game-showcase-20261101/media npm run check",
+    "exit": 1,
+    "lastSuiteCounts": {
+      "tests": 13,
+      "pass": 5,
+      "fail": 2,
+      "cancelled": 6
+    },
+    "errors": [
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:124:1",
+        "category": "blocked-participation",
+        "message": "every phone control stays reachable on short and sideways screens"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:267:1",
+        "category": "blocked-participation",
+        "message": "the phone screen swap honors reduced motion"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:305:1",
+        "category": "blocked-participation",
+        "message": "the vote dock resizes its targets on acknowledgement with a real transition, not an instant jump"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:458:1",
+        "category": "blocked-participation",
+        "message": "no frame of a vote dock change scales its text: acknowledgement, time-out, ADD_TIME reopen, Change answer (B1, W7)"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:529:1",
+        "category": "blocked-participation",
+        "message": "keyboard focus stays on the tapped answer when the vote is acknowledged"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:588:1",
+        "category": "blocked-participation",
+        "message": "focus stays where the player put it when the host reopens an already-acknowledged vote (W4)"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:823:1",
+        "category": "blocked-participation",
+        "message": "the nickname input releases focus after Join is submitted"
+      },
+      {
+        "id": "tests/integration/phone-short-viewport.test.mjs:890:1",
+        "category": "blocked-participation",
+        "message": "a reorder move is announced with the moved step and its new position"
+      }
+    ],
+    "fullFailureReport": "test at tests/integration/phone-short-viewport.test.mjs:124:1\n✖ every phone control stays reachable on short and sideways screens (73258.311792ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n  + actual - expected\n  \n  + [\n  +   '320x568 myth-among-three q26 question: \"CMaternal vaccination protects t\" ends at 587px after scrolling, below the 568px screen'\n  + ]\n  - []\n  \n      at file://tests/integration/phone-short-viewport.test.mjs:136:12\n      at async withViteAndBrowser (file://tests/integration/render-harness.mjs:338:14)\n      at async TestContext.<anonymous> (file://tests/integration/phone-short-viewport.test.mjs:125:3)\n      at async Test.run (node:internal/test_runner/test:1125:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: [ '320x568 myth-among-three q26 question: \"CMaternal vaccination protects t\" ends at 587px after scrolling, below the 568px screen' ],\n    expected: [],\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }\n\ntest at tests/integration/phone-short-viewport.test.mjs:267:1\n✖ the phone screen swap honors reduced motion (30002.214875ms)\n  'test timed out after 30000ms'\n\ntest at tests/integration/phone-short-viewport.test.mjs:305:1\n✖ the vote dock resizes its targets on acknowledgement with a real transition, not an instant jump (30002.227208ms)\n  'test timed out after 30000ms'\n\ntest at tests/integration/phone-short-viewport.test.mjs:458:1\n✖ no frame of a vote dock change scales its text: acknowledgement, time-out, ADD_TIME reopen, Change answer (B1, W7) (42058.921292ms)\n  AssertionError [ERR_ASSERTION]: test setup: the acknowledgement window sampled real frames (7)\n      at file://tests/integration/phone-short-viewport.test.mjs:514:16\n      at async withViteAndBrowser (file://tests/integration/render-harness.mjs:338:14)\n      at async TestContext.<anonymous> (file://tests/integration/phone-short-viewport.test.mjs:459:3)\n      at async Test.run (node:internal/test_runner/test:1125:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: false,\n    expected: true,\n    operator: '==',\n    diff: 'simple'\n  }\n\ntest at tests/integration/phone-short-viewport.test.mjs:529:1\n✖ keyboard focus stays on the tapped answer when the vote is acknowledged (30001.620542ms)\n  'test timed out after 30000ms'\n\ntest at tests/integration/phone-short-viewport.test.mjs:588:1\n✖ focus stays where the player put it when the host reopens an already-acknowledged vote (W4) (30001.311959ms)\n  'test timed out after 30000ms'\n\ntest at tests/integration/phone-short-viewport.test.mjs:823:1\n✖ the nickname input releases focus after Join is submitted (30003.256542ms)\n  'test timed out after 30000ms'\n\ntest at tests/integration/phone-short-viewport.test.mjs:890:1\n✖ a reorder move is announced with the moved step and its new position (20015.508583ms)\n  'test timed out after 20000ms'"
+  },
+  "failureSelection": "Wrong or stale claim, leaked answer, blocked participation, then stable ID. Every final gate failure is included. These are automated checks, not human pilot findings.",
+  "comparison": "Both final gates fail in the existing short/sideways phone suite, with different reported rows and failures. The candidate has additional timing/render failures. They remain unresolved and are not described as identical baseline failures. Later full-gate suites were not executed.",
+  "history": [
+    {
+      "log": "candidate-unit.log",
+      "command": "npm run test",
+      "exit": 1,
+      "lastSuiteCounts": {
+        "tests": 1331,
+        "pass": 1329,
+        "fail": 2,
+        "cancelled": 0
+      },
+      "errors": [
+        {
+          "id": "tests/unit/deck-vax-or-fiction.test.ts:1:10890",
+          "category": "test-contract",
+          "message": "the default provider returns the show deck and keeps flagship selectable"
+        },
+        {
+          "id": "tests/unit/no-home-paths.test.ts:1:1525",
+          "category": "test-contract",
+          "message": "no file in the repo names a home folder"
+        }
+      ],
+      "fullFailureReport": "test at tests/unit/deck-vax-or-fiction.test.ts:1:10890\n✖ the default provider returns the show deck and keeps flagship selectable (5.120584ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n  + actual - expected\n  \n    [\n      'vax-or-fiction',\n      'flagship',\n  +   'influenza'\n    ]\n  \n      at TestContext.<anonymous> (tests/unit/deck-vax-or-fiction.test.ts:218:10)\n      at async Test.run (node:internal/test_runner/test:1125:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: [ 'vax-or-fiction', 'flagship', 'influenza' ],\n    expected: [ 'vax-or-fiction', 'flagship' ],\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }\n\ntest at tests/unit/no-home-paths.test.ts:1:1525\n✖ no file in the repo names a home folder (998.163416ms)\n  AssertionError [ERR_ASSERTION]: write the path from the home folder as ~, or link the file from the repo root\n  + actual - expected\n  \n  + [\n  +   '.git:1'\n  + ]\n  - []\n  \n      at TestContext.<anonymous> (tests/unit/no-home-paths.test.ts:64:10)\n      at Test.runInAsyncScope (node:async_hooks:228:14)\n      at Test.run (node:internal/test_runner/test:1118:25)\n      at Test.start (node:internal/test_runner/test:1015:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: [ '.git:1' ],\n    expected: [],\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }"
+    },
+    {
+      "log": "candidate-check.log",
+      "command": "npm run check",
+      "exit": 1,
+      "lastSuiteCounts": {
+        "tests": 15,
+        "pass": 14,
+        "fail": 0,
+        "cancelled": 1
+      },
+      "errors": [
+        {
+          "id": "tests/integration/mounted-room.test.mjs:95:1",
+          "category": "blocked-participation",
+          "message": "mounted lock announcement counts voters, including shared choices and changed answers"
+        }
+      ],
+      "fullFailureReport": "test at tests/integration/mounted-room.test.mjs:95:1\n✖ mounted lock announcement counts voters, including shared choices and changed answers (20002.775375ms)\n  'test timed out after 20000ms'"
+    },
+    {
+      "log": "candidate-final-check.log",
+      "command": "npm run check",
+      "exit": 1,
+      "lastSuiteCounts": {
+        "tests": 15,
+        "pass": 14,
+        "fail": 0,
+        "cancelled": 1
+      },
+      "errors": [
+        {
+          "id": "tests/integration/mounted-room.test.mjs:95:1",
+          "category": "blocked-participation",
+          "message": "mounted lock announcement counts voters, including shared choices and changed answers"
+        }
+      ],
+      "fullFailureReport": "test at tests/integration/mounted-room.test.mjs:95:1\n✖ mounted lock announcement counts voters, including shared choices and changed answers (20002.847459ms)\n  'test timed out after 20000ms'"
+    },
+    {
+      "log": "candidate-stable-check.log",
+      "command": "npm run check",
+      "exit": 1,
+      "lastSuiteCounts": {
+        "tests": 1331,
+        "pass": 1330,
+        "fail": 1,
+        "cancelled": 0
+      },
+      "errors": [
+        {
+          "id": "tests/unit/bank-metadata.test.ts:1:6858",
+          "category": "test-contract",
+          "message": "Rating record: two raters or the owner, an adjudicator for every split or shared doubt, and the owner wins"
+        }
+      ],
+      "fullFailureReport": "test at tests/unit/bank-metadata.test.ts:1:6858\n✖ Rating record: two raters or the owner, an adjudicator for every split or shared doubt, and the owner wins (4.129709ms)\n  AssertionError [ERR_ASSERTION]: influenza:q1: an estimate's rubric level is provisional, nothing else is\n  \n  true !== false\n  \n      at TestContext.<anonymous> (tests/unit/bank-metadata.test.ts:173:14)\n      at Test.runInAsyncScope (node:async_hooks:228:14)\n      at Test.run (node:internal/test_runner/test:1118:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)\n      at Test.postRun (node:internal/test_runner/test:1247:19)\n      at Test.run (node:internal/test_runner/test:1175:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: true,\n    expected: false,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }"
+    },
+    {
+      "log": "candidate-release-check.log",
+      "command": "npm run check",
+      "exit": 1,
+      "lastSuiteCounts": {
+        "tests": 13,
+        "pass": 12,
+        "fail": 1,
+        "cancelled": 0
+      },
+      "errors": [
+        {
+          "id": "tests/integration/phone-short-viewport.test.mjs:124:1",
+          "category": "blocked-participation",
+          "message": "every phone control stays reachable on short and sideways screens"
+        }
+      ],
+      "fullFailureReport": "test at tests/integration/phone-short-viewport.test.mjs:124:1\n✖ every phone control stays reachable on short and sideways screens (37311.739667ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n  + actual - expected\n  \n  + [\n  +   '844x390 binary q17 question: \"FALSE\" ends at 513px after scrolling, below the 390px screen'\n  + ]\n  - []\n  \n      at file://tests/integration/phone-short-viewport.test.mjs:136:12\n      at async withViteAndBrowser (file://tests/integration/render-harness.mjs:338:14)\n      at async TestContext.<anonymous> (file://tests/integration/phone-short-viewport.test.mjs:125:3)\n      at async Test.run (node:internal/test_runner/test:1125:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: [ '844x390 binary q17 question: \"FALSE\" ends at 513px after scrolling, below the 390px screen' ],\n    expected: [],\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }"
+    }
+  ],
+  "isolatedMountedLock": {
+    "candidateExit": 0,
+    "candidateDurationMs": 19105.782375,
+    "controlExit": 0,
+    "controlDurationMs": 6799.587042,
+    "limits": "An isolated pass does not make the earlier full gates green."
+  },
+  "focusedShowcaseStatus": "Selected content, scoring, wire, production asset isolation and portrait browser tasks pass. Clinical review and human pilot remain pending."
+}

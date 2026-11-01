@@ -1,0 +1,7 @@
+{
+  "description": "Fixed public benchmark. Binary answers independently transcribed from the selected public record keys before the control run. Not a blind test.",
+  "correct": ["true", "true", "false", "true", "true", "true", "false", "false"],
+  "wrong": ["false", "false", "true", "false", "false", "false", "true", "true"],
+  "correctTotal": 950,
+  "wrongTotal": 0
+}
