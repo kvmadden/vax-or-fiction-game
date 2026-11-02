@@ -39,7 +39,7 @@
   },
   "candidate": {
     "log": "candidate-final-state-check.log",
-    "command": "VOF_VISIBLE=1 VOF_SHOWCASE_MEDIA=/Volumes/HubData/evidence/vax-or-fiction-game-showcase-20261101/media npm run check",
+    "command": "VOF_VISIBLE=1 VOF_SHOWCASE_MEDIA=<evidence directory>/media npm run check",
     "exit": 1,
     "lastSuiteCounts": {
       "tests": 13,
