@@ -1,10 +1,10 @@
 # Public eight-question verification
 
-The content and pilot are pending human work. This report describes software checks only. The complete repository gate is RED, not fully verified. All run logs and requested captures are preserved at `/Volumes/HubData/evidence/vax-or-fiction-game-showcase-20261101/`, the evidence path resolved from the host storage registry.
+The content and pilot are pending human work. This report describes software checks only. The complete repository gate is RED, not fully verified. All run logs and requested captures are preserved in a local evidence directory outside the repository.
 
 ## Scope and routing
 
-Public base is `kvmadden/vax-or-fiction-game` at `3b1154ec49ea953d893e1dabacbe2ab8726a2347`. The isolated public worktree is `~/dev/repos/public-showcase/vax-or-fiction`. The original private clone and its origin were preserved. No private history or approvals were transferred. Only the reusable reviewer interface and decision model were ported from private PR #64 at `38a4fa2`. Private PR #64 was still open with no independent review approvals. It supplied reusable code, not clinical or engineering approval for this public revision. Public PR and local started-job checks found no duplicate public owner. Job 42 is this work.
+Public base is `kvmadden/vax-or-fiction-game` at `3b1154ec49ea953d893e1dabacbe2ab8726a2347`. The original private clone and its origin were preserved. No private history or approvals were transferred. Only the reusable reviewer interface and decision model were ported from private PR #64 at `38a4fa2`. Private PR #64 was still open with no independent review approvals. It supplied reusable code, not clinical or engineering approval for this public revision. Public PR checks found no duplicate public owner.
 
 The repository was fetched and its complete tree and matching source text inspected. The private workflow, public bank, source sidecars, existing source-link, projection, order-token, scoring, accessibility and production-manifest checks were reconciled before implementation. The selected eight records are all binary and already belong to the public influenza deck. The bank remains 150 records and 180 deck appearances. The selected evidence has eight question records, eight question appearances, eight supporting claims, 36 authored factual field appearances and nine review rows. Runtime reveals and dynamic closing views reuse those frozen fields. Screen visits and repeated rendering are not additional independent facts. A test exercises every possible closing split and all eight takeaway routes against the frozen supported fields. Those eight claims use six clinical source documents. Rights policy is a seventh saved document.
 
@@ -52,7 +52,7 @@ Clinical accuracy is N/A with zero reviewed claims. A source-document bootstrap 
 | Run | Command | Exit | Result |
 | --- | --- | --- | --- |
 | Untouched public main | `npm run check` | 1 | Phone-fit suite: 13 tests, 9 pass, 2 assertion failures, 2 timeouts. |
-| Final candidate | `VOF_VISIBLE=1 VOF_SHOWCASE_MEDIA=/Volumes/HubData/evidence/vax-or-fiction-game-showcase-20261101/media npm run check` | 1 | Phone-fit suite: 13 tests, 5 pass, 2 assertion failures, 6 timeouts. |
+| Final candidate | `VOF_VISIBLE=1 VOF_SHOWCASE_MEDIA=<evidence directory>/media npm run check` | 1 | Phone-fit suite: 13 tests, 5 pass, 2 assertion failures, 6 timeouts. |
 | Final repository unit suite | `npm run test` | 0 | 1,331 pass. |
 | Mounted announcement, candidate | `node --test --test-name-pattern='mounted lock announcement' tests/integration/mounted-room.test.mjs` | 0 | About 19.1 seconds. |
 | Mounted announcement, untouched control | Same focused command | 0 | About 6.8 seconds. |
