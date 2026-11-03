@@ -136,7 +136,7 @@ Final levels: easy 73, medium 53, hard 19, expert 5.
 
 ```sh
 npm install
-npm run dev          # http://localhost:5173
+npm run dev          # prints a local address, open it
 ```
 
 Open the root URL and choose Host, Join or Solo. Solo is also at `/play`. To join from a phone on the same Wi-Fi, set

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readdirSync, readFileSync } from "node:fs";
 import { relative, resolve } from "node:path";
 import test from "node:test";
@@ -78,4 +79,102 @@ test("the guard knows a home folder when it sees one, and a route that only look
     ["", "Users", "<name>", "dev"].join("/"), ["", "Users", "*", "Library"].join("/")];
   for (const line of caught) assert.equal(namesHome(line), true, `caught: ${line}`);
   for (const line of passed) assert.equal(namesHome(line), false, `left alone: ${line}`);
+});
+
+// Prose is stricter than the rest of the repo. A README, SECURITY.md, CONTRIBUTING.md, or any plain-text file under docs/
+// (Markdown, text, logs, JSON, YAML, CSV or Python) names no machine path at all, not even from ~, and no local server
+// address: a reader needs the step, not the address. Code, config and tests may still use loopback addresses. The home
+// and volume patterns are built from pieces, as above, so this file does not match the check before it.
+const PROSE = /(?:^|\/)(?:README[^/]*\.md|SECURITY\.md|CONTRIBUTING\.md)$|^docs\/.*\.(?:md|markdown|txt|text|log|json|jsonl|py|ya?ml|csv|tsv)$/i;
+const PROSE_PATTERNS: [string, RegExp][] = [
+  ["a home folder", new RegExp(["(?<![\\w-])/", "Users", "/"].join(""))],
+  ["a mounted volume", new RegExp(["(?<![\\w-])/", "Volumes", "/"].join(""))],
+  ["a private system folder", /\/private\/(?:tmp|var)\b/],
+  ["a temporary folder path", /(?<![\w.~-])\/tmp\//],
+  ["a folder under ~/dev", /(?:~|\$HOME|\$\{HOME\})\/dev(?![\w-])/],
+  ["a loopback host name", /localhost/i],
+  ["a loopback or wildcard address", /(?<![\d.])(?:127\.0\.0\.1|0\.0\.0\.0)(?!\d)|\[::1\]/],
+];
+
+// Names from the author's own setup, kept as SHA-256 digests so this file does not spell them out: a disk, a variable
+// prefix, a workspace and its nickname. Each word is checked whole and in its underscore or hyphen parts, and each pair of
+// words is checked too.
+const PRIVATE = new Set([
+  "281fc54d9f4eac1d86906d272731264bd7787c8e65e52f2f70fe80d9c21e8b90",
+  "e649cd1b32b872ff33594130b5c30c5976667e936a9e088e9b372b557ad2ea69",
+  "fe905daa8dedc9a2208ecd34757ed3522ef22b0c3ba475dd83629597ca65b4f3",
+  "aa6cc0f6e747162d0f7c7f6964af3ca55fdcee0d24688d7b82ea426d9bfe44ae",
+]);
+
+// Prose lines allowed to keep a match, as { "path": [line numbers] }, each with the reason. Empty: no prose in this repo
+// needs one.
+const PROSE_ALLOWED: Record<string, number[]> = {};
+
+const digests = new Map<string, string>();
+function digest(text: string): string {
+  let hex = digests.get(text);
+  if (!hex) {
+    hex = createHash("sha256").update(text).digest("hex");
+    digests.set(text, hex);
+  }
+  return hex;
+}
+
+function wordParts(word: string): string[] {
+  const marks = [...word.matchAll(/_/g)].map((match) => match.index ?? 0);
+  const starts = [0, ...marks.map((index) => index + 1)];
+  const ends = [...marks, word.length];
+  const out: string[] = [];
+  for (const start of starts) {
+    for (const end of ends) {
+      if (end <= start) continue;
+      out.push(word.slice(start, end));
+      if (end < word.length) out.push(word.slice(start, end + 1));
+    }
+  }
+  return out;
+}
+
+function namesPrivate(line: string, names: Set<string> = PRIVATE): boolean {
+  const words = line.toLowerCase().match(/[a-z0-9_-]+/g) ?? [];
+  return words.some((word, index) =>
+    wordParts(word.replace(/-/g, "_")).some((part) => names.has(digest(part))) ||
+    (index > 0 && names.has(digest(`${words[index - 1]} ${word}`))));
+}
+
+const proseFindings = (line: string) => [
+  ...PROSE_PATTERNS.filter(([, pattern]) => pattern.test(line)).map(([what]) => what),
+  ...(namesPrivate(line) ? ["a private name"] : []),
+];
+
+test("READMEs and docs name no machine path, private name or loopback address", () => {
+  const prose = repoFiles(repoRoot).filter((file) => PROSE.test(file));
+  assert.ok(prose.includes("README.md") && prose.length > 5, `the scan sees the prose (${prose.length} files)`);
+  const read = (file: string) => readFileSync(resolve(repoRoot, file), "utf8").split("\n");
+  const hits: string[] = [];
+  for (const file of prose) {
+    read(file).forEach((line, index) => {
+      if (PROSE_ALLOWED[file]?.includes(index + 1)) return;
+      for (const what of proseFindings(line)) hits.push(`${file}:${index + 1}: ${what}`);
+    });
+  }
+  for (const [file, numbers] of Object.entries(PROSE_ALLOWED)) {
+    const lines = read(file);
+    for (const n of numbers) assert.ok(proseFindings(lines[n - 1] ?? "").length > 0, `${file}:${n} no longer needs its allowlist entry`);
+  }
+  assert.deepEqual(hits, [], "say what the reader does instead of giving the address, and write paths with placeholders such as <repo>");
+});
+
+test("the prose guard catches what it is for and leaves ordinary text alone", () => {
+  // Built from pieces, so this file names no home folder of its own.
+  const users = ["", "Users", "someone"].join("/");
+  const caught = [`cd ${users}/x`, `see ..${users}`, ["", "Volumes", "Disk", "x"].join("/"), "file:///private/tmp/x", "at ../../private/tmp/x",
+    "clone at /tmp/x", "see ~/dev/x", "open http://localhost:3000", "--bind 127.0.0.1.", "listen on 0.0.0.0", "http://[::1]:8080"];
+  const passed = [`the route /api${users}/ answers`, "src/tmp/cache", "version 10.0.0.0", "file://<repo>/test/a.js", "real estate", "~/development"];
+  for (const line of caught) assert.ok(proseFindings(line).length > 0, `caught: ${line}`);
+  for (const line of passed) assert.deepEqual(proseFindings(line), [], `left alone: ${line}`);
+  const decoy = new Set([digest("decoy_"), digest("a decoy")]);
+  assert.equal(namesPrivate("X_DECOY_PATH=1", decoy), true);
+  assert.equal(namesPrivate("in a decoy folder", decoy), true);
+  assert.equal(namesPrivate("decoys and decoying", decoy), false);
 });
