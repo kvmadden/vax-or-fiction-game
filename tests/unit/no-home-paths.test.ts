@@ -81,11 +81,11 @@ test("the guard knows a home folder when it sees one, and a route that only look
   for (const line of passed) assert.equal(namesHome(line), false, `left alone: ${line}`);
 });
 
-// Prose is stricter than the rest of the repo. A README, SECURITY.md, CONTRIBUTING.md, or a .md, .txt, .json or .py file
-// under docs/ names no machine path at all, not even from ~, and no local server address: a reader needs the step, not the
-// address. Code, config and tests may still use loopback addresses. The home and volume patterns are built from pieces, as
-// above, so this file does not match the check before it.
-const PROSE = /(?:^|\/)(?:README[^/]*\.md|SECURITY\.md|CONTRIBUTING\.md)$|^docs\/.*\.(?:md|txt|json|py)$/i;
+// Prose is stricter than the rest of the repo. A README, SECURITY.md, CONTRIBUTING.md, or any plain-text file under docs/
+// (Markdown, text, logs, JSON, YAML, CSV or Python) names no machine path at all, not even from ~, and no local server
+// address: a reader needs the step, not the address. Code, config and tests may still use loopback addresses. The home
+// and volume patterns are built from pieces, as above, so this file does not match the check before it.
+const PROSE = /(?:^|\/)(?:README[^/]*\.md|SECURITY\.md|CONTRIBUTING\.md)$|^docs\/.*\.(?:md|markdown|txt|text|log|json|jsonl|py|ya?ml|csv|tsv)$/i;
 const PROSE_PATTERNS: [string, RegExp][] = [
   ["a home folder", new RegExp(["(?<![\\w-])/", "Users", "/"].join(""))],
   ["a mounted volume", new RegExp(["(?<![\\w-])/", "Volumes", "/"].join(""))],
