@@ -74,10 +74,10 @@ WebKit).
 
 | Command | Result |
 | --- | --- |
-| `npm test` (unit) | 1,331 tests, 1,331 pass |
+| `npm test` (unit) | 1,333 tests, 1,333 pass |
 | `npm run lint` (oxlint) | 0 errors, 25 warnings |
 | `npm run build` (`tsc -b` and `vite build`) | passes |
-| `npm run check` | 1,331 unit tests plus 312 integration and browser tests across 28 test steps, 8 standalone script checks, lint and build. See the note below. |
+| `npm run check` | 1,333 unit tests plus 312 integration and browser tests across 28 test steps, 8 standalone script checks, lint and build. See the note below. |
 | `npm run check:db` | not run here: it needs a local PostgreSQL 17 |
 
 `npm run check` covers the local relay with real WebSockets, the Supabase relay and archive clients against in-process
