@@ -155,4 +155,57 @@ describe('game archive', () => {
     });
     assert.deepEqual(summary.teams, { navy: 0, gold: 100 }, 'GOLD 100 must archive as 100, not 0');
   });
+
+  it('archives each settled question accuracy from the real store producer (VOF-V1)', () => {
+    const question = {
+      id: 'synthetic-archive-accuracy',
+      type: 'question',
+      kind: 'binary',
+      statement: 'Synthetic archive accuracy contract',
+      answer: true,
+      takeaway: 'Synthetic takeaway',
+    } as never;
+
+    for (const { label, choices, accuracyPct } of [
+      { label: 'correct', choices: ['true'], accuracyPct: 100 },
+      { label: 'incorrect', choices: ['false'], accuracyPct: 0 },
+      { label: 'mixed', choices: ['true', 'false'], accuracyPct: 50 },
+      { label: 'zero-vote', choices: [], accuracyPct: 0 },
+    ]) {
+      const initial = useGameStore.getInitialState();
+      useGameStore.setState({
+        ...initial,
+        sessionId: `archive-${label}`,
+        run: [question],
+        slideIndex: 0,
+        phase: 'deliberating',
+        interactionMode: 'polling',
+        offlineMode: false,
+        votesLocked: false,
+        seenDevices: {},
+        pollVotes: {},
+        pollVoters: {},
+        settledQuestionInstances: {},
+        settledResults: {},
+      } as never, true);
+
+      for (const [index, choice] of choices.entries()) {
+        const deviceId = `synthetic-${label}-${index}`;
+        useGameStore.getState().dispatch({ type: 'HELLO', deviceId, nickname: `Synthetic ${index}` } as never);
+        useGameStore.getState().dispatch({ type: 'VOTE', questionId: question.id, deviceId, choice } as never);
+      }
+      useGameStore.getState().dispatch({ type: 'REVEAL' } as never);
+
+      const settled = useGameStore.getState();
+      assert.equal(settled.roomStats.questions[question.id]?.correctPct, accuracyPct, `${label} producer fixture`);
+      const summary = buildArchiveSummary({
+        roomId: 'SYNTHETIC',
+        roomStats: settled.roomStats,
+        seenDevices: settled.seenDevices,
+        run: settled.run,
+      } as never);
+      assert.equal(summary.outcomes[0]?.accuracyPct, accuracyPct, `${label} archived accuracy`);
+      assert.equal(summary.outcomes[0]?.votes, choices.length, `${label} archived votes`);
+    }
+  });
 });

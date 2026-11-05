@@ -87,6 +87,7 @@ test('nothing is requested until a question asks, then the layer and the family 
 
     await framePosed(page, 'widescreen', await question(page, 'q5'));
     assert.equal(await drawnFamily(page), 'rsv', 'the RSV question draws the RSV family');
+    await finishEntrances(page);
     const [rsv] = await layerOf(page, 'stage');
     assert.equal(rsv.opacity, STRENGTH, 'at 22 percent ink, twice the first build\'s 11');
     assert.equal(rsv.hidden, 'true', 'decoration only');

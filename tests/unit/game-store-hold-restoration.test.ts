@@ -81,6 +81,38 @@ test('hold restoration keeps duplicate occurrences separate and drops only remov
   assert.deepEqual(merge(restored, initial).settledResults, restored.settledResults, 'a second hydration is idempotent');
 });
 
+test('hydration drops malformed tally cells and recovery still supports a changed vote and repeated REVEAL (VOF-V2)', () => {
+  const cells = JSON.parse('{"true":1,"false":0,"not a token":6,"a.b":7,"a/b":8,"nullCell":null,"stringCell":"2","negative":-1,"fraction":1.5,"shadow":{"toString":null,"valueOf":null},"constructor":2,"__proto__":3}') as Record<string, unknown>;
+  cells.infinity = Number.POSITIVE_INFINITY;
+  cells.nan = Number.NaN;
+  const rawVotes: Record<string, unknown> = JSON.parse('{"constructor":{"true":7},"__proto__":{"true":8} }');
+  rawVotes[first.id] = cells;
+  const restored = merge({
+    sessionId: 'malformed-vote-recovery',
+    run: [first],
+    slideIndex: 0,
+    phase: 'deliberating',
+    votesLocked: false,
+    pollVotes: rawVotes,
+    pollVoters: { [first.id]: { [deviceId]: { choice: 'true' } } },
+  }, initial) as any;
+
+  assert.deepEqual(restored.pollVotes[first.id], { true: 1, false: 0 }, 'only safe nonnegative integer tally cells survive');
+  assert.equal(Object.hasOwn(restored.pollVotes, 'constructor'), false, 'unsafe question keys are dropped');
+  assert.equal(Object.hasOwn(restored.pollVotes, '__proto__'), false, 'prototype question keys are dropped');
+
+  useGameStore.setState(restored, true);
+  useGameStore.getState().dispatch({ type: 'HELLO', deviceId, nickname: 'Synthetic attendee' });
+  useGameStore.getState().dispatch({ type: 'VOTE', questionId: first.id, deviceId, choice: 'false' });
+  assert.deepEqual(useGameStore.getState().pollVotes[first.id], { true: 0, false: 1 }, 'a normal changed vote updates recovered tallies');
+  useGameStore.getState().dispatch({ type: 'REVEAL' });
+  const once = useGameStore.getState();
+  assert.equal(once.seenDevices[deviceId]?.answered, 1, 'the recovered answer is settled');
+  useGameStore.getState().dispatch({ type: 'REVEAL' });
+  assert.equal(useGameStore.getState().seenDevices[deviceId]?.answered, once.seenDevices[deviceId]?.answered, 'a repeated reveal does not rescore');
+  assert.deepEqual(useGameStore.getState().roomStats, once.roomStats, 'a repeated reveal preserves the recovered settlement');
+});
+
 test('duplicate question occurrences start with blank live votes and settled navigation restores only that occurrence', () => {
   useGameStore.setState({
     ...initial,

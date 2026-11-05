@@ -1,7 +1,7 @@
 import { buildClosingRecap } from '../engine/closing-recap';
 import { computeLeaderboard, rankLeaderboard, type RankedLeaderboardEntry } from '../engine/leaderboard';
 import { isQuestionSlide } from '../engine/kinds';
-import type { Question, SlideEntry } from '../data/types';
+import type { Question, QuestionStats, SlideEntry } from '../data/types';
 import type { GameShowdownState } from '../store/game-store';
 
 /** Classic archive tables only accept six lowercase room-alphabet characters. */
@@ -69,7 +69,7 @@ export interface GameArchiveSnapshot {
     mythsBusted?: number;
     bestStreak?: number;
     votesTotal?: number;
-    questions?: Record<string, { choices?: Record<string, number>; trueCount?: number; falseCount?: number; accuracyPct?: number }>;
+    questions?: Record<string, QuestionStats>;
     // TEAM-SCORES: the store keys this NAVY/GOLD, uppercase (summarizeTeams, game-store.ts:635-654).
     teams?: { NAVY?: { score?: number }; GOLD?: { score?: number } };
   } | null;
@@ -186,7 +186,7 @@ export function buildArchiveSummary(snapshot: GameArchiveSnapshot, now = () => n
     const question = slide as Question & { displayNumber?: number };
     const stats = questionStats[question.id];
     const votes = votesOn(stats);
-    const pct = Number(stats?.accuracyPct);
+    const pct = Number(stats?.correctPct);
     outcomes.push({
       questionId: question.id,
       number: Number.isInteger(question.displayNumber) ? Number(question.displayNumber) : number,
