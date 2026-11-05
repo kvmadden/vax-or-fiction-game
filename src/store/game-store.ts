@@ -912,6 +912,22 @@ function validatedPollVoters(value: unknown): Record<string, Record<string, Vote
   return valid;
 }
 
+function validatedPollVotes(value: unknown): Record<string, Record<string, number>> | null {
+  const questions = record(value);
+  if (!questions) return null;
+  const valid: Record<string, Record<string, number>> = {};
+  for (const [questionId, rawTallies] of Object.entries(questions)) {
+    const tallies = record(rawTallies);
+    if (!safeKey(questionId) || !tallies) continue;
+    const validTallies: Record<string, number> = {};
+    for (const [choice, count] of Object.entries(tallies)) {
+      if (safeKey(choice) && isValidVoteToken(choice) && validWholeNumber(count)) validTallies[choice] = count;
+    }
+    valid[questionId] = validTallies;
+  }
+  return valid;
+}
+
 function validatedReactionReceipts(value: unknown): Record<string, Record<string, string>> | null {
   const questions = record(value);
   if (!questions) return null;
@@ -1431,7 +1447,7 @@ function mergePersistedGameState(persistedState: unknown, currentState: GameStat
     phase,
     selectedDeckId: typeof persisted.selectedDeckId === 'string' && persisted.selectedDeckId.length > 0 ? persisted.selectedDeckId : currentState.selectedDeckId,
     deckId: typeof persisted.deckId === 'string' && persisted.deckId.length > 0 ? persisted.deckId : currentState.deckId,
-    pollVotes: record(persisted.pollVotes) ?? currentState.pollVotes,
+    pollVotes: validatedPollVotes(persisted.pollVotes) ?? currentState.pollVotes,
     pollVoters: validatedPollVoters(persisted.pollVoters) ?? currentState.pollVoters,
     seenDevices: validatedSeenDevices(persisted.seenDevices) ?? currentState.seenDevices,
     reactions: record(persisted.reactions) ?? currentState.reactions,
