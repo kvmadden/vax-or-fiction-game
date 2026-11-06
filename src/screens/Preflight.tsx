@@ -504,6 +504,7 @@ export const Preflight: React.FC<PreflightProps> = React.memo(({
       >
         <div className="setup-compact" hidden={view !== 'ready'}>
           <h1 className="setup-title">Your game is ready</h1>
+          {storeState.selectedDeckId === 'influenza' ? <p role="status">Influenza Insights · Clinical review by Kevin Madden, PharmD is pending · Eight questions</p> : null}
           <section className="setup-venues" aria-labelledby="setup-venue-question">
             <h2 id="setup-venue-question">Where are you presenting?</h2>
             <div

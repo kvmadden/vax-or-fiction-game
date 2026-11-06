@@ -7,7 +7,7 @@ export type HostPresetId = (typeof HOST_PRESET_IDS)[number];
 
 export type HostLaunchAction =
   | { type: 'APPLY_PRESET'; presetId: Exclude<HostPresetId, 'curated15-room' | 'curated8-room'>; venue?: Venue; timerSeconds?: number }
-  | { type: 'SELECT_MODE'; modeId: string; venue?: Venue; timerSeconds?: number };
+  | { type: 'SELECT_MODE'; deckId?: 'influenza'; modeId: string; venue?: Venue; timerSeconds?: number };
 
 function isHostPresetId(value: string): value is HostPresetId {
   return (HOST_PRESET_IDS as readonly string[]).includes(value);
@@ -43,6 +43,9 @@ export function hostLaunchPrefersAudibleWalkin(search: string): boolean {
 export function hostLaunchFromSearch(search: string): HostLaunchAction | null {
   const params = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search);
   const venue = parseHostVenue(params.get('venue'));
+  if (params.get('deck') === 'influenza') {
+    return { type: 'SELECT_MODE', deckId: 'influenza', modeId: 'full', venue: venue ?? 'teams' }
+  }
   const preset = (params.get('preset') ?? '').trim();
   if (preset && isHostPresetId(preset)) {
     const presetId = preset === 'curated15-room' ? 'curated15' : preset === 'curated8-room' ? 'curated8' : preset;
