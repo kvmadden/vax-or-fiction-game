@@ -319,7 +319,7 @@ const PhoneJoinComponent: React.FC<PhoneJoinProps> = React.memo(({
       data-team={teamsEnabled ? team : undefined}
       style={{ touchAction: "manipulation", overscrollBehaviorY: "contain", color: "var(--color-ink)", fontFamily: "var(--kit-font-sans)", ...style }}
     >
-      <p className="phone-join-kicker" data-role="join-header">JOIN THE GAME</p>
+      <h1 className="phone-join-kicker" data-role="join-header">JOIN THE GAME</h1>
       <div className="phone-hero-mark" data-role="phone-branding" data-mark="hero"><ShowWordmark stacked /></div>
       <p className="phone-join-lyric" data-role="join-walkin-lyric">{WALKIN_JOIN_LINE}</p>
       {activeError && (

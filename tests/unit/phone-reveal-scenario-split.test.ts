@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -53,4 +54,44 @@ test('the reveal scenario label agrees with the vote screen scenario label for t
   const voteLabel = voteHtml.match(/data-role="phone-scenario-label"[^>]*>([\s\S]*?)<\/span>/)?.[1];
   const revealLabel = revealHtml.match(/data-role="phone-scenario-label"[^>]*>([\s\S]*?)<\/span>/)?.[1];
   assert.equal(revealLabel, voteLabel, 'the reveal and the vote screen agree on the scenario label for the same question');
+});
+
+test('short-phone sources navigation hands focus to its heading and back to the original trigger', () => {
+  // Rendering alone cannot exercise effects; these assertions guard the two
+  // focus targets and the state transition until the M1 verifies live navigation.
+  const source = readFileSync('src/phone/PhoneReveal.tsx', 'utf8');
+  assert.match(source, /ref=\{continuationHeadingRef\} tabIndex=\{-1\} role="heading" aria-level=\{2\}/);
+  assert.equal(source.match(/ref=\{openContinuationButtonRef\} data-action="show-reveal-reactions"/g)?.length, 2,
+    'both short-phone continuation triggers restore focus after Back');
+  assert.match(source, /if \(compactPage === 'reactions'\) continuationHeadingRef\.current\?\.focus\(\)/);
+  assert.match(source, /else openContinuationButtonRef\.current\?\.focus\(\)/);
+});
+
+test('short-phone hosted reactions put focus on Back before the tapped reaction disables', () => {
+  // This guards the focus handoff; the M1 validates the real 390x560 interaction.
+  const source = readFileSync('src/phone/PhoneReveal.tsx', 'utf8');
+  assert.match(source, /onReaction\(value\);[\s\S]*?onSent\?\.\(\);/, 'sending a reaction invokes the focus handoff');
+  assert.match(source, /ref=\{continuationBackButtonRef\} data-action="return-reveal-main"/, 'the compact Back control owns the destination ref');
+  assert.match(source, /onSent=\{\(\) => continuationBackButtonRef\.current\?\.focus\(\)\}/,
+    'the hosted reaction focuses Back before its own button becomes disabled');
+});
+
+
+test('short-phone solo keeps its source links directly after the takeaway', () => {
+  // React's static render can exercise the compact layout branch without a browser.
+  const originalWindow = Object.getOwnPropertyDescriptor(globalThis, 'window');
+  Object.defineProperty(globalThis, 'window', { configurable: true, value: { innerHeight: 560 } });
+  try {
+    const { question } = projectPublicQuestion(withScenario, 'instance-compact', 1, 8);
+    const reveal = { ...projectPublicReveal(withScenario), citations: [{ label: 'Synthetic source', url: 'https://example.test/reference' }] };
+    const html = renderToStaticMarkup(React.createElement(PhoneReveal, { presentation: 'combined', question, reveal, attendee: null, solo: true }));
+    const takeawayAt = html.indexOf('data-role="takeaway-card"');
+    const sourcesAt = html.indexOf('data-role="reveal-citations"');
+    assert.ok(takeawayAt >= 0 && sourcesAt > takeawayAt, 'sources follow the visible takeaway in the same scroll pane');
+    assert.match(html, /href="https:\/\/example\.test\/reference"/, 'the authored source link remains intact');
+    assert.doesNotMatch(html, /data-action="show-reveal-reactions"/, 'solo sources do not require a separate continuation');
+  } finally {
+    if (originalWindow) Object.defineProperty(globalThis, 'window', originalWindow);
+    else Reflect.deleteProperty(globalThis, 'window');
+  }
 });

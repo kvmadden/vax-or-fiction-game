@@ -1165,6 +1165,17 @@ body:has(.phone-live-shell) {
    the h2 directly closes that gap. */
 .phone-takeaway-heading h2 {
   margin: 0;
+  /* The solo "Read takeaway" shortcut scrolls to this heading. Keep its card's
+     top inset visible rather than pinning the text against the scroll edge. */
+  scroll-margin-block-start: var(--kit-space-24);
+}
+
+/* The shortcut moves keyboard focus to this existing heading. Show where the
+   reader landed for pointer and keyboard activation, without shifting layout. */
+.phone-reveal-surface .phone-takeaway-heading h2:focus {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: var(--kit-space-4);
+  border-radius: var(--kit-radius-4);
 }
 
 /* Item 10: the answer in words, in the stage's colours. No stamp, no rotation, no grade word. */
