@@ -28,19 +28,6 @@
   box-sizing: border-box;
 }
 
-/* Short tablet/laptop viewports were clipping the bottom of the entry stack.
-   Keep the original art and all three routes; allow the document to grow when
-   text or the footer needs room instead of hiding the final controls. */
-@media (min-width: 601px) and (max-height: 800px) {
-  .entry-screen {
-    height: auto;
-    min-height: 100dvh;
-    justify-content: safe center;
-    gap: clamp(var(--kit-space-16), 3vh, var(--kit-space-32));
-    overflow-y: auto;
-  }
-}
-
 .entry-screen::after {
   content: "";
   position: absolute;
