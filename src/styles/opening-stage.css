@@ -344,6 +344,17 @@
   }
 }
 
+/* A 1024x768 landscape stage can lose the bottom of the hero behind the
+   viewport clip. Keep the same composition, but reclaim vertical space before
+   the entry stack grows taller than the screen. Portrait and phone layouts
+   have their own rules and are intentionally unchanged. */
+@media (min-width: 900px) and (max-height: 800px) and (orientation: landscape) {
+  .entry-screen-hero {
+    gap: clamp(var(--kit-space-20), 3vh, var(--kit-space-32));
+    padding-block: var(--kit-space-24);
+  }
+}
+
 /* Setup */
 .presenter-setup-stage {
   height: 100dvh !important;
