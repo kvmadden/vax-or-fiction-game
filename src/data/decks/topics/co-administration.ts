@@ -157,13 +157,6 @@ export const coAdministrationDeck: Deck = {
       "accessedDate": "2026-09-10",
       "url": "https://www.cdc.gov/mmwr/volumes/67/wr/mm6703a5.htm"
     },
-    {
-      "id": "cdc-covid-flu-coadmin",
-      "publisher": "CDC",
-      "shortDisplayLine": "CDC · Flu and COVID-19 vaccine coadministration",
-      "accessedDate": "2026-09-28",
-      "url": "https://www.cdc.gov/flu/vaccines/coadministration.html"
-    }
   ],
   "questions": [
     {
@@ -278,27 +271,6 @@ export const coAdministrationDeck: Deck = {
       "patientConversation": "Today you're due for your annual flu shot and your shingles shot, so let's get both taken care of.",
       "presenterNote": "Train vaccinators to avoid tentative framing like 'Would you want another shot today?' in favor of clear presumptive guidance.",
       "sourceIds": [
-        "cdc-general-best-practices"
-      ]
-    },
-    {
-      "id": "q6",
-      "index": 6,
-      "kind": "binary",
-      "statement": "CDC says eligible people can get flu and COVID-19 vaccines at the same visit, at separate injection sites.",
-      "answer": true,
-      "reveal": "CDC says people can get flu and COVID-19 vaccines at the same visit, and studies support the safety of getting both. Shots at the same visit go in separate places, at least an inch apart.",
-      "takeaway": "Flu and COVID-19 shots can share one visit.",
-      "topicCue": "COVID-19 AND FLU CO-ADMINISTRATION",
-      "authoringId": "q6",
-      "layoutFamily": "comparison",
-      "imageRequirementId": "plate-care-team",
-      "teachingRole": "consequence",
-      "discussionPrompt": "What operational workflows facilitate simultaneous COVID-19 and influenza vaccination during peak autumn visits?",
-      "patientConversation": "You can get your COVID-19 and flu vaccines at the same visit today, in separate spots.",
-      "presenterNote": "Highlight that CDC allows both at one visit, and that giving every due vaccine at one visit raises the chance people get fully vaccinated.",
-      "sourceIds": [
-        "cdc-covid-flu-coadmin",
         "cdc-general-best-practices"
       ]
     },

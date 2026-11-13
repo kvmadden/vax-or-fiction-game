@@ -753,13 +753,6 @@
         "zoster"
       ]
     },
-    "whattosay-natural-immunity-myth": {
-      "label": "Reply to \"I already had it, that's protection enough\"",
-      "subject": "what-to-say",
-      "vaccines": [
-        "any"
-      ]
-    },
     "whattosay-pregnancy-safety-concern": {
       "label": "Reply to a pregnant patient worried about vaccine harm",
       "subject": "what-to-say",
@@ -800,13 +793,6 @@
       "subject": "what-to-say",
       "vaccines": [
         "any"
-      ]
-    },
-    "whattosay-covid-post-infection-timing": {
-      "label": "Reply on COVID-19 vaccine timing after recent infection",
-      "subject": "what-to-say",
-      "vaccines": [
-        "covid-19"
       ]
     },
     "whattosay-hepb-dose-options": {

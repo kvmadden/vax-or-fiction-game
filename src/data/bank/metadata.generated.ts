@@ -92,17 +92,6 @@ export const BANK_META: Readonly<Record<string, RuntimeMeta>> = Object.freeze({
     "skill": "communication",
     "audience": "pharmacy-team"
   },
-  "art-of-the-offer:q17": {
-    "subject": "what-to-say",
-    "kind": "which-patient",
-    "textVersion": 2,
-    "difficulty": "easy",
-    "conceptId": "whattosay-covid-post-infection-timing",
-    "rotation": "alternate",
-    "status": "live",
-    "skill": "communication",
-    "audience": "pharmacy-team"
-  },
   "art-of-the-offer:q18": {
     "subject": "what-to-say",
     "kind": "which-patient",
@@ -143,17 +132,6 @@ export const BANK_META: Readonly<Record<string, RuntimeMeta>> = Object.freeze({
     "difficulty": "medium",
     "conceptId": "whattosay-hpv-dose-count-question",
     "rotation": "alternate",
-    "status": "live",
-    "skill": "communication",
-    "audience": "pharmacy-team"
-  },
-  "art-of-the-offer:q3": {
-    "subject": "what-to-say",
-    "kind": "which-patient",
-    "textVersion": 1,
-    "difficulty": "easy",
-    "conceptId": "whattosay-immune-overwhelm-concern",
-    "rotation": "core",
     "status": "live",
     "skill": "communication",
     "audience": "pharmacy-team"
@@ -213,17 +191,6 @@ export const BANK_META: Readonly<Record<string, RuntimeMeta>> = Object.freeze({
     "skill": "communication",
     "audience": "pharmacy-team"
   },
-  "art-of-the-offer:q9": {
-    "subject": "what-to-say",
-    "kind": "which-patient",
-    "textVersion": 2,
-    "difficulty": "easy",
-    "conceptId": "whattosay-natural-immunity-myth",
-    "rotation": "core",
-    "status": "live",
-    "skill": "communication",
-    "audience": "pharmacy-team"
-  },
   "co-administration:q1": {
     "subject": "at-the-counter",
     "kind": "binary",
@@ -275,17 +242,6 @@ export const BANK_META: Readonly<Record<string, RuntimeMeta>> = Object.freeze({
     "difficulty": "easy",
     "conceptId": "counter-presumptive-bundling",
     "rotation": "core",
-    "status": "live",
-    "skill": "recall",
-    "audience": "pharmacy-team"
-  },
-  "co-administration:q6": {
-    "subject": "at-the-counter",
-    "kind": "binary",
-    "textVersion": 3,
-    "difficulty": "easy",
-    "conceptId": "counter-coadministration-immune-response",
-    "rotation": "alternate",
     "status": "live",
     "skill": "recall",
     "audience": "pharmacy-team"
@@ -697,17 +653,6 @@ export const BANK_META: Readonly<Record<string, RuntimeMeta>> = Object.freeze({
     "skill": "recall",
     "audience": "everyone"
   },
-  "pneumococcal:q2": {
-    "subject": "pneumococcal",
-    "kind": "binary",
-    "textVersion": 1,
-    "difficulty": "easy",
-    "conceptId": "pneumococcal-disease-scope",
-    "rotation": "alternate",
-    "status": "live",
-    "skill": "recall",
-    "audience": "everyone"
-  },
   "pneumococcal:q3": {
     "subject": "pneumococcal",
     "kind": "binary",
@@ -1059,17 +1004,6 @@ export const BANK_META: Readonly<Record<string, RuntimeMeta>> = Object.freeze({
     "status": "live",
     "skill": "recall",
     "audience": "everyone"
-  },
-  "season-2:q8": {
-    "subject": "at-the-counter",
-    "kind": "binary",
-    "textVersion": 3,
-    "difficulty": "easy",
-    "conceptId": "counter-coadministration-immune-response",
-    "rotation": "core",
-    "status": "live",
-    "skill": "recall",
-    "audience": "pharmacy-team"
   },
   "season-2:q9": {
     "subject": "hpv",

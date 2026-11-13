@@ -36,7 +36,7 @@ test('every bundled question has a family, and the big screen and the phone reac
   // A sweep that saw nothing would pass every check above, so it must have seen the bundle, scenarios included.
   console.log(`topic patterns: ${covered} bundled questions checked in ${Object.keys(decks).length} decks, ${withScenario} with a scenario on the phone`);
   assert.ok(Object.keys(decks).length >= 13, 'the show deck, the flagship and the eleven solo topic decks');
-  assert.ok(covered >= 180, `only ${covered} bundled questions were checked`);
+  assert.ok(covered >= 174, `only ${covered} bundled questions were checked`);
   assert.ok(withScenario > 0, 'no phone statement carried a scenario, so the stem cut was never exercised');
 });
 

@@ -51,9 +51,8 @@ export const OVERRIDES = {
   // Several vaccines at one visit, from the RSV deck.
   'rsv:q8': 'one-visit',
   // The offer deck. Owner, 2026-10-02: every offer question takes the family of its subject, not the deck's What to
-  // say, for the whole deck. The pregnancy ones sit with newborns above. The four general ones (q9 a past infection,
-  // q11 putting it off, q16 a late second dose, q17 COVID-19 timing, which has no family) keep What to say.
-  'art-of-the-offer:q1': 'one-visit', 'art-of-the-offer:q2': 'one-visit', 'art-of-the-offer:q3': 'one-visit',
+  // say, for the whole deck. The pregnancy ones sit with newborns above. The general ones (q11 putting it off, q16 a late second dose) keep What to say.
+  'art-of-the-offer:q1': 'one-visit', 'art-of-the-offer:q2': 'one-visit',
   'art-of-the-offer:q4': 'one-visit', 'art-of-the-offer:q5': 'one-visit', 'art-of-the-offer:q6': 'one-visit',
   'art-of-the-offer:q7': 'egg', 'art-of-the-offer:q12': 'flu', 'art-of-the-offer:q18': 'hepatitis-b',
   'art-of-the-offer:q8': 'shingles', 'art-of-the-offer:q15': 'shingles', 'art-of-the-offer:q19': 'shingles',
