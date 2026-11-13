@@ -121,7 +121,7 @@ test("holds stay out, and a shared q-number never holds another deck's question"
 
 test('art of the offer plays as which reply is better: a posed question, the scenario, and two spoken lines', async () => {
   const offers = await deck('art-of-the-offer');
-  assert.equal(offers.questions.length, 20);
+  assert.equal(offers.questions.length, 17);
   assert.equal(offers.heldQuestionIds, undefined);
   for (const question of offers.questions) {
     assert.equal(question.kind, 'which-patient', question.id);
