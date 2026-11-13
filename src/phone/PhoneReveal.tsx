@@ -225,10 +225,10 @@ export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, que
         </p>
       </>}
     </section> : null}
-    {/* Solo's combined verdict can put the existing takeaway below the phone's scroll fold.
-        Give the player a direct, keyboard-operable route rather than implying the lesson is missing.
-        Ordered answers keep their page controls before offering this shortcut. */}
-    {solo && mainVisible && showsVerdict && showsTakeaway && (!compactOrderResult || orderResultPage === resultStepCount - 1) ? (
+    {/* Only the short-phone solo reveal needs a jump to the lesson below its scroll fold.
+        On taller screens the takeaway is already in view, so avoid a redundant button.
+        Keep the keyboard-operable route and ordered-answer pagination on short phones. */}
+    {solo && compactViewport && mainVisible && showsVerdict && showsTakeaway && (!compactOrderResult || orderResultPage === resultStepCount - 1) ? (
       <button
         type="button"
         data-action="jump-to-takeaway"
