@@ -95,3 +95,19 @@ test('short-phone solo keeps its source links directly after the takeaway', () =
     else Reflect.deleteProperty(globalThis, 'window');
   }
 });
+
+test('solo takeaway shortcut is reserved for short phone heights', () => {
+  // The card is already visible on a normal-height phone. Do not add an extra
+  // jump button unless the phone has the compact reveal layout.
+  const originalWindow = Object.getOwnPropertyDescriptor(globalThis, 'window');
+  try {
+    for (const [height, expectJump] of [[844, false], [664, true], [548, true]] as const) {
+      Object.defineProperty(globalThis, 'window', { configurable: true, value: { innerHeight: height } });
+      const html = renderSoloReveal(withScenario);
+      assert.equal(html.includes('data-action="jump-to-takeaway"'), expectJump, `height ${height}px`);
+    }
+  } finally {
+    if (originalWindow) Object.defineProperty(globalThis, 'window', originalWindow);
+    else Reflect.deleteProperty(globalThis, 'window');
+  }
+});
