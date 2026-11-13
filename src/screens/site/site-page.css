@@ -200,6 +200,8 @@
   color: var(--color-ink-muted);
   font-size: 16px;
   line-height: 1.7;
+  /* Prevent a lone final word on the disclaimer and other long site copy. */
+  text-wrap: pretty;
 }
 
 .site-page-body ul {
