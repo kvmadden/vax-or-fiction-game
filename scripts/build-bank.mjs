@@ -92,8 +92,8 @@ function buildBankDecks(_records) {
 }
 
 const records = loadMetadataRecords();
-if (records.length !== 150) {
-  console.error(`BUILD_BANK FAIL: expected 150 metadata records across content/bank/metadata/, found ${records.length}`);
+if (records.length !== 144) {
+  console.error(`BUILD_BANK FAIL: expected 144 metadata records across content/bank/metadata/, found ${records.length}`);
   process.exit(1);
 }
 const unrated = records.map((record) => [record.bankId, difficultyProblem(record)]).filter(([, problem]) => problem);

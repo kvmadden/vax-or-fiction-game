@@ -63,7 +63,7 @@ test('every question of every solo deck sits in exactly one topic, and a questio
     .filter((question) => !listed.has(`${deckId}:${question.id}`) && !byText.has(norm(question.statement || question.scenario)) && !FLAGSHIP_EXEMPT_FROM_COMPLETENESS.has(`${deckId}:${question.id}`))
     .map((question) => `${deckId}:${question.id}`));
   assert.deepEqual(missing, [], 'every question has a topic, except the flagship deck\'s 19 questions VOF-77 deliberately leaves solo-only to its own q17');
-  assert.equal(listed.size, 150, 'every question once: 146 play in solo (145 plus flagship:q17), and 4 held ones stay listed for when their holds lift');
+  assert.equal(listed.size, 144, 'every question once: the solo decks list 144, and held ones stay listed for when their holds lift');
 });
 
 test('a round deals the whole topic (VOF-68): every playable question once, no repeats, in one go', async () => {
@@ -121,7 +121,7 @@ test("holds stay out, and a shared q-number never holds another deck's question"
 
 test('art of the offer plays as which reply is better: a posed question, the scenario, and two spoken lines', async () => {
   const offers = await deck('art-of-the-offer');
-  assert.equal(offers.questions.length, 20);
+  assert.equal(offers.questions.length, 17);
   assert.equal(offers.heldQuestionIds, undefined);
   for (const question of offers.questions) {
     assert.equal(question.kind, 'which-patient', question.id);

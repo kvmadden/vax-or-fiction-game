@@ -239,26 +239,6 @@ export const pneumococcalDeck: Deck = {
       ]
     },
     {
-      "id": "q2",
-      "index": 2,
-      "kind": "binary",
-      "statement": "Pneumococcal vaccination protects individuals against viral respiratory illnesses such as influenza and COVID-19.",
-      "answer": false,
-      "reveal": "Pneumococcal vaccines specifically target Streptococcus pneumoniae bacteria. They do not prevent viral infections like influenza or SARS-CoV-2.",
-      "takeaway": "Pneumococcal vaccines target Streptococcus pneumoniae bacteria, not respiratory viruses.",
-      "topicCue": "ETIOLOGY MISCONCEPTION",
-      "authoringId": "q2",
-      "layoutFamily": "comparison",
-      "imageRequirementId": "plate-care-team",
-      "teachingRole": "misconception",
-      "discussionPrompt": "How do you explain the difference between bacterial pneumonia and viral upper respiratory infections to patients?",
-      "patientConversation": "The pneumonia vaccine targets bacterial lung infections, while flu and COVID-19 shots handle the viruses.",
-      "presenterNote": "Clarify that viral respiratory infections frequently predispose patients to secondary bacterial pneumonia.",
-      "sourceIds": [
-        "cdc-pneumo-basics"
-      ]
-    },
-    {
       "id": "q3",
       "index": 3,
       "kind": "binary",

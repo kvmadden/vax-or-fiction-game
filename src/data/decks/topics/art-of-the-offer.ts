@@ -471,13 +471,6 @@ export const artOfTheOfferDeck: Deck = {
       "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/vaccine-administration.html"
     },
     {
-      "id": "cdc-covid-clinical",
-      "publisher": "CDC",
-      "shortDisplayLine": "CDC · COVID-19 vaccine considerations",
-      "accessedDate": "2026-09-06",
-      "url": "https://www.cdc.gov/vaccines/covid-19/clinical-considerations/interim-considerations-us.html"
-    },
-    {
       "id": "cdc-shingles-clinical",
       "publisher": "CDC",
       "shortDisplayLine": "CDC · Shingles vaccine recommendations",
@@ -511,13 +504,6 @@ export const artOfTheOfferDeck: Deck = {
       "shortDisplayLine": "CDC · Shingles clinical overview",
       "accessedDate": "2026-09-06",
       "url": "https://www.cdc.gov/shingles/hcp/clinical-overview/index.html"
-    },
-    {
-      "id": "cdc-covid-benefits",
-      "publisher": "CDC",
-      "shortDisplayLine": "CDC · Benefits of COVID-19 vaccination",
-      "accessedDate": "2026-09-29",
-      "url": "https://www.cdc.gov/covid/vaccines/benefits.html"
     },
     {
       "id": "cdc-maternal-vaccines",
@@ -567,13 +553,6 @@ export const artOfTheOfferDeck: Deck = {
       "shortDisplayLine": "CDC · Timing and spacing of immunobiologics",
       "accessedDate": "2026-09-29",
       "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html"
-    },
-    {
-      "id": "cdc-covid-faq",
-      "publisher": "CDC",
-      "shortDisplayLine": "CDC · Staying up to date with COVID-19 vaccines",
-      "accessedDate": "2026-09-29",
-      "url": "https://www.cdc.gov/covid/vaccines/stay-up-to-date.html"
     },
     {
       "id": "cdc-hepb-adults",
@@ -659,32 +638,6 @@ export const artOfTheOfferDeck: Deck = {
         "I will inject both right together in this arm so the other arm stays free."
       ],
       "bestIndex": 0
-    },
-    {
-      "id": "q3",
-      "index": 3,
-      "kind": "which-patient",
-      "reply": true,
-      "statement": "A patient worries two shots together will overwhelm their immune system. What's the better reply?",
-      "reveal": "CDC guidance and clinical trials confirm that co-administering COVID-19 and seasonal influenza vaccines generates protective antibody levels comparable to separate administration, with similar safety profiles.",
-      "takeaway": "Simultaneous administration produces robust immune responses without immune overload.",
-      "topicCue": "Co-administration",
-      "authoringId": "q3",
-      "layoutFamily": "comparison",
-      "imageRequirementId": "plate-q03",
-      "teachingRole": "misconception",
-      "discussionPrompt": "What everyday analogy helps patients understand that two vaccines do not overload the immune system?",
-      "patientConversation": "Your immune system processes millions of antigens every day, and these two vaccines work safely together.",
-      "presenterNote": "Remind the audience of the immense antigen-processing capacity of the human immune system.",
-      "sourceIds": [
-        "cdc-covid-clinical"
-      ],
-      "scenario": "A 52-year-old scheduled for a COVID-19 vaccine asks whether receiving their seasonal influenza shot at the same visit overloads the immune system.",
-      "choices": [
-        "Getting two shots at once might overwhelm your body, so come back next week.",
-        "Your immune system easily handles both vaccines together with full protection."
-      ],
-      "bestIndex": 1
     },
     {
       "id": "q4",
@@ -817,32 +770,6 @@ export const artOfTheOfferDeck: Deck = {
         "If you run marathons and eat clean, you probably do not need the shingles shot."
       ],
       "bestIndex": 0
-    },
-    {
-      "id": "q9",
-      "index": 9,
-      "kind": "which-patient",
-      "reply": true,
-      "statement": "A patient says a past infection is protection enough. What's the better reply?",
-      "reveal": "CDC says the COVID-19 vaccine lowers the risk of severe illness, hospitalization and death. That protection adds to any protection from past infections.",
-      "takeaway": "The vaccine adds to what a past infection left behind.",
-      "topicCue": "Objection: Prior Infection",
-      "authoringId": "q9",
-      "layoutFamily": "comparison",
-      "imageRequirementId": "plate-q09",
-      "teachingRole": "consequence",
-      "discussionPrompt": "How do you explain, at the counter, that the vaccine adds to protection from a past infection?",
-      "patientConversation": "Protection from a past infection fades over time, and the updated vaccine is made for the strains going around now.",
-      "presenterNote": "Acknowledge prior infection without treating it as permanent complete defense.",
-      "sourceIds": [
-        "cdc-covid-benefits"
-      ],
-      "scenario": "A 38-year-old declines updated COVID-19 vaccination, claiming natural immunity acquired from an infection eight months ago provides lasting, robust protection.",
-      "choices": [
-        "Natural infection gives permanent immunity, so a booster does not add anything.",
-        "The vaccine adds protection on top of what a past infection gave you."
-      ],
-      "bestIndex": 1
     },
     {
       "id": "q10",
@@ -1046,38 +973,6 @@ export const artOfTheOfferDeck: Deck = {
         "Your first dose still counts, so we just give your second shot today to finish."
       ],
       "bestIndex": 1
-    },
-    {
-      "id": "q17",
-      "index": 17,
-      "kind": "which-patient",
-      "reply": true,
-      "statement": "A patient recovering from COVID-19 asks when to get their next COVID-19 vaccine. What's the better reply?",
-      "reveal": "CDC says people who recently had COVID-19 may delay their next vaccine for 3 months after symptoms started or after a positive test. Getting COVID-19 again is less likely in the weeks to months after an infection.",
-      "takeaway": "After COVID-19, the next shot can wait up to 3 months.",
-      "topicCue": "Timing: Post-Infection",
-      "authoringId": "q17",
-      "layoutFamily": "timeline",
-      "imageRequirementId": "plate-q17",
-      "teachingRole": "surprise",
-      "discussionPrompt": "How do you explain that waiting after COVID-19 is an option, not a rule?",
-      "patientConversation": "Now that you’ve recovered, you can get your dose now or wait up to 3 months, since getting COVID-19 again is less likely soon after an infection.",
-      "presenterNote": "Frame the 3-month wait as an option CDC allows, not a rule.",
-      "sourceIds": [
-        "cdc-covid-faq"
-      ],
-      "revealEmphasis": [
-        "3 months"
-      ],
-      "takeawayEmphasis": [
-        "3 months"
-      ],
-      "scenario": "A 48-year-old testing negative after symptomatic SARS-CoV-2 illness two weeks ago asks when they can receive an updated seasonal COVID-19 vaccine.",
-      "choices": [
-        "You can get it now, or wait up to 3 months, since reinfection is less likely soon after COVID-19.",
-        "You are strictly forbidden from receiving any COVID-19 shot for at least a year."
-      ],
-      "bestIndex": 0
     },
     {
       "id": "q18",

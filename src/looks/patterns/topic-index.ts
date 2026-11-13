@@ -75,7 +75,6 @@ export const STEM_FAMILY: Readonly<Record<string, PatternFamilyId>> = {
   "339eccf8": "newborns", // vax-or-fiction:q32
   "a5117b0c": "one-visit", // art-of-the-offer:q1
   "881af114": "one-visit", // art-of-the-offer:q2
-  "d0bb40f6": "one-visit", // art-of-the-offer:q3
   "802f6a1f": "one-visit", // art-of-the-offer:q4
   "6b89d858": "one-visit", // art-of-the-offer:q5
   "a04ca08c": "one-visit", // art-of-the-offer:q6
@@ -83,16 +82,13 @@ export const STEM_FAMILY: Readonly<Record<string, PatternFamilyId>> = {
   "d0516137": "one-visit", // co-administration:q2
   "ed3eadd8": "one-visit", // co-administration:q3
   "871306e1": "one-visit", // co-administration:q4
-  "935e5d41": "one-visit", // co-administration:q6
   "684c7311": "one-visit", // co-administration:q7
   "1c96cefb": "one-visit", // flagship:q8 flagship-r2:q8
   "e913b5f7": "one-visit", // rsv:q8
-  "beee8869": "one-visit", // season-2:q8
   "cd95424c": "one-visit", // season-2:q19
   "65f5a928": "one-visit", // vax-or-fiction:q17
   "413dbd64": "pneumococcal", // flagship:q10 flagship-r2:q10
   "332ba5cd": "pneumococcal", // pneumococcal:q1
-  "d0b7501a": "pneumococcal", // pneumococcal:q2
   "e1182bb1": "pneumococcal", // pneumococcal:q3
   "c93e4620": "pneumococcal", // pneumococcal:q4
   "38b759fa": "pneumococcal", // pneumococcal:q5
@@ -146,10 +142,8 @@ export const STEM_FAMILY: Readonly<Record<string, PatternFamilyId>> = {
   "33d2f11a": "tetanus", // tdap:q8
   "4e3fb1a1": "tetanus", // vax-or-fiction:q27
   "aa200963": "tetanus", // vax-or-fiction:q31
-  "4adfbf48": "what-to-say", // art-of-the-offer:q9
   "84fa1260": "what-to-say", // art-of-the-offer:q11
   "e5b7599b": "what-to-say", // art-of-the-offer:q16
-  "7961a8e8": "what-to-say", // art-of-the-offer:q17
   "2cf96e05": "what-to-say", // co-administration:q5
   "51b41603": "what-to-say", // co-administration:q8
   "f918442a": "what-to-say", // vax-or-fiction:q15

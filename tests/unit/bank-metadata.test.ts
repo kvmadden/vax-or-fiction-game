@@ -52,7 +52,7 @@ function deckLookup(): Map<string, { deck: string, question: Record<string, unkn
   return map;
 }
 
-test('BANK_METADATA_COVERAGE: 150 records, 180 appearances, one record per deck question', async () => {
+test('BANK_METADATA_COVERAGE: 144 records, 174 appearances, one record per deck question', async () => {
   const decks = new Map<string, Record<string, unknown>[]>();
   for (const deck of BUNDLED_DECKS) decks.set(deck.id, deck.questions as unknown as Record<string, unknown>[]);
   for (const [id, load] of Object.entries(SOLO_DECKS)) decks.set(id, (await load()).questions as unknown as Record<string, unknown>[]);
@@ -74,8 +74,8 @@ test('BANK_METADATA_COVERAGE: 150 records, 180 appearances, one record per deck 
   const orphanCopies = [...byCopy.entries()].filter(([copyId]) => !decks.get(copyId.split(':')[0]!)?.some((q) => `${copyId.split(':')[0]}:${q.id as string}` === copyId));
 
   console.log(`BANK_METADATA_COVERAGE records=${records.length} appearances=${appearances} decks=${decks.size}`);
-  assert.ok(records.length >= 150, `expected at least 150 records, found ${records.length}`);
-  assert.ok(appearances >= 180, `expected at least 180 appearances, found ${appearances}`);
+  assert.ok(records.length >= 144, `expected at least 144 records, found ${records.length}`);
+  assert.ok(appearances >= 174, `expected at least 174 appearances, found ${appearances}`);
   assert.deepEqual(unmapped, [], 'every deck question must map to exactly one record through bankId or copies');
   assert.deepEqual(orphanCopies, [], 'every record must map to at least one real deck question');
 });
@@ -193,7 +193,7 @@ test('Final level: every record and every runtime entry carries a final difficul
   const runtime = Object.entries(BANK_META);
   const runtimeFinal = runtime.filter(([, meta]) => DIFFICULTY_LEVELS.has(meta.difficulty));
   console.log(`BANK_DIFFICULTY_COVERAGE final=${final.length} records=${records.length} runtimeFinal=${runtimeFinal.length} runtime=${runtime.length}`);
-  assert.ok(records.length >= 150, `expected at least 150 records, found ${records.length}`);
+  assert.ok(records.length >= 144, `expected at least 144 records, found ${records.length}`);
   assert.deepEqual(records.filter((r) => !final.includes(r)).map((r) => r.bankId), [], 'every record needs a final difficulty level');
   assert.equal(runtime.length, records.length, 'the runtime slice must carry one entry per record');
   assert.deepEqual(runtime.filter(([, meta]) => !DIFFICULTY_LEVELS.has(meta.difficulty)).map(([id]) => id), [], 'every runtime entry needs a final difficulty level');
@@ -274,7 +274,6 @@ test('Adjudicated tags, populations and volatility remain attached to their bank
     'influenza:q3': ['precaution', 'safety'],
     'influenza:q4': ['misconception', 'safety'],
     'influenza:q8': ['misconception', 'effectiveness'],
-    'pneumococcal:q2': ['misconception', 'effectiveness'],
     'hpv:q4': ['eligibility', 'schedule'],
     'hpv:q6': ['misconception'],
   };
@@ -282,7 +281,7 @@ test('Adjudicated tags, populations and volatility remain attached to their bank
   assert.deepEqual(byId.get('vax-or-fiction:q23')?.populations, ['adults-19-49']);
   assert.deepEqual(byId.get('vax-or-fiction:q32')?.populations, ['pregnancy', 'infants']);
   assert.deepEqual(byId.get('hpv:q4')?.populations, ['adults-19-49']);
-  for (const id of ['vax-or-fiction:q10', 'vax-or-fiction:q12', 'season-2:q19', 'art-of-the-offer:q17']) {
+  for (const id of ['vax-or-fiction:q10', 'vax-or-fiction:q12', 'season-2:q19']) {
     assert.deepEqual(byId.get(id)?.populations, ['adults-19-49', 'adults-50-64', 'adults-65-plus'], id);
   }
   assert.deepEqual(byId.get('season-2:q18')?.populations, ['adults-19-49']);

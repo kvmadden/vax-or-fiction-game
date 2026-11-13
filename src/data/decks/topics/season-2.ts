@@ -534,13 +534,6 @@ export const seasonTwoDeck: Deck = {
       "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination"
     },
     {
-      "id": "cdc-flu-coadministration",
-      "publisher": "CDC",
-      "shortDisplayLine": "CDC · Flu and COVID-19 vaccine coadministration",
-      "accessedDate": "2026-09-29",
-      "url": "https://www.cdc.gov/flu/vaccines/coadministration.html"
-    },
-    {
       "id": "cdc-hpv-acip-recommendations",
       "publisher": "CDC Pink Book",
       "shortDisplayLine": "CDC Pink Book · HPV chapter",
@@ -624,13 +617,6 @@ export const seasonTwoDeck: Deck = {
       "accessedDate": "2026-09-29",
       "url": "https://www.cdc.gov/vaccines-adults/reasons/index.html"
     },
-    {
-      "id": "cdc-timing-spacing-immunobiologics",
-      "publisher": "CDC",
-      "shortDisplayLine": "CDC · Timing and spacing of immunobiologics",
-      "accessedDate": "2026-09-29",
-      "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html"
-    }
   ],
   "questions": [
     {
@@ -777,27 +763,6 @@ export const seasonTwoDeck: Deck = {
       "presenterNote": "Celebrate historical eradication as proof of what sustained population vaccination achieves.",
       "sourceIds": [
         "who-smallpox-history"
-      ]
-    },
-    {
-      "id": "q8",
-      "index": 8,
-      "kind": "binary",
-      "statement": "Receiving a flu shot and COVID-19 vaccine together weakens the response.",
-      "answer": false,
-      "reveal": "CDC says flu and COVID-19 vaccines can be given at the same visit, and studies support the safety of getting both. Its best practices add that, with some exceptions, vaccines given together produce immune responses similar to vaccines given apart.",
-      "takeaway": "Both shots in one visit is an option.",
-      "topicCue": "Co-administration",
-      "authoringId": "q8",
-      "layoutFamily": "comparison",
-      "imageRequirementId": "plate-q08",
-      "teachingRole": "applied",
-      "discussionPrompt": "What concerns do patients raise about two vaccines at once?",
-      "patientConversation": "You can get your flu and COVID-19 shots at the same visit, and studies support the safety of getting both.",
-      "presenterNote": "Emphasize that, with some exceptions, vaccines given together produce immune responses similar to vaccines given apart.",
-      "sourceIds": [
-        "cdc-flu-coadministration",
-        "cdc-timing-spacing-immunobiologics"
       ]
     },
     {
