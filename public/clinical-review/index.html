@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Clinical review | Vax or Fiction</title>
+<link rel="stylesheet" href="./review.css">
+<script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<main>
+<header>
+<p class="eyebrow">VAX OR FICTION / REVIEW WORKSPACE</p>
+<h1>Review the public eight-question round</h1>
+<p><strong>Clinical review by Kevin Madden, PharmD is pending.</strong> Kevin must review all eight questions and the opening, closing and presenter surfaces. No second independent review has been performed.</p>
+<a href="../showcase/index.html">Showcase evidence and limits</a>
+<p>Review the claim, game answer and cited evidence. Approve when ready, flag a correction with a note, or skip for later.</p>
+<p>Saved on this browser. Export after each session to keep a backup or move to another device. This unlisted page is not access protected.</p>
+<div class="tools">
+<button id="export">Export JSON</button>
+<label class="import">Import JSON<input id="import" type="file" accept=".json,application/json"></label>
+<label>Theme<select id="theme" aria-label="Theme"><option value="light">Light</option><option value="dark">Dark</option></select></label>
+</div>
+<p id="message" role="status" aria-live="polite"></p>
+</header>
+<section class="progress" aria-label="Review progress">
+<strong id="counts">Loading live questions…</strong>
+<progress id="progress" max="1" value="0" aria-label="Approved questions"></progress>
+<div class="tools">
+<label>Topic<select id="topic"><option value="all">All topics</option></select></label>
+<label>Show<select id="filter"><option value="all">All decisions</option><option value="pending">Not approved</option><option value="unseen">Unreviewed</option><option value="flagged">Flagged</option><option value="skipped">Skipped</option><option value="approved">Approved</option></select></label>
+</div>
+</section>
+<div id="questions"></div>
+</main>
+</body>
+</html>

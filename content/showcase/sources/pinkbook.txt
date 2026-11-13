@@ -1,0 +1,402 @@
+Chapter 12: Influenza | Pink Book | CDC
+Skip directly to site content
+Skip directly to search
+An official website of the United States government
+Here's how you know
+Official websites use .gov
+A .gov website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Epidemiology and Prevention of Vaccine-Preventable Diseases
+Explore This Topic
+Search
+Search
+Clear
+Search
+More from CDC
+Health Topics A-Z
+Outbreaks
+About CDC
+Health Topics A-Z
+Home
+search
+clear
+search
+Pink Book
+Menu
+clear
+search
+More from CDC
+More from CDC
+Health Topics A-Z
+Outbreaks
+About CDC
+Pink Book
+Chapter 12: Influenza
+For Health Care Providers
+Apr. 1, 2024
+At a glance
+Chapter author: Elisha Hall, PhD, RD
+Summary: This chapter discusses pathogenesis, clinical features, epidemiology, vaccination, and surveillance of influenza.
+Introduction
+Keep in mind
+The 14th edition of the "Pink Book" was published August 2021. Vaccine-specific recommendations may be outdated. Refer to the CDC website for updated Influenza Vaccination Information for Healthcare Professionals.
+Influenza
+Viral illness
+First pandemic in 1580
+Estimated 21 million deaths worldwide in pandemic of 1918-1919
+Influenza A and B viruses isolated in the 1930s
+Inactivated vaccines first developed and used in the late 1930s and 1940s
+Influenza is an infectious viral illness. The name "influenza" originated in 15th century Italy, from an epidemic attributed to "influence of the stars." The first documented pandemic, or worldwide epidemic, that clearly fits the description of influenza was in 1580. At least four pandemics of influenza occurred in the 19th century, three in the 20th century, and one thus far in the 21st century. The pandemic of "Spanish" influenza in 1918–1919 caused an estimated 21 million deaths worldwide.
+Wilson Smith, Christopher Andrewes, and Patrick Laidlaw isolated influenza A virus in ferrets in 1933, and Thomas Francis Jr. isolated influenza B virus in 1936. Also in 1936, Macfarlane Burnet discovered that influenza virus could be grown in embryonated hens' eggs. This led to the study of the virus's characteristics and the development and use of inactivated vaccines in the late 1930s and 1940s. The protective efficacy of these inactivated vaccines was demonstrated in the 1950s. The first live, attenuated influenza vaccine was licensed in 2003. A non-live, recombinant influenza virus vaccine not requiring isolation or growth in hen's eggs was licensed in 2013.
+Influenza Virus
+Influenza Virus
+Single-stranded RNA virus
+Orthomyxovirus family
+Three types affect humans: A, B, C
+Infection can be asymptomatic or result in mild to severe disease
+Influenza is a single-stranded, helically shaped, RNA virus of the orthomyxovirus family. Three types of influenza virus are known to affect humans: A, B, and C. Type A influenza has subtypes determined by the surface antigens hemagglutinin (HA) and neuraminidase (NA). There are 18 different H subtypes and 11 different N subtypes. Eight H subtypes (H1, H2, H3, H5, H6, H7, H9, H10) and six N subtypes (N1, N2, N6, N7, N8, and N9) have been detected in humans. Type B influenza is classified into two lineages: B/Yamagata and B/Victoria.
+Infection with influenza viruses can be asymptomatic or result in disease that ranges from mild to severe. Influenza B more commonly affects children. Influenza C is rarely reported as a cause of human illness, probably because most cases are subclinical. Influenza C has not been associated with epidemic disease.
+Antigenic Changes
+Antigenic Changes
+Antigenic drift
+Small mutations over time that result in novel strain
+Primary reason people can get influenza more than once
+May result in annual influenza epidemic
+Antigenic
+Abrupt, major change in surface antigen(s)
+May lead to pandemic (rare)
+Virus surface antigens hemagglutinin and neuraminidase continually change. Changes in influenza viruses can take the form of antigenic drift or antigenic shift.
+Antigenic drift involves small mutations in the genes of influenza viruses that lead to changes in HA and NA that accumulate over time, resulting in the emergence of novel strains that the human immune system may not recognize. These novel strains are the influenza virus's evolutionary adaptations to a strong population-wide immune response. Antigenic drift is the primary reason people can get influenza more than once and why it is necessary to annually review and update the composition of influenza vaccines. Antigenic drift, along with waning immunity, results in annual influenza epidemics, since the protection that remains from past exposures to similar viruses is incomplete. Drift occurs in all three types of influenza virus (A, B, C).
+Antigenic shift involves an abrupt, major change in one or both surface antigens (H or H-N combination). Antigenic shifts are probably due to genetic recombination (an exchange of a gene segment) between influenza A viruses that affect humans and/or animals. An antigenic shift may result in a worldwide pandemic if the virus is efficiently transmitted from person to person. Pandemics are rare; since the late 19th century, five antigenic shifts have led to pandemics in 1889-1891, 1918-1920, 1957-1958, 1968-1969, and 2009-2010.
+Pathogenesis
+Influenza Pathogenesis
+Respiratory transmission
+Replication in respiratory epithelium with subsequent destruction of cells
+Viremia rarely documented
+Virus shed in respiratory secretions for 5–10 days
+Following respiratory transmission, the virus attaches to and penetrates respiratory epithelial cells in the trachea and bronchi. Viral replication occurs, which results in the destruction of the host cell. Regeneration of epithelium takes about 3 to 4 weeks. Viremia, or presence of virus in the blood, has rarely been documented. Virus is shed in respiratory secretions for 5 to 10 days, with a peak of 1 to 3 days following illness onset.
+Clinical Features
+Influenza Clinical Features
+Incubation period 2 days (range, 1–4 days)
+About 8% of U.S. population gets sick each season
+Sudden onset of symptoms
+Respiratory: cough, sore throat, runny or stuffy nose
+Systemic: fever, chills, headache, malaise, myalgia
+Gastrointestinal: vomiting, diarrhea
+Rapid recovery
+The incubation period for influenza is usually 2 days but can vary from 1 to 4 days. Influenza illness can range from asymptomatic to severe infection. On average, about 8% of the U.S. population gets sick from influenza each season (range between 3% and 11%).
+Onset of influenza symptoms is sudden. Respiratory symptoms include cough, sore throat, and runny or stuffy nose. Systemic symptoms generally include fever, chills, headache, malaise, and myalgia. Vomiting and diarrhea may also occur, especially in children. Recovery is rapid; fever usually resolves within 3 to 4 days and other symptoms within approximately 7 days. Some patients may have lingering asthenia (lack of strength or energy) for several weeks. See more information.
+Influenza symptoms (e.g., pain and fever) can be controlled with medications such as aspirin, ibuprofen, or acetaminophen. Aspirin and salicylate-containing products should not be used for children or adolescents because it may increase the risk for developing Reye syndrome.
+Complications
+Influenza Complications
+Secondary bacterial pneumonia
+Exacerbations of underlying respiratory conditions
+Otitis media
+Laryngotracheobronchitis
+Bronchitis
+Other less common complications may occur
+People most at risk of developing serious influenza-related complications include people age 65 years and older, people with chronic medical conditions (e.g., heart disease or diabetes), pregnant women, and young children, especially those younger than age 2 years. More common complications of influenza include secondary bacterial pneumonia (e.g., Streptococcus pneumoniae, Haemophilus influenzae, or Staphylococcus aureus), exacerbations of underlying respiratory conditions, otitis media, laryngotracheobronchitis, and bronchitis.
+Other complications may include primary pneumonia, encephalitis, aseptic meningitis, transverse myelitis, myocarditis, pericarditis, Guillain-Barré syndrome, and Reye Syndrome. Reye syndrome is a complication that occurs almost exclusively in children taking aspirin, primarily in association with influenza B virus (or varicella zoster virus), and presents with severe vomiting and confusion, which may progress to coma due to swelling of the brain.
+Most deaths due to influenza typically occur among persons age 65 years and older.
+Medical Management
+Vaccination is the principal means for preventing influenza-related morbidity and mortality, however antiviral agents may be indicated in some situations for preventing and/or treating influenza. Current recommendations and a decision tree for clinicians is available for making antiviral decisions.
+Laboratory Testing
+Influenza is usually suspected based on characteristic clinical findings, particularly if influenza has been reported in the community. Influenza virus testing is not required to make a clinical diagnosis but can inform clinical management when results may influence decisions to initiate antiviral treatment, perform other diagnostic testing, or implement infection and prevention control measures. Diagnostic tests include:
+Molecular assays (i.e., rapid molecular assays, reverse transcription polymerase chain reaction (RT-PCR), and other nucleic acid amplification tests)
+Antigen detection tests (i.e., rapid influenza diagnostic tests and immunofluorescence assays)
+Approved respiratory tract specimens differ among the FDA-cleared influenza tests, so clinicians should refer to the specific test's package insert for approved respiratory specimens.
+In addition to diagnostic testing for only influenza virus, the Flu SC2 Multiplex Assay is a real-time RT-PCR test that detects and differentiates RNA from SARS-CoV2, influenza A virus, and influenza B virus in upper or lower respiratory specimens.
+Serology testing is no longer used for clinical diagnosis of influenza but is still used for research studies.
+See information for health care providers on influenza virus testing. See details about the laboratory diagnosis of influenza.
+Epidemiology
+Influenza Epidemiology
+Reservoir
+Type A infects humans and some animals
+Type B generally infects humans
+Type C infects only humans
+Transmission
+Person-to-person via large droplets
+Aerosol transmission of small droplets
+Exposure to fomites
+Temporal pattern
+October–April or May in northern hemisphere
+April–September in southern hemisphere
+Year round in tropical climates
+Communicability
+1 day before to 5 to 7 days after (adults) or 10 days after onset (children)
+Occurence
+Influenza occurs throughout the world.
+Reservoir
+Humans are the only known reservoir of influenza type C. Influenza B generally infects humans, but at least two reports have documented influenza B in seals. Influenza A viruses may infect both humans and some animals. Examples of animals include, but are not limited to, wild birds, poultry, pigs, horses, mink, and ferrets. There is no chronic carrier state.
+Transmission
+Influenza is primarily transmitted from person to person via large, virus-laden droplets (more than 5 microns in diameter) that are generated when infected persons cough or sneeze. These large droplets can then settle on the mucosal surfaces of the upper respiratory tracts of susceptible persons who are within six feet of infected persons. Aerosol transmission of small droplets may also transmit influenza. Transmission may occur through direct or indirect contact with respiratory secretions, such as when touching surfaces contaminated with influenza virus and then touching the eyes, nose, or mouth.
+Temporal Pattern
+In the Northern Hemisphere, influenza season can begin as early as October and last as late as April or May, while in the Southern Hemisphere, the season typically occurs during April-September. Influenza occurs throughout the year in tropical areas. In the United States, for 75% of influenza seasons from the 1982–1983 through the 2017–2018 season, peak influenza activity has not occurred until January or later. In 58% of seasons, the peak was in February or later.
+Communicability
+Adults can transmit influenza from the day before symptom onset to approximately 5 to 7 days after symptoms begin. Children can transmit influenza to others for 10 or more days after symptoms begin.
+Secular Trends in the United States
+Influenza Secular Trends in the United States
+9.3 to 45 million people experience symptomatic illness annually
+Annual average of 37,463 influenza-associated deaths since 2010
+Groups at risk for complications and hospitalizations include: persons age 65 years and older, pregnant and post-partum women, children younger than age 5 years, and persons with certain underlying medical conditions
+Causes more hospitalization among young children than any other vaccine-preventable disease
+Symptomatic illness of influenza is common. CDC estimates that between 9.3 million and 45 million people experience symptomatic illness annually. An increase in mortality typically accompanies each annual influenza season. Increased mortality results not only from influenza and pneumonia, but also from cardiopulmonary and other chronic diseases that can be exacerbated by influenza.
+The number of influenza-associated deaths varies substantially by year, influenza virus type and subtype, and age group. Since 2010, CDC estimates the number of annual influenza-associated deaths has ranged from a low of 12,447 (2011–2012 season) to a high of 61,099 (2017–2018 season), with an average of 37,463 influenza-associated deaths annually. Persons age 65 years and older account for approximately 80% of deaths attributed to influenza. While relatively rare, some children die from influenza each year. The 2019-2020 influenza season marked the highest recorded number for pediatric influenza deaths during a regular season at 189 reported pediatric influenza deaths.
+The risk for complications and hospitalizations from influenza is higher among persons age 65 years and older, pregnant and post-partum women, children younger than age 5 years, and persons of any age with certain underlying medical conditions. Since 2010, an average of more than 445,000 hospitalizations per year have been related to influenza, with about 38% occurring in persons younger than age 65 years.
+Influenza causes more hospitalizations among young children than any other vaccine-preventable disease. CDC estimates that since 2010, influenza-related hospitalizations among U.S. children younger than age 5 years have ranged from 7,000 to 26,000 each year. Healthy children age 5 through 18 years are not at increased risk for influenza complications. However, children typically have the highest attack rates during community outbreaks of influenza and serve as a major source of influenza transmission within communities.
+During the 2019–2020 influenza season, 75.5% of children age 6 months–4 years and 64.6% of children age 5–12 years received the influenza vaccine. Coverage was 53.3% for adolescents age 13 through 17 years. Among adults age 18 through 64 years and age 65 years and older, 42.3% and 69.8% received the influenza vaccine, respectively. Coverage in all age groups increased from the 2018–2019 season, with the largest increase (3.3%) in adults age 18 through 64 years. During 2019–2020, 61.2% of pregnant women received influenza vaccination.
+CDC estimates that vaccination in the U.S. during 2010–2011 to 2017–2018 seasons averted an estimated 4.9 million symptomatic illnesses, 2.4 million medical visits, 70,000 hospitalizations, and 6,400 deaths. Adults age 65 years represented a majority of the averted deaths (80%) and hospitalizations (58%). Children age 6 months to 17 years represented 43% of averted symptomatic illness and 51% of averted medical visits.
+Pandemics
+Since the late 19th century, five antigenic shifts have led to pandemics. Typically during influenza pandemics, there are high attack rates involving all age groups, and mortality is usually markedly increased. Severity is generally not greater in the individual patient (except for during the 1918–1919 pandemic), but because large numbers of persons are infected, there will be a large number of severe and fatal cases. Onset may occur in any season of the year. Secondary and tertiary waves may occur up to two years later, usually in the winter.
+In January 2011, CDC estimated that the 2009 H1N1 caused illness in more than 60 million Americans, leading to more than 270,000 hospitalizations and 12,500 deaths. Contrary to typical seasons, ninety percent of hospitalizations and deaths occurred in persons younger than age 65 years.
+Influenza Vaccines
+Influenza Vaccines
+Vaccine composition reviewed and updated each year, see current information.
+Inactivated influenza vaccine (IIV)
+Live, attenuated influenza vaccine (LAIV)
+Recombinant influenza vaccine (RIV)
+Vaccine composition is reviewed and updated each year since the influenza virus is constantly changing. Considerations include which influenza viruses are causing illness, the extent to which viruses are spreading, and how well the previous season's vaccine protects against those viruses.
+Three types of influenza vaccine are available in the United States: inactivated influenza vaccine (IIV); live, attenuated influenza vaccine (LAIV); and recombinant influenza vaccine (RIV). Trivalent vaccine contains three inactivated viruses: type A(H1N1), type A(H3N2), and type B. Quadrivalent influenza vaccines were first introduced during the 2013–2014 season. They contain the same antigens as trivalent vaccines, with an additional type B strain.
+ACIP does not recommend use of any influenza vaccine outside the vaccine's FDA-approved age indication. Information about current influenza vaccines and recommendations from the Advisory Committee on Immunization Practices (ACIP) are updated annually. See current information
+Characteristics
+Influenza Vaccine Characteristics
+IIV
+Administered by intramuscular injection
+Multidose vials contain thimerosal
+Some products contain residual egg protein
+RIV
+Administered by intramuscular injection
+Does not contain egg protein
+LAIV
+Administered intranasally
+Contains residual egg protein
+Inactivated Influenza Vaccines (IIV)
+IIV has been available since the 1940s. Most influenza vaccines distributed in the United States are subvirion (split-virus) or subunit inactivated vaccines. IIV currently licensed and distributed in the United States is administered by the intramuscular route. Vaccines are available in multiple presentations (manufacturer-filled syringe, single-dose vials, and multidose vials) and in preservative-free formulations. Viruses for IIV are grown in either chicken eggs (egg-based) or cell culture (cell culture-based). The final products from egg-based IIV contain residual egg protein. Thimerosal may be used in some influenza vaccines as a preservative to prevent microbial growth. The FDA package inserts can be referenced annually for the most current influenza vaccine ingredients.
+Recombinant Influenza Vaccine (RIV)
+RIV was first approved for use in 2013. The RIV manufacturing process uses recombinant DNA technology and does not require an egg-grown vaccine virus. The resulting vaccine contains recombinant hemagglutinin.
+Live, Attenuated Influenza Vaccine (LAIV)
+LAIV was first approved for use in the United States in 2003. The vaccine viruses are grown in chicken eggs and the final product contains residual egg protein. The viruses are cold-adapted and replicate effectively in the mucosa of the nasopharynx. LAIV is administered intranasally. The vaccine is provided in a manufacturer-filled, single use, intranasal sprayer; half of the dose is sprayed into each nostril. Vaccinated children can shed vaccine viruses in nasopharyngeal secretions for up to 3 weeks. Transmission of shed LAIV viruses from vaccine recipients to unvaccinated persons has been documented but has not been reported to be associated with serious illness.
+Vaccination Schedule and Use
+Influenza Vaccination Schedule
+1 dose each influenza season for persons age 9 years or older
+1 or 2 doses each influenza season for children age 6 months through 8 years
+1 dose if 2 or more doses are documented prior to July 1
+2 doses administered at least 4 weeks apart if 2 or more doses are not documented prior to July 1
+Refer to ACIP recommendations each season for most recent schedule
+Influenza vaccination is recommended annually for persons age 6 months and older who do not have contraindications. Vaccination is particularly important for persons at increased risk for severe illness and complications from influenza. When vaccine supply is limited, efforts should focus on delivering vaccination to high-risk groups who do not have contraindications. Emphasis should also be placed on vaccination of persons who live with or care for those who are at increased risk (e.g., healthcare personnel).
+Influenza activity can begin as early as October and last as late as April or May, but most frequently peaks in January. To ensure maximum protection, vaccination should be administered before the onset of influenza activity in the community. However, varied timing of onset, peak, and duration of influenza season, as well as potential vaccine-induced immunity waning, make it difficult to determine the ideal time to administer vaccine for each season. CDC recommends influenza vaccination by the end of October. However, vaccine should continue to be offered throughout the influenza season, even into January or later. Getting vaccinated early (e.g., July or August) is likely to be associated with reduced protection against influenza infection later in the influenza season, particularly among older adults.
+IIV and RIV should be administered by intramuscular injection. Both IIV and RIV may be administered on the same day or any time before or after other inactivated vaccines or live vaccines. If given on the same day with other injectable vaccines, the vaccines should be administered at separate anatomic sites. LAIV should be administered intranasally. It may be given on the same day with other live or inactivated vaccines. If LAIV is not administered on the same day with other live vaccines, then at least 4 weeks should separate administration of LAIV and other live vaccines.
+Persons age 9 years or older should receive 1 dose of a licensed age-appropriate vaccine each influenza season. Children age 6 months through 8 years who do not have documentation showing receipt of 2 or more doses of any influenza vaccine prior to July 1 should receive 2 doses of a licensed age-appropriate vaccine. This 2-dose series should be administered at least 4 weeks apart.
+Immunogenicity and Vaccine Efficacy
+Influenza Vaccine Efficacy
+Duration of immunity less than one year due to waning and antigenic drift
+40% to 60% effective in reducing the risk of influenza
+Effectiveness depends on similarity of vaccine strain(s) to circulating strain(s), age and health status of recipient, and type of vaccine administered
+For practical purposes, the duration of immunity following influenza vaccination is less than one year because of vaccine-induced antibody waning and antigenic drift of circulating influenza viruses. Influenza vaccine effectiveness depends on many factors including the similarity of the vaccine strain(s) to the circulating strain(s), the age and health status of the recipient, and the type of vaccine administered. Vaccination is effective in reducing the risk of influenza illness by 40% to 60% in the overall population when vaccine strains and circulating viruses are similar. However, the vaccine can be less effective in preventing illness among persons age 65 years and older.
+During the 2010–2011 to 2018–2019 influenza seasons, adjusted overall vaccine efficacy has ranged from 19% to 60% in patients age 6 months and older. Circulating A/H3N2 influenza viruses drifted significantly after strain selection for the 2014–2015 vaccines, contributing to a lower vaccine efficacy of 19% during that season.
+Studies have demonstrated a variety of benefits to influenza vaccination, including fewer: Illnesses, medical visits, ICU and hospital admissions, and days in the ICU and hospital. Fewer deaths have been demonstrated only in children. Additionally, some studies show that severity of illness among vaccinated persons who become sick is reduced. Influenza vaccination has also been associated with positive outcomes for people with chronic health conditions (e.g., lower rates of cardiac events among people with heart disease) and pregnant women (e.g., reduced risk of hospitalization and acute respiratory infection).
+A number of influenza vaccines from different manufacturers are available each season. Where there is more than one influenza vaccine available that is appropriate for a given recipient, ACIP does not express a preference for any one vaccine over another.
+Contraindications and Precautions to Vaccination
+Influenza Vaccine Contraindications and Precautions (IIV and RIV)
+Contraindication
+Severe allergic reaction to vaccine component or following a prior dose
+Precaution
+Moderate or severe acute illness
+History of Guillain-Barré syndrome (GBS) within 6 weeks of receipt of influenza vaccine
+Refer to ACIP influenza vaccine recommendations for LAIV contraindications and precautions
+Inactivated Influenza Vaccine (IIV) and Recombinant Influenza Vaccine (RIV)
+As with other vaccines, a history of severe allergic reaction (anaphylaxis) to a vaccine component or following a prior dose is a contraindication to further doses. Moderate or severe acute illness (with or without fever) in a patient is considered a precaution to vaccination, although persons with minor illness may be vaccinated.
+History of Guillain-Barré syndrome within 6 weeks of receipt of influenza vaccine is a precaution to vaccination for all influenza vaccines licensed in the United States.
+Because vaccine composition is reviewed and updated each year, refer to ACIP's most recent recommendations for contraindications and precautions.
+Live, Attenuated Influenza Vaccine (LAIV)
+LAIV has additional contraindications and precautions. Refer to ACIP's most recent recommendations for LAIV contraindications and precautions.
+Vaccine Safety
+Influenza Vaccine Safety
+IIV
+Soreness, redness, tenderness, or swelling at the injection site is common
+No clear link with GBS; risk would be no more than 1 to 2 cases per million
+RIV
+Tenderness
+48%
+Pain
+37%
+Headache
+20%
+Fatigue
+17%
+Muscle pain
+13%
+LAIV
+Runny nose, nasal congestion (children)
+Sore throat, headache, tiredness/weakness, muscle aches, cough, chills, sinusitis (adults)
+Inactivated Influenza Vaccine (IIV)
+Studies support the safety of annual IIV vaccination in children and adults. Local reactions are the most common adverse reactions following vaccination with IIV. These include soreness, redness, tenderness, or swelling at the injection site. These reactions are transient, generally lasting 1 to 2 days. In clinical trials, pain at the injection site during the first week after vaccination occurred in up to 65% of people vaccinated with IIV.
+Nonspecific systemic symptoms, including fever, chills, malaise, and myalgia, occur less often. These symptoms usually occur in those with no previous exposure to the viral antigens in the vaccine. Symptoms usually occur within 6 to 12 hours of IIV vaccination and last 1 to 2 days. Recent reports indicate systemic symptoms are no more common after receipt of IIV than in persons given a placebo injection.
+In some influenza seasons, IIV has been associated with an increased risk for febrile seizures on the day of, and the day after vaccination in young children. Febrile seizure is more likely to occur if IIV is given on the same day as 13-valent pneumococcal conjugate vaccine (PCV13) and diphtheria, tetanus and acellular pertussis (DTaP) vaccines. Most febrile seizures are brief and have a good prognosis. ACIP reviewed the risks and benefits of febrile seizures after IIV and did not make any changes in the recommendations for administering pediatric vaccines; these vaccines can be given on the same day.
+Guillain-Barré syndrome (GBS), a serious neurological condition that can cause paralysis, is known to occur after multiple infectious illnesses, particularly gastrointestinal and upper respiratory infections. GBS is known to occur rarely after influenza illness. Safety monitoring of seasonal IIV over the course of many years has not detected a clear link to GBS. If there is a risk of GBS from IIV, it would be no more than 1 to 2 cases per million people vaccinated. Studies suggest that the risk of GBS after influenza illness is higher than the potential risk of developing GBS after vaccination.
+Recombinant Influenza Vaccine (RIV)
+Studies support the safety of RIV in adults. During the pre-licensure clinical trials for RIV, the most common injection-site reaction for adults age 18 through 49 years were tenderness (48%) and pain (37%); the most common solicited systemic adverse reactions were headache (20%), fatigue (17%), and muscle pain (13%). Two serious adverse events (pleuropericarditis and vasovagal syncope) were assessed as possibly related to RIV vaccination. After licensure, a review of reports to the Vaccine Adverse Event Reporting System (VAERS) from 2013–2016 found 88 reports; allergic reactions were the most common adverse event reported. Other adverse events reported were injection site reactions, fatigue, myalgia, headache, and fever. There were four serious reports but no death was reported.
+Live, Attenuated Influenza Vaccine (LAIV)
+Studies support the safety of LAIV. In pre-licensure clinical trials, the most common adverse reactions were runny nose or nasal congestion in all ages, fever in children age 2 through 6 years, and sore throat in adults. Clinical trials show LAIV4 has a safety profile similar to the previously used trivalent LAIV, with the exception of slightly more reports of fever after the first dose of LAIV4 compared to trivalent LAIV in children age 2 through 8 years who were getting vaccinated for the first time. In adults, other adverse events reported more often after LAIV than after placebo were headache, sore throat, tiredness/weakness, muscles aches, cough, chills, and sinusitis.
+Limited data are available concerning the safety of LAIV among persons at high risk for influenza complications, such as immunosuppressed persons or those with chronic pulmonary or cardiac disease. Therefore, persons at high risk of influenza complications should receive IIV rather than LAIV.
+Vaccination During Pregnancy
+Pregnant women are at an increased risk for severe illness and complications from influenza due to changes in immunologic, heart and lung function. In addition, some studies suggest influenza infection is associated with preterm delivery and fetal demise. ACIP and the American College of Obstetricians & Gynecologists recommend women who are pregnant, might be pregnant, or are up to two weeks postpartum during the influenza season should receive any licensed, age-appropriate IIV or RIV product. LAIV is contraindicated during pregnancy. Vaccination can occur at any time during pregnancy, before and during the influenza season.
+Vaccine Storage and Handling
+Influenza vaccines (IIV, RIV and LAIV) should be maintained at refrigerator temperature between 2°C and 8°C (36°F and 46°F). LAIV sprayers must be kept in the carton until use in order to protect from light. For complete information on best practices and recommendations, please refer to CDC's Vaccine Storage and Handling Toolkit [3 MB, 56 pages].
+Surveillance and Reporting of Influenza
+Influenza-associated deaths among children younger than age 18 years and human infection with a novel influenza A virus are nationally notifiable conditions reported through the National Notifiable Diseases Surveillance System (NNDSS). Other influenza virus infections are not nationally notifiable but may be reported in some states. Influenza surveillance in the U.S. consists of five categories of information, including viral, outpatient illness, mortality, and hospitalization surveillance, as well as summary of the geographic spread of influenza.
+Influenza surveillance is intended to monitor the prevalence of circulating strains and detect new strains necessary for vaccine formulation; estimate influenza-related impact on morbidity, mortality, and economic loss; rapidly detect outbreaks; and assist disease control through rapid preventive action (e.g., chemoprophylaxis of unvaccinated high-risk patients).
+For information on guidance for state and local health department staff who are involved in surveillance activities for vaccine-preventable diseases, please consult the Manual for the Surveillance of Vaccine-Preventable Diseases.
+Acknowledgements
+The editors would like to acknowledge Scott Epperson, Lisa Grohskopf, David Shay, Tom Shimabukuro, and Jerome Tokars for their contributions to this chapter.
+Selected References
+American Academy of Pediatrics. Influenza. In: Kimberlin D, Brady M, Jackson M, et al., eds. Red Book: 2018 Report of the Committee on Infectious Diseases. 31st ed. Itasca, IL: American Academy of Pediatrics; 2018:476–90.
+Arriola C, Garg S, Anderson E, et al. Influenza Vaccination Modifies Disease Severity Among Community-dwelling Adults Hospitalized With Influenza. Clin Infect Dis 2017;65(8):1289–97.
+Boni M. Vaccination and antigenic drift in influenza. Vaccine 2008;26(Suppl 3):C8–14.
+Bresee J, Fry A, Sambhara S, et al. Inactivated influenza vaccines. In: Plotkin S, Orenstein W, Offit P, et al., eds. Plotkin's Vaccines. 7th ed. Elsevier;2018:456–88.
+CDC. Disease Burden of Influenza. Accessed October 23, 2020.
+CDC. FluVaxView Interactive!. Accessed October 15, 2020.
+CDC. Influenza vaccination of health-care personnel. Recommendations of the Healthcare Infection Control Practices Advisory Committee (HICPAC) and the Advisory Committee on Immunization Practices (ACIP). MMWR 2006;55(No. RR02):1–16.
+CDC. Prevention and control of seasonal influenza with vaccines: recommendations of the Advisory Committee on Immunization Practices—United States, 2019–20. MMWR 2019;68(3):1–21.
+CDC. Prevention and control of seasonal influenza with vaccines: recommendations of the Advisory Committee on Immunization Practices—United States, 2017–18 influenza season. MMWR Recomm Rep 2017;66(2):1–22.
+CDC. Prevention and control of seasonal influenza with vaccines: recommendations of the Advisory Committee on Immunization Practices–United States, 2020-21 influenza season. MMWR 2020;69(8):1–24.
+CDC. Seasonal Influenza Vaccine Safety: A Summary for Clinicians. Accessed October 26, 2020.
+Duffy J, Weintraub E, Hambidge S. Febrile seizure risk after vaccination in children 6 to 23 months. Pediatrics 2016;130(1):e20160320.
+Ferdinands J, Olsho L, Agan A, et al. Effectiveness of Influenza Vaccine Against Life-threatening RT-PCR-confirmed Influenza Illness in US Children, 2010–2012. J Infect Dis 2014;210(5):674–83.
+Jhung M, Swerdlow D, Olsen S, et al. Epidemiology of 2009 pandemic influenza A (H1N1) in the United States. Clin Infect Dis 2011;52(suppl 1):S13–26.
+Luke C, Lakdawala S, Subbarao K. Influenza vaccine–live. In: Plotkin S, Orenstein W, Offit P, et al., eds. Plotkin's Vaccines. 7th ed. Elsevier;2018:489–510.
+Monto A, Ohmit S, Petrie J, et al. Comparative efficacy of inactivated and live attenuated influenza vaccines. N Engl J Med 2009;361:1260–7.
+Murphy K, Strunk R. Safe administration of influenza vaccine in asthmatic children hypersensitive to egg protein. J Pediatr 1985;106(6):931–3.
+Razzaghi H, Kahn K, Black C, et al. Influenza and Tdap vaccination coverage among pregnant women — United States, April 2020. MMWR 2020;69(39):1391-7.
+Rondy M, Omeiri N, Thompson M, et al. Effectiveness of influenza vaccines in preventing severe influenza illness among adults: A systematic review and meta-analysis of test-negative design case-control studies. J Infect 2017;75(5):381-94.
+Rongxia L, Stewart B, McNeil M. Post licensure surveillance of influenza vaccines in the Vaccine Safety Datalink in the 2013-2014 and 2014-2015 seasons. Pharmacoepidemiol Drug Saf 2016;25(8):928–34.
+Thompson M, Kwong J, Regan A, et al. Influenza Vaccine Effectiveness in Preventing Influenza-associated Hospitalizations During Pregnancy: A Multi-country Retrospective Test Negative Design Study, 2010–2016. Clin Infect Dis 2019;68(9):1444-53.
+Thompson M, Pierse N, Huan Q, et al. Influenza vaccine effectiveness in preventing influenza-associated intensive care admissions and attenuating severe disease among adults in New Zealand 2012–2015. Vaccine 2018;36(39):5916-25.
+Treanor J. Influenza viruses. In: Kaslow R, Stanberry L, Le Duc J, eds. Viral Infections of Humans Epidemiology and Control. 5th edition. Boston, MA: Springer;2014:455-78.
+Udell J, Zawi R, Bhatt D, et al. Association between influenza vaccination and cardiovascular outcomes in high-risk patients: a meta-analysis. JAMA 2013;310(16):1711-20.
+Walter E, Klein N, Wodi A. Fever after influenza, diphtheria-tetanus-acellular pertussis, and pneumococcal vaccinations. Pediatrics 2020;145(3):e20191909.
+Woo EJ, Moro PL, Cano M, Jankosky C. Postmarketing safety surveillance of trivalent recombinant influenza vaccine: Reports to the Vaccine Adverse Event Reporting System. Vaccine. 2017;35(42):5618-5621.
+On This Page
+Introduction
+Influenza Virus
+Pathogenesis
+Clinical Features
+Epidemiology
+Secular Trends in the United States
+Influenza Vaccines
+Vaccination Schedule and Use
+Contraindications and Precautions to Vaccination
+Vaccine Safety
+Vaccine Storage and Handling
+Surveillance and Reporting of Influenza
+Acknowledgements
+Selected References
+Apr. 1, 2024
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+National Center for Immunization and Respiratory Diseases (NCIRD); Immunization Services Division
+About This Page
+Published: July 16, 2024
+Updated: April 1, 2024
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed: August 18, 2021
+The information on this page was last reviewed by subject matter experts to ensure accuracy.
+Pink Book
+The Pink Book provides healthcare professionals with comprehensive information on routinely used vaccines and the diseases they prevent.
+View All
+Sign up for Email Updates
+Contact Us
+Contact Us
+Call 800-232-4636
+Contact CDC
+About CDC
+About CDC
+Pressroom
+Organization
+Budget & Funding
+Careers & Jobs
+Policies
+Accessibility
+External Links
+Privacy
+Web Policies
+FOIA
+OIG
+No Fear Act
+Nondiscrimination
+Vulnerability Disclosure Policy
+Languages
+Languages
+Español
+Language Assistance
+Español
+繁體中文
+Tiếng Việt
+한국어
+Tagalog
+Русский
+العربية
+Kreyòl Ayisyen
+Français
+Polski
+Português
+Italiano
+Deutsch
+日本語
+فارسی
+English
+Archive
+CDC Archive
+Public Health Publications
+Contact Us
+Contact Us
+Call 800-232-4636
+Contact CDC
+About CDC
+Pressroom
+Organization
+Budget & Funding
+Careers & Jobs
+About CDC
+Policies
+Accessibility
+External Links
+Privacy
+Web Policies
+FOIA
+OIG
+No Fear Act
+Nondiscrimination
+Vulnerability Disclosure Policy
+Languages
+Languages
+Español
+Language Assistance
+Español
+繁體中文
+Tiếng Việt
+한국어
+Tagalog
+Русский
+العربية
+Kreyòl Ayisyen
+Français
+Polski
+Português
+Italiano
+Deutsch
+日本語
+فارسی
+English
+Archive
+CDC Archive
+Public Health Publications
+HHS.gov
+USA.gov

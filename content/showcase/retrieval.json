@@ -1,0 +1,65 @@
+[
+  {
+    "id": "recommendations",
+    "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+    "resolvedUrl": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+    "status": 200,
+    "retrievedOn": "2026-11-01",
+    "sha256": "9bc7e323651892dce72f8539deff696c15db652bf50174582fdd671e7d70207a",
+    "file": "content/showcase/sources/recommendations.txt"
+  },
+  {
+    "id": "egg",
+    "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+    "resolvedUrl": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+    "status": 200,
+    "retrievedOn": "2026-11-01",
+    "sha256": "392da07cbd990838db36fb702eb92d75e217cce5b5f8ea5df3622e1ff8446339",
+    "file": "content/showcase/sources/egg.txt"
+  },
+  {
+    "id": "pinkbook",
+    "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-12-influenza.html",
+    "resolvedUrl": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-12-influenza.html",
+    "status": 200,
+    "retrievedOn": "2026-11-01",
+    "sha256": "fc37bf4ae3b5a66b268f208dbfcd4e923c68d95056345c37da734c5b7bd1923a",
+    "file": "content/showcase/sources/pinkbook.txt"
+  },
+  {
+    "id": "heart",
+    "url": "https://www.cdc.gov/flu/highrisk/heartdisease.html",
+    "resolvedUrl": "https://www.cdc.gov/flu/highrisk/heartdisease.html",
+    "status": 200,
+    "retrievedOn": "2026-11-01",
+    "sha256": "cc56b5409669371fe26c973ac4e1b3c89e3d92ea08b3e550f88362461d0d4779",
+    "file": "content/showcase/sources/heart.txt"
+  },
+  {
+    "id": "antivirals",
+    "url": "https://www.cdc.gov/flu/treatment/antiviral-drugs.html",
+    "resolvedUrl": "https://www.cdc.gov/flu/treatment/antiviral-drugs.html",
+    "status": 200,
+    "retrievedOn": "2026-11-01",
+    "sha256": "3fcc758460efcf702c2b86c24b5ad1504f45b9cb9e012a4e9de8154ddb926e2f",
+    "file": "content/showcase/sources/antivirals.txt"
+  },
+  {
+    "id": "rights",
+    "url": "https://www.cdc.gov/other/agencymaterials.html",
+    "resolvedUrl": "https://www.cdc.gov/other/agencymaterials.html",
+    "status": 200,
+    "retrievedOn": "2026-11-01",
+    "sha256": "d735e1c541d3a51ea34da09c01ccb6b4485909277bb0723a6a963d9544b3a3f5",
+    "file": "content/showcase/sources/rights.txt"
+  },
+  {
+    "id": "keyfacts",
+    "url": "https://www.cdc.gov/flu/vaccines/keyfacts.html",
+    "resolvedUrl": "https://www.cdc.gov/flu/vaccines/keyfacts.html",
+    "status": 200,
+    "retrievedOn": "2026-11-01",
+    "sha256": "2687127096253b71187d00b8baae0855c4b24b1fe730d7f9e5c0359308e1d6c2",
+    "file": "content/showcase/sources/keyfacts.txt"
+  }
+]

@@ -92,7 +92,7 @@
       "level": "easy",
       "source": "rubric",
       "rationale": "Raters agree. Knows annual flu vaccination is recommended for everyone 6 months and older, the most basic flu fact.",
-      "provisional": false,
+      "provisional": true,
       "ratings": [
         {
           "role": "rater-a",
@@ -117,11 +117,21 @@
     },
     "evidence": {
       "sourceIds": [
-        "cdc-flu-recs"
+        "cdc-keyfacts"
       ],
-      "claims": [],
-      "guidelineVersion": null,
-      "retrievedOn": null,
+      "claims": [
+        {
+          "id": "annual",
+          "role": "key",
+          "text": "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
+          "url": "https://www.cdc.gov/flu/vaccines/keyfacts.html",
+          "quote": "Everyone 6 months and older in the United States, with rare exception, should get a flu vaccine every season.",
+          "retrievedOn": "2026-11-01",
+          "pageUpdated": "2026-09-01"
+        }
+      ],
+      "guidelineVersion": "2026-09-01",
+      "retrievedOn": "2026-11-01",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -158,7 +168,7 @@
       "level": "easy",
       "source": "rubric",
       "rationale": "Agreed. Pharmacy teams give a preferred product to everyone 65 plus every flu season, a fact the room meets weekly in season.",
-      "provisional": false,
+      "provisional": true,
       "ratings": [
         {
           "role": "rater-a",
@@ -194,11 +204,21 @@
     },
     "evidence": {
       "sourceIds": [
-        "acip-older-adults"
+        "cdc-flu-recs"
       ],
-      "claims": [],
-      "guidelineVersion": null,
-      "retrievedOn": null,
+      "claims": [
+        {
+          "id": "older",
+          "role": "key",
+          "text": "For adults aged 65 and older, CDC preferentially recommends high-dose inactivated, recombinant, or adjuvanted influenza vaccine.",
+          "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+          "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).",
+          "retrievedOn": "2026-11-01",
+          "pageUpdated": "2026-09-01"
+        }
+      ],
+      "guidelineVersion": "Interim clinical considerations for the 2026-2027 influenza season, published September 1, 2026. CDC states July 2025 schedule recommendations remain in effect.",
+      "retrievedOn": "2026-11-01",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -236,7 +256,7 @@
       "level": "easy",
       "source": "rubric",
       "rationale": "Raters agree. Exclusively under prolonged inpatient observation is extreme wording no guidance uses, so it gives itself away.",
-      "provisional": false,
+      "provisional": true,
       "ratings": [
         {
           "role": "rater-a",
@@ -269,9 +289,19 @@
       "sourceIds": [
         "cdc-egg-allergy"
       ],
-      "claims": [],
-      "guidelineVersion": null,
-      "retrievedOn": null,
+      "claims": [
+        {
+          "id": "egg",
+          "role": "key",
+          "text": "Egg allergy alone requires no extra vaccine safety measures. Use a flu vaccine appropriate for the person’s age and health status, where allergic reactions can be recognized and treated.",
+          "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+          "quote": "People with egg allergy may receive any flu vaccine (egg-based or non-egg-based) that is otherwise appropriate for their age and health status.\nOverview\nBeginning with the 2023-2024 season, additional safety measures are no longer recommended for flu vaccination of people who are allergic to eggs beyond those recommended for receipt of any vaccine, regardless of the severity of previous reaction to egg. All vaccines should be administered in settings in which personnel and equipment needed for rapid recognition and treatment of allergic reactions are available.",
+          "retrievedOn": "2026-11-01",
+          "pageUpdated": "2024-09-17"
+        }
+      ],
+      "guidelineVersion": "2024-09-17",
+      "retrievedOn": "2026-11-01",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -310,7 +340,7 @@
       "level": "easy",
       "source": "rubric",
       "rationale": "Raters agree. The easy idea that a flu shot cannot give you flu, dressed in clinical words.",
-      "provisional": false,
+      "provisional": true,
       "ratings": [
         {
           "role": "rater-a",
@@ -339,11 +369,21 @@
     },
     "evidence": {
       "sourceIds": [
-        "cdc-pinkbook-flu"
+        "cdc-keyfacts"
       ],
-      "claims": [],
-      "guidelineVersion": null,
-      "retrievedOn": null,
+      "claims": [
+        {
+          "id": "biology",
+          "role": "key",
+          "text": "Flu shots contain inactivated virus or influenza proteins and cannot cause flu.",
+          "url": "https://www.cdc.gov/flu/vaccines/keyfacts.html",
+          "quote": "Flu vaccines that are given with a needle (flu shots) are currently made in two ways: the vaccine is made either with a) influenza vaccine viruses that have been killed (inactivated) and are therefore not infectious, or b) with proteins from an influenza virus (which is the case for recombinant influenza vaccine). Nasal spray vaccine is made with weakened (attenuated) live influenza viruses and also cannot cause flu illness. The weakened viruses are cold-adapted, which means they are designed to only reproduce at the cooler temperatures found within the nose. The viruses cannot reproduce in the lungs or other areas where warmer temperatures exist.",
+          "retrievedOn": "2026-11-01",
+          "pageUpdated": "2026-09-01"
+        }
+      ],
+      "guidelineVersion": "2026-09-01",
+      "retrievedOn": "2026-11-01",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -381,7 +421,7 @@
       "level": "easy",
       "source": "rubric",
       "rationale": "Raters agree. Knows September and October are the ideal flu vaccination months, a routine timing fact.",
-      "provisional": false,
+      "provisional": true,
       "ratings": [
         {
           "role": "rater-a",
@@ -410,9 +450,19 @@
       "sourceIds": [
         "cdc-flu-recs"
       ],
-      "claims": [],
-      "guidelineVersion": null,
-      "retrievedOn": null,
+      "claims": [
+        {
+          "id": "timing",
+          "role": "key",
+          "text": "For most people who need one dose, flu vaccination should ideally be offered in September or October.",
+          "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+          "quote": "For most persons who need only 1 dose of influenza vaccine for the season, vaccination should ideally be offered during September or October.",
+          "retrievedOn": "2026-11-01",
+          "pageUpdated": "2026-09-01"
+        }
+      ],
+      "guidelineVersion": "Interim clinical considerations for the 2026-2027 influenza season, published September 1, 2026. CDC states July 2025 schedule recommendations remain in effect.",
+      "retrievedOn": "2026-11-01",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -450,7 +500,7 @@
       "level": "medium",
       "source": "rubric",
       "rationale": "Agreed. Flu vaccination and fewer heart attacks is a common talking point that not all staff know. Scope doubt is a defect note.",
-      "provisional": false,
+      "provisional": true,
       "ratings": [
         {
           "role": "rater-a",
@@ -486,11 +536,21 @@
     },
     "evidence": {
       "sourceIds": [
-        "cdc-flu-recs"
+        "cdc-heart"
       ],
-      "claims": [],
-      "guidelineVersion": null,
-      "retrievedOn": null,
+      "claims": [
+        {
+          "id": "cardiac",
+          "role": "key",
+          "text": "Flu vaccination is associated with lower rates of some cardiac events among people with heart disease.",
+          "url": "https://www.cdc.gov/flu/highrisk/heartdisease.html",
+          "quote": "Flu vaccination has been associated with lower rates of some cardiac events among people with heart disease, especially among those who have had a cardiac event in the past year.",
+          "retrievedOn": "2026-11-01",
+          "pageUpdated": "2025-09-18"
+        }
+      ],
+      "guidelineVersion": "2025-09-18",
+      "retrievedOn": "2026-11-01",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -527,7 +587,7 @@
       "level": "easy",
       "source": "rubric",
       "rationale": "Raters agree. Knows a mild cold without fever does not delay a flu shot. Afebrile and nasal discharge are jargon.",
-      "provisional": false,
+      "provisional": true,
       "ratings": [
         {
           "role": "rater-a",
@@ -559,9 +619,19 @@
       "sourceIds": [
         "cdc-pinkbook-flu"
       ],
-      "claims": [],
-      "guidelineVersion": null,
-      "retrievedOn": null,
+      "claims": [
+        {
+          "id": "minor",
+          "role": "key",
+          "text": "People with minor illness may be vaccinated. Moderate or severe acute illness is a precaution.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-12-influenza.html",
+          "quote": "Moderate or severe acute illness (with or without fever) in a patient is considered a precaution to vaccination, although persons with minor illness may be vaccinated.",
+          "retrievedOn": "2026-11-01",
+          "pageUpdated": "2024-04-01"
+        }
+      ],
+      "guidelineVersion": "Pink Book 14th edition, August 2021. Page warns that vaccine recommendations may be outdated. Used only for minor illness, not current seasonal policy.",
+      "retrievedOn": "2026-11-01",
       "volatility": "seasonal",
       "reviewBy": "2027-09-28"
     },
@@ -600,7 +670,7 @@
       "level": "easy",
       "source": "rubric",
       "rationale": "Raters agree. Knows antivirals treat flu but do not replace vaccination, an obvious point for pharmacy staff.",
-      "provisional": false,
+      "provisional": true,
       "ratings": [
         {
           "role": "rater-a",
@@ -627,11 +697,21 @@
     },
     "evidence": {
       "sourceIds": [
-        "cdc-flu-recs"
+        "cdc-antivirals"
       ],
-      "claims": [],
-      "guidelineVersion": null,
-      "retrievedOn": null,
+      "claims": [
+        {
+          "id": "treatment",
+          "role": "key",
+          "text": "Antiviral drugs can treat flu but are not a substitute for a flu vaccine.",
+          "url": "https://www.cdc.gov/flu/treatment/antiviral-drugs.html",
+          "quote": "Antiviral drugs are not a substitute for getting a flu vaccine.",
+          "retrievedOn": "2026-11-01",
+          "pageUpdated": "2026-06-26"
+        }
+      ],
+      "guidelineVersion": "2026-06-26",
+      "retrievedOn": "2026-11-01",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
