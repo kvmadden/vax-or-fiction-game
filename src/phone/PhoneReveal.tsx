@@ -41,6 +41,10 @@ const REACTIONS = STAGE_REACTIONS;
 /** How long "Sent to the room" stays under the reactions after a tap (critique item 7). */
 export const REACTION_ACK_MS = 1500;
 
+// At 664px the takeaway is already visible; a jump button only pushes it further down.
+// The shorter 548px layout still needs a direct route past the sticky Next control.
+const SOLO_TAKEAWAY_JUMP_MAX_HEIGHT = 620;
+
 /**
  * One reaction per reveal: the tapped button fills gold, the others step back, and a reserved
  * line says "Sent to the room" for 1.5s. Keyed by the question instance so a new reveal starts clean.
@@ -76,6 +80,7 @@ export const PhoneReactions: React.FC<{ questionInstanceId?: string; onReaction:
 export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, question, attendee, onReaction, presentation, solo = false, className = '' }) => {
   // Read the height before the first paint, so a short phone never flashes the tall layout for a frame.
   const [compactViewport, setCompactViewport] = useState(() => typeof window !== 'undefined' && window.innerHeight < 700);
+  const [soloJumpViewport, setSoloJumpViewport] = useState(() => typeof window !== 'undefined' && window.innerHeight < SOLO_TAKEAWAY_JUMP_MAX_HEIGHT);
   const [compactPage, setCompactPage] = useState<'main' | 'reactions'>('main');
   const [orderResultPage, setOrderResultPage] = useState(0);
   const verdictHeadingRef = useRef<HTMLParagraphElement>(null);
@@ -86,7 +91,10 @@ export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, que
   const previousCompactPageRef = useRef<'main' | 'reactions'>('main');
   const focusedVerdictRef = useRef<string | null>(null);
   useEffect(() => {
-    const syncViewport = () => setCompactViewport(window.innerHeight < 700);
+    const syncViewport = () => {
+      setCompactViewport(window.innerHeight < 700);
+      setSoloJumpViewport(window.innerHeight < SOLO_TAKEAWAY_JUMP_MAX_HEIGHT);
+    };
     syncViewport();
     window.addEventListener('resize', syncViewport);
     return () => window.removeEventListener('resize', syncViewport);
@@ -228,7 +236,7 @@ export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, que
     {/* Only the short-phone solo reveal needs a jump to the lesson below its scroll fold.
         On taller screens the takeaway is already in view, so avoid a redundant button.
         Keep the keyboard-operable route and ordered-answer pagination on short phones. */}
-    {solo && compactViewport && mainVisible && showsVerdict && showsTakeaway && (!compactOrderResult || orderResultPage === resultStepCount - 1) ? (
+    {solo && soloJumpViewport && mainVisible && showsVerdict && showsTakeaway && (!compactOrderResult || orderResultPage === resultStepCount - 1) ? (
       <button
         type="button"
         data-action="jump-to-takeaway"
