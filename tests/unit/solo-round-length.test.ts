@@ -55,4 +55,18 @@ test('the topic list prints each count the dealer gives, and nothing before they
   assert.match(source, /await soloRoundLength\(topic\)/);
   assert.match(source, /counts=\{counts\}/);
   assert.doesNotMatch(source, /estimatedPlayableCount/);
+  // The points and all scoring copy remain accessible but no longer crowd the first topic choice.
+  const heading = source.indexOf('<h1 id="solo-topics-title"');
+  const disclosure = source.indexOf('<details className="solo-topics__scoring">');
+  const topicList = source.indexOf('<SoloTopicList ');
+  assert.ok(heading >= 0 && disclosure > heading && topicList > disclosure, 'a named scoring disclosure follows the topic heading');
+  // A topic can fail to load after its row has scrolled far down on a phone. Keep
+  // its unchanged alert above the choices and move keyboard focus to it on failure.
+  const errorAlert = source.indexOf('<p ref={errorRef} tabIndex={-1} className="solo-topics__error" role="alert">');
+  assert.ok(errorAlert > disclosure && errorAlert < topicList, 'topic load failure is announced before the long choice list');
+  assert.match(source, /if \(error\) errorRef\.current\?\.focus\(\)/, 'a failure is focused so the scroller reveals the alert');
+  assert.match(source, /<summary>How points work<\/summary>/);
+  assert.match(source, /<ul className="solo-topics__points" aria-label="How points work">/, 'the original score table is retained');
+  const css = readFileSync('src/styles/solo.css', 'utf8');
+  assert.match(css, /\.solo-topics__scoring > summary \{[^}]*min-height: var\(--kit-space-48\)/s, 'the disclosure has a full-size keyboard/touch target');
 });

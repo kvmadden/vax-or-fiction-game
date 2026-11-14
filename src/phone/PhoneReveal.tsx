@@ -41,11 +41,15 @@ const REACTIONS = STAGE_REACTIONS;
 /** How long "Sent to the room" stays under the reactions after a tap (critique item 7). */
 export const REACTION_ACK_MS = 1500;
 
+// At 664px the takeaway is already visible; a jump button only pushes it further down.
+// The shorter 548px layout still needs a direct route past the sticky Next control.
+const SOLO_TAKEAWAY_JUMP_MAX_HEIGHT = 620;
+
 /**
  * One reaction per reveal: the tapped button fills gold, the others step back, and a reserved
  * line says "Sent to the room" for 1.5s. Keyed by the question instance so a new reveal starts clean.
  */
-export const PhoneReactions: React.FC<{ questionInstanceId?: string; onReaction: (reaction: string) => void }> = ({ questionInstanceId, onReaction }) => {
+export const PhoneReactions: React.FC<{ questionInstanceId?: string; onReaction: (reaction: string) => void; onSent?: () => void }> = ({ questionInstanceId, onReaction, onSent }) => {
   const [sent, setSent] = useState<string | null>(() => readPhoneReaction(questionInstanceId));
   const [ackVisible, setAckVisible] = useState(false);
   useEffect(() => {
@@ -60,6 +64,8 @@ export const PhoneReactions: React.FC<{ questionInstanceId?: string; onReaction:
     writePhoneReaction(questionInstanceId, value);
     cuePhoneChrome();
     onReaction(value);
+    // Move focus before React disables the selected button, rather than letting it fall to BODY.
+    onSent?.();
   };
   return <>
     <div data-role="phone-reactions" data-sent={sent ? 'true' : 'false'}>
@@ -74,12 +80,21 @@ export const PhoneReactions: React.FC<{ questionInstanceId?: string; onReaction:
 export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, question, attendee, onReaction, presentation, solo = false, className = '' }) => {
   // Read the height before the first paint, so a short phone never flashes the tall layout for a frame.
   const [compactViewport, setCompactViewport] = useState(() => typeof window !== 'undefined' && window.innerHeight < 700);
+  const [soloJumpViewport, setSoloJumpViewport] = useState(() => typeof window !== 'undefined' && window.innerHeight < SOLO_TAKEAWAY_JUMP_MAX_HEIGHT);
   const [compactPage, setCompactPage] = useState<'main' | 'reactions'>('main');
   const [orderResultPage, setOrderResultPage] = useState(0);
   const verdictHeadingRef = useRef<HTMLParagraphElement>(null);
+  const takeawayHeadingRef = useRef<HTMLHeadingElement>(null);
+  const continuationHeadingRef = useRef<HTMLParagraphElement>(null);
+  const openContinuationButtonRef = useRef<HTMLButtonElement>(null);
+  const continuationBackButtonRef = useRef<HTMLButtonElement>(null);
+  const previousCompactPageRef = useRef<'main' | 'reactions'>('main');
   const focusedVerdictRef = useRef<string | null>(null);
   useEffect(() => {
-    const syncViewport = () => setCompactViewport(window.innerHeight < 700);
+    const syncViewport = () => {
+      setCompactViewport(window.innerHeight < 700);
+      setSoloJumpViewport(window.innerHeight < SOLO_TAKEAWAY_JUMP_MAX_HEIGHT);
+    };
     syncViewport();
     window.addEventListener('resize', syncViewport);
     return () => window.removeEventListener('resize', syncViewport);
@@ -88,6 +103,15 @@ export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, que
     setCompactPage('main');
     setOrderResultPage(0);
   }, [presentation, question?.questionInstanceId, reveal?.answerToken]);
+  // The short-phone Sources/Reactions pane replaces its trigger. Move focus to the
+  // newly exposed heading, then return focus to the restored trigger on Back.
+  // Otherwise keyboard and screen-reader users can be stranded on a removed button.
+  useEffect(() => {
+    if (previousCompactPageRef.current === compactPage) return;
+    previousCompactPageRef.current = compactPage;
+    if (compactPage === 'reactions') continuationHeadingRef.current?.focus();
+    else openContinuationButtonRef.current?.focus();
+  }, [compactPage]);
   // Solo's combined screen is the whole reveal beat in one go (VOF-W7): a tap lands here with no lead-in
   // screen to have already put a person's attention on the verdict, so focus moves to it here and it
   // announces itself. PhoneLayout keys its content on screenKey (`reveal-${presentation}-${questionId}`),
@@ -116,7 +140,9 @@ export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, que
   const compactOrderResult = compactViewport && showsVerdict && teaching.steps.length > 0;
   // Without reactions (solo play) the continuation page only exists to hold the explanation's sources.
   const hasReactions = Boolean(onReaction);
-  const compactContinuation = compactViewport && (showsTakeaway ? hasReactions || reveal.citations.length > 0 : hasReactions && teaching.steps.length > 0);
+  // Solo keeps the authored source links alongside the takeaway, even on short phones.
+  // Only hosted play needs a separate reactions/sources pane; its flow is unchanged.
+  const compactContinuation = !solo && compactViewport && (showsTakeaway ? hasReactions || reveal.citations.length > 0 : hasReactions && teaching.steps.length > 0);
   const mainVisible = !compactContinuation || compactPage === 'main';
   const reactionsVisible = !compactContinuation || compactPage === 'reactions';
   const continuationLabel = showsTakeaway ? (hasReactions ? 'Sources and reactions' : 'Sources') : 'Reactions';
@@ -181,7 +207,7 @@ export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, que
         <p ref={verdictHeadingRef} tabIndex={presentation === 'combined' ? -1 : undefined} aria-live={presentation === 'combined' ? 'polite' : undefined} role={presentation === 'combined' ? 'heading' : undefined} aria-level={presentation === 'combined' ? 2 : undefined} data-role="canonical-verdict" className="phone-canonical-verdict">{answer.letter ? <span className="sr-only">{answer.letter} · </span> : null}{teaching.steps.length ? 'Correct order' : answer.text}</p>
       </div>
       {answer.detail ? <p className="phone-verdict-detail" data-role="phone-verdict-detail">{answer.detail}</p> : null}
-      {teaching.steps.length > 0 && <><ol data-role="correct-order" className="phone-reveal-order" start={compactOrderResult ? orderResultPage * 2 + 1 : undefined}>{shownResultSteps.map((step, index) => <li key={index}>{step}</li>)}</ol>{compactOrderResult && resultStepCount > 1 && <div className="phone-order-page-nav">{orderResultPage > 0 && <button type="button" data-action="previous-correct-order-page" onClick={() => { cuePhoneChrome(); setOrderResultPage((page) => page - 1); }} className="phone-reveal-return" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: 'transparent', color: "var(--color-ink)" }}>Previous steps</button>}{orderResultPage < resultStepCount - 1 ? <button type="button" data-action="next-correct-order-page" onClick={() => { cuePhoneChrome(); setOrderResultPage((page) => page + 1); }} className="phone-reveal-continue" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: "var(--color-panel-navy)", color: "var(--color-ink)" }}>Next steps</button> : compactContinuation ? <button type="button" data-action="show-reveal-reactions" onClick={() => { cuePhoneChrome(); setCompactPage('reactions'); }} className="phone-reveal-continue" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: "var(--color-panel-navy)", color: "var(--color-ink)" }}>{continuationLabel}</button> : null}</div>}</>}
+      {teaching.steps.length > 0 && <><ol data-role="correct-order" className="phone-reveal-order" start={compactOrderResult ? orderResultPage * 2 + 1 : undefined}>{shownResultSteps.map((step, index) => <li key={index}>{step}</li>)}</ol>{compactOrderResult && resultStepCount > 1 && <div className="phone-order-page-nav">{orderResultPage > 0 && <button type="button" data-action="previous-correct-order-page" onClick={() => { cuePhoneChrome(); setOrderResultPage((page) => page - 1); }} className="phone-reveal-return" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: 'transparent', color: "var(--color-ink)" }}>Previous steps</button>}{orderResultPage < resultStepCount - 1 ? <button type="button" data-action="next-correct-order-page" onClick={() => { cuePhoneChrome(); setOrderResultPage((page) => page + 1); }} className="phone-reveal-continue" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: "var(--color-panel-navy)", color: "var(--color-ink)" }}>Next steps</button> : compactContinuation ? <button type="button" ref={openContinuationButtonRef} data-action="show-reveal-reactions" onClick={() => { cuePhoneChrome(); setCompactPage('reactions'); }} className="phone-reveal-continue" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: "var(--color-panel-navy)", color: "var(--color-ink)" }}>{continuationLabel}</button> : null}</div>}</>}
       {(!compactOrderResult || orderResultPage === 0) && <>
         {result && !awaitingResult ? <p className="phone-reveal-outcome" data-role="phone-reveal-outcome" data-outcome={result.isCorrect ? 'right' : 'missed'}>{result.isCorrect ? REVEAL_RIGHT : REVEAL_MISSED}</p> : null}
         <p className="phone-reveal-said" data-role="phone-reveal-said" data-outcome={result?.isCorrect ? 'right' : result ? 'missed' : awaitingResult ? 'pending' : 'none'}>
@@ -207,19 +233,37 @@ export const PhoneReveal: React.FC<PhoneRevealProps> = React.memo(({ reveal, que
         </p>
       </>}
     </section> : null}
+    {/* Only the short-phone solo reveal needs a jump to the lesson below its scroll fold.
+        On taller screens the takeaway is already in view, so avoid a redundant button.
+        Keep the keyboard-operable route and ordered-answer pagination on short phones. */}
+    {solo && soloJumpViewport && mainVisible && showsVerdict && showsTakeaway && (!compactOrderResult || orderResultPage === resultStepCount - 1) ? (
+      <button
+        type="button"
+        data-action="jump-to-takeaway"
+        className="phone-reveal-continue"
+        onClick={() => {
+          cuePhoneChrome();
+          takeawayHeadingRef.current?.scrollIntoView({ block: 'start', behavior: 'auto' });
+          takeawayHeadingRef.current?.focus({ preventScroll: true });
+        }}
+        style={{ alignSelf: 'flex-start', width: 'auto', minHeight: 'var(--kit-touch)', padding: '0 var(--kit-space-12)', border: '1px solid var(--color-film-border)', borderRadius: 'var(--kit-space-8)', background: 'transparent', color: 'var(--color-gold)', font: '600 16px var(--kit-font-sans)', cursor: 'pointer' }}
+      >
+        Read takeaway <span aria-hidden="true">↓</span>
+      </button>
+    ) : null}
     {mainVisible && showsTakeaway ? <>
       <section data-role="takeaway-card" className="phone-takeaway-card">
-        <div className="phone-takeaway-heading"><Lightbulb size={16} style={{ color: "var(--color-gold)" }} /><h2>Takeaway</h2></div>
+        <div className="phone-takeaway-heading"><Lightbulb size={16} style={{ color: "var(--color-gold)" }} /><h2 ref={takeawayHeadingRef} tabIndex={-1}>Takeaway</h2></div>
         <p><EmphasizedText text={reveal.takeaway || teaching.explanation} phrases={reveal.takeaway ? reveal.takeawayEmphasis : reveal.explanationEmphasis} renderText={keepCompounds} /></p>
         {reveal.takeaway && teaching.explanation && teaching.explanation !== reveal.takeaway && <p style={{ color: "var(--color-ink-dim)" }}><EmphasizedText text={teaching.explanation} phrases={reveal.explanationEmphasis} renderText={keepCompounds} /></p>}
       </section>
       {!compactContinuation && reveal.citations.length > 0 && <section data-role="reveal-citations" >{reveal.citations.map((citation) => citation.url ? <a key={`${citation.label}:${citation.url}`} href={citation.url} target="_blank" rel="noreferrer" style={{ color: "var(--color-gold)", minHeight: "var(--kit-touch)", display: 'inline-flex', alignItems: 'center' }}>{citation.label}</a> : <span key={citation.label} style={{ color: "var(--color-ink-dim)" }}>{citation.label}</span>)}</section>}
     </> : null}
-    {compactContinuation && mainVisible && showReactionContinuation && !(compactOrderResult && resultStepCount > 1) && <button type="button" data-action="show-reveal-reactions" onClick={() => { cuePhoneChrome(); setCompactPage('reactions'); }} className="phone-reveal-continue" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: "var(--color-panel-navy)", color: "var(--color-ink)" }}>{continuationLabel}</button>}
+    {compactContinuation && mainVisible && showReactionContinuation && !(compactOrderResult && resultStepCount > 1) && <button type="button" ref={openContinuationButtonRef} data-action="show-reveal-reactions" onClick={() => { cuePhoneChrome(); setCompactPage('reactions'); }} className="phone-reveal-continue" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: "var(--color-panel-navy)", color: "var(--color-ink)" }}>{continuationLabel}</button>}
     <section data-role="phone-reveal-reactions-page" hidden={!reactionsVisible} className="phone-reveal-reactions-page">
-      {compactContinuation && <><p className="phone-reveal-page-label">{continuationLabel}</p>{showsTakeaway && reveal.citations.length > 0 && <section data-role="reveal-citations" >{reveal.citations.map((citation) => citation.url ? <a key={`${citation.label}:${citation.url}`} href={citation.url} target="_blank" rel="noreferrer" style={{ color: "var(--color-gold)", minHeight: "var(--kit-touch)", display: 'inline-flex', alignItems: 'center' }}>{citation.label}</a> : <span key={citation.label} style={{ color: "var(--color-ink-dim)" }}>{citation.label}</span>)}</section>}</>}
-      {onReaction && <PhoneReactions key={question?.questionInstanceId ?? reveal.answerToken} questionInstanceId={question?.questionInstanceId} onReaction={onReaction} />}
-      {compactContinuation && <button type="button" data-action="return-reveal-main" onClick={() => { cuePhoneChrome(); setCompactPage('main'); }} className="phone-reveal-return" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: 'transparent', color: "var(--color-ink)" }}>Back</button>}
+      {compactContinuation && <><p ref={continuationHeadingRef} tabIndex={-1} role="heading" aria-level={2} className="phone-reveal-page-label">{continuationLabel}</p>{showsTakeaway && reveal.citations.length > 0 && <section data-role="reveal-citations" >{reveal.citations.map((citation) => citation.url ? <a key={`${citation.label}:${citation.url}`} href={citation.url} target="_blank" rel="noreferrer" style={{ color: "var(--color-gold)", minHeight: "var(--kit-touch)", display: 'inline-flex', alignItems: 'center' }}>{citation.label}</a> : <span key={citation.label} style={{ color: "var(--color-ink-dim)" }}>{citation.label}</span>)}</section>}</>}
+      {onReaction && <PhoneReactions key={question?.questionInstanceId ?? reveal.answerToken} questionInstanceId={question?.questionInstanceId} onReaction={onReaction} onSent={() => continuationBackButtonRef.current?.focus()} />}
+      {compactContinuation && <button type="button" ref={continuationBackButtonRef} data-action="return-reveal-main" onClick={() => { cuePhoneChrome(); setCompactPage('main'); }} className="phone-reveal-return" style={{ minHeight: "var(--kit-touch)", paddingInline: "var(--kit-space-12)", borderRadius: "var(--kit-space-8)", border: "1px solid var(--color-hairline)", backgroundColor: 'transparent', color: "var(--color-ink)" }}>Back</button>}
     </section>
   </div>;
 });
