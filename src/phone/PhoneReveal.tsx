@@ -41,9 +41,9 @@ const REACTIONS = STAGE_REACTIONS;
 /** How long "Sent to the room" stays under the reactions after a tap (critique item 7). */
 export const REACTION_ACK_MS = 1500;
 
-// At 664px the takeaway is already visible; a jump button only pushes it further down.
-// The shorter 548px layout still needs a direct route past the sticky Next control.
-const SOLO_TAKEAWAY_JUMP_MAX_HEIGHT = 620;
+// On 664px phones the takeaway heading is visible, but its source is still below
+// the sticky Next control. Keep a direct keyboard-accessible jump through 699px.
+const SOLO_TAKEAWAY_JUMP_MAX_HEIGHT = 700;
 
 /**
  * One reaction per reveal: the tapped button fills gold, the others step back, and a reserved
