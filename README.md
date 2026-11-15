@@ -50,9 +50,9 @@ flowchart LR
 
 ### The question bank
 
-- **Concepts.** 150 distinct questions map to 121 concepts in `content/bank/concepts.json`. Two questions that test
+- **Concepts.** 144 distinct questions map to 119 concepts in `content/bank/concepts.json`. Two questions that test
   the same idea share a concept, so a round never deals both.
-- **Rotation.** 88 questions are `core` and 62 are `alternate`. A solo round plays a topic's whole rotation: every
+- **Rotation.** 85 questions are `core` and 59 are `alternate`. A solo round plays a topic's whole rotation: every
   core question plus each alternate whose concept is not already covered. On a second play each core question with a
   same-kind twin swaps it in, so the length and kind mix stay the same and the content changes.
 - **Difficulty rubric.** Four levels (easy, medium, hard, expert) defined against a mixed room, with an accuracy band
@@ -61,7 +61,7 @@ flowchart LR
   or stale key). See [docs/QUESTION-DIFFICULTY-RUBRIC.md](docs/QUESTION-DIFFICULTY-RUBRIC.md).
 - **Dealing.** The solo dealer orders a round with the fewest same-kind neighbors the counts allow, and fills the
   first, middle and last thirds with easier to harder levels where the pool supports it.
-- **Sources.** All 180 question appearances cite at least one source, 80 distinct URLs in total. The stage shows the
+- **Sources.** All 174 question appearances cite at least one source, 76 distinct URLs in total. The stage shows the
   source on the evidence card after each reveal.
 
 The difficulty ratings in the metadata were made by AI model raters following the rubric, and each record names the
@@ -92,17 +92,17 @@ fetched once). Each failed in some full runs on a machine with a load average ab
 times each in isolation, and the whole `test:topic-patterns` file 15 of 15 on its third full run. Every other step
 passed. The run stops at its first failing step, so the steps after `test:flavor` were run on their own.
 
-**Rater agreement, measured from the shipped metadata.** Method: for each of the 150 records, compare the two
+**Rater agreement, measured from the shipped metadata.** Method: for each of the 144 current records, compare the two
 independent rater levels (`rater-a`, `rater-b`) on the four-level scale. Both raters were instances of the same model.
 
 | Measure | Value |
 | --- | --- |
-| Exact agreement | 127 of 150 (84.7%) |
-| Within one level | 150 of 150 |
+| Exact agreement | 121 of 144 (84.0%) |
+| Within one level | 144 of 144 |
 | Linear-weighted Cohen's kappa | 0.81 |
 | Records needing an adjudicator (split, or both raters unsure) | 47 |
 
-Final levels: easy 73, medium 53, hard 19, expert 5.
+Final levels are easy 67, medium 53, hard 19 and expert 5.
 
 ## Design decisions and tradeoffs
 
@@ -115,7 +115,7 @@ Final levels: easy 73, medium 53, hard 19, expert 5.
   a socket.
 - **Points follow the question kind, not its difficulty.** A rating change never changes anyone's score, so ratings
   can move without making old games incomparable.
-- **Difficulty rated by AI raters against a written rubric, with an adjudicator.** It made rating 150 questions
+- **Difficulty rated by AI raters against a written rubric, with an adjudicator.** It made rating the question bank
   practical and leaves a reason on every record. Two instances of one model are not independent judges, so play data
   should eventually replace these levels.
 

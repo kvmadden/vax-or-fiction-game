@@ -4,14 +4,13 @@ How questions are described, rated, cited and dealt. Companion: `docs/QUESTION-D
 
 ## What is in it today
 
-- 13 deck modules under `src/data/decks/` hold the player-facing text: 180 question appearances, 150 distinct
+- 13 deck modules under `src/data/decks/` hold the player-facing text: 174 question appearances, 144 distinct
   questions once shared copies merge (30 appearances are copies of a question in another deck).
-- Five kinds: true or false (112 of 150), which-patient or which-reply (27), estimate (5), myth among three (3) and
+- Five kinds: true or false (109 of 144), which-patient or which-reply (24), estimate (5), myth among three (3) and
   order the steps (3).
 - 11 subjects: flu, RSV, shingles, pneumococcal, HPV, hepatitis B, tetanus and whooping cough, COVID-19, general
   public health, at the counter, and what to say.
-- Every appearance cites at least one source. Across all decks they point to 80 distinct URLs: 67 on cdc.gov, 9 on
-  fda.gov, 2 on who.int, 2 on nlm.nih.gov. Each source records a publisher, a short display line and an accessed date,
+- Every appearance cites at least one source. Across all decks they point to 76 distinct URLs. Each source records a publisher, a short display line and an accessed date,
   and the stage shows it on the evidence card after the reveal. The `/credits` page lists the sources of the two
   host decks.
 
@@ -35,9 +34,9 @@ A record also carries `textHash` and `textVersion`, so a wording change is visib
 
 | Field | Values |
 |---|---|
-| `conceptId` | A key in `content/bank/concepts.json` (121 concepts, each with a label, subject and vaccines). Two questions that test the same idea share a concept. |
-| `rotation` | `core` (88): every solo round of the topic plays it. `alternate` (62): a twin of a core question, swapped in on a later play. |
-| `difficulty` | `level` (easy 73, medium 53, hard 19, expert 5), `source` (`rubric` today), a one-line rationale, and every rating behind it. |
+| `conceptId` | A key in `content/bank/concepts.json` (119 concepts are used by the current bank). Two questions that test the same idea share a concept. |
+| `rotation` | `core` (85): every solo round of the topic plays it. `alternate` (59): a twin of a core question, swapped in on a later play. |
+| `difficulty` | `level` (easy 67, medium 53, hard 19, expert 5), `source` (`rubric` today), a one-line rationale, and every rating behind it. |
 | `skill` | recall, application, judgment, communication, estimation, sequencing. Estimate and order kinds are always estimation and sequencing. A reply question is always communication. |
 | `audience` | `everyone`, `pharmacy-team` (assumes pharmacy workflow), `immunizer` (assumes clinical immunization knowledge). |
 | `tags`, `vaccines`, `populations` | Controlled lists in `concepts.json` and `src/data/bank/types.ts`. |
@@ -47,7 +46,7 @@ A record also carries `textHash` and `textVersion`, so a wording change is visib
 ### How a level was set
 
 Each record holds two independent ratings from AI model raters (`rater-a`, `rater-b`, each naming its run and model),
-plus an adjudicator's rating whenever the two split or both were unsure (47 of 150). Three records carry a direct
+plus an adjudicator's rating whenever the two split or both were unsure (47 of 144). Three records carry a direct
 call from the author, which outranks the raters. The rubric defines the four levels against a mixed room, with an
 expected accuracy band per kind that corrects for guessing. These are difficulty estimates. They say nothing about
 whether a claim is correct.
@@ -72,7 +71,7 @@ whether a claim is correct.
 
 `tests/unit/bank-metadata.test.ts` fails when:
 
-- a deck question has no record, or a record matches no deck question (coverage: 150 records, 180 appearances);
+- a deck question has no record, or a record matches no deck question (coverage: 144 records, 174 appearances);
 - a copy's stem, kind or answer differs from its primary;
 - a field holds a value outside its vocabulary, or a `conceptId` or tag is missing from `concepts.json`;
 - the metadata kind differs from the deck question's kind, or a kind has the wrong skill;
