@@ -33,6 +33,39 @@
   line-height: 1.15;
 }
 
+/* Topic choice is the first job. Keep the complete rules available without letting
+   their table take the initial phone viewport; native details retains keyboard support. */
+.solo-topics__scoring {
+  border: 1px solid var(--color-film-border);
+  border-radius: var(--kit-radius-12);
+  background-color: var(--color-film);
+}
+
+.solo-topics__scoring > summary {
+  display: list-item;
+  min-height: var(--kit-space-48);
+  padding: var(--kit-space-12) var(--kit-space-16);
+  color: var(--color-ink-muted);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.solo-topics__scoring > summary:hover {
+  color: var(--color-gold);
+}
+
+.solo-topics__scoring > summary:focus-visible {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
+}
+
+.solo-topics__scoring-content {
+  display: grid;
+  gap: var(--kit-space-12);
+  padding: 0 var(--kit-space-16) var(--kit-space-16);
+}
+
 .solo-topics__how {
   margin: 0;
   color: var(--color-ink-muted);
@@ -42,8 +75,20 @@
 
 .solo-topics__error {
   margin: 0;
+  padding: var(--kit-space-12) var(--kit-space-16);
+  border: 1px solid var(--color-film-border);
+  border-inline-start: 2px solid var(--color-gold);
+  border-radius: var(--kit-radius-12);
+  background: var(--color-film);
   color: var(--color-ink);
   font-weight: 600;
+  line-height: 1.45;
+}
+
+/* A topic failure takes focus so it scrolls into view; make that focus visible, too. */
+.solo-topics__error:focus {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: 2px;
 }
 
 .solo-topics__back {
@@ -560,6 +605,13 @@
   color: var(--color-gold);
   font-family: var(--kit-font-mono);
   font-weight: 700;
+}
+
+/* Each takeaway has exactly two grid children: its number and one flowing text span.
+   Without the wrapper, emphasis spans become separate grid cells and the rest stacks word by word. */
+.solo-closing__takeaway-copy {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 /* On the narrowest phones the strip closes its gaps, so a round of eight holds one row, and a wrapped More topics takes

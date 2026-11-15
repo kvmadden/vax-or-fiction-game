@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PhoneLayout from '../phone/PhoneLayout';
 import { PhoneBackdrop } from '../phone/PhoneBackdrop';
 import { SOLO_GROUPS, type SoloTopic } from '../data/decks/topics';
@@ -35,18 +35,29 @@ function useRoundLengths(topics: readonly SoloTopic[]): Record<string, number> |
  */
 export const SoloTopics: React.FC<SoloTopicsProps> = ({ topics, loadingId, error, onOpen }) => {
   const counts = useRoundLengths(topics);
+  const errorRef = useRef<HTMLParagraphElement>(null);
+  // A topic can fail after a tap far down the list. Bring its existing error into the
+  // reader's view/focus instead of leaving it below every topic where it goes unseen.
+  useEffect(() => {
+    if (error) errorRef.current?.focus();
+  }, [error]);
   return <PhoneLayout className="phone-live-shell solo-shell" brandMark="stacked" backdrop={<PhoneBackdrop scrim="stage" />} showWakeLockIndicator={false} showFooter={false}>
     <section className="solo-topics" data-role="solo-topics" aria-labelledby="solo-topics-title">
       <header className="solo-topics__intro">
         <p className="solo-topics__kicker">Play on your own</p>
         <h1 id="solo-topics-title" className="solo-topics__title">What do you want to play?</h1>
-        <p className="solo-topics__how">Every round plays the whole topic, start to finish. A right answer scores by the question. Three in a row adds 50. Every fifth adds 100. A miss scores nothing.</p>
-        <ul className="solo-topics__points" aria-label="How points work">
-          {KIND_POINTS.map(({ label, points }) => <li key={label}><span>{label}</span><strong>{points}</strong></li>)}
-        </ul>
+        <details className="solo-topics__scoring">
+          <summary>How points work</summary>
+          <div className="solo-topics__scoring-content">
+            <p className="solo-topics__how">Play the whole topic. Correct answers score by type. Streak bonuses: 3rd correct +50, every 5th +100. Wrong answers: 0.</p>
+            <ul className="solo-topics__points" aria-label="How points work">
+              {KIND_POINTS.map(({ label, points }) => <li key={label}><span>{label}</span><strong>{points}</strong></li>)}
+            </ul>
+          </div>
+        </details>
       </header>
+      {error ? <p ref={errorRef} tabIndex={-1} className="solo-topics__error" role="alert">{error}</p> : null}
       <SoloTopicList groups={SOLO_GROUPS} topics={topics} loadingId={loadingId} counts={counts} onOpen={onOpen} />
-      {error ? <p className="solo-topics__error" role="alert">{error}</p> : null}
       <a className="solo-topics__back" href="/">Back to the start</a>
     </section>
   </PhoneLayout>;

@@ -26,6 +26,7 @@ import { Showdown } from '../../src/screens/Showdown';
 import { splitEmphasis } from '../../src/screens/questions/emphasis-match';
 import { joinLastNWords } from '../../src/screens/questions/widow-guard';
 import { buildPaceRoundRecap } from '../../src/solo/pace/pace-recap';
+import { SoloPaceRecap } from '../../src/solo/pace/SoloPaceRecap';
 import { isolateSoloStore, projectSolo, recordSoloVote, revealSoloAnswer, startSoloRound, type SoloPool } from '../../src/solo/solo-game';
 import { useGameStore } from '../../src/store/game-store';
 
@@ -247,4 +248,20 @@ test('the phone explanation card keeps a number range on one line in its takeawa
   assert.match(card, /Early in the <span class="keep-compound">27–36<\/span> week window\./, 'the takeaway keeps 27–36 whole');
   assert.match(card, /and weeks <span class="keep-compound">27–36<\/span> are right\./, 'the reason keeps 27–36 whole');
   assert.match(card, /<span class="vof-emphasis vof-emphasis--body" data-comp-id="emphasis">Every pregnancy<\/span>/, 'and the marks stay');
+});
+
+
+test('solo pace recaps keep the whole highlighted takeaway together in its grid text cell', () => {
+  const takeaway = 'The rate of adults getting vaccinated was 45% last season.';
+  const recap = buildPaceRoundRecap([{ id: 'test-flu', kind: 'binary', isRight: false, takeaway, takeawayEmphasis: ['45%'] }]);
+  for (const pace of ['run', 'climb', 'best'] as const) {
+    const html = renderToStaticMarkup(React.createElement(SoloPaceRecap, {
+      pace, outcomes: [false], recap, nextTopic: null, onPlayNext: () => {},
+    }));
+    const cell = html.match(/<li[^>]*data-role="phone-closing-takeaway"[^>]*>([\s\S]*?)<\/li>/)?.[1];
+    assert.ok(cell, `${pace}: missed takeaway is rendered`);
+    assert.match(cell, /^<span class="solo-closing__takeaway-copy">/, `${pace}: one grid cell contains the entire sentence`);
+    assert.match(cell, /class="vof-emphasis vof-emphasis--body"/, `${pace}: clinical emphasis is still inline`);
+    assert.equal(cell.replace(/<[^>]*>/g, ''), takeaway, `${pace}: no text is moved or lost`);
+  }
 });

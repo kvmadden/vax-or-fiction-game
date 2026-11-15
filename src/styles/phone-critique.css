@@ -622,6 +622,13 @@
   text-transform: uppercase;
 }
 
+/* Focus lands on this heading when the short-phone Sources/Reactions pane opens. */
+.phone-live-shell .phone-reveal-page-label:focus {
+  outline: 2px solid var(--color-accent-teal);
+  outline-offset: var(--kit-space-4);
+  border-radius: var(--kit-space-4);
+}
+
 .phone-live-shell .phone-result-screen[data-compact-page="main"]:has([data-kind="order"]) {
   justify-content: flex-start;
 }

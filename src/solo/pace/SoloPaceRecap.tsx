@@ -86,7 +86,7 @@ export const SoloPaceRecap: React.FC<SoloPaceRecapProps> = ({ pace, outcomes, re
     </p>}
     {recap.missedTakeaways.length > 0 && <section data-role="phone-closing-takeaways" className="solo-closing__takeaways" aria-labelledby={headingId}>
       <h2 id={headingId}><Lightbulb size={18} aria-hidden="true" />What to take back to the counter</h2>
-      <ol>{recap.missedTakeaways.map((entry) => <li key={entry.id} data-role="phone-closing-takeaway"><EmphasizedText text={entry.takeaway} phrases={entry.takeawayEmphasis} renderText={keepCompounds} /></li>)}</ol>
+      <ol>{recap.missedTakeaways.map((entry) => <li key={entry.id} data-role="phone-closing-takeaway"><span className="solo-closing__takeaway-copy"><EmphasizedText text={entry.takeaway} phrases={entry.takeawayEmphasis} renderText={keepCompounds} /></span></li>)}</ol>
     </section>}
     {nextTopic && <button type="button" className="solo-controls__primary solo-pace-recap__next" data-action="solo-play-next-topic" data-role="solo-pace-recap-next" onClick={() => onPlayNext(nextTopic)}>Play {nextTopic.label}</button>}
   </div>;
