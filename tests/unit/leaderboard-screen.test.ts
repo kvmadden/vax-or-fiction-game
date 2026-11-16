@@ -22,19 +22,26 @@ function renderLeaderboard(
   room?: Room,
 ): string {
   const previous = useGameStore.getState();
+  const getInitialState = useGameStore.getInitialState;
   try {
-    useGameStore.setState({
+    // React server rendering uses getInitialState(), not getState(), for
+    // useSyncExternalStore. Supply the test snapshot to both paths.
+    const snapshot: State = {
+      ...previous,
       seenDevices: {},
       run: [{ id: 'title', type: 'title', title: 'Welcome' }] as State['run'],
       slideIndex: 0,
       offlineMode: false,
       ...overrides,
-    });
+    };
+    useGameStore.getInitialState = () => snapshot;
+    useGameStore.setState(snapshot, true);
     const screen = React.createElement(Leaderboard, props);
     return renderToStaticMarkup(room
       ? React.createElement(RoomContext.Provider, { value: room }, screen)
       : screen);
   } finally {
+    useGameStore.getInitialState = getInitialState;
     useGameStore.setState(previous, true);
   }
 }
