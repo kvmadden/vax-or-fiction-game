@@ -71,6 +71,25 @@ test('Privacy states the placeholder contact and never implies the mailbox alrea
   assert.ok(/placeholder/i.test(html), 'Privacy must say the address is a placeholder, per the owner’s ruling');
 });
 
+test('only Privacy contact and help links get the expanded touch-target class', () => {
+  const html = renderToStaticMarkup(React.createElement(Privacy));
+  const taggedHrefs = [...html.matchAll(/<a class="site-page-touch-link" href="([^"]+)"/g)]
+    .map((match) => match[1]);
+  assert.deepEqual(taggedHrefs, ['mailto:hello@vaxorfiction.com', '/disclaimer']);
+
+  for (const [name, Component] of EXPECTED_H1) {
+    if (name === 'Privacy') continue;
+    assert.doesNotMatch(
+      renderToStaticMarkup(React.createElement(Component)),
+      /class="site-page-touch-link"/,
+      `${name} must keep its existing inline prose-link layout`,
+    );
+  }
+  const css = readFileSync(path.resolve(process.cwd(), 'src/screens/site/site-page.css'), 'utf8');
+  assert.match(css, /\\.site-page-body a\\.site-page-touch-link\\s*\\{/);
+  assert.doesNotMatch(css, /\\.site-page-body p a\\s*\\{/);
+});
+
 test('Privacy states the live recap-privacy facts: admin-only identity-checked reads, 30-day and 90-day deletion tied to the next save', () => {
   const html = renderToStaticMarkup(React.createElement(Privacy));
   assert.match(html, /30 days/, 'Privacy must state the 30-day recap window');

@@ -111,9 +111,9 @@ test('the 404 brand link and Credits citation links reach 44px', async (t) => {
         const page = await browser.newPage({ viewport: { width, height: 664 } });
         try {
           await page.goto(`${origin}/privacy`, { waitUntil: 'domcontentloaded' });
-          await page.locator('.site-page-body p a').first().waitFor({ state: 'attached', timeout: 10000 });
+          await page.locator('.site-page-body a.site-page-touch-link').first().waitFor({ state: 'attached', timeout: 10000 });
           await page.evaluate(() => document.fonts.ready);
-          const links = await page.locator('.site-page-nav-links a, .site-page-body p a').evaluateAll((elements) =>
+          const links = await page.locator('.site-page-nav-links a, .site-page-body a.site-page-touch-link').evaluateAll((elements) =>
             elements.map((element) => {
               const rect = element.getBoundingClientRect();
               return {
@@ -126,7 +126,9 @@ test('the 404 brand link and Credits citation links reach 44px', async (t) => {
               };
             }),
           );
-          assert.equal(links.length, 7, `privacy at ${width} must have five site links and two prose links`);
+          assert.equal(links.length, 7, `privacy at ${width} must have five site links and two explicitly expanded help links`);
+          const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+          assert.ok(overflow <= 1, `${width}px: Privacy must not scroll horizontally (overflow ${overflow}px)`);
           for (const link of links) {
             assert.ok(link.height >= 43.9, `${width}px: ${link.text} must have a 44px-high tap target, measured ${link.height}`);
             assert.ok(link.x >= -0.5 && link.right <= width + 0.5, `${width}px: ${link.text} must fit inside the viewport`);
