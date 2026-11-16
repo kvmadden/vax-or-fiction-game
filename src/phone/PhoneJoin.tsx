@@ -38,6 +38,8 @@ export interface PhoneJoinProps {
   isLoading?: boolean;
   /** Server or network error message string to render */
   errorMessage?: string | null;
+  /** A parent retry banner already shows the network error; keep local form errors inline. */
+  errorInBanner?: boolean;
   /** The presenter's screen is not connected to the room right now. */
   hostDown?: boolean;
   /** Live link status, so join can say it will retry in about 5 seconds. */
@@ -74,6 +76,7 @@ const PhoneJoinComponent: React.FC<PhoneJoinProps> = React.memo(({
   onJoin,
   isLoading = false,
   errorMessage = null,
+  errorInBanner = false,
   hostDown = false,
   connectionStatus,
   className = "",
@@ -194,7 +197,7 @@ const PhoneJoinComponent: React.FC<PhoneJoinProps> = React.memo(({
 
   const isCodeComplete = isJoinableRoomCode(roomCode, "address");
   const isFormValid = isCodeComplete && sanitizeName(nickname).length > 0;
-  const activeError = errorMessage || localError;
+  const activeError = (errorInBanner ? null : errorMessage) || localError;
   const reconnecting = connectionStatus === "reconnecting";
   const nextStatus = joinNextStatus({ hostDown, reconnecting, loading: isLoading });
   const returnToJoinForm = () => {

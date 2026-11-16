@@ -162,7 +162,7 @@ export const PhoneScreens: React.FC<PhoneScreensProps> = ({ link, roomId, device
   // keeps its own.
   let framed = false;
   if (!registered) {
-    content = <PhoneJoin deviceId={deviceId} initialRoomCode={roomId} teamsEnabled={Boolean(roomState?.teamScores)} isLoading={pending || connectionStatus !== 'connected' || !roomState} errorMessage={hostDown ? null : error} hostDown={hostDown} connectionStatus={connectionStatus} onJoin={joinRoom} />;
+    content = <PhoneJoin deviceId={deviceId} initialRoomCode={roomId} teamsEnabled={Boolean(roomState?.teamScores)} isLoading={pending || connectionStatus !== 'connected' || !roomState} errorMessage={hostDown ? null : error} errorInBanner={Boolean(error && announcement)} hostDown={hostDown} connectionStatus={connectionStatus} onJoin={joinRoom} />;
     screenKey = 'join';
   } else if (!roomState || hostDown) {
     content = <Waiting kicker="Hold on" message={HOST_DOWN_STAY} />;

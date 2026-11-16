@@ -256,6 +256,8 @@ body:has(.phone-live-shell) {
   display: flex;
   gap: var(--kit-space-12);
   align-items: center;
+  /* A long validation message must grow instead of shrinking to the minimum height on short phones. */
+  flex-shrink: 0;
   min-height: 56px;
   margin-bottom: var(--kit-space-8);
   padding: var(--kit-space-12) var(--kit-space-16);
