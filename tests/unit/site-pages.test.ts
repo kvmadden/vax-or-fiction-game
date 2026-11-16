@@ -86,8 +86,8 @@ test('only Privacy contact and help links get the expanded touch-target class', 
     );
   }
   const css = readFileSync(path.resolve(process.cwd(), 'src/screens/site/site-page.css'), 'utf8');
-  assert.match(css, /\\.site-page-body a\\.site-page-touch-link\\s*\\{/);
-  assert.doesNotMatch(css, /\\.site-page-body p a\\s*\\{/);
+  assert.match(css, /\.site-page-body a\.site-page-touch-link\s*\{/);
+  assert.doesNotMatch(css, /\.site-page-body p a\s*\{/);
 });
 
 test('Privacy states the live recap-privacy facts: admin-only identity-checked reads, 30-day and 90-day deletion tied to the next save', () => {
