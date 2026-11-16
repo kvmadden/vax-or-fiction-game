@@ -144,6 +144,14 @@ test('/join?room= uses fat tap targets, a clear error, and reconnect wording', (
   assert.match(css('phone-critique.css'), /\.phone-live-shell \.phone-join-continue,[\s\S]*min-height:\s*56px/);
 });
 
+test('join errors can grow to fit wrapped messages on narrow phones', () => {
+  const sheet = css('phone-live.css');
+  const errorRule = sheet.match(/\.phone-join-source__error\s*\{([^}]*)\}/)?.[1];
+  assert.ok(errorRule, 'join error styling must exist');
+  assert.match(errorRule, /flex-shrink:\s*0\s*;/, 'flex items must not shrink the alert below its text height');
+  assert.match(errorRule, /min-height:\s*56px\s*;/, 'retain a readable minimum alert height');
+});
+
 test('a room relay failure appears once with Retry, without suppressing standalone join errors', () => {
   const failure = 'No live room relay is configured for this build.';
   const inRoom = screens({ connectionStatus: 'offline', error: failure });
