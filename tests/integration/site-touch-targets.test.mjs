@@ -105,6 +105,47 @@ test('the 404 brand link and Credits citation links reach 44px', async (t) => {
       assert.ok(heights.every((h) => h >= 43.9), `every citation card must be at least 44px tall, measured ${JSON.stringify(heights)}`);
       assert.ok(cornerLandsOnAnchor.every(Boolean), `every citation card's bottom-right corner must land on its own anchor, got ${JSON.stringify(cornerLandsOnAnchor)}`);
     });
+
+    await t.test('phone privacy links have 44px targets and a spaced 3+2 navigation', async () => {
+      for (const width of [375, 390, 430]) {
+        const page = await browser.newPage({ viewport: { width, height: 664 } });
+        try {
+          await page.goto(`${origin}/privacy`, { waitUntil: 'domcontentloaded' });
+          await page.locator('.site-page-body a.site-page-touch-link').first().waitFor({ state: 'attached', timeout: 10000 });
+          await page.evaluate(() => document.fonts.ready);
+          const links = await page.locator('.site-page-nav-links a, .site-page-body a.site-page-touch-link').evaluateAll((elements) =>
+            elements.map((element) => {
+              const rect = element.getBoundingClientRect();
+              return {
+                text: element.textContent?.trim(),
+                x: rect.x,
+                y: rect.y,
+                right: rect.right,
+                width: rect.width,
+                height: rect.height,
+              };
+            }),
+          );
+          assert.equal(links.length, 7, `privacy at ${width} must have five site links and two explicitly expanded help links`);
+          const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+          assert.ok(overflow <= 1, `${width}px: Privacy must not scroll horizontally (overflow ${overflow}px)`);
+          for (const link of links) {
+            assert.ok(link.height >= 43.9, `${width}px: ${link.text} must have a 44px-high tap target, measured ${link.height}`);
+            assert.ok(link.x >= -0.5 && link.right <= width + 0.5, `${width}px: ${link.text} must fit inside the viewport`);
+          }
+          const nav = links.slice(0, 5);
+          assert.ok(Math.abs(nav[0].y - nav[1].y) < 1 && Math.abs(nav[1].y - nav[2].y) < 1,
+            `${width}px: the first three nav links must share a row`);
+          assert.ok(Math.abs(nav[3].y - nav[4].y) < 1 && nav[3].y >= nav[0].y + 44,
+            `${width}px: the last two nav links must be on a separate row`);
+          for (const [left, right] of [[nav[0], nav[1]], [nav[1], nav[2]], [nav[3], nav[4]]]) {
+            assert.ok(right.x - left.right >= 3.9, `${width}px: adjacent nav links need a visible gap`);
+          }
+        } finally {
+          await page.close();
+        }
+      }
+    });
   } finally {
     await browser?.close();
     child.kill('SIGTERM');

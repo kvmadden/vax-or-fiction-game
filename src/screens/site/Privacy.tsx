@@ -89,8 +89,8 @@ export const Privacy: React.FC = React.memo(() => (
     </p>
     <h2>Questions</h2>
     <p>
-      Reach out at <a href="mailto:hello@vaxorfiction.com">hello@vaxorfiction.com</a>. This
-      address is a placeholder until it is set up. See the <a href="/disclaimer">Disclaimer</a>{' '}
+      Reach out at <a className="site-page-touch-link" href="mailto:hello@vaxorfiction.com">hello@vaxorfiction.com</a>. This
+      address is a placeholder until it is set up. See the <a className="site-page-touch-link" href="/disclaimer">Disclaimer</a>{' '}
       for how the game's content is sourced.
     </p>
   </SitePage>
