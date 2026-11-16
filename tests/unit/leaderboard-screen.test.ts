@@ -2,54 +2,22 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Leaderboard, type LeaderboardProps } from '../../src/screens/Leaderboard';
+import { Leaderboard } from '../../src/screens/Leaderboard';
+import { ScoreBoard } from '../../src/components/show/ScoreBoard';
+import { computeStageLanes, questionDisplayNumber } from '../../src/engine/leaderboard';
 import { RoomContext } from '../../src/presentation/RoomContext';
-import { useGameStore, type SeenDeviceState } from '../../src/store/game-store';
 
-type State = ReturnType<typeof useGameStore.getState>;
-type Room = React.ContextType<typeof RoomContext>;
-
-function player(nickname: string, score: number, answered = 1): SeenDeviceState {
-  return {
-    nickname, score, answered, team: null, joinedAt: 1,
-    correct: 0, streak: 0, bestStreak: 0, hardQuestionPoints: 0, realityGap: 0,
-  };
+function renderScreen(): string {
+  return renderToStaticMarkup(React.createElement(Leaderboard));
 }
 
-function renderLeaderboard(
-  overrides: Partial<Pick<State, 'seenDevices' | 'run' | 'slideIndex' | 'offlineMode'>> = {},
-  props: LeaderboardProps = {},
-  room?: Room,
-): string {
-  const previous = useGameStore.getState();
-  const getInitialState = useGameStore.getInitialState;
-  try {
-    // React server rendering uses getInitialState(), not getState(), for
-    // useSyncExternalStore. Supply the test snapshot to both paths.
-    const snapshot: State = {
-      ...previous,
-      seenDevices: {},
-      run: [{ id: 'title', type: 'title', title: 'Welcome' }] as State['run'],
-      slideIndex: 0,
-      offlineMode: false,
-      ...overrides,
-    };
-    useGameStore.getInitialState = () => snapshot;
-    useGameStore.setState(snapshot, true);
-    const screen = React.createElement(Leaderboard, props);
-    return renderToStaticMarkup(room
-      ? React.createElement(RoomContext.Provider, { value: room }, screen)
-      : screen);
-  } finally {
-    useGameStore.getInitialState = getInitialState;
-    useGameStore.setState(previous, true);
-  }
-}
-
-test('the screen shows a readable waiting state before anyone has answered', () => {
-  const html = renderLeaderboard();
+test('the projected screen starts with a readable empty standings board', () => {
+  // React's server renderer uses Zustand's initial snapshot. This tests the
+  // actual default screen; populated states are covered through ScoreBoard.
+  const html = renderScreen();
   assert.match(html, /data-role="leaderboard-screen"/);
   assert.match(html, /aria-label="Standings"/);
+  assert.match(html, /data-format="widescreen"/);
   assert.match(html, /<span>STANDINGS<\/span>/);
   assert.match(html, /data-role="score-board"[^>]*data-count="0"/);
   assert.match(html, /data-role="score-board-empty"/);
@@ -57,8 +25,25 @@ test('the screen shows a readable waiting state before anyone has answered', () 
   assert.doesNotMatch(html, /data-role="score-board-lane"/);
 });
 
-test('the screen displays the five highest-scoring people who actually answered', () => {
-  const seenDevices = {
+test('the screen honors its format and class and shows the presenter room code', () => {
+  const room = { roomId: 'ABCD', connectionStatus: 'connected' as const, error: null };
+  const html = renderToStaticMarkup(React.createElement(
+    RoomContext.Provider,
+    { value: room },
+    React.createElement(Leaderboard, { format: 'portrait', className: 'custom-stage' }),
+  ));
+  assert.match(html, /class="leaderboard-screen screen leaderboard custom-stage"/);
+  assert.match(html, /data-format="portrait"/);
+  assert.match(html, /aria-label="Standings"/);
+  assert.match(html, /class="join-card__code">ABCD<\/strong>/);
+  assert.match(html, /class="show-footer__room">ROOM ABCD<\/span>/);
+});
+
+test('the stage standings render the five highest-scoring answered players without device IDs', () => {
+  const player = (nickname: string, score: number, answered = 1) => ({
+    nickname, score, answered, bestStreak: 0, hardQuestionPoints: 0, realityGap: 0, team: null,
+  });
+  const lanes = computeStageLanes({
     'private-device-1': player('Ada', 600),
     'private-device-2': player('Ben', 500),
     'private-device-3': player('Cleo', 400),
@@ -66,8 +51,8 @@ test('the screen displays the five highest-scoring people who actually answered'
     'private-device-5': player('Eva', 200),
     'private-device-6': player('Finn', 100),
     'private-device-7': player('Never answered', 999, 0),
-  };
-  const html = renderLeaderboard({ seenDevices });
+  });
+  const html = renderToStaticMarkup(React.createElement(ScoreBoard, { entries: lanes, tone: 'stage' }));
   const names = [...html.matchAll(/class="score-board__name">([^<]+)<\/span>/g)]
     .map((match) => match[1]);
   assert.deepEqual(names, ['Ada', 'Ben', 'Cleo', 'Drew', 'Eva']);
@@ -76,29 +61,21 @@ test('the screen displays the five highest-scoring people who actually answered'
   assert.doesNotMatch(html, /Finn|Never answered|private-device-/);
 });
 
-test('a question slide names the standings cutoff and preserves room and screen chrome', () => {
-  const run = [{
-    id: 'q4', type: 'question', kind: 'binary', answer: true,
-    statement: 'Synthetic test question', displayNumber: 4,
-  }] as unknown as State['run'];
-  const room: Room = { roomId: 'ABCD', connectionStatus: 'connected', error: null };
-  const html = renderLeaderboard(
-    { run, slideIndex: 0, seenDevices: { one: player('Ada', 42) } },
-    { format: 'portrait', className: 'custom-stage' },
-    room,
-  );
-  assert.match(html, /class="leaderboard-screen screen leaderboard custom-stage"/);
-  assert.match(html, /data-format="portrait"/);
-  assert.match(html, /data-through="4"/);
-  assert.match(html, /aria-label="Standings through question 4"/);
-  assert.match(html, /class="score-board__kicker">Through 4<\/p>/);
-  assert.match(html, /class="join-card__code">ABCD<\/strong>/);
-});
-
-test('non-question slides do not announce an invented question cutoff', () => {
-  const html = renderLeaderboard({ seenDevices: { one: player('Ada', 42) } });
-  assert.match(html, /aria-label="Standings"/);
-  assert.match(html, /data-through="final"/);
-  assert.match(html, /class="score-board__kicker">The top 1<\/p>/);
-  assert.doesNotMatch(html, /Standings through question|Through [0-9]/);
+test('the board announces a real question cutoff, never an invented one', () => {
+  const slide = { id: 'q4', type: 'question', kind: 'binary', answer: true, displayNumber: 4 };
+  const through = questionDisplayNumber(slide);
+  assert.equal(through, 4);
+  assert.equal(questionDisplayNumber({ id: 'title', type: 'title' }), null);
+  const entries = computeStageLanes({
+    one: { nickname: 'Ada', score: 42, answered: 1, bestStreak: 0, hardQuestionPoints: 0 },
+  });
+  const atQuestion = renderToStaticMarkup(React.createElement(ScoreBoard, { entries, tone: 'stage', through }));
+  assert.match(atQuestion, /data-through="4"/);
+  assert.match(atQuestion, /class="score-board__kicker">Through 4<\/p>/);
+  const noQuestion = renderToStaticMarkup(React.createElement(ScoreBoard, {
+    entries, tone: 'stage', through: questionDisplayNumber({ id: 'closing', type: 'closing' }),
+  }));
+  assert.match(noQuestion, /data-through="final"/);
+  assert.match(noQuestion, /class="score-board__kicker">The top 1<\/p>/);
+  assert.doesNotMatch(noQuestion, /Through [0-9]/);
 });
