@@ -84,6 +84,7 @@ export const ShowChrome: React.FC<ShowChromeProps> = React.memo(({
   // until reveal. The footer element itself stays mounted so the presenter status slot can share it.
   const sourceVisible = Boolean(sourceLabel || showDetails) && (evidenceVisible ?? !OPEN_QUESTION_PHASES.has(String(storePhase)));
   const source = sourceVisible ? describeSource(sourceLabel, currentCitation) : null;
+  const sourceDateLabel = currentCitation?.lastVerified ? "Verified" : "Retrieved"
   useLayoutEffect(() => {
     const footer = footerRef.current;
     const frame = footer?.closest<HTMLElement>("[data-show-frame]");
@@ -128,10 +129,10 @@ export const ShowChrome: React.FC<ShowChromeProps> = React.memo(({
       {hasFooter ? (
         <footer ref={footerRef} className="show-footer">
           {source ? (
-            <span className="show-footer__context show-source-pill" data-role="source-pill" aria-label={`Reviewed evidence · ${source.org}${source.verified ? ` · verified ${source.verified}` : ""}`}>
-              <span className="show-source-pill__label">Reviewed evidence</span>
+            <span className="show-footer__context show-source-pill" data-role="source-pill" aria-label={`Source evidence · ${source.org}${source.verified ? ` · ${sourceDateLabel.toLowerCase()} ${source.verified}` : ""}`}>
+              <span className="show-source-pill__label">Source evidence</span>
               <span className="show-source-pill__org">{source.org}</span>
-              {source.verified ? <span className="show-source-pill__verified">Verified {source.verified}</span> : null}
+              {source.verified ? <span className="show-source-pill__verified">{sourceDateLabel} {source.verified}</span> : null}
             </span>
           ) : <span className="show-footer__context show-footer__context--pending" data-role="source-pill" data-pending="true" />}
           {footerStatus}

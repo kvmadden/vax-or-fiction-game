@@ -1,0 +1,11 @@
+{
+  "status": "pending",
+  "facilitatorsCompleted": 0,
+  "participantsCompleted": 0,
+  "taskAttempts": 0,
+  "taskCompletions": 0,
+  "sessions": [],
+  "observations": [],
+  "requiredObservationFields": ["sessionHash", "participantId", "taskId", "devicePath", "attempted", "outcome", "helpCount", "retries", "elapsedSecondsOrNull", "observation"],
+  "allowedOutcomes": ["completed-without-help", "completed-with-help", "failed", "stopped", "not-attempted"]
+}

@@ -15,6 +15,7 @@ import { BANK_META } from '../../src/data/bank/metadata.generated.ts';
 import type { QuestionMetadata } from '../../src/data/bank/types.ts';
 
 const METADATA_DIR = 'content/bank/metadata';
+const selectedPublicRound = new Set(JSON.parse(readFileSync('public/showcase/evidence.json', 'utf8')).questions.map((q: { bankRecordId: string }) => q.bankRecordId))
 const DIFFICULTY_LEVELS = new Set(['easy', 'medium', 'hard', 'expert']);
 const SKILL_TYPES = new Set(['recall', 'application', 'judgment', 'communication', 'estimation', 'sequencing']);
 const AUDIENCE_PITCHES = new Set(['everyone', 'pharmacy-team', 'immunizer']);
@@ -170,7 +171,7 @@ test('Rating record: two raters or the owner, an adjudicator for every split or 
         branches.agreed += 1;
         assert.equal(d.level, raterA[0]!.level, `${record.bankId}: agreeing raters set the final level`);
       }
-      assert.equal(d.provisional, record.kind === 'estimate', `${record.bankId}: an estimate's rubric level is provisional, nothing else is`);
+      assert.equal(d.provisional, record.kind === 'estimate' || selectedPublicRound.has(record.bankId), `${record.bankId}: estimates and selected uncalibrated AI ratings remain provisional`);
     }
     assert.ok(d.rationale.length > 0 && d.rationale.length <= 140, `${record.bankId}: rationale must be one line of 140 characters or fewer`);
     assert.ok(!/[;—]/.test(d.rationale), `${record.bankId}: rationale has a semicolon or an em dash`);

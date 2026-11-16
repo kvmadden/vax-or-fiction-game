@@ -22,9 +22,9 @@ export const influenzaDeck: Deck = {
   "title": "Influenza Insights",
   "version": 1,
   "status": "draft",
-  "contentRevision": "2026-09-10",
+  "contentRevision": "2026-11-01",
   "defaultTimerSeconds": 20,
-  "description": "Essential refresher on annual influenza vaccination, older adult formulations, egg allergy safety, and seasonal defense.",
+  "description": "Eight questions. Read, discuss, check the source. Clinical review by Kevin Madden, PharmD is pending.",
   "defaults": {
     "conviction": true,
     "talkWindowSeconds": 45,
@@ -63,31 +63,32 @@ export const influenzaDeck: Deck = {
       "id": "title",
       "type": "title",
       "title": "Influenza Insights",
-      "body": "Essential refresher on annual influenza vaccination, older adult formulations, egg allergy safety, and seasonal defense.",
-      "presenterNote": "Welcome the team to this refresher on seasonal influenza prevention and best practices."
+      "body": "Eight questions. Read, discuss, check the source. Clinical review by Kevin Madden, PharmD is pending.",
+      "presenterNote": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending."
     },
     {
       "id": "instructions",
       "type": "instructions",
       "title": "Talk first. Reveal second.",
       "body": "Every question follows one facilitator-controlled rhythm.",
-      "presenterNote": "Encourage open discussion before revealing each evidence-based answer."
+      "presenterNote": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending."
     },
     {
       "id": "closing",
       "type": "closing",
       "title": "Make the offer clear",
-      "body": "Universal annual vaccination and proactive formulation selection ensure robust seasonal protection.",
-      "presenterNote": "Conclude by reminding clinicians to offer influenza vaccine at every clinical opportunity.",
-      "pearl": "Recommend annual influenza vaccination routinely for all persons 6 months and older, with enhanced formulations for ages 65 and older.",
+      "body": "Keep the source in the conversation.",
+      "presenterNote": "Invite questions and check the linked guidance together. Clinical review by Kevin Madden, PharmD is pending.",
+      "pearl": "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
       "summaryPoints": [
-        "Administer annual influenza vaccination to all persons aged 6 months and older.",
-        "Preferentially select Fluzone High-Dose, Flublok, or adjuvanted vaccine for adults 65 and older.",
-        "Provide any age-appropriate formulation in routine settings regardless of egg allergy severity."
+        "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
+        "For adults aged 65 and older, CDC preferentially recommends high-dose inactivated, recombinant, or adjuvanted influenza vaccine.",
+        "Egg allergy alone requires no extra vaccine safety measures. Use a flu vaccine appropriate for the person’s age and health status, where allergic reactions can be recognized and treated."
       ],
       "references": [
         {
-          "label": "CDC ACIP Influenza Recommendations"
+          "label": "CDC guidance · Draft review · Public domain prose · retrieved 2026-11-01",
+          "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html"
         }
       ],
       "imageRequirementId": "plate-care-team"
@@ -139,30 +140,50 @@ export const influenzaDeck: Deck = {
     {
       "id": "cdc-flu-recs",
       "publisher": "CDC",
-      "shortDisplayLine": "CDC · Seasonal influenza vaccine recommendations",
-      "accessedDate": "2026-09-29",
+      "publisherLabel": "CDC · Draft review",
+      "shortDisplayLine": "CDC · recommendations · Draft review · Public domain prose · retrieved 2026-11-01",
+      "accessedDate": "2026-11-01",
       "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html"
-    },
-    {
-      "id": "acip-older-adults",
-      "publisher": "CDC ACIP",
-      "shortDisplayLine": "CDC ACIP · Preferential Recommendations for Adults Aged 65 Years and Older",
-      "accessedDate": "2026-09-10",
-      "url": "https://www.cdc.gov/mmwr/volumes/71/wr/mm7129a1.htm"
     },
     {
       "id": "cdc-egg-allergy",
       "publisher": "CDC",
-      "shortDisplayLine": "CDC · Flu vaccine and egg allergy",
-      "accessedDate": "2026-09-29",
+      "publisherLabel": "CDC · Draft review",
+      "shortDisplayLine": "CDC · egg · Draft review · Public domain prose · retrieved 2026-11-01",
+      "accessedDate": "2026-11-01",
       "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html"
     },
     {
       "id": "cdc-pinkbook-flu",
-      "publisher": "CDC Pink Book",
-      "shortDisplayLine": "CDC Pink Book · Influenza chapter",
-      "accessedDate": "2026-09-29",
+      "publisher": "CDC",
+      "publisherLabel": "CDC · Draft review",
+      "shortDisplayLine": "CDC · pinkbook · Draft review · Public domain prose · retrieved 2026-11-01",
+      "accessedDate": "2026-11-01",
       "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-12-influenza.html"
+    },
+    {
+      "id": "cdc-keyfacts",
+      "publisher": "CDC",
+      "publisherLabel": "CDC · Draft review",
+      "shortDisplayLine": "CDC · keyfacts · Draft review · Public domain prose · retrieved 2026-11-01",
+      "accessedDate": "2026-11-01",
+      "url": "https://www.cdc.gov/flu/vaccines/keyfacts.html"
+    },
+    {
+      "id": "cdc-heart",
+      "publisher": "CDC",
+      "publisherLabel": "CDC · Draft review",
+      "shortDisplayLine": "CDC · heart · Draft review · Public domain prose · retrieved 2026-11-01",
+      "accessedDate": "2026-11-01",
+      "url": "https://www.cdc.gov/flu/highrisk/heartdisease.html"
+    },
+    {
+      "id": "cdc-antivirals",
+      "publisher": "CDC",
+      "publisherLabel": "CDC · Draft review",
+      "shortDisplayLine": "CDC · antivirals · Draft review · Public domain prose · retrieved 2026-11-01",
+      "accessedDate": "2026-11-01",
+      "url": "https://www.cdc.gov/flu/treatment/antiviral-drugs.html"
     }
   ],
   "questions": [
@@ -172,26 +193,20 @@ export const influenzaDeck: Deck = {
       "kind": "binary",
       "statement": "Routine annual influenza vaccination is recommended by ACIP for all individuals aged 6 months and older who lack contraindications.",
       "answer": true,
-      "reveal": "CDC recommends a flu vaccine every year for everyone aged 6 months and older.",
-      "takeaway": "Everyone aged 6 months and older, every year.",
+      "reveal": "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
+      "takeaway": "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
       "topicCue": "UNIVERSAL RECOMMENDATION",
       "authoringId": "q1",
       "layoutFamily": "editorial-split",
       "imageRequirementId": "plate-care-team",
       "teachingRole": "applied",
-      "discussionPrompt": "Why does ACIP maintain a universal annual recommendation rather than a risk-targeted approach?",
-      "patientConversation": "Annual flu vaccination is recommended for everyone in the family starting at 6 months of age.",
-      "presenterNote": "Emphasize that the recommendation covers everyone aged 6 months and older, every year.",
+      "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
+      "patientConversation": "Annual flu vaccination is recommended for people aged 6 months and older who do not have contraindications.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
-        "cdc-flu-recs"
+        "cdc-keyfacts"
       ],
       "emphasis": [
-        "aged 6"
-      ],
-      "revealEmphasis": [
-        "aged 6"
-      ],
-      "takeawayEmphasis": [
         "aged 6"
       ]
     },
@@ -201,27 +216,21 @@ export const influenzaDeck: Deck = {
       "kind": "binary",
       "statement": "Adults aged 65 years and older are preferentially recommended to receive Fluzone High-Dose, Flublok, or adjuvanted influenza vaccine over standard-dose unadjuvanted vaccines.",
       "answer": true,
-      "reveal": "ACIP preferentially recommends higher-dose or adjuvanted formulations including Fluzone High-Dose and Flublok for adults aged 65 and older.",
-      "takeaway": "Higher-dose and adjuvanted formulations provide stronger antibody responses for adults 65 and older.",
+      "reveal": "For adults aged 65 and older, CDC preferentially recommends high-dose inactivated, recombinant, or adjuvanted influenza vaccine.",
+      "takeaway": "For adults aged 65 and older, CDC preferentially recommends high-dose inactivated, recombinant, or adjuvanted influenza vaccine.",
       "topicCue": "OLDER ADULT FORMULATIONS",
       "authoringId": "q2",
       "layoutFamily": "comparison",
       "imageRequirementId": "plate-care-team",
       "teachingRole": "applied",
-      "discussionPrompt": "How does immunosenescence justify preferential formulation selection for older adults?",
-      "patientConversation": "For adults 65 and older, these specific enhanced vaccines provide stronger protection against flu complications.",
-      "presenterNote": "Discuss comparative effectiveness data showing reduced hospitalizations with enhanced vaccines in seniors.",
+      "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
+      "patientConversation": "For adults aged 65 and older, CDC preferentially recommends high-dose inactivated, recombinant, or adjuvanted influenza vaccine.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
-        "acip-older-adults"
+        "cdc-flu-recs"
       ],
       "emphasis": [
         "aged 65"
-      ],
-      "revealEmphasis": [
-        "65 and older"
-      ],
-      "takeawayEmphasis": [
-        "65 and older"
       ]
     },
     {
@@ -230,16 +239,16 @@ export const influenzaDeck: Deck = {
       "kind": "binary",
       "statement": "A severe egg allergy means a longer observation period after a flu shot.",
       "answer": false,
-      "reveal": "CDC and ACIP confirm persons with egg allergies can receive any age-appropriate influenza vaccine in standard outpatient settings without special observation.",
-      "takeaway": "Persons with egg allergy of any severity can safely receive any age-appropriate influenza vaccine.",
+      "reveal": "Egg allergy alone requires no extra vaccine safety measures. Use a flu vaccine appropriate for the person’s age and health status, where allergic reactions can be recognized and treated.",
+      "takeaway": "Egg allergy alone requires no extra vaccine safety measures. Use a flu vaccine appropriate for the person’s age and health status, where allergic reactions can be recognized and treated.",
       "topicCue": "EGG ALLERGY SAFETY",
       "authoringId": "q3",
       "layoutFamily": "editorial-split",
       "imageRequirementId": "plate-care-team",
       "teachingRole": "misconception",
-      "discussionPrompt": "How does current ovalbumin data support removing previous egg allergy precautions?",
-      "patientConversation": "Current guidelines confirm you can safely receive your flu shot right here today, regardless of egg allergies.",
-      "presenterNote": "Explain that most flu vaccines hold a small amount of egg protein, and studies show severe allergic reactions in people with egg allergy are unlikely.",
+      "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
+      "patientConversation": "Egg allergy alone requires no extra vaccine safety measures. Use a flu vaccine appropriate for the person’s age and health status, where allergic reactions can be recognized and treated.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-egg-allergy"
       ]
@@ -250,18 +259,18 @@ export const influenzaDeck: Deck = {
       "kind": "binary",
       "statement": "Flu shots can’t cause flu, because the virus in them is killed or is only a single protein.",
       "answer": true,
-      "reveal": "Inactivated and recombinant influenza vaccines contain killed virus or engineered protein subunits that cannot replicate or cause flu.",
-      "takeaway": "Inactivated and recombinant vaccines cannot cause influenza infection.",
+      "reveal": "Flu shots contain inactivated virus or influenza proteins and cannot cause flu.",
+      "takeaway": "Flu shots contain inactivated virus or influenza proteins and cannot cause flu.",
       "topicCue": "VACCINE BIOLOGY",
       "authoringId": "q4",
       "layoutFamily": "timeline",
       "imageRequirementId": "plate-care-team",
       "teachingRole": "surprise",
-      "discussionPrompt": "What explains the mild transient soreness or fatigue patients occasionally feel after vaccination?",
-      "patientConversation": "The flu vaccine cannot give you the flu because the viral parts are completely inactive.",
-      "presenterNote": "Address the common confusion between mild immune reactogenicity and active viral infection.",
+      "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
+      "patientConversation": "Flu shots contain inactivated virus or influenza proteins and cannot cause flu.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
-        "cdc-pinkbook-flu"
+        "cdc-keyfacts"
       ]
     },
     {
@@ -270,16 +279,16 @@ export const influenzaDeck: Deck = {
       "kind": "binary",
       "statement": "For most people, September or October is the ideal time for a flu shot.",
       "answer": true,
-      "reveal": "CDC says most people who need one dose should ideally get it in September or October.",
-      "takeaway": "September or October is the ideal window for most people.",
+      "reveal": "For most people who need one dose, flu vaccination should ideally be offered in September or October.",
+      "takeaway": "For most people who need one dose, flu vaccination should ideally be offered in September or October.",
       "topicCue": "TIMING OF VACCINATION",
       "authoringId": "q5",
       "layoutFamily": "three-site-map",
       "imageRequirementId": "plate-care-team",
       "teachingRole": "applied",
-      "discussionPrompt": "Why is early summer vaccination discouraged while autumn vaccination remains strongly supported?",
-      "patientConversation": "September or October is the best time for most people to get a flu shot.",
-      "presenterNote": "Explain that CDC does not recommend July or August vaccination for most people, because protection may wane before the season ends.",
+      "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
+      "patientConversation": "For most people who need one dose, flu vaccination should ideally be offered in September or October.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-flu-recs"
       ]
@@ -290,18 +299,18 @@ export const influenzaDeck: Deck = {
       "kind": "binary",
       "statement": "Among people with heart disease, flu vaccination is linked to fewer cardiac events.",
       "answer": true,
-      "reveal": "Flu illness is linked to more heart attacks and strokes, and flu vaccination is linked to fewer cardiac events in people with heart disease.",
-      "takeaway": "For people with heart disease, a flu shot is heart protection too.",
+      "reveal": "Flu vaccination is associated with lower rates of some cardiac events among people with heart disease.",
+      "takeaway": "Flu vaccination is associated with lower rates of some cardiac events among people with heart disease.",
       "topicCue": "CARDIOVASCULAR PROTECTION",
       "authoringId": "q6",
       "layoutFamily": "numeric-poster",
       "imageRequirementId": "plate-care-team",
       "teachingRole": "consequence",
-      "discussionPrompt": "What pathophysiological mechanisms link acute respiratory influenza infection to cardiovascular events?",
-      "patientConversation": "For people with heart disease, a yearly flu shot is linked to fewer heart problems.",
-      "presenterNote": "Highlight that flu illness is linked to more heart attacks and strokes, and flu vaccination to fewer cardiac events in people with heart disease.",
+      "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
+      "patientConversation": "Flu vaccination is associated with lower rates of some cardiac events among people with heart disease.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
-        "cdc-flu-recs"
+        "cdc-heart"
       ]
     },
     {
@@ -310,16 +319,16 @@ export const influenzaDeck: Deck = {
       "kind": "binary",
       "statement": "A mild afebrile cold with clear nasal discharge requires clinicians to postpone seasonal influenza vaccination until all symptoms clear.",
       "answer": false,
-      "reveal": "Mild afebrile illnesses are not contraindications, and postponing vaccination risks missing opportunities to protect patients.",
-      "takeaway": "Mild afebrile illness without fever does not warrant postponing influenza vaccination.",
+      "reveal": "People with minor illness may be vaccinated. Moderate or severe acute illness is a precaution.",
+      "takeaway": "People with minor illness may be vaccinated. Moderate or severe acute illness is a precaution.",
       "topicCue": "MILD ILLNESS PRECAUTIONS",
       "authoringId": "q7",
       "layoutFamily": "offset-split",
       "imageRequirementId": "plate-care-team",
       "teachingRole": "misconception",
-      "discussionPrompt": "How can clinicians prevent missed vaccination opportunities when patients present with minor ailments?",
-      "patientConversation": "A mild head cold without fever will not affect your vaccine, so we can give it safely today.",
-      "presenterNote": "Reinforce that false contraindications are a frequent cause of missed vaccination opportunities.",
+      "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
+      "patientConversation": "People with minor illness may be vaccinated. Moderate or severe acute illness is a precaution.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
         "cdc-pinkbook-flu"
       ]
@@ -330,19 +339,19 @@ export const influenzaDeck: Deck = {
       "kind": "binary",
       "statement": "Starting antiviral medications after respiratory symptom onset replaces the immunological protection provided by annual influenza vaccination.",
       "answer": false,
-      "reveal": "Antiviral drugs treat flu, but CDC says they are not a substitute for getting a flu vaccine.",
-      "takeaway": "Antiviral treatment manages acute infection but does not replace proactive annual immunization.",
+      "reveal": "Antiviral drugs can treat flu but are not a substitute for a flu vaccine.",
+      "takeaway": "Antiviral drugs can treat flu but are not a substitute for a flu vaccine.",
       "topicCue": "ANTIVIRALS VS VACCINATION",
       "authoringId": "q8",
       "layoutFamily": "comparison",
       "imageRequirementId": "plate-care-team",
       "teachingRole": "applied",
-      "discussionPrompt": "Why is active immunization essential as a public health defense compared to reactive antiviral therapy?",
-      "patientConversation": "Antivirals can help if you get sick, but they don’t replace your flu shot.",
-      "presenterNote": "Clarify that antivirals treat flu illness but are not a substitute for a flu vaccine.",
+      "discussionPrompt": "What would you check in the cited guidance before discussing this with a patient?",
+      "patientConversation": "Antiviral drugs can treat flu but are not a substitute for a flu vaccine.",
+      "presenterNote": "Read the explanation and invite the room to check the source. Clinical review by Kevin Madden, PharmD is pending.",
       "sourceIds": [
-        "cdc-flu-recs"
+        "cdc-antivirals"
       ]
     }
   ]
-};
+}

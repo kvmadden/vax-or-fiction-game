@@ -1,5 +1,28 @@
 # Vax or Fiction
 
+**Can players make an informed vaccine call from accurate, current evidence without the game leaking the answer or shutting out phone and keyboard users?**
+
+**Short answer:** the software side holds up in automated tests, but the clinical side is not proven yet. Clinical review by Kevin Madden, PharmD is pending, and no human pilot has been run.
+
+The showcase is one eight-question influenza round. Each question has a claim, a true or false answer, an exact quote from a CDC page, saved with its retrieval date and hash, and a link to that page.
+
+### How we test it
+
+| Question | How it is tested | Result now | Limit |
+| --- | --- | --- | --- |
+| Is every fact backed by a public source? | Each of the 8 questions and the opening and closing text is tied to a saved CDC quote. A check fails if a quote, hash or link changes. | 8 of 8 questions have a saved quote. All 6 links loaded and still held their quotes on 2026-11-01. 0 of 8 reviewed by a clinician. | The link between a sentence and its quote is assigned by hand, not checked by meaning. Clinical accuracy is N/A until Kevin reviews. No second reviewer. |
+| Does the game hide the answer until the reveal? | Tests check what reaches phones before the reveal and that the phone's built files hold no answer key. | Pass. A separate live probe of phone messages and the host screen in all 8 voting phases also found no leak. | The public evidence page and review sheet show the answers on purpose. This is a fixed public round, not a blind test. |
+| Can phone and keyboard users play? | Browser tests at 390x844 and 430x932, light and dark, plus keyboard reveal, source access and focus return. | All pass in headless Chromium. | No real phones, screen readers or players yet. |
+| Does scoring work? | An all-correct bot and an all-wrong bot play the round. | 950 points and 0 points, as expected. | Binary questions only. |
+
+### Limits
+
+These are automated software checks on committed files. They do not show that the content is clinically correct, that players learn from it, or that it changes anyone's vaccine choices. Content may go out of date after the retrieval date. One source (the Pink Book chapter, 2021) carries a CDC warning that it may be outdated. Kevin has not reviewed any question yet, there is no second clinical reviewer, and the four-player pilot has not been run.
+
+### Where to look
+
+Run locally (see below) and open `/showcase/index.html` for the evidence, source chips and the full error list, with a button to host the round. Kevin's phone-friendly review sheet (approve, flag with a note, or skip per question) is at `/clinical-review/index.html`. More detail: [workflow](docs/SHOWCASE.md), [verification](docs/SHOWCASE-VERIFICATION.md), [how it was built](docs/HOW-BUILT.md), [media](docs/media/README.md). The other 142 questions in the bank are outside this review. The full repository gate (`npm run check`) fails on main and on this change in the short-phone layout suite. See the verification report.
+
 A game for talking through immunizations. One screen hosts the show, the room calls true or false (or picks the
 better reply, the myth, the number or the order) on their phones, and every reveal shows the public source behind the
 answer. There is also a solo mode for one player.

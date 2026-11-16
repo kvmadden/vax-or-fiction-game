@@ -141,10 +141,16 @@ export const PresentationSuite: React.FC<PresentationSuiteProps> = ({ roomId = '
       if (!isSetupPhase(useGameStore.getState().phase)) return;
       const action = hostLaunchFromWindow();
       if (!action) return;
+      if (action.type === 'SELECT_MODE' && action.deckId === 'influenza') {
+        useGameStore.getState().dispatch({ type: 'SELECT_DECK', deckId: action.deckId })
+      }
       if (action.type === 'APPLY_PRESET') {
         useGameStore.getState().dispatch({ type: 'APPLY_PRESET', presetId: action.presetId });
       } else if (action.modeId) {
         useGameStore.getState().dispatch({ type: 'SELECT_MODE', modeId: action.modeId });
+      }
+      if (action.type === 'SELECT_MODE' && action.deckId === 'influenza') {
+        useGameStore.getState().dispatch({ type: 'SET_TIMER', seconds: 20, enabled: false, visible: false })
       }
       if (action.venue) applyVenue(action.venue);
       if (action.timerSeconds) {

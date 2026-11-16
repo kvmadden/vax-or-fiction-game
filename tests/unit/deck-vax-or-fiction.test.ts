@@ -209,13 +209,13 @@ test('VOF-W6 (2026-09-27): q2, flagship q3 and flagship-r2 q3 no longer say flu 
   }
 });
 
-test('the default provider returns the show deck and keeps flagship selectable', async () => {
+test('the default provider returns the show deck and keeps flagship and the frozen influenza round selectable', async () => {
   const provider = new OfflineProvider();
   assert.equal(DEFAULT_DECK_ID, 'vax-or-fiction');
   assert.equal((await provider.getDeck('default')).id, 'vax-or-fiction');
   assert.equal((await provider.getDeck('vax-or-fiction')).id, 'vax-or-fiction');
   assert.equal((await provider.getDeck('flagship')).id, 'flagship');
-  assert.deepEqual((await provider.getDecks()).map((entry) => entry.id), ['vax-or-fiction', 'flagship']);
+  assert.deepEqual((await provider.getDecks()).map((entry) => entry.id), ['vax-or-fiction', 'flagship', 'influenza']);
   assert.equal(resolveBundledDeck('nope'), null);
   assert.equal(flagshipDeck.questions.length, 20);
 });

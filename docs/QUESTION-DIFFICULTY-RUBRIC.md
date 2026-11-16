@@ -153,3 +153,7 @@ Both clear the batch gate (exact 60%, weighted kappa 0.5). Every disagreement wa
 **Where rater A was unsure:** 9 of 24. They cluster in the same weak spots: the two estimates with neighboring plausible ranges (`vax-or-fiction:q19`, `:q14`), how familiar the sixfold heart-attack figure is (`vax-or-fiction:q2`), the buried hinge (`:q24`), the dense four-choice case (`:q29`), folk wisdom about rusty nails (`:q31`), a wrong reply that sounds like something people really say (`art-of-the-offer:q12`), an order whose middle two steps are arguable (`vax-or-fiction:q15`, whose own reveal says a real conversation can loop back), and a schedule detail (`hpv:q3`). Three of the nine became splits.
 
 **Content notes from raters (text not changed by the rating pass):** `vax-or-fiction:q24` has a buried hinge. `vax-or-fiction:q27` and `:q28` give their order away. `art-of-the-offer:q18`'s question gives the answer away, and one rater noted its keyed reply overclaims ("complete liver defense"). `vax-or-fiction:q15`'s order is arguable by its own reveal. `hepatitis-b:q7` uses jargon.
+
+## Public eight-question showcase
+
+The eight influenza records in the public showcase retain their original AI ratings and rationale, but all eight ratings are provisional until fresh human play calibration. Rater agreement is not player difficulty quality or clinical review. The showcase evidence and pilot do not validate difficulty.

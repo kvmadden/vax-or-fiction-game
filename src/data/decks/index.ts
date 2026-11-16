@@ -1,9 +1,10 @@
 import type { Deck, GameMode } from '../types';
 import { vaxOrFictionDeck } from './vax-or-fiction';
 import { flagshipDeck } from './flagship';
+import { influenzaDeck } from './topics/influenza';
 
 /** The show deck ships first; the 20-question flagship stays bundled as a second selectable deck. */
-export const BUNDLED_DECKS: readonly Deck[] = [vaxOrFictionDeck, flagshipDeck];
+export const BUNDLED_DECKS: readonly Deck[] = [vaxOrFictionDeck, flagshipDeck, influenzaDeck];
 
 export const DEFAULT_DECK_ID = vaxOrFictionDeck.id;
 
