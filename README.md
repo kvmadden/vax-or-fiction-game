@@ -1,6 +1,12 @@
 # Vax or Fiction
 
-A game for talking through immunizations. One screen hosts the show, the room calls true or false (or picks the
+Vax or Fiction is an immunization quiz game for educators, groups, and solo players.
+
+[Play a sample question](https://kvmadden.com/projects/vax-or-fiction-game/#try).
+
+**Run locally.** Run `npm install` and `npm run dev`, then open the address Vite prints and choose **Host a game**, **Join a game**, or **Play on your own**.
+
+One screen hosts the show, the room calls true or false (or picks the
 better reply, the myth, the number or the order) on their phones, and every reveal shows the public source behind the
 answer. There is also a solo mode for one player.
 
