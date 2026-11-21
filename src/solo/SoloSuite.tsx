@@ -92,7 +92,7 @@ export const SoloSuite: React.FC = () => {
     try {
       deal(topic, await loadSoloPool(topic));
     } catch {
-      setError("That topic didn't load. Check your connection, then try again.");
+      setError("That topic didn't load. Check your connection, then reload the page.");
     } finally {
       setLoadingId(null);
     }
