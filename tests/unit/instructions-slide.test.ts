@@ -4,27 +4,21 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { InstructionsSlide } from "../../src/screens/InstructionsSlide";
 import { useGameStore } from "../../src/store/game-store";
+import { phonesCanVote } from "../../src/screens/setup-polling";
 
 function render(props: React.ComponentProps<typeof InstructionsSlide> = {}): string {
   return renderToStaticMarkup(React.createElement(InstructionsSlide, props));
 }
 
 test("instructions show the three canonical steps in an accessible ordered list", () => {
-  const previousMode = useGameStore.getState().interactionMode;
-  useGameStore.setState({ interactionMode: "facilitator" });
-  try {
-    const html = render();
-    assert.match(html, /data-screen="instructions"/);
-    assert.match(html, /data-format="widescreen"/);
-    assert.match(html, /<h1>Talk first\. Reveal second\.<\/h1>/);
-    assert.match(html, /<ol[^>]*aria-label="How this works"/);
-    assert.equal((html.match(/class="instructions-source-step step-/g) ?? []).length, 3);
-    for (const title of ["Make your call", "Hash it out", "See the evidence"]) {
-      assert.ok(html.includes(title), `missing canonical step: ${title}`);
-    }
-    assert.doesNotMatch(html, /Vote on your phone\./, "hands-up instructions should not imply phone voting");
-  } finally {
-    useGameStore.setState({ interactionMode: previousMode });
+  const html = render();
+  assert.match(html, /data-screen="instructions"/);
+  assert.match(html, /data-format="widescreen"/);
+  assert.match(html, /<h1>Talk first\. Reveal second\.<\/h1>/);
+  assert.match(html, /<ol[^>]*aria-label="How this works"/);
+  assert.equal((html.match(/class="instructions-source-step step-/g) ?? []).length, 3);
+  for (const title of ["Make your call", "Hash it out", "See the evidence"]) {
+    assert.ok(html.includes(title), "missing canonical step: " + title);
   }
 });
 
@@ -46,16 +40,26 @@ test("custom copy and steps render, and format takes precedence over formatId", 
 });
 
 test("phone-voting descriptions show only in a voting-enabled venue and mode", () => {
-  const previousMode = useGameStore.getState().interactionMode;
-  try {
-    useGameStore.setState({ interactionMode: "polling" });
-    assert.match(render({ venue: "teams" }), /Vote on your phone\./);
-    assert.match(render({ venue: "room" }), /Vote on your phone\./);
-    assert.doesNotMatch(render({ venue: "offline" }), /Vote on your phone\./);
-    useGameStore.setState({ interactionMode: "facilitator" });
-    assert.doesNotMatch(render({ venue: "teams" }), /Vote on your phone\./);
-  } finally {
-    useGameStore.setState({ interactionMode: previousMode });
+  for (const venue of ["teams", "room", "offline"] as const) {
+    for (const mode of ["polling", "facilitator"] as const) {
+      assert.equal(
+        phonesCanVote(venue, mode),
+        venue !== "offline" && mode === "polling",
+        venue + " / " + mode + " voting policy",
+      );
+    }
+  }
+
+  // Zustand's server-rendered hook reads its initial snapshot, not setState mutations.
+  // Check rendered markup against that snapshot and test both modes via the policy above.
+  const serverMode = useGameStore.getInitialState().interactionMode ?? "facilitator";
+  for (const venue of ["teams", "room", "offline"] as const) {
+    const html = render({ venue });
+    if (phonesCanVote(venue, serverMode)) {
+      assert.match(html, /Vote on your phone\./);
+    } else {
+      assert.doesNotMatch(html, /Vote on your phone\./);
+    }
   }
 });
 
