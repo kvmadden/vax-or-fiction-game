@@ -1,0 +1,72 @@
+August 30, 2024
+RSV Vaccine Guidance for Pregnant Women
+What to know
+To prevent severe RSV disease in infants, either maternal RSV vaccination or infant immunization with RSV monoclonal antibody is recommended.
+Pregnant women should get a single dose of the maternal RSV vaccine (Pfizer’s Abrysvo) during weeks 32 through 36 of pregnancy sometime between September through January.
+Most infants will not need both.
+Overview
+CDC recommends a respiratory syncytial virus (RSV) vaccine for pregnant women to protect their babies from severe RSV disease. Pregnant women should get a single dose of the maternal RSV vaccine (Pfizer’s Abrysvo) during weeks 32 through 36 of pregnancy. These vaccines are administered September through January in most of the United States.
+Protection provided by a maternal vaccine, passed from the mother to the baby, wanes over time. Because these vaccines are administered September through January, the protection passed to the baby will last for their first RSV season.
+Pregnant women and their healthcare providers should discuss both maternal RSV vaccination and infant immunization with nirsevimab and consider patient preferences when deciding which product is best for their family.
+Recommendations
+Timing
+CDC recommends one dose of Pfizer’s Abrysvo for women who are 32 0/7 weeks’ through 36 6/7 weeks’ gestation. Pregnant women who are more than 36 weeks 6 days pregnant should not be vaccinated, as it is unlikely there will be enough time for the antibodies to develop, cross the placenta, and protect the infant. Instead, their infant should receive RSV immunization (i.e., nirsevimab) just before or at the start of the RSV season.
+In most of the continental United States, pregnant women should receive RSV vaccine from September (1–2 months before the anticipated start of RSV season) through January (2–3 months before the anticipated end of the RSV season) so that their babies are protected against severe RSV disease at birth.
+Providers should not administer maternal RSV vaccine outside of this seasonal timeframe unless the individual lives in an area where RSV circulation is less predictable and peak activity may vary, including Alaska and tropical climates (including but not limited to southern Florida, Guam, Hawaii, Puerto Rico, U.S.-affiliated Pacific Islands, and the U.S. Virgin Islands).
+If an infant requires protection against severe RSV outside of the recommended seasonal administration for maternal RSV vaccination, healthcare providers should administer nirsevimab.
+Reason for Seasonal Administration
+Babies will be born 1–2 months after the mother is vaccinated and will have immediate protection against RSV. Protection provided by a maternal vaccine wanes over time.
+CDC does not currently recommend maternal vaccination outside of this period in most of the U.S. because vaccinating a pregnant woman in February or March for an infant born in April or May will provide that infant limited protection during the RSV season (typically fall and winter). That infant would be better protected by receiving nirsevimab just before or at the start of the RSV season. Because administration happens before the baby is born, it is difficult to adjust vaccination timing based on year-to-year variations in RSV circulation.
+Revaccination for subsequent pregnancies&lrm;
+At this time, if a pregnant woman has already received a maternal RSV vaccine during any previous pregnancy, CDC does not recommend another dose of RSV vaccine during subsequent pregnancies. If their mother was not vaccinated during the current pregnancy, the infant should receive nirsevimab during October–March (ideally, in October if born during April–September or at birth if born during October–March).
+CDC continues to evaluate data to determine whether there is sufficient benefit of revaccination in subsequent pregnancies.
+Administration with other vaccines
+There are multiple vaccines recommended for pregnant women. Maternal RSV vaccine can be administered during the same visit that a patient receives a Tdap, COVID-19, and/or influenza vaccine.
+Misadministration alert
+In the 2023–2024 RSV season, CDC received reports of GSK's Arexvy being administered in error to pregnant women.
+Pfizer's Abrysvo is the only RSV vaccine recommended for pregnant women. GSK's Arexvy and Moderna's mResvia are NOT approved for use during pregnancy.
+Learn more about misadministration errors during RSV maternal vaccination.
+Efficacy
+Data from clinical trials show that the estimated benefits of the recommended maternal RSV vaccine outweigh any potential risks.
+In the phase 3 clinical trial, maternal RSV vaccine reduced the risk of the baby being hospitalized for RSV by 68% and risk of having a healthcare visit for RSV by 57% within 3 months after birth. In the same trial, the RSV vaccine reduced the risk of the baby being hospitalized for RSV by 57% and risk of having a healthcare visit for RSV by 51% within 6 months after birth.
+The maternal RSV vaccine reduced the risk of severe infant outcomes caused by RSV, including having low oxygen in the blood or the need for mechanical ventilation or admission to an intensive care unit (ICU), by 82% within 3 months and by 69% within 6 months after birth.
+Real-world effectiveness
+The timing of 2023–2024 RSV season and overall low uptake of maternal RSV vaccine limited CDC’s ability to estimate maternal RSV vaccine effectiveness during the 2023–2024 RSV season. CDC will continue to monitor maternal RSV vaccine uptake and effectiveness.
+Safety
+Contraindications
+Pfizer's Abrysvo should not be administered to a person with a history of severe allergic reaction, such as anaphylaxis, to any component of this vaccine. Information about Abrysvo can be found in the manufacturer's package insert.
+Precautions
+Patients with a minor acute illness, such as a cold, can receive maternal RSV vaccination. If a patient has moderate or severe acute illness, with or without fever, vaccination should generally be deferred until the patient's health improves.
+To learn more, see ACIP Contraindications Guidelines for Immunization, General Best Practice Guidelines for Immunization.
+Reporting adverse events
+Adverse events after maternal RSV vaccination should be reported to the Vaccine Adverse Event Reporting System (VAERS), even if it is not clear that the vaccine caused the adverse event. Information on how to submit a report to VAERS is available at https://vaers.hhs.gov/index.html or by telephone at 1-800-822-7967. Anyone can submit a report to VAERS — healthcare professionals, vaccine manufacturers, and the general public.
+V-Safe
+Encourage patients to sign-up for V-Safe, where they can share with CDC how they feel after getting an RSV vaccine.
+V-Safe
+To learn more about RSV vaccine safety, go to the following page:
+Respiratory Syncytial Virus (RSV) Vaccine Safety
+Learn safety information about the Respiratory Syncytial Virus (RSV) vaccine.
+Jan. 31, 2025
+Want to learn more about the science behind CDC’s recommendations?
+CDC RSV Surveillance & Research
+RSV References and Resources
+Resources
+Still have questions?
+Contact NIP-INFO by emailing nipinfo@cdc.gov.
+On This Page
+Overview
+Recommendations
+Efficacy
+Safety
+Want to learn more about the science behind CDC’s recommendations?
+Resources
+August 30, 2024
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Immunization and Respiratory Diseases; Coronavirus and Other Respiratory Viruses Division

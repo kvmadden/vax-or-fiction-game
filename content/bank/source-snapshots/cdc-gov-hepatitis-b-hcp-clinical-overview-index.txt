@@ -1,0 +1,174 @@
+Clinical Overview of Hepatitis B
+For Health Care Providers
+Nov. 2, 2026
+Key points
+Hepatitis B is a vaccine-preventable disease caused by infection of the liver with the hepatitis B virus (HBV).
+HBV is highly infectious and transmitted when blood, semen or other body fluids from a person infected with the virus enters the body of someone who is uninfected.
+People with hepatitis B often do not have symptoms.
+Vaccination is the best way to prevent hepatitis B.
+CDC recommends vaccination for nearly everyone and screening all adults at least once in their lifetime.
+Overview
+For some people, hepatitis B is a short-term illness. For others, it can become a long-term, chronic infection that can lead to serious, even life-threatening health issues like liver disease or liver cancer.
+The risk for chronic infection varies according to the age at infection and is greatest among young children. Approximately 90% of infected infants and 30% of children infected between 1–5 years will remain chronically infected with HBV. By contrast, approximately 95% of infected adults recover completely from acute HBV infection and do not become chronically infected.
+For Everyone
+Hepatitis B Basics
+Causes
+Hepatitis B is caused by infection with HBV. HBV is a 40–42-nanometer enveloped virus classified in the Hepadnaviridae family. HBV contains a circular, partially double-stranded DNA genome that is 3.2 kb in length. After a susceptible person is exposed, the virus enters the liver via the bloodstream. The liver is the primary site of HBV replication.
+The virus:
+Has multiple serologic markers for infection.
+Is classified by serologic subtype and genotype, which vary geographically.
+Is infectious for at least 7 days on surfaces.
+Types
+Acute hepatitis B is a short-term illness that occurs within the first 6 months after someone is exposed to HBV. Some people with acute hepatitis B have no symptoms at all or only mild illness. For others, acute hepatitis B can cause a more severe illness that requires hospitalization.
+Acute hepatitis B can lead to lifelong infection, or chronic hepatitis B. Over time, chronic hepatitis B can cause serious health problems, including liver damage, cirrhosis, liver cancer, and even death.
+Risk factors
+While anyone can get hepatitis B, some people are at a higher risk.
+Infants born to people with hepatitis B.
+People born in certain countries where hepatitis B is common.
+People born in the United States who were not vaccinated as infants and whose parents were born in countries with high rates of hepatitis B.
+People who have hepatitis C.
+People who have sexually transmitted infections, such as human immunodeficiency virus (HIV).
+People who are on dialysis.
+People who have liver damage or inflammation.
+People who have been in jail or prison.
+People who inject drugs (PWID) or share needles, syringes, and other types of drug equipment.
+Sex partners of people who have hepatitis B.
+Men who have sex with men.
+People who live with someone who has hepatitis B.
+Health care and public safety workers who are exposed to blood on the job.
+Incubation period
+The average incubation period for HBV is 60 days (range: 40–90 days) from exposure to onset of abnormal serum alanine aminotransferase (ALT) levels and 90 days (range: 60–150 days) from exposure to onset of signs and symptoms.
+How it spreads
+HBV is highly infectious and can be transmitted by percutaneous, mucosal, or nonintact skin exposure to infectious blood, semen, and/or other body fluids. HBV is most highly concentrated in blood, and percutaneous exposure is an efficient mode of transmission.
+HBV is primarily spread through:
+Childbirth.
+Sexual contact.
+Sharing contaminated needles, syringes, or other equipment used to inject drugs.
+Though less common, HBV can also be spread through:
+Needlesticks or other sharp instrument injuries.
+Organ transplantation and dialysis.
+Sharing items such as razors or toothbrushes.
+Contact with open sores of a person infected with HBV.
+People with type 1 or type 2 diabetes mellitus have higher rates of hepatitis B than the general population. Among people with diabetes, HBV has been spread through contact with infectious blood. People with diabetes who share blood glucose meters, fingerstick devices or other equipment like syringes or insulin pens are at increased risk for hepatitis B.
+CDC has investigated numerous hepatitis B outbreaks in people with diabetes in several settings, including long-term care facilities, hospitals, community health centers, ambulatory surgical centers, private offices, homes, and health fairs. Modes of transmission included:
+Use of a blood glucose meter for more than one person without cleaning and disinfecting it.
+Failure to consistently wear gloves and wash hands between fingerstick procedures.
+Use of the same device for more than one person.
+Cross-contamination of clean supplies with contaminated blood glucose monitoring equipment.
+Failure to separate clean and contaminated podiatry equipment.
+Improper sterilization of contaminated podiatry equipment.
+Failure to perform environmental cleaning and disinfection between podiatry patients.
+Infection rates and trends
+The rate of reported cases of acute hepatitis B declined by 30% from 2019 to 2020 and has remained relatively stable through 2023.
+Reported cases of hepatitis B in 2023
+2,214
+In 2023, a total of 2,214 cases of hepatitis B were reported in the US, but experts estimate the actual number is likely around 14,400.
+See more data in the 2023 Viral Hepatitis Surveillance Report.
+Mortality rates
+The age-adjusted hepatitis B-related death rate during 2023 (0.44 deaths per 100,000 population) remained stable compared to 2022.
+In 2023, hepatitis B-related death rates among non-Hispanic Asian/Pacific Islander persons and non-Hispanic Black persons were 8.5 times and 2.7 times as high as the rate among non-Hispanic White people, respectively.
+Clinical features
+Adults aged 30 and older are more likely to experience symptoms during acute infection with hepatitis B than those who are younger.
+For a complete list of symptoms, visit Clinical Signs and Symptoms of Hepatitis B.
+Prevention
+The best way to prevent HBV infection is by getting vaccinated.
+Clinicians should explain to patients how HBV is transmitted and encourage them to avoid certain behaviors that can spread the virus, such as those described previously.
+Did you know?
+The best way to prevent HBV infection is by getting vaccinated.
+Hepatitis B Vaccine Administration
+There are separate specific vaccination recommendations for perinatal clinicians. See detailed guidance on perinatal vaccine administration.
+Testing, screening, and diagnosis
+When conducting serologic testing for HBV infection for the first time, include three HBV seromarkers:
+Hepatitis B surface antigen (HBsAg).
+Antibody to hepatitis B surface antigen (anti-HBs).
+Total antibody to hepatitis B core antigen (total anti-HBc).
+For subsequent periodic risk-based testing, consider using the triple panel test, or HBsAg.
+Testing recommendations:
+All adults aged 18 years and older should be tested at least once in their lifetime.
+All pregnant patients should be tested for HBsAg during an early prenatal visit for each pregnancy.
+All infants born to HBsAg-positive people (only HBsAg and anti-HBs are recommended).
+Anyone who requests testing regardless of risk because many may be reluctant to disclose stigmatizing behaviors.
+Clinicians should also test people with a history of risk, regardless of age, if they were susceptible during the period of increased risk, and periodic testing if there is ongoing risk while susceptible.
+See complete recommendations for screening and testing for HBV infection.
+See detailed listing of recommendations and testing information for hepatitis B.
+There are specific separate testing recommendations for perinatal clinicians. See detailed guidance on perinatal clinical testing.
+Treatment and recovery
+Generally, clinicians will treat people with acute hepatitis B with supportive care depending on the symptoms. There are several antiviral medications available for chronic hepatitis B. It is important to link these patients to care with regular monitoring to prevent liver damage and/or hepatocellular carcinoma.
+Talk to your patients about getting hepatitis B vaccine
+Getting vaccinated is the best way to prevent hepatitis B. Clinicians should talk to their patients about screening, vaccination, and healthy habits to maintain health and prevent transmission.
+Learn more about treating hepatitis B.
+Long-term effects
+Acute hepatitis B is a short-term illness that is rarely fatal. Severity of hepatitis B and the length of infection can depend on when the person is infected.
+About 9 in 10 infants who become infected go on to develop lifelong, chronic infection. The risk goes down as a child gets older. About 1 in 3 children who get infected before age 6 will develop chronic hepatitis B.
+Approximately 15%–25% of people with chronic infection develop chronic liver disease, including cirrhosis, liver failure, or liver cancer.
+By contrast, almost all children 6 years and older and adults infected with acute HBV recover completely with no lasting liver damage.
+In some cases, HBV can reactivate, causing a flare of disease symptoms.
+HBV reactivation is when HBV DNA appears in an inactive chronic or resolved hepatitis B patient. A flare in disease activity, like elevated liver enzymes, with or without symptoms, usually follows HBV reactivation. Reactivation can be severe and lead to death.
+Patients who test positive for both anti-HBc and HBsAg have a higher reactivation risk compared to patients who test positive for both anti-HBc and anti-HBs.
+Other patients with a high risk for HBV reactivation include:
+Patients completing chemotherapy or taking immunosuppressive therapy that targets B lymphocytes.
+Patients taking high-dose steroids and anti-TNF agents.
+Patients with HIV infection who have discontinued therapy with antiretroviral drugs with activity against HBV.
+Patients undergoing organ or bone marrow transplant.
+Patients getting treatment for hepatitis C virus (HCV) infection.
+For more information on risk, monitoring, and prevention of HBV reactivation, see:
+The American Gastroenterological Association (AGA) Institute Guideline on the Prevention and Treatment of HBV Reactivation During Immunosuppressive Drug Therapy
+AGA Institute Guidelines on Hepatitis B Reactivation (HBVr): Clinical Decision Support Tool
+University of Washington Infectious Diseases Education & Assessment (IDEA) program's publication on hepatitis B reactivation
+Case definitions
+CDC, in collaboration with the Council of State and Territorial Epidemiologists, has developed case definitions to provide uniform clinical and laboratory testing criteria to identify and report nationally notifiable infectious diseases.
+Surveillance case definitions help public health officials classify and count cases consistently across reporting jurisdictions.
+To learn more about classification of hepatitis B cases, visit the National Notifiable Diseases Surveillance System (NNDSS) for each of the following:
+Acute hepatitis B
+Chronic hepatitis B
+Perinatal hepatitis B (acquired in the US or US territories)
+Surveillance case definitions are not intended to be used by clinicians to make a clinical diagnosis or determine how to meet an individual patient's health needs.
+Resources
+Chapter 10: Hepatitis B
+Learn about Hepatitis B and vaccination, including vaccine safety, efficacy, storage, and reporting.
+Screening and Testing for Hepatitis B Virus Infection: CDC Recommendations — United States, 2023
+MMWR. Recommendations and Reports / Vol. 72 / No. 1 / P. 1–25
+Universal Hepatitis B Vaccination in Adults Aged 19–59 Years: Updated Recommendations of the Advisory Committee on Immunization Practices — United States, 2022
+MMWR. Morbidity and Mortality Weekly Report / Vol. 71 / No. 13 / P. 477–483
+ACIP Presentation Slides: September 18, 2025
+Background briefing document - Hepatitis B Birth Dose Briefing Document
+Background briefing document - Hepatitis B Birth Dose Briefing Document
+Download
+Download
+Hepatitis B Vaccine Birth Dose ACIP Presentation - Final
+Hepatitis B Vaccine Birth Dose ACIP Presentation - Final
+Download
+Download
+For more resources, visit Hepatitis B Resources for Health Care Professionals.
+On This Page
+Overview
+Causes
+Types
+Risk factors
+Incubation period
+How it spreads
+Infection rates and trends
+Mortality rates
+Clinical features
+Prevention
+Testing, screening, and diagnosis
+Treatment and recovery
+Long-term effects
+Case definitions
+Resources
+Nov. 2, 2026
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+Division of Viral Hepatitis
+About This Page
+Published: May 15, 2024
+Updated: August 29, 2025
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed: November 2, 2026
+The information on this page was last reviewed by subject matter experts to ensure accuracy.

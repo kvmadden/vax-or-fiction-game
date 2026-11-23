@@ -1,0 +1,501 @@
+Summary of Risk-based Pneumococcal Vaccination Recommendations
+For Health Care Providers
+May 8, 2026
+Key points
+CDC recommends pneumococcal vaccination for children and adults at increased risk for pneumococcal disease.
+Stay up to date on pneumococcal vaccine recommendations for your patients.
+Find resources below, like CDC's free app, to help you implement pneumococcal vaccine recommendations.
+App available to interpret recommendations
+CDC offers PneumoRecs VaxAdvisor as a free app to quickly and easily provide patient-specific pneumococcal vaccine guidance. It's available for download for iOS and Android mobile devices. There's also a web-based version that doesn't require a download.
+Keep Reading
+PneumoRecs VaxAdvisor App for Vaccine Providers
+Children 2 through 5 years old
+The following guidance applies to children in this age group who have a risk condition.
+Unvaccinated or <3 PCV doses before age 2 years
+Give 2 doses of PCV15 or PCV20. Give the second dose at least 8 weeks after the first.
+Determine if they've ever received a dose of PCV20:
+Received PCV20
+Their pneumococcal vaccinations are complete.
+Never received PCV20
+See "Complete PCV series that didn't include PCV20" guidance below.
+3 PCV doses before age 12 months but no booster dose at or after age 12 months
+Give 1 dose of PCV15 or PCV20.
+Determine if they've ever received a dose of PCV20:
+Received PCV20
+Their pneumococcal vaccinations are complete.
+Never received PCV20
+See "Complete PCV series that didn't include PCV20" guidance below.
+Complete PCV series that included PCV20
+Their pneumococcal vaccines are complete.
+Complete PCV series that didn't include PCV20
+Recommendations depend on if the child's risk condition is an immunocompromising condition.
+Immunocompromising condition
+Determine if they have ever received a dose of PPSV23:
+Received PPSV23
+Then no pneumococcal vaccines are recommended at this time.
+Wait until at least 5 years have passed since they received their first PPSV23 dose.
+Then give 1 dose of PCV20 or PPSV23. Regardless of vaccine used (PCV20 or PPSV23), their pneumococcal vaccinations are then complete.
+Never received PPSV23
+Give 1 dose of PCV20 or PPSV23 at least 8 weeks after the last PCV dose.
+When PCV20 is used, their pneumococcal vaccinations are then complete.
+When PPSV23 is used, they need another pneumococcal vaccine at least 5 years later. At that time, give 1 dose of PCV20 or PPSV23. Regardless of vaccine used (PCV20 or PPSV23), their pneumococcal vaccinations are then complete.
+Not an immunocompromising condition
+Determine if they have ever received a dose of PPSV23:
+Received PPSV23
+Their pneumococcal vaccinations are complete.
+Never received PPSV23
+Give 1 dose of PCV20 or PPSV23 at least 8 weeks after last PCV dose. Regardless of vaccine used (PCV20 or PPSV23), their pneumococcal vaccinations are then complete.
+Children 6 through 18 years old
+The following guidance applies to children in this age group who have a risk condition.
+Never received PCV13, PCV15, or PCV20
+Give 1 dose of PCV15 or PCV20 at least 8 weeks after the most recent pneumococcal vaccine dose. Give it regardless of whether the child has previously received PPSV23 or PCV7.
+When PCV15 is used
+It should be followed by a dose of PPSV23 if not previously given.
+When PCV20 is used
+It doesn't need to be followed by a dose of PPSV23. Their pneumococcal vaccinations are complete.
+Received PCV13 or PCV15 before age 6 years, never received PCV20
+Recommendations depend on if the child's risk condition is an immunocompromising condition.
+Immunocompromising condition
+Determine if they already received PPSV23:
+Received 1 dose of PPSV23
+Then no pneumococcal vaccines are recommended at this time.
+Wait until at least 5 years have passed since they received their first PPSV23 dose.
+Then give 1 dose of PCV20 or PPSV23. Regardless of vaccine used (PCV20 or PPSV23), their pneumococcal vaccinations are then complete.
+Received 2 doses of PPSV23
+Their pneumococcal
+vaccinations are complete.
+Never received PPSV23
+Give 1 dose of PCV20 or PPSV23 at least 8 weeks after the last PCV dose.
+When PCV20 is used, their pneumococcal vaccinations are complete.
+When PPSV23 is used, they need another pneumococcal vaccine at least 5 years later. At that time, give either 1 dose of PCV20 or PPSV23. Regardless of vaccine used (PCV20 or PPSV23), their pneumococcal vaccinations are then complete.
+Not an immunocompromising condition
+Determine if they already received PPSV23:
+Received PPSV23
+Their pneumococcal vaccinations are complete.
+Never received PPSV23
+Give 1 dose of PCV20 or PPSV23 at least 8 weeks after the most recent pneumococcal vaccine dose. Regardless of vaccine used (PCV20 or PPSV23), their pneumococcal vaccinations are then complete.
+Adults 19 through 49 years old
+The following guidance applies to adults younger than 50 years who have a risk condition.
+Learn about serotype 4 vaccine coverage and how it relates to adults younger than 65 years.
+Job Aid for Adult Recommendations
+View complete pneumococcal vaccine schedules for adults based on prior vaccination history. Pages 2–4 provide illustrations of vaccine options to complete the recommended pneumococcal vaccines for adults 19–49 years old.
+Pneumococcal Vaccine Timing for Adults
+Never received any pneumococcal vaccineA
+Give 1 dose of PCV15, PCV20, or PCV21:
+When PCV15 is used
+It should be followed by a dose of PPSV23 Bat least 1 year later. The minimum interval (8 weeks) can be considered in adults with an immunocompromising condition, cochlear implant, or cerebrospinal fluid leak. Their pneumococcal vaccinations are then complete.
+When PCV20 or PCV21 is used
+It doesn't need to be followed by a dose of PPSV23. Regardless of vaccine used (PCV20 or PCV21), their pneumococcal vaccinations are complete.
+Only received PPSV23
+Give 1 dose of PCV15, PCV20, or PCV21 at least 1 year after the most recent PPSV23 vaccination. Regardless of which vaccine is used (PCV15, PCV20, or PCV21), an additional dose of PPSV23 isn't recommended. Their pneumococcal vaccinations are complete.
+Only received PCV13
+Give 1 dose of PCV20 or PCV21 at least 1 year after the most recent PCV13 vaccination. Regardless of which vaccine is used (PCV20 or PCV21), their pneumococcal vaccinations are complete.
+Received PCV13 and 1 dose of PPSV23
+Recommendations depend on the person's risk condition.
+Immunocompromising condition, cerebrospinal fluid leak, or cochlear implant
+Give 1 dose of PCV20 or PCV21 at least 5 years after the most recent pneumococcal vaccination. Regardless of which vaccine is used (PCV20 or PCV21), their pneumococcal vaccinations are complete. If PCV20 or PCV21 is not administered, review pneumococcal vaccine recommendations again when the patient turns 50 years old.
+Other risk conditionC
+No additional pneumococcal vaccines are recommended until at least age 50 years. Review pneumococcal vaccine recommendations again when the patient turns 50 years old.
+Received PCV13 and 2 doses of PPSV23
+Recommendations depend on the person's risk condition.
+Immunocompromising condition, cerebrospinal fluid leak, or cochlear implant
+Give 1 dose of PCV20 or PCV21 at least 5 years after the most recent pneumococcal vaccination or give no additional pneumococcal vaccines. Regardless of which vaccine is used (PCV20 or PCV21), their pneumococcal vaccinations are complete. If PCV20 or PCV21 is not administered, review pneumococcal vaccine recommendations again when the patient turns 50 years old.
+Other risk conditionC
+No additional pneumococcal vaccines are recommended until at least age 50 years. Review pneumococcal vaccine recommendations again when the patient turns 50 years old.
+Serotype 4 considerations and vaccine choice
+CDC recommends three pneumococcal conjugate vaccines for use in adults:
+PCV15 (in conjunction with PPSV23)
+PCV20 alone
+PCV21 alone
+PCV21 contains eight new pneumococcal serotypes not included in PCV15, PCV20, or PPSV23. However, PCV21 doesn't contain certain pneumococcal serotypes (e.g., serotype 4) included in other pneumococcal vaccines.
+Populations at risk
+In certain adult populations in the Western United States with data (Alaska, Colorado, New Mexico, Navajo Nation,1 and Oregon), serotype 4 has caused high percentages (i.e., ≥30%) of invasive pneumococcal disease (IPD). CDC currently doesn't know if this is seen in other parts of the Western United States that don't routinely monitor IPD data.
+Economic models looked at what happens if the proportion of pneumococcal disease cases caused by serotype 4 is at least 30%. In those models, PCV21 use compared with PCV20 use could
+Be more expensive
+Result in more deaths from IPD in some cases
+When serotype 4 was less than 30% in these models, PCV21 could be less expensive and save more lives than PCV20 in some cases. These models didn’t evaluate PCV15 and PPSV23 use.
+Proportion of IPD* caused by serotype 4 by site^ and age group 2017–2023
+Populations where the proportion of IPD caused by serotype 4 is ≥30% are denoted in red. Populations where the proportion of IPD caused by serotype 4 is <30% are denoted in green, yellow, or orange.
+Age group (years)
+Region
+State
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+19-49
+East
+CT
+0
+0
+0
+0
+0
+0
+0
+GA
+0
+0
+0
+0
+2
+1
+0
+MD
+0
+0
+0
+0
+0
+0
+0
+NY
+0
+0
+0
+0
+0
+0
+3
+TN
+0
+0
+0
+0
+0
+0
+2
+West
+AK&dagger;
+0
+6
+13
+65
+66
+59
+37
+CA
+15
+22
+14
+21
+17
+13
+10
+CO
+19
+32
+25
+31
+37
+28
+23
+MN
+0
+1
+0
+2
+4
+2
+28
+NM
+9
+19
+9
+22
+30
+30
+22
+OR
+0
+0
+0
+0
+11
+45
+48
+Age group (years)
+Region
+State
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+50-64
+East
+CT
+0
+0
+1
+0
+0
+0
+0
+GA
+0
+0
+1
+0
+1
+0
+1
+MD
+0
+0
+0
+0
+0
+0
+0
+NY
+0
+0
+0
+4
+0
+0
+0
+TN
+0
+0
+0
+0
+0
+0
+3
+West
+AK&dagger;
+0
+2
+10
+48
+66
+56
+41
+CA
+16
+12
+6
+15
+0
+11
+18
+CO
+13
+12
+16
+23
+20
+22
+14
+MN
+0
+0
+1
+1
+2
+2
+12
+NM
+0
+7
+13
+18
+22
+21
+15
+OR
+0
+0
+0
+0
+3
+19
+43
+Age group (years)
+Region
+State
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+≥65
+East
+CT
+0
+0
+0
+0
+0
+0
+0
+GA
+0
+0
+0
+0
+0
+0
+1
+MD
+0
+1
+0
+0
+0
+0
+0
+NY
+0
+0
+0
+0
+0
+0
+1
+TN
+0
+0
+1
+1
+0
+0
+3
+West
+AK&dagger;
+0
+3
+3
+26
+36
+37
+31
+CA
+5
+6
+2
+0
+3
+4
+3
+CO
+3
+1
+4
+8
+9
+11
+7
+MN
+0
+0
+0
+0
+0
+0
+1
+NM
+1
+1
+1
+6
+10
+9
+14
+OR
+0
+0
+0
+0
+0
+6
+26
+* Among IPD cases with an isolate available for serotyping
+^ Active Bacterial Core surveillance (ABCs): Areas and Population
+&dagger; Alaska Department of Health and CDC's Arctic Investigations Program maintain statewide laboratory-based surveillance for invasive disease caused by Streptococcus pneumoniae and four other organisms, similar to ABCs.
+Typically, individuals living within these geographic areas who develop serotype 4 IPD are adults aged <65 years with specific underlying conditions or risk factors such as:
+Alcoholism
+Chronic lung disease
+Cigarette smoking
+Homelessness
+Injection drug use
+Importantly, these individuals usually haven't received a PCV containing protection against serotype 4. In such populations, PCV20 alone or both PCV15 and PPSV23 are expected to provide broader serotype coverage against locally circulating strains compared to PCV21 alone.
+Alaska-specific guidance
+The Alaska Department of Health encourages administration of PCV20 in most circumstances as serotype 4 has been responsible for almost a third of Alaska IPD cases.
+Read Alaska-specific guidance
+Supporting patients
+As a provider, you play an important role in supporting your patients to make informed decisions about vaccination. Help your patients understand their options and ensure they're informed about the many benefits and potential risks of vaccination.
+Risk conditions
+Children and adults
+Many conditions are an indication for pneumococcal vaccination for both children and adults:
+Cerebrospinal fluid leak
+Chronic liver disease
+Cochlear implant
+An immunocompromising condition
+Diabetes mellitus
+The following are considered immunocompromising conditions in both children and adults:
+Congenital or acquired asplenia, or splenic dysfunction
+Congenital or acquired immunodeficiencyD
+Diseases or conditions treated with immunosuppressive drugs or radiation therapyE
+HIV infection
+Sickle cell disease or other hemoglobinopathy
+Children specifically
+The following risk conditions are only an indication for pneumococcal vaccination of children:
+Chronic heart disease
+Particularly cyanotic congenital heart disease and cardiac failure
+Chronic kidney disease, excluding maintenance dialysis or nephrotic syndrome
+Chronic lung disease
+Includes moderate persistent or severe persistent asthma
+Maintenance dialysis or nephrotic syndrome
+Adults specifically
+The following risk conditions are only an indication for pneumococcal vaccination of adults:
+Alcoholism or cigarette smoking
+Chronic heart disease
+Includes congestive heart failure and cardiomyopathies
+Excludes hypertension
+Chronic lung disease
+Includes chronic obstructive pulmonary disease, emphysema, and asthma
+Chronic renal failure or nephrotic syndrome
+Supporting patients
+As a provider, you play an important role in supporting your patients to make informed decisions about vaccination. Help your patients understand their options and ensure they're informed about the many benefits and potential risks of vaccination.
+Resources
+Immunization schedules
+Child and adolescent immunization schedule
+Adult immunization schedule
+Other resources
+ACIP vaccine recommendations
+On This Page
+App available to interpret recommendations
+Children 2 through 5 years old
+Children 6 through 18 years old
+Adults 19 through 49 years old
+Serotype 4 considerations and vaccine choice
+Risk conditions
+Resources
+May 8, 2026
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Immunization and Respiratory Diseases; Division of Bacterial Diseases
+Footnotes
+Also applies to people who received PCV7 at any age and no other pneumococcal vaccines.
+If PPSV23 is not available, one dose of PCV20 or PCV21 may be given.
+e.g., alcoholism, chronic heart disease, chronic liver disease, chronic lung disease, cigarette smoking, diabetes mellitus
+Includes B-(humoral) or T-lymphocyte deficiency; complement deficiencies, particularly C1, C2, C3, and C4 deficiency; and phagocytic disorders (excluding chronic granulomatous disease)
+Includes Hodgkin disease, leukemia, lymphoma, malignant neoplasm, and solid organ transplant
+References
+Serotype 4 Alert for Navajo Nation Providers

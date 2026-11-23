@@ -1,0 +1,109 @@
+RSV Vaccine Guidance for Adults
+For Health Care Providers
+Feb. 24, 2026
+What to know
+CDC recommends a single dose of respiratory syncytial virus (RSV) vaccine for all adults ages 75 and older and adults ages 50–74 at increased risk of severe RSV illness.
+There are three FDA-licensed RSV vaccines recommended for use in adults ages 50 and older: GSK’s Arexvy, Moderna’s mResvia, and Pfizer’s Abrysvo. There is no preference for which vaccine adults 50 and older should receive.
+Eligible adults can get an RSV vaccine at any time, but the best time to vaccinate patients is in late summer and early fall before RSV usually starts to spread in the community.
+The RSV vaccine is not currently an annual vaccine. People who have already received one dose have completed their vaccination and should not receive another dose at this time.
+Overview
+CDC recommends a single dose of RSV vaccine for certain adults to help prevent serious RSV infection and hospitalization.
+RSV vaccination is recommended for the following adults:
+All adults ages 75 and older
+Adults ages 50–74 at increased risk of severe RSV illness
+Conditions that increase risk of severe RSV illness
+The following conditions increase the risk of severe RSV illness:A
+Chronic cardiovascular disease (e.g., heart failure, coronary artery disease, or congenital heart disease [excluding isolated hypertension])
+Chronic lung or respiratory disease (e.g., chronic obstructive pulmonary disease, emphysema, asthma, interstitial lung disease, or cystic fibrosis)
+End-stage renal disease or dependence on hemodialysis or other renal replacement therapy
+Diabetes mellitus complicated by chronic kidney disease, neuropathy, retinopathy, or other end-organ damage, or requiring treatment with insulin or sodium-glucose cotransporter-2 (SGLT2) inhibitor
+Neurologic or neuromuscular conditions causing impaired airway clearance or respiratory muscle weakness (e.g., poststroke dysphagia, amyotrophic lateral sclerosis, or muscular dystrophy [excluding history of stroke without impaired airway clearance])
+Chronic liver disease (e.g., cirrhosis)
+Chronic hematologic conditions (e.g., sickle cell disease or thalassemia)
+Severe obesity (body mass index ≥40 kg/m2)
+Moderate or severe immune compromiseB
+Residence in a nursing home
+Other chronic medical conditions or risk factors that a healthcare provider determines would increase the risk for severe disease due to viral respiratory infection (e.g., frailty,C situations in which healthcare providers have concern for presence of undiagnosed chronic medical conditions, or residence in a remote or rural community where transportation of patients with severe RSV disease for escalation of medical care is challengingD)
+Available vaccines
+There are currently three vaccines available:
+GSK's Arexvy
+Moderna's mResvia
+Pfizer's Abrysvo
+CDC does not have a preferential recommendation for any specific vaccine. Eligible adults should receive any RSV vaccine that is licensed and available for them.
+ACIP Recommendation
+CDC works closely with the Advisory Committee on Immunization Practices (ACIP) to develop vaccine recommendations. Go to ACIP Vaccine Recommendations to learn more.
+Recommendations
+Timing of RSV vaccination
+Eligible adults who have not previously received RSV vaccination may be vaccinated at any time of year, but vaccination will have the most benefit if administered in late summer or early fall, just before the RSV season. In most of the continental United States, this corresponds to vaccination during August–October.
+Number of doses
+The RSV vaccine is not currently an annual vaccine, meaning eligible adults do not need to get a dose every RSV season. Currently, CDC recommends only a single dose of RSV vaccine for all adults ages 75 and older and for adults ages 50–74 with increased risk of severe RSV illness. Surveillance and evaluation activities are ongoing to determine whether adults might benefit from receiving additional RSV vaccine doses in the future.
+The need for additional RSV vaccine doses will be evaluated by ACIP and CDC in the future; recommendations will be updated as needed.
+Coadministration with other vaccines
+RSV vaccines can be coadministered with other adult vaccines during the same visit.
+Data on immunogenicity of RSV vaccines and other vaccines when coadministered are currently limited. These limited data show coadministration of RSV with other respiratory virus vaccines may result in lower antibody titers, but the clinical significance of this is unknown.
+Keep Reading
+Respiratory Syncytial Virus (RSV) Immunization: Information for Health Care Providers
+Coadministration of RSV vaccine with one or more adult vaccines during the same visit may increase the frequency of common side effects (e.g., pain at the injection site, fever, headache, myalgia). CDC will continue to monitor vaccine safety and effectiveness to guide recommendations for coadministration.
+When deciding whether to coadminister other vaccines with an RSV vaccine, providers should consider:
+whether the patient is recommended other vaccines
+the feasibility of the patient returning for vaccination during a separate visit
+risk for acquiring vaccine-preventable disease
+vaccine reactogenicity profiles
+patient preferences
+Safety
+To learn more about RSV vaccine safety, go to the following page:
+Respiratory Syncytial Virus (RSV) Vaccine Safety
+Learn safety information about the Respiratory Syncytial Virus (RSV) vaccine.
+Refer to the Pfizer Abrysvo FDA package insert, GSK Arexvy FDA package insert, Moderna mResvia FDA package insert, and CDC RSV Vaccine Information Sheet for contraindications, precautions, and additional safety information.
+Reporting adverse events
+Adverse events after RSV vaccination should be reported to the Vaccine Adverse Event Reporting System (VAERS), even if it is not clear that the vaccine caused the adverse event. Information on how to submit a report to VAERS is available at https://vaers.hhs.gov/index.html or by telephone at 1-800-822-7967. Anyone can submit a report to VAERS — healthcare professionals, vaccine manufacturers, and the general public.
+V-safe
+Encourage patients to sign-up for V-safe, where they can share with CDC how they feel after getting an RSV vaccine.
+V-safe
+Effectiveness
+GSK’s Arexvy
+In studies of the real-world effectiveness of Arexvy during the 2023–2024 RSV season, the first since licensure of Arexvy, Arexvy was approximately 77% effective in preventing RSV-associated emergency department encounters and 83% effective in preventing RSV-associated hospitalizations in adults 60 and older. In addition, effectiveness was demonstrated among adults ages 60 years or older with certain immunocompromising conditions and those with end-stage renal disease and in all adults 75 years or older.
+Studies assessing the real-world effectiveness of Arexvy during the second year following vaccination are currently underway. Clinical trial data showed durable protection against symptomatic RSV lower respiratory tract disease through at least 23 months following vaccination, with some waning over time. CDC will continue to monitor real-world RSV vaccine effectiveness during each respiratory virus season.
+Pfizer's Abrysvo
+In studies of the real-world effectiveness of Abrysvo during the 2023–2024 RSV season, the first RSV season after licensure, Abrysvo was approximately 79% effective in preventing RSV-associated emergency department encounters and 73% effective in preventing RSV-associated hospitalizations in adults 60 and older. In addition, effectiveness was demonstrated among adults ages 60 years and older with certain immunocompromising conditions and those with end-stage renal disease and in all adults ages 75 years and older.
+Studies assessing the real-world effectiveness of Abrysvo during the second year following vaccination are currently underway. Clinical trial data showed durable protection against symptomatic RSV lower respiratory tract disease through at least 16 months following vaccination, with some waning over time. CDC will continue to monitor real-world RSV vaccine effectiveness during each respiratory virus season.
+Moderna's mResvia
+Due to the recency of mResvia licensure, real-world vaccine effectiveness against RSV-associated hospitalization and other severe illness cannot yet be estimated. Vaccine efficacy data are available from one large phase 2/3 randomized, blinded placebo-controlled clinical trial in participants ages 60 and older. In this trial, efficacy of a single dose of mResvia against symptomatic RSV was approximately 80% during the first 4 months following vaccination, 56% during the first 12 months after vaccination, and 34% through 18 months after vaccination.
+CDC will continue to monitor real-world RSV vaccine effectiveness during each respiratory virus season.
+Adults younger than 50 years
+FDA has approved use of two RSV vaccines — Pfizer's Abrysvo and Moderna's mResvia — in adults ages 18-49 years who are at increased risk for RSV-associated lower respiratory tract infection. ACIP and CDC have been reviewing evidence for use of RSV vaccines in younger adults who are at increased risk for RSV illness and will continue considering new evidence as it becomes available. Evidence may include:
+Updated RSV vaccine safety analyses, including results from the full 2023–2024 RSV season in the FDA-CMS partnership analysis incorporating chart confirmation of GBS diagnoses;
+Additional data on duration of protection from RSV vaccination and immune response after revaccination;
+Immunogenicity data in adults with immunocompromise;
+Cost effectiveness of RSV vaccination in this population.
+RSV in Adults Flyer for Healthcare Professionals
+RSV Vaccines for Adults flyer for healthcare professionals
+Download PDF of RSV in Adults HCP Flyer here: English
+Resources
+ACIP Vaccine Recommendations
+RSV Vaccine Information Statement
+Safety Information for Respiratory Syncytial Virus (RSV) Vaccine
+CDC RSV Surveillance & Research
+Still have questions?
+Contact NIP-INFO by emailing nipinfo@cdc.gov.
+On This Page
+Overview
+Recommendations
+Safety
+Effectiveness
+Resources
+Feb. 24, 2026
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Immunization and Respiratory Diseases; Coronavirus and Other Respiratory Viruses Division
+Footnotes
+[A] Patient attestation is sufficient evidence of the presence of a risk factor. Vaccinators should not deny RSV vaccination to a person because of lack of medical documentation.
+[B] A list of moderately or severely immunocompromising conditions can be found in the COVID-19 vaccination interim clinical considerations guide.
+[C] Frailty is a multidimensional geriatric syndrome that reflects a state of increased vulnerability to adverse health outcomes. Although no consensus definition exists, one frequently used tool for determination is the Fried frailty phenotype assessment, in which frailty is defined as a clinical syndrome with three or more of the following symptoms present: unintentional weight loss (10 lbs [4.5 kg] in the past year), self-reported exhaustion, weakness (grip strength), slow walking speed, or low physical activity.
+[D] Healthcare providers caring for adults aged 50–74 years residing in these communities may use clinical judgement, knowledge of local RSV epidemiology, and community incidence of RSV-associated hospitalization to recommend vaccination for a broader population in this age group.

@@ -1,0 +1,101 @@
+Cancers Linked with HPV Each Year
+Dec. 3, 2025
+Español
+What to know
+Each year in the United States, about 49,908 new cases of cancer are found in parts of the body where human papillomavirus (HPV) is often found. HPV causes about 39,300 of these cancers.
+Overview
+Each year in the United States, about 49,908 new cases of cancer are found in parts of the body where human papillomavirus (HPV) is often found: 27,081 among females, and 22,827 among males. HPV causes about 39,300 of these cancers. Cervical cancer is the most common HPV-associated cancer among women, and oropharyngeal cancers (cancers of the back of the throat, including the base of the tongue and tonsils) are the most common among men.
+Number of HPV-associated cancer cases per year
+An HPV-associated cancer is a specific cellular type of cancer that is diagnosed in a part of the body where HPV is often found. These parts of the body include the cervix, vagina, vulva, penis, anus, and oropharynx (back of the throat, including the base of the tongue and tonsils).12 These cellular types include carcinomas of the cervix and squamous cell carcinomas of the vagina, vulva, penis, anus, and oropharynx.
+Researchers use cancer registry data to estimate the number of HPV-associated cancers in the United States by looking at cancer in parts of the body and cancer cell types that are more likely to be caused by HPV. Cancer registries do not routinely collect data on whether HPV is in the cancer tissue. CDC studies34 have reported the number of HPV-associated cancer cases per year, and these studies have more information on how HPV-associated numbers were calculated.
+Number of HPV-attributable cancer cases per year
+An HPV-attributable cancer is a cancer that is probably caused by HPV. HPV causes nearly all cervical cancers and many cancers of the vagina, vulva, penis, anus, rectum, and oropharynx. A CDC study5 used population-based data from cancer tissue to estimate the percentage of these cancers that are probably caused by HPV. Since rectal cancer was not included in the CDC genotyping study, the percentage of anal cancer caused by HPV was used because recent studies have shown that the HPV-associated types of anal and rectal squamous cell carcinomas are similar.2
+To find the number of HPV-attributable cancers, multiply the number of HPV-associated cancers by the percentage of these cancers that are probably caused by HPV. For example, about 8,348 people are diagnosed with anal cancer each year, and about 91% (7,600) of anal cancers are thought to be caused by HPV.
+Number of HPV-Associated and Estimated Number of HPV-Attributable Cancer Cases per Year
+Cancer site
+Average number of cancers per year in sites where HPV is often found (HPV-associated cancers)
+Percentage probably caused by any HPV typea
+Estimated number probably caused by any HPV typea
+Cervix
+12,287
+91%
+11,100
+Vagina
+889
+75%
+700
+Vulva
+4,370
+69%
+3,000
+Penis
+1,429
+63%
+900
+Anusb
+8,348
+91%
+7,600
+— Female
+5,726
+93%
+5,300
+— Male
+2,622
+89%
+2,300
+Oropharynx
+22,585
+70%
+16,000
+— Female
+3,809
+63%
+2,400
+— Male
+18,776
+72%
+13,600
+TOTAL
+49,908
+79%
+39,300
+— Female
+27,081
+84%
+22,500
+— Male
+22,827
+74%
+16,800
+aHPV types detected in genotyping study; most were high-risk HPV types known to cause cancer (Saraiya M, et al. U.S. assessment of HPV types in cancers: implications for current and 9-valent HPV vaccines. J Natl Cancer Inst. 2016;107:djv086). Estimates were rounded to the nearest 100. Estimated counts might not sum to total because of rounding.
+bIncludes anal and rectal squamous cell carcinomas.
+Data are from population-based cancer registries participating in CDC's National Program of Cancer Registries (NPCR) and/or the National Cancer Institute's Surveillance, Epidemiology, and End Results (SEER) Program for 2018 to 2022, covering 100% of the United States population.
+To determine the cancers most likely to be HPV-associated, the following additional criteria were applied to the data:
+All cancers were confirmed microscopically.
+Cervical cancers were limited by histology to carcinomas only.
+All other cancer sites were limited by histology to squamous cell carcinomas only.
+U.S. Cancer Statistics Data Visualizations Tool
+The Data Visualizations tool makes it easy for anyone to explore and use the latest official federal government cancer data from United States Cancer Statistics. It includes the latest cancer data covering the United States population. The Data Visualizations tool shows rates for HPV-associated cancers.
+On This Page
+Overview
+Number of HPV-associated cancer cases per year
+Number of HPV-attributable cancer cases per year
+Dec. 3, 2025
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Chronic Disease Prevention and Health Promotion; Division of Cancer Prevention and Control
+References
+International Agency for Research on Cancer. IARC monographs on the evaluation of carcinogenic risks to humans. Volume 90: Human papillomaviruses. International Agency for Research on Cancer, World Health Organization; 2007.
+Shiels MS, Kreimer AR, Coghill AE, Darragh TM, Devesa SS. Anal cancer incidence in the United States, 1977–2011: distinct patterns by histology and behavior. Cancer Epidemiol Biomarkers Prev. 2015;24:1548–1556.
+Viens LJ, Henley SJ, Watson M, et. al. Human papillomavirus–associated cancers—United States, 2008–2012. MMWR Morb Mortal Wkly Rep. 2016;65(26):661–666.
+Supplement: Assessing the Burden of HPV-Associated Cancers in the United States. Cancer 2008;113(S10):2837–3057.
+Saraiya M, Unger ER, Thompson TD, et. al. US assessment of HPV types in cancers: implications for current and 9-valent HPV vaccines. J Natl Cancer Inst. 2015;107:djv086.
+Sources
+National Program of Cancer Registries SEER*Stat Database: U.S. Cancer Statistics Incidence Analytic file 1998–2022. United States Department of Health and Human Services, Centers for Disease Control and Prevention. Released June 2025, based on the 2024 submission.

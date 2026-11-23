@@ -1,0 +1,66 @@
+2024–2025 Influenza Season Summary: Severity, Disease Burden, and Burden Prevented
+For Public Health
+Mar. 12, 2026
+Purpose
+This report classifies how severe the 2024–2025 flu season was, including providing an updated estimate of how many flu illnesses, medical visits, hospitalizations and deaths happened, and how many were prevented by flu vaccination.
+Overview
+CDC estimates there were 51 million influenza (flu)-related illnesses, 23 million medical visits, 710,000 hospitalizations and 45,000 deaths during the 2024-2025 flu season. Based on CDC criteria, the severity of the 2024-2025 season was high.
+The estimated flu-related illnesses and medical visits are higher than the 2017-2018 season, the last high severity flu season. Estimated hospitalizations are the same as 2017-2018, while estimated deaths are lower.
+Flu vaccination is estimated to have prevented about 10 million flu illnesses, 5 million medical visits, 180,000 hospitalizations and 12,000 deaths.
+Influenza Severity Assessment and Estimated Flu Illnesses, Medical Visits, Hospitalizations, and Deaths that Occurred and those that were Prevented by Vaccination in the United States for the 2024–2025 Flu Season
+This summary is an addendum to Influenza Activity in the United States during the 2024–2025 Season and Composition of the 2024–2025 Influenza Vaccine | Influenza (Flu) | CDC.1 CDC uses mathematical models to estimate the numbers of flu illnesses, medical visits, hospitalizations, and deaths that happen.2 When combined, these are called "burden." CDC also estimates the burden that is prevented by flu vaccination each year.3 These estimates are used to inform decision-making and communications about flu prevention and control.
+Note: On March 12, 2026, this report was updated to correct the estimated number of flu illnesses prevented by vaccination during the 2024–2025 season. The corrected estimate is 10 million.
+2024–2025 Severity Assessment
+CDC assessed seasonal flu severity overall and for three different age groups: pediatric, 0–17 years, adults, 18–64 years, and older adults, ≥65 years based on key activity indicators, including illnesses, hospitalizations and deaths.4
+Based on assessment results, the 2024–2025 season was classified as being a high severity season across all ages and for each age group. This is the first high severity season since 2017-2018.45
+2024–2025 Disease Burden Estimates
+Based on data from October 1, 2024, through April 30, 2025, CDC estimates that
+51 million people were sick with flu,
+23 million people visited a healthcare provider in an outpatient setting for their flu illness,
+710,000 people had an flu-related hospitalization, and
+45,000 flu-related deaths occurred during the 2024–2025 season.
+Estimates of flu-related illnesses and medical visits for 2024-2025 are higher than the 2017-2018 season, the last high severity influenza season, and higher than any season going back as far as 2010-2011. Estimates of flu-related hospitalizations are the same as those from 2017-2018, but otherwise higher than any season going back to 2010-2011. Estimated deaths during the 2024-2025 season are lower than from the 2017-2018 and 2014-2015 seasons, but otherwise higher than any season going back to 2010-2011.6
+CDC's estimates of flu hospitalizations and deaths during the 2024–2025 season highlight 65 years and older accounted for 57% of hospitalizations and 71% of deaths, which is similar to past seasons. Adults 50–64 years accounted for 20% of flu-related hospitalizations and 21% of flu-related deaths, and people 18–49 years accounted for an additional 16% of flu-related hospitalizations.
+Flu-associated pediatric deaths have been reportable in the United States since 2004; 290 deaths among children were reported for the 2024–2025 season as of February 14, 2026.7 This is the highest number of flu-associated pediatric deaths reported to CDC since the 2009 Influenza A(H1N1) pandemic and the highest number ever reported for a regular flu season since this type of reporting began. However, flu-related pediatric deaths are still thought to be under-reported since not all children whose deaths are related to an influenza virus infection may have been tested for influenza. CDC estimates that there were 790 flu-related pediatric deaths during the 2024–2025 season among children younger than 18 years.
+Earlier estimates of disease burden for this season released over the course of the 2024-2025 season used preliminary flu-related hospitalizations and deaths data along with historic data to inform multipliers to calculate the full impact of flu. For the 2024–2025 season, these earlier estimates were reported in a technical report describing the 2024–2025 flu season1. The end-of-season estimates for 2024-2025 presented in this document were calculated using final flu-related hospitalizations and death data from this season along with historic data to inform the calculations. These estimates for the 2024-2025 season are still preliminary and will not be considered final until all data are available for this season (estimated in 2027).
+2024–2025 Burden Prevented by Vaccination
+CDC estimates that during the 2024-2025 season, flu vaccination prevented8
+10 million flu-related illnesses,
+5 million flu-related medical visits,
+180,000 flu-related hospitalizations, and
+12,000 flu-related deaths
+To calculate these estimates of the burden prevented by vaccination during the 2024–2025 season, CDC used the previously described estimates of disease burden, in addition to other inputs, including vaccine coverage (how many people got vaccinated), and two measures of vaccine effectiveness (how well the vaccine worked at preventing medical visits and how well it worked at preventing hospitalizations). Age specific inputs were used to produce age specific estimates of burden prevented.
+As examples, flu vaccine coverage during the 2024–2025 season was lowest (31%) among people 18–49 years and highest (63%) among people 65 years and older in the United States.9 Vaccine effectiveness (VE) against flu-related outpatient medical visits also varied by age group and was lowest (40%) among people 65 years and older and highest (60%) among children 6 months to 4 years. Vaccine effectiveness estimates against flu-related hospitalization was lowest (41%) among people 50–64 years and highest (61%) among children 6 months to 4 years.10
+Using age specific inputs, burden prevented was calculated for specific age groups. Flu vaccination is estimated to have prevented the highest number of illnesses (49%) among people 18–49 years and the highest number of medically attended illnesses (44%) among children 5–17 years. Among adults 65 years and older, moderate vaccine effectiveness against hospitalizations (44%) combined with higher vaccine coverage (63%) meant that most (81%) of the deaths prevented by vaccination were among people 65 years and older.
+Conclusion
+During the 2024–2025 flu season, CDC estimates that flu was associated with 51 million illnesses, 23 million outpatient medical visits, 710,000 hospitalizations, and 45,000 deaths. CDC estimates flu vaccination prevented 10 million flu-related illnesses, 5 million flu-related outpatient medical visits, 180,000 flu-related hospitalizations, and 12,000 flu-related deaths. Flu vaccination has been shown to have many benefits including reducing the risk of flu illnesses, hospitalizations, and even the risk of flu-related death.11 People should talk with their doctor about the benefits and risks of getting vaccinated to reduce the risk of flu and its potentially serious complications.
+Disclaimer:
+Disease burden estimates for the 2024–2025 flu season are preliminary and will be updated at least two additional times; however, this report will not be updated. To access the most up to date burden estimates, please visit the past seasons burden page.6
+On This Page
+Overview
+2024–2025 Severity Assessment
+2024–2025 Disease Burden Estimates
+2024–2025 Burden Prevented by Vaccination
+Conclusion
+Mar. 12, 2026
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Immunization and Respiratory Diseases (NCIRD)
+References
+CDC. Influenza Activity in the United States during the 2024–2025 Season and Composition of the 2025–2026 Influenza Vaccine 2025 Available from: https://www.cdc.gov/flu/whats-new/2025-2026-influenza-activity.html
+CDC. How CDC Estimates the Burden of Seasonal Flu in the United States 2019 Available from: https://www.cdc.gov/flu-burden/php/about/how-cdc-estimates.html
+CDC. How CDC Estimates the Burden of Flu Prevented by Vaccination 2024 Available from: https://www.cdc.gov/flu-burden/php/about-burden-prevented/how-cdc-estimates-vaccinations.html
+CDC. How CDC Classifies Flu Severity each Season in the United States 2024 Available from: https://www.cdc.gov/flu-burden/php/surveillance/index.html
+CDC. Past Flu Season Severity Assessments 2025 Available from: https://www.cdc.gov/flu-burden/php/surveillance/past-seasons.html
+CDC. Flu Disease Burden: Past Seasons 2025 Available from: https://www.cdc.gov/flu-burden/php/data-vis/past-seasons.html
+CDC. Flu View Interactive Available from: FluView Interactive | FluView | CDC
+CDC. Flu Burden Prevented by Vaccination: Past Seasons 2025 Available from: https://www.cdc.gov/flu-burden/php/data-vis-vac/past-burden-prevented-est.html
+CDC. Flu Vaccination Coverage by Season 2024 Available from: https://www.cdc.gov/fluvaxview/coverage-by-season/index.html
+CDC. CDC's Influenza Vaccine Effectiveness Networks 2024 Available from: https://www.cdc.gov/flu-vaccines-work/php/vaccine-effectiveness/index.html
+CDC. Key Facts About Seasonal Flu Vaccine. Available from: ￼https://www.cdc.gov/flu/vaccines/keyfacts.html

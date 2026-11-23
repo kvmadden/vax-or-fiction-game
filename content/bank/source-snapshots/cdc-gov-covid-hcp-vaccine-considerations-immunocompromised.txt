@@ -1,0 +1,236 @@
+COVID-19 Vaccination Guidance for People Who Are Immunocompromised
+For Health Care Providers
+Sept. 23, 2026
+At a glance
+COVID-19 vaccination is recommended for people ages 6 months and older who are moderately or severely immunocompromised.
+There is a modified COVID-19 vaccination schedule for people who are moderately or severely immunocompromised.
+People can self-attest to being moderately or severely immunocompromised and receive COVID-19 vaccination.
+Where a recommendation on this page describes use that is not within the FDA-approved indication, the page identifies it as off-label.
+Administering COVID-19 vaccines should not be delayed in patients taking immunosuppressive therapies.
+Introduction
+COVID-19 vaccination is recommended for people ages 6 months and older who are moderately or severely immunocompromised. Moderate or severe immunocompromise is a risk factor for severe COVID-19. The recommended vaccine and number of 2026-2027 COVID-19 vaccine doses for people who are moderately or severely immunocompromised are based on age and vaccination history (Table 2).
+Table 2: 2026–2027 COVID-19 vaccination schedule for people who are moderately or severely immunocompromised, November 4, 2025
+2a: Ages 6 months–4 years
+NOTE
+In Table 2a, Moderna refers to Spikevax, the only COVID-19 vaccine approved for children 6 months-4 years of age; Spikevax is approved for this age group for children with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19.*
+Children ages 6–23 months previously vaccinated with Pfizer-BioNTech COVID-19 Vaccine may receive dose(s) of Moderna COVID-19 Vaccine.**
+COVID-19 vaccination history before 2026-2027 COVID-19 vaccine***
+Number of 2026-2027 COVID-19 vaccine doses indicated*
+Recommended 2026-2027 COVID-19 vaccine&dagger; and interval between doses*
+Unvaccinated:
+Administer an initial 3-dose series with 2026-2027 COVID-19 vaccine
+Administer 1 dose of 2026-2027 vaccine 6 months after completing initial series
+Unvaccinated
+4
+2026-2027 COVID-19 vaccine dose 1 (Moderna): Day 0
+2026-2027 COVID-19 vaccine dose 2 (Moderna): 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna): At least 4 weeks after 2026-2027 Dose 2
+2026-2027 COVID-19 vaccine dose 4 (Moderna): 6 months (minimum interval 2 months) after 2026-2027 Dose 3
+Initiated but did not complete the 3-dose initial series before 2026–2027 vaccine:
+Complete the 3-dose series with 2026-2027 COVID-19 vaccine
+Administer 1 dose of 2026-2027 COVID-19 vaccine 6 months after completing initial series
+1 dose Moderna
+3
+2026-2027 COVID-19 vaccine dose 1 (Moderna): 4 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna): At least 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna): 6 months (minimum interval 2 months) after 2026-2027 Dose 2
+2 doses Moderna
+2
+2026-2027 COVID-19 vaccine dose 1 (Moderna): At least 4 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna): 6 months (minimum interval 2 months) after 2026-2027 Dose 1
+1 dose Pfizer-BioNTech
+3
+2026-2027 COVID-19 vaccine dose 1 (Moderna): 3 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna): At least 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna): 6 months (minimum interval 2 months) after 2026-2027 Dose 2
+2 doses Pfizer-BioNTech
+2
+2026-2027 COVID-19 vaccine dose 1 (Moderna): At least 8 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna): 6 months (minimum interval 2 months) after 2026-2027 Dose 1
+Completed the 3-dose initial series before 2026-2027 COVID-19 vaccine:
+Administer 2 doses of 2026-2027 COVID-19 vaccine spaced 6 months apart
+3 or more doses Moderna or 3 or more doses Pfizer-BioNTech
+2
+2026-2027 COVID-19 vaccine dose 1 (Moderna): At least 8 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna): 6 months (minimum interval 2 months) after 2026-2027 Dose 1
+*Dosing series is based on recommendations of the Advisory Committee on Immunization Practices. FDA approval for available COVID-19 vaccines is limited to two doses of COVID-19 vaccine in children ages 6-23 months and one dose for children ages 2-4 years. The recommendation for additional doses of COVID-19 vaccine in these age groups are off-label.
+**Pfizer-BioNTech COVID-19 Vaccine is no longer authorized in the United States for children ages 6 months–4 years. Children in this age group who began vaccination with Pfizer-BioNTech COVID-19 Vaccine and have not completed the recommended number of doses cannot complete the series with the same product. CDC advises completing vaccination with an available age-appropriate product, consistent with CDC guidance on interchangeability of COVID-19 vaccines. This guidance is issued to prevent children from remaining with an incomplete series. It is based on CDC interchangeability guidance and the judgment of CDC clinical and public health experts. It has not been reviewed by ACIP for the 2026-2027 formulations.
+***COVID-19 vaccination history refers to all doses of COVID-19 vaccine from any manufacturer received before the availability of the 2026-2027 COVID-19 vaccines.
+&dagger;Dosage for Moderna (Spikevax): 0.25 mL/25 ug.
+2b: Ages 5–11 years
+NOTE
+Moderna (Spikevax) and Pfizer-BioNTech (Comirnaty) COVID-19 vaccines are approved for use for children 5 – 11 years of age; Comirnaty is approved for this age group for children with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19.* In Table 2b, Moderna refers to Spikevax.
+See footnote** for guidance on children who transition from age 4 years to age 5 years during the initial vaccination series.
+COVID-19 vaccination history before 2026-2027 COVID-19 vaccine&dagger;
+Number of 2026-2027 COVID-19 vaccine doses indicated
+Recommended 2026-2027 vaccine&Dagger; and interval between doses
+Unvaccinated:
+Administer an initial 3-dose series with 2026-2027 COVID-19 vaccine
+Administer 1 dose of 2026-2027 vaccine 6 months after completing initial series
+Unvaccinated
+4
+2026-2027 COVID-19 vaccine dose 1 (Moderna): Day 0
+2026-2027 COVID-19 vaccine dose 2 (Moderna): 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna): At least 4 weeks after 2026-2027 Dose 2
+2026-2027 COVID-19 vaccine dose 4 (Moderna or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 3
+OR
+4
+2026-2027 COVID-19 vaccine dose 1 (Pfizer-BioNTech): Day 0
+2026-2027 COVID-19 vaccine dose 2 (Pfizer-BioNTech): 3 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Pfizer-BioNTech): At least 4 weeks after 2026-2027 Dose 2
+2026-2027 COVID-19 vaccine dose 4 (Moderna or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 3
+Initiated but did not complete the 3-dose initial series before 2026-2027 vaccine:
+Complete the 3-dose series with 2026-2027 COVID-19 vaccine
+Administer 1 dose of 2026-2027 COVID-19 vaccine 6 months after completing initial series
+1 dose Moderna
+3
+2026-2027 COVID-19 vaccine dose 1 (Moderna): 4 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna): At least 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 2
+2 doses Moderna
+2
+2026-2027 COVID-19 vaccine dose 1 (Moderna): At least 4 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 1
+1 dose Pfizer-BioNTech
+3
+2026-2027 COVID-19 vaccine dose 1 (Pfizer-BioNTech): 3 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Pfizer-BioNTech): At least 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 2
+2 doses Pfizer-BioNTech
+2
+2026-2027 COVID-19 vaccine dose 1 (Pfizer-BioNTech): At least 4 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 1
+Completed the 3-dose initial series before 2026-2027 COVID-19 vaccine:
+Administer 2 doses of 2026-2027 COVID-19 vaccine spaced 6 months apart
+3 or more doses Moderna or 3 or more doses Pfizer-BioNTech
+2
+2026-2027 COVID-19 vaccine dose 1 (Moderna or Pfizer-BioNTech): At least 8 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 1
+*FDA approval for available COVID-19 vaccines is limited to a single dose of COVID-19 vaccine in this age group for children with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19. Dosing series is based on recommendations of the Advisory Committee on Immunization Practices. The recommendation for more than one dose of COVID-19 vaccine in this age group is off-label.
+**Children who transition from age 4 years to age 5 years during the initial vaccination series may complete the 3-dose series using the dosage for children ages 5–11 years for all doses received on or after turning age 5 years.
+- Moderna series: 2026-2027 Moderna, 0.25 mL/25 ug; there is no dosage change
+- Pfizer-BioNTech series: 2026-2027 Pfizer-BioNTech, 0.3 mL/10 ug
+&dagger;COVID-19 vaccination history refers to all doses of COVID-19 vaccine from any manufacturer received before the availability of the 2026-2027 COVID-19 vaccines.
+&Dagger;Dosage for Moderna (Spikevax): 0.25 mL/25 ug; dosage for Pfizer-BioNTech: 0.3 mL/10 ug.
+2c: Ages 12 years and older
+NOTE
+Moderna (mNexspike), Moderna (Spikevax), Novavax, and Pfizer-BioNTech COVID-19 vaccines are approved for individual 12 years and older; for persons 12-64 years of age, these vaccines are approved for individuals with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19 which includes persons with immunocompromise.*
+Moderna (mNexspike) and Moderna (Spikevax) may be used interchangeably in the initial 3-dose series.
+See footnote** for guidance on children who transition from age 11 years to age 12 years during the initial vaccination series.
+COVID-19 vaccination history before 2026-2027 COVID-19 vaccine&dagger;
+Number of 2026-2027 COVID-19 vaccine doses indicated
+Recommended 2026-2027 COVID-19 vaccine&Dagger; and interval between doses
+Unvaccinated:
+Administer an initial series with 2026-2027 COVID-19 vaccine
+Administer 1 dose of 2026-2027 COVID-19 vaccine 6 months after completing initial series
+Unvaccinated
+4
+2026-2027 COVID-19 vaccine dose 1 (Moderna): Day 0
+2026-2027 COVID-19 vaccine dose 2 (Moderna): 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna): At least 4 weeks after 2026-2027 Dose 2
+2026-2027 COVID-19 vaccine dose 4 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 3; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 3
+OR
+3
+2026-2027 COVID-19 vaccine dose 1 (Novavax): Day 0
+2026-2027 COVID-19 vaccine dose 2 (Novavax): 3 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 2; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 2
+OR
+4
+2026-2027 COVID-19 vaccine dose 1 (Pfizer-BioNTech): Day 0
+2026-2027 COVID-19 vaccine dose 2 (Pfizer-BioNTech): 3 weeks after 2026-2027 Dose 1
+2026-2027 Dose 3 (Pfizer-BioNTech): At least 4 weeks after 2026-2027 Dose 2
+2026-2027 Dose 4 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 3; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 3
+Initiated but did not complete the initial series before 2026-2027 vaccine:
+Complete the initial series with 2026-2027 vaccine
+Administer 1 dose of 2026-2027 vaccine 6 months after completing initial series
+1 dose Moderna
+3
+2026-2027 COVID-19 vaccine dose 1 (Moderna): 4 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna): At least 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 2; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 2
+2 doses Moderna
+2
+2026-2027 COVID-19 vaccine dose 1 (Moderna): At least 4 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 1; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 1
+1 dose Pfizer-BioNTech
+3
+2026-2027 COVID-19 vaccine dose 1 (Pfizer-BioNTech): 3 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Pfizer-BioNTech): At least 4 weeks after 2026-2027 Dose 1
+2026-2027 COVID-19 vaccine dose 3 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 2; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 2
+2 doses Pfizer-BioNTech
+2
+2026-2027 COVID-19 vaccine dose 1 (Pfizer-BioNTech): At least 4 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 1; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 1
+1 dose Novavax
+2
+2026-2027 COVID-19 vaccine dose 1 (Novavax): At least 3 weeks after last dose
+2026-2027 COVID-19 vaccine dose 2 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 1; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 1
+Completed the initial series before 2026-2027 vaccine:
+Administer 2 doses of 2026-2027 COVID-19 vaccine spaced 6 months apart
+3 or more doses Moderna or 3 or more doses Pfizer-BioNTech
+2
+2026-2027 COVID-19 vaccine dose 1 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): At least 8 weeks after last dose; (Moderna [mNexspike]): At least 3 months after last dose&sect;
+2026-2027 COVID-19 vaccine dose 2 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 1; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 1
+2 or more doses Novavax
+2
+2026-2027 COVID-19 vaccine dose 1 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): At least 8 weeks after last dose; (Moderna [mNexspike]): At least 3 months after last dose&sect;
+2026-2027 COVID-19 vaccine dose 2 (Moderna [Spikevax], Novavax, or Pfizer-BioNTech): 6 months (minimum interval 2 months) after 2026-2027 Dose 1; (Moderna [mNexspike]): 6 months (minimum interval 3 months)&sect; after 2026-2027 Dose 1
+*FDA approval for available COVID-19 vaccines is limited to a single dose of COVID-19 vaccine in this age group for persons with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19. Dosing series is based on recommendations of the Advisory Committee on Immunization Practices from 2024. The recommendation for more than one dose of COVID-19 vaccine in this age group is off-label.
+**Children who transition from age 11 years to age 12 years during the initial vaccination series may complete the 3-dose series using the dosage for people ages 12 years and older for all doses received on or after turning age 12 years.
+&dagger;COVID-19 vaccination history refers to all doses of COVID-19 vaccine from any manufacturer received before the availability of the 2026-2027 COVID-19 vaccines.
+&Dagger;Dosage for Moderna (mNexspike): 0.2 mL/10 ug; dosage for Moderna (Spikevax): 0.5 mL/50 ug; dosage for Novavax: 0.5 mL/5 ug rS protein and 50 ug Matrix-M adjuvant; dosage for Pfizer-BioNTech: 0.3 mL/30 ug.
+&sect;The recommended interval for Moderna (mNexspike) is 3 months after the last dose; however, a dose administered at least 2 months after the last dose should not be repeated.
+Self-attestation of immunocompromised status
+People can self-attest to their moderately or severely immunocompromised status and receive COVID-19 vaccine doses wherever vaccines are offered. Vaccinators should not deny COVID-19 vaccination to a person due to lack of documentation.
+COVID-19 vaccination and pemivibart
+Pemivibart (Pemgarda) is a monoclonal antibody for COVID-19 pre-exposure prophylaxis in people who are moderately or severely immunocompromised and unlikely to mount an adequate immune response to COVID-19 vaccination and who meet the Food and Drug Administration (FDA)-authorized conditions for use. Pemivibart is not authorized for treatment of COVID-19 or for post-exposure prophylaxis. Healthcare providers should consult the pemivibart fact sheet and frequently asked questions for additional information.
+Pemivibart is not a substitute for COVID-19 vaccination. People who are moderately or severely immunocompromised should receive COVID-19 vaccine according to the recommended schedule. Per the pemivibart Emergency Use Authorization (EUA), administration of pemivibart should be deferred for at least 2 weeks after a dose of COVID-19 vaccine.
+Description of moderate and severe immunocompromising conditions and treatment
+Moderate and severe immunocompromising conditions and treatments include but are not limited to:
+Active treatment for solid tumor and hematologic malignancies
+Hematologic malignancies associated with poor responses to COVID-19 vaccines regardless of current treatment status (e.g., chronic lymphocytic leukemia, non-Hodgkin lymphoma, multiple myeloma, acute leukemia)
+Receipt of solid-organ transplant or an islet transplant and taking immunosuppressive therapy
+Receipt of chimeric antigen receptor (CAR)-T-cell therapy or hematopoietic cell transplant (HCT) (within 2 years of transplantation or taking immunosuppressive therapy)
+Moderate or severe primary immunodeficiency (e.g., common variable immunodeficiency disease, severe combined immunodeficiency, DiGeorge syndrome, Wiskott-Aldrich syndrome)
+Advanced HIV infection (people with HIV and CD4 cell counts less than 200/mm3, history of an AIDS-defining illness without immune reconstitution, or clinical manifestations of symptomatic HIV) or untreated HIV infection
+Active treatment with high-dose corticosteroids (i.e., 20 mg or more of prednisone or equivalent per day when administered for 2 or more weeks), alkylating agents, antimetabolites, transplant-related immunosuppressive drugs, cancer chemotherapeutic agents classified as severely immunosuppressive, tumor necrosis factor (TNF) blockers, and other biologic agents that are immunosuppressive or immunomodulatory (e.g., B-cell-depleting agents)
+Factors to consider in assessing the general level of immune competence in a patient include disease severity, duration, clinical stability, complications, comorbidities, and any potentially immune-suppressing treatment.
+For additional information about the degree of immune suppression associated with different medical conditions and treatments, providers can consult General Best Practices for Immunizations, the CDC Yellow Book, and the Infectious Diseases Society of America policy statement, 2013 IDSA Clinical Practice Guideline for Vaccination of the Immunocompromised Host.
+Development of moderate or severe immunocompromise and revaccination
+Development of moderate or severe immunocompromise after vaccination
+People who were vaccinated for COVID-19 and subsequently become moderately or severely immunocompromised should follow the COVID-19 vaccination schedule in Table 2.
+Considerations for revaccination
+Recipients of HCT or CAR-T-cell therapy who received 1 or more doses of COVID-19 vaccine prior to or during treatment should be revaccinated. Revaccination should start at least 3 months (12 weeks) after transplant or CAR-T-cell therapy and should follow the currently recommended schedule for people who are unvaccinated (Table 2).
+Revaccination may also be considered for patients who received 1 or more doses of COVID-19 vaccine during treatment with B-cell-depleting therapies (e.g., rituximab, ocrelizumab) that were administered over a limited period (e.g., as part of a treatment regimen for certain malignancies) according to the currently recommended schedule for people who are unvaccinated (Table 2). The suggested interval to start revaccination is about 6 months after completion of the B-cell-depleting therapy. Timing of vaccination for patients who receive B-cell-depleting therapies on a continuing basis (e.g., for treatment of certain autoimmune conditions such as rheumatoid arthritis or multiple sclerosis) is addressed in Considerations for timing of COVID-19 vaccination in relation to immunosuppressive therapies.
+A patient's clinical team is best positioned to determine the degree of immune compromise, need for revaccination, and appropriate timing of revaccination.
+Considerations for timing of COVID-19 vaccination in relation to immunosuppressive therapies
+Administration of COVID-19 vaccines should not necessarily be delayed in patients taking immunosuppressive therapies. Whenever possible, COVID-19 vaccines should be administered at least 2 weeks before initiation or resumption of immunosuppressive therapies. For patients who receive B-cell-depleting therapies on a continuing basis, COVID-19 vaccines should be administered approximately 4 weeks before the next scheduled therapy.
+Timing of COVID-19 vaccination should take into consideration:
+Current or planned immunosuppressive therapies
+Optimization of both the patient's medical condition and anticipated response to vaccination
+Individual benefits and risks
+On a case-by-case basis, providers caring for these patients may administer Moderna, Novavax, and Pfizer-BioNTech COVID-19 vaccines through off-label use outside of the FDA and CDC dosing intervals when, based on their clinical judgment, the benefits of vaccination are deemed to outweigh the potential and unknown risks for the recipient who is immunocompromised.
+On This Page
+Introduction
+Table 2: 2026–2027 COVID-19 vaccination schedule for people who are moderately or severely immunocompromised, November 4, 2025
+Self-attestation of immunocompromised status
+COVID-19 vaccination and pemivibart
+Description of moderate and severe immunocompromising conditions and treatment
+Development of moderate or severe immunocompromise and revaccination
+Considerations for timing of COVID-19 vaccination in relation to immunosuppressive therapies
+Sept. 23, 2026
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+National Center for Immunization and Respiratory Diseases; Coronavirus and Other Respiratory Viruses Division
+About This Page
+Published: May 1, 2025
+Updated: September 23, 2026
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed: September 23, 2026
+The information on this page was last reviewed by subject matter experts to ensure accuracy.

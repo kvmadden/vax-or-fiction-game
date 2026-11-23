@@ -1,0 +1,137 @@
+Skip directly to search
+Skip directly to A to Z list
+Skip directly to site content
+CDC Home
+CDC 24/7: Saving Lives. Protecting People.™
+Morbidity and Mortality Weekly Report (MMWR)
+MMWR
+Persons using assistive technology might not be able to fully access information in this file. For assistance, please send e-mail to: mmwrq@cdc.gov. Type 508 Accommodation and the title of the report in the subject line of e-mail.
+Use of Hepatitis B Vaccination for Adults with Diabetes Mellitus: Recommendations of the Advisory Committee on Immunization Practices (ACIP)
+Hepatitis B virus (HBV) causes acute and chronic infection of the liver leading to substantial morbidity and mortality. In the United States, since 1996, a total of 29 outbreaks of HBV infection in one or multiple long-term–care (LTC) facilities, including nursing homes and assisted-living facilities, were reported to CDC; of these, 25 involved adults with diabetes receiving assisted blood glucose monitoring (1; CDC, unpublished data, 2011). These outbreaks prompted the Hepatitis Vaccines Work Group of the Advisory Committee on Immunization Practices (ACIP) to evaluate the risk for HBV infection among all adults with diagnosed diabetes. The Work Group reviewed HBV infection–related morbidity and mortality and the effectiveness of implementing infection prevention and control measures. The strength of scientific evidence regarding protection was evaluated using the Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) methodology,* and safety, values, and cost-effectiveness were incorporated into a recommendation using the GRADE system. Based on the Work Group findings, on October 25, 2011, ACIP recommended that all previously unvaccinated adults aged 19 through 59 years with diabetes mellitus (type 1 and type 2) be vaccinated against hepatitis B as soon as possible after a diagnosis of diabetes is made (recommendation category A). Data on the risk for hepatitis B among adults aged ≥60 years are less robust. Therefore, ACIP recommended that unvaccinated adults aged ≥60 years with diabetes may be vaccinated at the discretion of the treating clinician after assessing their risk and the likelihood of an adequate immune response to vaccination (recommendation category B). This report summarizes these recommendations and provides the rationale used by ACIP to inform their decision making.
+Risk for HBV Infection
+An estimate of the risk for HBV infection for adults with diabetes living in LTC facilities was not available; continuing outbreaks suggest that it might be substantial. The population risk for HBV infection among adults with diagnosed diabetes was estimated from 865 confirmed cases of acute HBV infection reported during 2009–2010 from eight Emerging Infections Program (EIP) sites constituting approximately 17% of the U.S. population. The analysis was restricted to persons aged ≥23 years because of high rates of vaccination among younger persons. In multivariate analyses that considered persons without hepatitis B–related risk behaviors (i.e., injection-drug use, male sex with a male, and sex with multiple partners), persons aged 23 through 59 years with diabetes had 2.1 (95% confidence interval [CI] = 1.6–2.8) times the odds of developing acute hepatitis B as those without diabetes; the odds were 1.5 (CI = 0.9–2.5) times as likely for persons aged ≥60 years. The annual incidence of reported cases of acute HBV infection among adults with diabetes was 1.8 per 100,000 (CI = 1.5–2.2) (2). Acute HBV infection incidence is underestimated; an additional 10.5 new cases of infection likely occurred for each reported, confirmed case (3).
+Data for the period 1999–2010 from the National Health and Nutrition Examination Survey (NHANES), a nationally representative sample of the noninstitutionalized U.S. population, indicated a 60% (p<0.001) higher seroprevalence of antibody to hepatitis B core antigen (indicative of past or present HBV infection) overall among persons aged ≥18 years with diagnosed diabetes compared with those without diabetes. Stratified by age, the estimated prevalence ratios were 1.7 (CI = 1.3–2.2) for persons aged 18 through 59 years and 1.3 (CI = 1.0–1.6) for those aged ≥60 years (CDC, unpublished data, 2011).
+Morbidity and Mortality
+The severity of acute HBV infection among adults ranges from asymptomatic to fulminant hepatitis. National viral hepatitis surveillance data indicate that of the 3,371 acute HBV infections reported in 2009, 47% of the 2,126 infections for which information was available resulted in hospitalization, and 1% of the 1,900 infections for which information was available were fatal (3). Data from EIP for the period 2009–2010 indicated a higher case-fatality rate among acute HBV–infected persons with diagnosed diabetes compared with those without diabetes, although the difference was not statistically significant (5% versus 2%, p=0.127) (2). Acute HBV infection progresses to chronic infection in approximately 5% of otherwise healthy adults (4), but is believed to be greater among older adults with diabetes (5). In the United States, an estimated 700,000 to 1.4 million persons are infected with HBV (3). Because chronic HBV infection can persist for decades, persons with chronic HBV infection are the reservoir for continuing HBV transmission. Chronic HBV infection is associated with high morbidity and mortality, leading to cirrhosis and liver cancer in ≥15% of affected adults (5).
+Diabetes is associated with nonalcoholic fatty liver disease, including its most severe form, nonalcoholic steatohepatitis. A study of veterans without HBV infection indicated that adults with diabetes have approximately twice the risk for chronic nonalcoholic liver disease and hepatocellular carcinoma as those without diabetes (6).
+Infection Control
+HBV is highly infectious and environmentally stable (5); HBV can be transmitted by medical equipment that is contaminated with blood that is not visible to the unaided eye. Percutaneous exposures to HBV occur as a result of assisted monitoring of blood glucose (7) and other procedures involving instruments or parenteral treatments shared between persons. Lapses in infection control during assisted blood glucose monitoring that have led to HBV transmission include multipatient use of finger stick devices designed for single-patient use and inadequate disinfection and cleaning of blood glucose monitors between patients. Breaches have been documented in various settings, including LTC facilities, hospitals, community health centers, ambulatory surgical centers, private offices, homes, and health fairs (7; CDC, unpublished data, 2011). Initiatives are ongoing to encourage improvement in the design and labeling of devices used in diabetes monitoring and care, and for greater oversight and training of staff responsible for providing diabetes care.†
+Infection control guidelines for safe blood glucose monitoring have been available since 1990, and guidelines targeting LTC settings were published in 2005 (8). Since 1982, hepatitis B vaccination has been recommended for health-care personnel, including personnel exposed to blood in LTC settings, in conjunction with meticulous attention to infection control practice (5,8). In addition, a recommendation for hepatitis B vaccination exists for persons beginning hemodialysis (5).
+Hepatitis B Vaccine
+Two single-antigen recombinant hepatitis B vaccines, Recombivax HB (Merck & Co., Inc.) and Engerix-B (GlaxoSmithKline Biologicals), and one combination hepatitis A and hepatitis B vaccine, Twinrix (GlaxoSmithKline Biologicals), are available in the United States. Hepatitis B vaccines have been used in the United States since 1982. Extensive data support their safety in all age groups (5).
+Hepatitis B vaccination usually consists of 3 doses of vaccine administered intramuscularly at 0, 1, and 6 months; other schedules are available. At younger ages, the immune response to vaccine is similar among adults with and without diabetes. The proportion of adults who achieve seroprotection (≥10 mIU/mL antibody to hepatitis B surface antigen [anti-HBs]) after receipt of the 3-dose vaccine series decreases with age, obesity, smoking, immunosuppression, and comorbid conditions including diabetes. When the antibody responses among older adults with and without diabetes are compared, the response might be reduced among those with diabetes. A synthesis of available literature suggests a protective response is achieved after completion of the hepatitis B vaccine series in ≥90%, 80%, 65%, and <40% of adults with diabetes lacking comorbid conditions aged ≤40 years, 41 through 59 years, 60 through 69 years, and ≥70 years, respectively (CDC, unpublished data, 2011). Revaccination with 1–3 additional doses of hepatitis B vaccine safely increases the proportion of adults who achieve a protective level of anti-HBs (≥10 mIU/mL) (5). The duration of protection against symptomatic and chronic HBV infection lasts >22 years among healthy vaccine responders (9); duration of immunity among persons with diabetes is unknown.
+Cost-Effectiveness
+The Hepatitis Vaccines Work Group developed economic models that yielded age-stratified calculations (base case) of the incremental cost per quality-adjusted life-year (QALY) saved based on vaccinating adults with diabetes against hepatitis B.§ The estimated cost per QALY saved was $75,100 for persons aged 20 through 59 years but increased substantially with increasing age. From a lifetime perspective, a one-time vaccination program consisting of a 3-dose series of hepatitis B vaccine, covering 10% of unvaccinated U.S. adults with diagnosed diabetes aged 20 through 59 years (or approximately 528,047 persons) would be expected to prevent 4271 HBV infections, 467 hospitalizations, 256 chronic cases, 33 cases of hepatocellular carcinoma, 13 liver transplants, and 130 deaths. Postvaccination serologic testing and revaccination would add considerable cost, with limited increase in disease protection (CDC, unpublished data, 2011).
+ACIP Recommendations
+On the basis of available information about HBV risk, morbidity and mortality, available vaccines, age at diagnosis of diabetes, and cost-effectiveness, ACIP recommends the following:
+Hepatitis B vaccination should be administered to unvaccinated adults with diabetes mellitus who are aged 19 through 59 years (recommendation category A; evidence type 2).
+Hepatitis B vaccination may be administered at the discretion of the treating clinician to unvaccinated adults with diabetes mellitus who are aged ≥60 years (recommendation category B; evidence type 2).
+Remarks
+Continued efforts are needed to increase adherence to recommended infection control practice. Shared use of blood-contaminated equipment increases the risk for exposure to bloodborne pathogens, including hepatitis C virus, human immunodeficiency virus, and HBV, which is highly infectious.
+Administration of the hepatitis B vaccine series should be completed as soon as feasible after diabetes is diagnosed. Available data do not confirm an advantage to any specific hepatitis B vaccine, dosage, or approved schedule for adults with diabetes. No serologic testing or additional hepatitis B vaccination is recommended for adults who received a complete series of hepatitis B vaccinations at any time in the past.
+The hepatitis B vaccination series can be given safely to persons of any age, but current hepatitis B vaccines are less efficacious and less cost-effective among older adults. Evidence for the extent of increased risk for acute HBV infection among persons with diabetes who are aged ≥60 years is less strong than for younger persons with diabetes. In 2008, the median age of diabetes diagnosis was 53 years; two thirds of adult diabetes diagnoses were made before age 60 years.¶
+Decisions to vaccinate adults with diabetes who are aged ≥60 years of age should incorporate consideration of the patient's likelihood of acquiring HBV infection, including the risk posed by an increased need for assisted blood-glucose monitoring in LTC facilities, the likelihood of experiencing chronic sequelae if infected with HBV, and the declining immunologic responses to vaccines that are associated with frailty, a geriatric syndrome characterized by decreased physiologic reserve and increased vulnerability, leading to early mortality in older adults (10).
+Hepatitis B vaccine may be administered during health-care visits scheduled for other purposes as long as minimum intervals between doses are observed; there is no maximum interval between doses that makes the hepatitis B vaccination series ineffective.
+Reported by
+Mark H. Sawyer, MD, Univ of California San Diego and Rady Children's Hospital, San Diego, California. Thomas J. Hoerger, PhD, RTI International, Research Triangle Park, North Carolina. Trudy V. Murphy, MD, Sarah F. Schillie, MD, Dale Hu, MD, Philip R. Spradling, MD, Kathy K. Byrd, MD, Jian Xing, PhD, Meredith L. Reilly, MPH, Rania A. Tohme, MD, Anne Moorman, MPH, Emily A. Smith, MPH, Brittney N. Baack, MPH, Ruth B. Jiles, PhD, Monina Klevens, DDS, John W. Ward, MD, Div of Viral Hepatitis, National Center for HIV, Viral Hepatitis, STD, and TB Prevention; Henry S. Kahn, MD, Div of Diabetes Translation, National Center for Chronic Disease Prevention and Health Promotion; Fangjun Zhou, PhD, Immunization Svcs Div, National Center for Immunization and Respiratory Diseases, CDC. Corresponding contributor: Trudy V. Murphy, tvmurphy@cdc.gov, 404-639-8845.
+Acknowledgments
+John S. Wittenborn, RTI International, Research Triangle Park, North Carolina. Nicola D. Thompson, PhD, Joseph F. Perz, PhD, Div of Healthcare Quality Promotion, National Center for Emerging and Zoonotic Infectious Diseases; Rachel J. Wilson, Div of Viral Hepatitis, National Center for HIV, Viral Hepatitis, STD, and TB Prevention; Nilka Ríos Burrows, MPH, Pamela Allweiss, MD, Div of Diabetes Translation, National Center for Chronic Disease Prevention and Health Promotion, CDC.
+References
+Thompson ND, Perz JF. Eliminating the blood: ongoing outbreaks of hepatitis B virus infection and the need for innovative glucose monitoring technologies. J Diabetes Sci Technol 2009;3:283–8.
+Reilly ML, Poissant T, Vonderwahl CW, Gerard K, Murphy TV. Incidence of acute hepatitis B among adults with and without diabetes, 2009–2010. Presented at the 49th Annual Meeting of the Infectious Disease Society of America and the HIV Medicine Association; Boston, MA, October 20–23, 2011.
+CDC. Viral hepatitis surveillance—United States, 2009. Atlanta, GA: US Department of Health and Human Services; 2011. Available at http://www.cdc.gov/hepatitis/statistics/2009surveillance/index.htm. Accessed December 15, 2011.
+Hyams KC. Risks of chronicity following acute hepatitis B virus infection: a review. Clin Infect Dis 1995;20:992–1000.
+CDC. A comprehensive immunization strategy to eliminate transmission of hepatitis B virus infection in the United States. Recommendations of the Advisory Committee on Immunization Practices (ACIP) part II: immunization of adults. MMWR 2006;55(No. RR-16).
+El-Serag HB, Tran T, Everhart JE. Diabetes increases the risk of chronic liver disease and hepatocellular carcinoma. Gastroenterology 2004;126:460–8.
+Klonoff DC, Perz JF. Assisted monitoring of blood glucose: special safety needs for a new paradigm in testing glucose. J Diabetes Science Technol 2010;4:1027–31.
+CDC. Transmission of hepatitis B virus among persons undergoing blood glucose monitoring in long-term–care facilities—Mississippi, North Carolina, and Los Angeles County, California, 2003–2004. MMWR 2005;54:220–3.
+Leuridan E, Van Damme P. Hepatitis B and the need for a booster dose. Clin Infect Dis 2011;53:68–75.
+Yao X, Hamilton RG, Weng NP, et al. Frailty is associated with impairment of vaccine-induced antibody response and increase in post-vaccination influenza infection in community-dwelling older adults. Vaccine 2011;29:5015–21.
+* Recommendation category A: a recommendation that applies to all persons in an age or risk-based group. Recommendation category B: a recommendation for individual clinical decision making. Evidence type 1: randomized controlled trials, or overwhelming evidence from observational studies. Evidence type 2: randomized controlled trials with important limitations, or exceptionally strong evidence from observational studies. Evidence type 3: observational studies, or randomized controlled trials with notable limitations. Evidence type 4: clinical experience and observations, observational studies with important limitations, or randomized controlled trials with several major limitations. Source: Ahmed F, Temte JL, Campos-Outcalt D, Schünemann HJ; for the ACIP Evidence Based Recommendations Work Group (EBRWG). Methods for developing evidence-based recommendations by the Advisory Committee on Immunization Practices (ACIP) of the U.S. Centers for Disease Control and Prevention (CDC). Vaccine 2011;29:9171–6. Additional information about the GRADE methodology related to this policy is available at http://www.cdc.gov/vaccines/recs/acip/grade/table-refs.htm.
+† Additional information available at http://www.cdc.gov/injectionsafety/meetings/stickingwsafety52010.html.
+§ The Charter of ACIP states that, when considering recommendations for use of a vaccine, ACIP members' deliberations should include consideration of vaccine efficacy as well as cost-benefit and risk-benefit analyses. No predefined threshold for cost-effectiveness is considered. To ensure that economic data presented to the Committee and its Working Groups are uniform in presentation, understandable, and of the highest quality, lead economists and the Health Economics Research Group at CDC developed Guidance for Health Economics Studies Presented to the Advisory Committee on Immunization Practices (ACIP), available at http://www.cdc.gov/vaccines/recs/acip/economic-studies.htm. The guidance specifically mandates technical review of any economic study that is presented to ACIP.
+¶ Additional information available at http://www.cdc.gov/diabetes/statistics/age/fig1.htm.
+Use of trade names and commercial sources is for identification only and does not imply endorsement by the U.S. Department of
+Health and Human Services.
+References to non-CDC sites on the Internet are
+provided as a service to MMWR readers and do not constitute or imply
+endorsement of these organizations or their programs by CDC or the U.S.
+Department of Health and Human Services. CDC is not responsible for the content
+of pages found at these sites. URL addresses listed in MMWR were current as of
+the date of publication.
+All MMWR HTML versions of articles are electronic conversions from typeset documents.
+This conversion might result in character translation or format errors in the HTML version.
+Users are referred to the electronic PDF version (http://www.cdc.gov/mmwr)
+and/or the original MMWR paper copy for printable versions of official text, figures, and tables.
+An original paper copy of this issue can be obtained from the Superintendent of Documents, U.S.
+Government Printing Office (GPO), Washington, DC 20402-9371;
+telephone: (202) 512-1800. Contact GPO for current prices.
+**Questions or messages regarding errors in formatting should be addressed to
+mmwrq@cdc.gov.
+MMWR Home
+Publications
+Weekly Report
+Past Volumes (1982-2014)
+Recommendations and Reports
+Past Volumes (1990-2014)
+Surveillance Summaries
+Past Volumes (1983-2014)
+Supplements
+Notifiable Diseases
+About MMWR
+Instructions for Authors
+Serial Publications
+Weekly
+Continuing Education
+Continuing Education
+Weekly Publications
+Serial Publications
+State Health Statistics
+MMWR Editorial Board
+MMWR Staff
+File Formats Help:
+How do I view different file formats (PDF, DOC, PPT, MPEG) on this site?
+Print
+Updates
+Subscribe
+Listen
+Download
+Page last reviewed: December 23, 2011
+Page last updated: December 23, 2011
+Content source: Centers for Disease Control and Prevention
+Home
+A-Z Index
+Policies
+Using this Site
+Link to Us
+Contact CDC
+Centers for Disease Control and Prevention 1600 Clifton Road Atlanta, GA 30329-4027, USA
+800-CDC-INFO (800-232-4636) TTY: (888) 232-6348 - Contact CDC–INFO
+A-Z Index
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+#

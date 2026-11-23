@@ -1,0 +1,255 @@
+Chapter 16: Pertussis
+For Health Care Providers
+Apr. 12, 2024
+At a glance
+Chapter author: Fiona P. Havers, MD, MHS; Pedro L. Moro, MD, MPH; Susan Hariri, PhD; and Tami Skoff, MS
+Summary: This chapter discusses pathogenesis, clinical features, epidemiology, vaccination, and surveillance of pertussis.
+Introduction
+Keep in mind
+The 14th edition of the "Pink Book" was published August 2021. Vaccine-specific recommendations may be outdated. Refer to the CDC website for updated Diphtheria, Tetanus, and Pertussis Vaccination Information for Healthcare Professionals.
+Pertussis
+Acute infectious disease caused by Bordetella pertussis
+Outbreaks first described in 16th century
+Bordetella pertussis isolated in 1906
+More than 200,000 cases annually in the United States in prevaccine era
+Pertussis, or whooping cough, is an acute infectious disease caused by the bacterium Bordetella pertussis. Outbreaks of pertussis were first described in the 16th century by Guillaume de Baillou. The organism was first isolated by Jules Bordet and Octave Gengou in 1906.
+In the 20th century, pertussis was one of the most common childhood diseases and a major cause of childhood mortality in the United States. Before the availability of pertussis vaccine in the 1940s, more than 200,000 cases of pertussis were reported annually. Since widespread use of the vaccine began, incidence has decreased more than 75% compared with the prevaccine era.
+Pertussis remains a major health problem among children worldwide. Data from a recent modeling study suggest that more than 24 million new pertussis cases occurred globally among children younger than age 5 years in 2014 and caused an estimated 160,700 deaths.
+Bordetella pertussis
+Bordetella pertussis
+Aerobic gram-negative bacteria
+Antigenic and biologically active components:
+Pertussis toxin (PT)
+Filamentous hemagglutinin (FHA)
+Agglutinogens
+Adenylate cyclase
+Pertactin
+Tracheal cytotoxin
+B. pertussis is a small, aerobic gram-negative rod. It requires special media for isolation.
+B. pertussis produces multiple antigenic and biologically active products, including pertussis toxin (PT), filamentous hemagglutinin (FHA), agglutinogens, adenylate cyclase, pertactin, and tracheal cytotoxin. These products are responsible for the clinical features of pertussis disease. An immune response to one or more of these products produces immunity following infection. Immunity following B. pertussis infection is not permanent.
+Pathogenesis
+Pertussis Pathogenesis
+Primarily a toxin-mediated disease
+Bacteria attach to cilia of respiratory epithelial cells
+Toxins cause inflammation which interferes with clearance of pulmonary secretions
+Pertussis antigens allow evasion of host defenses
+Pertussis is primarily a toxin-mediated disease. The bacteria attach to the cilia of the respiratory epithelial cells, produce toxins that paralyze the cilia, and cause inflammation of the respiratory tract, which interferes with the clearing of pulmonary secretions. Pertussis antigens appear to allow the organism to evade host defenses in that lymphocytosis is promoted but chemotaxis is impaired.
+Previously it was thought that B. pertussis did not invade the tissues. However, studies have shown the bacteria to be present in alveolar macrophages.
+Clinical Features
+Pertussis Clinical Features
+Incubation period 7 through 10 days (range, 4 through 21 days)
+Catarrhal stage: Insidious onset, similar to the common cold
+1-2 weeks
+Paroxysmal stage: More severe cough and may experience paroxysms of numerous, rapid coughs
+1-6 weeks
+Convalescence stage: Gradual recovery
+Weeks to months
+The incubation period of pertussis is commonly 7 through 10 days, with a range of 4 through 21 days. The clinical course of the illness is divided into three stages: catarrhal, paroxysmal, and convalescent.
+The first stage, the catarrhal stage, is characterized by the insidious onset of coryza (runny nose), sneezing, low-grade fever, and a mild, occasional cough similar to the common cold. The cough gradually becomes more severe and after 1 to 2 weeks, the second, or paroxysmal, stage, begins. Fever is generally minimal throughout the course of the illness.
+It is during the paroxysmal stage that the diagnosis of pertussis is usually suspected. Characteristically, the patient might have bursts, or paroxysms, of numerous, rapid coughs, apparently due to difficulty expelling thick mucus from the tracheobronchial tree. At the end of the paroxysm, a long inspiratory effort is usually accompanied by a characteristic high-pitched whoop. During such an attack, the patient may become cyanotic. Children and young infants, especially, might appear very ill and distressed. Vomiting and exhaustion might follow the episode. The person does not appear to be ill between attacks.
+Paroxysmal attacks generally occur more frequently at night, with an average of 15 attacks per 24 hours. During the first 1 or 2 weeks of this paroxysmal stage, the attacks might increase in frequency, remain at the same level for 2 to 3 weeks, and then gradually decrease. The paroxysmal stage usually lasts 1 to 6 weeks but may persist for up to 10 weeks. Infants younger than age 6 months may not have the strength to have a whoop, but they can have paroxysms of coughing. Additionally, the classic whoop might not be present in persons with milder disease.
+In the convalescent stage, recovery is gradual. The cough becomes less paroxysmal and disappears in 2 to 3 weeks. However, paroxysms often recur with subsequent respiratory infections for many months after the onset of pertussis.
+Adolescents, adults, and children who were previously vaccinated may become infected with B. pertussis but may have milder disease than infants and young children. Pertussis infection in these persons may be asymptomatic or present as illness ranging from a mild cough illness to classic pertussis with persistent cough (i.e., lasting more than 7 days). Inspiratory whoop is not common.
+Even though the disease may be milder in older persons, those who are infected may still transmit the disease to other susceptible persons, including unimmunized or incompletely immunized infants. An adult, adolescent, or older school-age child is often found to be the first case in a household with multiple pertussis cases and is often the source of infection for young infants.
+Pertussis Complications
+Most common complication and cause of death is secondary bacterial pneumonia
+Young infants at highest risk
+Neurologic complications—seizures, encephalopathy
+Less serious complications—otitis media, anorexia, dehydration
+307 deaths between 2000 and 2017
+The most common complication, and the cause of most pertussis-related deaths, is secondary bacterial pneumonia. Young infants are at highest risk for developing pertussis-associated complications. Data from 2000–2017 indicate that pneumonia occurred in 13.2% of all reported pertussis cases, and among 18.6% of infants younger than age 6 months.
+Neurologic complications such as seizures and encephalopathy may occur as a result of hypoxia from coughing, or possibly from pertussis toxin. Neurologic complications of pertussis are more common among infants.
+Other less serious complications of pertussis include otitis media, anorexia, and dehydration. Complications resulting from pressure effects of severe paroxysms include pneumothorax, epistaxis, subdural hematomas, hernias, and rectal prolapse.
+Between 2000 and 2017, 307 deaths from pertussis were reported to CDC; children younger than age 2 months accounted for 84.0% of these deaths. During the same time period, among infants, the annual mean number of pertussis cases, hospitalizations, and deaths were 2,957 (range 1,803 to 4,994), 1,122 (range 544 to 1,938), and 15 (range 3 to 35), respectively.
+Adolescents and adults may also develop complications of pertussis, such as difficulty sleeping, urinary incontinence, pneumonia, rib fracture, syncope, and weight loss.
+The diagnosis of pertussis is based on a clinical history of signs and symptoms, as well as a variety of laboratory tests (e.g., culture, polymerase chain reaction [PCR], and serology).
+Culture is considered the gold standard laboratory test and is the most specific of the laboratory tests for pertussis. However, fastidious growth requirements make B. pertussis difficult to culture. The yield of culture can be affected by specimen collection, transportation, and isolation techniques. Specimens from the posterior nasopharynx, not the throat, should be obtained using polyester, rayon, nylon, or calcium alginate (not cotton) swabs. Isolation rates are highest during the first 2 weeks of illness (catarrhal and early paroxysmal stages). Cultures are less likely to be positive if performed later in the course of illness (more than 2 weeks after cough onset) or on specimens from persons who have received antibiotics or who have been vaccinated. Since adolescents and adults have often been coughing for several weeks before they seek medical attention, it is often too late for culture to be useful.
+PCR is a rapid test and has excellent sensitivity. PCR tests vary in specificity, so obtaining culture confirmation of pertussis for at least one possible case is recommended any time there is suspicion of a pertussis outbreak. Results should be interpreted along with the clinical symptoms and epidemiological information. PCR should be performed on nasopharyngeal specimens taken at 0 to 3 weeks following cough onset but may provide accurate results for up to 4 weeks of cough in infants or unvaccinated persons. After the fourth week of cough, the amount of bacterial DNA rapidly diminishes, which increases the risk of obtaining false negative results. PCR assay protocols that include multiple targets allow for Bordetella speciation. False positive results may be obtained because of contamination in the laboratory or during specimen collection. Direct comparison with culture is necessary for validation, and the use of multiple targets is recommended to distinguish B. pertussis from other Bordetella species.
+Serologic testing is generally more useful for diagnosing pertussis during the later phase of disease when both culture and PCR are likely to be negative. For the CDC/FDA single-point serologic assay, the optimal timing for specimen collection is 2 to 8 weeks following cough onset, when the antibody titers are at their highest. However, serology may be performed on specimens collected up to 12 weeks following cough onset. Many state public health labs have included this assay as part of their testing regimen for pertussis.
+Commercially, there are many different serologic tests used in the United States with unproven or unknown clinical accuracy. CDC is actively engaged in better understanding the usefulness of these commercially available assays.
+Because direct fluorescent antibody testing of nasopharyngeal secretions has been demonstrated in some studies to have low sensitivity and variable specificity, such testing should not be relied on as a criterion for laboratory confirmation.
+An elevated white blood cell count with a lymphocytosis is usually present in classical pertussis among infants. The absolute lymphocyte count often reaches 20,000 or greater. However, there may be no lymphocytosis in some infants and children or in persons with mild or modified cases of pertussis.
+The medical management of pertussis patients is primarily supportive, although antibiotics are of some value if administered early. This therapy eradicates the organism from secretions, thereby decreasing communicability and may modify the course of the illness if initiated early (i.e., during the first 1 to 2 weeks of cough before coughing paroxysms begin). Recommended antibiotics are azithromycin, clarithromycin, and erythromycin. Trimethoprim-sulfamethoxazole can also be used.
+Immunity following pertussis is not permanent. Unvaccinated or incompletely vaccinated persons recovering from pertussis should begin or complete active immunization with DTaP or Tdap as indicated.
+Vaccination history of close contacts of pertussis patients should also be assessed. An antibiotic effective against pertussis should be administered to all close contacts of persons with pertussis, regardless of age and vaccination status. All close contacts younger than age 7 years who have not completed the 3-dose primary vaccination series of a pertussis-containing vaccine and the first booster dose usually given at age 15 through 18 months should complete the series according to the minimum intervals. Close contacts who are age 4 through 6 years and who have not yet received the second booster dose of pertussis-containing vaccine (usually the fifth dose of DTaP [diphtheria and tetanus toxoids and acellular pertussis vaccine]) should be vaccinated.
+Epidemiology
+Pertussis Epidemiology
+Reservoir
+Humans
+Transmission
+Person-to-person through respiratory droplets or contact with airborne droplets
+Exposure to fomites
+Temporal pattern
+No distinct seasonal pattern, but may increase in the summer and fall
+Communicability
+Highly communicable
+Infectious from catarrhal stage through third week of paroxysms
+Pertussis occurs worldwide.
+Pertussis is a human disease. No animal or insect source or vector is known to exist. Adolescents, adults, and older school-age children are an important reservoir for B. pertussis and are often the source of infection for infants.
+Transmission most commonly occurs person-to-person through contact with respiratory droplets, or by contact with airborne droplets of respiratory secretions. Transmission occurs less frequently by contact with an infected person's freshly contaminated articles.
+Pertussis has no distinct seasonal pattern, but it may increase in the summer and fall.
+Pertussis is highly communicable, as evidenced by secondary attack rates of 80% among susceptible household contacts. Persons with pertussis are infectious from the beginning of the catarrhal stage through the third week after the onset of paroxysms or until 5 days after the start of effective antimicrobial treatment.
+Secular Trends in the United States
+Pertussis Secular Trends
+in the United States
+Average of 175,000 cases per year before vaccine
+Cases gradually declined after vaccine introduced in 1940s
+Between 1980 and 1990, 2,900 reported cases per year
+Incidence gradually increasing in United States since late 1980s with large epidemic peaks since mid-2000s
+Waning of vaccine-induced immunity may play a role in increase
+Before the availability of vaccine, pertussis was a common cause of morbidity and mortality among children. During the 6-year period from 1940 through 1945, more than 1 million cases of pertussis were reported, an average of 175,000 cases per year (approximately 150 cases per 100,000 population).
+Following introduction of whole-cell pertussis vaccine in the 1940s, pertussis incidence gradually declined, reaching 15,000 reported cases in 1960 (approximately 8 per 100,000 population). By 1970, annual incidence was fewer than 5,000 cases per year and, between 1980 and 1990, an average of 2,900 cases per year were reported (approximately 1 per 100,000 population).
+Reported pertussis incidence has been gradually increasing in the United States since the late 1980s and early 1990s, and large epidemic peaks in disease have been observed since the mid-2000s. A total of 48,277 pertussis cases were reported in 2012, the largest number reported since the mid-1950s. There are likely many factors contributing to the observed increase in reported disease. These include changes in diagnostic testing, heightened recognition and reporting of pertussis cases, and molecular changes in the organism. However, waning of vaccine-induced immunity is thought to play a key role in countries, including the United States, that have transitioned to acellular vaccines in the 1990s.
+Infants younger than age 1 year continue to have the highest rates of pertussis. In 2018, pertussis incidence per 100,000 was 72.3 in infants younger than age 6 months and 32.7 in infants age 6 to 12 months, compared to 1.4 in persons age 20 years or older. However, the epidemiology of pertussis has changed since the late 1980s, and an increasing burden of reported cases in the United States is now occurring among fully vaccinated children and adolescents. Between 2000–2006, the second highest average annual incidence rate was reported among adolescents age 11 through 18 years (13.1 per 100,000 population). Between 2007 and 2014, children age 7 through 10 years had the second highest average annual incidence rate (28.3 cases per 100,000 population). While the incidence of pertussis in children age 7 through 10 years and 11 through 18 years was comparable between 2015 and 2016, the rate of disease in adolescents age 11 through 18 years once again surpassed the rates of disease among children age 7 through 10 years during this period. The observed changes in pertussis epidemiology in recent years coincide with the transition to acellular vaccines in the United States and the aging of the first acellular-primed birth cohorts, suggesting a key role of waning immunity.
+Among children born during 2016–2017, 93.3% had received at least 3 doses of DTaP vaccine by age 24 months, and 80.6% had received at least 4 doses of DTaP vaccine by age 24 months. Although Tdap coverage among adolescents age 13 through 17 years reached 90.2% in 2019, coverage remains low among adults (31.7% in 2017).
+Pertussis-containing Vaccines
+Pertussis-containing Vaccines
+DTaP (Daptacel and Infanrix)
+Tdap (Adacel and Boostrix)
+DTaP-HepB-IPV (Pediarix)
+DTaP-IPV/Hib (Pentacel)
+DTaP-IPV (Kinrix and Quadracel)
+DTaP-IPV-Hib-HepB (Vaxelis)
+Whole-cell pertussis vaccines were first licensed in the United States in 1914 and were available as a combined vaccine with diphtheria and tetanus toxoids (as DTP) in 1948. Based on controlled efficacy trials conducted in the 1940s and on subsequent observational efficacy studies, a series of 4 doses of whole-cell DTP vaccine was 70% to 90% effective in preventing serious pertussis disease. Local reactions such as redness, swelling, and pain at the injection site occurred following up to 50% of doses of whole-cell DTP vaccines. Fever and other mild systemic events were also common. Concerns about safety led to the development of more purified (acellular) pertussis vaccines, which are associated with a lower frequency of adverse reactions. No DTP vaccines are currently licensed in the United States.
+Acellular pertussis vaccine is combined with tetanus toxoid and diphtheria toxoid as DTaP (Infanrix and Daptacel) or Tdap (Boostrix and Adacel). DTaP and Tdap contain the same pertussis components, but Tdap contains a reduced quantity of some pertussis antigens and diphtheria toxoid. Boostrix contains a reduced quantity of tetanus toxoid compared to Infanrix.
+Children younger than age 7 years should receive DTaP vaccine or DT vaccine (in instances where the pertussis vaccine component is contraindicated or where the physician decides that pertussis vaccine is not to be administered). Persons age 7 years or older should receive the Td vaccine or Tdap vaccine (Tdap would be off-label for children age 7 through 9 years, but is still recommended by ACIP), even if they have not completed a series of DTaP or DT. Tdap (Boostrix) is approved for persons age 10 years or older; Tdap (Adacel) is approved for persons age 10 through 64 years.
+There are five combination vaccines that contain DTaP vaccine. DTaP-HepB-IPV (Pediarix) is licensed for the first 3 doses of the DTaP series among children age 6 weeks through 6 years. DTaP-IPV/Hib (Pentacel) is licensed for the first 4 doses of the component vaccines among children age 6 weeks through 4 years. DTaP-IPV (Kinrix) is licensed only for the fifth dose of DTaP and fourth dose of IPV among children age 4 through 6 years. DTaP-IPV (Quadracel) is licensed only for the fifth dose of DTaP and fourth or fifth dose of IPV among children age 4 through 6 years. DTaP-IPV-Hib-HepB (Vaxelis) is licensed for use in children age 6 weeks through 4 years.
+Pertussis-containing Vaccine Characteristics
+Administered by intramuscular injection
+Contains aluminum as an adjuvant
+Pertussis vaccines are administered by intramuscular injection. Each dose of pertussis-containing vaccine contains aluminum as an adjuvant but no preservative. DTaP-HepB-IPV (Pediarix), DTaP-IPV/Hib (Pentacel), DTaP-IPV-Hib-HepB (Vaxelis), DTaP-IPV (Kinrix), and DTaP-IPV (Quadracel) contain neomycin and polymyxin B as antibiotics. DTaP-IPV-Hib-HepB (Vaxelis) contains streptomycin as an antibiotic. DTaP-HepB-IPV (Pediarix) and DTaP-IPV-Hib-HepB (Vaxelis) vaccines contain yeast protein.
+Presentations of some pertussis-containing vaccines contain latex rubber.
+Vaccination Schedule and Use
+Pertussis-containing Vaccine Schedule
+DTaP
+3-dose primary series at age 2, 4, and 6 months
+Primary series interval of 4- to 8-weeks and minimum interval 4 weeks
+Boosters at age 15 through 18 months and age 4 through 6 years
+Minimum interval for dose 4 is 6 months from dose 3 and minimum age is 12 months
+If dose 4 is given on or after 4th birthday, the 5th dose is optional
+DT is used in place of DTaP if child has a valid contraindication to pertussis vaccine
+DTaP (diphtheria, tetanus toxoids, and acellular pertussis vaccine) is recommended for children age 6 weeks through 6 years. The routine schedule is a primary series of 3 doses at age 2, 4, and 6 months, a booster dose between age 15 through 18 months, and another booster dose between age 4 through 6 years (total of 5 doses). The first 3 doses should be given at 4- to 8-week intervals (minimum of 4 weeks). Dose 4 should follow dose 3 by no less than 6 months and should not be administered before age 12 months.
+Dose 4 of both brands of DTaP is recommended to be administered at age 15 through 18 months (15 through 20 months for Daptacel). Dose 4 may be given as early as age 12 months if at least 6 months have elapsed since dose 3 and, in the opinion of the vaccine provider, the child is unlikely to return for an additional visit between age 15 through 18 months.
+Children who received 4 doses before their fourth birthday should receive a fifth dose of DTaP before entering school. The fifth dose is not necessary (but may be given) if dose 4 in the series was given on or after the fourth birthday. Administering the fifth dose increases antibody levels and may decrease the risk of school-age children transmitting the disease to younger siblings who are not fully vaccinated.
+If a child has a valid contraindication to pertussis vaccine, DT should be used to complete the vaccination series. If the child was younger than age 12 months when the first dose of DT was administered (as DTP, DTaP, or DT), the child should receive a total of 4 DT doses. If the child was age 12 months or older at the time the first dose of DT was administered, 3 doses (with dose 3 administered 6 through 12 months after dose 2) will complete the primary DT series. If dose 4 of DTP, DTaP, or DT is administered before the fourth birthday, a fifth dose is recommended at age 4 through 6 years.
+DTaP-HepB-IPV vaccine is approved for use as a 3-dose series for children age 6 weeks through 6 years. It is administered to infants at age 2, 4, and 6 months. The minimum intervals for DTaP-HepB-IPV vaccine are determined by the DTaP component. The 3 doses must be separated by at least 4 weeks between doses. Because the minimum age for the first dose of DTaP-HepB-IPV vaccine is 6 weeks, this vaccine cannot be used for the birth dose of hepatitis B (HepB) vaccine. The final dose of DTaP-HepB-IPV vaccine should be administered at age 24 weeks or older, the minimum age for completion of the hepatitis B vaccine series. When DTaP-HepB-IPV vaccine is used to provide 3 doses at age 2, 4, and 6 months (based on the DTaP and IPV schedules), this will result in a 4-dose HepB vaccine series, which is acceptable.
+DTaP-IPV/Hib vaccine is approved for use as a 4-dose series for children age 6 weeks through 4 years. It is administered to infants at age 2, 4, 6, and 15 through 18 months. The minimum intervals for DTaP-IPV/Hib vaccine are determined by the DTaP component. The first 3 doses must be separated by at least 4 weeks between doses. Dose 4 must be separated from dose 3 by at least 6 months, and should not be administered before age 12 months. When DTaP-IPV/Hib vaccine is used to provide 4 doses at age 2, 4, 6, and between 15 through 18 months (based on the DTaP and Hib schedules), an additional booster dose with IPV-stand alone or DTaP-IPV vaccine should be administered at age 4 through 6 years. This will result in a 5-dose IPV vaccine series, which is acceptable.
+DTaP-IPV-Hib-HepB is approved for use as a 3-dose series for children age 6 weeks through 4 years. It is administered to infants at age 2, 4, and 6 months. The minimum intervals for DTaP-IPV-Hib-HepB vaccine are determined by the DTaP component. The 3 doses must be separated by at least 4 weeks between doses. Because the minimum age for the first dose of DTaP-IPV-Hib-HepB vaccine is 6 weeks, this vaccine cannot be used for the birth dose of hepatitis B (HepB) vaccine. The final dose of DTaP-IPV-Hib-HepB vaccine should be administered at age 24 weeks or older, the minimum age for completion of the hepatitis B vaccine series. When DTaP-IPV-Hib-HepB vaccine is used to provide 3 doses at age 2, 4, and 6 months (based on the DTaP and IPV schedules), this will result in a 4-dose HepB vaccine series, which is acceptable.
+DTaP-IPV (Kinrix) vaccine is approved only for dose 5 of DTaP vaccine and dose 4 of IPV vaccine in children age 4 through 6 years whose previous DTaP vaccine doses have been with Infanrix and/or Pediarix for dose 1, 2, and 3 and Infanrix for dose 4. However, if DTaP-IPV (Kinrix) vaccine is administered to children who received another brand of DTaP vaccine for prior DTaP vaccine doses, or if administered as dose 1, 2, 3, or 4 of the DTaP vaccine series or dose 1, 2, or 3 of the IPV vaccine series, the dose of DTaP-IPV (Kinrix) does not need to be repeated.
+DTaP-IPV (Quadracel) vaccine is approved only for dose 5 of DTaP vaccine and dose 4 or 5 of IPV vaccine in children age 4 through 6 years who have received 4 doses of Pentacel and/or Daptacel vaccine. However, if DTaP-IPV (Quadracel) vaccine is administered to children who received another brand of DTaP vaccine for prior DTaP vaccines doses, or if administered as dose 1, 2, 3, or 4 of the DTaP vaccine series or dose 1, 2, or 3 of the IPV series, the dose of DTaP-IPV (Quadracel) does not need to be repeated.
+Both Tdap vaccines are approved by the FDA for a booster dose for persons who have completed the recommended childhood DTP/DTaP vaccination series. Boostrix is approved for persons age 10 years or older. Adacel is approved for a single dose in persons age 10 through 64 years. A second dose of Adacel is also licensed for administration 8 or more years after the first Tdap dose and for use for tetanus prophylaxis when indicated for wound management if at least 5 years have elapsed since the previous receipt of any tetanus toxoid-containing vaccine.
+A single Tdap dose is recommended for adolescents age 11 through 18 years who have completed the recommended childhood DTP/DTaP vaccination series, preferably at age 11 through 12 years. Adults age 19 years or older who have not previously received Tdap should receive a single dose of Tdap. To reduce the burden of pertussis in infants, a dose of Tdap has been recommended during each pregnancy since 2012, although this practice is an off-label use.
+All adolescents and adults should have received a primary series of at least 3 documented doses of tetanus and diphtheria toxoids-containing vaccine (i.e., DTaP, DTP, DT, or Td) during their lifetime. A person without such documentation should receive a series of 3 doses of tetanus- and diphtheria-containing vaccine. One of these doses, preferably the first, should be Tdap. The remaining 2 doses should be either Td or Tdap.
+For persons age 7 to 9 years who receive a dose of Tdap as part of the catch-up series, an adolescent Tdap dose should be administered at age 11 through 12 years. If a Tdap dose is administered at age 10 years or older, the Tdap dose may count as the adolescent Tdap dose. Either brand of Tdap may be used.
+Adults age 19 years or older who previously have not received Tdap should receive a single dose of Tdap to protect against pertussis and reduce the likelihood of transmission. For adults age 19 through 64 years, either brand of Tdap may be used. Adults age 65 years or older should be vaccinated with Boostrix, if feasible. However, either vaccine administered to a person age 65 years or older is immunogenic and would provide protection. A dose of either vaccine would be considered valid.
+Adolescents and adults who have not previously received Tdap, and have or anticipate having close contact with an infant younger than age 12 months (e.g., parents, siblings, grandparents, child care providers, and health care personnel) should receive a single dose of Tdap to protect against pertussis. Ideally, these persons should receive Tdap at least 2 weeks before beginning close contact with the infant.
+Health care personnel should receive a single dose of Tdap as soon as feasible if they have not previously received Tdap, regardless of the time since their most recent Td vaccination.
+When Tdap is indicated (e.g., routine vaccination, catch-up vaccination, or pregnancy), it can be administered regardless of the interval since the last tetanus- or diphtheria-toxoid-containing vaccine. After receipt of Tdap, persons should continue to receive a dose of Td or Tdap for routine booster immunization against tetanus and diphtheria every 10 years unless needed sooner for tetanus prophylaxis as part of wound management.
+Pertussis-containing Vaccine Schedule
+Tdap
+1 dose at age 11 through 18 for adolescents who have completed DTaP series
+Booster dose of Td or Tdap every 10 years for all persons
+Use of Tdap
+1 dose Tdap during each pregnancy (off-label use)
+1 dose Tdap for the following with no previous documentation of Tdap: adults, adolescents and adults who have or anticipate having close contact with an infant younger than age 12 months, and health care personnel
+3 doses of tetanus- and diphtheria-containing vaccine (1 dose should be Tdap) for adolescents and adults without documentation of a primary series
+To reduce the burden of pertussis in infants, health care providers should administer a dose of Tdap during each pregnancy, regardless of the mother's prior Tdap vaccination history, although this is an off-label use. To maximize the maternal antibody response and passive antibody transfer to the infant, optimal timing for Tdap administration is between 27 and 36 weeks of gestation, preferably during the earlier part of this period, although Tdap may be administered at any time during pregnancy. For women not previously vaccinated with Tdap, if Tdap is not administered during pregnancy, Tdap should be administered immediately postpartum. Tdap should be administered during each pregnancy (preferred) or during the postpartum period regardless of the interval since the last tetanus- or diphtheria toxoid-containing vaccine.
+Pertussis-containing Vaccine Efficacy
+DTaP vaccine efficacy 80%-85%
+Tdap similar efficacy
+Since 1991, several studies conducted in Europe and Africa have evaluated the efficacy of DTaP vaccines administered to infants. These studies varied in type and number of vaccines, design, case definition, and laboratory method used to confirm the diagnosis of pertussis, so comparison among studies must be made with caution. Point estimates of DTaP vaccine efficacy ranged from 80% to 85%, with overlapping confidence intervals.
+Adolescent and adult formulation Tdap vaccines were licensed on the basis of noninferiority of the serologic response to the various components compared with each company's pediatric DTaP formulation among persons who had received pediatric DTaP or DTP in childhood. For both vaccines, the antibody response to a single dose of Tdap was similar to that following 3 doses of DTaP in infants. This type of study is known as "bridging." The new vaccines are assumed to have similar clinical efficacy as DTaP vaccine since a similar level of antibody to the components was achieved.
+Studies on the persistence of antipertussis antibodies following a dose of Tdap show antibody levels in healthy, nonpregnant adults peak during the first month after vaccination, with antibody levels declining after 1 year. Because antibody levels wane substantially during the first year after vaccination, ACIP concluded a single dose of Tdap during one pregnancy would not be sufficient to provide protection for subsequent pregnancies.
+Contraindications and Precautions to Vaccination
+Pertussis-containing Vaccine Contraindications and Precautions
+Contraindication
+Severe allergic reaction to vaccine component or following a prior dose
+Encephalopathy not attributable to another identifiable cause within 7 days after vaccination*
+Precaution
+Moderate or severe acute illness
+Progressive or unstable neurological disorder*
+Uncontrolled seizures*
+Progressive encephalopathy*
+Guillain-Barre syndrome within 6 weeks after a previous dose of tetanus-toxoid containing vaccine**
+History of Arthus-type hypersensitivity reactions after a previous dose of diphtheria toxoid- or tetanus toxoid-containing vaccine**
+*DTaP and Tdap
+**DTaP, DT, Tdap, Td
+As with other vaccines, a history of a severe allergic reaction (anaphylaxis) to a vaccine component or following a prior dose is a contraindication to further doses. Moderate or severe acute illness (with or without fever) in a patient is considered a precaution to vaccination, although persons with minor illness may be vaccinated.
+Contraindications to combination vaccines that contain DTaP include the contraindications to the individual component vaccines (e.g., IPV, hepatitis B, Hib), but specific ingredients might differ. DTaP-HepB-IPV (Pediarix) and DTaP-IPV-Hib-HepB (Vaxelis) vaccines contain yeast. Presentations of some pertussis-containing vaccines contain latex rubber. DTaP-HepB-IPV (Pediarix), DTaP-IPV/Hib (Pentacel), DTaP-IPV-Hib-HepB (Vaxelis), DTaP-IPV (Kinrix), and DTaP-IPV (Quadracel) contain neomycin and polymyxin B. DTaP-IPV-Hib-HepB (Vaxelis) contains streptomycin.
+Encephalopathy not attributable to another identifiable cause occurring within 7 days after vaccination with DTaP, DTP, or Tdap is a contraindication for DTaP and Tdap vaccination.
+A progressive or unstable neurological disorder, uncontrolled seizures, or progressive encephalopathy is a precaution for DTaP and Tdap vaccination. For persons with a known or suspected neurologic condition, vaccination with DTaP or Tdap should be delayed until the condition has been evaluated, treatment initiated, and the condition stabilized. These conditions include the presence of an evolving neurologic disorder (e.g., uncontrolled epilepsy, infantile spasms, and progressive encephalopathy); a history of seizures that has not been evaluated; or a neurologic event that occurs between doses of vaccine. A family history of seizures or other neurologic diseases, or stable or resolved neurologic conditions (e.g., controlled idiopathic epilepsy, cerebral palsy, developmental delay), are neither contraindications nor precautions to DTaP or Tdap vaccination.
+Guillain-Barr&eacute; syndrome within 6 weeks after a previous dose of tetanus toxoid-containing vaccine is a precaution for DTaP, Tdap, DT, and Td vaccination.
+A history of Arthus-type hypersensitivity reactions after a previous dose of diphtheria toxoid-containing or tetanus toxoid–containing vaccine is a precaution for DTaP, Tdap, DT, and Td vaccination; vaccination should be deferred until at least 10 years have elapsed since the last tetanus-toxoid-containing vaccine.
+Vaccine Safety
+Pertussis-containing Vaccine Safety
+DTaP
+Pain, redness, or swelling
+20%-40%
+Temperature of 101°F
+3%-5%
+Moderate or severe systemic reactions
+Fewer than 1 in 10,000 doses
+Arthus-type reactions are rare
+Tdap, Td
+Pain, redness, or swelling
+21%-75%
+Temperature of 100.4°F or higher
+1.1%-5%
+DTaP vaccine may cause local reactions, such as pain, redness, or swelling. Local reactions have been reported in 20% to 40% of children after each of the first 3 doses. Local reactions appear to be more frequent after the fourth and/or fifth doses. Mild systemic reactions such as drowsiness, fretfulness, and low-grade fever may also occur. Temperature of 101°F or higher is reported in 3% to 5% of DTaP recipients. These reactions are self-limited and can be managed with symptomatic treatment with acetaminophen or ibuprofen.
+Moderate or severe systemic reactions (such as fever of 105°F or higher, febrile seizures, persistent crying lasting 3 hours or longer, and hypotonic-hyporesponsive episodes) have been reported after administration of DTaP, but occur less frequently than among children who received whole-cell DTP. Rates of these moderate or severe systemic reactions vary by symptom and vaccine but generally occur in fewer than 1 in 10,000 doses.
+Exaggerated local (Arthus-type) reactions are rarely reported but may occur following receipt of a vaccine containing diphtheria or tetanus toxoids.
+The most common adverse reaction following vaccination with both brands of Tdap is a local reaction, such as pain (66% to 75%), redness (25%), or swelling (21%) at the site of injection. Temperature of 100.4°F or higher was reported by 1.4% to 5% of Tdap recipients and 1.1% to 5% of Td recipients. Tdap recipients also reported a variety of nonspecific systemic events, such as headache, fatigue and gastrointestinal symptoms.
+The Institute of Medicine reported in 2011 that the evidence was inadequate to accept or reject a causal relation between receipt of diphtheria toxoid and tetanus toxoid–containing vaccine and encephalitis, encephalopathy, infantile spasms, seizures, ataxia, autism, acute disseminated encephalomyelitis, transverse myelitis, optic neuritis, onset of multiple sclerosis in adults, relapse of multiple sclerosis in adults, relapse of multiple sclerosis in children, Guillain-Barr&eacute; syndrome, chronic inflammatory disseminated polyneuropathy, opsoclonus myoclonus syndrome, or Bell's palsy.
+The most frequently reported adverse events after DTaP in the Vaccine Adverse Effect Reporting System (VAERS) and Vaccine Safety Datalink (VSD), two post-licensure surveillance systems, were consistent with observations from pre-licensure studies of these vaccines. When VAERS DTaP reports for each vaccine brand were compared individually with reports for all other inactivated vaccines in the VAERS database, no concerning patterns of adverse events were observed.
+Routine VAERS surveillance for and VSD studies on adverse events following receipt of Tdap vaccines in persons aged 10 through 64 years have provided reassuring data consistent with the prelicensure clinical trial safety data and have not demonstrated any associations between Tdap and the following rare adverse events: encephalopathy-encephalitis-meningitis, paralytic syndromes, seizures, cranial nerve disorders, and Guillain-Barr&eacute; syndrome.
+Vaccine Storage and Handling
+DTaP and Tdap vaccines should be maintained at refrigerator temperature between 2°C and 8°C (36°F and 46°F). Manufacturer package inserts contain additional information. For complete information on best practices and recommendations, please refer to CDC’s Vaccine Storage and Handling Toolkit.
+Surveillance and Reporting of Pertussis
+For information on guidance for state and local health department staff who are involved in surveillance activities for vaccine-preventable diseases, please consult the Manual for the Surveillance of Vaccine-Preventable Diseases.
+Acknowledgements
+The editors would like to acknowledge Jennifer Liang, Stacey Martin, and Cindy Weinbaum for their contributions to this chapter.
+Selected References
+American Academy of Pediatrics. Pertussis. In: Kimberlin D, Brady M, Jackson M, et al., eds. Red Book: 2018 Report of the Committee on Infectious Diseases. 31st ed. Itasca, IL: American Academy of Pediatrics;2018:620–34.
+CDC. Prevention of pertussis, tetanus, and diphtheria with vaccines in the United States: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR 2018;67(RR-2):1–44.
+CDC. Updated recommendations for use of tetanus toxoid, reduced diphtheria toxoid and acellular pertussis vaccine (Tdap) in pregnant women and persons who have or anticipate having close contact with an infant <12 months of age – Advisory Committee on Immunization Practices (ACIP). MMWR 2011;60(41):1424–6.
+CDC. Use of tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis vaccines: updated recommendations of the Advisory Committee on Immunization Practices — United States, 2019. MMWR 2020;69(3):77–83.
+Cherry J, The epidemiology of pertussis: a comparison of the epidemiology of the disease pertussis with the epidemiology of Bordetella pertussis infection. Pediatrics 2005;115(5):1422–7.
+Edwards K, Decker M. Pertussis Vaccines. In: Plotkin S, Orenstein W, Offit P, et al., eds. Plotkin's Vaccines. 7th ed. Elsevier;2018:711–61.
+Elam-Evans L, Yankey D, Singleton J, et al. National, Regional, State, and Selected Local Area Vaccination Coverage Among Adolescents Aged 13–17 Years — United States, 2019. MMWR 2020;69(33):1109–16.
+Greenberg D. Pertussis in adolescents: increasing incidence brings attention to the need for booster immunization of adolescents. Pediatr Infect Dis J 2005;24(8):721–8.
+Skoff T, Hadler S, Hariri S. The epidemiology of nationally reported pertussis in the United States, 2000–2016. Clin Infect Dis 2019 68(10):1634–40.
+Skoff T, Kenyon C, Cocoros N, et al. Sources of infant pertussis infection in the United States. Pediatrics 2015;136(4):635–41.
+Ward J, Cherry J, Chang S, et al. Efficacy of an acellular pertussis vaccine among adolescents and adults. N Engl J Med 2005;353:1555–63.
+Woo E, Burwen D, Gatumu SN, et al. Extensive limb swelling after immunization: Reports to the Vaccine Adverse Event Reporting System. Clin Infect Dis 2003;37(3):351–8.
+Yeung K, Duclos P, Nelson E, et al. An update of the global burden of pertussis in children younger than 5 years: a modelling study. Lancet Infect Dis. 2017;17(9):974–80.
+On This Page
+Introduction
+Bordetella pertussis
+Pathogenesis
+Clinical Features
+Epidemiology
+Secular Trends in the United States
+Pertussis-containing Vaccines
+Vaccination Schedule and Use
+Contraindications and Precautions to Vaccination
+Vaccine Safety
+Vaccine Storage and Handling
+Surveillance and Reporting of Pertussis
+Acknowledgements
+Selected References
+Apr. 12, 2024
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+National Center for Immunization and Respiratory Diseases (NCIRD); Immunization Services Division
+About This Page
+Published: July 16, 2024
+Updated: April 12, 2024
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed: October 19, 2022
+The information on this page was last reviewed by subject matter experts to ensure accuracy.

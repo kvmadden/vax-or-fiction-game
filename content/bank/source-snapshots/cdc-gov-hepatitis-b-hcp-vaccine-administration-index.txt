@@ -1,0 +1,156 @@
+Hepatitis B Vaccine Administration
+For Health Care Providers
+Nov. 9, 2026
+What to know
+The Advisory Committee on Immunization Practices (ACIP) recommends hepatitis B (HepB) vaccination among all infants at birth, unvaccinated children younger than 19 years of age, adults aged 19–59 years, and adults aged 60 years and older with risk factors for hepatitis B or without identified risk factors but seeking protection.
+Who should be vaccinated
+ACIP recommends that the following people should receive hepatitis B (HepB) vaccination:
+All infants.
+Unvaccinated children younger than 19 years of age.
+Adults 19–59 years.
+Adults 60 years and older with risk factors for hepatitis B.
+The following groups may also receive HepB vaccination:
+Adults 60 years and older without known risk factors for hepatitis B.
+See Also
+Hepatitis B Screening Questionnaire for HCPs from Immunize.org
+For testing recommendations and assistance interpreting B screening results, see hepatitis B testing guidelines.
+Composition and dosage
+The United States Food and Drug Administration (FDA) has licensed three single-antigen vaccines (Engerix-B, Heplisav-B, and Recombivax HB), and three combination vaccines (Pediarix, Vaxelis, and Twinrix) to protect against hepatitis B. All vaccines contain yeast protein and aluminum adjuvant or a small synthetic nucleotide immunostimulant (Heplisav-B).
+No differences in immunogenicity have been observed when one or 2 doses of hepatitis B vaccine produced by one manufacturer are followed by doses from a different manufacturer. Whenever feasible, the same vaccine should be used for the subsequent doses; however, if a different brand is administered, the dose(s) should be considered valid and do not need to be repeated.
+Engerix-B
+For persons from birth through adulthood
+People aged 19 years and younger should receive three doses. People aged 20 years and older should receive three doses. Adults on hemodialysis should receive four doses. See package insert for detailed dosage instructions.
+See the Engerix-B package insert.
+Heplisav-B
+For adults aged 18 years through adulthood
+People aged 18 years and older should receive two doses. The safety and effectiveness of Heplisav-B has not been established in adults on hemodialysis. See package insert for indications and detailed dosage instructions.
+See the Heplisav-B package insert.
+Recombivax HB
+For persons from birth through adulthood
+People aged 19 years and younger should receive three doses. People aged 20 years and older should receive three doses. Adults on dialysis or predialysis should receive three doses of the dialysis formulation. See package insert for indications and detailed dosage instructions.
+See the Recombivax HB package insert.
+PreHevbrio
+PreHevbrio voluntary nationwide recall
+As of November of 2024, the vaccine manufacturer is initiating a voluntary nationwide recall of all remaining PreHevbrio® [Hepatitis B Vaccine (Recombinant); NDC 75052-001-10] due to restructuring of the company and discontinuing operations. Further distribution or use of any remaining PreHevbrio vaccine by healthcare providers or others should cease immediately.
+Vaccination should not be deferred when the manufacturer of previously administered doses is unknown or when the vaccine from the same manufacturer is unavailable. For vaccine series started with PreHevbrio as dose 1 or doses 1 and 2, vaccine from a different manufacturer should adhere to the 3-dose schedule; if PreHevbrio was given as dose 1, another vaccine licensed for adults (i.e., Engerix-B or Recombivax HB) should be given as dose 2 and dose 3 in accordance with the schedule. The 2-dose Heplisav-B vaccine series can also be given as dose 2 and dose 3 to complete a 3-dose vaccine series when the manufacturer of a previously administered dose 1 is unknown, or PreHevbrio was given as dose 1.
+Recall Details
+Pediarix
+For children aged 6 weeks through age 6 years
+People between 6 weeks and 6 years of age should receive three doses. See package insert for detailed dosage instructions.
+See the Pediarix package insert.
+Vaxelis
+For children aged 6 weeks through age 4 years
+People between 6 weeks and 4 years of age should receive three doses. See package insert for detailed dosage instructions.
+See the Vaxelis package insert.
+Twinrix
+For adults aged 18 years through adulthood
+People aged 18 years and older should receive either three or four doses. See package insert for detailed dosage instructions.
+See the Twinrix package insert.
+Vaccine effectiveness
+Each of the HepB vaccines are highly effective in preventing infection. Studies indicate that immunity persists for at least 30 years among healthy people who initiate HepB vaccination at less than 6 months of age.
+Hemodialysis
+Providers should vaccinate adult hemodialysis patients needing HepB vaccination with high-dose (40ug) Engerix-B or Recombivax HB. See package insert for detailed dosage instructions.
+Pregnancy
+Providers should vaccinate pregnant patients needing HepB vaccination with Engerix-B, Heplisav-B, Recombivax HB, or Twinrix.
+Safety and precautions
+Scientific evidence overwhelmingly supports the safety of HepB vaccines.
+As a precaution, clinicians should ask the person getting the vaccine if they've previously experienced an allergic reaction to:
+A previous dose of HepB vaccine.
+Any part of HepB vaccine.
+Yeast.
+People who are moderately or severely ill should wait until they recover before getting a HepB vaccine. However, administering the vaccine to people with minor illnesses, such as a cold, is fine. Learn more about contraindications and precautions.
+Reporting adverse events
+The most frequently reported adverse event associated with HepB vaccination is injection site soreness. Any adverse event suspected to be associated with HepB vaccination should be reported through the Vaccine Adverse Event Reporting System (VAERS).
+VAERS is an early warning system, co-managed by CDC and the FDA, that monitors potential vaccine safety problems. Clinicians and vaccine manufacturers are required by law to report certain adverse events following vaccination to VAERS. Patients and caregivers can also submit reports.
+Administration
+Clinicians should administer the vaccine intramuscularly into the anterolateral aspect of the thigh or the deltoid muscle of the upper arm, depending on the person’s age. When administering multiple vaccines, Clinicians should use different anatomic sites (e.g., separate limbs).
+Concurrent administration of other vaccines
+Clinicians can administer HepB vaccine concurrently with other vaccines to children and adults. There is no evidence that coadministration reduces the vaccine response or effectiveness.
+Vaccine schedules
+HepB vaccine can be given as a stand-alone vaccine or as part of a combination vaccine. For detailed information on HepB vaccine schedules, see immunization schedules from CDC.
+Child and Adolescent Immunization Schedule by Age (Addendum updated July 2, 2025)
+Guide health care providers in determining recommended vaccines for each age group.
+Adult Immunization Schedule by Age (Addendum updated July 2, 2025)
+Stay up-to-date on recommended vaccines. View and print CDC immunization schedules for adults.
+Resources
+ACIP Presentation Slides: September 18, 2025
+Background briefing document - Hepatitis B Birth Dose Briefing Document
+Background briefing document - Hepatitis B Birth Dose Briefing Document
+Download
+Download
+Hepatitis B Vaccine Birth Dose ACIP Presentation - Final
+Hepatitis B Vaccine Birth Dose ACIP Presentation - Final
+Download
+Download
+Scientific guidelines and recommendations
+Updated Recommendation for Universal Hepatitis B Vaccination in Adults Aged 19–59 Years — United States, 2024
+MMWR. Morbidity and Mortality Weekly Report / Vol. 73 / No. 48 / P. 1106
+Universal Hepatitis B Vaccination in Adults Aged 19–59 Years: Updated Recommendations of the Advisory Committee on Immunization Practices — United States, 2022
+MMWR. Morbidity and Mortality Weekly Report / Vol. 71 / No. 13 / P. 477–483
+Screening and Testing for Hepatitis B Virus Infection: CDC Recommendations — United States, 2023
+MMWR. Recommendations and Reports / Vol. 72 / No. 1 / P. 1–25
+Recommendations of the Advisory Committee on Immunization Practices for Use of a Hepatitis B Vaccine with a Novel Adjuvant
+MMWR. Morbidity and Mortality Weekly Report / Vol. 67 / No. 15 / P. 455–458
+Hepatitis B Vaccination, Screening, and Linkage to Care
+Best practice advice from the American College of Physicians and CDC.
+Continuing education
+Driving Hepatitis B Management: Universal Screening and Vaccination in Primary Care
+Free continuing education credits and hepatitis B screening, testing, and vaccination recommendations from CDC and ACIP.
+University of Washington Hepatitis B Online Resource
+Free continuing education credits and more information on HBV immunizations.
+Vaccine requirements by state
+Hepatitis B Vaccine Requirements for Childcare and School (Kg–Gr 12)
+Vaccination requirements for childcare and schools from Immunize.org.
+Hepatitis B Vaccine Requirements for Colleges and Universities
+Vaccination requirements for colleges and universities from Immunize.org.
+Standing orders
+Use of Standing Orders Programs to Increase Adult Vaccination Rates
+MMWR covers the effectiveness of these programs, describes implementation, and recommends initiating these programs to improve immunization coverage.
+Vaccine assistance programs
+Merck Vaccine Patient Assistance Program
+This site outlines the Merck Vaccine Patient Assistance Program for people who need help with paying for medications and vaccines.
+GSK Patient Assistance Program
+This site outlines the GSK Patient Assistance Program for people who need help with paying for medications and vaccines.
+Specific sites and tools
+Vaccine Storage and Handling
+Proper vaccine storage and handling practices for clinicians.
+Vaccine Administration
+Learn proper vaccine administration protocols and access vaccine administration trainings.
+Vaccinating Adults: A Step-by-Step Guide
+A step-by-step guide from the Immunization Action Coalition providing information to help implement or enhance adult immunization services in your health care setting.
+Related pages
+Traveler's Health
+Clinician resources for traveling patients.
+Vaccines & Immunizations
+Learn more about 2024 immunization schedules for your patients.
+Vaccine Information Statement (VIS)
+Vaccine Information Statements (VISs) are information sheets produced by CDC that explain both the benefits and risks of a vaccine. View the VIS for HepB vaccine.
+On This Page
+Who should be vaccinated
+Composition and dosage
+Vaccine effectiveness
+Safety and precautions
+Reporting adverse events
+Administration
+Resources
+Vaccine Information Statement (VIS)
+Nov. 9, 2026
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+Division of Viral Hepatitis
+About this page
+Published: May 15, 2024
+Updated: September 18, 2025
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed: November 9, 2026
+The information on this page was last reviewed by subject matter experts to ensure accuracy.
+Sources
+Recommendations for Preventing Transmission of Infections Among Chronic Hemodialysis Patients | MMWR
+Prevention of Hepatitis B Virus Infection in the United States: Recommendations of the Advisory Committee on Immunization Practices | MMWR
+Screening and Testing for Hepatitis B Virus Infection: CDC Recommendations — United States, 2023 | MMWR
