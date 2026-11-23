@@ -62,9 +62,28 @@
       "sourceIds": [
         "cdc-covid-long-term-effects"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "The CDC study found a possible higher risk of thrombotic events, including stroke, for up to a year after COVID-19.",
+          "url": "https://wwwnc.cdc.gov/eid/article/31/14/25-0630_article",
+          "quote": "In conclusion, this study identified a possible elevated risk for thrombotic events, including stroke, up to a year after COVID-19, especially among patients hospitalized with COVID-19. This risk appears to remain higher for patients with COVID-19 than for those with ARI.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": null
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "The unadjusted risk for ischemic stroke was higher after COVID-19 than after other acute respiratory infections in every interval from 31 to 365 days.",
+          "url": "https://wwwnc.cdc.gov/eid/article/31/14/25-0630_article",
+          "quote": "The unadjusted risk for ischemic stroke was higher among patients with COVID-19 compared with patients with ARI in every time interval and among both hospitalized and nonhospitalized patients (hospitalized patient incidence ratio 1.13 for 31–90 days, 1.26 for 91–180 days, 1.12 for 181–365 days; nonhospitalized patient incidence ratio 1.65 for 31–90 days, 1.68 for 91–180 days, 1.77 for 181–365 days) (p<0.0001).",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": null
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -126,9 +145,28 @@
       "sourceIds": [
         "cdc-covid-immunocompromised"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "For immunocompromised people ages 12 and older who already completed the initial series, CDC schedules two 2026-2027 COVID-19 doses six months apart.",
+          "url": "https://www.cdc.gov/covid/hcp/vaccine-considerations/immunocompromised.html",
+          "quote": "Completed the initial series before 2026-2027 vaccine: Administer 2 doses of 2026-2027 COVID-19 vaccine spaced 6 months apart",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-23"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Immunocompromised people ages 12 to 64 can receive these COVID-19 vaccines in an initial three-dose series.",
+          "url": "https://www.cdc.gov/covid/hcp/vaccine-considerations/immunocompromised.html",
+          "quote": "Moderna (mNexspike), Moderna (Spikevax), Novavax, and Pfizer-BioNTech COVID-19 vaccines are approved for individual 12 years and older; for persons 12-64 years of age, these vaccines are approved for individuals with at least one underlying condition that puts them at high risk for severe outcomes from COVID-19 which includes persons with immunocompromise.* Moderna (mNexspike) and Moderna (Spikevax) may be used interchangeably in the initial 3-dose series.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-23"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },

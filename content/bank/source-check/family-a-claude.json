@@ -1,6 +1,8 @@
 {
   "family": "a",
+  "via": "claude",
   "label": "Claude",
+  "model": "claude-opus-5-5",
   "cli": "Claude Code CLI, print mode, no tools, subscription login",
   "promptVersion": "source-check-v1",
   "snapshotIndexSha256": "edbd214ca448046c9d135ef60f520a8f8931151a092e2c56d053c0c061a4b066",

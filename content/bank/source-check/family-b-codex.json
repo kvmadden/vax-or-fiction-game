@@ -1,6 +1,8 @@
 {
   "family": "b",
+  "via": "codex",
   "label": "OpenAI Codex",
+  "model": null,
   "cli": "Codex CLI, exec mode, read-only sandbox, ChatGPT subscription login",
   "promptVersion": "source-check-v1",
   "snapshotIndexSha256": "edbd214ca448046c9d135ef60f520a8f8931151a092e2c56d053c0c061a4b066",

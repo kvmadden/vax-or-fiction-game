@@ -54,9 +54,19 @@
       "sourceIds": [
         "cdc-flu-egg-allergies"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says people with egg allergy may receive any flu vaccine, egg-based or not, that fits their age and health status.",
+          "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+          "quote": "People with egg allergy may receive any flu vaccine (egg-based or non-egg-based) that is otherwise appropriate for their age and health status.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-09-17"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -269,9 +279,28 @@
       "sourceIds": [
         "cdc-egg-allergy"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says egg allergy of any severity calls for no safety measures beyond those used for every vaccine recipient.",
+          "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+          "quote": "Egg allergy does not indicate additional safety measures for flu vaccination beyond those recommended for any recipient of any vaccine, regardless of severity of previous reaction to egg.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-09-17"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Beginning with the 2023-2024 season, no additional safety measures are recommended for flu vaccination of people allergic to eggs beyond the measures for any vaccine, regardless of how severe the previous egg reaction was.",
+          "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+          "quote": "Beginning with the 2023-2024 season, additional safety measures are no longer recommended for flu vaccination of people who are allergic to eggs beyond those recommended for receipt of any vaccine, regardless of the severity of previous reaction to egg.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-09-17"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -410,9 +439,19 @@
       "sourceIds": [
         "cdc-flu-recs"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says most people who need only one flu vaccine dose should ideally be vaccinated in September or October.",
+          "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+          "quote": "For most persons who need only 1 dose of influenza vaccine for the season, vaccination should ideally be offered during September or October.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-01"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -559,9 +598,19 @@
       "sourceIds": [
         "cdc-pinkbook-flu"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Only moderate or severe acute illness is a precaution to influenza vaccination, and people with minor illness may be vaccinated.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-12-influenza.html",
+          "quote": "Moderate or severe acute illness (with or without fever) in a patient is considered a precaution to vaccination, although persons with minor illness may be vaccinated.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-01"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "seasonal",
       "reviewBy": "2027-09-28"
     },
@@ -770,9 +819,19 @@
       "sourceIds": [
         "cdc-flu-misconceptions"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says flu shots cannot cause flu because they contain only killed virus or a single influenza protein.",
+          "url": "https://www.cdc.gov/flu/prevention/misconceptions.html",
+          "quote": "Flu vaccines cannot cause flu illness. Flu vaccines given with a needle (i.e., flu shots) are made with either inactivated (killed) viruses, or with only a single protein from an influenza virus.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-09-06"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -844,9 +903,19 @@
       "sourceIds": [
         "t-egg"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says egg allergy calls for no extra flu-vaccine safety measures beyond those used for any vaccine, however severe the past egg reaction was.",
+          "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+          "quote": "Egg allergy does not indicate additional safety measures for flu vaccination beyond those recommended for any recipient of any vaccine, regardless of severity of previous reaction to egg.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-09-17"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -919,9 +988,19 @@
       "sourceIds": [
         "t-flu-coverage"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC reports that 41.9% of US adults 18 and older got a flu vaccine in the 2024–25 season, down from 44.9% the season before.",
+          "url": "https://www.cdc.gov/fluvaxview/coverage-by-season/2024-2025.html",
+          "quote": "Flu vaccination coverage among adults ≥18 years was 41.9%, a decrease of 3.0 percentage points from the prior season (44.9%).",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-01-08"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "seasonal",
       "reviewBy": "2027-09-28"
     },
@@ -995,9 +1074,19 @@
       "sourceIds": [
         "cdc-flu-heart-disease"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC cites a 2018 study that found heart-attack risk was 6 times higher within a week of a confirmed flu infection.",
+          "url": "https://www.cdc.gov/flu/highrisk/heartdisease.html",
+          "quote": "A 2018 study found that the risk of having a heart attack was 6 times higher within a week of a confirmed flu infection.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-09-18"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -1059,9 +1148,19 @@
       "sourceIds": [
         "flu-expectations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Flu vaccines cannot cause flu illness, because flu shots are made with inactivated viruses or a single viral protein.",
+          "url": "https://www.cdc.gov/flu/prevention/misconceptions.html",
+          "quote": "Flu vaccines cannot cause flu illness. Flu vaccines given with a needle (i.e., flu shots) are made with either inactivated (killed) viruses, or with only a single protein from an influenza virus.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-09-06"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -1127,9 +1226,28 @@
       "sourceIds": [
         "flu-2026"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "An 8-year-old who needs 2 flu doses should still get dose 2 even after turning 9 between doses.",
+          "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+          "quote": "For children aged 8 years who require 2 doses of vaccine, both doses should be administered even if the child turns age 9 years between receipt of dose 1 and dose 2.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-01"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "A child aged 8 who needs two doses still gets the second dose at least four weeks later, even after turning 9.",
+          "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+          "quote": "Children aged 6 months through 8 years who require 2 doses of influenza vaccine should receive their first dose as soon as possible (including during July and August, if vaccine is available) to allow the second dose (which must be administered ≥4 weeks later) to be received, ideally, by the end of October. For children aged 8 years who require 2 doses of vaccine, both doses should be administered even if the child turns age 9 years between receipt of dose 1 and dose 2.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-01"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -1195,9 +1313,28 @@
         "flu-2026",
         "flu-older"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "If HD-IIV3, RIV3 and aIIV3 are all unavailable, any other age-appropriate flu vaccine should be given at that visit.",
+          "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+          "quote": "If none of these three preferentially recommended vaccines are available at an opportunity for vaccine administration, then any other age-appropriate influenza vaccine should be administered.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-01"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "If preferred high-dose, recombinant, or adjuvanted flu vaccines are unavailable, any other age-appropriate influenza vaccine should be given.",
+          "url": "https://www.cdc.gov/flu/hcp/vax-summary/seasonal-influenza-vaccines.html",
+          "quote": "Adults aged ≥65 years should preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: high-dose inactivated influenza vaccine (HD-IIV3), recombinant influenza vaccine (RIV3), or adjuvanted inactivated influenza vaccine (aIIV3).464748 If none of these three preferentially recommended vaccines are available at an opportunity for vaccine administration, then any other age-appropriate influenza vaccine should be administered.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-01"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -1268,9 +1405,19 @@
       "sourceIds": [
         "flu-burden-2024-25"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC estimates adults 65 and older accounted for 71% of flu deaths in the 2024–2025 season.",
+          "url": "https://www.cdc.gov/flu-burden/php/data-vis-vac/2024-2025-prevented.html",
+          "quote": "CDC's estimates of flu hospitalizations and deaths during the 2024–2025 season highlight 65 years and older accounted for 57% of hospitalizations and 71% of deaths, which is similar to past seasons.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-03-12"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "seasonal",
       "reviewBy": "2027-09-28"
     },
@@ -1333,9 +1480,19 @@
       "sourceIds": [
         "mild-illness"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Only moderate or severe acute illness is a precaution for all vaccines, and vaccinating people with mild illness has been shown to be safe and effective.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/contraindications-precautions.html",
+          "quote": "The presence of a moderate or severe acute illness with or without a fever is a precaution to administration of all vaccines (Table 4-1). The decision to administer or delay vaccination because of a current or recent acute illness depends on the severity of symptoms and etiology of the condition. The safety and efficacy of vaccinating persons who have mild illnesses have been documented891011.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },

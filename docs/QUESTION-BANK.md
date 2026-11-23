@@ -89,12 +89,13 @@ Each question's cited pages are saved as text so its answer can be checked word 
 1. `npm run source:snapshots` fetches every cited URL once into `content/bank/source-snapshots/`, with the fetch date
    and a sha256 per page. Only US government pages have their text committed. Failures (PDFs, blocked pages) are
    listed in `index.json` with the reason.
-2. `npm run source:extract -- --family a` (Claude) and `-- --family b` (Codex) each propose one verbatim quote per
-   question and a verdict: supports, contradicts or silent. Both run on subscription logins with every API key
-   removed from their environment. Each family keeps its own file in `content/bank/source-check/`.
+2. `npm run source:extract -- --family a` (Claude) and `-- --family b --via grok` or `--via codex` each propose one
+   verbatim quote per question and a verdict: supports, contradicts or silent. All run on subscription logins with
+   every API key removed from their environment. Each family and provider keeps its own file,
+   `content/bank/source-check/family-<a|b>-<provider>.json`.
 3. `scripts/source-check-lib.mjs` accepts a quote only when it is an exact substring of its snapshot after whitespace
    normalization. A failed quote is discarded, never repaired.
-4. `npm run source:merge` fills `evidence.claims` only when both families gave a verified quote and both said
+4. `npm run source:merge -- --b grok` (or `--b codex`) fills `evidence.claims` only when both families gave a verified quote and both said
    supports. Every other question goes to `docs/review/source-check-<date>.md` for pharmacist review. No answer or
    wording changes.
 

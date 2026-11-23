@@ -60,9 +60,19 @@
       "sourceIds": [
         "cdc-general-timing"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says to recommend and offer vaccines at the same visit because patients who get both a recommendation and an offer are more likely to be vaccinated.",
+          "url": "https://www.cdc.gov/vaccines-adults/hcp/imz-standards/index.html",
+          "quote": "Recommend and offer vaccines at the same visit. Research shows that when patients receive a vaccine recommendation and are offered the vaccine at the same time, they are more likely to be vaccinated.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-08-09"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -125,9 +135,28 @@
       "sourceIds": [
         "cdc-maternal-vaccines"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends Tdap in every pregnancy and times it to maximize passive transfer of maternal antibodies to the infant.",
+          "url": "https://www.cdc.gov/vaccines-pregnancy/hcp/vaccination-guidelines/index.html",
+          "quote": "Health-care personnel should administer a dose of Tdap during each pregnancy irrespective of the patient’s prior history of receiving Tdap. To maximize the maternal antibody response and passive antibody transfer to the infant, optimal timing for Tdap administration is between 27 and 36 weeks of gestation although Tdap may be given at any time during pregnancy.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-08-22"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Tdap timing is meant to maximize maternal antibody response and passive antibody transfer to the infant.",
+          "url": "https://www.cdc.gov/vaccines-pregnancy/hcp/vaccination-guidelines/index.html",
+          "quote": "To maximize the maternal antibody response and passive antibody transfer to the infant, optimal timing for Tdap administration is between 27 and 36 weeks of gestation although Tdap may be given at any time during pregnancy.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-08-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -277,9 +306,19 @@
       "sourceIds": [
         "cdc-flu-safety"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC states flu vaccines cannot cause flu and their side effects are usually mild and resolve on their own within a few days.",
+          "url": "https://www.cdc.gov/flu/vaccine-safety/index.html",
+          "quote": "Flu vaccines cannot cause flu. Side effects of the flu vaccine are generally mild and go away on their own within a few days.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2023-08-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -347,9 +386,19 @@
       "sourceIds": [
         "cdc-pertussis-pregnancy"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends one dose of Tdap during every pregnancy, preferably early in weeks 27 through 36.",
+          "url": "https://www.cdc.gov/pertussis/hcp/vaccine-recommendations/index.html",
+          "quote": "CDC recommends giving a single dose of Tdap during every pregnancy, preferably during the early part of gestational weeks 27 through 36.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-02"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -414,9 +463,19 @@
       "sourceIds": [
         "cdc-rsv-maternal"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says pregnant women should get one dose of Abrysvo during weeks 32 through 36 of pregnancy, between September and January.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/pregnant-people.html",
+          "quote": "Pregnant women should get a single dose of the maternal RSV vaccine (Pfizer’s Abrysvo) during weeks 32 through 36 of pregnancy sometime between September through January.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-08-30"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -482,9 +541,19 @@
       "sourceIds": [
         "cdc-shingles-recurrence"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Patients who have had herpes zoster can receive Shingrix without a waiting period, just not during an acute episode.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "There is no specific amount of time you need to wait before administering Shingrix to patients who have had herpes zoster. However, you should not give Shingrix to patients who are experiencing an acute episode of herpes zoster.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -550,9 +619,28 @@
       "sourceIds": [
         "cdc-timing-intervals"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Longer than recommended intervals usually do not lower final antibody levels, and an interrupted schedule generally does not require restarting the series.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html",
+          "quote": "However, intervals between doses that are longer than recommended typically do not reduce final antibody concentrations, although protection might not be attained until the recommended number of doses has been administered. With some exceptions (e.g. oral typhoid vaccine) an interruption in the vaccination schedule does not require restarting the entire series of a vaccine or toxoid or addition of extra doses7.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-24"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Intervals longer than recommended typically do not reduce final antibody concentrations, and an interruption does not require restarting the series or adding extra doses.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html",
+          "quote": "Vaccination providers should administer vaccines as close to the recommended intervals as possible. However, intervals between doses that are longer than recommended typically do not reduce final antibody concentrations, although protection might not be attained until the recommended number of doses has been administered. With some exceptions (e.g. oral typhoid vaccine) an interruption in the vaccination schedule does not require restarting the entire series of a vaccine or toxoid or addition of extra doses7.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -621,9 +709,28 @@
       "sourceIds": [
         "cdc-hepb-adults"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "The CDC says people aged 18 and older who get Heplisav-B should receive two doses.",
+          "url": "https://www.cdc.gov/hepatitis-b/hcp/vaccine-administration/index.html",
+          "quote": "Heplisav-B For adults aged 18 years through adulthood People aged 18 years and older should receive two doses.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-11-09"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "People aged 18 years and older should receive two doses of Heplisav-B.",
+          "url": "https://www.cdc.gov/hepatitis-b/hcp/vaccine-administration/index.html",
+          "quote": "People aged 18 years and older should receive two doses. The safety and effectiveness of Heplisav-B has not been established in adults on hemodialysis. See package insert for indications and detailed dosage instructions.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-11-09"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -693,9 +800,28 @@
       "sourceIds": [
         "cdc-shingles-efficacy"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends two doses of recombinant zoster vaccine for adults aged 50 and older to prevent shingles and its complications.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of recombinant zoster vaccine (RZV) to prevent shingles and related complications in adults aged ≥50 years.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "CDC recommends two Shingrix doses separated by two to six months for immunocompetent adults aged 50 and older.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of Shingrix separated by 2–6 months for immunocompetent adults aged 50 years and older:",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -772,9 +898,19 @@
       "sourceIds": [
         "cdc-pinkbook-admin"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "When several vaccines are given at one visit, CDC says each goes at a different anatomic site and each site is recorded with its vaccine.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/vaccine-administration.html",
+          "quote": "If multiple vaccines are administered at a single visit, administer each preparation at a different anatomic site28. The location of all injection sites with the corresponding vaccine injected should be documented in each patient’s medical record.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-06-18"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -850,9 +986,19 @@
       "sourceIds": [
         "cdc-hpv-schedules"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "People who get their first valid HPV dose on or after their 15th birthday are recommended a 3-dose series.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-11-human-papillomavirus.html",
+          "quote": "A 3-dose series is recommended for persons who receive the first valid dose on or after their 15th birthday, and for persons with primary or secondary immunocompromising conditions that might reduce cell-mediated or humoral immunity, such as B lymphocyte antibody deficiencies, T lymphocyte complete or partial defects, human immunodeficiency virus (HIV) infection, malignant neoplasm, transplantation, autoimmune disease, or immunosuppressive therapy, in whom immune response to vaccination may be attenuated.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-23"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -921,9 +1067,19 @@
       "sourceIds": [
         "cdc-shingles-clinical"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Shingrix can be given at the same visit as other adult vaccines at a different anatomic site.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "Recombinant and adjuvanted vaccines (like Shingrix) can be administered concomitantly at different anatomic sites with other adult vaccines.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -993,9 +1149,19 @@
       "sourceIds": [
         "cdc-rsv-adults"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says RSV vaccines can be given with other adult vaccines at the same visit.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/adults.html",
+          "quote": "RSV vaccines can be coadministered with other adult vaccines during the same visit.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -1065,9 +1231,19 @@
       "sourceIds": [
         "cdc-multiple-vaccinations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says that, with some exceptions, giving common vaccines together produces immune responses and adverse reaction rates similar to giving them separately.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html",
+          "quote": "With some exceptions, simultaneously administering the most widely used live and non-live vaccines has produced seroconversion rates and rates for adverse reactions similar to those observed when the vaccines are administered separately12151617.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -1145,9 +1321,28 @@
       "sourceIds": [
         "cdc-flu-egg-allergy"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Since the 2023-2024 season, people with egg allergy of any severity need no extra safety measures for flu vaccination beyond those used for any vaccine.",
+          "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+          "quote": "Beginning with the 2023-2024 season, additional safety measures are no longer recommended for flu vaccination of people who are allergic to eggs beyond those recommended for receipt of any vaccine, regardless of the severity of previous reaction to egg. All vaccines should be administered in settings in which personnel and equipment needed for rapid recognition and treatment of allergic reactions are available.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-09-17"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Everyone with an egg allergy should receive an annual flu vaccine, any appropriate flu vaccine can be used, and egg allergy does not require extra safety measures regardless of reaction severity.",
+          "url": "https://www.cdc.gov/flu/vaccines/egg-allergies.html",
+          "quote": "Everyone 6 months and older with egg allergy should receive an annual flu vaccine. Any flu vaccine (egg based or non-egg based) that is otherwise appropriate for the recipient's age and health status can be used. Egg allergy does not indicate additional safety measures for flu vaccination beyond those recommended for any recipient of any vaccine, regardless of severity of previous reaction to egg.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-09-17"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -1212,9 +1407,28 @@
       "sourceIds": [
         "cdc-shingles-overview"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Shingles risk rises sharply after age 50 and increases as VZV-specific cell-mediated immunity declines.",
+          "url": "https://www.cdc.gov/shingles/hcp/clinical-overview/index.html",
+          "quote": "A person's risk for herpes zoster and related complications, including hospitalizations, sharply increases after 50 years of age. The reasons why VZV reactivates and causes herpes zoster are not well understood. However, a person's risk for herpes zoster increases as their VZV-specific cell-mediated immunity declines.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-06-27"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "CDC recommends Shingrix for adults 50 years and older.",
+          "url": "https://www.cdc.gov/shingles/hcp/clinical-overview/index.html",
+          "quote": "CDC recommends 2 doses of recombinant zoster vaccine (RZV, Shingrix) to prevent shingles and related complications in adults 50 years and older.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-06-27"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -1349,9 +1563,19 @@
       "sourceIds": [
         "cdc-shingrix-considerations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends two Shingrix doses for immunocompetent adults 50 and older, even if they have had shingles before.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of Shingrix separated by 2–6 months for immunocompetent adults aged 50 years and older: Whether or not they report a prior episode of herpes zoster.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },

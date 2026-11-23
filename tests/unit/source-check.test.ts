@@ -2,7 +2,7 @@
 // A quote counts only when it is an exact substring of its saved snapshot after whitespace normalization. Each guard
 // here was shown red by a disposable mutation before it landed.
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import test from 'node:test';
 
 import { decide, htmlToText, normalizeWhitespace, pageUpdatedFrom, sha256, verifyQuote } from '../../scripts/source-check-lib.mjs';
@@ -110,18 +110,18 @@ test('Filled claims: every claim the source check wrote is an exact substring of
 test('Family outputs: every recorded quote check still gives the same result when re-run', () => {
   const byId = new Map(index.sources.filter((s) => s.committed).map((s) => [s.id, s]));
   let seen = 0;
-  for (const f of ['a', 'b']) {
-    const path = `content/bank/source-check/family-${f}.json`;
-    if (!existsSync(path)) continue;
+  const files = readdirSync('content/bank/source-check').filter((f) => /^family-[ab]-[a-z]+\.json$/.test(f));
+  for (const f of files) {
+    const path = `content/bank/source-check/${f}`;
     const doc = JSON.parse(readFileSync(path, 'utf8')) as { results: Record<string, { sourceId?: string, quote?: string, quoteCheckAtRun?: string, error?: string }> };
     for (const [bankId, r] of Object.entries(doc.results)) {
       if (r.error) continue;
       const snap = r.sourceId ? byId.get(r.sourceId) : undefined;
       const now = snap ? verifyQuote(r.quote ?? '', readFileSync(snap.file, 'utf8')) : { ok: false };
-      assert.equal(now.ok, r.quoteCheckAtRun === 'ok', `family ${f} ${bankId}: recorded check ${r.quoteCheckAtRun} but re-run gives ${now.ok}`);
+      assert.equal(now.ok, r.quoteCheckAtRun === 'ok', `${f} ${bankId}: recorded check ${r.quoteCheckAtRun} but re-run gives ${now.ok}`);
       seen += 1;
     }
   }
-  console.log(`SOURCE_CHECK_FAMILY_QUOTES rechecked=${seen}`);
+  console.log(`SOURCE_CHECK_FAMILY_QUOTES files=${files.length} rechecked=${seen}`);
   assert.ok(seen > 0, 'the family re-check must see at least one answer');
 });

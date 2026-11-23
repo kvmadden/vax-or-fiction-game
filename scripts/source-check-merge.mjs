@@ -9,25 +9,38 @@
 // It only ever rewrites claims this script wrote before (listed in content/bank/source-check/merged.json). A record
 // that already carries claims from elsewhere is left as it is and reported.
 //
-// Run: node --import tsx scripts/source-check-merge.mjs [--date YYYY-MM-DD]
+// Run: node --import tsx scripts/source-check-merge.mjs [--date YYYY-MM-DD] [--a claude] [--b grok|codex]
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
 import { SNAPSHOT_INDEX, answerLine, decide, normalizeWhitespace, stemLines, verifyQuote } from './source-check-lib.mjs';
 import { loadBankQuestions } from './source-check-questions.mjs';
+import { SOLO_TOPICS } from '../src/data/decks/topics/index.ts';
 
-const dateArg = process.argv.indexOf('--date');
-const DATE = dateArg >= 0 ? process.argv[dateArg + 1] : new Date().toISOString().slice(0, 10);
+const arg = (name, fallback) => {
+  const i = process.argv.indexOf(`--${name}`);
+  return i >= 0 ? process.argv[i + 1] : fallback;
+};
+const DATE = arg('date', new Date().toISOString().slice(0, 10));
+const VIA_A = arg('a', 'claude');
+const VIA_B = arg('b', 'grok');
 const METADATA_DIR = 'content/bank/metadata';
 const OUT_DIR = 'content/bank/source-check';
 const MERGED = `${OUT_DIR}/merged.json`;
+// Kevin's ruling (2026-11-01): bank records stay COVID-free except the questions The big picture plays. The guard
+// that enforces it is tests/unit/no-covid-outside-big-picture.test.ts, and this pattern mirrors its COVID pattern so
+// the merge never writes a claim that guard would reject. The guard stays the authority.
+const COVID = /covid|sars-?cov|coronavirus/i;
+const COVID_ALLOWED = new Set(SOLO_TOPICS.find((t) => t.id === 'big-picture').picks.map(([d, q]) => `${d}:${q}`));
 const REVIEW = `docs/review/source-check-${DATE}.md`;
 
 const index = JSON.parse(readFileSync(SNAPSHOT_INDEX, 'utf8'));
 const committedByUrl = new Map(index.sources.filter((s) => s.committed).map((s) => [s.url, s]));
 const failedUrls = new Set(index.failures.map((f) => f.url));
-const loadFamily = (f) => (existsSync(`${OUT_DIR}/family-${f}.json`) ? JSON.parse(readFileSync(`${OUT_DIR}/family-${f}.json`, 'utf8')) : null);
-const famA = loadFamily('a');
-const famB = loadFamily('b');
+const loadFamily = (f, via) => (existsSync(`${OUT_DIR}/family-${f}-${via}.json`) ? JSON.parse(readFileSync(`${OUT_DIR}/family-${f}-${via}.json`, 'utf8')) : null);
+const famA = loadFamily('a', VIA_A);
+const famB = loadFamily('b', VIA_B);
+const labelA = `A, ${famA?.label ?? VIA_A}`;
+const labelB = `B, ${famB?.label ?? VIA_B}`;
 const previous = existsSync(MERGED) ? JSON.parse(readFileSync(MERGED, 'utf8')) : { filled: [] };
 const ownedBefore = new Set(previous.filled);
 
@@ -49,7 +62,7 @@ for (const q of questions) {
   let decision;
   if (snaps.length === 0) {
     decision = decide(null, null, { sourcesOk: !anyFailed, rightsOk: anyFailed });
-  } else if (!b && (!famB || Object.values(famB.results).some((r) => /usage limit/.test(r.error ?? '')))) {
+  } else if (!b && (!famB || Object.values(famB.results).some((r) => /usage limit|grok limit/.test(r.error ?? '')))) {
     // Family B has not run yet (or stopped on its subscription limit). Report what family A alone already settles.
     if (a?.verdict === 'contradicts') decision = { outcome: 'contradicts', reason: 'family A read the source as contradicting the answer. Family B has not run' };
     else if (a?.verdict === 'supports' && a.quoteOk) decision = { outcome: 'awaiting-b', reason: 'family A verified support. Family B has not run' };
@@ -78,8 +91,15 @@ for (const row of rows) {
   for (const fam of [row.a, row.b]) {
     const quote = normalizeWhitespace(fam.quote);
     if (claims.some((c) => c.quote === quote)) continue;
+    if (!COVID_ALLOWED.has(row.q.bankId) && COVID.test(`${quote} ${fam.claim}`)) continue; // kept in the family file only
     const cited = row.q.sources.find((s) => committedByUrl.get(s.url)?.id === fam.snap.id);
     claims.push({ id: `c${claims.length + 1}`, role: 'key', text: fam.claim, url: cited.url, quote, retrievedOn: fam.snap.retrievedOn, pageUpdated: fam.snap.pageUpdated });
+  }
+  if (claims.length === 0) {
+    row.outcome = 'covid-rule';
+    row.reason = 'both families verified support, but every quote mentions COVID, which this bank record must not carry';
+    if (ownedBefore.has(row.q.bankId)) { record.evidence.claims = []; record.evidence.retrievedOn = null; }
+    continue;
   }
   record.evidence.claims = claims;
   record.evidence.retrievedOn = claims.map((c) => c.retrievedOn).sort().at(-1);
@@ -88,12 +108,12 @@ for (const row of rows) {
 for (const [file, records] of byFile) writeFileSync(`${METADATA_DIR}/${file}`, `${JSON.stringify(records, null, 2)}\n`);
 
 const count = (o) => rows.filter((r) => r.outcome === o).length;
-const counts = Object.fromEntries(['verified', 'awaiting-b', 'contradicts', 'disagree', 'silent', 'fetch-failure', 'rights', 'missing'].map((o) => [o, count(o)]));
+const counts = Object.fromEntries(['verified', 'awaiting-b', 'contradicts', 'disagree', 'silent', 'fetch-failure', 'rights', 'covid-rule', 'missing'].map((o) => [o, count(o)]));
 writeFileSync(MERGED, `${JSON.stringify({
   note: 'Generated by scripts/source-check-merge.mjs. filled lists the records whose evidence.claims this merge wrote.',
   mergedOn: DATE,
-  familyA: famA ? { label: famA.label, promptVersion: famA.promptVersion, answered: Object.values(famA.results).filter((r) => !r.error).length } : null,
-  familyB: famB ? { label: famB.label, promptVersion: famB.promptVersion, answered: Object.values(famB.results).filter((r) => !r.error).length } : null,
+  familyA: famA ? { via: VIA_A, label: famA.label, model: famA.model, promptVersion: famA.promptVersion, answered: Object.values(famA.results).filter((r) => !r.error).length } : null,
+  familyB: famB ? { via: VIA_B, label: famB.label, model: famB.model, promptVersion: famB.promptVersion, answered: Object.values(famB.results).filter((r) => !r.error).length } : null,
   counts,
   filled: filled.sort(),
   leftAlone: foreign.sort(),
@@ -101,9 +121,10 @@ writeFileSync(MERGED, `${JSON.stringify({
 }, null, 2)}\n`);
 
 // The review file: one block per question that did not verify, worst first, readable on a phone.
-const ORDER = ['contradicts', 'disagree', 'silent', 'missing', 'fetch-failure', 'rights'];
+const ORDER = ['contradicts', 'disagree', 'silent', 'missing', 'fetch-failure', 'rights', 'covid-rule'];
 const TITLES = { contradicts: 'Contradicts the answer', disagree: 'Families disagree or a quote failed', silent: 'Source is silent',
-  missing: 'No answer from a family', 'fetch-failure': 'Source could not be fetched', rights: 'Source text not committed (not public domain)' };
+  missing: 'No answer from a family', 'fetch-failure': 'Source could not be fetched', rights: 'Source text not committed (not public domain)',
+  'covid-rule': 'Verified, but every quote mentions COVID' };
 const bar = (n, total) => `${'█'.repeat(Math.round((n / total) * 20))}${'░'.repeat(20 - Math.round((n / total) * 20))}`;
 const famLine = (label, f, result) => {
   if (!result) return `- **${label}:** no answer`;
@@ -139,8 +160,8 @@ for (const outcome of ORDER) {
     lines.push(`**Bank answer:** ${answerLine(r.q.question)}  `);
     lines.push(`**Sources:** ${r.q.sources.map((s) => `[${s.citationId}](${s.url})${failedUrls.has(s.url) ? ` (not fetched: ${index.failures.find((f) => f.url === s.url).error})` : ''}`).join(', ')}`, '');
     if (r.snaps.length > 0) {
-      lines.push(famLine('A, Claude', r.a, famA?.results[r.q.bankId]));
-      lines.push(famLine('B, Codex', r.b, famB?.results[r.q.bankId]));
+      lines.push(famLine(labelA, r.a, famA?.results[r.q.bankId]));
+      lines.push(famLine(labelB, r.b, famB?.results[r.q.bankId]));
       lines.push('');
     }
     lines.push(`Why it is here: ${r.reason}.`, '');
