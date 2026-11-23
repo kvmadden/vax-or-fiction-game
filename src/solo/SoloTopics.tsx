@@ -56,7 +56,10 @@ export const SoloTopics: React.FC<SoloTopicsProps> = ({ topics, loadingId, error
           </div>
         </details>
       </header>
-      {error ? <p ref={errorRef} tabIndex={-1} className="solo-topics__error" role="alert">{error}</p> : null}
+      {error ? <div className="solo-topics__recovery">
+        <p ref={errorRef} tabIndex={-1} className="solo-topics__error" role="alert">{error}</p>
+        <button type="button" className="solo-topics__reload" onClick={() => window.location.reload()}>Reload the page</button>
+      </div> : null}
       <SoloTopicList groups={SOLO_GROUPS} topics={topics} loadingId={loadingId} counts={counts} onOpen={onOpen} />
       <a className="solo-topics__back" href="/">Back to the start</a>
     </section>

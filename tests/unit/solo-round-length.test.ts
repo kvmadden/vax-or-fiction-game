@@ -66,7 +66,11 @@ test('the topic list prints each count the dealer gives, and nothing before they
   assert.ok(errorAlert > disclosure && errorAlert < topicList, 'topic load failure is announced before the long choice list');
   assert.match(source, /if \(error\) errorRef\.current\?\.focus\(\)/, 'a failure is focused so the scroller reveals the alert');
   assert.match(source, /<summary>How points work<\/summary>/);
+  assert.match(source, /\{error \? <div className="solo-topics__recovery">/, 'reload recovery is only offered after a failed topic load');
+  assert.match(source, /<button type="button" className="solo-topics__reload" onClick=\{\(\) => window\.location\.reload\(\)\}>Reload the page<\/button>/, 'the recovery control actually reloads to retry failed dynamic imports');
+  assert.match(readFileSync('src/solo/SoloSuite.tsx', 'utf8'), /Check your connection, then reload the page\./, 'the error instructions match the recovery action');
   assert.match(source, /<ul className="solo-topics__points" aria-label="How points work">/, 'the original score table is retained');
   const css = readFileSync('src/styles/solo.css', 'utf8');
   assert.match(css, /\.solo-topics__scoring > summary \{[^}]*min-height: var\(--kit-space-48\)/s, 'the disclosure has a full-size keyboard/touch target');
+  assert.match(css, /\.solo-topics__reload \{[^}]*min-height: var\(--kit-space-48\)/s, 'reload remains a full-size touch target');
 });
