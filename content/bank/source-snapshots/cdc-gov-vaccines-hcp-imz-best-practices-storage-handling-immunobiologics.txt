@@ -1,0 +1,141 @@
+Storage and Handling of Immunobiologics
+June 18, 2024
+Key points
+Failure to adhere to recommended specifications for storage and handling of immunobiologics can reduce or destroy their potency.
+Improper storage and handling can result in inadequate or no immune response in the recipient.
+Updates
+Most of the 2011 language was removed because this content is now codified and continually updated in the CDC’s Vaccine Storage and Handling Toolkit. This content included Storage Units, Monitoring Storage Temperature, Vaccine Inventory, and Vaccine Transport.
+General Principles
+Failure to adhere to recommended specifications for storage and handling of immunobiologics can reduce or destroy their potency, resulting in inadequate or no immune response in the recipient. Recommendations in the product package inserts, including methods for reconstitution of the vaccine, should be followed carefully. Maintenance of vaccine quality is the shared responsibility of all handlers of vaccines from the time a vaccine is manufactured until administration. All vaccines should be inspected on delivery and monitored during storage to ensure that the recommended storage temperatures are maintained. Vaccines should continue to be stored at recommended temperatures immediately upon receipt until use. Inadequate vaccine storage also can result in significant costs to replace vaccine inventory.
+Storage Temperature
+Vaccines licensed for refrigerator storage should be stored at 2°C-8°C (36°F-46°F). Liquid vaccines containing an aluminum adjuvant permanently lose potency when exposed to freezing temperatures. Non-live vaccines that are stored in a liquid state (i.e., non-lyophilized [freeze-dried]) but that do not contain aluminum adjuvants should also generally be kept at refrigerator temperature, although whether or not they lose potency when frozen is not known. Non-live lyophilized vaccines generally do not need to be frozen, but lyophilized varicella-containing vaccines that are recommended to be stored frozen lose potency when exposed to higher temperatures because the viruses degrade more quickly at storage temperatures that are warmer than recommended (Table 7-1). These varicella-containing vaccines also can be prone to losses in sterility if kept too cold, due to increased gas permeability of the rubber vaccine vial (observed with use of dry ice at temperatures below -50°C or -58°F [personal communication, manufacturer]).
+Expiration Dates and Windows
+All vaccines have an expiration date determined by the manufacturer that must be observed. Providers should record the vaccine expiration dates and lot numbers on a stock or inventory record for each vaccine vial when a shipment is received. When vaccines are removed from storage, clinicians and other health-care providers should note whether an expiration window exists for vaccine stored at room temperature or at an intermediate temperature. For example, single-component varicella vaccine that is stored frozen must be discarded after 72 hours of storage at refrigerator temperature. Vaccine transport between the storage site and the administration clinic is discouraged unless the cold chain is maintained, and vaccine transport by the patient is particularly discouraged. An expiration window also applies to vaccines that have been reconstituted. For example, after reconstitution, MMR vaccine should be kept at refrigerator temperature and must be administered within 8 hours. Doses of expired vaccines that are administered inadvertently generally should not be counted as valid and should be repeated. Non-live vaccines should generally be repeated as soon as possible. Recombinant zoster vaccine (RZV) should be administered 28 days after the invalid dose, to reduce the burden of adverse reactions which occurs with this vaccine. Live vaccines should be repeated after a 28-day interval from the invalid dose to reduce the risk for interference from interferon on the subsequent doses. For rotavirus vaccines, the repeat dose should be administered after a 28-day interval from the invalid dose or at the maximum age for the vaccine dose (whichever is earlier). See Vaccine Storage and Handling Toolkit for additional information about expiration dates.
+Response to Out-of-Range Temperature Reading
+An out-of-range temperature reading should prompt immediate action. A plan should be developed ahead of time to address various types of emergencies that might require removal of vaccine from the original storage unit. Transfer of vaccines to a predesignated alternative emergency storage site might be necessary if a temperature problem cannot be resolved immediately (e.g., plugging in an unplugged unit or closing a door that has been left open). It is critical to avoid freezing vaccine during transport (improperly packing vaccine with ice can damage vaccines). Vaccine should be marked “do not use” and moved to the alternate site after verifying that the alternate unit is at the proper temperature. Determinations of vaccine viability in practice include consideration of both time and magnitude of temperature excursions and should be made in consultation with state/local public health departments or the vaccine manufacturer, as one or both of these groups may have additional information based on a broad international perspective. Damage to the immunogenicity of a vaccine exposed to temperatures outside of the recommended range might not be apparent visually. As a general rule, vaccines that have been stored at inappropriate temperatures should not be administered unless public health authorities or the manufacturer determine it is safe and effective to do so. If such vaccines already have been administered, vaccine exposed to inappropriate temperatures that is inadvertently administered should generally be repeated. Non-live vaccines should generally be repeated as soon as possible. Recombinant zoster vaccine (RZV) is neither live nor inactivated: the repeat dose of RZV should be administered 28 days after the invalid dose, to reduce the burden of adverse reactions which occurs with this vaccine. Live vaccines should be repeated after a 28-day interval from the invalid dose to reduce the risk for interference from interferon on the subsequent doses. For rotavirus vaccines, the repeat dose should be administered after a 28-day interval from the invalid dose or at the maximum age for the vaccine dose (whichever is earlier). Clinicians should consult promptly with state or local health departments in these situations. Consultation with CDC is available when necessary.
+TABLE 7-1. Vaccine storage temperature recommendations
+Nonlyophilized, aluminum-adjuvanted vaccines
+Vaccines
+Vaccine storage temperature
+Diluent storage temperature
+Diphtheria-tetanus-containing vaccines (DT, Td) or pertussis-containing vaccines (DTaP, Tdap)
+2°C-8°C (36°F-46°F)
+Do not freeze
+No diluent
+HepA and HepB
+2°C-8°C (36°F-46°F)
+Do not freeze
+No diluent
+MenB(a)
+2°C-8°C (36°F-46°F)
+Do not freeze
+No diluent
+PCV13
+2°C-8°C (36°F-46°F)
+Do not freeze
+No diluent
+PCV15
+2°C-8°C (36°F-46°F)
+Do not freeze
+No diluent
+PCV20
+2°C-8°C (36°F-46°F)
+Do not freeze
+No diluent
+HPV(a)
+2°C-8°C (36°F-46°F)
+Do not freeze
+No diluent
+Nonlyophilized, nonaluminum-adjuvanted vaccines
+Vaccines
+Vaccine storage temperature
+Diluent storage temperature
+PRP-OMP Hib
+2°C-8°C (36°F-46°F)
+No diluent
+IPV(a)
+2°C-8°C (36°F-46°F)
+No diluent
+MenACWY(a),(b)
+2°C-8°C (36°F-46°F)
+No diluent
+PPSV
+2°C-8°C (36°F-46°F)
+No diluent
+IIV(a)
+2°C-8°C (36°F-46°F)
+No diluent
+RZV(a)
+2°C-8°C (36°F-46°F)
+Do not freeze
+2°C-8°C (36°F-46°F)
+Do not freeze
+Lyophilized (non-varicella) vaccines
+Vaccines
+Vaccine storage temperature
+Diluent storage temperature
+PRP-T Hib(a)
+2°C-8°C (36°F-46°F)(c)
+2°C-8°C (35°F-46°F)
+Do not freeze
+MMR(a)
+-50°C-8°C (-58°F-46°F)(c)
+2°C-25°C (35°F-77°F)
+Can be refrigerated or stored at room temperature
+DEN4CYD
+2°C-8°C (36°F-46°F) Do not freeze
+2°C-8°C (36°F-46 °F) Do not freeze
+Varicella-containing vaccines
+Vaccines
+Vaccine storage temperature
+Diluent storage temperature
+MMRV(a)
+-50°C to -15°C (-58°F-5°F)
+2°C-25°C (35°F-77°F)
+Can be refrigerated or stored at room temperature
+Varicella(a)
+-50°C to -15°C (-58°F-5°F)
+2°C-25°C (35°F-77°F)
+Can be refrigerated or stored at room temperature
+Noninjectable vaccines
+Vaccines
+Vaccine storage temperature
+Diluent storage temperature
+RV5 vaccine(a)
+2°C-8°C (36°F-46°F)
+Do not freeze
+No diluent
+RV1 vaccine(a)
+2°C-8°C (36°F-46°F)
+Do not freeze
+The diluent may be stored at a controlled room temperature 20°C-25°C (68°F-77°F).
+Do not freeze
+LAIV(a)
+2°C-8°C (36°F-46°F)
+No diluent
+Abbreviations: DEN4CYD = dengue vaccine; DT = diphtheria and tetanus toxoids; DTaP = diphtheria and tetanus toxoids and acellular pertussis; HepA = hepatitis A; HepB = hepatitis B; Hib = Haemophilus influenzae type b; HPV = human papillomavirus; IIV = inactivated influenza vaccine; IPV = inactivated poliovirus; LAIV = live, attenuated influenza vaccine; MenACWY = quadrivalent meningococcal conjugate vaccine; MenB = Serogroup B meningococcal vaccine; MMR = measles, mumps, and rubella; MMRV = measles, mumps, rubella, and varicella; MPSV4 = quadrivalent meningococcal polysaccharide vaccine; PCV13 = pneumococcal conjugate vaccine; PPSV23= pneumococcal polysaccharide vaccine; PRP-OMP = polyribosylribitol phosphate-meningococcal outer membrane protein conjugate; PRP-T = polyribosylribitol phosphate polysaccharide conjugated to a tetanus toxoid; PRP-T Hib = polyribosylphosphate tetanus-toxoid conjugate Hib vaccine; PRP-T Hib-MenCY = polyribosylphosphate-tetanus-toxoid Hib vaccine with a bivalent Meningococcal vaccine; RV = rotavirus; RV1 = live, attenuated monovalent rotavirus vaccine; RV5 = live, reassortment pentavalent rotavirus vaccine; Td = tetanus and diphtheria toxoids; Tdap = tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis.
+Sources: 12
+(a) Protect from light.
+(b) There are 2 meningococcal conjugate vaccines; Menactra is nonlyophilized, and Menveo is lyophilized. Both powder and diluent should be stored at 35°F-46°F.
+(c) The lyophilized pellet may be stored at freezer temperature; the reconstituted vaccine should be stored at refrigerator temperature.
+On This Page
+Updates
+General Principles
+Storage Temperature
+Expiration Dates and Windows
+Response to Out-of-Range Temperature Reading
+June 18, 2024
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Immunization and Respiratory Diseases; Immunization Services Division
+References
+Kroger A, Atkinson W, Pickering L. General immunization practices. In: Plotkin S, Orenstein W, Offit P, eds. Vaccines. 6th ed. China: Elsevier Saunders; 2013:88-111.
+MMWR Morb Mortal Wkly Rep. 2003;52(42):1023-1025.
+Sources
+National Center for Immunization and Respiratory Diseases

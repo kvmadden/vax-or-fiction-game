@@ -53,9 +53,28 @@
       "sourceIds": [
         "cdc-pneumococcal-recommendations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends pneumococcal vaccination for all adults aged 50 years or older.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/index.html",
+          "quote": "CDC recommends pneumococcal vaccination for children younger than 5 years and adults 50 years or older.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-25"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "CDC recommends pneumococcal vaccination for adults 50 years or older, and also for people at increased risk.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/index.html",
+          "quote": "CDC recommends pneumococcal vaccination for children younger than 5 years and adults 50 years or older. CDC also recommends pneumococcal vaccination for children and adults at increased risk for pneumococcal disease.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -126,9 +145,19 @@
       "sourceIds": [
         "cdc-pneumo-acip"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "The CDC routinely recommends a pneumococcal conjugate vaccine for all adults 50 or older who have never had one or whose history is unknown.",
+          "url": "https://www.cdc.gov/vaccines/vpd/pneumo/hcp/who-when-to-vaccinate.html",
+          "quote": "Administer PCV15, PCV20, or PCV21 for all adults 50 years or older Who have never received any pneumococcal conjugate vaccine Whose previous vaccination history is unknown",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -273,9 +302,28 @@
       "sourceIds": [
         "cdc-pneumo-risk"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC lists diabetes mellitus as a risk condition that indicates pneumococcal vaccination for adults.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/risk-indications.html",
+          "quote": "Many conditions are an indication for pneumococcal vaccination for both children and adults: Cerebrospinal fluid leak Chronic liver disease Cochlear implant An immunocompromising condition Diabetes mellitus",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-05-08"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Pneumococcal vaccines are recommended for adults 19 to 49 years old.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/risk-indications.html",
+          "quote": "View complete pneumococcal vaccine schedules for adults based on prior vaccination history. Pages 2–4 provide illustrations of vaccine options to complete the recommended pneumococcal vaccines for adults 19–49 years old.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-05-08"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -350,9 +398,19 @@
       "sourceIds": [
         "cdc-pneumo-ipd"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Pneumococcal bacteremia kills about 20% of patients overall and up to 60% of older adult patients.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/clinical-signs/index.html",
+          "quote": "The overall case-fatality rate for bacteremia is about 20%. It may be as high as 60% among patients who are older adults.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -498,9 +556,19 @@
       "sourceIds": [
         "acip-pcv15-ppsv23"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "When PCV15 is used, one PPSV23 dose follows at least 1 year later, and the 8-week minimum interval is only for certain high-risk adults.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-notes.html",
+          "quote": "If PCV15 is used, administer 1 dose PPSV23 at least 1 year after the PCV15 dose (may use minimum interval of 8 weeks for adults with an immunocompromising condition,* cochlear implant, or cerebrospinal fluid leak).",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": null
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -635,9 +703,19 @@
       "sourceIds": [
         "cdc-pneumo-conjugate-guidance"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "For adults 50 or older given PCV20 or PCV21, no PPSV23 dose is indicated and their pneumococcal vaccinations are complete.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/index.html",
+          "quote": "If PCV20 or PCV21 is used, a dose of PPSV23 isn't indicated. Regardless of which vaccine is used (PCV20 or PCV21), the patient's pneumococcal vaccinations are complete.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -912,9 +990,19 @@
       "sourceIds": [
         "t-pneumococcal"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says to give PCV15, PCV20 or PCV21 to adults 50 or older who have never had a conjugate vaccine or whose vaccination history is unknown.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/index.html",
+          "quote": "Administer PCV15, PCV20, or PCV21 for all adults 50 years or older Who have never received any pneumococcal conjugate vaccine Whose previous vaccination history is unknown",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -976,9 +1064,28 @@
       "sourceIds": [
         "cdc-pneumococcal-recommendations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends pneumococcal vaccination for all adults aged 50 years or older.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/index.html",
+          "quote": "CDC recommends pneumococcal vaccination for children younger than 5 years and adults 50 years or older.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-25"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "CDC recommends pneumococcal vaccination for adults 50 years or older, and also for people at increased risk.",
+          "url": "https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/index.html",
+          "quote": "CDC recommends pneumococcal vaccination for children younger than 5 years and adults 50 years or older. CDC also recommends pneumococcal vaccination for children and adults at increased risk for pneumococcal disease.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },

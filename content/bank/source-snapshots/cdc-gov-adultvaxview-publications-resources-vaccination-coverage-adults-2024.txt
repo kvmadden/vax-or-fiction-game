@@ -1,0 +1,99 @@
+Vaccination Coverage among Adults in the United States, National Health Interview Survey, 2024
+For Everyone
+June 1, 2026
+At a glance
+Data from the 2024 National Health Interview Survey (NHIS) indicates vaccination coverage among U.S. adults was low for most recommended vaccines.
+Summary
+Updated vaccination recommendations for adults are published on the CDC website. To assess vaccination coverage among adults aged ≥19 years, the Centers for Disease Control and Prevention (CDC) analyzed data from the National Health Interview Survey (NHIS). The NHIS is a continuous, cross-sectional national household survey of the noninstitutionalized U.S. civilian population. Interviews are conducted over the course of the year in a probability sample of households, and data are compiled and released on an annual basis. For this report, adult receipt* of influenza, pneumococcal, herpes zoster (including any type of herpes zoster vaccine, zoster vaccine live [ZVL] or recombinant zoster vaccine [RZV]), and hepatitis A vaccines were assessed using the data collected in 2024. Recent trends in adult vaccination were examined using data from 2018–2024.
+Coverage among recommended age groups for all vaccines differed by race and ethnicity with generally lower coverage among Black and Hispanic adults compared with White adults.** Linear trend tests indicated that since 2018, coverage increased for any type of herpes zoster vaccination among adults aged ≥50 years. Coverage remained stable for influenza vaccination (aged ≥19 years and those at increased risk) and for pneumococcal vaccination among adults aged 19–64 years at increased risk of disease. Coverage decreased for pneumococcal vaccination among adults aged ≥65 years. Coverage with ≥2 doses of RZV among adults aged ≥50 years increased from 1.1% in 2018, when RZV was first recommended, to 28.7% in 2024.
+Improvement in adult vaccination uptake could reduce the burden of vaccine-preventable diseases nationally.
+Methods
+The NHIS is a continuous, cross-sectional national household survey of the noninstitutionalized U.S. civilian population conducted by the U.S. Census Bureau for CDC's National Center for Health Statistics (1). The objectives of the NHIS are to monitor the health of the U.S. population and provide estimates of health indicators, health care use and access, and health-related behaviors (2). Respondents aged ≥19 years with interviews conducted during August 2023–June 2024 (for influenza vaccination) and January 2024–December 2024 (for pneumococcal, herpes zoster, and hepatitis A vaccination) were included in this analysis. The total sample of persons aged ≥19 years was 32,341 in 2024. The final sample adult core response rate was 47.9% for the 2024 NHIS. One adult from each family in the household was randomly selected and asked questions regarding their receipt of adult-recommended vaccinations. Vaccination questions included in the 2024 NHIS were as follows:
+For influenza vaccination, respondents were asked if they had received a flu shot or nasal spray during the preceding 12 months and, if so, in which month and year;
+For pneumococcal vaccination, respondents were asked if they had ever had a pneumonia shot;
+For herpes zoster vaccination, respondents were asked if they had ever received a shingles vaccine and, if yes, in which year; if shingles vaccine was received in 2017 or later, whether RZV ever received, and number of RZV doses; and,
+For hepatitis A vaccination, respondents were asked if they had ever received the hepatitis A vaccine.
+Weighted data were used to produce national vaccination coverage estimates. The weighted proportion of respondents who reported receiving selected vaccinations was calculated for non-influenza adult vaccination coverage estimates. Influenza vaccination coverage was assessed separately using a season-specific approach, and the Kaplan-Meier survival analysis procedure was used to assess season-specific influenza vaccination coverage (3). Race and ethnicity were categorized into five mutually exclusive groups: White, Black, Hispanic, Asian, and other. In this report, persons were included in White, Black, Asian, or other race categories if they did not report Hispanic ethnicity. Persons who reported Hispanic ethnicity were classified as Hispanic in the analyses regardless of reported race. Other race was defined as non-Hispanic persons reporting American Indian, Alaska Native, Native Hawaiian, Pacific Islander, or any other race and persons who reported multiple races.
+Point estimates and 95% confidence intervals (CIs) were calculated using SUDAAN software (Research Triangle Institute, Research Triangle Park, NC, version 11.0.4) to account for the complex sample design. Coverage changes were calculated for pneumococcal and herpes zoster vaccines as the differences between 2023 and 2024; because the NHIS hepatitis A question is only asked every 3 years, coverage changes were calculated between 2021 and 2024. T-tests were used to compare data years and by each level of each respondent characteristic to a chosen referent level (e.g., for race and ethnicity, White was the reference group). Statistical significance was defined as p<0.05. Coverage estimates are not reported for small sample size (n<30) or large relative standard errors (standard error/estimate >0.3).
+Trends in adult vaccination were assessed from 2018 through 2024 for influenza, pneumococcal, and herpes zoster vaccinations using weighted linear regression of annual estimates using the inverse of estimated variances of the estimates as weights. Tetanus vaccination data (respondents were asked if they had received a tetanus shot in the past 10 years) are not available for the most recent data years, but 2018, 2019, and 2022 data are included in the trend figure for a more complete picture of adult vaccination coverage.***
+Results
+Overall, coverage with ≥1 dose of a pneumococcal vaccine among adults aged 19–64 years at increased risk for pneumococcal disease was 24.1% in 2024, similar to the estimate for 2023.
+Coverage among White adults (25.3%) was higher compared with Hispanic adults (19.4%).
+Coverage with ≥1 dose of a pneumococcal vaccine among all adults aged ≥65 years was 64.7%, similar to the estimate for 2023.
+Coverage among White adults aged ≥65 years (68.3%) was higher compared with Black (54.6%), Hispanic (48.6%), and Asian (61.7%) adults.
+Coverage with ≥1 dose of a pneumococcal vaccine among adults aged 19–49 years at increased risk for pneumococcal disease was 15.8%, and coverage among all adults aged 50-64 years was 19.7%, similar to the 2023 estimate.
+TABLE 1. Estimated proportion of adults aged ≥19 years who ever received pneumococcal vaccination by age, increased-risk status, and race and ethnicity — National Health Interview Survey, United States, 2024
+Overall, coverage with ≥1 dose of any type of herpes zoster vaccination among adults aged ≥19 years with an indication for vaccination (all adults aged ≥50 years or adults aged ≥19 years with weakened immune systems) was 41.7% in 2024, higher than the estimate for 2023 (38.3%).
+White adults aged ≥19 years with an indication had higher coverage (44.8%) compared with Black (31.6%) and Hispanic (30.5%) adults, but lower than Asian (50.3%) adults.
+Coverage with ≥1 dose of any type of herpes zoster was 31.8% among adults aged ≥19 overall with weakened immune systems; and 9.0%, and 47.3% among those aged 19–49, and ≥50 years, respectively. Coverage among those aged ≥19 overall and those ≥50 years was higher than the estimate in 2023.
+Coverage with ≥1 dose of any type of herpes zoster vaccination was 43.6% among all adults aged ≥50 years and 51.1% among adults aged ≥60 years in 2024, higher for both groups than the estimates for 2023.
+White adults aged ≥50 and ≥60 years had higher coverage compared with Black and Hispanic adults, but lower than Asian adults.
+RZV coverage (≥2 doses) was 27.3% among all adults aged ≥19 years with an indication for vaccination and 28.7% among all adults aged ≥50 years; by age group, coverages was 19.4% among adults aged 50–59 years, 29.1% among adults aged 60–64 years, and 35.0% among adults aged ≥65 years. All 2024 estimates were higher than estimates in 2023 except among those aged 50–59 years.
+Coverage was 33.4% among adults aged ≥60 years, higher than the estimate for 2023 (27.5%).
+Coverage was 19.6% and 31.7% among adults aged ≥19 and ≥50 years with weakened immune systems, higher than estimates for 2023.
+TABLE 2. Estimated proportion of adults aged ≥50 years or adults aged ≥19 years with weakened immune systems who ever received herpes zoster vaccination, by age and race and ethnicity — National Health Interview Survey, United States, 2024
+Among all adults aged ≥19 years, hepatitis A vaccination coverage in 2024 was 28.4% overall, higher than estimates for 2021;
+Coverage for 2024 was higher among travelers (36.8%) than nontravelers (22.3%); for both groups, the 2024 estimates were higher than the 2021 estimates.
+Among all adults ≥19 years, coverage among White adults (27.5%) was lower than Asian (41.1%) and other race (33.2%) adults.
+Among adults aged 19–49 years, White adults had higher coverage (37.0%) than Black (32.3%) and Hispanic (29.9%) adults, but lower than Asian (47.0%) adults.
+TABLE 3. Estimated proportion of adults aged ≥19 years who received hepatitis A vaccination, by age group, increased-risk status, and race and ethnicity — National Health Interview Survey, United States, 2024
+Trends in coverage from 2018–2024 with selected vaccines recommended for adults are shown in Figure 1.
+Increases in coverage from 2018–2024 were observed for any herpes zoster vaccination among adults aged ≥50 years (annual average percentage point increase: 3.4%, 95% CI: 3.1, 3.6).
+Coverage with ≥2 doses RZV among adults ≥50 years increased from 1.1% in 2018 to 28.7% in 2024 (annual average percentage point increase: 4.6%, 95% CI: 4.3, 4.9).
+Decreases in coverage were observed for pneumococcal vaccination among adults aged ≥65 years (annual average percentage point decrease: -0.7%, 95% CI: -0.9, -0.4).
+Coverage for pneumococcal vaccination among adults aged 19–64 years at increased risk remained stable from 2018 to 2024.
+Influenza vaccination coverage among all adults aged ≥19 years and those at increased risk remained stable from 2018 to 2024.
+Tetanus vaccination coverage among adults aged ≥19 years decreased from 62.9% in 2018 and 2019 to 59.2% in 2022.
+Figure 1. Estimated proportion of adults aged ≥19 years who received selected vaccines, by age group and risk status — National Health Interview Survey, United States, 2018–2024
+Discussion
+NHIS data from 2024 indicate that many adults in the United States remained unprotected against vaccine-preventable diseases. While the overall trend in herpes zoster vaccination coverage increased over the years assessed, coverage with ≥2 doses of RZV remained relatively low across age groups, including for those ≥19 years with weakened immune systems, for whom Advisory Committee on Immunization Practices (ACIP) recommended vaccination in October 2021 (4). Pneumococcal vaccination coverage remained stable among adults aged 19–64 years at increased risk of disease and decreased among adults aged ≥65 years. Influenza vaccination coverage remained stable over the 5-year period, but data suggest a decrease in coverage in the most recent season. Other data sources have also shown small but continued decreases in influenza vaccination coverage among adults in recent influenza seasons (5). Differences in vaccination coverage by race and ethnicity persist for all vaccines, with generally lower coverage among Black and Hispanic adults compared with White adults.
+Pneumococcal vaccination coverage among adults aged ≥65 years decreased overall during 2018–2024 and has fluctuated since 2022 but remains below pre-pandemic levels (Figure 1). Separate analyses of adults aged 65–70 years eligible for pneumococcal vaccination during 2015–2022 showed lower pneumococcal vaccination coverage during the COVID-19 pandemic period (6, CDC unpublished data); reductions in persons accessing vaccination services among older adults may have resulted in a modest decrease in pneumococcal vaccination coverage (7). Similar findings were observed using data collected from the Behavioral Risk Factor Surveillance System (6, CDC unpublished data). While recommendations for pneumococcal vaccination have changed over time, during 2018–2024 one or more doses of 23-valent pneumococcal polysaccharide vaccine (PPSV23) or pneumococcal conjugate vaccine (PCV), alone or in combination, were recommended for all adults ≥65 years and 19–64 years at increased risk for pneumococcal disease, depending on age, risk condition, and vaccination history (8). In October 2024, ACIP expanded recommendations to all adults aged ≥50 years, while maintaining risk-based recommendations for adults aged 19–49 years (9). This change was made in part because of the ease of implementing consistent age-based recommendations. NHIS data from 2024 indicated that coverage with ≥1 dose of pneumococcal vaccine was 15.8% among adults aged 19–49 years at increased risk, 19.7% among adults aged 50–64 years, and 64.7% among adults aged ≥65 years. These estimates provide a baseline for assessing the impact of the expanded recommendations. The NHIS does not distinguish between PCV and PPSV23, which may affect the interpretation of vaccination coverage data.
+Limitations
+The estimates in this report are subject to several limitations. First, all data relied on respondent self-report and were not validated with medical records. However, adult self-reported vaccination status has demonstrated ≥70% sensitivity and specificity for influenza, pneumococcal, and zoster vaccine live in one or more studies (10-12). Questions specifically addressing recombinant zoster vaccine were only asked if a respondent reported receiving a herpes zoster vaccine in 2017 or later and recall accuracy for type of herpes zoster vaccine (i.e., ZVL or RZV) has not been reported. Second, the NHIS response rate was 47.9% in 2024. Nonresponse bias can result if respondents and non-respondents differ in their vaccination behaviors and if survey weighting does not fully correct for this. Finally, the NHIS sample excludes persons in the military and those residing in institutions, which might result in underestimation or overestimation of adult vaccination coverage levels.
+Conclusion
+Coverage of routinely recommended vaccines among adults remains low. Differences in vaccination coverage by race and ethnicity were seen for all vaccines assessed. Ensuring access to and increasing uptake of recommended vaccines can reduce the burden of vaccine-preventable diseases.
+Authors
+Mei-Chuan Hung, MPH, PhD1,2; Anup Srivastav, B.V.Sc.&A.H., MPVM, PhD1,2; Peng-jun Lu, MD, PhD1; Charleigh J. Granade, MPH1; Tara C. Anderson, DVM, PhD3; Carla L. Black, PhD1
+1Immunization Services Division, National Center for Immunization and Respiratory Diseases, CDC 2 Eagle Health Analytics, Inc, Atlanta, GA
+3Division of Viral Diseases, National Center for Immunization and Respiratory Diseases, CDC
+References
+National Center for Health Statistics. Survey description, National Health Interview Survey, 2024. Hyattsville, Maryland. 2024. Available at: https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/NHIS/2024/srvydesc-508.pdf.
+National Center for Health Statistics. Public-use data file and documentation. Available at: https://www.cdc.gov/nchs/nhis/about/?CDC_AAref_Val=https://www.cdc.gov/nchs/nhis/about_nhis.htm.
+Lu PJ, Santibanez TA, Williams WW, et al. Surveillance of influenza vaccination coverage—United States, 2007-08 through 2011-12 influenza seasons. MMWR Surveill Summ. 2013;62(4):1-28. https://www.cdc.gov/mmwr/preview/mmwrhtml/ss6204a1.htm
+Anderson TC, Masters NB, Guo A, et al. Use of recombinant zoster vaccine in immunocompromised adults aged ≥19 years: recommendations of the Advisory Committee on Immunization Practices — United States, 2022. MMWR Morb Mortal Wkly Rep 2022;71:80–84. doi: http://dx.doi.org/10.15585/mmwr.mm7103a2.
+CDC. Flu Vaccination Coverage, United States, 2024–25 Influenza Season. Available at: https://www.cdc.gov/fluvaxview/coverage-by-season/2024-2025.html.
+CDC. Pneumococcal vaccination among adults 65–70 years of age before and during the COVID-19 pandemic— United States, 2021. Available at: https://www.cdc.gov/adultvaxview/publications-resources/pandemic-impact-on-ppv.html?CDC_AAref_Val=https://www.cdc.gov/vaccines/imz-managers/coverage/adultvaxview/pubs-resources/pandemic-impact-on-ppv.html.
+Czeisler M&Eacute;, Marynak K, Clarke KEN, et al. Delay or avoidance of medical care because of COVID-19–related concerns—United States, June 2020. MMWR Morb Mortal Wkly Rep 2020;69(36):1250–1257. doi: 10.15585/mmwr.mm6936a4.
+Kobayashi M, Pilishvili T, Farrar JL, et al. Pneumococcal Vaccine for Adults Aged ≥19 Years: Recommendations of the Advisory Committee on Immunization Practices, United States, 2023. MMWR Recomm Rep 2023;72(No. RR-3):1–39. doi: 10.15585/mmwr.rr7203a1.
+Kobayashi M, Leidner AJ, Gierke R, et al. Expanded Recommendations for Use of Pneumococcal Conjugate Vaccines Among Adults Aged ≥50 Years: Recommendations of the Advisory Committee on Immunization Practices — United States, 2024. MMWR Morb Mortal Wkly Rep 2025;74:1–8. doi: http://dx.doi.org/10.15585/mmwr.mm7401a1.
+Rolnick SJ, Parker ED, Nordin JD, et al. Self-report compared to electronic medical record across eight adult vaccines: do results vary by demographic factors? Vaccine 2013;31(37):3928–3935. doi: 10.1016/j.
+Donald RM, Baken L, Nelson A, Nichol KL. Validation of self-report of influenza and pneumococcal vaccination status in elderly outpatients. Am J Prev Med. 1999; 16:173–177. doi: 10.1016/s0749-3797(98)00159-7.
+Zimmerman RK, Raymund M, Janosky JE, et al. Sensitivity and specificity of patient self-report of influenza and pneumococcal polysaccharide vaccinations among elderly outpatients in diverse patient care strata. Vaccine. 2003; 21:1486–1491. doi: 10.1016/s0264-410x(02)00700-4.
+Footnotes
+*The following are the current recommendations for adult vaccinations:
+Influenza: annual vaccination is recommended for all adults aged ≥19 years.
+Pneumococcal: previously recommended for adults aged 19–64 years at increased risk and those aged ≥65 years; recommended since October 2024 for those aged ≥50 years as well as adults aged 19–49 years at increased risk.
+Herpes zoster: recombinant zoster vaccine is recommended for adults aged ≥50 years, and for adults aged ≥19 years with weakened immune systems.
+Hepatitis A: recommended for adults at risk (e.g., travel, liver disease) and for any adult who wants protection.
+**In this report, persons identified as White, Black, Asian, or other race are non-Hispanic. Persons identified as Hispanic might be of any race. "Other" includes American Indian/Alaska Native, Native Hawaiian, Pacific Islander, or any other race and persons who identified multiple races. The five racial/ethnic categories are mutually exclusive.
+*** Tetanus vaccination data were assessed in 2018, 2019, and 2022 due to the NHIS survey question rotation every 3 years starting in 2019.
+On This Page
+Summary
+Methods
+Results
+Discussion
+Limitations
+Conclusion
+Authors
+References
+Footnotes
+June 1, 2026
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Immunization and Respiratory Diseases; Immunization Services Division

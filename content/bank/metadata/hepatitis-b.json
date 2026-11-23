@@ -63,9 +63,19 @@
       "sourceIds": [
         "cdc-hepatitis-b-about"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC states that about one in two people with hepatitis B do not know they are infected.",
+          "url": "https://www.cdc.gov/hepatitis-b/about/index.html",
+          "quote": "About 1 in 2 people with hepatitis B do not know they are infected.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-11-10"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -138,9 +148,19 @@
       "sourceIds": [
         "cdc-hepatitis-b-clinical-overview"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "The CDC states that hepatitis B virus is infectious for at least 7 days on surfaces.",
+          "url": "https://www.cdc.gov/hepatitis-b/hcp/clinical-overview/index.html",
+          "quote": "Is infectious for at least 7 days on surfaces.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-11-02"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -284,9 +304,19 @@
       "sourceIds": [
         "cdc-hepb-clinical"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "ACIP recommends HepB vaccination for adults 60 and older who have risk factors and also for those without identified risk factors who seek protection.",
+          "url": "https://www.cdc.gov/hepatitis-b/hcp/vaccine-administration/index.html",
+          "quote": "The Advisory Committee on Immunization Practices (ACIP) recommends hepatitis B (HepB) vaccination among all infants at birth, unvaccinated children younger than 19 years of age, adults aged 19–59 years, and adults aged 60 years and older with risk factors for hepatitis B or without identified risk factors but seeking protection.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-11-09"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -429,9 +459,19 @@
       "sourceIds": [
         "cdc-diabetes-hepb"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Adults aged 23 through 59 with diabetes had 2.1 times the odds of acute hepatitis B compared with adults without diabetes.",
+          "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6050a4.htm",
+          "quote": "In multivariate analyses that considered persons without hepatitis B–related risk behaviors (i.e., injection-drug use, male sex with a male, and sex with multiple partners), persons aged 23 through 59 years with diabetes had 2.1 (95% confidence interval [CI] = 1.6–2.8) times the odds of developing acute hepatitis B as those without diabetes; the odds were 1.5 (CI = 0.9–2.5) times as likely for persons aged ≥60 years.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2011-12-23"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -509,9 +549,19 @@
       "sourceIds": [
         "cdc-hepb-screening"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC's 2023 recommendations call for hepatitis B screening with three laboratory tests at least once in a lifetime for all adults aged 18 and older.",
+          "url": "https://www.cdc.gov/mmwr/volumes/72/rr/rr7201a1.htm",
+          "quote": "New recommendations include hepatitis B screening using three laboratory tests at least once during a lifetime for adults aged ≥18 years.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2023-08-10"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -576,9 +626,19 @@
       "sourceIds": [
         "acip-general-spacing"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Longer than recommended intervals do not require restarting a vaccine series, with exceptions such as oral typhoid vaccine.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html",
+          "quote": "However, intervals between doses that are longer than recommended typically do not reduce final antibody concentrations, although protection might not be attained until the recommended number of doses has been administered. With some exceptions (e.g. oral typhoid vaccine) an interruption in the vaccination schedule does not require restarting the entire series of a vaccine or toxoid or addition of extra doses7.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -653,9 +713,19 @@
       "sourceIds": [
         "cdc-hepd-prevention"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "The CDC says there is no hepatitis D vaccine, but the hepatitis B vaccine also protects against hepatitis D.",
+          "url": "https://www.cdc.gov/hepatitis-d/about/index.html",
+          "quote": "Although there is no hepatitis D vaccine, getting hepatitis B vaccine also protects you from hepatitis D.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-11-03"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },

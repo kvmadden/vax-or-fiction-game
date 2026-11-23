@@ -1,0 +1,214 @@
+Guidelines for Vaccinating Pregnant Women
+Aug. 22, 2025
+What to know
+This table below summarizes general recommendations for vaccinating pregnant women with routine vaccines, travel vaccines, and other vaccines. You can reference the text below the table to find detailed recommendations for each vaccine from the Advisory Committee on Immunization Practices (ACIP).
+General Recommendations for Vaccinating Pregnant Women
+Vaccine
+General Recommendation for Use in Pregnancy
+Routine Vaccines
+COVID-19
+No guidance/not applicable.
+Hepatitis A (HepA)
+Recommended if pregnant and at risk for a hepatitis A virus (HAV) infection or severe outcome from infection, if not previously vaccinated.
+Haemophilus influenzae type b (Hib)
+No recommendation.
+Hepatitis B (HebB)
+Recommended if not already vaccinated.
+Human papillomavirus (HPV)
+Not recommended. If indicated, vaccinate after pregnancy.
+Influenza; inactivated or recombinant
+(IIV or RIV)
+Recommended to receive seasonally.
+Influenza live attenuated (LAIV)
+Contraindicated.
+Monkeypox
+No recommendation. If indicated, base decision on risk vs. benefit.
+Measles, mumps, and rubella (MMR)
+Contraindicated. If indicated, vaccinate after pregnancy.
+Meningococcal (ACWY)
+May be used if otherwise indicated.
+Meningococcal B (MenB)
+Pregnancy is a precaution; may be used if benefit outweighs risk.
+Pneumococcal conjugate (PCV)
+No recommendation.
+Pneumococcal polysaccharide (PPSV23)
+No recommendation.
+Poliovirus (IPV)
+Pregnancy is a precaution. If indicated, base decision on risk vs. benefit
+Respiratory syncytial virus (RSV)
+Recommended to receive one dose of Abrysvo (Pfizer RSV vaccine) during gestational weeks 32 – 36 administered between September and January for most of the continental U.S. Additional doses are not recommended in subsequent pregnancies.
+Tetanus, Diphtheria, Pertussis (Tdap)
+Recommended during each pregnancy, preferably in early part of gestational weeks 27–36.
+Varicella (VAR)
+Contraindicated. If indicated, vaccinate after pregnancy.
+Zoster (RZV)
+No recommendation. If indicated, consider delaying RZV until after pregnancy.
+Non-Routine
+Adenovirus
+Contraindicated.
+Anthrax
+Low risk of exposure — not recommended.
+High risk of exposure — may be used.
+Cholera
+No data available. May be used if benefit outweighs risk.
+Dengue
+Pregnancy is a precaution; may be used if benefit outweighs risk.
+Ebola
+Inadequate data. May be used if benefit outweighs risk.
+Japanese Encephalitis
+No data available. May be used if benefit outweighs risk.
+Rabies
+May be used if otherwise indicated.
+Smallpox
+Contraindicated for pre-exposure.
+Tick-borne Encephalitis
+May be used if otherwise indicated.
+Typhoid
+Inadequate data.
+Live typhoid (Ty21a) is contraindicated; give Vi polysaccharide if clearly needed.
+Yellow Fever
+Pregnancy is a precaution; may be used if benefit outweighs risk.
+Routine Vaccines
+COVID-19
+For more information: COVID-19 Vaccination for Women Who Are Pregnant or Breastfeeding | COVID-19 | CDC
+Hepatitis A
+Pregnant women should be vaccinated with HepA vaccine if any of the following applies:
+they are identified to be at risk for HAV infection during pregnancy (e.g., international travelers, women who use injection or noninjection drugs [i.e., all those who use illegal drugs], women who have occupational risk for infection, women who anticipate close personal contact with an international adoptee, or women experiencing homelessness)
+they are at risk for severe outcome from HAV infection (e.g., women with chronic liver disease or women with HIV infection).
+There is limited safety data on the use of hepatitis A vaccines during pregnancy; however, because HepA vaccine is produced from inactivated HAV, the theoretic risk to the developing fetus is expected to be low. The risk associated with vaccination should be weighed against the risk for HAV infection in pregnant women who might be at high risk for exposure to HAV.
+Hepatitis B
+Pregnancy is not a contraindication to vaccination. Limited data suggest that developing fetuses are not at risk for adverse events when hepatitis B vaccine is administered to pregnant women. Available vaccines contain noninfectious HBsAg and should cause no risk of infection to the fetus.
+If not already vaccinated with hepatitis B vaccine (HepB), pregnant women should be vaccinated with HepB in pregnancy, since all adults 19 through 59 years of age are recommended to receive HepB vaccination.
+Human Papillomavirus (HPV)
+HPV vaccines are not recommended for use in pregnant women. If a woman is found to be pregnant after initiating the vaccination series, the remainder of the 2- or 3-dose series should be delayed until completion of pregnancy. Pregnancy testing is not needed before vaccination. If a vaccine dose has been inadvertently administered during pregnancy, no intervention is needed.
+The manufacturers for each HPV vaccine established pregnancy registries to follow outcomes for those women who were mistakenly vaccinated. Close monitoring has not found any health concerns.
+Influenza (Inactivated or Recombinant)
+Pregnant and postpartum women are at higher risk for severe illness and complications from influenza than women who are not pregnant because of changes in the immune system, heart, and lungs during pregnancy. Influenza vaccination can be administered at any time during pregnancy, during the influenza season as long as flu viruses are circulating. Women who are or will be pregnant during influenza season should receive inactivated influenza vaccine (IIV) or recombinant influenza vaccine (RIV). For those who are in their first or second trimester of pregnancy, vaccination should be preferably administered in September or October. Vaccination should be avoided in July and August unless there is concern that vaccination later in the season might not be possible. For women in their third trimester of pregnancy, vaccination during July and August can be considered because vaccination has been associated in multiple studies with reduced risk for influenza illness in infants during the first months after birth when they are too young to receive influenza vaccine.
+For more information: Influenza Vaccine Safety Considerations during Pregnancy or while Breastfeeding | Influenza (Flu) | CDC
+Influenza (LAIV)
+Live attenuated influenza vaccine (LAIV) is contraindicated for use during pregnancy.
+Monkeypox
+Available human data on JYNNEOS administered to pregnant women are insufficient to determine vaccine-associated risks in pregnancy. However, animal models, including rats and rabbits, have shown no evidence of harm to a developing fetus.
+Vaccine recipients might consider avoiding high-risk exposures until after temporary conditions (e.g., pregnancy or transient therapy with immunocompromising therapeutics) are completed. If high-risk exposures cannot be avoided, women who are pregnant, immunocompromised, or breastfeeding or who have atopic dermatitis may receive JYNNEOS in consultation with their health care provider and after careful consideration of the risks and benefits.
+Measles, Mumps, Rubella (MMR)
+MMR vaccine is contraindicated for use during pregnancy and should not be administered to women known to be pregnant or attempting to become pregnant. However, routine pregnancy testing of women of childbearing age before administering MMR vaccine is not recommended.
+Because of the theoretical risk to the fetus when MMR vaccine is administered during pregnancy, patients should be counseled to avoid becoming pregnant for 28 days after receipt of MMR vaccine. If the vaccine is inadvertently administered during pregnancy or a pregnancy occurs within 28 days of vaccination, the patient should be counseled about the theoretical risk to the fetus. MMR vaccination during pregnancy should not be considered a reason to terminate pregnancy.
+Rubella-susceptible women of childbearing age who are not vaccinated because they state they are or may be pregnant should be counseled about the potential risk for congenital rubella syndrome (CRS) and the importance of being vaccinated as soon as they are no longer pregnant.
+Meningococcal (MenACWY)
+Pregnancy should not preclude vaccination with MenACWY, if indicated. Women who become aware that they were pregnant at the time of MenACWY vaccination should contact their health-care provider or the vaccine manufacturer so that their experience might be captured in the vaccine manufacturer’s registry of vaccination during pregnancy.
+Meningococcal (MenB)
+There is limited safety data on the use of MenB vaccines in pregnant or lactating women. Vaccination should be deferred in pregnant and lactating women unless the woman is at increased risk, and, after consultation with a health care provider, the benefits of vaccination are considered to outweigh the potential risks.
+Pneumococcal Conjugate (PCV)
+There are no recommendations for use of any PCV product during pregnancy due to limited safety data.
+Pneumococcal Polysaccharide (PPSV23)
+There are no recommendations for use of PPSV23 during pregnancy due to limited safety data. However, there does not seem to be an increased risk of adverse consequences among newborns whose mothers were inadvertently vaccinated during pregnancy.
+Polio (IPV)
+Although no adverse effects of IPV have been documented among pregnant women or their fetuses, vaccination of pregnant women should be avoided on theoretical grounds. However, if a pregnant woman is at increased risk for infection and requires immediate protection against polio, IPV can be administered in accordance with the recommended schedules for adults.
+Respiratory Syncytial Virus (RSV)
+Maternal Pfizer RSVpreF (Abrysvo) vaccination is recommended for pregnant women as a single dose at 32 weeks and zero days’–36 weeks and 6 days’ gestation using seasonal administration (meaning September–January in most of the continental United States) for prevention of RSV-associated lower respiratory tract infection in infants aged <6 months. In jurisdictions with RSV seasonality that differs from most of the continental United States, including Alaska, southern Floria, Guam, Puerto Rico, U.S. affiliated Pacific Islands, and U.S. Virgin Islands, providers should follow state, local, or territorial guidance on timing of maternal RSVpreF vaccination.
+Note: Only Pfizer RSVpreF vaccine (Abrysvo) may be administered to pregnant women; Arexvy (GSK) and mResvia (Moderna) vaccines should not be administered during pregnancy.
+To protect infants from severe RSV disease, either maternal RSV vaccination with Abrysvo or infant immunization with nirsevimab (RSV monoclonal antibody) is recommended.
+If a pregnant woman has already received a maternal RSV vaccine during any previous pregnancy, CDC does not currently recommend another dose of RSV during subsequent pregnancies. Instead, the infant should receive nirsevimab.
+For more information: RSV Vaccine Guidance for Pregnant Women | RSV | CDC
+Tetanus, Diphtheria, and Pertussis (Tdap); Tetanus and Diphtheria (Td)
+Health-care personnel should administer a dose of Tdap during each pregnancy irrespective of the patient’s prior history of receiving Tdap. To maximize the maternal antibody response and passive antibody transfer to the infant, optimal timing for Tdap administration is between 27 and 36 weeks of gestation although Tdap may be given at any time during pregnancy.
+Currently available data suggest that vaccinating earlier in the 27 through 36–week period will maximize passive antibody transfer to the infant.
+Available data from studies do not suggest any elevated frequency or unusual patterns of adverse events in pregnant women who received Tdap and that the few serious adverse events reported were unlikely to have been caused by the vaccine.
+Wound Management: If tetanus-containing vaccine is indicated for wound management in a pregnant woman, Tdap should be administered.
+Unknown or Incomplete Tetanus Vaccination: To ensure protection against maternal and neonatal tetanus, pregnant women who never have been vaccinated against tetanus should receive three vaccinations containing tetanus and reduced diphtheria toxoids. The recommended schedule is 0, 4 weeks and 6 through 12 months. Tdap should replace 1 dose of Td, preferably between 27- and 36-weeks’ gestation. For women not previously vaccinated with Tdap, if Tdap is not administered during pregnancy, Tdap should be administered immediately postpartum.
+Providers are encouraged to report administration of Tdap to a pregnant woman, regardless of trimester, to the appropriate manufacturer’s pregnancy registry: for Adacel® to Sanofi Pasteur, telephone 1-800-822-2463 and for Boostrix® to GlaxoSmithKline Biologicals, telephone 1-888-452-9622.
+For more information: Vaccinating Pregnant Patients | Whooping Cough | CDC
+Varicella
+Because the effects of the varicella virus on the fetus are unknown, varicella vaccine is contraindicated for use during pregnancy. Nonpregnant women who are vaccinated should avoid becoming pregnant for 1 month after each injection. For people without evidence of immunity, having a pregnant household member is not a contraindication for vaccination.
+Wild-type varicella poses a low risk to the fetus. Because the virulence of the attenuated virus used in the vaccine is less than that of the wild-type virus, the risk to the fetus, if any, should be even lower.
+Routine pregnancy testing of women of childbearing age before administering varicella vaccine is not recommended. If a pregnant woman is inadvertently vaccinated or becomes pregnant within 4 weeks after varicella vaccination, she should be counseled about the theoretical basis of concern for the fetus; however, varicella vaccination during pregnancy should not be considered a reason to terminate pregnancy.
+Merck monitors pregnancy outcomes after inadvertent exposures to VZV-containing vaccines during pregnancy or within 3 months before conception. CDC and the Food and Drug Administration monitors adverse events after vaccination with VZV-containing vaccines through the Vaccine Adverse Event Reporting System (VAERS). New cases of exposure immediately before or during pregnancy or other adverse events after vaccination with Varivax and ProQuad should be reported to Merck (telephone, 1-877-888-4231) and to VAERS.
+Zoster
+There is currently no ACIP recommendation for Shingrix (RZV) use in pregnancy. Consider delaying RZV until after pregnancy. 1
+Non-Routine Vaccines
+Adenovirus
+Adenovirus Type 4 and Type 7 Vaccine, Live, Oral is contraindicated for use in pregnant women. Avoid becoming pregnant following vaccination for at least 6 weeks after vaccination to prevent the fetus from being exposed to adenovirus.
+Adenovirus Type 4 and Type 7 Vaccine, Live, Oral contains live virus that is shed in the stool for up to 28 days following vaccination and can cause disease if transmitted. It is given to individuals undergoing intensive military training who have limited contact with pregnant women, children under age seven, and people with compromised immune systems.
+Anthrax
+In a pre-event setting, in which the risk for exposure to aerosolized B. anthracis spores is presumably low, vaccination of pregnant women is not recommended and should be deferred until after pregnancy.
+In a post-event setting that poses a high risk for exposure to aerosolized B. anthracis spores, pregnancy is neither a precaution nor a contraindication to PEP. Pregnant women at risk for inhalation anthrax should receive AVA and 60 days of antimicrobial therapy as described.
+Cholera
+No data exist on use of the currently licensed CVD 103-HgR during pregnancy or while breastfeeding. Prospective travelers who are pregnant and their clinicians should consider the risks associated with traveling to areas with active cholera transmission.
+Dengue
+• Pregnancy is a precaution for Dengvaxia. Vaccination should generally be deferred but might be indicated if the benefit of protection from the vaccine outweighs the risk for an adverse reaction.
+• Pregnant women, who are at increased risk for dengue-related complications, were not specifically studied in the Dengvaxia trial. The limited number of pregnant women inadvertently vaccinated during the trial had a similar frequency of adverse pregnancy outcomes (e.g., spontaneous abortion, intrauterine death, and stillbirth) as occurred in the control group; however, the number of vaccinated pregnant females was not sufficient to determine a possible effect of Dengvaxia on pregnancy.
+Ebola
+Human data available from clinical trials with Ervebo are insufficient to establish the presence or absence of vaccine-associated risk during pregnancy. The decision regarding whether to vaccinate a pregnant woman should involve consideration of the woman’s risk for exposure to EBOV.
+Japanese Encephalitis (JE)
+Pregnancy is a precaution for the use of JE-VC. Vaccination with JE vaccine usually should be deferred because of a theoretical risk for the developing fetus. However, pregnant women who must travel to an area in which risk for JE is high should be vaccinated if the benefits outweigh the risks of vaccination to the mother and developing fetus.
+Rabies
+Because of the potential consequences of inadequately managed rabies exposure, pregnancy is not considered a contraindication to postexposure prophylaxis. Certain studies have indicated no increased incidence of abortion, premature births, or fetal abnormalities associated with rabies vaccination.
+If the risk of exposure to rabies is substantial, pre-exposure prophylaxis also might be indicated during pregnancy. Rabies exposure or the diagnosis of rabies in the mother should not be regarded as reasons to terminate the pregnancy.
+Tick-borne Encephalitis
+TBE virus infection can pose a risk for severe illness in pregnant women; thus, the benefits of vaccinating pregnant women when the likelihood of infection is high likely outweigh the potential risks.
+Typhoid
+No data have been reported on the use of either typhoid vaccine in pregnant women. In general, live vaccines like Ty21a are contraindicated in pregnancy. Vi polysaccharide vaccine should be given to pregnant women only if clearly needed.
+Vaccinia (Smallpox)
+Because of the limited risk but severe consequences of fetal infection, smallpox vaccine should not be administered in a pre-event setting to pregnant women or to women who are trying to become pregnant.
+If a pregnant woman is inadvertently vaccinated or if she becomes pregnant within 4 weeks after smallpox vaccination, she should be counseled regarding concern for the fetus. Smallpox vaccination during pregnancy should not ordinarily be a reason to terminate pregnancy. CDC has established a pregnancy registry to prospectively follow the outcome of such pregnancies and facilitate the investigation of any adverse pregnancy outcome among pregnant women who were inadvertently vaccinated. For enrollment in the registry, contact CDC at 404-639-8253.
+Pregnant women who have had a definite exposure to smallpox virus (i.e., face-to-face, household, or close-proximity contact with a smallpox patient) and are, therefore, at high risk for contracting the disease, should be vaccinated. Smallpox infection among pregnant women has been reported to result in a more severe infection than among nonpregnant women. Therefore, the risks to the mother and fetus from experiencing clinical smallpox substantially outweigh any potential risks regarding vaccination. In addition, vaccinia virus has not been documented to be teratogenic, and the incidence of fetal vaccinia is low.
+When the level of exposure risk is undetermined, the decision to vaccinate should be made after assessment by the clinician and the patient of the potential risks versus the benefits of smallpox vaccination.
+Yellow Fever
+Pregnancy is a precaution for YF vaccine administration, compared with most other live vaccines, which are contraindicated in pregnancy. If travel is unavoidable, and the risks for YFV exposure are felt to outweigh the vaccination risks, a pregnant woman should be vaccinated. If the risks for vaccination are felt to outweigh the risks for YFV exposure, pregnant women should be issued a medical waiver to fulfill health regulations.
+Because pregnancy might affect immunologic function, serologic testing to document an immune response to the vaccine should be considered.
+Although no specific data are available, a woman should wait 4 weeks after receiving YF vaccine before conceiving.
+Breastfeeding and Vaccination
+Breastfeeding is a contraindication for smallpox vaccination, and yellow fever vaccine should be avoided in breastfeeding women if possible. Other vaccines should not affect the safety of breastfeeding and can be given to breastfeeding women if otherwise indicated. Per ACIP General Best Practice for Immunization:
+“Neither inactivated nor live-virus vaccines administered to a lactating woman affect the safety of breastfeeding for women or their infants. Although live viruses in vaccines can replicate in vaccine recipients (i.e., the mother), the majority of live viruses in vaccines have been demonstrated not to be excreted in human milk. Varicella vaccine virus has not been found in human milk. Although rubella vaccine virus might be excreted in human milk, the virus usually does not infect the infant. If infection does occur, it is well tolerated because the virus is attenuated. Inactivated, recombinant, subunit, polysaccharide, and conjugate vaccines, as well as toxoids, pose no risk for mothers who are breastfeeding or for their infants.”
+“Breastfeeding is a contraindication for smallpox vaccination of the mother because of the theoretical risk for contact transmission from mother to infant. Yellow fever vaccine should be avoided in breastfeeding women. However, when nursing mothers cannot avoid or postpone travel to areas endemic for yellow fever in which risk for acquisition is high, these women should be vaccinated.”
+FDA Pregnancy Categories
+Prior to 2014, regulation required that each product be classified under 1 of 5 pregnancy categories (A, B, C, D, and X) on the basis of risk of reproductive and developmental adverse effects or, for certain categories, on the basis of such risk weighted against potential benefits. However, in 2014, FDA amended its pregnancy labeling regulation to include a summary of risk, a discussion of the data supporting that summary, and relevant information to help health care providers make prescribing decisions and counsel women about the use of drugs during pregnancy. This information can be found in section 8.1 of every package insert.
+On This Page
+General Recommendations for Vaccinating Pregnant Women
+Routine Vaccines
+Non-Routine Vaccines
+Breastfeeding and Vaccination
+FDA Pregnancy Categories
+Aug. 22, 2025
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Immunization and Respiratory Diseases (NCIRD); Immunization Services Division
+References
+CDC. Use of recombinant zoster vaccine in immunocompromised adults aged ≥19 years: recommendations of the Advisory Committee on Immunization Practices (ACIP) — United States, 2022. MMWR. 2022; 71: 80–84. DOI: http://dx.doi.org/10.15585/mmwr.mm7103a2.
+Sources
+CDC. Dengue vaccine: recommendations of the Advisory Committee on Immunization Practices (ACIP), United States, 2021. MMWR. 2021; 70 (No. RR-6): 1–16. DOI: http://dx.doi.org/10.15585/mmwr.rr7006a1.
+CDC. Prevention of hepatitis A virus infection in the United States: recommendations of the Advisory Committee on Immunization Practices (ACIP), 2020. MMWR. 2020; 69 (No. RR-5):1–38. DOI: http://dx.doi.org/10.15585/mmwr.rr6905a1.
+CDC. Prevention of hepatitis B virus infection in the United States: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2018; 67 (No. RR-1): 1–31. DOI: http://dx.doi.org/10.15585/mmwr.rr6701a1.
+CDC. Universal hepatitis B Vaccination in adults aged 19–59 years: updated recommendations of the Advisory Committee on Immunization Practices (ACIP) — United States, 2022. MMWR. 2022; 71: 477–483. DOI: http://dx.doi.org/10.15585/mmwr.mm7113a1.
+CDC. Human papillomavirus (HPV) vaccination: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2014; 63 (No. 5): 1–30.
+CDC. Use of 9-valent human papillomavirus (HPV) vaccine: updated HPV vaccination recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2015; 64 (No. 11): 303.
+CDC. Prevention and control of seasonal influenza with vaccines: recommendations of the Advisory Committee on Immunization Practices (ACIP) — United States, 2023–24 Influenza Season. MMWR. 2023; 72 (No. RR-2): 1–25. DOI: http://dx.doi.org/10.15585/mmwr.rr7202a1.
+CDC. Use of JYNNEOS (smallpox and monkeypox vaccine, live, nonreplicating) for preexposure vaccination of persons at risk for occupational exposure to orthopoxviruses: recommendations of the Advisory Committee on Immunization Practices (ACIP) — United States, 2022. MMWR. 2022; 71: 734–742. DOI: http://dx.doi.org/10.15585/mmwr.mm7122e1.
+CDC. Prevention of measles, rubella, congenital rubella syndrome, and mumps, 2013: summary recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2013; 62 (No. RR-4): 13.
+CDC. General best practice guidelines for immunization: special situations. https://www.cdc.gov/vaccines/hcp/acip-recs/general-recs/special-situations.html.
+CDC. Measles, mumps, and rubella — vaccine use and strategies for elimination of measles, rubella, and congenital rubella syndrome and control of mumps: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 1998; 47 (No. RR-8): 18, 32-33.
+CDC. Meningococcal vaccination: recommendations of the Advisory Committee on Immunization Practices (ACIP), United States, 2020. MMWR. 2020; 69 (No. RR-9): 1–41. DOI: http://dx.doi.org/10.15585/mmwr.rr6909a1.
+CDC. Pneumococcal vaccine for adults aged ≥19 years: recommendations of the Advisory Committee on Immunization Practices (ACIP), United States, 2023. MMWR. 2023; 72 (No. RR-3): 1–39. DOI: http://dx.doi.org/10.15585/mmwr.rr7203a1.
+CDC. Use of inactivated polio vaccine among U.S. adults: updated recommendations of the Advisory Committee on Immunization Practices (ACIP) — United States, 2023. MMWR. 2023; 72:1327–1330. DOI: http://dx.doi.org/10.15585/mmwr.mm7249a3.
+CDC. Use of the Pfizer respiratory syncytial virus vaccine during pregnancy for the prevention of respiratory syncytial virus-associated lower respiratory tract disease in infants: recommendations of the Advisory Committee on Immunization Practices (ACIP) — United States, 2023. MMWR. 2023; 72: 1115–1122. DOI: http://dx.doi.org/10.15585/mmwr.mm7241e1.
+CDC. Use of tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis vaccines: updated recommendations of the Advisory Committee on Immunization Practices (ACIP) — United States, 2019. MMWR. 2020; 69: 77–83. DOI: http://dx.doi.org/10.15585/mmwr.mm6903a5.
+17. CDC. Prevention of pertussis, tetanus, and diphtheria with vaccines in the United States: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2018; 67 (No. RR-2): 1–44. DOI: http://dx.doi.org/10.15585/mmwr.rr6702a1.
+CDC. Prevention of varicella: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2007; 56 (No. RR-4): 28, 31.
+CDC. Closure of varicella-zoster virus–containing vaccines pregnancy registry — United States, 2013. MMWR. 2014; 63 (No. 33): 732-33.
+FDA. Adenovirus type 4 and type 7 vaccine, live, oral. Package insert.
+CDC. Use of anthrax vaccine in the United States: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2010; 59 (No. RR-6): 19-21.
+CDC. Cholera vaccine: recommendations of the Advisory Committee on Immunization Practices (ACIP), 2022. MMWR. 2022; 71 (No. RR-2): 1–8. DOI: http://dx.doi.org/10.15585/mmwr.rr7102a1.
+CDC. Use of ebola vaccine: recommendations of the Advisory Committee on Immunization Practices (ACIP), United States, 2020. MMWR. 2021; 70 (No. RR-1):1–12. DOI: http://dx.doi.org/10.15585/mmwr.rr7001a1.
+CDC. Japanese encephalitis vaccine: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2019; 68 (No. RR-2): 1–33. DOI: http://dx.doi.org/10.15585/mmwr.rr6802a1.
+CDC. Human rabies prevention — United States, 2008: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2008; 57 (No. RR-3): 20-21.
+CDC. Tick-borne encephalitis vaccine: recommendations of the Advisory Committee on Immunization Practices (ACIP), United States, 2023. MMWR. 2023; 72 (No. RR-5): 1–29. DOI: http://dx.doi.org/10.15585/mmwr.rr7205a1.
+CDC. Updated recommendations for the use of typhoid vaccine — Advisory Committee on Immunization Practices, United States, 2015. MMWR. 2015; 64 (No. 11): 307.
+CDC. Recommendations for using smallpox vaccine in a pre-event vaccination program: supplemental recommendations of the Advisory Committee on Immunization Practices (ACIP) and the Healthcare Infection Control Practices Advisory Committee (HICPAC). MMWR. 2003; 52 (No. RR-7): 9-11.
+CDC. Vaccinia (smallpox) vaccine: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2001; 50 (No. RR-10): 12 & 19.
+CDC. Yellow fever vaccine: recommendations of the Advisory Committee on Immunization Practices (ACIP). MMWR. 2010; 59 (No. RR-7): 13 & 21.

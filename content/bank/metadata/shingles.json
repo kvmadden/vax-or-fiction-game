@@ -120,9 +120,19 @@
       "sourceIds": [
         "cdc-shingles-clinical-guidance"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends 2 doses of Shingrix for immunocompetent adults aged 50 and older even if they had a prior dose of Zostavax.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of Shingrix separated by 2–6 months for immunocompetent adults aged 50 years and older: Whether or not they report a prior episode of herpes zoster. Whether or not they report a prior dose of Zostavax, a shingles vaccine that is no longer available for use in the United States.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -264,9 +274,28 @@
       "sourceIds": [
         "cdc-shingrix-recs"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "ACIP recommends recombinant zoster vaccine to prevent herpes zoster and its complications in immunocompetent adults aged 50 years and older.",
+          "url": "https://www.cdc.gov/mmwr/volumes/67/wr/mm6703a5.htm",
+          "quote": "Recombinant zoster vaccine (RZV) is recommended for the prevention of herpes zoster and related complications for immunocompetent adults aged ≥50 years.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2023-03-06"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "ACIP recommended recombinant zoster vaccine for immunocompetent adults aged 50 years and older.",
+          "url": "https://www.cdc.gov/mmwr/volumes/67/wr/mm6703a5.htm",
+          "quote": "On October 25, 2017, the Advisory Committee on Immunization Practices (ACIP) recommended the recombinant zoster vaccine (RZV) for use in immunocompetent adults aged ≥50 years.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2023-03-06"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -339,9 +368,19 @@
       "sourceIds": [
         "cdc-shingrix-schedule"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends two Shingrix doses for immunocompetent adults 50 and older even if they report a prior shingles episode.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of Shingrix separated by 2–6 months for immunocompetent adults aged 50 years and older: Whether or not they report a prior episode of herpes zoster.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -416,9 +455,19 @@
       "sourceIds": [
         "cdc-shingrix-schedule"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends two doses of Shingrix given 2 to 6 months apart for immunocompetent adults aged 50 and older.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of Shingrix separated by 2–6 months for immunocompetent adults aged 50 years and older:",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -483,9 +532,19 @@
       "sourceIds": [
         "cdc-shingrix-recs"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "The source says two doses of Shingrix are necessary even for people who previously received Zostavax.",
+          "url": "https://www.cdc.gov/mmwr/volumes/67/wr/mm6703a5.htm",
+          "quote": "If the second dose of RZV is given less than 4 weeks after the first, the second dose should be repeated. Two doses of the vaccine are necessary regardless of prior history of herpes zoster or prior receipt of ZVL.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2023-03-06"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -552,9 +611,28 @@
       "sourceIds": [
         "acip-shingrix-immuno"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "ACIP recommended two doses of recombinant zoster vaccine for immunodeficient or immunosuppressed adults aged 19 years and older.",
+          "url": "https://www.cdc.gov/mmwr/volumes/71/wr/mm7103a2.htm",
+          "quote": "On October 20, 2021, the Advisory Committee on Immunization Practices recommended 2 RZV doses for prevention of herpes zoster and related complications in immunodeficient or immunosuppressed adults aged ≥19 years.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2022-01-20"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "ACIP recommended two RZV doses for adults 19 and older who are or will be immunodeficient or immunosuppressed.",
+          "url": "https://www.cdc.gov/mmwr/volumes/71/wr/mm7103a2.htm",
+          "quote": "On October 20, 2021, ACIP recommended 2 doses of RZV for the prevention of herpes zoster and related complications in adults aged ≥19 years&dagger; who are or will be immunodeficient or immunosuppressed because of disease or therapy.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2022-01-20"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -843,9 +921,19 @@
       "sourceIds": [
         "cdc-shingrix-considerations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says that if more than 6 months have passed since the first dose, the second dose should be given as soon as possible without restarting the series.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "Administer the second dose as soon as possible. Do not restart the vaccine series.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -917,9 +1005,28 @@
       "sourceIds": [
         "cdc-shingrix-considerations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends two Shingrix doses 2 to 6 months apart for adults 50 and older, whether or not they have had shingles before.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of Shingrix separated by 2–6 months for immunocompetent adults aged 50 years and older: Whether or not they report a prior episode of herpes zoster.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "CDC recommends two Shingrix doses, two to six months apart, for adults 50 and older even after a prior shingles episode.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of Shingrix separated by 2–6 months for immunocompetent adults aged 50 years and older: Whether or not they report a prior episode of herpes zoster. Whether or not they report a prior dose of Zostavax, a shingles vaccine that is no longer available for use in the United States.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -991,9 +1098,28 @@
         "t-shingles-risk",
         "t-shingles-guidance"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC states that about 1 in 3 people in the United States will develop shingles in their lifetime.",
+          "url": "https://www.cdc.gov/shingles/data-research/index.html",
+          "quote": "About 1 in 3 people in the United States will develop shingles in their life. Your risk of having shingles increases as you get older or if you have a weakened immune system.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-12"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "About 1 in 3 people in the United States will develop shingles in their life.",
+          "url": "https://www.cdc.gov/shingles/data-research/index.html",
+          "quote": "About 1 in 3 people in the United States will develop shingles in their life.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-12"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -1059,9 +1185,19 @@
       "sourceIds": [
         "cdc-shingrix-considerations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends two doses of Shingrix for immunocompetent adults aged 50 and older even if they have had shingles before.",
+          "url": "https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html",
+          "quote": "CDC recommends 2 doses of Shingrix separated by 2–6 months for immunocompetent adults aged 50 years and older: Whether or not they report a prior episode of herpes zoster.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-10-22"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -1126,9 +1262,28 @@
       "sourceIds": [
         "cdc-shingles-symptoms"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Postherpetic neuralgia happens where the shingles rash was and can last for months or years after the rash goes away.",
+          "url": "https://www.cdc.gov/shingles/signs-symptoms/index.html",
+          "quote": "PHN occurs where the shingles rash was located, even after the rash clears up. It can last for months or years after the rash goes away.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-19"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Long-term nerve pain called postherpetic neuralgia is the most common shingles complication and can last for months or years after the rash goes away.",
+          "url": "https://www.cdc.gov/shingles/signs-symptoms/index.html",
+          "quote": "The most common complication of shingles is long-term nerve pain called postherpetic neuralgia, or PHN. PHN occurs where the shingles rash was located, even after the rash clears up. It can last for months or years after the rash goes away.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-19"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },

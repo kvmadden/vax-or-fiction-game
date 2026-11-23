@@ -119,9 +119,19 @@
       "sourceIds": [
         "cdc-general-best-practices"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says that giving the most widely used vaccines together, with some exceptions, produces seroconversion and adverse reaction rates similar to giving them separately.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html",
+          "quote": "With some exceptions, simultaneously administering the most widely used live and non-live vaccines has produced seroconversion rates and rates for adverse reactions similar to those observed when the vaccines are administered separately12151617.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -185,9 +195,28 @@
       "sourceIds": [
         "cdc-coadmin-guidance"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says multiple injections in a single limb should be separated by at least 1 inch so local reactions can be told apart.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/vaccine-administration.html",
+          "quote": "For infants and younger children, if more than 2 vaccines are injected in a single limb, the thigh is the preferred site because of the greater muscle mass; the injections should be sufficiently separated (separate anatomic sites [i.e. ≥1 inch] if possible) so that any local reactions can be differentiated1329.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-06-18"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Two vaccines given in one limb should be spaced an inch apart.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/vaccine-administration.html",
+          "quote": "If 2 vaccines are to be administered in a single limb, they should be spaced an inch apart424.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-06-18"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -252,9 +281,19 @@
       "sourceIds": [
         "acip-shingrix-flu-coadmin"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Studies of giving RZV together with quadrivalent influenza vaccine found no evidence that either vaccine interfered with the immune response to the other.",
+          "url": "https://www.cdc.gov/mmwr/volumes/67/wr/mm6703a5.htm",
+          "quote": "Concomitant administration of RZV with Fluarix Quadrivalent (influenza vaccine) (QIV) has been studied, and there was no evidence for interference in the immune response to either vaccine or safety concerns (32).",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2023-03-06"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "seasonal",
       "reviewBy": "2027-09-28"
     },
@@ -407,9 +446,28 @@
       "sourceIds": [
         "cdc-coadmin-guidance"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says the location of every injection site, along with the vaccine given there, should be documented in the patient's medical record.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/vaccine-administration.html",
+          "quote": "If multiple vaccines are administered at a single visit, administer each preparation at a different anatomic site28. The location of all injection sites with the corresponding vaccine injected should be documented in each patient’s medical record.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-06-18"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Every injection site and the vaccine given there should be written in the medical record.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/vaccine-administration.html",
+          "quote": "The location of all injection sites with the corresponding vaccine injected should be documented in each patient’s medical record.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-06-18"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -549,9 +607,19 @@
       "sourceIds": [
         "cdc-flu-vaccine-coadministration"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says injected vaccines given at one visit can go in the same arm if the sites are at least an inch apart.",
+          "url": "https://www.cdc.gov/flu/vaccines/coadministration.html",
+          "quote": "Vaccines given with a needle at the same visit should be given at separate places on the body (at least one inch apart). Adults and older children can get them in the same arm at least an inch apart, or they can get them in different arms.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-01"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -617,9 +685,19 @@
       "sourceIds": [
         "cdc-rsv-coadministration"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says RSV vaccines can be given with other adult vaccines at the same visit.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/adults.html",
+          "quote": "RSV vaccines can be coadministered with other adult vaccines during the same visit.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -684,9 +762,28 @@
       "sourceIds": [
         "t-live"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says injectable or nasal live vaccines not given the same day need at least 4 weeks apart, and a second dose given sooner is not counted.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html",
+          "quote": "Two or more injectable or nasally administered live vaccines not administered on the same day should be separated by at least 4 weeks (Table 3-4), to minimize the potential risk for interference. If 2 such vaccines are separated by <4 weeks, the second vaccine administered should not be counted and the dose should be repeated at least 4 weeks later.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-24"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Live injectable or nasal vaccines not given the same day must be at least four weeks apart, or the second dose should not be counted.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/timing-spacing-immunobiologics.html",
+          "quote": "Two or more injectable or nasally administered live vaccines not administered on the same day should be separated by at least 4 weeks (Table 3-4), to minimize the potential risk for interference. If 2 such vaccines are separated by <4 weeks, the second vaccine administered should not be counted and the dose should be repeated at least 4 weeks later. On the day a live injectable or intranasal vaccine will be administered, providers should ensure that no live injectable or intranasal vaccine was given in the previous 28 days.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -753,9 +850,28 @@
         "storage-response",
         "storage-viability"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "After an excursion, staff first notify the coordinator and segregate the doses as DO NOT USE without discarding them, then documentation begins.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-5-vaccine-storage-and-handling.html",
+          "quote": "Notify the primary or alternate vaccine coordinator immediately or report the problem to a supervisor. Label exposed vaccines \"DO NOT USE,\" and place them in a separate container apart from other vaccines in the storage unit (do not discard these vaccines). The vaccine coordinator or supervisor should begin to document details of the event.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-03"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Vaccine should be marked do not use and moved to a proper-temperature unit, and viability should be decided from the excursion with public health or the manufacturer.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/storage-handling-immunobiologics.html",
+          "quote": "Vaccine should be marked “do not use” and moved to the alternate site after verifying that the alternate unit is at the proper temperature. Determinations of vaccine viability in practice include consideration of both time and magnitude of temperature excursions and should be made in consultation with state/local public health departments or the vaccine manufacturer, as one or both of these groups may have additional information based on a broad international perspective.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-06-18"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -829,9 +945,19 @@
         "diluent",
         "diluent-error"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Vaccines must be reconstituted only with their supplied diluent, and a stock vial of sterile water should never be used.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-6-vaccine-administration.html",
+          "quote": "Vaccines should be reconstituted according to manufacturer guidelines using only the diluent supplied for a specific vaccine. Diluents vary in volume and composition, and are specifically designed to meet volume, pH balance, and the chemical requirements of their corresponding vaccines. A different diluent, a stock vial of sterile water, or normal saline should never be used to reconstitute vaccines.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-08"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },

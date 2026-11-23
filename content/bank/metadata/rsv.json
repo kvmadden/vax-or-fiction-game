@@ -55,9 +55,19 @@
       "sourceIds": [
         "cdc-rsv-adult-guidance"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC lists chronic cardiovascular disease, including heart failure, as a condition that increases the risk of severe RSV illness.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/adults.html",
+          "quote": "The following conditions increase the risk of severe RSV illness:A Chronic cardiovascular disease (e.g., heart failure, coronary artery disease, or congenital heart disease [excluding isolated hypertension])",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -184,9 +194,19 @@
       "sourceIds": [
         "cdc-rsv-dose-timing"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says the RSV vaccine is not an annual vaccine and people who already got one, even last year, should not get another now.",
+          "url": "https://www.cdc.gov/rsv/vaccines/adults.html",
+          "quote": "The RSV vaccine is not currently an annual vaccine. If you have already received an RSV vaccine (including last year), you should not get another RSV vaccine at this time.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-20"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "seasonal",
       "reviewBy": "2027-09-28"
     },
@@ -320,9 +340,28 @@
       "sourceIds": [
         "cdc-rsv-hospitalization"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "RSV causes severe disease and hospitalizations in adults, especially older adults and those with certain risk factors.",
+          "url": "https://www.cdc.gov/rsv/hcp/clinical-overview/index.html",
+          "quote": "RSV is one of the most common causes of childhood illness and is the most common cause of hospitalization in infants. It also causes severe disease and hospitalizations in adults, especially those who are older or have certain risk factors.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-08-18"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "RSV causes severe disease and hospitalizations in adults, especially older adults and adults with certain risk factors.",
+          "url": "https://www.cdc.gov/rsv/hcp/clinical-overview/index.html",
+          "quote": "It also causes severe disease and hospitalizations in adults, especially those who are older or have certain risk factors.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-08-18"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -389,9 +428,19 @@
       "sourceIds": [
         "fda-abrysvo-maternal"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "The FDA says Abrysvo is indicated for pregnant individuals at 32 through 36 weeks gestation to prevent LRTD and severe LRTD from RSV in infants up to 6 months old.",
+          "url": "https://www.fda.gov/vaccines-blood-biologics/abrysvo",
+          "quote": "Active immunization of pregnant individuals at 32 through 36 weeks gestational age for the prevention of lower respiratory tract disease (LRTD) and severe LRTD caused by respiratory syncytial virus (RSV) in infants from birth through 6 months of age.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-19"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -606,9 +655,19 @@
       "sourceIds": [
         "acip-rsv-coadmin"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says adult RSV vaccines can be given with other adult vaccines at the same visit, and lower antibody titers seen with respiratory vaccines have unknown clinical significance.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/adults.html",
+          "quote": "RSV vaccines can be coadministered with other adult vaccines during the same visit. Data on immunogenicity of RSV vaccines and other vaccines when coadministered are currently limited. These limited data show coadministration of RSV with other respiratory virus vaccines may result in lower antibody titers, but the clinical significance of this is unknown.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -682,9 +741,19 @@
       "sourceIds": [
         "cdc-rsv-adult-risk"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC lists chronic lung disease, naming COPD and asthma, among the conditions that increase the risk of severe RSV.",
+          "url": "https://www.cdc.gov/rsv/hcp/clinical-overview/index.html",
+          "quote": "The following conditions increase the risk of severe RSV:* Chronic cardiovascular disease (e.g., heart failure, coronary artery disease, or congenital heart disease [excluding isolated hypertension]) Chronic lung or respiratory disease (e.g., chronic obstructive pulmonary disease, emphysema, asthma, interstitial lung disease, or cystic fibrosis)",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-08-18"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -746,9 +815,19 @@
       "sourceIds": [
         "cdc-rsv-adult-guidelines"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends one RSV vaccine dose for all adults 75 and older and for adults 50 to 74 at increased risk.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/adults.html",
+          "quote": "CDC recommends a single dose of respiratory syncytial virus (RSV) vaccine for all adults ages 75 and older and adults ages 50–74 at increased risk of severe RSV illness.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-02-24"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -812,9 +891,19 @@
       "sourceIds": [
         "cdc-rsv-pregnant-clinical"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends a single maternal RSV vaccine dose at weeks 32 through 36 of pregnancy to protect babies from severe RSV disease.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/pregnant-people.html",
+          "quote": "CDC recommends a respiratory syncytial virus (RSV) vaccine for pregnant women to protect their babies from severe RSV disease. Pregnant women should get a single dose of the maternal RSV vaccine (Pfizer’s Abrysvo) during weeks 32 through 36 of pregnancy.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-08-30"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -958,9 +1047,19 @@
         "maternal-rsv",
         "fda-abrysvo"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Abrysvo is the only RSV vaccine recommended in pregnancy, and Arexvy and mResvia are not approved for use during pregnancy.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/pregnant-people.html",
+          "quote": "Pfizer's Abrysvo is the only RSV vaccine recommended for pregnant women. GSK's Arexvy and Moderna's mResvia are NOT approved for use during pregnancy.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-08-30"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -1025,9 +1124,28 @@
       "sourceIds": [
         "maternal-rsv"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says not to vaccinate after 36 weeks 6 days of pregnancy and to give the infant nirsevimab instead.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/pregnant-people.html",
+          "quote": "Pregnant women who are more than 36 weeks 6 days pregnant should not be vaccinated, as it is unlikely there will be enough time for the antibodies to develop, cross the placenta, and protect the infant. Instead, their infant should receive RSV immunization (i.e., nirsevimab) just before or at the start of the RSV season.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-08-30"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Women past 36 weeks and 6 days should not get maternal RSV vaccine, and the infant should get RSV immunization instead.",
+          "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/pregnant-people.html",
+          "quote": "CDC recommends one dose of Pfizer’s Abrysvo for women who are 32 0/7 weeks’ through 36 6/7 weeks’ gestation. Pregnant women who are more than 36 weeks 6 days pregnant should not be vaccinated, as it is unlikely there will be enough time for the antibodies to develop, cross the placenta, and protect the infant. Instead, their infant should receive RSV immunization (i.e., nirsevimab) just before or at the start of the RSV season.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-08-30"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },

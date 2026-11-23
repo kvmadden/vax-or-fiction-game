@@ -1,0 +1,226 @@
+Chapter 5: Vaccine Storage and Handling
+For Health Care Providers
+Apr. 3, 2024
+At a glance
+Chapter author: Tina Objio, RN, MSN; Valerie Morelli, BA; and Sean Trimble, BS, MPH
+Summary: This chapter provides an overview of best practices for vaccine storage and handling. Note: The 14th edition of the “Pink Book” was published August 2021. Vaccine-specific recommendations may be outdated.
+Overview
+CDC's Vaccine Storage and Handling Toolkit contains detailed information on best practices and recommendations. Participants in the Vaccines for Children (VFC) program or providers with vaccines purchased with public funds should consult their state or local immunization program to ensure all state storage and handling requirements are met, since there may be requirements that are specific to or tailored to the jurisdiction.
+Vaccine Cold Chain
+A cold chain is a temperature-controlled supply chain that includes all vaccine-related equipment and procedures. The cold chain begins with the cold storage unit at the manufacturing plant, extends to the transport and delivery of the vaccine and proper storage at the provider facility, and ends with administration of the vaccine to the patient.
+Manufacturers, distributors, public health staff, and health care providers share responsibility to ensure the vaccine cold chain is maintained from the time vaccines are manufactured until they are administered.
+Vaccine Storage and Handling Standard Operating Procedures (SOPs)
+Facilities should develop and maintain clearly written, detailed, and up-to-date storage and handling standard operating procedures (SOPs). SOPs should be reviewed by all staff and updated by the vaccine coordinator annually.
+SOPs should contain plans and information for three major areas:
+General information – include contact information for vaccine manufacturers, equipment service providers, and important facility staff, as well as job descriptions, regularly used forms, and staff training requirements.
+Routine storage and handling – include information for all aspects of vaccine inventory management, from ordering to monitoring storage conditions.
+Emergency vaccine storage, handling, and transport – outline steps to be taken in the event of equipment malfunctions, power failures, natural disasters, or other emergencies that might compromise vaccine storage conditions.
+VFC providers or those who have vaccines purchased with public funds should contact their immunization program for guidance regarding routine and emergency SOPs.
+All staff members who receive deliveries or handle vaccines should be trained in proper storage and handling as described in the facility's SOPs. SOPs should be kept near vaccine storage units and staff should know where to find them.
+Storage and handling training should be done:
+As part of new employee orientation
+Annually as a refresher for all staff involved in immunization activities
+When new vaccines are added to inventory
+When vaccine recommendations are updated
+A primary vaccine coordinator should be responsible for ensuring all vaccines are stored and handled correctly, with an alternate coordinator appointed who can serve in the absence of the primary coordinator. These individuals should be fully trained in routine and emergency policies and procedures. Coordinator responsibilities may be completed by the coordinator or delegated to appropriate staff. The coordinator must ensure the delegate has documented training demonstrating competency for the specific tasks assigned and must confirm that tasks are completed.
+Some coordinator responsibilities include:
+Ordering vaccines
+Overseeing proper receipt and storage of vaccine deliveries
+Documenting vaccine inventory information
+Organizing and monitoring vaccines within storage units, including rotating stock and removing expired vaccines
+Setting up temperature monitoring devices (TMDs) and recording daily temperatures
+Responding to temperature excursions (out-of-range temperatures) and equipment failures
+Overseeing vaccine transport (when necessary)
+Overseeing emergency preparations
+Creating and updating storage and handling SOPs
+Vaccine Storage and Temperature Monitoring Equipment
+It is important for a facility to have proper storage and monitoring equipment that is set up correctly, maintained appropriately, and repaired as needed. This equipment protects patients from inadvertently receiving compromised vaccine and protects facilities against costs of revaccinating patients, replacing expensive vaccines, and losing patient confidence.
+CDC recommends the following types of refrigerators and freezers:
+Purpose-built or pharmaceutical-grade units designed to either refrigerate or freeze biologics, including vaccines, are preferred. These units can be compact, under-the-counter style or large units.
+If a purpose-built or pharmaceutical-grade unit is not available, a stand-alone, household-grade unit may be an acceptable option in some practice settings. Only the refrigerator compartment of a household-grade combination refrigerator/freezer unit should be used. The freezer compartment of this type of unit is not recommended for storing vaccines and there may be areas of the refrigerated compartment that should not be used as well. These units have cold spots and temperature fluctuations, and air circulating from the freezer could expose refrigerated vaccines to freezing temperatures. A separate freezer unit is necessary for storage for facilities that stock frozen vaccines.
+All units should have enough space to store the largest inventory expected at the busiest point in the year (e.g., flu season) without crowding.
+Never store any vaccine in a dormitory-style or bar-style combined unit. These units often have a single exterior door and an evaporator plate/cooling coil, usually located in an icemaker/freezer compartment. These units pose a significant risk of freezing vaccines, even when used for temporary storage.
+Every vaccine storage unit must have a reliable TMD. CDC recommends (and VFC requires) the use of a continuous monitoring and recording device called a "digital data logger" (DDL), set at recording intervals of at least every 30 minutes. Many DDLs use a buffered temperature probe. Temperatures measured by a buffered probe match vaccine temperature more closely than those measured by standard thermometers, which tend instead to reflect air temperature. DDLs provide details on how long a unit has been operating outside the recommended temperature range (a temperature excursion). Each DDL should have a current and valid Certificate of Calibration Testing (also known as a "Report of Calibration") to ensure device accuracy.
+DDLs should have the following characteristics:
+Detachable probe that best reflects vaccine temperatures (e.g., a probe buffered with glycol, glass beads, sand, or Teflon®)
+Alarm for out-of-range temperatures
+Low-battery indicator
+Current, minimum, and maximum temperature display
+Recommended uncertainty of +/-0.5°C (+/-1°F)
+Logging interval (or reading rate) that can be programmed by the user to measure and record temperatures at least every 30 minutes
+Temperature data from a DDL can be downloaded to a computer using special software or retrieved from a website for user review, which is critical to ensuring vaccine safety. The software or website may also allow the user to set the frequency of temperature readings.
+Each facility should have a recommended TMD for:
+Each vaccine storage unit
+Each emergency transport unit
+Backup (with a different calibration testing schedule) in case a primary device malfunctions or is out for calibration testing
+Calibration testing should be done every one to two years or according to the manufacturer's suggested timeline. CDC recommends that a DDL's current and valid Certificate of Calibration Testing include:
+Model/device name or number
+Serial number
+Date of calibration (report or issue date)
+Confirmation that the instrument passed testing (or instrument in tolerance)
+Recommended uncertainty of +/-0.5°C (+/-1°F) or less
+Storage units should be placed in a well-ventilated room, leaving space between the unit, ceiling, and any wall. Nothing should block the cover of the motor compartment. The unit should be firm and level, with the bottom of the unit above the floor. The unit door should open and close smoothly and fit squarely against the body of the unit. Studies find that most units work best when placed in an area with standard indoor room temperatures, usually considered to be between 20°C and 25°C (68°F and 77°F). Check the manufacturer-supplied owner's manual for additional guidance on placement and spacing.
+It may take two to seven days to stabilize the temperature in a newly installed or repaired refrigerator and two to three days to stabilize the temperature for a freezer.
+Before using a unit for vaccine storage, the minimum and maximum temperatures each workday for two to seven days should be checked and recorded. If temperatures cannot be recorded digitally, they should be checked and recorded a minimum of two times each workday. Once two consecutive days of temperatures have been recorded within the recommended range, the unit is stable and ready for use.
+To protect the storage unit's power supply:
+Plug in only one storage unit per electrical outlet.
+Use a safety-lock plug or an outlet cover to prevent the unit from being unplugged.
+Post "DO NOT UNPLUG" warning signs at outlets and on storage units to alert staff, custodians, electricians, and other workers not to unplug units.
+Label fuses and circuit breakers to alert people not to turn off power to storage units.
+Use caution when using power outlets that can be tripped or switched off and avoid using built-in circuit switches (that may have reset buttons), outlets activated by a wall switch, and multioutlet power strips.
+Storage units and temperature monitoring devices need regular maintenance to ensure proper operation, maintain required temperatures, and extend the useful life of the equipment.
+Check storage unit door seals regularly for signs of wear and tear.
+Check door hinges and adjust so that the door opens and closes smoothly and fits squarely against the body of the unit. Leaving the door open can cause the thermostat to respond to warmer room temperatures, and the unit will work harder to maintain the correct temperature inside. The temperature may become very cold in some parts of the unit. Using an open-door alarm and a self-closing door may be helpful.
+Clean unit coils and motor per manufacturer instructions.
+Clean inside of units to discourage bacterial and fungal growth. Cleaning must be done quickly to minimize the risk of the temperature going out of range.
+Defrost manual-defrost freezers when the frost exceeds either 1 cm or per the manufacturer's suggested limit. Follow the manufacturer's instructions. While defrosting, store vaccines temporarily in another unit with appropriate freezer temperatures.
+Temperature monitoring devices experience "drift" over time that affects accuracy. If calibration testing indicates the device is no longer accurate within +/-0.5°C (+/-1°F), it should be replaced. Adjustments to correct accuracy are not recommended.
+Storage unit temperatures may need to be adjusted over time. Temperature adjustments should only be made by a vaccine coordinator and not during a busy part of the workday when the door is being frequently opened. The coordinator should confirm there is not another issue (e.g., unit unplugged, door left open, broken TMD, etc.) before making any adjustment to the temperature.
+If you believe there could be an issue with the TMD, use the backup TMD to confirm the temperature before making any adjustments.
+If a backup generator is used, it should be tested quarterly and serviced annually, and according to the manufacturer's guidance.
+Organizing and Storing Vaccine in Storage Unit
+Manufacturers' package inserts should be referred to for the most up-to-date storage and handling recommendations for specific vaccines and diluents.
+To confirm vaccines are stored correctly and to minimize the risk of administration errors:
+Store vaccines in their original packaging with lids closed in separate containers until ready for administration to protect them from light and provide additional thermal stability/protection. Never store loose vials or manufacturer-filled syringes outside of their packaging. This increases the risk of administration errors, exposes vaccine to light, and makes it more difficult to track expiration dates and manage inventory. For certain purpose-built units, it is recommended that vaccine be stored outside of the packaging. If this is the case, follow the manufacturer's guidance for vaccine storage.
+Place vaccines and diluents with the earliest expiration dates in front of those with later expiration dates.
+Store vaccines and diluents with similar packaging or names or with pediatric and adult formulations on different shelves.
+Whenever possible, store diluent with the corresponding refrigerated vaccine. Never store diluent in a freezer.
+Position vaccines and diluents two to three inches from the unit walls, ceiling, floor, and door.
+Arrange vaccines and diluents in rows and allow space between them to promote air circulation.
+If using a household-grade unit, avoid storing vaccines and diluents in any part of the unit that may not provide stable temperatures or sufficient air flow, such as directly under cooling vents; in deli, fruit, or vegetable drawers; or on refrigerator door shelves.
+Place water bottles on the top shelf, the floor, and in the door racks of a household-grade unit. Putting water bottles in the unit can help maintain stable temperatures. (Water bottles are not recommended for use with certain pharmaceutical-grade units, follow manufacturer's directions.)
+Avoid placing or storing any items other than vaccines, diluents, and water bottles inside storage units. If other medications and biological products must be stored in the same unit as vaccines, they must be clearly marked and stored in separate containers or bins from vaccines. Potentially contaminated items (e.g., blood, urine, stool) should be properly contained and stored below vaccines to avoid contamination from drips or leaks.
+Place the TMD in the center of the unit with the vaccines surrounding it. A DDL should be set to measure temperature no less frequently than every 30 minutes.
+Temperature Ranges
+Refrigerators should maintain temperatures between 2°C and 8°C (36°F and 46°F). Freezers should maintain temperatures between -50°C and -15°C (-58°F and +5°F). Refrigerator or freezer thermostats should be set at the factory-set or midpoint temperature, which will decrease the likelihood of temperature excursions.
+Thermostats are marked in various ways and, in general, show levels of coldness rather than temperatures. The only way to know the temperature where vaccines are stored is to measure and monitor it with a TMD.
+To ensure the safety of vaccines, the storage unit minimum and maximum temperatures should be checked and recorded at the start of each workday. If using a TMD that does not display minimum and maximum temperatures, then the current temperature should be checked and recorded a minimum of two times (at the start and end of the workday).
+A temperature monitoring log sheet should be placed on each storage unit door (or nearby), and the following information should be recorded:
+Minimum/maximum temperature (or current temperature if using a device that does not record minimum/maximum temperatures)
+Date
+Time
+Name of person who checked and recorded the temperature
+Any actions taken if a temperature excursion occurred
+If a reading is missed, leave a blank entry in the log. Such entries should be distinguished from entries in which the TMD failed to display a reading.
+Check unit doors throughout the day and always at the end of the day to ensure they are tightly closed.
+On a weekly basis, review storage unit temperature readings for changes in temperature trends that might require action (adjusting unit temperature or repairing/replacing storage or temperature monitoring equipment). Temperature data should be kept for three years (unless state statutes or rules require a longer period).
+Any temperature reading outside ranges recommended in the vaccine manufacturers' package inserts is considered a temperature excursion and requires immediate action:
+Notify the primary or alternate vaccine coordinator immediately or report the problem to a supervisor.
+Label exposed vaccines "DO NOT USE," and place them in a separate container apart from other vaccines in the storage unit (do not discard these vaccines).
+The vaccine coordinator or supervisor should begin to document details of the event.
+Implement your facility's SOPs for temperature excursions, being sure to check temperature monitoring device placement or adjusting unit temperature as needed.
+Contact your immunization program and/or the vaccine manufacturer(s) per your SOPs for guidance.
+Complete documentation of the event, including actions taken and results.
+Vaccines should never remain in a nonfunctioning unit for an extended period. If it is believed a unit has failed, implementation of emergency SOPs should begin.
+Vaccine Inventory Management
+It is important to make sure vaccines are unpacked and stored correctly and to account for every dose received and used, whether administered, wasted, compromised, expired, or transferred.
+Scheduling and Receiving Deliveries
+The vaccine coordinator or alternate should be notified immediately when vaccines arrive. Vaccines should be unpacked and stored immediately. Vaccine delivery should only be scheduled on dates and during times staff will be present. A vaccine delivery container should never be left unattended.
+Unpacking Deliveries
+Vaccines and diluents should be unpacked and promptly stored at recommended temperatures. They should not be stored in an unopened shipment box.
+Examine the shipping container and contents for signs of damage.
+Compare contents against the packing list. For frozen vaccines, the packing list may show the maximum time vaccines can be in transit based on shipment date.
+Ensure that lyophilized vaccines came with the correct type and quantity of diluents.
+Check vaccine and diluent expiration dates to ensure there are no expired or soon-to-expire products.
+If included, check the cold chain monitor (CCM) for any temperature excursion during transit. Note: CCMs are for one-time use and should be discarded after being checked.
+If there are discrepancies between the contents and the packing list or other concerns about the contents (including temperature excursion), the vaccine manufacturer should be immediately notified. If a temperature excursion is suspected, vaccines should be labeled "DO NOT USE" and stored in the appropriate vaccine storage unit, separated from other vaccines, until a vaccine viability determination is made. The state or local immunization program should be contacted regarding any VFC or other vaccines purchased with public funds.
+Conduct a vaccine inventory assessment at least once a month and before placing vaccine orders to ensure adequate vaccines and diluents are on hand. Determining factors for ordering include projected demand, storage capacity, and current vaccine supplies. Many state and local immunization information systems (IISs) have vaccine inventory accounting functions and VFC providers may be required to use the IIS to track inventory.
+Stock Rotation and Removal
+Vaccine stock should be rotated and checked for expired doses regularly. Any expired vaccines and diluents should be removed immediately to avoid inadvertently administering them.
+Understanding Expiration Dates
+Determining when a vaccine or diluent expires is an essential step in proper vaccine storage and handling. Administration of expired vaccine remains one of the top vaccine storage and handling errors, so it is crucial for staff to understand how to read expiration dates to prevent patients from receiving invalid vaccine doses.
+When the expiration date has only a month and year, the product may be used up to and including the last day of that month. If a day is included with the month and year, the product may only be used through the end of that day. Products that have been contaminated or compromised should not be used, regardless of the expiration date.
+In some instances, such as when a manufacturer indicates there is a beyond-use date (BUD), vaccines must be used before the expiration date on the label.
+The BUD is calculated based on the date the vial is first punctured and the storage information in the package insert. If the vaccine has no BUD, the vaccine should be used by the expiration date indicated by the manufacturer.
+The BUD replaces the expiration date and should be noted on the label, along with the initials of the person making the calculation. Examples include:
+Reconstituted vaccines have a limited time frame for use once the vaccine is mixed with a diluent. For example, if the package insert states that the reconstituted vaccine must be used within 30 minutes, it must be discarded if not used by that time. This time frame might only apply as long as the reconstituted vaccine is still in the vial, not after it is drawn into a syringe, so the package insert should be carefully checked.
+Multidose vials (MDVs) might have a specified time frame for use once they have been entered with a needle. For example, the package insert may state that the vaccine must be discarded 28 days after it is entered. If the vial is entered on June 1, 2020, the BUD is June 29, 2020.
+Manufacturer-shortened expiration dates may apply when vaccine is exposed to inappropriate storage conditions. The manufacturer might determine that the vaccine can still be used but will expire on an earlier date than the date on the label.
+In addition to a BUD, some MDVs have a specific number of doses that can be withdrawn. Once the maximum number of doses has been removed, the vial should be discarded, even if there is residual vaccine in the vial.
+Sometimes unused vaccine and diluent doses, unopened vials, expired vials, and potentially compromised vaccine may be returned for credit, even if they must be discarded. The state or local immunization program or the vaccine manufacturer can provide vaccine-specific information.
+Open and broken vials and syringes, manufacturer-filled syringes that have been activated, and vaccines predrawn by providers cannot be returned and should be discarded according to state requirements.
+Immediately after use, all syringe/needle devices should be placed in biohazard containers that are closable, puncture-resistant, leakproof on sides and bottom, and labeled or color-coded. This practice helps prevent accidental needlesticks and reuse. Used needles should not be recapped, cut, or detached from syringes before disposal.
+Empty, expired, or compromised vaccine vials are usually not considered hazardous or pharmaceutical waste and do not require disposal in a biomedical waste container. However, state requirements regarding disposal should be followed. Medical waste disposal requirements are set by state environmental agencies.
+Vaccines should be drawn up only at the time of administration. General-use syringes are designed for immediate administration, not for storage. Contamination and growth of microorganisms can occur in syringes with predrawn vaccine that does not contain a preservative. In addition, vaccine components may interact with polymers in a plastic syringe over time, potentially reducing vaccine potency. Predrawing vaccines can also result in vaccine waste.
+Even for off-site clinics, vaccine manufacturers do not recommend predrawing vaccines. As an alternative, CDC recommends using manufacturer-filled syringes (MFSs) for large vaccination clinics.
+If vaccines must be predrawn:
+Set up a separate administration station for each vaccine type to prevent medication errors.
+Draw up vaccines only after arriving at the clinic site or mass vaccination event.
+Each person administering vaccines should draw up no more than one MDV or 10 doses at one time.
+Monitor patient flow to avoid drawing up unnecessary doses.
+Predraw reconstituted vaccine into a syringe only when ready for administration.
+If a predrawn vaccine is not used within 30 minutes of being reconstituted, follow manufacturer guidance for storage conditions and time limits.
+Any remaining vaccine in predrawn syringes should be discarded at the end of the workday. Predrawn, reconstituted vaccine should never be transferred back into a vial for storage.
+Vaccine Transport
+To protect the vaccine supply, vaccine should be delivered directly to the facility where it will be used. However, sometimes, vaccine needs to be transported to an off-site or satellite facility for an event like an on-site vaccination clinic. Transport may also be required during emergencies such as long-term power outages or flooding or other natural disasters that can put the vaccine supply in jeopardy. In these instances, certain actions must be taken to protect the vaccine supply.
+Vaccine transport to off-site or satellite facilities is different from both shipping and emergency transport. Shipping usually involves a professional carrier and a long distance and time frame for moving vaccines between locations. Transport involves the movement of vaccine over a short time frame and distance between providers. Depending on the situation, transport recommendations may vary. An organization's SOPs should clearly define transport procedures for all possible scenarios and should be used by trained staff for any vaccine transport.
+A facility should have a supply of materials needed for transport of the largest annual vaccine inventory.
+Container Description
+Emergency Transport
+Transport to Off-Site Clinic or Satellite Facility or for Relocation of Stock
+Portable Vaccine Refrigerator or Freezer
+Yes
+Yes
+Qualified Container and Packout
+Yes
+Yes
+Conditioned Water Bottle Transport System [2 pages]
+Yes
+No
+Manufacturer’s Original Shipping Container
+Yes
+(last resort only)
+No
+Food/Beverage Coolers
+No
+No
+Soft-sided containers specifically engineered for vaccine transport are acceptable (and may be part of a qualified container and packout system). Commercially available soft-sided food or beverage coolers should not be used because most are poorly insulated and likely to be affected by room or outdoor temperatures.
+A TMD for each transport container should be used during transport, as well as appropriate coolants and transport materials according to the specific transport system(s) being used.
+The same shipping containers the vaccines were initially shipped in may be used for emergency transport as a last resort only.
+Partially used vials cannot be transferred between providers or across state lines.
+Best practices for transport include:
+The total time for transport alone or transport plus clinic workday should be a maximum of 8 hours.
+Transport diluents with their corresponding vaccines to ensure there are always equal amounts of vaccines and diluents for reconstitution.
+Transport only the amount of vaccine needed for the workday.
+If a noncommercial vehicle must be used, place the transport containers in the passenger compartment, not the trunk.
+In addition to the actions outlined above, in an emergency situation:
+Contact an alternative vaccine storage facility before packing any vaccine to confirm it can accept vaccines for storage.
+Note any protective measures in place at the time of the event (water bottles, battery-powered TMD, transport to alternative facility, etc.).
+Only open the vaccine storage unit door when ready to pack vaccine in transport containers or when power has been restored.
+If an emergency can be anticipated (e.g., weather event), suspend immunization activities before the onset of emergency conditions to allow adequate time for packing and transport.
+Immediately upon arrival at the off-site location, vaccines should be stored in an appropriate storage unit with a TMD. Follow recommended guidelines for monitoring and recording storage unit temperatures:
+If the device displays minimum/maximum temperatures, this information should be checked and recorded.
+If the device does not display minimum/maximum temperatures, then the current temperature should be checked and recorded a minimum of two times (at the start and end of the workday).
+If vaccines cannot be stored in an on-site storage unit, they should be kept in the portable vaccine storage unit using the following guidance:
+Place a TMD (preferably with a probe in a thermal buffer) as close as possible to the vaccines and check and record temperatures hourly.
+Keep the container closed as much as possible.
+Acknowledgements
+The editors would like to acknowledge Jennifer Hamborsky, Beth Hibbs, Ginger Redmon, Donna Weaver, A. Patricia Wodi, and Skip Wolfe for their contributions to this chapter.
+Selected References
+CDC. General Best Practice Guidelines for Immunization: Best Practices Guidance of the Advisory Committee on Immunization Practices (ACIP). Accessed December 27, 2019 and August 12, 2020.
+CDC. Recommendations and Guidelines: Storage and Handling.
+CDC. Vaccine Storage and Handling Toolkit.
+Ezeanolue E, Harriman K, Hunter P, et al. General Best Practice Guidelines for Immunization: Best Practices Guidance of the Advisory Committee on Immunization Practices (ACIP). Accessed December 27, 2019 and August 12, 2020.
+Food and Drug Administration (FDA). Vaccines Licensed for Use in the United States.
+Immunization Action Coalition. Clinic Resources: Storage and Handling.
+On This Page
+Overview
+Vaccine Cold Chain
+Vaccine Storage and Handling Standard Operating Procedures (SOPs)
+Vaccine Storage and Temperature Monitoring Equipment
+Organizing and Storing Vaccine in Storage Unit
+Temperature Ranges
+Vaccine Inventory Management
+Vaccine Transport
+Acknowledgements
+Selected References
+Apr. 3, 2024
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Immunization and Respiratory Diseases (NCIRD); Immunization Services Division

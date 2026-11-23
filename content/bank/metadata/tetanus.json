@@ -55,9 +55,19 @@
       "sourceIds": [
         "cdc-tdap-pregnancy"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says to give Tdap during each pregnancy so that each infant gets the most protective antibodies.",
+          "url": "https://www.cdc.gov/pertussis/hcp/vaccine-recommendations/vaccinating-pregnant-patients.html",
+          "quote": "Administering Tdap during each pregnancy helps protect infants during the time when they're most vulnerable. Optimal timing is between 27 and 36 weeks gestation, preferably during the earlier part of this period. Vaccination during each pregnancy is important for transferring the greatest number of protective antibodies to each infant.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-02"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -121,9 +131,28 @@
       "sourceIds": [
         "cdc-tdap-pregnancy-hcp"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says the best time for Tdap is 27 to 36 weeks of pregnancy, so the infant gets the most protective antibodies.",
+          "url": "https://www.cdc.gov/pertussis/hcp/vaccine-recommendations/vaccinating-pregnant-patients.html",
+          "quote": "Optimal timing is between 27 and 36 weeks gestation, preferably during the earlier part of this period. Vaccination during each pregnancy is important for transferring the greatest number of protective antibodies to each infant.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-02"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "The optimal time to give Tdap is between 27 and 36 weeks gestation, preferably in the earlier part of that window.",
+          "url": "https://www.cdc.gov/pertussis/hcp/vaccine-recommendations/vaccinating-pregnant-patients.html",
+          "quote": "Administering Tdap during each pregnancy helps protect infants during the time when they're most vulnerable. Optimal timing is between 27 and 36 weeks gestation, preferably during the earlier part of this period. Vaccination during each pregnancy is important for transferring the greatest number of protective antibodies to each infant.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-02"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -189,9 +218,28 @@
       "sourceIds": [
         "cdc-tetanus-wound-management"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "For clean and minor wounds, CDC recommends tetanus vaccination for people with a complete primary series only when their last dose was 10 or more years ago.",
+          "url": "https://www.cdc.gov/tetanus/hcp/clinical-guidance/index.html",
+          "quote": "For clean and minor wounds People with a complete tetanus primary series who received their last tetanus vaccine 10 or more years ago.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-08"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "No tetanus vaccine is needed for any wound when the last dose was less than five years ago and the primary series is complete.",
+          "url": "https://www.cdc.gov/tetanus/hcp/clinical-guidance/index.html",
+          "quote": "Regardless of wound type, no tetanus vaccination is needed if the patient meets both criteria below: Received last tetanus vaccination less than 5 years ago Completed the primary vaccine series",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-08"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -405,9 +453,19 @@
       "sourceIds": [
         "cdc-pinkbook-tetanus"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "After Tdap, people should keep getting a Td or Tdap booster against tetanus and diphtheria every 10 years.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-21-tetanus.html",
+          "quote": "After receipt of Tdap, persons should continue to receive a dose of Td or Tdap for routine booster immunization against tetanus and diphtheria every 10 years unless needed sooner for tetanus prophylaxis as part of wound management.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -480,9 +538,28 @@
       "sourceIds": [
         "acip-wound-mgmt"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends tetanus vaccination for dirty or major wounds in people with a complete primary series whose last dose was 5 or more years ago.",
+          "url": "https://www.cdc.gov/tetanus/hcp/clinical-guidance/index.html",
+          "quote": "For dirty or major wounds People with a complete tetanus primary series who received their last tetanus vaccine 5 or more years ago.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-08"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Tetanus vaccination is recommended for dirty or major wounds when a person who completed the primary series got the last dose five or more years ago.",
+          "url": "https://www.cdc.gov/tetanus/hcp/clinical-guidance/index.html",
+          "quote": "Vaccination recommended For all wounds People with an unknown vaccination history Unvaccinated people People with an incomplete tetanus primary series For clean and minor wounds People with a complete tetanus primary series who received their last tetanus vaccine 10 or more years ago. For dirty or major wounds People with a complete tetanus primary series who received their last tetanus vaccine 5 or more years ago.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-08"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -557,9 +634,19 @@
       "sourceIds": [
         "cdc-pinkbook-tetanus"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Tetanus does not spread from person to person, so it is infectious but not contagious.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-21-tetanus.html",
+          "quote": "Tetanus is not contagious from person-to-person. It is the only vaccine-preventable disease that is infectious but not contagious.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -637,9 +724,19 @@
       "sourceIds": [
         "cdc-pinkbook-pertussis"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Adolescents and adults with pertussis often have milder disease, and the inspiratory whoop is not common in them.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-16-pertussis.html",
+          "quote": "Adolescents, adults, and children who were previously vaccinated may become infected with B. pertussis but may have milder disease than infants and young children. Pertussis infection in these persons may be asymptomatic or present as illness ranging from a mild cough illness to classic pertussis with persistent cough (i.e., lasting more than 7 days). Inspiratory whoop is not common.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-12"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -869,9 +966,19 @@
       "sourceIds": [
         "cdc-pinkbook-tetanus"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "A past Arthus-type reaction to a tetanus or diphtheria toxoid vaccine is a precaution, and the next dose should wait at least 10 years after the last tetanus-containing dose.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-21-tetanus.html",
+          "quote": "A history of Arthus-type hypersensitivity reactions after a previous dose of diphtheria toxoid-containing or tetanus toxoid–containing vaccine is a precaution for DTaP, Tdap, DT, and Td vaccination; vaccination should be deferred until at least 10 years have elapsed since the last tetanus-toxoid-containing vaccine.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-25"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -942,9 +1049,28 @@
       "sourceIds": [
         "t-tdap-pregnancy"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says Tdap should be given in each pregnancy between 27 and 36 weeks, preferably during the earlier part of that window.",
+          "url": "https://www.cdc.gov/pertussis/hcp/vaccine-recommendations/vaccinating-pregnant-patients.html",
+          "quote": "Administering Tdap during each pregnancy helps protect infants during the time when they're most vulnerable. Optimal timing is between 27 and 36 weeks gestation, preferably during the earlier part of this period.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-02"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Optimal timing is between 27 and 36 weeks gestation, preferably during the earlier part of this period.",
+          "url": "https://www.cdc.gov/pertussis/hcp/vaccine-recommendations/vaccinating-pregnant-patients.html",
+          "quote": "Administering Tdap during each pregnancy helps protect infants during the time when they're most vulnerable. Optimal timing is between 27 and 36 weeks gestation, preferably during the earlier part of this period. Vaccination during each pregnancy is important for transferring the greatest number of protective antibodies to each infant.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-02"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -1014,9 +1140,19 @@
       "sourceIds": [
         "adult-tdap"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says unvaccinated adults get Tdap first, then Td or Tdap at least 4 weeks later, then Td or Tdap 6 to 12 months later.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-notes.html",
+          "quote": "Unvaccinated or incomplete primary vaccination series for tetanus, diphtheria, or pertussis: administer remaining doses (1, 2, or 3 doses) to complete 3–dose primary series. 1 dose Tdap followed by 1 dose Td or Tdap at least 4 weeks later, and a third dose of Td or Tdap 6–12 months later (Tdap is preferred as first dose and can be substituted for any Td dose), then Td or Tdap every 10 years thereafter.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": null
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -1090,9 +1226,28 @@
         "tetanus-wound",
         "adult-tdap"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC recommends tetanus vaccination for dirty or major wounds when a person with a complete primary series had their last dose 5 or more years ago.",
+          "url": "https://www.cdc.gov/tetanus/hcp/clinical-guidance/index.html",
+          "quote": "For dirty or major wounds People with a complete tetanus primary series who received their last tetanus vaccine 5 or more years ago.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2026-09-08"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "For people with at least three tetanus doses, give Tdap or Td for all other wounds if more than five years have passed since the last dose.",
+          "url": "https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-notes.html",
+          "quote": "Wound management: Persons with 3 or more doses of tetanus–toxoid–containing vaccine: For clean and minor wounds, administer Tdap or Td if more than 10 years since last dose of tetanus–toxoid–containing vaccine; for all other wounds, administer Tdap or Td if more than 5 years since last dose of tetanus–toxoid–containing vaccine.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": null
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -1159,9 +1314,28 @@
       "sourceIds": [
         "cdc-tdap-pregnancy"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Tdap given in the third trimester prevents 78% of pertussis cases in infants younger than 2 months and is 91% effective against hospitalized cases.",
+          "url": "https://www.cdc.gov/pertussis/hcp/vaccine-recommendations/vaccinating-pregnant-patients.html",
+          "quote": "A CDC evaluation found Tdap vaccination during the third trimester of pregnancy prevents 78% of pertussis cases in infants younger than 2 months of age. The same evaluation also found that this vaccination strategy is 91% effective against hospitalized cases.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-02"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "A CDC evaluation found third trimester Tdap prevents 78% of pertussis cases in infants younger than 2 months.",
+          "url": "https://www.cdc.gov/pertussis/hcp/vaccine-recommendations/vaccinating-pregnant-patients.html",
+          "quote": "Evidence shows that infants are less likely to develop pertussis early in life if their mother got Tdap during pregnancy. A CDC evaluation found Tdap vaccination during the third trimester of pregnancy prevents 78% of pertussis cases in infants younger than 2 months of age. The same evaluation also found that this vaccination strategy is 91% effective against hospitalized cases.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-02"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },

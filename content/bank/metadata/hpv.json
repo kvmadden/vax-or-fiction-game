@@ -135,9 +135,28 @@
       "sourceIds": [
         "cdc-hpv-recs"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "ACIP recommends HPV vaccination for everyone through age 26 who was not adequately vaccinated when younger.",
+          "url": "https://www.cdc.gov/hpv/hcp/vaccination-considerations/index.html",
+          "quote": "ACIP also recommends vaccination for everyone through age 26 years if not adequately vaccinated when younger. HPV vaccination is given as a series of either two or three doses, depending on age at initial vaccination.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-09"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "HPV vaccine is recommended for routine vaccination at 11 or 12 and for everyone through age 26 if not adequately vaccinated earlier.",
+          "url": "https://www.cdc.gov/hpv/hcp/vaccination-considerations/index.html",
+          "quote": "HPV vaccine is recommended for routine vaccination at 11 or 12 years old. Vaccination can be started at age 9. ACIP also recommends vaccination for everyone through age 26 years if not adequately vaccinated when younger.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-09"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -210,9 +229,19 @@
       "sourceIds": [
         "acip-hpv-schedule"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "People who get their first HPV dose before age 15 need 2 doses, with the second given 6 to 12 months after the first.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-11-human-papillomavirus.html",
+          "quote": "A 2-dose series is recommended for persons who receive the first valid dose before their 15th birthday (except for persons with certain immunocompromising conditions). The second and final dose should be administered 6 through 12 months after the first dose (0, 6-12 month schedule).",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-23"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -277,9 +306,28 @@
       "sourceIds": [
         "acip-adult-decision"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "ACIP recommends shared clinical decision-making about HPV vaccination for some adults aged 27 through 45 years who are not adequately vaccinated.",
+          "url": "https://www.cdc.gov/mmwr/volumes/68/wr/mm6832a3.htm",
+          "quote": "Adults aged >26 years. Catch-up HPV vaccination is not recommended for all adults aged >26 years. Instead, shared clinical decision-making regarding HPV vaccination is recommended for some adults aged 27 through 45 years who are not adequately vaccinated.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2019-08-15"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "ACIP recommended shared clinical decision-making on HPV vaccination for some inadequately vaccinated adults aged 27 through 45.",
+          "url": "https://www.cdc.gov/mmwr/volumes/68/wr/mm6832a3.htm",
+          "quote": "ACIP did not recommend catch-up vaccination for all adults aged 27 through 45 years, but recognized that some persons who are not adequately vaccinated might be at risk for new HPV infection and might benefit from vaccination in this age range; therefore, ACIP recommended shared clinical decision-making regarding potential HPV vaccination for these persons.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2019-08-15"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -348,9 +396,19 @@
       "sourceIds": [
         "cdc-pinkbook-hpv"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "People already infected with some HPV vaccine types get less benefit, but vaccination still protects against vaccine types they have not acquired.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-11-human-papillomavirus.html",
+          "quote": "Vaccination will provide less benefit to sexually active persons who have been already infected with one or more HPV vaccine types. However, HPV vaccination can provide protection against HPV vaccine types not already acquired.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-23"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -487,9 +545,19 @@
       "sourceIds": [
         "cdc-pinkbook-hpv"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "HPV vaccination does not remove the need for continued cervical cancer screening because some cervical cancers come from HPV types the vaccines do not cover.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-11-human-papillomavirus.html",
+          "quote": "HPV vaccination does not eliminate the need for continued cervical cancer screening, since up to 30% of cervical cancers are caused by HPV types not prevented by the quadrivalent or bivalent vaccines, and 15% of cervical cancers are caused by HPV types not prevented by the 9-valent vaccine.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-23"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -561,9 +629,28 @@
       "sourceIds": [
         "cdc-hpv-recs"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says a pregnancy found mid-series only means delaying the remaining doses until after pregnancy, and there is no reason for alarm.",
+          "url": "https://www.cdc.gov/hpv/hcp/vaccination-considerations/index.html",
+          "quote": "If a woman is found to be pregnant after starting the HPV vaccine series, second and/or third doses should be delayed until they are no longer pregnant. If a woman receives HPV vaccine and later learns that she is pregnant, there is no reason to be alarmed.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-09"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "If pregnancy is found after the series starts, later doses are delayed until after pregnancy and there is no reason to be alarmed.",
+          "url": "https://www.cdc.gov/hpv/hcp/vaccination-considerations/index.html",
+          "quote": "Although HPV vaccines have not been linked to causing adverse pregnancy outcomes or side effects (adverse events) to the developing fetus among pregnant women vaccinated inadvertently, HPV vaccines have not been studied in pregnant women in clinical trials. If a woman is found to be pregnant after starting the HPV vaccine series, second and/or third doses should be delayed until they are no longer pregnant. If a woman receives HPV vaccine and later learns that she is pregnant, there is no reason to be alarmed.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-09"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -631,9 +718,19 @@
       "sourceIds": [
         "fda-gardasil9-label"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "The FDA says Gardasil 9 is indicated for girls and women aged 9 through 45 years.",
+          "url": "https://www.fda.gov/vaccines-blood-biologics/vaccines/gardasil-9",
+          "quote": "GARDASIL 9 is a recombinant vaccine indicated in girls and women 9 through 45 years of age for the prevention of the following diseases:",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-03-26"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -706,9 +803,28 @@
       "sourceIds": [
         "cdc-hpv-acip-recommendations"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "Every HPV vaccine, including 9vHPV, prevents infection with types 16 and 18, which cause most cervical cancers, and 9vHPV also covers five more high-risk types.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-11-human-papillomavirus.html",
+          "quote": "All of the vaccines prevent infection with high-risk HPV types 16 and 18, types that cause most cervical and other cancers attributable to HPV; 9vHPV vaccine also prevents infection with five additional high-risk types.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-23"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Gardasil 9 prevents HPV types 16 and 18, which cause most cervical cancers attributable to HPV.",
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-11-human-papillomavirus.html",
+          "quote": "A 9-valent recombinant protein subunit HPV vaccine (9vHPV, Gardasil 9) is licensed for use and is currently distributed in the United States. Two additional HPV vaccines remain licensed in the United States but are not currently distributed: a quadrivalent HPV vaccine (4vHPV, Gardasil), and a bivalent HPV vaccine (2vHPV, Cervarix). All of the vaccines prevent infection with high-risk HPV types 16 and 18, types that cause most cervical and other cancers attributable to HPV; 9vHPV vaccine also prevents infection with five additional high-risk types.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-04-23"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },
@@ -771,9 +887,28 @@
       "sourceIds": [
         "t-hpv"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC says some adults aged 27 through 45 who were not adequately vaccinated might decide to get HPV vaccine after discussion with their clinician.",
+          "url": "https://www.cdc.gov/hpv/hcp/vaccination-considerations/index.html",
+          "quote": "Vaccination is not recommended for everyone older than age 26 years. Some adults ages 27 through 45 years might decide to get the HPV vaccine based on discussion with their clinician, if they did not get adequately vaccinated when they were younger.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-09"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "Some adults ages 27 through 45 who were not adequately vaccinated may decide to get HPV vaccine after discussion with their clinician.",
+          "url": "https://www.cdc.gov/hpv/hcp/vaccination-considerations/index.html",
+          "quote": "Some adults ages 27 through 45 years might decide to get the HPV vaccine based on discussion with their clinician, if they did not get adequately vaccinated when they were younger.",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2024-07-09"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "recommendation",
       "reviewBy": "2027-03-28"
     },
@@ -838,9 +973,28 @@
       "sourceIds": [
         "cdc-hpv-cancer-cases"
       ],
-      "claims": [],
+      "claims": [
+        {
+          "id": "c1",
+          "role": "key",
+          "text": "CDC estimates HPV causes about 11,100 cervical cancers and about 13,600 oropharyngeal cancers in males each year.",
+          "url": "https://www.cdc.gov/cancer/hpv/cases.html",
+          "quote": "Estimated number probably caused by any HPV typea Cervix 12,287 91% 11,100 Vagina 889 75% 700 Vulva 4,370 69% 3,000 Penis 1,429 63% 900 Anusb 8,348 91% 7,600 — Female 5,726 93% 5,300 — Male 2,622 89% 2,300 Oropharynx 22,585 70% 16,000 — Female 3,809 63% 2,400 — Male 18,776 72% 13,600",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-03"
+        },
+        {
+          "id": "c2",
+          "role": "key",
+          "text": "The estimated number probably caused by HPV is 13,600 for male oropharyngeal cancers and 11,100 for cervical cancer.",
+          "url": "https://www.cdc.gov/cancer/hpv/cases.html",
+          "quote": "Number of HPV-Associated and Estimated Number of HPV-Attributable Cancer Cases per Year Cancer site Average number of cancers per year in sites where HPV is often found (HPV-associated cancers) Percentage probably caused by any HPV typea Estimated number probably caused by any HPV typea Cervix 12,287 91% 11,100 Vagina 889 75% 700 Vulva 4,370 69% 3,000 Penis 1,429 63% 900 Anusb 8,348 91% 7,600 — Female 5,726 93% 5,300 — Male 2,622 89% 2,300 Oropharynx 22,585 70% 16,000 — Female 3,809 63% 2,400 — Male 18,776 72% 13,600",
+          "retrievedOn": "2026-11-23",
+          "pageUpdated": "2025-12-03"
+        }
+      ],
       "guidelineVersion": null,
-      "retrievedOn": null,
+      "retrievedOn": "2026-11-23",
       "volatility": "stable",
       "reviewBy": "2029-09-28"
     },

@@ -1,0 +1,17 @@
+{
+  "family": "b",
+  "via": "codex",
+  "label": "OpenAI Codex",
+  "model": null,
+  "cli": "Codex CLI, exec mode, read-only sandbox, ChatGPT subscription login",
+  "promptVersion": "source-check-v1",
+  "snapshotIndexSha256": "edbd214ca448046c9d135ef60f520a8f8931151a092e2c56d053c0c061a4b066",
+  "results": {
+    "art-of-the-offer:q1": {
+      "promptSha256": "6b99c5775a589f2fe64119bf9c994a3aa653d30678b99faed5ce076478180da8",
+      "ranOn": "2026-11-23",
+      "durationMs": 4973,
+      "error": "codex subscription usage limit reached"
+    }
+  }
+}
